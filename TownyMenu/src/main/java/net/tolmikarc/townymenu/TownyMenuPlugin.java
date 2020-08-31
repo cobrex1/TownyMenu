@@ -10,6 +10,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 	@Override
 	protected void onPluginStart() {
 		Common.log("Enabling Towny Menu by Tolmikarc");
+		Common.log("for TownyAdvanced");
 
 
 		registerCommand(new TownMenuCommand());
