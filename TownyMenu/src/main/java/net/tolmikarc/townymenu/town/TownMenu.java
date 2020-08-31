@@ -59,7 +59,7 @@ public class TownMenu extends Menu {
 			}
 		}
 
-		setSize(9 * 5);
+		setSize(9 * 4);
 		setTitle("&2&lTown Menu");
 
 		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), CompMaterial.LEVER, "&3&lToggle Settings Menu", "", "Turn on and off", "various town settings.");
@@ -85,23 +85,23 @@ public class TownMenu extends Menu {
 	@Override
 	public ItemStack getItemAt(int slot) {
 
-		if (slot == 9 + 2)
+		if (slot == 2)
 			return toggleMenuButton.getItem();
-		if (slot == 9 + 4)
+		if (slot == 4)
 			return residentListButton.getItem();
-		if (slot == 9 + 6)
+		if (slot == 6)
 			return townyPermButton.getItem();
 
-		if (slot == 9 * 3 + 2)
+		if (slot == 9 * 2 + 2)
 			return economyButton.getItem();
-		if (slot == 9 * 3 + 4)
+		if (slot == 9 * 2 + 4)
 			return generalSettingsButton.getItem();
-		if (slot == 9 * 3 + 6)
+		if (slot == 9 * 2 + 6)
 			return invitePlayerButton.getItem();
 
-		if (slot == 9 * 4 + 3)
+		if (slot == 9 * 3 + 3)
 			return extraInfoButton.getItem();
-		if (slot == 9 * 4 + 5)
+		if (slot == 9 * 3 + 5)
 			return plotMenuButton.getItem();
 
 		return DUMMY_BUTTON;
