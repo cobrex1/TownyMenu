@@ -687,7 +687,6 @@ public class TownMenu extends Menu {
 
 	public class EconomyManagementMenu extends Menu {
 
-		Town town;
 
 		private final ItemStack balanceButton;
 		private final Button depositButton;
@@ -730,7 +729,6 @@ public class TownMenu extends Menu {
 
 	public class GeneralSettingsMenu extends Menu {
 
-		Town town;
 
 		private final Button setSpawnButton;
 		private final Button setHomeBlockButton;
