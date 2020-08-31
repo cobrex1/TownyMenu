@@ -1,0 +1,5 @@
+name: TownyMenu
+version: 1.0.0
+main: net.tolmikarc.townymenu.TownyMenuPlugin
+api-version: 1.16
+author: Tolmikarc

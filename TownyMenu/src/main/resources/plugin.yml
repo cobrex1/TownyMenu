@@ -1,0 +1,5 @@
+name: TownyMenu
+version: ${project.version}
+main: ${main.class}
+api-version: 1.16
+author: Tolmikarc
