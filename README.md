@@ -11,3 +11,5 @@
 townymenu.town.use - Permission to use the town management menu  
 townymenu.plot.admin - permission to manage any plot in any town  
 
+# Support
+https://discord.gg/MMgtDwc - Support discord
