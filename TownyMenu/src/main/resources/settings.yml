@@ -4,8 +4,14 @@
 # For help, visit <youradress>.com
 #
 
+# The prefix for messages from the plugin
 Prefix: "&b&lTM &7// "
+# The symbol used in messages for money
 Money_Symbol: "$"
+# How many milliseconds should an action take before the lag is logged to console
 Log_Lag_Over_Milis: 100
+
+# Do not touch below this line
+# ---------------------------------------------------------------
 Debug: []
 Version: 1
