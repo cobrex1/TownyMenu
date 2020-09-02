@@ -24,7 +24,7 @@ public class TownMenuCommand extends SimpleCommand {
 			return;
 		}
 
-		final Town town;
+		Town town;
 		Resident resident = TownyAPI.getInstance().getDataSource().getResident(getPlayer().getName());
 		if (resident.hasTown()) {
 			town = resident.getTown();

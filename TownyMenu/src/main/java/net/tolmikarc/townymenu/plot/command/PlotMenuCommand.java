@@ -25,8 +25,8 @@ public class PlotMenuCommand extends SimpleCommand {
 			return;
 		}
 
-		final TownBlock townBlock;
-		final Town town;
+		TownBlock townBlock;
+	  Town town;
 		Resident resident = TownyAPI.getInstance().getDataSource().getResident(getPlayer().getName());
 		if (TownyAPI.getInstance().getTownBlock(getPlayer().getLocation()) != null) {
 			townBlock = TownyAPI.getInstance().getTownBlock(getPlayer().getLocation());
