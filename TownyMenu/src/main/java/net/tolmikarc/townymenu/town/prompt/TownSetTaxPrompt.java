@@ -3,6 +3,7 @@ package net.tolmikarc.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -23,16 +24,16 @@ public class TownSetTaxPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)";
+		return "&3Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)";
 	}
 
 	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
 		if (Valid.isInteger(input))
 			if (town.isTaxPercentage())
-				return (0 < Integer.parseInt(input) && Integer.parseInt(input) < TownySettings.getMaxTownTaxPercent());
+				return (0 <= Integer.parseInt(input) && Integer.parseInt(input) < TownySettings.getMaxTownTaxPercent());
 			else
-				return (Integer.parseInt(input) < TownySettings.getMaxTownTax());
+				return (Integer.parseInt(input) < TownySettings.getMaxTownTax() && Integer.parseInt(input) >= 0);
 		return false;
 	}
 
@@ -52,7 +53,7 @@ public class TownSetTaxPrompt extends SimplePrompt {
 
 		town.setTaxes(Integer.parseInt(input));
 		TownyAPI.getInstance().getDataSource().saveTown(town);
-		tell(town.isTaxPercentage() ? "&aTax percent set to " + input : "&aTax amount set to " + input);
+		tell(town.isTaxPercentage() ? "&3Tax percent set to &b" + input : "&3Tax amount set to &b" + Settings.MONEY_SYMBOL + input);
 
 		return null;
 	}

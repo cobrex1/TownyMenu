@@ -28,7 +28,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6What type would you like to set this plot? &2(Options: " + Common.join(plotTypes, ", ") + ")";
+		return "&3What type would you like to set this plot? &b(Options: " + Common.join(plotTypes, ", ") + ")";
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 			return null;
 		}
 		townBlock.setType(TownBlockType.valueOf(input.toUpperCase()));
-		tell("&aPlot type set to: " + input);
+		tell("&3Plot type set to: &b" + input);
 		return null;
 	}
 }

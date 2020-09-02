@@ -2,6 +2,7 @@ package net.tolmikarc.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.TownBlock;
+import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +23,7 @@ public class PlotForSalePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)";
+		return "&3Type in the amount you would like to set this plot for sale: &c(Type cancel to exit prompt)";
 	}
 
 	@Override
@@ -43,7 +44,7 @@ public class PlotForSalePrompt extends SimplePrompt {
 		}
 
 		townBlock.setPlotPrice(Integer.parseInt(input));
-		tell("&6Plot set price to &a$" + input);
+		tell("&3Plot set price to &b" + Settings.MONEY_SYMBOL + input);
 		return null;
 	}
 }

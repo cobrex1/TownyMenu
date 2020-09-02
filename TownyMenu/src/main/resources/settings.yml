@@ -1,0 +1,11 @@
+#
+# Welcome to the main settings file.
+#
+# For help, visit <youradress>.com
+#
+
+Prefix: "&b&lTM &7// "
+Money_Symbol: "$"
+Log_Lag_Over_Milis: 100
+Debug: []
+Version: 1

@@ -20,7 +20,7 @@ public class TownTitlePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the title you would like to give to &2" + resident.getName() + " &6now: (under 10 characters) &cType cancel to exit.";
+		return "&3Type in the title you would like to give to &b" + resident.getName() + " &3now: (under 10 characters) &cType cancel to exit.";
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class TownTitlePrompt extends SimplePrompt {
 			e.printStackTrace();
 		}
 
-		tell("&aSuccessfully set " + resident.getName() + "'s &atitle to " + input);
+		tell("&3Successfully set &b" + resident.getName() + "'s &3title to &b" + input);
 
 		return null;
 	}

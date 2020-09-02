@@ -8,6 +8,7 @@ import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.mineacademy.fo.Common;
 import org.mineacademy.fo.conversation.SimplePrompt;
 
 public class TownGiveMayorPrompt extends SimplePrompt {
@@ -21,7 +22,7 @@ public class TownGiveMayorPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&cAre you sure you would like to give &a" + resident.getName() + " &cthe Mayor position? &6(Type &aconfirm &6 or &4deny&6)";
+		return "&cAre you sure you would like to give &b" + resident.getName() + " &cthe Mayor position? &3(Type &bconfirm &3or &4deny&3)";
 	}
 
 	@Override
@@ -39,6 +40,7 @@ public class TownGiveMayorPrompt extends SimplePrompt {
 		if (input.toLowerCase().equals("confirm")) {
 			Town town = resident.getTown();
 			town.setMayor(resident);
+			Common.tell(getPlayer(context), "&3Successfully set &b" + resident.getName() + " &3as mayor!");
 			TownyAPI.getInstance().getDataSource().saveTown(town);
 		}
 

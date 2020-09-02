@@ -20,7 +20,7 @@ public class PlotEvictPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Would you like to evict the resident of this plot? Type &aconfirm &6or &cdeny&6:";
+		return "&cWould you like to evict the resident of this plot? Type &aconfirm &cor deny:";
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class PlotEvictPrompt extends SimplePrompt {
 			return null;
 		}
 		if (!townBlock.hasResident()) {
-			tell("Plot does not have any residents.");
+			tell("&cPlot does not have any residents.");
 			return null;
 		}
 

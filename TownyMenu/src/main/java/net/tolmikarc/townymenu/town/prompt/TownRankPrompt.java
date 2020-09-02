@@ -14,6 +14,8 @@ import org.mineacademy.fo.conversation.SimplePrompt;
 
 public class TownRankPrompt extends SimplePrompt {
 
+	// TODO fix
+
 	Resident resident;
 
 	public TownRankPrompt(Resident resident) {
@@ -23,13 +25,13 @@ public class TownRankPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the rank you would like to give to &a" + resident.getName() + " &6now: &2(Options: " + Common.join(TownyPerms.getTownRanks(), ", ") + ") &6Type &ccancel &6to cancel or &cremove &6to remove their rank.";
+		return "&3Type in the rank you would like to give to &b" + resident.getName() + " &3now: &b(Options: " + Common.join(TownyPerms.getTownRanks(), ", ") + ") &3Type &ccancel &3to cancel or &cremove &3to remove their rank.";
 	}
 
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "This player either already has this rank or the rank does not exist. &2(Options: " + Common.join(TownyPerms.getTownRanks(), ", ") + ") &cType &c&lcancel &cto cancel or &cremove &6to remove their ranks.";
+		return "&cThis player either already has this rank or the rank does not exist. (Options: " + Common.join(TownyPerms.getTownRanks(), ", ") + ") &cType &c&lcancel &cto cancel or remove to remove their ranks.";
 	}
 
 	@Override
@@ -40,14 +42,6 @@ public class TownRankPrompt extends SimplePrompt {
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 
-		try {
-			if (!resident.getTown().getMayor().equals(resident))
-				return null;
-		} catch (NotRegisteredException e) {
-			e.printStackTrace();
-		}
-
-
 		if (input.toLowerCase().equals("cancel")) {
 			tell("&cCancelled prompt.");
 			return null;
@@ -57,7 +51,6 @@ public class TownRankPrompt extends SimplePrompt {
 					try {
 						resident.removeTownRank(rank);
 						TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
-						tell("&cSuccessfully removed all town ranks from " + resident.getName());
 					} catch (NotRegisteredException e) {
 						e.printStackTrace();
 					}

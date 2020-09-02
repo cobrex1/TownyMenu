@@ -6,11 +6,11 @@ import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownyPermission;
 import com.palmergames.bukkit.towny.object.TownyPermissionChange;
+import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.plot.prompt.PlotEvictPrompt;
 import net.tolmikarc.townymenu.plot.prompt.PlotForSalePrompt;
 import net.tolmikarc.townymenu.plot.prompt.PlotNotForSalePrompt;
 import net.tolmikarc.townymenu.plot.prompt.PlotSetTypePrompt;
-import net.tolmikarc.townymenu.town.prompt.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -19,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.mineacademy.fo.Common;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
@@ -32,10 +33,6 @@ import java.util.List;
 
 public class PlotMenu extends Menu {
 
-	// TODO
-	//  plot perms menu
-	//  mayor page for setting price, evicting, clearing, setting type, for sale
-
 
 	private final Button toggleSettingsMenu;
 	private final Button permMenuButton;
@@ -45,6 +42,7 @@ public class PlotMenu extends Menu {
 	public PlotMenu(TownBlock townBlock) {
 
 		setSize(9);
+		setTitle("&2Plot Menu");
 
 		List<Resident> onlineResidents = new ArrayList<>();
 		for (Player player : Bukkit.getOnlinePlayers()) {
@@ -88,6 +86,7 @@ public class PlotMenu extends Menu {
 
 		protected FriendPlayerMenu(Iterable<Resident> pages) {
 			super(PlotMenu.this, pages);
+			setTitle("&2Friend Menu");
 		}
 
 		@Override
@@ -109,15 +108,22 @@ public class PlotMenu extends Menu {
 			return itemSkull;
 		}
 
+		@SneakyThrows
 		@Override
 		protected void onPageClick(Player player, Resident item, ClickType click) {
 
-			player.closeInventory();
+			Resident playerResident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
+
 			try {
-				if (item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(player.getName())))
-					player.performCommand("res friend remove " + item.getName());
-				else
-					player.performCommand("res friend add " + item.getName());
+				if (item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(player.getName()))) {
+					playerResident.getFriends().remove(item);
+					Common.tell(player, "&cRemoved " + item.getName() + " to your friends list!");
+				} else {
+					playerResident.getFriends().add(item);
+					Common.tell(player, "&3Added &b" + item.getName() + " &3to your friends list!");
+				}
+				TownyAPI.getInstance().getDataSource().saveResidents();
+				restartMenu();
 			} catch (NotRegisteredException e) {
 				e.printStackTrace();
 			}

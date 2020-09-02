@@ -1,12 +1,15 @@
 package net.tolmikarc.townymenu.town;
 
 import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.*;
 import net.tolmikarc.townymenu.plot.PlotMenu;
+import net.tolmikarc.townymenu.settings.Settings;
 import net.tolmikarc.townymenu.town.prompt.*;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -14,6 +17,8 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.mineacademy.fo.Common;
+import org.mineacademy.fo.TimeUtil;
+import org.mineacademy.fo.debug.LagCatcher;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
@@ -28,11 +33,8 @@ import java.util.List;
 
 public class TownMenu extends Menu {
 
-	// TODO
-	//  create plot menu
 
-
-	// TODO set up github, discord, spigot, website
+	// TODO set up discord, spigot
 
 
 	private final Button toggleMenuButton;
@@ -51,6 +53,7 @@ public class TownMenu extends Menu {
 		List<Resident> residentList = town.getResidents();
 
 		List<Resident> allOnlineResidents = new ArrayList<>();
+		LagCatcher.start("load-residents-online");
 		for (Player players : Bukkit.getOnlinePlayers()) {
 			try {
 				allOnlineResidents.add(TownyAPI.getInstance().getDataSource().getResident(players.getName()));
@@ -58,13 +61,14 @@ public class TownMenu extends Menu {
 				e.printStackTrace();
 			}
 		}
+		LagCatcher.end("load-residents-online");
 
 		setSize(9 * 4);
 		setTitle("&2&lTown Menu");
 
 		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), CompMaterial.LEVER, "&3&lToggle Settings Menu", "", "Turn on and off", "various town settings.");
 
-		residentListButton = new ButtonMenu(new residentListMenu(residentList), CompMaterial.PLAYER_HEAD, "&6&lResident Menu", "", "View all resident info", "and settings.");
+		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), CompMaterial.PLAYER_HEAD, "&6&lResident Menu", "", "View all resident info", "and settings.");
 
 		townyPermButton = new ButtonMenu(new TownyPermMenu(town), CompMaterial.STONE_AXE, "&c&lPermission Menu", "", "Adjust town permissions", "for residents, nation", "allies and outsiders.");
 
@@ -227,7 +231,7 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 
-					return ItemCreator.of(CompMaterial.EMERALD, "&2&lToggle Tax Percent", "", town.isTaxPercentage() ? "&eClick to Turn &cOff" : "&eClick to Turn &eOn").build().make();
+					return ItemCreator.of(CompMaterial.EMERALD, "&2&lToggle Tax Percent", "", town.isTaxPercentage() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
 
 				}
 			};
@@ -256,21 +260,28 @@ public class TownMenu extends Menu {
 		}
 	}
 
-	public class residentListMenu extends MenuPagged<Resident> {
+	public class ResidentListMenu extends MenuPagged<Resident> {
 
 
-		protected residentListMenu(Iterable<Resident> pages) {
+		protected ResidentListMenu(Iterable<Resident> pages) {
 			super(TownMenu.this, pages);
 			setTitle("&2&lResident Menu");
+			setInfo("Click on a resident", "to manage them!");
 		}
 
 		@Override
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(item.getName());
+			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
+			if (item.getUUID() == null)
+				return null;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
+			List<String> lore = new ArrayList<>();
+			lore.add("");
+			lore.add(ChatColor.GRAY + "Last online: " + TimeUtil.getFormattedDateShort(item.getLastOnline()));
+			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
 		}
@@ -282,11 +293,11 @@ public class TownMenu extends Menu {
 				player.closeInventory();
 				return;
 			}
-			new residentMenu(item).displayTo(player);
+			new ResidentMenu(item).displayTo(player);
 		}
 	}
 
-	public class residentMenu extends Menu {
+	public class ResidentMenu extends Menu {
 
 
 		private final Button kickButton;
@@ -295,7 +306,7 @@ public class TownMenu extends Menu {
 		private final Button mayorButton;
 
 
-		protected residentMenu(Resident resident) {
+		protected ResidentMenu(Resident resident) {
 			super(TownMenu.this);
 
 			setTitle("&2&lResident Menu");
@@ -687,7 +698,6 @@ public class TownMenu extends Menu {
 
 	public class EconomyManagementMenu extends Menu {
 
-
 		private final ItemStack balanceButton;
 		private final Button depositButton;
 		private final Button withdrawButton;
@@ -699,9 +709,7 @@ public class TownMenu extends Menu {
 			setSize(9 * 2);
 			setTitle("&2&lEconomy Menu");
 
-			this.town = town;
-
-			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&2&lCurrent Town Balance", "", "&a" + town.getAccount().getHoldingFormattedBalance()).build().make();
+			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&2&lCurrent Town Balance", "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", "Current Upkeep: " + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).build().make();
 
 			depositButton = new ButtonConversation(new TownDepositPrompt(town), CompMaterial.CHEST, "&a&lDeposit Money", "", "Deposit money into", "your town bank.");
 
@@ -729,7 +737,6 @@ public class TownMenu extends Menu {
 
 	public class GeneralSettingsMenu extends Menu {
 
-
 		private final Button setSpawnButton;
 		private final Button setHomeBlockButton;
 		private final Button townBoardButton;
@@ -741,8 +748,6 @@ public class TownMenu extends Menu {
 			setInfo("Adjust other", "extra town settings.");
 			setTitle("&2&lGeneral Settings Menu");
 
-			this.town = town;
-
 
 			setHomeBlockButton = new Button() {
 				@Override
@@ -752,8 +757,8 @@ public class TownMenu extends Menu {
 						if (townBlock != null && townBlock.getTown().equals(town) && town.getMayor().getName().equals(player.getName())) {
 							town.setHomeBlock(townBlock);
 							TownyAPI.getInstance().getDataSource().saveTown(town);
-							Common.tell(player, "&aSet town block to your location!");
-							Common.tell(player, "&aMake sure to also set your town spawn again!");
+							Common.tell(player, "&eSet town block to your location!");
+							Common.tell(player, "&bMake sure to also set your town spawn again!");
 						} else {
 							Common.tell(player, "&cCannot set townblock here.");
 						}
@@ -779,7 +784,7 @@ public class TownMenu extends Menu {
 					try {
 						if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
 							town.setSpawn(player.getLocation());
-							Common.tell(player, "&aSet town spawn to current location.");
+							Common.tell(player, "&eSet town spawn to current location.");
 							player.closeInventory();
 							TownyAPI.getInstance().getDataSource().saveTown(town);
 						} else {
@@ -866,10 +871,8 @@ public class TownMenu extends Menu {
 
 		@Override
 		protected void onPageClick(Player player, Resident item, ClickType click) {
-
 			player.closeInventory();
 			player.performCommand("t invite " + item.getName());
-
 		}
 	}
 
@@ -880,7 +883,7 @@ public class TownMenu extends Menu {
 
 		protected ExtraTownInfo() {
 			super(TownMenu.this);
-			setSize(9 * 2);
+			setSize(9);
 		}
 
 		@Override

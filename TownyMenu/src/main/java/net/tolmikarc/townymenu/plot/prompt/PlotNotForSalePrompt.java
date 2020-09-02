@@ -20,7 +20,7 @@ public class PlotNotForSalePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Would you like to set this plot not for sale? Type &aconfirm &6or &cdeny&6:";
+		return "&3Would you like to set this plot not for sale? Type &aconfirm &3or &cdeny&6:";
 	}
 
 	@Override

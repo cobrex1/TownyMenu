@@ -27,7 +27,7 @@ public class TownNamePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the name you would like to give to your town: (under 10 characters) &2Current Name: " + town.getName() + " &cType cancel to exit.";
+		return "&3Type in the name you would like to give to your town: (under 10 characters) &bCurrent Name: " + town.getName() + " &cType cancel to exit.";
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class TownNamePrompt extends SimplePrompt {
 				town.setName(input);
 				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
 
-				tell("&aSuccessfully set town name to " + input);
+				tell("&3Successfully set town name to " + input);
 				TownyAPI.getInstance().getDataSource().saveAll();
 			} else
 				tell("&cNot enough money in town bank to change town name.");

@@ -39,7 +39,7 @@ public class TownKickPrompt extends SimplePrompt {
 			Town town = resident.getTown();
 			town.removeResident(resident);
 			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell("&aSuccessfully kicked " + resident.getName() + "from your town.");
+			tell("&3Successfully kicked &b" + resident.getName() + " &3from your town.");
 		} catch (EmptyTownException | NotRegisteredException e) {
 			e.printStackTrace();
 		}

@@ -3,6 +3,7 @@ package net.tolmikarc.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.EconomyException;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +25,7 @@ public class TownDepositPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&6Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)";
+		return "&3Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)";
 	}
 
 	@Override
@@ -47,7 +48,7 @@ public class TownDepositPrompt extends SimplePrompt {
 			HookManager.withdraw(getPlayer(context), Integer.parseInt(input));
 			town.getAccount().setBalance(town.getAccount().getHoldingBalance() + Integer.parseInt(input), "Deposit money from menu.");
 			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell("&aDeposited " + input + " into your town account.");
+			tell("&3Deposited &b" + Settings.MONEY_SYMBOL + input + " &3into your town account.");
 		} catch (EconomyException e) {
 			e.printStackTrace();
 		}
