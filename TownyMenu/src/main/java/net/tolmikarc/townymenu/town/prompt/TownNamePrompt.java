@@ -57,7 +57,7 @@ public class TownNamePrompt extends SimplePrompt {
 				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
 
 				tell("&3Successfully set town name to " + input);
-				TownyAPI.getInstance().getDataSource().saveAll();
+				TownyAPI.getInstance().getDataSource().saveTown(town);
 			} else
 				tell("&cNot enough money in town bank to change town name.");
 		} catch (EconomyException e) {
