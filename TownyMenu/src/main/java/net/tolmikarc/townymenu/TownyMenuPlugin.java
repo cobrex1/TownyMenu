@@ -1,5 +1,7 @@
 package net.tolmikarc.townymenu;
 
+import com.palmergames.bukkit.towny.Towny;
+import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import net.tolmikarc.townymenu.plot.command.PlotMenuCommand;
 import net.tolmikarc.townymenu.settings.Settings;
 import net.tolmikarc.townymenu.town.command.TownMenuCommand;
@@ -21,6 +23,8 @@ public class TownyMenuPlugin extends SimplePlugin {
 
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
+
+		TownyEconomyHandler.initialize(Towny.getPlugin());
 	}
 
 	@Override

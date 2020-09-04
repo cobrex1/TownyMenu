@@ -14,7 +14,6 @@ import net.tolmikarc.townymenu.plot.prompt.PlotSetTypePrompt;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
@@ -91,10 +90,12 @@ public class PlotMenu extends Menu {
 
 		@Override
 		protected ItemStack convertToItemStack(Resident item) {
+			if (item.getUUID() == null)
+				return null;
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(item.getName());
-			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
+			Player player = Bukkit.getPlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
