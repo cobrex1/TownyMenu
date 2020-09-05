@@ -698,7 +698,7 @@ public class TownMenu extends Menu {
 
 	public class EconomyManagementMenu extends Menu {
 
-		private ItemStack balanceButton;
+		private final ItemStack balanceButton;
 		private final Button depositButton;
 		private final Button withdrawButton;
 		private final Button setTaxButton;
@@ -708,7 +708,7 @@ public class TownMenu extends Menu {
 			super(TownMenu.this);
 			setSize(9 * 2);
 			setTitle("&2&lEconomy Menu");
-			
+
 			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&2&lCurrent Town Balance", "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", "Current Upkeep: " + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).build().make();
 
 			depositButton = new ButtonConversation(new TownDepositPrompt(town), CompMaterial.CHEST, "&a&lDeposit Money", "", "Deposit money into", "your town bank.");
