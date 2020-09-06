@@ -6,7 +6,7 @@
 
     <groupId>net.tolmikarc</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.8</version>
 
 
     <properties>
@@ -48,7 +48,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.kangarko</groupId>
+            <groupId>org.mineacademy</groupId>
             <artifactId>Foundation</artifactId>
             <version>${foundation.version}</version>
             <scope>compile</scope>
@@ -65,9 +65,7 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
     <build>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -95,7 +93,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>org.mineacademy:Game*</include>
-                                    <include>com.github.kangarko:Foundation*</include>
+                                    <include>org.mineacademy:Foundation*</include>
                                 </includes>
                                 <excludes>
                                     <exclude>org.mineacademy:GameAPI*</exclude>
