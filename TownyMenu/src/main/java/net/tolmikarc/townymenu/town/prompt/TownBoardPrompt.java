@@ -31,6 +31,7 @@ public class TownBoardPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.set.board"))
 			return null;
 
+
 		town.setTownBoard(input);
 		TownyAPI.getInstance().getDataSource().saveTown(town);
 

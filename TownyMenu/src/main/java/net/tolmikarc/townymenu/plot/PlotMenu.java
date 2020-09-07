@@ -28,7 +28,9 @@ import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PlotMenu extends Menu {
 
@@ -43,7 +45,7 @@ public class PlotMenu extends Menu {
 		setSize(9);
 		setTitle("&2Plot Menu");
 
-		List<Resident> onlineResidents = new ArrayList<>();
+		Set<Resident> onlineResidents = new HashSet<>();
 		for (Player player : Bukkit.getOnlinePlayers()) {
 			try {
 				onlineResidents.add(TownyAPI.getInstance().getDataSource().getResident(player.getName()));

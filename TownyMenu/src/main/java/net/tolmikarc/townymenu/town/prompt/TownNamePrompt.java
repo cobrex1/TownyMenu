@@ -2,7 +2,9 @@ package net.tolmikarc.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
+import com.palmergames.bukkit.towny.exceptions.AlreadyRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.EconomyException;
+import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Town;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -53,14 +55,14 @@ public class TownNamePrompt extends SimplePrompt {
 
 		try {
 			if (town.getAccount().canPayFromHoldings(TownySettings.getTownRenameCost())) {
-				town.setName(input);
+				TownyAPI.getInstance().getDataSource().renameTown(town, input);
 				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
 
 				tell("&3Successfully set town name to " + input);
 				TownyAPI.getInstance().getDataSource().saveTown(town);
 			} else
 				tell("&cNot enough money in town bank to change town name.");
-		} catch (EconomyException e) {
+		} catch (EconomyException | NotRegisteredException | AlreadyRegisteredException e) {
 			e.printStackTrace();
 		}
 

@@ -6,7 +6,7 @@
 
     <groupId>net.tolmikarc</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 
 
     <properties>
@@ -94,6 +94,8 @@
                                 <includes>
                                     <include>org.mineacademy:Game*</include>
                                     <include>org.mineacademy:Foundation*</include>
+                                    <include>com.palmergames.bukkit.towny:Towny*</include>
+                                    <include>com.github.TownyAdvanced*</include>
                                 </includes>
                                 <excludes>
                                     <exclude>org.mineacademy:GameAPI*</exclude>
