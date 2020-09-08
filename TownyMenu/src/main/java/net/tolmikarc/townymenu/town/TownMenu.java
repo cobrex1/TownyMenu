@@ -5,6 +5,8 @@ import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.*;
+import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
+import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.plot.PlotMenu;
 import net.tolmikarc.townymenu.settings.Settings;
 import net.tolmikarc.townymenu.town.prompt.*;
@@ -28,6 +30,7 @@ import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -48,7 +51,7 @@ public class TownMenu extends Menu {
 
 	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.GRAY_STAINED_GLASS_PANE, "").build().make();
 
-	public TownMenu(Town town, Player player) {
+	public TownMenu(Town town, Player player) throws NotRegisteredException {
 
 		List<Resident> residentList = town.getResidents();
 
@@ -72,7 +75,70 @@ public class TownMenu extends Menu {
 
 		townyPermButton = new ButtonMenu(new TownyPermMenu(town), CompMaterial.STONE_AXE, "&c&lPermission Menu", "", "Adjust town permissions", "for residents, nation", "allies and outsiders.");
 
-		economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+		if (TownySettings.isBankActionLimitedToBankPlots()) {
+			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
+				if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getType().equals(TownBlockType.BANK))
+					economyButton = new Button() {
+						@Override
+						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+							Common.tell(player, "&cYou must be in a bank plot to use this menu.");
+							player.closeInventory();
+						}
+
+						@Override
+						public ItemStack getItem() {
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+						}
+					};
+				else
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+			else
+				economyButton = new Button() {
+					@Override
+					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+						Common.tell(player, "&cYou must be in a bank plot to use this menu.");
+						player.closeInventory();
+					}
+
+					@Override
+					public ItemStack getItem() {
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+					}
+				};
+		} else if (TownySettings.isBankActionDisallowedOutsideTown()) {
+			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
+				if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getTown().equals(town)) {
+					economyButton = new Button() {
+						@Override
+						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+							Common.tell(player, "&cYou must be in your town to use this menu.");
+							player.closeInventory();
+						}
+
+						@Override
+						public ItemStack getItem() {
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+						}
+					};
+				} else
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+			else {
+				economyButton = new Button() {
+					@Override
+					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+						Common.tell(player, "&cYou must be in your town to use this menu.");
+						player.closeInventory();
+					}
+
+					@Override
+					public ItemStack getItem() {
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+					}
+				};
+			}
+
+		} else
+			economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
 
 		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), CompMaterial.ENDER_CHEST, "&2&lOther Settings Menu", "", "Change various", "extra town settings.");
 
@@ -176,9 +242,40 @@ public class TownMenu extends Menu {
 				}
 			};
 			pvpToggle = new Button() {
+				@SneakyThrows
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+					if (TownySettings.getOutsidersPreventPVPToggle()) {
+						Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
+						for (Player onlinePlayer : onlinePlayers) {
+							Resident onlinePlayerAsRes = TownyAPI.getInstance().getDataSource().getResident(onlinePlayer.getName());
+							if (onlinePlayerAsRes.hasTown()) {
+								if (!onlinePlayerAsRes.getTown().equals(town))
+									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
+										if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()).getTown().equals(town)) {
+											Common.tell(player, "&cCannot toggle PVP while outsiders are in your town.");
+											player.closeInventory();
+											return;
+										}
+							} else {
+								if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
+									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()).getTown().equals(town)) {
+										Common.tell(player, "&cCannot toggle PVP while outsiders are in your town.");
+										player.closeInventory();
+										return;
+									}
+							}
+						}
+					}
+					if (TownySettings.getPVPCoolDownTime() > 0) {
+						if (CooldownTimerTask.hasCooldown(town.getName(), CooldownTimerTask.CooldownType.PVP)) {
+							Common.tell(player, "&cYou cannot toggle pvp until the cooldown is complete.");
+							player.closeInventory();
+							return;
+						}
+					}
 					town.setPVP(!town.isPVP());
+					CooldownTimerTask.addCooldownTimer(town.getName(), CooldownTimerTask.CooldownType.PVP);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
 				}
