@@ -3,6 +3,7 @@ package net.tolmikarc.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +21,7 @@ public class TownTitlePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3Type in the title you would like to give to &b" + resident.getName() + " &3now: (under 10 characters) &cType cancel to exit.";
+		return Localization.TownConversables.Title.PROMPT.replace("{player}", resident.getName());
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class TownTitlePrompt extends SimplePrompt {
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 
-		if (!getPlayer(context).hasPermission("towny.command.town.set.title"))
+		if (!getPlayer(context).hasPermission("towny.command.town.set.title") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
 
@@ -42,7 +43,7 @@ public class TownTitlePrompt extends SimplePrompt {
 			e.printStackTrace();
 		}
 
-		tell("&3Successfully set &b" + resident.getName() + "'s &3title to &b" + input);
+		tell(Localization.TownConversables.Title.RESPONSE.replace("{player}", resident.getName()).replace("{input}", input));
 
 		return null;
 	}

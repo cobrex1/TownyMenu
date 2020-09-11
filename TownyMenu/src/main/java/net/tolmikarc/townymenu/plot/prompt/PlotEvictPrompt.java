@@ -1,6 +1,7 @@
 package net.tolmikarc.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.object.TownBlock;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -20,34 +21,29 @@ public class PlotEvictPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&cWould you like to evict the resident of this plot? Type &aconfirm &cor deny:";
+		return Localization.PlotConversables.Evict.PROMPT;
 	}
+
 
 	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
-		return (input.equalsIgnoreCase("confirm") || input.equalsIgnoreCase("deny"));
-	}
-
-	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "&cPlease enter either confirm or deny";
+		return (input.equalsIgnoreCase(Localization.CANCEL) || input.equalsIgnoreCase(Localization.CONFIRM));
 	}
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.evict")) {
-			tell("&cYou do not have permission to evict people from this plot.");
+		if (!getPlayer(context).hasPermission("towny.command.plot.evict") || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
 		if (!townBlock.hasResident()) {
-			tell("&cPlot does not have any residents.");
+			tell(Localization.PlotConversables.Evict.INVALID);
 			return null;
 		}
 
 		townBlock.setResident(null);
 		townBlock.setPlotPrice(-1);
 
-		tell("&cPlot resident evicted.");
+		tell(Localization.PlotConversables.Evict.RESPONSE);
 		return null;
 	}
 }

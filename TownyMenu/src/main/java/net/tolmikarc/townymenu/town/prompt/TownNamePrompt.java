@@ -6,6 +6,7 @@ import com.palmergames.bukkit.towny.exceptions.AlreadyRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.EconomyException;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +30,7 @@ public class TownNamePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3Type in the name you would like to give to your town: (under 10 characters) &bCurrent Name: " + town.getName() + " &cType cancel to exit.";
+		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName());
 	}
 
 	@Override
@@ -39,29 +40,29 @@ public class TownNamePrompt extends SimplePrompt {
 		for (Town town : TownyAPI.getInstance().getDataSource().getTowns())
 			allTownNames.add(town.getName());
 		LagCatcher.end("load-all-town-names");
-		return (input.length() < 10 && !allTownNames.contains(input));
+		return ((input.length() < 10 && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
 	}
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "&cName must be unique and less than 10 characters.";
+		return Localization.TownConversables.Name.INVALID;
 	}
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.town.set.name"))
+		if (!getPlayer(context).hasPermission("towny.command.town.set.name") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
 
 		try {
 			if (town.getAccount().canPayFromHoldings(TownySettings.getTownRenameCost())) {
 				TownyAPI.getInstance().getDataSource().renameTown(town, input);
-				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
+				town.getAccount().withdraw(TownySettings.getTownRenameCost(), "Renaming town.");
 
-				tell("&3Successfully set town name to " + input);
+				tell(Localization.TownConversables.Name.RESPONSE.replace("{input}", input));
 				TownyAPI.getInstance().getDataSource().saveTown(town);
 			} else
-				tell("&cNot enough money in town bank to change town name.");
+				tell(Localization.TownConversables.Name.RETURN);
 		} catch (EconomyException | NotRegisteredException | AlreadyRegisteredException e) {
 			e.printStackTrace();
 		}

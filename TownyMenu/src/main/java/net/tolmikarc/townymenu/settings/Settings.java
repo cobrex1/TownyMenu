@@ -15,6 +15,8 @@ public class Settings extends SimpleSettings {
 		pathPrefix(null);
 
 		MONEY_SYMBOL = getString("Money_Symbol");
+
+
 	}
 
 }

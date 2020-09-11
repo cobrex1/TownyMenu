@@ -2,6 +2,7 @@ package net.tolmikarc.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownBlockType;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3What type would you like to set this plot? &b(Options: " + Common.join(plotTypes, ", ") + ")";
+		return Localization.PlotConversables.SetType.PROMPT.replace("{options}", Common.join(plotTypes, ", "));
 	}
 
 	@Override
@@ -38,17 +39,16 @@ public class PlotSetTypePrompt extends SimplePrompt {
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "&cPlease enter a valid plot type. Valid types: " + Common.join(plotTypes, ", ");
+		return Localization.PlotConversables.SetType.INVALID.replace("{options}", Common.join(plotTypes, ", "));
 	}
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.set" + input.toLowerCase())) {
-			tell("&cYou do not have permission to set this plot type here.");
+		if (!getPlayer(context).hasPermission("towny.command.plot.set" + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
 		townBlock.setType(TownBlockType.valueOf(input.toUpperCase()));
-		tell("&3Plot type set to: &b" + input);
+		tell(Localization.PlotConversables.SetType.RESPONSE.replace("{input}", input));
 		return null;
 	}
 }

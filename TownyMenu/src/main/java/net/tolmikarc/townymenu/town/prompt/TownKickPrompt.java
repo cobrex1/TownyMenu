@@ -5,6 +5,7 @@ import com.palmergames.bukkit.towny.exceptions.EmptyTownException;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -22,12 +23,12 @@ public class TownKickPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&cAre you sure you would like to kick &b" + resident.getName() + " &cfrom your town? Type &bconfirm &cor &4cancel &cnow:";
+		return Localization.TownConversables.Kick.PROMPT.replace("{player}", resident.getName());
 	}
 
 	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
-		return input.toLowerCase().equals("confirm") || input.toLowerCase().equals("cancel");
+		return input.toLowerCase().equals(Localization.CONFIRM) || input.toLowerCase().equals(Localization.CANCEL);
 	}
 
 	@Override
@@ -36,10 +37,12 @@ public class TownKickPrompt extends SimplePrompt {
 			return null;
 
 		try {
-			Town town = resident.getTown();
-			town.removeResident(resident);
-			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell("&3Successfully kicked &b" + resident.getName() + " &3from your town.");
+			if (input.toLowerCase().equals(Localization.CONFIRM)) {
+				Town town = resident.getTown();
+				town.removeResident(resident);
+				TownyAPI.getInstance().getDataSource().saveTown(town);
+				tell(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()));
+			}
 		} catch (EmptyTownException | NotRegisteredException e) {
 			e.printStackTrace();
 		}

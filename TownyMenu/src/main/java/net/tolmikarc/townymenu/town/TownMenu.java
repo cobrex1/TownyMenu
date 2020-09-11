@@ -8,6 +8,7 @@ import com.palmergames.bukkit.towny.object.*;
 import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
 import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.plot.PlotMenu;
+import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
 import net.tolmikarc.townymenu.town.prompt.*;
 import org.bukkit.Bukkit;
@@ -67,13 +68,11 @@ public class TownMenu extends Menu {
 		LagCatcher.end("load-residents-online");
 
 		setSize(9 * 4);
-		setTitle("&2&lTown Menu");
+		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
-		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), CompMaterial.LEVER, "&3&lToggle Settings Menu", "", "Turn on and off", "various town settings.");
-
-		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), CompMaterial.PLAYER_HEAD, "&6&lResident Menu", "", "View all resident info", "and settings.");
-
-		townyPermButton = new ButtonMenu(new TownyPermMenu(town), CompMaterial.STONE_AXE, "&c&lPermission Menu", "", "Adjust town permissions", "for residents, nation", "allies and outsiders.");
+		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), CompMaterial.LEVER, Localization.TownMenu.TOGGLE_MENU_BUTTON, "", Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE1, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE2);
+		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), CompMaterial.PLAYER_HEAD, Localization.TownMenu.RESIDENT_MENU_BUTTON, "", Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE1, Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE2);
+		townyPermButton = new ButtonMenu(new TownyPermMenu(town), CompMaterial.STONE_AXE, Localization.TownMenu.PERMISSIONS_MENU_BUTTON, "", Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE1, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE2, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE3);
 
 		if (TownySettings.isBankActionLimitedToBankPlots()) {
 			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
@@ -81,28 +80,28 @@ public class TownMenu extends Menu {
 					economyButton = new Button() {
 						@Override
 						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-							Common.tell(player, "&cYou must be in a bank plot to use this menu.");
+							Common.tell(player, Localization.Error.MUST_BE_IN_BANK);
 							player.closeInventory();
 						}
 
 						@Override
 						public ItemStack getItem() {
-							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
 						}
 					};
 				else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
 			else
 				economyButton = new Button() {
 					@Override
 					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-						Common.tell(player, "&cYou must be in a bank plot to use this menu.");
+						Common.tell(player, Localization.Error.MUST_BE_IN_BANK);
 						player.closeInventory();
 					}
 
 					@Override
 					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
 					}
 				};
 		} else if (TownySettings.isBankActionDisallowedOutsideTown()) {
@@ -111,45 +110,45 @@ public class TownMenu extends Menu {
 					economyButton = new Button() {
 						@Override
 						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-							Common.tell(player, "&cYou must be in your town to use this menu.");
+							Common.tell(player, Localization.Error.MUST_BE_IN_TOWN);
 							player.closeInventory();
 						}
 
 						@Override
 						public ItemStack getItem() {
-							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
 						}
 					};
 				} else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
 			else {
 				economyButton = new Button() {
 					@Override
 					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-						Common.tell(player, "&cYou must be in your town to use this menu.");
+						Common.tell(player, Localization.Error.MUST_BE_IN_TOWN);
 						player.closeInventory();
 					}
 
 					@Override
 					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money").build().make();
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
 					}
 				};
 			}
 
 		} else
-			economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, "&a&lEconomy Management Menu", "", "Manage your town's money");
+			economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
 
-		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), CompMaterial.ENDER_CHEST, "&2&lOther Settings Menu", "", "Change various", "extra town settings.");
+		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), CompMaterial.ENDER_CHEST, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON, "", Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE1, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE2);
 
-		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), CompMaterial.BELL, "&d&lInvite Player Menu", "", "Invite an online player", "to your town.");
+		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), CompMaterial.BELL, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON, "", Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE1, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE2);
 
-		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), CompMaterial.ENCHANTED_BOOK, "&e&lExtra Towny Info", "", "Learn how to claim land plus", "some useful commands");
+		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), CompMaterial.ENCHANTED_BOOK, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON, "", Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE1, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE2);
 
 		if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().getTownBlock(player.getLocation())))
-			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), CompMaterial.WOODEN_SHOVEL, "&9&lPlot Management Menu", "", "Manage the plot at", "your current location.");
+			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), CompMaterial.WOODEN_SHOVEL, Localization.TownMenu.PLOT_MENU_BUTTON, "", Localization.TownMenu.PLOT_MENU_BUTTON_LORE1, Localization.TownMenu.PLOT_MENU_BUTTON_LORE2);
 		else
-			plotMenuButton = Button.makeDummy(ItemCreator.of(CompMaterial.WOODEN_SHOVEL, "&9&lPlot Management Menu", "", "Manage the plot at", "your current location."));
+			plotMenuButton = Button.makeDummy(ItemCreator.of(CompMaterial.WOODEN_SHOVEL, Localization.TownMenu.PLOT_MENU_BUTTON, "", Localization.TownMenu.PLOT_MENU_BUTTON_LORE1, Localization.TownMenu.PLOT_MENU_BUTTON_LORE2));
 	}
 
 	@Override
@@ -193,9 +192,9 @@ public class TownMenu extends Menu {
 
 			setSize(9 * 2);
 
-			setTitle("&2&lToggle Settings Menu");
+			setTitle(Localization.TownMenu.ToggleMenu.MENU_TITLE);
 
-			setInfo("Adjust toggleable settings", "for your town!");
+			setInfo(Localization.TownMenu.ToggleMenu.INFO1, Localization.TownMenu.ToggleMenu.INFO2);
 
 			fireToggle = new Button() {
 				@Override
@@ -207,7 +206,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CAMPFIRE, "&6&lToggle Firespread", "", town.isFire() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.CAMPFIRE, Localization.TownMenu.ToggleMenu.FIRE, "", town.isFire() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 				}
 			};
 			mobsToggle = new Button() {
@@ -222,7 +221,7 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 
-					return ItemCreator.of(CompMaterial.SHULKER_SPAWN_EGG, "&a&lToggle Mob Spawning", "", town.hasMobs() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.SHULKER_SPAWN_EGG, Localization.TownMenu.ToggleMenu.MOBS, "", town.hasMobs() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 
 				}
 			};
@@ -237,7 +236,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.TNT, "&c&lToggle Explosions", "", town.isBANG() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.TNT, Localization.TownMenu.ToggleMenu.EXPLODE, "", town.isBANG() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_OFF).build().make();
 
 				}
 			};
@@ -253,14 +252,14 @@ public class TownMenu extends Menu {
 								if (!onlinePlayerAsRes.getTown().equals(town))
 									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
 										if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()).getTown().equals(town)) {
-											Common.tell(player, "&cCannot toggle PVP while outsiders are in your town.");
+											Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
 											player.closeInventory();
 											return;
 										}
 							} else {
 								if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
 									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()).getTown().equals(town)) {
-										Common.tell(player, "&cCannot toggle PVP while outsiders are in your town.");
+										Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
 										player.closeInventory();
 										return;
 									}
@@ -269,7 +268,7 @@ public class TownMenu extends Menu {
 					}
 					if (TownySettings.getPVPCoolDownTime() > 0) {
 						if (CooldownTimerTask.hasCooldown(town.getName(), CooldownTimerTask.CooldownType.PVP)) {
-							Common.tell(player, "&cYou cannot toggle pvp until the cooldown is complete.");
+							Common.tell(player, Localization.Error.TOGGLE_PVP_COOLDOWN);
 							player.closeInventory();
 							return;
 						}
@@ -282,7 +281,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.GOLDEN_SWORD, "&4&lToggle PVP", "", town.isPVP() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.GOLDEN_SWORD, Localization.TownMenu.ToggleMenu.PVP, "", town.isPVP() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 				}
 			};
 			publicToggle = new Button() {
@@ -296,7 +295,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHEST, "&9&lToggle Public", "", town.isPublic() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.CHEST, Localization.TownMenu.ToggleMenu.PUBLIC, "", town.isPublic() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 				}
 			};
 			openToggle = new Button() {
@@ -311,7 +310,7 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 
-					return ItemCreator.of(CompMaterial.ACACIA_DOOR, "&3&lToggle Open", "", town.isOpen() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.ACACIA_DOOR, Localization.TownMenu.ToggleMenu.OPEN, "", town.isOpen() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 
 				}
 			};
@@ -328,7 +327,7 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 
-					return ItemCreator.of(CompMaterial.EMERALD, "&2&lToggle Tax Percent", "", town.isTaxPercentage() ? "&eClick to Turn &cOff" : "&eClick to Turn &aOn").build().make();
+					return ItemCreator.of(CompMaterial.EMERALD, Localization.TownMenu.ToggleMenu.TAX_PERCENT, "", town.isTaxPercentage() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).build().make();
 
 				}
 			};
@@ -362,8 +361,8 @@ public class TownMenu extends Menu {
 
 		protected ResidentListMenu(Iterable<Resident> pages) {
 			super(TownMenu.this, pages);
-			setTitle("&2&lResident Menu");
-			setInfo("Click on a resident", "to manage them!");
+			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
+			setInfo(Localization.TownMenu.ResidentMenu.INFO1, Localization.TownMenu.ResidentMenu.INFO2);
 		}
 
 		@Override
@@ -377,7 +376,7 @@ public class TownMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.GRAY + "Last online: " + TimeUtil.getFormattedDateShort(item.getLastOnline()));
+			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -386,7 +385,7 @@ public class TownMenu extends Menu {
 		@Override
 		protected void onPageClick(Player player, Resident item, ClickType click) {
 			if (item.getName().equals(player.getName())) {
-				Common.tell(player, "&cYou cannot select yourself to edit.");
+				Common.tell(player, Localization.Error.CANNOT_SELECT_SELF);
 				player.closeInventory();
 				return;
 			}
@@ -406,16 +405,16 @@ public class TownMenu extends Menu {
 		protected ResidentMenu(Resident resident) {
 			super(TownMenu.this);
 
-			setTitle("&2&lResident Menu");
+			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
 
 
-			kickButton = new ButtonConversation(new TownKickPrompt(resident), CompMaterial.REDSTONE_BLOCK, "&c&lKick Player", "", "Click to kick resident", "from your town");
+			kickButton = new ButtonConversation(new TownKickPrompt(resident), CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.ResidentMenu.KICK, "", Localization.TownMenu.ResidentMenu.KICK_LORE1, Localization.TownMenu.ResidentMenu.KICK_LORE2);
 
-			titleButton = new ButtonConversation(new TownTitlePrompt(resident), CompMaterial.NAME_TAG, "&a&lSet Resident Title", "", "Give a title to", "this resident.");
+			titleButton = new ButtonConversation(new TownTitlePrompt(resident), CompMaterial.NAME_TAG, Localization.TownMenu.ResidentMenu.TITLE, "", Localization.TownMenu.ResidentMenu.TITLE_LORE1, Localization.TownMenu.ResidentMenu.TITLE_LORE2);
 
-			rankButton = new ButtonConversation(new TownRankPrompt(resident), CompMaterial.IRON_SWORD, "&3&lSet Resident Rank", "", "Give a town rank", "to a a player");
+			rankButton = new ButtonConversation(new TownRankPrompt(resident), CompMaterial.IRON_SWORD, Localization.TownMenu.ResidentMenu.RANK, "", Localization.TownMenu.ResidentMenu.RANK_LORE1, Localization.TownMenu.ResidentMenu.RANK_LORE2);
 
-			mayorButton = new ButtonConversation(new TownGiveMayorPrompt(resident), CompMaterial.GOLDEN_APPLE, "&a&lGive Resident Mayor", "", "Make this resident", "the mayor.", "&4&lIrreversible");
+			mayorButton = new ButtonConversation(new TownGiveMayorPrompt(resident), CompMaterial.GOLDEN_APPLE, Localization.TownMenu.ResidentMenu.MAYOR, "", Localization.TownMenu.ResidentMenu.MAYOR_LORE1, Localization.TownMenu.ResidentMenu.MAYOR_LORE2, Localization.TownMenu.ResidentMenu.MAYOR_LORE3);
 		}
 
 		@Override
@@ -436,10 +435,10 @@ public class TownMenu extends Menu {
 
 	public class TownyPermMenu extends Menu {
 
-		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, "&3&lBuild", "", "Who has permission", "to build in", "your town.").build().make();
-		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, "&c&lBreak", "", "Who has permission", "to break blocks in", "your town.").build().make();
-		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, "&6&lItem Use", "", "Who has permission", "to use items in", "your town.", "", "E.g. take water from cauldron").build().make();
-		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, "&2&lSwitch", "", "Who has permission", "to switch in", "your town.", "", "E.g. use a lever or door").build().make();
+		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, Localization.TownMenu.PlayerPermissionsMenu.BUILD, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE1, Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE2, Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE3).build().make();
+		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, Localization.TownMenu.PlayerPermissionsMenu.BREAK, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE1, Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE2, Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE3).build().make();
+		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, Localization.TownMenu.PlayerPermissionsMenu.USE, "", Localization.TownMenu.PlayerPermissionsMenu.USE_LORE1, Localization.TownMenu.PlayerPermissionsMenu.USE_LORE2, Localization.TownMenu.PlayerPermissionsMenu.USE_LORE3, "", Localization.TownMenu.PlayerPermissionsMenu.USE_LORE4).build().make();
+		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.PlayerPermissionsMenu.SWITCH, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE1, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE2, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE3, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE4).build().make();
 
 		private final Button buildResidentButton;
 		private final Button buildNationButton;
@@ -468,8 +467,8 @@ public class TownMenu extends Menu {
 		protected TownyPermMenu(Town town) {
 			super(TownMenu.this);
 			setSize(9 * 6);
-			setInfo("Set permissions for", "different groups", "in your town.");
-			setTitle("&2&lPermissions Menu");
+			setInfo(Localization.TownMenu.PlayerPermissionsMenu.INFO1, Localization.TownMenu.PlayerPermissionsMenu.INFO2, Localization.TownMenu.PlayerPermissionsMenu.INFO3);
+			setTitle(Localization.TownMenu.PlayerPermissionsMenu.MENU_TITLE);
 
 			buildResidentButton = new Button() {
 				@Override
@@ -482,7 +481,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, "&6&lBuild Resident Perm", "", "Can Residents Build: ", town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			buildNationButton = new Button() {
@@ -496,7 +495,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, "&6&lBuild Nation Perm", "", "Can Nation Members Build: ", town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			buildAllyButton = new Button() {
@@ -510,7 +509,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, "&6&lBuild Ally Perm", "", "Can Naton Allies Build: ", town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			buildOutsiderButton = new Button() {
@@ -524,7 +523,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, "&6&lBuild Outsider Perm", "", "Can Outsiders Build: ", town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 
@@ -540,7 +539,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, "&6&lBreak Resident Perm", "", "Can Residents Break Blocks: ", town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			breakNationButton = new Button() {
@@ -554,7 +553,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, "&6&lBreak Nation Perm", "", "Can Nation Members Break Blocks: ", town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			breakAllyButton = new Button() {
@@ -568,7 +567,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, "&6&lBreak Ally Perm", "", "Can Nation Allies Break Blocks: ", town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			breakOutsiderButton = new Button() {
@@ -582,7 +581,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, "&6&lBreak Outsider Perm", "", "Can Outsiders Break Blocks: ", town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 
@@ -598,7 +597,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, "&6&lItem Use Resident Perm", "", "Can Residents Use Items: ", town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.USE_RES, "", Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			itemUseNationButton = new Button() {
@@ -612,7 +611,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, "&6&lItem Use Nation Perm", "", "Can Nation Members Use Items: ", town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.USE_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			itemUseAllyButton = new Button() {
@@ -626,7 +625,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, "&6&lItem Use Ally Perm", "", "Can Nation Allies Use Items: ", town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			itemUseOutsiderButton = new Button() {
@@ -640,7 +639,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, "&6&lItem Use Outsider Perm", "", "Can Outsiders Use Items: ", town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 
@@ -657,7 +656,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, "&6&lSwitch Resident Perm", "", "Can Residents Switch: ", town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			switchNationButton = new Button() {
@@ -671,7 +670,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, "&6&lSwitch Nation Perm", "", "Can Nation Members Switch: ", town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			switchAllyButton = new Button() {
@@ -685,7 +684,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, "&6&lSwitch Ally Perm", "", "Can Nation Allies Switch: ", town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 			switchOutsiderButton = new Button() {
@@ -699,7 +698,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, "&6&lSwitch Outsider Perm", "", "Can Outsiders Switch: ", town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
 				}
 			};
 
@@ -715,7 +714,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, "&c&lReset All Fields", "", "Turn off all permissions", "for all groups.").build().make();
+					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.RESET, "", Localization.TownMenu.PlayerPermissionsMenu.RESET2, Localization.TownMenu.PlayerPermissionsMenu.RESET3).build().make();
 				}
 			};
 			allOnButton = new Button() {
@@ -728,7 +727,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&a&lTurn On All Fields", "", "Turn on all permissions", "for all groups.").build().make();
+					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.ON, "", Localization.TownMenu.PlayerPermissionsMenu.ON2, Localization.TownMenu.PlayerPermissionsMenu.ON3).build().make();
 				}
 			};
 
@@ -804,15 +803,15 @@ public class TownMenu extends Menu {
 		protected EconomyManagementMenu(Town town) {
 			super(TownMenu.this);
 			setSize(9 * 2);
-			setTitle("&2&lEconomy Menu");
+			setTitle(Localization.TownMenu.EconomyMenu.MENU_TITLE);
 
-			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, "&2&lCurrent Town Balance", "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", "Current Upkeep: " + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).build().make();
+			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.EconomyMenu.BALANCE, "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).build().make();
 
-			depositButton = new ButtonConversation(new TownDepositPrompt(town), CompMaterial.CHEST, "&a&lDeposit Money", "", "Deposit money into", "your town bank.");
+			depositButton = new ButtonConversation(new TownDepositPrompt(town), CompMaterial.CHEST, Localization.TownMenu.EconomyMenu.DEPOSIT, "", Localization.TownMenu.EconomyMenu.DEPOSIT2, Localization.TownMenu.EconomyMenu.DEPOSIT3);
 
-			withdrawButton = new ButtonConversation(new TownWithdrawPrompt(town), CompMaterial.ENDER_CHEST, "&c&lWithdraw Money", "", "Withdraw money from", "your town bank.");
+			withdrawButton = new ButtonConversation(new TownWithdrawPrompt(town), CompMaterial.ENDER_CHEST, Localization.TownMenu.EconomyMenu.WITHDRAW, "", Localization.TownMenu.EconomyMenu.WITHDRAW2, Localization.TownMenu.EconomyMenu.WITHDRAW3);
 
-			setTaxButton = new ButtonConversation(new TownSetTaxPrompt(town), CompMaterial.ARROW, "&c&lSet Tax Amount", "", town.isTaxPercentage() ? "Set tax percentage" : "Set tax amount");
+			setTaxButton = new ButtonConversation(new TownSetTaxPrompt(town), CompMaterial.ARROW, Localization.TownMenu.EconomyMenu.TAX, "", town.isTaxPercentage() ? Localization.TownMenu.EconomyMenu.TAX_PERCENTAGE : Localization.TownMenu.EconomyMenu.TAX_AMOUNT);
 
 		}
 
@@ -842,8 +841,8 @@ public class TownMenu extends Menu {
 		protected GeneralSettingsMenu(Town town) {
 			super(TownMenu.this);
 			setSize(9 * 2);
-			setInfo("Adjust other", "extra town settings.");
-			setTitle("&2&lGeneral Settings Menu");
+			setInfo(Localization.TownMenu.GeneralSettingsMenu.INFO1, Localization.TownMenu.GeneralSettingsMenu.INFO2);
+			setTitle(Localization.TownMenu.GeneralSettingsMenu.MENU_TITLE);
 
 
 			setHomeBlockButton = new Button() {
@@ -854,15 +853,15 @@ public class TownMenu extends Menu {
 						if (townBlock != null && townBlock.getTown().equals(town) && town.getMayor().getName().equals(player.getName())) {
 							town.setHomeBlock(townBlock);
 							TownyAPI.getInstance().getDataSource().saveTown(town);
-							Common.tell(player, "&eSet town block to your location!");
-							Common.tell(player, "&bMake sure to also set your town spawn again!");
+							Common.tell(player, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_MSG);
+							Common.tell(player, Localization.TownMenu.GeneralSettingsMenu.SPAWN_REMINDER);
 						} else {
-							Common.tell(player, "&cCannot set townblock here.");
+							Common.tell(player, Localization.Error.CANNOT_SET_HOMEBLOCK);
 						}
 						player.closeInventory();
 
 					} catch (TownyException e) {
-						Common.tell(player, "&cCannot set townblock here.");
+						Common.tell(player, Localization.Error.CANNOT_SET_HOMEBLOCK);
 					}
 
 
@@ -870,7 +869,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.GLOWSTONE, "&3&lSet Home Block", "", "Set the home block", "of your town.").build().make();
+					return ItemCreator.of(CompMaterial.GLOWSTONE, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK, "", Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK2, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK3).build().make();
 				}
 			};
 
@@ -881,11 +880,11 @@ public class TownMenu extends Menu {
 					try {
 						if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
 							town.setSpawn(player.getLocation());
-							Common.tell(player, "&eSet town spawn to current location.");
+							Common.tell(player, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN_MSG);
 							player.closeInventory();
 							TownyAPI.getInstance().getDataSource().saveTown(town);
 						} else {
-							Common.tell(player, "&cCannot set town spawn here.");
+							Common.tell(player, Localization.Error.CANNOT_SET_SPAWN);
 						}
 					} catch (TownyException e) {
 						e.printStackTrace();
@@ -894,7 +893,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.LAPIS_LAZULI, "&b&lSet Town Spawn", "", "Set the location for", "teleporting with", "/t spawn", "&cMust be in the Home Block.").build().make();
+					return ItemCreator.of(CompMaterial.LAPIS_LAZULI, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN, "", Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN2, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN3, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN4, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN5).build().make();
 				}
 			};
 
@@ -906,12 +905,12 @@ public class TownMenu extends Menu {
 					if (town.getMayor().getName().equals(player.getName()))
 						new TownNamePrompt(town).show(player);
 					else
-						Common.tell(player, "&cMust be mayor to change town name.");
+						Common.tell(player, Localization.Error.CANNOT_CHANGE_NAME);
 				}
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.NAME_TAG, "&6&lSet Town Name", "", "Change the name", "of your town.").build().make();
+					return ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.GeneralSettingsMenu.SET_NAME, "", Localization.TownMenu.GeneralSettingsMenu.SET_NAME2, Localization.TownMenu.GeneralSettingsMenu.SET_NAME3).build().make();
 				}
 			};
 
@@ -921,12 +920,12 @@ public class TownMenu extends Menu {
 					if (town.getMayor().getName().equals(player.getName()))
 						new TownBoardPrompt(town).show(player);
 					else
-						Common.tell(player, "&cMust be mayor to change town name.");
+						Common.tell(player, Localization.Error.CANNOT_CHANGE_BOARD);
 				}
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.OAK_SIGN, "&2&lSet Town Board", "", "Set the town board", "of your town.").build().make();
+					return ItemCreator.of(CompMaterial.OAK_SIGN, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD, "", Localization.TownMenu.GeneralSettingsMenu.SET_BOARD2, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD3).build().make();
 				}
 			};
 
@@ -975,8 +974,8 @@ public class TownMenu extends Menu {
 
 	public class ExtraTownInfo extends Menu {
 
-		private final ItemStack claimInfo = ItemCreator.of(CompMaterial.GOLDEN_AXE, "&6&lClaiming Info", "", "&a/t claim &7- claim a chunk of land", "", "Claiming requires money in", "your town bank", "and requires you to be in a", "chunk bordering your town.", "Use &aF3+G &7to see chunks and", "&a/towny map &7to see claimed land.").build().make();
-		private final ItemStack extraCommands = ItemCreator.of(CompMaterial.BOOKSHELF, "&2&lExtra Commands", "", "&a/t outlaw &7- make a player an outlaw", "&a/t buy &7- chunk purchase info", "&a/t online &7- online town members", "&a/t say &7- broadcast a town message").build().make();
+		private final ItemStack claimInfo = ItemCreator.of(CompMaterial.GOLDEN_AXE, Localization.TownMenu.ExtraInfoMenu.CLAIMING, "", Localization.TownMenu.ExtraInfoMenu.CLAIMING2, "", Localization.TownMenu.ExtraInfoMenu.CLAIMING3, Localization.TownMenu.ExtraInfoMenu.CLAIMING4, Localization.TownMenu.ExtraInfoMenu.CLAIMING5, Localization.TownMenu.ExtraInfoMenu.CLAIMING6, Localization.TownMenu.ExtraInfoMenu.CLAIMING7, Localization.TownMenu.ExtraInfoMenu.CLAIMING8).build().make();
+		private final ItemStack extraCommands = ItemCreator.of(CompMaterial.BOOKSHELF, Localization.TownMenu.ExtraInfoMenu.COMMANDS, "", Localization.TownMenu.ExtraInfoMenu.COMMANDS2, Localization.TownMenu.ExtraInfoMenu.COMMANDS3, Localization.TownMenu.ExtraInfoMenu.COMMANDS4, Localization.TownMenu.ExtraInfoMenu.COMMANDS5).build().make();
 
 		protected ExtraTownInfo() {
 			super(TownMenu.this);

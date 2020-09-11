@@ -4,6 +4,7 @@ import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import lombok.SneakyThrows;
+import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.town.TownMenu;
 import org.mineacademy.fo.command.SimpleCommand;
 
@@ -20,7 +21,7 @@ public class TownMenuCommand extends SimpleCommand {
 		checkConsole();
 
 		if (TownyAPI.getInstance().isWarTime()) {
-			tell("&cTown menu not allowed during war time.");
+			tell(Localization.Error.WAR_TIME);
 			return;
 		}
 
@@ -33,9 +34,9 @@ public class TownMenuCommand extends SimpleCommand {
 			else if (getPlayer().hasPermission("townymenu.town.use")) {
 				new TownMenu(town, getPlayer()).displayTo(getPlayer());
 			} else
-				tell("&cYou are not the mayor nor a high enough rank to open the Town Menu.");
+				tell(Localization.Error.NO_PERMISSION);
 		} else {
-			tell("&cYou do not have a town.");
+			tell(Localization.Error.NO_TOWN);
 		}
 
 

@@ -2,6 +2,7 @@ package net.tolmikarc.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +22,7 @@ public class TownBoardPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3Type in a message for your town's board: ";
+		return Localization.TownConversables.Board.PROMPT;
 	}
 
 
@@ -35,7 +36,7 @@ public class TownBoardPrompt extends SimplePrompt {
 		town.setBoard(input);
 		TownyAPI.getInstance().getDataSource().saveTown(town);
 
-		tell("&3Successfully set town board!");
+		tell(Localization.TownConversables.Board.RESPONSE);
 
 		return null;
 	}

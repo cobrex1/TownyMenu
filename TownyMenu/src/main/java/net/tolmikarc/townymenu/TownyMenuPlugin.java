@@ -3,6 +3,7 @@ package net.tolmikarc.townymenu;
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import net.tolmikarc.townymenu.plot.command.PlotMenuCommand;
+import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
 import net.tolmikarc.townymenu.town.command.TownMenuCommand;
 import org.mineacademy.fo.Common;
@@ -31,6 +32,6 @@ public class TownyMenuPlugin extends SimplePlugin {
 
 	@Override
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
-		return Arrays.asList(Settings.class);
+		return Arrays.asList(Settings.class, Localization.class);
 	}
 }

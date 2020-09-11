@@ -3,6 +3,7 @@ package net.tolmikarc.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.EconomyException;
 import com.palmergames.bukkit.towny.object.Town;
+import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -25,13 +26,13 @@ public class TownWithdrawPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)";
+		return Localization.TownConversables.Withdraw.PROMPT;
 	}
 
 	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
 		try {
-			return (Valid.isInteger(input) && (town.getAccount().canPayFromHoldings(Integer.parseInt(input))));
+			return ((Valid.isInteger(input) && (town.getAccount().canPayFromHoldings(Integer.parseInt(input)))) || input.equalsIgnoreCase(Localization.CANCEL));
 		} catch (EconomyException e) {
 			e.printStackTrace();
 		}
@@ -40,17 +41,19 @@ public class TownWithdrawPrompt extends SimplePrompt {
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "&cPlease enter only whole numbers and make sure you have enough money to deposit.";
+		return Localization.TownConversables.Withdraw.INVALID;
 	}
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
+		if (input.equalsIgnoreCase(Localization.CANCEL))
+			return null;
 
 		try {
 			HookManager.deposit(getPlayer(context), Integer.parseInt(input));
-			town.getAccount().pay(Integer.parseInt(input), "Withdrawn from menu.");
+			town.getAccount().withdraw(Integer.parseInt(input), "Withdrawn from menu.");
 			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell("&3Withdrew &b" + Settings.MONEY_SYMBOL + input + " &3from your town account.");
+			tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 		} catch (EconomyException e) {
 			e.printStackTrace();
 		}

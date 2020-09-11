@@ -6,6 +6,7 @@ import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.plot.PlotMenu;
+import net.tolmikarc.townymenu.settings.Localization;
 import org.mineacademy.fo.command.SimpleCommand;
 
 public class PlotMenuCommand extends SimpleCommand {
@@ -21,7 +22,7 @@ public class PlotMenuCommand extends SimpleCommand {
 		checkConsole();
 
 		if (TownyAPI.getInstance().isWarTime()) {
-			tell("&cPlot menu not allowed during war time.");
+			tell(Localization.Error.WAR_TIME);
 			return;
 		}
 
@@ -36,9 +37,9 @@ public class PlotMenuCommand extends SimpleCommand {
 			else if (townBlock.hasResident() && townBlock.isOwner(resident)) {
 				new PlotMenu(townBlock).displayTo(getPlayer());
 			} else
-				tell("&cYou do not own this plot.");
+				tell(Localization.Error.MUST_BE_IN_OWN_PLOT);
 		} else {
-			tell("&cYou are not in a town.");
+			tell(Localization.Error.NO_TOWN);
 		}
 
 

@@ -2,6 +2,7 @@ package net.tolmikarc.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.TownBlock;
+import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -23,7 +24,7 @@ public class PlotForSalePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return "&3Type in the amount you would like to set this plot for sale: &c(Type cancel to exit prompt)";
+		return Localization.PlotConversables.ForSale.PROMPT;
 	}
 
 	@Override
@@ -33,18 +34,17 @@ public class PlotForSalePrompt extends SimplePrompt {
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return "&cPlease enter only whole numbers and is less than the max plot price: " + TownySettings.getMaxPlotPrice();
+		return Localization.PlotConversables.ForSale.INVALID.replace("{max_price}", String.valueOf(TownySettings.getMaxPlotPrice()));
 	}
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 		if (!getPlayer(context).hasPermission("towny.command.plot.forsale")) {
-			tell("&cYou do not have permission to set plots for sale.");
 			return null;
 		}
 
 		townBlock.setPlotPrice(Integer.parseInt(input));
-		tell("&3Plot set price to &b" + Settings.MONEY_SYMBOL + input);
+		tell(Localization.PlotConversables.ForSale.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 		return null;
 	}
 }
