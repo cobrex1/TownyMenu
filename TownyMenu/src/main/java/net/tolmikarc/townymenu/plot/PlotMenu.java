@@ -55,13 +55,13 @@ public class PlotMenu extends Menu {
 			}
 		}
 
-		toggleSettingsMenu = new ButtonMenu(new PlotToggleSettingsMenu(townBlock), CompMaterial.LEVER, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON, "", Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE1, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE2);
+		toggleSettingsMenu = new ButtonMenu(new PlotToggleSettingsMenu(townBlock), CompMaterial.LEVER, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE);
 
-		permMenuButton = new ButtonMenu(new PlotPermMenu(townBlock), CompMaterial.STONE_AXE, Localization.PlotMenu.PERMISSIONS_MENU_BUTTON, "", Localization.PlotMenu.PERMISSIONS_MENU_BUTTON_LORE1, Localization.PlotMenu.PERMISSIONS_MENU_BUTTON_LORE2, Localization.PlotMenu.PERMISSIONS_MENU_BUTTON_LORE3);
+		permMenuButton = new ButtonMenu(new PlotPermMenu(townBlock), CompMaterial.STONE_AXE, Localization.PlotMenu.PERMISSIONS_MENU_BUTTON, Localization.PlotMenu.PERMISSIONS_MENU_BUTTON_LORE);
 
-		plotAdministrationMenuButton = new ButtonMenu(new PlotAdministrationMenu(townBlock), CompMaterial.BELL, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON, "", Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE1, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE2);
+		plotAdministrationMenuButton = new ButtonMenu(new PlotAdministrationMenu(townBlock), CompMaterial.BELL, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE);
 
-		friendButton = new ButtonMenu(new FriendPlayerMenu(onlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, "", Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE1);
+		friendButton = new ButtonMenu(new FriendPlayerMenu(onlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
 
 
 	}
@@ -149,7 +149,8 @@ public class PlotMenu extends Menu {
 
 			setTitle(Localization.PlotMenu.ToggleMenu.MENU_TITLE);
 
-			setInfo(Localization.PlotMenu.ToggleMenu.INFO1, Localization.PlotMenu.ToggleMenu.INFO2);
+			setInfo(Localization.PlotMenu.ToggleMenu.INFO);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
 			fireToggle = new Button() {
 				@Override
@@ -229,10 +230,10 @@ public class PlotMenu extends Menu {
 
 	public class PlotPermMenu extends Menu {
 
-		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, Localization.PlotMenu.PlayerPermissionsMenu.BUILD, "", Localization.PlotMenu.PlayerPermissionsMenu.BUILD_LORE1, Localization.PlotMenu.PlayerPermissionsMenu.BUILD_LORE2, Localization.PlotMenu.PlayerPermissionsMenu.BUILD_LORE3).build().make();
-		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, Localization.PlotMenu.PlayerPermissionsMenu.BREAK, "", Localization.PlotMenu.PlayerPermissionsMenu.BREAK_LORE1, Localization.PlotMenu.PlayerPermissionsMenu.BREAK_LORE2, Localization.PlotMenu.PlayerPermissionsMenu.BREAK_LORE3).build().make();
-		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, Localization.PlotMenu.PlayerPermissionsMenu.USE, "", Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE1, Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE2, Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE3, "", Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE4).build().make();
-		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, Localization.PlotMenu.PlayerPermissionsMenu.SWITCH, "", Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE1, Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE2, Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE3, "", Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE4).build().make();
+		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, Localization.PlotMenu.PlayerPermissionsMenu.BUILD, Localization.PlotMenu.PlayerPermissionsMenu.BUILD_LORE).build().make();
+		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, Localization.PlotMenu.PlayerPermissionsMenu.BREAK, Localization.PlotMenu.PlayerPermissionsMenu.BREAK_LORE).build().make();
+		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, Localization.PlotMenu.PlayerPermissionsMenu.USE, Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE).build().make();
+		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, Localization.PlotMenu.PlayerPermissionsMenu.SWITCH, Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE).build().make();
 
 		private final Button buildResidentButton;
 		private final Button buildNationButton;
@@ -261,8 +262,9 @@ public class PlotMenu extends Menu {
 		protected PlotPermMenu(TownBlock townBlock) {
 			super(PlotMenu.this);
 			setSize(9 * 6);
-			setInfo(Localization.PlotMenu.PlayerPermissionsMenu.INFO1, Localization.PlotMenu.PlayerPermissionsMenu.INFO2, Localization.PlotMenu.PlayerPermissionsMenu.INFO3);
+			setInfo(Localization.PlotMenu.PlayerPermissionsMenu.INFO);
 			setTitle(Localization.PlotMenu.PlayerPermissionsMenu.MENU_TITLE);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
 			buildResidentButton = new Button() {
 				@Override
@@ -508,7 +510,7 @@ public class PlotMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.PlotMenu.PlayerPermissionsMenu.RESET, "", Localization.PlotMenu.PlayerPermissionsMenu.RESET2, Localization.PlotMenu.PlayerPermissionsMenu.RESET3).build().make();
+					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.PlotMenu.PlayerPermissionsMenu.RESET, Localization.PlotMenu.PlayerPermissionsMenu.RESET_LORE).build().make();
 				}
 			};
 			allOnButton = new Button() {
@@ -521,7 +523,7 @@ public class PlotMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.PlotMenu.PlayerPermissionsMenu.ON, "", Localization.PlotMenu.PlayerPermissionsMenu.ON2, Localization.PlotMenu.PlayerPermissionsMenu.ON3).build().make();
+					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.PlotMenu.PlayerPermissionsMenu.ON, Localization.PlotMenu.PlayerPermissionsMenu.ON_LORE).build().make();
 				}
 			};
 		}
@@ -597,13 +599,13 @@ public class PlotMenu extends Menu {
 			setSize(9);
 			setTitle(Localization.PlotMenu.PlotAdminMenu.MENU_TITLE);
 
-			plotForSaleButton = new ButtonConversation(new PlotForSalePrompt(townBlock), CompMaterial.EMERALD_BLOCK, Localization.PlotMenu.PlotAdminMenu.FOR_SALE, "", Localization.PlotMenu.PlotAdminMenu.FOR_SALE2, Localization.PlotMenu.PlotAdminMenu.FOR_SALE3, Localization.PlotMenu.PlotAdminMenu.FOR_SALE4);
+			plotForSaleButton = new ButtonConversation(new PlotForSalePrompt(townBlock), CompMaterial.EMERALD_BLOCK, Localization.PlotMenu.PlotAdminMenu.FOR_SALE, Localization.PlotMenu.PlotAdminMenu.FOR_SALE_LORE);
 
-			plotNotForSaleButton = new ButtonConversation(new PlotNotForSalePrompt(townBlock), CompMaterial.REDSTONE_BLOCK, Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE, "", Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE2, Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE3);
+			plotNotForSaleButton = new ButtonConversation(new PlotNotForSalePrompt(townBlock), CompMaterial.REDSTONE_BLOCK, Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE, Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE_LORE);
 
-			plotSetTypeButton = new ButtonConversation(new PlotSetTypePrompt(townBlock), CompMaterial.DARK_OAK_DOOR, Localization.PlotMenu.PlotAdminMenu.SET_TYPE, "", Localization.PlotMenu.PlotAdminMenu.SET_TYPE2, Localization.PlotMenu.PlotAdminMenu.SET_TYPE3);
+			plotSetTypeButton = new ButtonConversation(new PlotSetTypePrompt(townBlock), CompMaterial.DARK_OAK_DOOR, Localization.PlotMenu.PlotAdminMenu.SET_TYPE, Localization.PlotMenu.PlotAdminMenu.SET_TYPE_LORE);
 
-			plotEvictButton = new ButtonConversation(new PlotEvictPrompt(townBlock), CompMaterial.DIAMOND_AXE, Localization.PlotMenu.PlotAdminMenu.EVICT, "", Localization.PlotMenu.PlotAdminMenu.EVICT2, Localization.PlotMenu.PlotAdminMenu.EVICT3);
+			plotEvictButton = new ButtonConversation(new PlotEvictPrompt(townBlock), CompMaterial.DIAMOND_AXE, Localization.PlotMenu.PlotAdminMenu.EVICT, Localization.PlotMenu.PlotAdminMenu.EVICT_LORE);
 
 
 		}

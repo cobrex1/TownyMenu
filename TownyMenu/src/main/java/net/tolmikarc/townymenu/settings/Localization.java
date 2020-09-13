@@ -2,84 +2,71 @@ package net.tolmikarc.townymenu.settings;
 
 import org.mineacademy.fo.settings.SimpleLocalization;
 
+import java.util.Collection;
+
 
 public class Localization extends SimpleLocalization {
 	@Override
 	protected int getConfigVersion() {
-		return 1;
+		return 2;
 	}
 
 	public static String CONFIRM;
 	public static String CANCEL;
+	public static String MENU_INFORMATION;
 
 	private static void init() {
 		pathPrefix(null);
 		CONFIRM = getString("Confirm");
 		CANCEL = getString("Cancel");
+		MENU_INFORMATION = getString("Menu_Information");
 	}
 
 	public static class TownMenu {
 
 		public static String MAIN_MENU_TITLE;
 		public static String TOGGLE_MENU_BUTTON;
-		public static String TOGGLE_MENU_BUTTON_LORE1;
-		public static String TOGGLE_MENU_BUTTON_LORE2;
+		public static Collection<String> TOGGLE_MENU_BUTTON_LORE;
 		public static String RESIDENT_MENU_BUTTON;
-		public static String RESIDENT_MENU_BUTTON_LORE1;
-		public static String RESIDENT_MENU_BUTTON_LORE2;
+		public static Collection<String> RESIDENT_MENU_BUTTON_LORE;
 		public static String PERMISSIONS_MENU_BUTTON;
-		public static String PERMISSIONS_MENU_BUTTON_LORE1;
-		public static String PERMISSIONS_MENU_BUTTON_LORE2;
-		public static String PERMISSIONS_MENU_BUTTON_LORE3;
+		public static Collection<String> PERMISSIONS_MENU_BUTTON_LORE;
 		public static String ECONOMY_MENU_BUTTON;
-		public static String ECONOMY_MENU_BUTTON_LORE1;
+		public static Collection<String> ECONOMY_MENU_BUTTON_LORE;
 		public static String GENERAL_SETTINGS_MENU_BUTTON;
-		public static String GENERAL_SETTINGS_MENU_BUTTON_LORE1;
-		public static String GENERAL_SETTINGS_MENU_BUTTON_LORE2;
+		public static Collection<String> GENERAL_SETTINGS_MENU_BUTTON_LORE;
 		public static String INVITE_PLAYER_MENU_BUTTON;
-		public static String INVITE_PLAYER_MENU_BUTTON_LORE1;
-		public static String INVITE_PLAYER_MENU_BUTTON_LORE2;
+		public static Collection<String> INVITE_PLAYER_MENU_BUTTON_LORE;
 		public static String EXTRA_INFO_MENU_BUTTON;
-		public static String EXTRA_INFO_MENU_BUTTON_LORE1;
-		public static String EXTRA_INFO_MENU_BUTTON_LORE2;
+		public static Collection<String> EXTRA_INFO_MENU_BUTTON_LORE;
 		public static String PLOT_MENU_BUTTON;
-		public static String PLOT_MENU_BUTTON_LORE1;
-		public static String PLOT_MENU_BUTTON_LORE2;
+		public static Collection<String> PLOT_MENU_BUTTON_LORE;
 
 		private static void init() {
 			pathPrefix("Town_Menu");
 
 			MAIN_MENU_TITLE = getString("Main_Menu_Title");
 			TOGGLE_MENU_BUTTON = getString("Toggle_Menu_Button");
-			TOGGLE_MENU_BUTTON_LORE1 = getString("Toggle_Menu_Button_Lore1");
-			TOGGLE_MENU_BUTTON_LORE2 = getString("Toggle_Menu_Button_Lore2");
+			TOGGLE_MENU_BUTTON_LORE = getStringList("Toggle_Menu_Button_Lore");
 			RESIDENT_MENU_BUTTON = getString("Resident_Menu_Button");
-			RESIDENT_MENU_BUTTON_LORE1 = getString("Resident_Menu_Button_Lore1");
-			RESIDENT_MENU_BUTTON_LORE2 = getString("Resident_Menu_Button_Lore2");
+			RESIDENT_MENU_BUTTON_LORE = getStringList("Resident_Menu_Button_Lore");
 			PERMISSIONS_MENU_BUTTON = getString("Permissions_Menu_Button");
-			PERMISSIONS_MENU_BUTTON_LORE1 = getString("Permissions_Menu_Button_Lore1");
-			PERMISSIONS_MENU_BUTTON_LORE2 = getString("Permissions_Menu_Button_Lore2");
-			PERMISSIONS_MENU_BUTTON_LORE3 = getString("Permissions_Menu_Button_Lore3");
+			PERMISSIONS_MENU_BUTTON_LORE = getStringList("Permissions_Menu_Button_Lore");
 			ECONOMY_MENU_BUTTON = getString("Economy_Menu_Button");
-			ECONOMY_MENU_BUTTON_LORE1 = getString("Economy_Menu_Button_Lore1");
+			ECONOMY_MENU_BUTTON_LORE = getStringList("Economy_Menu_Button_Lore");
 			GENERAL_SETTINGS_MENU_BUTTON = getString("General_Settings_Menu_Button");
-			GENERAL_SETTINGS_MENU_BUTTON_LORE1 = getString("General_Settings_Menu_Button_Lore1");
-			GENERAL_SETTINGS_MENU_BUTTON_LORE2 = getString("General_Settings_Menu_Button_Lore2");
+			GENERAL_SETTINGS_MENU_BUTTON_LORE = getStringList("General_Settings_Menu_Button_Lore");
 			INVITE_PLAYER_MENU_BUTTON = getString("Invite_Player_Menu_Button");
-			INVITE_PLAYER_MENU_BUTTON_LORE1 = getString("Invite_Player_Menu_Button_Lore1");
-			INVITE_PLAYER_MENU_BUTTON_LORE2 = getString("Invite_Player_Menu_Button_Lore2");
+			INVITE_PLAYER_MENU_BUTTON_LORE = getStringList("Invite_Player_Menu_Button_Lore");
 			EXTRA_INFO_MENU_BUTTON = getString("Extra_Info_Menu_Button");
-			EXTRA_INFO_MENU_BUTTON_LORE1 = getString("Extra_Info_Menu_Button_Lore1");
-			EXTRA_INFO_MENU_BUTTON_LORE2 = getString("Extra_Info_Menu_Button_Lore2");
+			EXTRA_INFO_MENU_BUTTON_LORE = getStringList("Extra_Info_Menu_Button_Lore");
 			PLOT_MENU_BUTTON = getString("Plot_Menu_Button");
-			PLOT_MENU_BUTTON_LORE1 = getString("Plot_Menu_Button_Lore1");
-			PLOT_MENU_BUTTON_LORE2 = getString("Plot_Menu_Button_Lore2");
+			PLOT_MENU_BUTTON_LORE = getStringList("Plot_Menu_Button_Lore");
 		}
 
 		public static class ToggleMenu {
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
+			public static String[] INFO;
 			public static String TOGGLE_OFF;
 			public static String TOGGLE_ON;
 			public static String FIRE;
@@ -95,8 +82,7 @@ public class Localization extends SimpleLocalization {
 				pathPrefix("Toggle_Menu");
 
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
+				INFO = getStringList("Info").toArray(new String[0]);
 				TOGGLE_OFF = getString("Toggle_Off");
 				TOGGLE_ON = getString("Toggle_On");
 				FIRE = getString("Fire");
@@ -112,42 +98,30 @@ public class Localization extends SimpleLocalization {
 		public static class ResidentMenu {
 
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
+			public static String[] INFO;
 			public static String ONLINE;
 			public static String KICK;
-			public static String KICK_LORE1;
-			public static String KICK_LORE2;
+			public static Collection<String> KICK_LORE;
 			public static String TITLE;
-			public static String TITLE_LORE1;
-			public static String TITLE_LORE2;
+			public static Collection<String> TITLE_LORE;
 			public static String RANK;
-			public static String RANK_LORE1;
-			public static String RANK_LORE2;
+			public static Collection<String> RANK_LORE;
 			public static String MAYOR;
-			public static String MAYOR_LORE1;
-			public static String MAYOR_LORE2;
-			public static String MAYOR_LORE3;
+			public static Collection<String> MAYOR_LORE;
 
 			private static void init() {
 				pathPrefix("Resident_Menu");
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
+				INFO = getStringList("Info").toArray(new String[0]);
 				ONLINE = getString("Online");
 				KICK = getString("Kick");
-				KICK_LORE1 = getString("Kick_Lore1");
-				KICK_LORE2 = getString("Kick_Lore2");
+				KICK_LORE = getStringList("Kick_Lore");
 				TITLE = getString("Title");
-				TITLE_LORE1 = getString("Title_Lore1");
-				TITLE_LORE2 = getString("Title_Lore2");
+				TITLE_LORE = getStringList("Title_Lore");
 				RANK = getString("Rank");
-				RANK_LORE1 = getString("Rank_Lore1");
-				RANK_LORE2 = getString("Rank_Lore2");
+				RANK_LORE = getStringList("Rank_Lore");
 				MAYOR = getString("Mayor");
-				MAYOR_LORE1 = getString("Mayor_Lore1");
-				MAYOR_LORE2 = getString("Mayor_Lore2");
-				MAYOR_LORE3 = getString("Mayor_Lore3");
+				MAYOR_LORE = getStringList("Mayor_Lore");
 
 			}
 		}
@@ -155,36 +129,22 @@ public class Localization extends SimpleLocalization {
 		public static class PlayerPermissionsMenu {
 
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
-			public static String INFO3;
+			public static String[] INFO;
 			public static String TRUE_MSG;
 			public static String FALSE_MSG;
 			public static String CHANGE;
 			public static String RESET;
-			public static String RESET2;
-			public static String RESET3;
+			public static Collection<String> RESET_LORE;
 			public static String ON;
-			public static String ON2;
-			public static String ON3;
+			public static Collection<String> ON_LORE;
 			public static String BUILD;
-			public static String BUILD_LORE1;
-			public static String BUILD_LORE2;
-			public static String BUILD_LORE3;
+			public static Collection<String> BUILD_LORE;
 			public static String BREAK;
-			public static String BREAK_LORE1;
-			public static String BREAK_LORE2;
-			public static String BREAK_LORE3;
+			public static Collection<String> BREAK_LORE;
 			public static String USE;
-			public static String USE_LORE1;
-			public static String USE_LORE2;
-			public static String USE_LORE3;
-			public static String USE_LORE4;
+			public static Collection<String> USE_LORE;
 			public static String SWITCH;
-			public static String SWITCH_LORE1;
-			public static String SWITCH_LORE2;
-			public static String SWITCH_LORE3;
-			public static String SWITCH_LORE4;
+			public static Collection<String> SWITCH_LORE;
 			public static String BUILD_RES;
 			public static String BUILD_RES2;
 			public static String BUILD_NATION;
@@ -222,36 +182,22 @@ public class Localization extends SimpleLocalization {
 			private static void init() {
 				pathPrefix("Player_Permission_Menu");
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
-				INFO3 = getString("Info3");
+				INFO = getStringList("Info").toArray(new String[0]);
 				TRUE_MSG = getString("True_Msg");
 				FALSE_MSG = getString("False_Msg");
 				CHANGE = getString("Change");
 				RESET = getString("Reset");
-				RESET2 = getString("Reset2");
-				RESET3 = getString("Reset3");
+				RESET_LORE = getStringList("Reset_Lore");
 				ON = getString("On_Msg");
-				ON2 = getString("On_Msg2");
-				ON3 = getString("On_Msg3");
+				ON_LORE = getStringList("On_Msg_Lore");
 				BUILD = getString("Build");
-				BUILD_LORE1 = getString("Build_Lore1");
-				BUILD_LORE2 = getString("Build_Lore2");
-				BUILD_LORE3 = getString("Build_Lore3");
+				BUILD_LORE = getStringList("Build_Lore");
 				BREAK = getString("Break");
-				BREAK_LORE1 = getString("Break_Lore1");
-				BREAK_LORE2 = getString("Break_Lore2");
-				BREAK_LORE3 = getString("Break_Lore3");
+				BREAK_LORE = getStringList("Break_Lore");
 				USE = getString("Use");
-				USE_LORE1 = getString("Use_Lore1");
-				USE_LORE2 = getString("Use_Lore2");
-				USE_LORE3 = getString("Use_Lore3");
-				USE_LORE4 = getString("Use_Lore4");
+				USE_LORE = getStringList("Use_Lore");
 				SWITCH = getString("Switch");
-				SWITCH_LORE1 = getString("Switch_Lore1");
-				SWITCH_LORE2 = getString("Switch_Lore2");
-				SWITCH_LORE3 = getString("Switch_Lore3");
-				SWITCH_LORE4 = getString("Switch_Lore4");
+				SWITCH_LORE = getStringList("Switch_Lore");
 				BUILD_RES = getString("Build_Res");
 				BUILD_RES2 = getString("Build_Res2");
 				BUILD_NATION = getString("Build_Nation");
@@ -269,7 +215,7 @@ public class Localization extends SimpleLocalization {
 				BREAK_OUTSIDER = getString("Break_Outsider");
 				BREAK_OUTSIDER2 = getString("Break_Outsider2");
 				USE_RES = getString("Use_Res");
-				USE_RES2 = getString("Use_Res");
+				USE_RES2 = getString("Use_Res2");
 				USE_NATION = getString("Use_Nation");
 				USE_NATION2 = getString("Use_Nation2");
 				USE_ALLY = getString("Use_Ally");
@@ -295,11 +241,9 @@ public class Localization extends SimpleLocalization {
 			public static String BALANCE;
 			public static String UPKEEP;
 			public static String WITHDRAW;
-			public static String WITHDRAW2;
-			public static String WITHDRAW3;
+			public static Collection<String> WITHDRAW_LORE;
 			public static String DEPOSIT;
-			public static String DEPOSIT2;
-			public static String DEPOSIT3;
+			public static Collection<String> DEPOSIT_LORE;
 			public static String TAX;
 			public static String TAX_PERCENTAGE;
 			public static String TAX_AMOUNT;
@@ -311,11 +255,9 @@ public class Localization extends SimpleLocalization {
 				BALANCE = getString("Balance");
 				UPKEEP = getString("Upkeep");
 				WITHDRAW = getString("Withdraw");
-				WITHDRAW2 = getString("Withdraw2");
-				WITHDRAW3 = getString("Withdraw3");
+				WITHDRAW_LORE = getStringList("Withdraw_Lore");
 				DEPOSIT = getString("Deposit");
-				DEPOSIT2 = getString("Deposit2");
-				DEPOSIT3 = getString("Deposit3");
+				DEPOSIT_LORE = getStringList("Deposit_Lore");
 				TAX = getString("Tax");
 				TAX_PERCENTAGE = getString("Tax_Percentage");
 				TAX_AMOUNT = getString("Tax_Amount");
@@ -326,51 +268,35 @@ public class Localization extends SimpleLocalization {
 
 		public static class GeneralSettingsMenu {
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
+			public static String[] INFO;
 			public static String SET_HOME_BLOCK_MSG;
 			public static String SPAWN_REMINDER;
 			public static String SET_HOME_BLOCK;
-			public static String SET_HOME_BLOCK2;
-			public static String SET_HOME_BLOCK3;
+			public static Collection<String> SET_HOME_BLOCK_LORE;
 			public static String SET_SPAWN_MSG;
 			public static String SET_SPAWN;
-			public static String SET_SPAWN2;
-			public static String SET_SPAWN3;
-			public static String SET_SPAWN4;
-			public static String SET_SPAWN5;
+			public static Collection<String> SET_SPAWN_LORE;
 			public static String SET_NAME;
-			public static String SET_NAME2;
-			public static String SET_NAME3;
+			public static Collection<String> SET_NAME_LORE;
 			public static String SET_BOARD;
-			public static String SET_BOARD2;
-			public static String SET_BOARD3;
+			public static Collection<String> SET_BOARD_LORE;
 
 			private static void init() {
 				pathPrefix("General_Settings_Menu");
 
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
+				INFO = getStringList("Info").toArray(new String[0]);
 				SET_HOME_BLOCK_MSG = getString("Set_Home_Block_Msg");
 				SPAWN_REMINDER = getString("Spawn_Reminder");
 				SET_HOME_BLOCK = getString("Set_Home_Block");
-				SET_HOME_BLOCK2 = getString("Set_Home_Block2");
-				SET_HOME_BLOCK3 = getString("Set_Home_Block3");
+				SET_HOME_BLOCK_LORE = getStringList("Set_Home_Block_Lore");
 				SET_SPAWN_MSG = getString("Set_Spawn_Msg");
 				SET_SPAWN = getString("Set_Spawn");
-				SET_SPAWN2 = getString("Set_Spawn2");
-				SET_SPAWN3 = getString("Set_Spawn3");
-				SET_SPAWN4 = getString("Set_Spawn4");
-				SET_SPAWN5 = getString("Set_Spawn5");
+				SET_SPAWN_LORE = getStringList("Set_Spawn_Lore");
 				SET_NAME = getString("Set_Name");
-				SET_NAME2 = getString("Set_Name2");
-				SET_NAME3 = getString("Set_Name3");
+				SET_NAME_LORE = getStringList("Set_Name_Lore");
 				SET_BOARD = getString("Set_Board");
-				SET_BOARD2 = getString("Set_Board2");
-				SET_BOARD3 = getString("Set_Board3");
-
-
+				SET_BOARD_LORE = getStringList("Set_Board_Lore");
 			}
 
 		}
@@ -378,35 +304,17 @@ public class Localization extends SimpleLocalization {
 		public static class ExtraInfoMenu {
 
 			public static String CLAIMING;
-			public static String CLAIMING2;
-			public static String CLAIMING3;
-			public static String CLAIMING4;
-			public static String CLAIMING5;
-			public static String CLAIMING6;
-			public static String CLAIMING7;
-			public static String CLAIMING8;
+			public static Collection<String> CLAIMING_LORE;
 			public static String COMMANDS;
-			public static String COMMANDS2;
-			public static String COMMANDS3;
-			public static String COMMANDS4;
-			public static String COMMANDS5;
+			public static Collection<String> COMMANDS_LORE;
 
 			private static void init() {
 				pathPrefix("Extra_Info_Menu");
 
 				CLAIMING = getString("Claiming");
-				CLAIMING2 = getString("Claiming2");
-				CLAIMING3 = getString("Claiming3");
-				CLAIMING4 = getString("Claiming4");
-				CLAIMING5 = getString("Claiming5");
-				CLAIMING6 = getString("Claiming6");
-				CLAIMING7 = getString("Claiming7");
-				CLAIMING8 = getString("Claiming8");
+				CLAIMING_LORE = getStringList("Claiming_Lore");
 				COMMANDS = getString("Commands");
-				COMMANDS2 = getString("Commands2");
-				COMMANDS3 = getString("Commands3");
-				COMMANDS4 = getString("Commands4");
-				COMMANDS5 = getString("Commands5");
+				COMMANDS_LORE = getStringList("Commands_Lore");
 
 
 			}
@@ -419,34 +327,26 @@ public class Localization extends SimpleLocalization {
 
 		public static String MAIN_MENU_TITLE;
 		public static String TOGGLE_SETTINGS_MENU_BUTTON;
-		public static String TOGGLE_SETTINGS_MENU_BUTTON_LORE1;
-		public static String TOGGLE_SETTINGS_MENU_BUTTON_LORE2;
+		public static String[] TOGGLE_SETTINGS_MENU_BUTTON_LORE;
 		public static String PERMISSIONS_MENU_BUTTON;
-		public static String PERMISSIONS_MENU_BUTTON_LORE1;
-		public static String PERMISSIONS_MENU_BUTTON_LORE2;
-		public static String PERMISSIONS_MENU_BUTTON_LORE3;
+		public static String[] PERMISSIONS_MENU_BUTTON_LORE;
 		public static String PLOT_ADMIN_MENU_BUTTON;
-		public static String PLOT_ADMIN_MENU_BUTTON_LORE1;
-		public static String PLOT_ADMIN_MENU_BUTTON_LORE2;
+		public static String[] PLOT_ADMIN_MENU_BUTTON_LORE;
 		public static String FRIEND_MENU_BUTTON;
-		public static String FRIEND_MENU_BUTTON_LORE1;
+		public static String[] FRIEND_MENU_BUTTON_LORE;
 
 
 		private static void init() {
 			pathPrefix("Plot_Menu");
 			MAIN_MENU_TITLE = getString("Main_Menu_Title");
 			TOGGLE_SETTINGS_MENU_BUTTON = getString("Toggle_Settings_Menu_Button");
-			TOGGLE_SETTINGS_MENU_BUTTON_LORE1 = getString("Toggle_Settings_Menu_Button_Lore1");
-			TOGGLE_SETTINGS_MENU_BUTTON_LORE2 = getString("Toggle_Settings_Menu_Button_Lore2");
+			TOGGLE_SETTINGS_MENU_BUTTON_LORE = getStringList("Toggle_Settings_Menu_Button_Lore").toArray(new String[0]);
 			PERMISSIONS_MENU_BUTTON = getString("Permissions_Menu_Button");
-			PERMISSIONS_MENU_BUTTON_LORE1 = getString("Permissions_Menu_Button_Lore1");
-			PERMISSIONS_MENU_BUTTON_LORE2 = getString("Permissions_Menu_Button_Lore2");
-			PERMISSIONS_MENU_BUTTON_LORE3 = getString("Permissions_Menu_Button_Lore3");
+			PERMISSIONS_MENU_BUTTON_LORE = getStringList("Permissions_Menu_Button_Lore").toArray(new String[0]);
 			PLOT_ADMIN_MENU_BUTTON = getString("Plot_Admin_Menu_Button");
-			PLOT_ADMIN_MENU_BUTTON_LORE1 = getString("Plot_Admin_Menu_Button_Lore1");
-			PLOT_ADMIN_MENU_BUTTON_LORE2 = getString("Plot_Admin_Menu_Button_Lore2");
+			PLOT_ADMIN_MENU_BUTTON_LORE = getStringList("Plot_Admin_Menu_Button_Lore").toArray(new String[0]);
 			FRIEND_MENU_BUTTON = getString("Friend_Menu_Button");
-			FRIEND_MENU_BUTTON_LORE1 = getString("Friend_Menu_Button_Lore1");
+			FRIEND_MENU_BUTTON_LORE = getStringList("Friend_Menu_Button_Lore").toArray(new String[0]);
 
 
 		}
@@ -470,8 +370,7 @@ public class Localization extends SimpleLocalization {
 
 		public static class ToggleMenu {
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
+			public static String[] INFO;
 			public static String TOGGLE_OFF;
 			public static String TOGGLE_ON;
 			public static String FIRE;
@@ -484,8 +383,7 @@ public class Localization extends SimpleLocalization {
 				pathPrefix("Plot_Toggle_Menu");
 
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
+				INFO = getStringList("Info").toArray(new String[0]);
 				TOGGLE_OFF = getString("Toggle_Off");
 				TOGGLE_ON = getString("Toggle_On");
 				FIRE = getString("Fire");
@@ -498,36 +396,22 @@ public class Localization extends SimpleLocalization {
 		public static class PlayerPermissionsMenu {
 
 			public static String MENU_TITLE;
-			public static String INFO1;
-			public static String INFO2;
-			public static String INFO3;
+			public static String[] INFO;
 			public static String TRUE_MSG;
 			public static String FALSE_MSG;
 			public static String CHANGE;
 			public static String RESET;
-			public static String RESET2;
-			public static String RESET3;
+			public static Collection<String> RESET_LORE;
 			public static String ON;
-			public static String ON2;
-			public static String ON3;
+			public static Collection<String> ON_LORE;
 			public static String BUILD;
-			public static String BUILD_LORE1;
-			public static String BUILD_LORE2;
-			public static String BUILD_LORE3;
+			public static Collection<String> BUILD_LORE;
 			public static String BREAK;
-			public static String BREAK_LORE1;
-			public static String BREAK_LORE2;
-			public static String BREAK_LORE3;
+			public static Collection<String> BREAK_LORE;
 			public static String USE;
-			public static String USE_LORE1;
-			public static String USE_LORE2;
-			public static String USE_LORE3;
-			public static String USE_LORE4;
+			public static Collection<String> USE_LORE;
 			public static String SWITCH;
-			public static String SWITCH_LORE1;
-			public static String SWITCH_LORE2;
-			public static String SWITCH_LORE3;
-			public static String SWITCH_LORE4;
+			public static Collection<String> SWITCH_LORE;
 			public static String BUILD_RES;
 			public static String BUILD_RES2;
 			public static String BUILD_NATION;
@@ -565,36 +449,22 @@ public class Localization extends SimpleLocalization {
 			private static void init() {
 				pathPrefix("Plot_Player_Permission_Menu");
 				MENU_TITLE = getString("Menu_Title");
-				INFO1 = getString("Info1");
-				INFO2 = getString("Info2");
-				INFO3 = getString("Info3");
+				INFO = getStringList("Info").toArray(new String[0]);
 				TRUE_MSG = getString("True_Msg");
 				FALSE_MSG = getString("False_Msg");
 				CHANGE = getString("Change");
 				RESET = getString("Reset");
-				RESET2 = getString("Reset2");
-				RESET3 = getString("Reset3");
+				RESET_LORE = getStringList("Reset_Lore");
 				ON = getString("On_Msg");
-				ON2 = getString("On_Msg2");
-				ON3 = getString("On_Msg3");
+				ON_LORE = getStringList("On_Msg_Lore");
 				BUILD = getString("Build");
-				BUILD_LORE1 = getString("Build_Lore1");
-				BUILD_LORE2 = getString("Build_Lore2");
-				BUILD_LORE3 = getString("Build_Lore3");
+				BUILD_LORE = getStringList("Build_Lore");
 				BREAK = getString("Break");
-				BREAK_LORE1 = getString("Break_Lore1");
-				BREAK_LORE2 = getString("Break_Lore2");
-				BREAK_LORE3 = getString("Break_Lore3");
+				BREAK_LORE = getStringList("Break_Lore");
 				USE = getString("Use");
-				USE_LORE1 = getString("Use_Lore1");
-				USE_LORE2 = getString("Use_Lore2");
-				USE_LORE3 = getString("Use_Lore3");
-				USE_LORE4 = getString("Use_Lore4");
+				USE_LORE = getStringList("Use_Lore");
 				SWITCH = getString("Switch");
-				SWITCH_LORE1 = getString("Switch_Lore1");
-				SWITCH_LORE2 = getString("Switch_Lore2");
-				SWITCH_LORE3 = getString("Switch_Lore3");
-				SWITCH_LORE4 = getString("Switch_Lore4");
+				SWITCH_LORE = getStringList("Switch_Lore");
 				BUILD_RES = getString("Build_Res");
 				BUILD_RES2 = getString("Build_Res2");
 				BUILD_NATION = getString("Build_Nation");
@@ -636,36 +506,26 @@ public class Localization extends SimpleLocalization {
 
 			public static String MENU_TITLE;
 			public static String FOR_SALE;
-			public static String FOR_SALE2;
-			public static String FOR_SALE3;
-			public static String FOR_SALE4;
+			public static String[] FOR_SALE_LORE;
 			public static String NOT_FOR_SALE;
-			public static String NOT_FOR_SALE2;
-			public static String NOT_FOR_SALE3;
+			public static String[] NOT_FOR_SALE_LORE;
 			public static String SET_TYPE;
-			public static String SET_TYPE2;
-			public static String SET_TYPE3;
+			public static String[] SET_TYPE_LORE;
 			public static String EVICT;
-			public static String EVICT2;
-			public static String EVICT3;
+			public static String[] EVICT_LORE;
 
 
 			private static void init() {
 				pathPrefix("Plot_Admin_Menu");
 				MENU_TITLE = getString("Menu_Title");
 				FOR_SALE = getString("For_Sale");
-				FOR_SALE2 = getString("For_Sale2");
-				FOR_SALE3 = getString("For_Sale3");
-				FOR_SALE4 = getString("For_Sale4");
+				FOR_SALE_LORE = getStringList("For_Sale_Lore").toArray(new String[0]);
 				NOT_FOR_SALE = getString("Not_For_Sale");
-				NOT_FOR_SALE2 = getString("Not_For_Sale2");
-				NOT_FOR_SALE3 = getString("Not_For_Sale3");
+				NOT_FOR_SALE_LORE = getStringList("Not_For_Sale_Lore").toArray(new String[0]);
 				SET_TYPE = getString("Set_Type");
-				SET_TYPE2 = getString("Set_Type2");
-				SET_TYPE3 = getString("Set_Type3");
+				SET_TYPE_LORE = getStringList("Set_Type_Lore").toArray(new String[0]);
 				EVICT = getString("Evict");
-				EVICT2 = getString("Evict2");
-				EVICT3 = getString("Evict3");
+				EVICT_LORE = getStringList("Evict_Lore").toArray(new String[0]);
 
 			}
 
@@ -892,6 +752,5 @@ public class Localization extends SimpleLocalization {
 
 		}
 	}
-
 
 }

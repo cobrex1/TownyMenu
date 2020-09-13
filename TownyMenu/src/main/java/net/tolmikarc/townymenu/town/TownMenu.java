@@ -70,9 +70,18 @@ public class TownMenu extends Menu {
 		setSize(9 * 4);
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
-		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), CompMaterial.LEVER, Localization.TownMenu.TOGGLE_MENU_BUTTON, "", Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE1, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE2);
-		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), CompMaterial.PLAYER_HEAD, Localization.TownMenu.RESIDENT_MENU_BUTTON, "", Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE1, Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE2);
-		townyPermButton = new ButtonMenu(new TownyPermMenu(town), CompMaterial.STONE_AXE, Localization.TownMenu.PERMISSIONS_MENU_BUTTON, "", Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE1, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE2, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE3);
+		ItemCreator.ItemCreatorBuilder toggleMenuItem = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.TOGGLE_MENU_BUTTON, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder residentListItem = ItemCreator.of(CompMaterial.PLAYER_HEAD, Localization.TownMenu.RESIDENT_MENU_BUTTON, Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder permissionsMenuItem = ItemCreator.of(CompMaterial.STONE_AXE, Localization.TownMenu.PERMISSIONS_MENU_BUTTON, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder economyMenuItem = ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder plotMenuItem = ItemCreator.of(CompMaterial.WOODEN_SHOVEL, Localization.TownMenu.PLOT_MENU_BUTTON, Localization.TownMenu.PLOT_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder settingsMenuItem = ItemCreator.of(CompMaterial.ENDER_CHEST, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder inviteMenuItem = ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE);
+		ItemCreator.ItemCreatorBuilder extraInfoItem = ItemCreator.of(CompMaterial.ENCHANTED_BOOK, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE);
+
+		toggleMenuButton = new ButtonMenu(new ToggleSettingsMenu(town), toggleMenuItem);
+		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), residentListItem);
+		townyPermButton = new ButtonMenu(new TownyPermMenu(town), permissionsMenuItem);
 
 		if (TownySettings.isBankActionLimitedToBankPlots()) {
 			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
@@ -86,11 +95,11 @@ public class TownMenu extends Menu {
 
 						@Override
 						public ItemStack getItem() {
-							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 						}
 					};
 				else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
 			else
 				economyButton = new Button() {
 					@Override
@@ -101,7 +110,7 @@ public class TownMenu extends Menu {
 
 					@Override
 					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 					}
 				};
 		} else if (TownySettings.isBankActionDisallowedOutsideTown()) {
@@ -116,11 +125,11 @@ public class TownMenu extends Menu {
 
 						@Override
 						public ItemStack getItem() {
-							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
+							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 						}
 					};
 				} else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
+					economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
 			else {
 				economyButton = new Button() {
 					@Override
@@ -131,25 +140,27 @@ public class TownMenu extends Menu {
 
 					@Override
 					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1).build().make();
+						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 					}
 				};
 			}
 
 		} else
-			economyButton = new ButtonMenu(new EconomyManagementMenu(town), CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, "", Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE1);
+			economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
 
-		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), CompMaterial.ENDER_CHEST, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON, "", Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE1, Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE2);
+		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), settingsMenuItem);
 
-		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), CompMaterial.BELL, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON, "", Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE1, Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE2);
+		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), inviteMenuItem);
 
-		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), CompMaterial.ENCHANTED_BOOK, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON, "", Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE1, Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE2);
+		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), extraInfoItem);
 
 		if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().getTownBlock(player.getLocation())))
-			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), CompMaterial.WOODEN_SHOVEL, Localization.TownMenu.PLOT_MENU_BUTTON, "", Localization.TownMenu.PLOT_MENU_BUTTON_LORE1, Localization.TownMenu.PLOT_MENU_BUTTON_LORE2);
+			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), plotMenuItem);
 		else
-			plotMenuButton = Button.makeDummy(ItemCreator.of(CompMaterial.WOODEN_SHOVEL, Localization.TownMenu.PLOT_MENU_BUTTON, "", Localization.TownMenu.PLOT_MENU_BUTTON_LORE1, Localization.TownMenu.PLOT_MENU_BUTTON_LORE2));
+			plotMenuButton = Button.makeDummy(plotMenuItem);
+
 	}
+
 
 	@Override
 	public ItemStack getItemAt(int slot) {
@@ -173,6 +184,7 @@ public class TownMenu extends Menu {
 		if (slot == 9 * 3 + 5)
 			return plotMenuButton.getItem();
 
+
 		return DUMMY_BUTTON;
 	}
 
@@ -194,7 +206,8 @@ public class TownMenu extends Menu {
 
 			setTitle(Localization.TownMenu.ToggleMenu.MENU_TITLE);
 
-			setInfo(Localization.TownMenu.ToggleMenu.INFO1, Localization.TownMenu.ToggleMenu.INFO2);
+			setInfo(Localization.TownMenu.ToggleMenu.INFO);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
 			fireToggle = new Button() {
 				@Override
@@ -362,7 +375,8 @@ public class TownMenu extends Menu {
 		protected ResidentListMenu(Iterable<Resident> pages) {
 			super(TownMenu.this, pages);
 			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
-			setInfo(Localization.TownMenu.ResidentMenu.INFO1, Localization.TownMenu.ResidentMenu.INFO2);
+			setInfo(Localization.TownMenu.ResidentMenu.INFO);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 		}
 
 		@Override
@@ -408,13 +422,13 @@ public class TownMenu extends Menu {
 			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
 
 
-			kickButton = new ButtonConversation(new TownKickPrompt(resident), CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.ResidentMenu.KICK, "", Localization.TownMenu.ResidentMenu.KICK_LORE1, Localization.TownMenu.ResidentMenu.KICK_LORE2);
+			kickButton = new ButtonConversation(new TownKickPrompt(resident), ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.ResidentMenu.KICK, Localization.TownMenu.ResidentMenu.KICK_LORE));
 
-			titleButton = new ButtonConversation(new TownTitlePrompt(resident), CompMaterial.NAME_TAG, Localization.TownMenu.ResidentMenu.TITLE, "", Localization.TownMenu.ResidentMenu.TITLE_LORE1, Localization.TownMenu.ResidentMenu.TITLE_LORE2);
+			titleButton = new ButtonConversation(new TownTitlePrompt(resident), ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.ResidentMenu.TITLE, Localization.TownMenu.ResidentMenu.TITLE_LORE));
 
-			rankButton = new ButtonConversation(new TownRankPrompt(resident), CompMaterial.IRON_SWORD, Localization.TownMenu.ResidentMenu.RANK, "", Localization.TownMenu.ResidentMenu.RANK_LORE1, Localization.TownMenu.ResidentMenu.RANK_LORE2);
+			rankButton = new ButtonConversation(new TownRankPrompt(resident), ItemCreator.of(CompMaterial.IRON_SWORD, Localization.TownMenu.ResidentMenu.RANK, Localization.TownMenu.ResidentMenu.RANK_LORE));
 
-			mayorButton = new ButtonConversation(new TownGiveMayorPrompt(resident), CompMaterial.GOLDEN_APPLE, Localization.TownMenu.ResidentMenu.MAYOR, "", Localization.TownMenu.ResidentMenu.MAYOR_LORE1, Localization.TownMenu.ResidentMenu.MAYOR_LORE2, Localization.TownMenu.ResidentMenu.MAYOR_LORE3);
+			mayorButton = new ButtonConversation(new TownGiveMayorPrompt(resident), ItemCreator.of(CompMaterial.GOLDEN_APPLE, Localization.TownMenu.ResidentMenu.MAYOR, Localization.TownMenu.ResidentMenu.MAYOR_LORE));
 		}
 
 		@Override
@@ -435,10 +449,10 @@ public class TownMenu extends Menu {
 
 	public class TownyPermMenu extends Menu {
 
-		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, Localization.TownMenu.PlayerPermissionsMenu.BUILD, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE1, Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE2, Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE3).build().make();
-		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, Localization.TownMenu.PlayerPermissionsMenu.BREAK, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE1, Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE2, Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE3).build().make();
-		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, Localization.TownMenu.PlayerPermissionsMenu.USE, "", Localization.TownMenu.PlayerPermissionsMenu.USE_LORE1, Localization.TownMenu.PlayerPermissionsMenu.USE_LORE2, Localization.TownMenu.PlayerPermissionsMenu.USE_LORE3, "", Localization.TownMenu.PlayerPermissionsMenu.USE_LORE4).build().make();
-		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.PlayerPermissionsMenu.SWITCH, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE1, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE2, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE3, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE4).build().make();
+		private final ItemStack BUILD_BUTTON = ItemCreator.of(CompMaterial.BRICKS, Localization.TownMenu.PlayerPermissionsMenu.BUILD, Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE).build().make();
+		private final ItemStack BREAK_BUTTON = ItemCreator.of(CompMaterial.GOLDEN_PICKAXE, Localization.TownMenu.PlayerPermissionsMenu.BREAK, Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE).build().make();
+		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(CompMaterial.FLINT_AND_STEEL, Localization.TownMenu.PlayerPermissionsMenu.USE, Localization.TownMenu.PlayerPermissionsMenu.USE_LORE).build().make();
+		private final ItemStack SWITCH_BUTTON = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.PlayerPermissionsMenu.SWITCH, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE).build().make();
 
 		private final Button buildResidentButton;
 		private final Button buildNationButton;
@@ -467,8 +481,9 @@ public class TownMenu extends Menu {
 		protected TownyPermMenu(Town town) {
 			super(TownMenu.this);
 			setSize(9 * 6);
-			setInfo(Localization.TownMenu.PlayerPermissionsMenu.INFO1, Localization.TownMenu.PlayerPermissionsMenu.INFO2, Localization.TownMenu.PlayerPermissionsMenu.INFO3);
+			setInfo(Localization.TownMenu.PlayerPermissionsMenu.INFO);
 			setTitle(Localization.TownMenu.PlayerPermissionsMenu.MENU_TITLE);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
 			buildResidentButton = new Button() {
 				@Override
@@ -481,7 +496,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			buildNationButton = new Button() {
@@ -495,7 +510,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			buildAllyButton = new Button() {
@@ -509,7 +524,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			buildOutsiderButton = new Button() {
@@ -523,7 +538,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 
@@ -539,7 +554,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			breakNationButton = new Button() {
@@ -553,7 +568,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			breakAllyButton = new Button() {
@@ -567,7 +582,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			breakOutsiderButton = new Button() {
@@ -581,7 +596,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 
@@ -597,7 +612,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.USE_RES, "", Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.USE_RES, "", Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			itemUseNationButton = new Button() {
@@ -611,7 +626,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.USE_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.USE_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			itemUseAllyButton = new Button() {
@@ -625,7 +640,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			itemUseOutsiderButton = new Button() {
@@ -639,7 +654,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 
@@ -656,7 +671,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BELL, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			switchNationButton = new Button() {
@@ -670,7 +685,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CHAINMAIL_CHESTPLATE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			switchAllyButton = new Button() {
@@ -684,7 +699,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.CARROT, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 			switchOutsiderButton = new Button() {
@@ -698,7 +713,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? "&atrue" : "&cfalse", "", "&eClick to change!").build().make();
+					return ItemCreator.of(CompMaterial.BONE, Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER, "", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).build().make();
 				}
 			};
 
@@ -714,7 +729,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.RESET, "", Localization.TownMenu.PlayerPermissionsMenu.RESET2, Localization.TownMenu.PlayerPermissionsMenu.RESET3).build().make();
+					return ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.RESET, Localization.TownMenu.PlayerPermissionsMenu.RESET_LORE).build().make();
 				}
 			};
 			allOnButton = new Button() {
@@ -727,7 +742,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.ON, "", Localization.TownMenu.PlayerPermissionsMenu.ON2, Localization.TownMenu.PlayerPermissionsMenu.ON3).build().make();
+					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.PlayerPermissionsMenu.ON, Localization.TownMenu.PlayerPermissionsMenu.ON_LORE).build().make();
 				}
 			};
 
@@ -807,9 +822,9 @@ public class TownMenu extends Menu {
 
 			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.EconomyMenu.BALANCE, "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).build().make();
 
-			depositButton = new ButtonConversation(new TownDepositPrompt(town), CompMaterial.CHEST, Localization.TownMenu.EconomyMenu.DEPOSIT, "", Localization.TownMenu.EconomyMenu.DEPOSIT2, Localization.TownMenu.EconomyMenu.DEPOSIT3);
+			depositButton = new ButtonConversation(new TownDepositPrompt(town), ItemCreator.of(CompMaterial.CHEST, Localization.TownMenu.EconomyMenu.DEPOSIT, Localization.TownMenu.EconomyMenu.DEPOSIT_LORE));
 
-			withdrawButton = new ButtonConversation(new TownWithdrawPrompt(town), CompMaterial.ENDER_CHEST, Localization.TownMenu.EconomyMenu.WITHDRAW, "", Localization.TownMenu.EconomyMenu.WITHDRAW2, Localization.TownMenu.EconomyMenu.WITHDRAW3);
+			withdrawButton = new ButtonConversation(new TownWithdrawPrompt(town), ItemCreator.of(CompMaterial.ENDER_CHEST, Localization.TownMenu.EconomyMenu.WITHDRAW, Localization.TownMenu.EconomyMenu.WITHDRAW_LORE));
 
 			setTaxButton = new ButtonConversation(new TownSetTaxPrompt(town), CompMaterial.ARROW, Localization.TownMenu.EconomyMenu.TAX, "", town.isTaxPercentage() ? Localization.TownMenu.EconomyMenu.TAX_PERCENTAGE : Localization.TownMenu.EconomyMenu.TAX_AMOUNT);
 
@@ -841,8 +856,9 @@ public class TownMenu extends Menu {
 		protected GeneralSettingsMenu(Town town) {
 			super(TownMenu.this);
 			setSize(9 * 2);
-			setInfo(Localization.TownMenu.GeneralSettingsMenu.INFO1, Localization.TownMenu.GeneralSettingsMenu.INFO2);
+			setInfo(Localization.TownMenu.GeneralSettingsMenu.INFO);
 			setTitle(Localization.TownMenu.GeneralSettingsMenu.MENU_TITLE);
+			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
 
 			setHomeBlockButton = new Button() {
@@ -869,7 +885,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.GLOWSTONE, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK, "", Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK2, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK3).build().make();
+					return ItemCreator.of(CompMaterial.GLOWSTONE, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_LORE).build().make();
 				}
 			};
 
@@ -893,7 +909,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.LAPIS_LAZULI, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN, "", Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN2, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN3, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN4, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN5).build().make();
+					return ItemCreator.of(CompMaterial.LAPIS_LAZULI, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN_LORE).build().make();
 				}
 			};
 
@@ -910,7 +926,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.GeneralSettingsMenu.SET_NAME, "", Localization.TownMenu.GeneralSettingsMenu.SET_NAME2, Localization.TownMenu.GeneralSettingsMenu.SET_NAME3).build().make();
+					return ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.GeneralSettingsMenu.SET_NAME, Localization.TownMenu.GeneralSettingsMenu.SET_NAME_LORE).build().make();
 				}
 			};
 
@@ -925,7 +941,7 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(CompMaterial.OAK_SIGN, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD, "", Localization.TownMenu.GeneralSettingsMenu.SET_BOARD2, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD3).build().make();
+					return ItemCreator.of(CompMaterial.OAK_SIGN, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD, Localization.TownMenu.GeneralSettingsMenu.SET_BOARD_LORE).build().make();
 				}
 			};
 
@@ -974,8 +990,8 @@ public class TownMenu extends Menu {
 
 	public class ExtraTownInfo extends Menu {
 
-		private final ItemStack claimInfo = ItemCreator.of(CompMaterial.GOLDEN_AXE, Localization.TownMenu.ExtraInfoMenu.CLAIMING, "", Localization.TownMenu.ExtraInfoMenu.CLAIMING2, "", Localization.TownMenu.ExtraInfoMenu.CLAIMING3, Localization.TownMenu.ExtraInfoMenu.CLAIMING4, Localization.TownMenu.ExtraInfoMenu.CLAIMING5, Localization.TownMenu.ExtraInfoMenu.CLAIMING6, Localization.TownMenu.ExtraInfoMenu.CLAIMING7, Localization.TownMenu.ExtraInfoMenu.CLAIMING8).build().make();
-		private final ItemStack extraCommands = ItemCreator.of(CompMaterial.BOOKSHELF, Localization.TownMenu.ExtraInfoMenu.COMMANDS, "", Localization.TownMenu.ExtraInfoMenu.COMMANDS2, Localization.TownMenu.ExtraInfoMenu.COMMANDS3, Localization.TownMenu.ExtraInfoMenu.COMMANDS4, Localization.TownMenu.ExtraInfoMenu.COMMANDS5).build().make();
+		private final ItemStack claimInfo = ItemCreator.of(CompMaterial.GOLDEN_AXE, Localization.TownMenu.ExtraInfoMenu.CLAIMING, Localization.TownMenu.ExtraInfoMenu.CLAIMING_LORE).build().make();
+		private final ItemStack extraCommands = ItemCreator.of(CompMaterial.BOOKSHELF, Localization.TownMenu.ExtraInfoMenu.COMMANDS, Localization.TownMenu.ExtraInfoMenu.COMMANDS_LORE).build().make();
 
 		protected ExtraTownInfo() {
 			super(TownMenu.this);

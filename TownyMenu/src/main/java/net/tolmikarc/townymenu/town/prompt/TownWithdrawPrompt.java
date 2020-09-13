@@ -45,7 +45,8 @@ public class TownWithdrawPrompt extends SimplePrompt {
 	}
 
 	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
+	protected @Nullable
+	Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 		if (input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
