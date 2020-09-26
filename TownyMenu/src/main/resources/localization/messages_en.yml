@@ -432,8 +432,8 @@ Plot_Conversables:
     Prompt: "&3Would you like to set this plot not for sale? Type &aconfirm &3or &ccancel&6:"
     Response: "&cPlot set not for sale."
   Set_Type:
-    Prompt: "&3What type would you like to set this plot? &b(Options: {options})"
-    Invalid: "&cPlease enter a valid plot type. Valid types: {options})"
+    Prompt: "&3What type would you like to set this plot? &b(Options: {options}) Type 'exit' to cancel"
+    Invalid: "&cPlease enter a valid plot type. Valid types: {options}) or type 'exit' to cancel"
     Response: "&3Plot type set to: &b{input}"
 
 
