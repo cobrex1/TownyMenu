@@ -39,6 +39,7 @@ public class TownTitlePrompt extends SimplePrompt {
 		resident.setTitle(input);
 		try {
 			TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
+			TownyAPI.getInstance().getDataSource().saveResident(resident);
 		} catch (NotRegisteredException e) {
 			e.printStackTrace();
 		}

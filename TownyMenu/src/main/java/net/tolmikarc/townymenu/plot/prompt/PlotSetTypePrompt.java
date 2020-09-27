@@ -1,7 +1,9 @@
 package net.tolmikarc.townymenu.plot.prompt;
 
+import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownBlockType;
+import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -42,12 +44,15 @@ public class PlotSetTypePrompt extends SimplePrompt {
 		return Localization.PlotConversables.SetType.INVALID.replace("{options}", Common.join(plotTypes, ", "));
 	}
 
+	@SneakyThrows
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 		if (!getPlayer(context).hasPermission("towny.command.plot.set" + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
 		townBlock.setType(TownBlockType.valueOf(input.toUpperCase()));
+		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
+		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
 		tell(Localization.PlotConversables.SetType.RESPONSE.replace("{input}", input));
 		return null;
 	}

@@ -42,6 +42,7 @@ public class TownGiveMayorPrompt extends SimplePrompt {
 			town.setMayor(resident);
 			Common.tell(getPlayer(context), Localization.TownConversables.Mayor.RESPONSE.replace("{player}", resident.getName()));
 			TownyAPI.getInstance().getDataSource().saveTown(town);
+			TownyAPI.getInstance().getDataSource().saveResident(resident);
 		}
 
 		return null;

@@ -1,6 +1,8 @@
 package net.tolmikarc.townymenu.plot.prompt;
 
+import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.TownBlock;
+import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -30,12 +32,15 @@ public class PlotNotForSalePrompt extends SimplePrompt {
 	}
 
 
+	@SneakyThrows
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 		if (!getPlayer(context).hasPermission("towny.command.plot.notforsale") || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
 		townBlock.setPlotPrice(-1);
+		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
+		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
 		tell(Localization.PlotConversables.NotForSale.RESPONSE);
 		return null;
 	}

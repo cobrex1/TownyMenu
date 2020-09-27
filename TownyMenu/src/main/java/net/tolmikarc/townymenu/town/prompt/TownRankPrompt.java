@@ -51,6 +51,7 @@ public class TownRankPrompt extends SimplePrompt {
 					try {
 						resident.removeTownRank(rank);
 						TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
+						TownyAPI.getInstance().getDataSource().saveResident(resident);
 					} catch (NotRegisteredException e) {
 						e.printStackTrace();
 					}

@@ -41,6 +41,7 @@ public class TownKickPrompt extends SimplePrompt {
 				Town town = resident.getTown();
 				town.removeResident(resident);
 				TownyAPI.getInstance().getDataSource().saveTown(town);
+				TownyAPI.getInstance().getDataSource().saveResident(resident);
 				tell(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()));
 			}
 		} catch (EmptyTownException | NotRegisteredException e) {

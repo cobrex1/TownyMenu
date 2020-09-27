@@ -40,7 +40,7 @@ public class TownNamePrompt extends SimplePrompt {
 		for (Town town : TownyAPI.getInstance().getDataSource().getTowns())
 			allTownNames.add(town.getName());
 		LagCatcher.end("load-all-town-names");
-		return ((input.length() < 10 && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
+		return ((input.length() < TownySettings.getMaxNameLength() && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
 	}
 
 	@Override

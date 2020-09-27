@@ -1,7 +1,9 @@
 package net.tolmikarc.townymenu.plot.prompt;
 
+import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.TownBlock;
+import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
@@ -37,6 +39,7 @@ public class PlotForSalePrompt extends SimplePrompt {
 		return Localization.PlotConversables.ForSale.INVALID.replace("{max_price}", String.valueOf(TownySettings.getMaxPlotPrice()));
 	}
 
+	@SneakyThrows
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
 		if (!getPlayer(context).hasPermission("towny.command.plot.forsale")) {
@@ -44,6 +47,8 @@ public class PlotForSalePrompt extends SimplePrompt {
 		}
 
 		townBlock.setPlotPrice(Integer.parseInt(input));
+		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
+		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
 		tell(Localization.PlotConversables.ForSale.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 		return null;
 	}
