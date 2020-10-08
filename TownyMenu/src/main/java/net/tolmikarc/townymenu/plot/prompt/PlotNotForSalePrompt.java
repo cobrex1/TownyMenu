@@ -1,9 +1,11 @@
 package net.tolmikarc.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.settings.Localization;
+import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +41,9 @@ public class PlotNotForSalePrompt extends SimplePrompt {
 			return null;
 		}
 		townBlock.setPlotPrice(-1);
+		townBlock.setChanged(true);
+		TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+		Bukkit.getServer().getPluginManager().callEvent(event);
 		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
 		tell(Localization.PlotConversables.NotForSale.RESPONSE);

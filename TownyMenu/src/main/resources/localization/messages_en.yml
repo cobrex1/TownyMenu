@@ -396,8 +396,8 @@ Town_Conversables:
     Prompt: "&cAre you sure you would like to kick &b{player} &cfrom your town? Type &bconfirm &cor &4cancel &cnow:"
     Response: "&3Successfully kicked &b{player} &3from your town."
   Name:
-    Prompt: "&3Type in the name you would like to give to your town: (under 10 characters) &bCurrent Name: {town} &cType cancel to exit."
-    Invalid: "&cName must be unique and less than 10 characters."
+    Prompt: "&3Type in the name you would like to give to your town: (under {max_length} characters) &bCurrent Name: {town} &cType cancel to exit."
+    Invalid: "&cName must be unique and less than {max_length} characters."
     Response: "&3Successfully set town name to {input}"
     Return: "&cNot enough money in town bank to change town name."
   Rank:

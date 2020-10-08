@@ -1,6 +1,7 @@
 package net.tolmikarc.townymenu.plot;
 
 import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.*;
 import lombok.SneakyThrows;
@@ -117,19 +118,17 @@ public class PlotMenu extends Menu {
 
 			Resident playerResident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
 
-			try {
-				if (item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(player.getName()))) {
-					playerResident.getFriends().remove(item);
-					Common.tell(player, Localization.PlotMenu.FriendMenu.REMOVE.replace("{player}", item.getName()));
-				} else {
-					playerResident.getFriends().add(item);
-					Common.tell(player, Localization.PlotMenu.FriendMenu.ADD.replace("{player}", item.getName()));
-				}
-				TownyAPI.getInstance().getDataSource().saveResident(playerResident);
-				restartMenu();
-			} catch (NotRegisteredException e) {
-				e.printStackTrace();
+			if (item.equals(playerResident))
+				return;
+			if (playerResident.getFriends().contains(item)) {
+				playerResident.removeFriend(item);
+				Common.tell(player, Localization.PlotMenu.FriendMenu.REMOVE.replace("{player}", item.getName()));
+			} else {
+				playerResident.addFriend(item);
+				Common.tell(player, Localization.PlotMenu.FriendMenu.ADD.replace("{player}", item.getName()));
 			}
+			TownyAPI.getInstance().getDataSource().saveResident(playerResident);
+			restartMenu();
 
 		}
 	}
@@ -155,6 +154,9 @@ public class PlotMenu extends Menu {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().fire = !townBlock.getPermissions().fire;
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
@@ -169,6 +171,9 @@ public class PlotMenu extends Menu {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().mobs = !townBlock.getPermissions().mobs;
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
@@ -187,6 +192,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 
 					townBlock.getPermissions().explosion = !townBlock.getPermissions().explosion;
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
@@ -202,6 +210,9 @@ public class PlotMenu extends Menu {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().pvp = !townBlock.getPermissions().pvp;
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
@@ -274,6 +285,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD), TownyPermission.PermLevel.RESIDENT, TownyPermission.ActionType.BUILD);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -289,6 +303,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD), TownyPermission.PermLevel.NATION, TownyPermission.ActionType.BUILD);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -304,6 +321,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD), TownyPermission.PermLevel.ALLY, TownyPermission.ActionType.BUILD);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -319,6 +339,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD), TownyPermission.PermLevel.OUTSIDER, TownyPermission.ActionType.BUILD);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -336,6 +359,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY), TownyPermission.PermLevel.RESIDENT, TownyPermission.ActionType.DESTROY);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -351,6 +377,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY), TownyPermission.PermLevel.NATION, TownyPermission.ActionType.DESTROY);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -366,6 +395,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY), TownyPermission.PermLevel.ALLY, TownyPermission.ActionType.DESTROY);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -381,6 +413,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY), TownyPermission.PermLevel.OUTSIDER, TownyPermission.ActionType.DESTROY);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -398,6 +433,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE), TownyPermission.PermLevel.RESIDENT, TownyPermission.ActionType.ITEM_USE);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -413,6 +451,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE), TownyPermission.PermLevel.NATION, TownyPermission.ActionType.ITEM_USE);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -428,6 +469,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE), TownyPermission.PermLevel.ALLY, TownyPermission.ActionType.ITEM_USE);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -443,6 +487,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE), TownyPermission.PermLevel.OUTSIDER, TownyPermission.ActionType.ITEM_USE);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -461,6 +508,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH), TownyPermission.PermLevel.RESIDENT, TownyPermission.ActionType.SWITCH);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -476,6 +526,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH), TownyPermission.PermLevel.NATION, TownyPermission.ActionType.SWITCH);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -491,6 +544,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH), TownyPermission.PermLevel.ALLY, TownyPermission.ActionType.SWITCH);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -506,6 +562,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH), TownyPermission.PermLevel.OUTSIDER, TownyPermission.ActionType.SWITCH);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 
@@ -524,6 +583,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.ALL_PERMS, false);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 				}
@@ -538,6 +600,9 @@ public class PlotMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					townBlock.getPermissions().change(TownyPermissionChange.Action.ALL_PERMS, true);
 					restartMenu();
+					townBlock.setChanged(true);
+					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
+					Bukkit.getServer().getPluginManager().callEvent(event);
 					TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 				}
