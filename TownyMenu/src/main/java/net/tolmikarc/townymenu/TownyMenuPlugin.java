@@ -27,6 +27,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
 
+
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 	}
 

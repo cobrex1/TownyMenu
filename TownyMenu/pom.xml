@@ -6,7 +6,7 @@
 
     <groupId>net.tolmikarc</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.2.4</version>
+    <version>1.2.8</version>
 
 
     <properties>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.github.TownyAdvanced</groupId>
             <artifactId>Towny</artifactId>
-            <version>0.96.3.0</version>
+            <version>0.96.5.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -49,7 +49,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 	@SneakyThrows
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.set" + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
+		if (!getPlayer(context).hasPermission("towny.command.plot.set." + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
 		townBlock.setType(TownBlockType.valueOf(input.toUpperCase()));
