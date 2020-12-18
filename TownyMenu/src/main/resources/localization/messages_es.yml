@@ -379,7 +379,7 @@ Town_Conversables:
     Prompt: "&3Escribe el nuevo mensaje de ciudad: "
     Response: "&3Se ha actualizado el board de tu ciudad"
   Deposit:
-    Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escribe "cancel" para cancelar)"
+    Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escribe 'cancel' para cancelar)"
     Invalid: "&cIngresa solo números enteros y asegúrate de tener suficiente dinero para depositar."
     Response: "&3Has depositado &b{money_symbol}{input} &3en la cuenta de la ciudad."
   Mayor:
@@ -389,7 +389,7 @@ Town_Conversables:
     Prompt: "&c¿Estas seguro de expulsar a &b{player} &cde tu ciudad? Escribiendo &bconfirm &co &4cancel &cahora:"
     Response: "&3SSe ha expulsado a &b{player} &3de tu ciudad."
   Name:
-    Prompt: "&3Escribe el nuevo nombre de tu ciudad: (menos de {max_length} caracteres) &bNombre actual: {town} &cEscrube "cancel" para salir."
+    Prompt: "&3Escribe el nuevo nombre de tu ciudad: (menos de {max_length} caracteres) &bNombre actual: {town} &cEscrube 'cancel' para salir."
     Invalid: "&cEl nombre debe ser unico y mejor a {max_length} caracteres."
     Response: "&3El nombre de tu ciudad ahora es {input}"
     Return: "&cNo tienes suficiente dinero en el banco para cambiar el nombre."
