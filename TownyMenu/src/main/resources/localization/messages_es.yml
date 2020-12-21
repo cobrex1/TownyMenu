@@ -224,6 +224,7 @@ Extra_Info_Menu:
     - ""
     - "Puedes usar &a/towny map &7para ver info"
     - "de las tierras cercanas"
+  Commands: "&2&lExtra Commands"
   Commands_Lore:
     - ""
     - "&a/t outlaw &7- convertir a un jugador en un forajido"
