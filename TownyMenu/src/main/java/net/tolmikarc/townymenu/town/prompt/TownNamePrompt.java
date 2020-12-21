@@ -57,7 +57,7 @@ public class TownNamePrompt extends SimplePrompt {
 		try {
 			if (town.getAccount().canPayFromHoldings(TownySettings.getTownRenameCost())) {
 				TownyAPI.getInstance().getDataSource().renameTown(town, input);
-				town.getAccount().withdraw(TownySettings.getTownRenameCost(), "Renaming town.");
+				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
 
 				tell(Localization.TownConversables.Name.RESPONSE.replace("{input}", input));
 				TownyAPI.getInstance().getDataSource().saveTown(town);

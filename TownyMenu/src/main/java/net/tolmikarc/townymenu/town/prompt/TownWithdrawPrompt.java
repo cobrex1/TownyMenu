@@ -52,7 +52,7 @@ public class TownWithdrawPrompt extends SimplePrompt {
 
 		try {
 			HookManager.deposit(getPlayer(context), Integer.parseInt(input));
-			town.getAccount().withdraw(Integer.parseInt(input), "Withdrawn from menu.");
+			town.getAccount().pay(Integer.parseInt(input), "Withdrawn from menu.");
 			TownyAPI.getInstance().getDataSource().saveTown(town);
 			tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 		} catch (EconomyException e) {
