@@ -33,7 +33,7 @@ public class TownBoardPrompt extends SimplePrompt {
 			return null;
 
 
-		town.setTownBoard(input);
+		town.setBoard(input);
 		TownyAPI.getInstance().getDataSource().saveTown(town);
 
 		tell(Localization.TownConversables.Board.RESPONSE);
