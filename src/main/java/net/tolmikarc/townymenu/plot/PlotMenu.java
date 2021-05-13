@@ -103,7 +103,7 @@ public class PlotMenu extends Menu {
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			try {
-				lore.add(item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(getViewers().stream().findAny().orElseThrow(NullPointerException::new).getName())) ? ChatColor.RED + "Remove Friend" : ChatColor.YELLOW + "Add Friend");
+				lore.add(item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(getViewer().getName())) ? ChatColor.RED + "Remove Friend" : ChatColor.YELLOW + "Add Friend");
 			} catch (NotRegisteredException e) {
 				e.printStackTrace();
 			}

@@ -1,0 +1,454 @@
+Confirm: "confirmar"
+Cancel: "cancelar"
+Menu_Information: "Información"
+
+Town_Menu:
+  Main_Menu_Title: "&2&lTown Menú"
+  Toggle_Menu_Button: "&3&lMenú de Configuraciones"
+  Toggle_Menu_Button_Lore:
+    - ""
+    - "Encender y apagar"
+    - "opciones varias."
+  Resident_Menu_Button: "&6&lMenú de Residentes"
+  Resident_Menu_Button_Lore:
+    - ""
+    - "Ver toda la informacion de residentes"
+    - "y sus configuraciones."
+  Permissions_Menu_Button: "&c&lMenú de permisos"
+  Permissions_Menu_Button_Lore:
+    - ""
+    - "Ajustar los permisos de la ciudad"
+    - "para residentes, aliados, miembros"
+    - "de la nacion y forasteros."
+  Economy_Menu_Button: "&a&lMenú de Economía"
+  Economy_Menu_Button_Lore:
+    - ""
+    - "Maneja el dinero de tu ciudad"
+  General_Settings_Menu_Button: "&2&lMenú de otras opciones"
+  General_Settings_Menu_Button_Lore:
+    - ""
+    - "Cambios varios"
+    - "configuraciones adicionales."
+  Invite_Player_Menu_Button: "&d&lMenú de Invitaciones"
+  Invite_Player_Menu_Button_Lore:
+    - ""
+    - "Invita a jugadores conectados"
+    - "a tu ciudad"
+  Extra_Info_Menu_Button: "&e&lInformacion extra"
+  Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Apende a cómo reclamar tierras"
+    - "y otros comandos utiles"
+  Plot_Menu_Button: "&9&lMenú de Parcelas"
+  Plot_Menu_Button_Lore:
+    - ""
+    - "Maneja la parcela (chunk) en"
+    - "la que te encuentras ahora"
+Toggle_Menu:
+  Menu_Title: "&2&lMenú de Configuraciones"
+  Info:
+    - "Activa y desactiva diversas"
+    - "opciones en tu ciudad"
+  Toggle_Off: "&eClick para &cDesactivar"
+  Toggle_On: "&eClick para &aActivar"
+  Fire: "&6&lAjustar propagacion de fuego"
+  Mobs: "&a&lAjustar spawn de mobs"
+  Explode: "&c&lAjustar explosiones"
+  PVP: "&4&lAjustar PVP"
+  Public: "&9&lAjustar spawn publico"
+  Open: "&3&lAjustar ingreso publica"
+  Tax_Percent: "&2&lAjustar impuestos por porcentaje"
+Resident_Menu:
+  Menu_Title: "&2&lMenu de Residentes"
+  Info:
+    - "Click en un residente para"
+    - "manejar diversas opciones"
+  Online: "Ultima conexion: "
+  Kick: "&c&lExpulsar Jugador"
+  Kick_Lore:
+    - ""
+    - "Click para expulsar al"
+    - "residente de tu ciudad"
+  Title: "&a&lOtorgar un titulo"
+  Title_Lore:
+    - ""
+    - "Dar un titulo a"
+    - "este residente"
+  Rank: "&3&lOtorgar un rango"
+  Rank_Lore:
+    - ""
+    - "Dar un rango en la ciudad"
+    - "a este residente"
+  Mayor: "&a&lOtorgar ADMIN de la Ciudad"
+  Mayor_Lore:
+    - ""
+    - "Has a un residente"
+    - "co-administrador de la ciudad"
+    - ""
+    - "&4&lIrreversible"
+Player_Permission_Menu:
+  Menu_Title: "&2&lMenu de permisos de rangos"
+  Info:
+    - ""
+    - "Define los permisos de"
+    - "diferentes grupos en tu"
+    - "ciudad"
+  True_Msg: "&averdadero"
+  False_Msg: "&cfalso"
+  Change: "&eClick para cambiar"
+  Reset: "&c&lRestablecer todos los campos"
+  Reset_Lore:
+    - ""
+    - "Desactivar todos los permisos"
+    - "de todos los grupos."
+  On_Msg: "&a&lActivar todos los campos"
+  On_Msg_Lore:
+    - ""
+    - "Activar todos los permisos"
+    - "de todos los grupos."
+  Build: "&3&lConstruir"
+  Build_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede construir en la ciudad"
+  Break: "&c&lRomper"
+  Break_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede romper bloques en la ciudad"
+  Use: "&6&lUsar items"
+  Use_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede usar items en la ciudad"
+    - ""
+    - "Ej. Agarrar agua con un balde"
+  Switch: "&2&lSwitch"
+  Switch_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede usar switchs en la ciudad"
+    - ""
+    - "Ej. Usar una palanca o una puerta"
+  Build_Res: "&6&lResidentes - Permiso para construir"
+  Build_Res2: "Pueden los residentes construir: "
+  Build_Nation: "&6&lNacion - Permiso para construir"
+  Build_Nation2: "Pueden los miembros de la nacion construir: "
+  Build_Ally: "&6&lAlianzas - Permiso para consstruir"
+  Build_Ally2: "Pueden los aliados de la nacion construir: "
+  Build_Outsider: "&6&lForasteros - Permiso para construir"
+  Build_Outsider2: "Pueden los forasteros construir: "
+  Break_Res: "&6&lResidentes - Permiso para romper"
+  Break_Res2: "Pueden los residentes romper bloques: "
+  Break_Nation: "&6&lNacion - Permiso para romper"
+  Break_Nation2: "Pueden los miembros de la nacion romper bloques: "
+  Break_Ally: "&6&lAlianzas - Permiso para romper"
+  Break_Ally2: "Pueden los aliados de la nacion romper bloques: "
+  Break_Outsider: "&6&lForasteros - Permiso para romper"
+  Break_Outsider2: "Pueden los forasteros romper bloques: "
+  Use_Res: "&6&lResidentes - Permiso para usar items"
+  Use_Res2: "Pueden los residentes usar items: "
+  Use_Nation: "&6&lNacion - Permiso para usar items"
+  Use_Nation2: "Pueden los miembros de la nacion usar items: "
+  Use_Ally: "&6&lAlianzas - Permiso para usar items"
+  Use_Ally2: "Pueden los aliados de la nacion usar items: "
+  Use_Outsider: "&6&lForasteros - Permiso para usar items"
+  Use_Outsider2: "Pueden los forasteros usar items: "
+  Switch_Res: "&6&lResidentes - Permiso Switch"
+  Switch_Res2: "Pueden los residentes usar switch: "
+  Switch_Nation: "&6&lNacion - Permiso Switch"
+  Switch_Nation2: "Pueden los miembros de la nacion usar switch: "
+  Switch_Ally: "&6&lAlianzas - Permiso Switch"
+  Switch_Ally2: "Pueden los aliados de la nacion usar switch: "
+  Switch_Outsider: "&6&lForasteros - Permiso Switch"
+  Switch_Outsider2: "Pueden los forasteros usar switch: "
+Economy_Menu:
+  Menu_Title: "&2&lMenu de Economía"
+  Balance: "&2&lDinero actual de la ciudad"
+  Upkeep: "Cuota de mantenimiento: "
+  Withdraw: "&c&lRetirar dinero"
+  Withdraw_Lore:
+    - ""
+    - "Retira dinero del"
+    - "banco de tu ciudad"
+  Deposit: "&a&lDepositar dinero"
+  Deposit_Lore:
+    - ""
+    - "Depositar dinero en el"
+    - "banco de tu ciudad"
+  Tax: "&c&lEstablecer impuestos"
+  Tax_Percentage: "Establecer impuestos por porcentaje"
+  Tax_Amount: "Establecer impuestos por cantidad"
+General_Settings_Menu:
+  Menu_Title: "&2&lMenu de configuraciones generales"
+  Info:
+    - "Ajustar otros ajustes"
+    - "adicionales de la ciudad"
+  Set_Home_Block_Msg: "&eSe ha establecido el home block en tu posicion"
+  Spawn_Reminder: "&bAsegúrate de volver a configurar tu ciudad de nuevo"
+  Set_Home_Block: "&3&lEstablecer Home Block"
+  Set_Home_Block_Lore:
+    - ""
+    - "Establecer el home block"
+    - "de tu ciudad"
+  Set_Spawn_Msg: "&eSe ha establecido el town spawn en tu posicion."
+  Set_Spawn: "&b&lEstablecer Town Spawn"
+  Set_Spawn_Lore:
+    - ""
+    - "Establecer la ubicacion"
+    - "del comando /t spawn"
+    - ""
+    - "&cDebes estar en el Home Block."
+  Set_Name: "&6&lEstablecer nombre de la ciudad"
+  Set_Name_Lore:
+    - ""
+    - "Cambiar el nombre"
+    - "de tu ciudad"
+  Set_Board: "&2&lEstablecer el board de la ciudad"
+  Set_Board_Lore:
+    - ""
+    - "Establecer el board"
+    - "de tu ciudad"
+Extra_Info_Menu:
+  Claiming: "&6&lInformacion de claims"
+  Claiming_Lore:
+    - ""
+    - "&a/t claim &7- Reclama un chunk para tu ciudad"
+    - ""
+    - "Necesitas dinero en el banco de tu"
+    - "ciudad para usar este comando."
+    - ""
+    - "Necesitas esta en el chunk que quieres"
+    - "reclamar junto a tierras ya reclamadas."
+    - "Usa &aF3+G &7para ver los chunks"
+    - ""
+    - "Puedes usar &a/towny map &7para ver info"
+    - "de las tierras cercanas"
+  Commands: "&2&lExtra Commands"
+  Commands_Lore:
+    - ""
+    - "&a/t outlaw &7- convertir a un jugador en un forajido"
+    - "&a/t buy &7- informacion de compra de chunks adicionales"
+    - "&a/t online &7- listar miembros de la ciudad conectados"
+    - "&a/t say &7- enviar un mensaje de ciudad"
+
+
+
+
+
+Plot_Menu:
+  Main_Menu_Title: "&2Menu de Parcelas"
+  Toggle_Settings_Menu_Button: "&3&lMenu de opciones"
+  Toggle_Settings_Menu_Button_Lore:
+    - ""
+    - "Activar y desactivar"
+    - "configuraciones de parcelas"
+  Permissions_Menu_Button: "&c&lMenu de permisos"
+  Permissions_Menu_Button_Lore:
+    - ""
+    - "Ajustar los permisos de parcelas"
+    - "para amigos, naciones, aliados"
+    - "y forasteros"
+  Plot_Admin_Menu_Button: "&5&lMenu de administrador"
+  Plot_Admin_Menu_Button_Lore:
+    - ""
+    - "Opiones avanzadas de parcelas"
+    - "y configuraciones"
+  Friend_Menu_Button: "&aMenu de amigos"
+  Friend_Menu_Button_Lore:
+    - ""
+    - "Menu de manejo de amigos"
+Friend_Menu:
+  Menu_Title: "&2Menu de amigos"
+  Remove: "&cHas removido a {player} de tu lista de amigos"
+  Add: "&3Has agregado &b{player} &3a tu lista de amigos"
+Plot_Toggle_Menu:
+  Menu_Title: "&2&lMenu de opciones"
+  Info:
+    - "Ajustar configuraciones"
+    - "activables de tu parcela"
+  Toggle_Off: "&eClick para &cDesactivar"
+  Toggle_On: "&eClick para &aActivar"
+  Fire: "&6&lAjustar propagación del fuego"
+  Mobs: "&a&lAjustar spawn de mobs"
+  Explode: "&c&lAjustar explosiones"
+  PVP: "&4&lAjustar PVP"
+Plot_Player_Permission_Menu:
+  Menu_Title: "&2&lMenu de permisos"
+  Info:
+    - ""
+    - "Establecer permisos de"
+    - "diferentes grupos en tu"
+    - "parcela"
+  True_Msg: "&averdadero"
+  False_Msg: "&cfalso"
+  Change: "&eClick para cambiar"
+  Reset: "&c&lRestablecer todos los campos"
+  Reset_Lore:
+    - ""
+    - "Desactivar todos los permisos"
+    - "de todos los grupos"
+  On_Msg: "&a&lActivar todos los campos"
+  On_Msg_Lore:
+    - ""
+    - "Activar todos los permisos"
+    - "de todos los grupos"
+  Build: "&3&lContruir"
+  Build_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede construir en tu parcela"
+  Break: "&c&lRomper"
+  Break_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede romper bloques en tu parcela"
+  Use: "&6&lUsar items"
+  Use_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede usar items en tu parcela"
+    - ""
+    - "Ej. Agarrar agua con un balde"
+  Switch: "&2&lSwitch"
+  Switch_Lore:
+    - ""
+    - "Quien tenga este permiso"
+    - "puede usar switchs en tu parcela"
+    - ""
+    - "Ej. Usar una palanca o una puerta"
+  Build_Res: "&6&lResidentes/Amigos - Permiso para construir"
+  Build_Res2: "Pueden los residentes/amigos construir: "
+  Build_Nation: "&6&lNacion/Ciudad - Permiso para construir"
+  Build_Nation2: "Pueden los miembros de la nacion/ciudad construir: "
+  Build_Ally: "&6&lAlianzas - Permiso para consstruir"
+  Build_Ally2: "Pueden los aliados de la nacion construir: "
+  Build_Outsider: "&6&lForasteros - Permiso para construir"
+  Build_Outsider2: "Pueden los forasteros construir: "
+  Break_Res: "&6&Residentes/Amigos - Permiso para romper"
+  Break_Res2: "Pueden los residentes/amigos romper bloques: "
+  Break_Nation: "&6&lNacion/Ciudad - Permiso para romper"
+  Break_Nation2: "Pueden los miembros de la nacion/ciudad romper bloques: "
+  Break_Ally: "&6&lAlianzas - Permiso para romper"
+  Break_Ally2: "Pueden los aliados de la nacion romper bloques: "
+  Break_Outsider: "&6&lForasteros - Permiso para romper"
+  Break_Outsider2: "Pueden los forasteros romper bloques: "
+  Use_Res: "&6&lResidentes/Amigos - Permiso para usar items"
+  Use_Res2: "Pueden los residentes/amigos usar items: "
+  Use_Nation: "&6&lNacion/Ciudad - Permiso para usar items"
+  Use_Nation2: "Pueden los miembros de la nacion/ciudad usar items: "
+  Use_Ally: "&6&lAlianzas - Permiso para usar items"
+  Use_Ally2: "Pueden los aliados de la nacion usar items: "
+  Use_Outsider: "&6&lForasteros - Permiso para usar items"
+  Use_Outsider2: "Pueden los forasteros usar items: "
+  Switch_Res: "&6&lResidentes/Amigos - Permiso Switch"
+  Switch_Res2: "Pueden los residentes/amigos usar switch: "
+  Switch_Nation: "&6&lNacion/Ciudad - Permiso Switch"
+  Switch_Nation2: "Pueden los miembros de la nacion/ciudad usar switch: "
+  Switch_Ally: "&6&lAlianzas - Permiso Switch"
+  Switch_Ally2: "Pueden los aliados de la nacion usar switch: "
+  Switch_Outsider: "&6&lForasteros - Permiso Switch"
+  Switch_Outsider2: "Pueden los forasteros usar switch: "
+Plot_Admin_Menu:
+  Menu_Title: "&2Menu admin de parcelas"
+  For_Sale: "&a&lPoner a la venta"
+  For_Sale_Lore:
+    - ""
+    - "Pon la parcela actual en"
+    - "venta con un precio especifico"
+  Not_For_Sale: "&c&lDejar de vender"
+  Not_For_Sale_Lore:
+    - ""
+    - "Dejar de vender una"
+    - "parcela"
+  Set_Type: "&3&lEstablecer tipo de parcela"
+  Set_Type_Lore:
+    - ""
+    - "Determina que tipo de"
+    - "parcela es"
+  Evict: "&4&lDesalojar al dueño de la parcela"
+  Evict_Lore:
+    - ""
+    - "Remueve al dueño de"
+    - "esta parcela"
+
+
+
+
+Town_Conversables:
+  Board:
+    Prompt: "&3Escribe el nuevo mensaje de ciudad: "
+    Response: "&3Se ha actualizado el board de tu ciudad"
+  Deposit:
+    Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escribe 'cancel' para cancelar)"
+    Invalid: "&cIngresa solo números enteros y asegúrate de tener suficiente dinero para depositar."
+    Response: "&3Has depositado &b{money_symbol}{input} &3en la cuenta de la ciudad."
+  Mayor:
+    Prompt: "&c¿Estas seguro de hacer a &b{player} &cMayor (Co-Dueño)? &3(Escribe &bconfirm &3o &4deny&3)"
+    Response: "&3¡Se ha otorgado el rol Mayor a &b{player} &3!"
+  Kick:
+    Prompt: "&c¿Estas seguro de expulsar a &b{player} &cde tu ciudad? Escribiendo &bconfirm &co &4cancel &cahora:"
+    Response: "&3SSe ha expulsado a &b{player} &3de tu ciudad."
+  Name:
+    Prompt: "&3Escribe el nuevo nombre de tu ciudad: (menos de {max_length} caracteres) &bNombre actual: {town} &cEscrube 'cancel' para salir."
+    Invalid: "&cEl nombre debe ser unico y mejor a {max_length} caracteres."
+    Response: "&3El nombre de tu ciudad ahora es {input}"
+    Return: "&cNo tienes suficiente dinero en el banco para cambiar el nombre."
+  Rank:
+    Remove: "remove"
+    Prompt: "&3Escribe el nuevo rango de &b{player} &3: &b(Opciones: {ranks}) &3Escribe &ccancel &3para cancelar o&cremove &3para eliminar su rango."
+    Invalid: "&cEste jugador ya tiene este rango o el rango no existe. (Opciones: {ranks}) &cEscribe &c&lcancel &cpara cancelar o remove para eliminar su rango."
+    Response: "&aEl rango de {player} ahora es {input}"
+    Removed_All: "&cRemover todos los rangos del residente {player}"
+  Tax:
+    Prompt: "&3Escriba la cantidad que le gustaría establecer como impuesto para su ciudad: &c(Escribe cancel para cancelar)"
+    Invalid_Percent: "&cIngrese solo un número entero entre 0 y {max_percent} para el porcentaje de impuestos."
+    Invalid_Amount: "&cIngrese solo un número entero entre 0 y {max_amount} para el costo de impuestos."
+    Response_Percent: "&3El porcentaje de impuestos ahora es &b{input}"
+    Response_Amount: "&3El costo de los puestos ahora es &b{money_symbol}{input}"
+  Title:
+    Prompt: "&3Escriba el título que le gustaría dar a &b{player}&3: (menos de 10 caracteres) &cEscribe cancel para salir."
+    Response: "&3Se ha asignado el titulo &b{input} &3a &b{player}"
+  Withdraw:
+    Prompt: "&3Escriba la cantidad que le gustaría depositar en su ciudad: &c(Escribe cancel para cancelar)"
+    Invalid: "&cIngrese solo números enteros y asegúrese de tener suficiente dinero para depositar."
+    Response: "&3Se retiró &b{money_symbol}{input} &3de la cuenta de tu ciudad."
+Plot_Conversables:
+  Evict:
+    Prompt: "&c¿Te gustaría desalojar al residente de esta trama? Escribe &aconfirm &co cancel:"
+    Invalid: "&cLa parcela no tiene residentes."
+    Response: "&cEl residente ha sido desalojado."
+  For_Sale:
+    Prompt: "&3Escriba el precio al que le gustaría poner en venta esta parcela: &c(Escribe cancel para salir)"
+    Invalid: "&cIngrese solo números enteros y es menor que el precio máximo de la parcela: {max_price}"
+    Response: "&3Precio de la parcela establecido en &b{money_symbol}{input}."
+  Not_For_Sale:
+    Prompt: "&3¿Le gustaría dejar esta parcela a la venta? Escribe &aconfirm &3o &ccancel&6:"
+    Response: "&cLa parcela ya no está a la venta."
+  Set_Type:
+    Prompt: "&3¿De qué tipo le gustaría establecer esta parcela? &b(Opciones: {options}) Escribe 'cancel' para cancelar"
+    Invalid: "&cIngrese un tipo de parcela válida. (Tipos validos: {options}) o escribe 'cancel' para cancelar"
+    Response: "&3El tipo de parcela ahora es: &b{input}"
+
+
+
+
+Error:
+  No_Permission: "&cNo puedes hacer eso."
+  No_Town: "&cNo tienes una ciudad."
+  War_Time: "&cYou may not do this action during war time."
+  Must_Be_In_Own_Plot: "&cSolo puedes usar esto en tus parcelas."
+  Must_Be_In_Town: "&cDebes estar en tu ciudad para hacer esto."
+  Must_Be_In_Bank: "&cDebes estar en el banco de tu ciudad para hacer esto."
+  Toggle_PVP_Outsiders: "&cNo puedes cambiar el PVP mientras hayan forasteros en tu ciudad."
+  Toggle_PVP_Cooldown: "&cNo puedes cambiar el pvp hasta que pase el cooldown."
+  Cannot_Select_Self: "&cNo puedes seleccionarte a ti mismo."
+  Cannot_Set_Homeblock: "&cNo puedes establecer el Home block acá."
+  Cannot_Set_Spawn: "&cNo puedes establecer el spawn de la ciudad acá."
+  Cannot_Change_Name: "&cDebes ser el dueño de la ciudad para hacer esto."
+  Cannot_Change_Board: "&cDebes ser el dueño de la ciudad para hacer esto."
+
+
+
+# DO NOT TOUCH VERSION
+Version: 2
