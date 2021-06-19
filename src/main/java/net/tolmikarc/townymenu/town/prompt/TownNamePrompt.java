@@ -3,7 +3,6 @@ package net.tolmikarc.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.exceptions.AlreadyRegisteredException;
-import com.palmergames.bukkit.towny.exceptions.EconomyException;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Town;
 import net.tolmikarc.townymenu.settings.Localization;
@@ -57,13 +56,13 @@ public class TownNamePrompt extends SimplePrompt {
 		try {
 			if (town.getAccount().canPayFromHoldings(TownySettings.getTownRenameCost())) {
 				TownyAPI.getInstance().getDataSource().renameTown(town, input);
-				town.getAccount().pay(TownySettings.getTownRenameCost(), "Renaming town.");
+				town.getAccount().withdraw(TownySettings.getTownRenameCost(), "Renaming town.");
 
 				tell(Localization.TownConversables.Name.RESPONSE.replace("{input}", input));
 				TownyAPI.getInstance().getDataSource().saveTown(town);
 			} else
 				tell(Localization.TownConversables.Name.RETURN);
-		} catch (EconomyException | NotRegisteredException | AlreadyRegisteredException e) {
+		} catch (NotRegisteredException | AlreadyRegisteredException e) {
 			e.printStackTrace();
 		}
 

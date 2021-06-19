@@ -16,8 +16,7 @@
         <jar jarfile="${serverPath}\plugins\${ant.project.name}.jar" basedir="./target/classes/" includes="**/*">
 
 
-            <zipgroupfileset dir="${user.home}/.m2/repository/org/mineacademy/Foundation/${foundation.version}/"
-                             includes="**/*${foundation.version}.jar"/>
+            <zipgroupfileset dir="${user.home}/.m2/repository/com/github/kangarko/Foundation/${foundation.version}/" includes="**/*${foundation.version}.jar" />
 
             <!-- <fileset dir="../Foundation/target/classes" /> -->
         </jar>

@@ -9,6 +9,8 @@
 Prefix: "&b&lTM &7// "
 # The Language this plugin's messages will be run in. Check the localization folder for options
 Locale: en
+# Whether or not economy is enabled or disabled for towny menu corresponding with it being enabled or disabled for Towny
+Economy: true
 # The symbol used in messages for money
 Money_Symbol: "$"
 # How many milliseconds should an action take before the lag is logged to console

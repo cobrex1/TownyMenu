@@ -1,7 +1,7 @@
 package net.tolmikarc.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.exceptions.EconomyException;
+import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
@@ -45,14 +45,14 @@ public class TownDepositPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.deposit") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		try {
-			HookManager.withdraw(getPlayer(context), Integer.parseInt(input));
-			town.getAccount().setBalance(town.getAccount().getHoldingBalance() + Integer.parseInt(input), "Deposit money from menu.");
-			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell(Localization.TownConversables.Deposit.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
-		} catch (EconomyException e) {
-			e.printStackTrace();
+		HookManager.withdraw(getPlayer(context), Integer.parseInt(input));
+		Resident res = TownyAPI.getInstance().getResident(getPlayer(context).getUniqueId());
+		if (res == null) {
+			return null;
 		}
+		res.getAccount().payTo(Integer.parseInt(input), town, "Deposit money from menu.");
+		TownyAPI.getInstance().getDataSource().saveTown(town);
+		tell(Localization.TownConversables.Deposit.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 
 		return null;
 	}

@@ -26,12 +26,10 @@ public class PlotMenuCommand extends SimpleCommand {
 			return;
 		}
 
-		TownBlock townBlock;
-		Town town;
-		Resident resident = TownyAPI.getInstance().getDataSource().getResident(getPlayer().getName());
+		Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
 		if (TownyAPI.getInstance().getTownBlock(getPlayer().getLocation()) != null) {
-			townBlock = TownyAPI.getInstance().getTownBlock(getPlayer().getLocation());
-			town = townBlock.getTown();
+			TownBlock townBlock = TownyAPI.getInstance().getTownBlock(getPlayer().getLocation());
+			Town town = townBlock.getTown();
 			if (town.getMayor().equals(resident) || getPlayer().hasPermission("townymenu.admin.plot"))
 				new PlotMenu(townBlock).displayTo(getPlayer());
 			else if (townBlock.hasResident() && townBlock.isOwner(resident)) {

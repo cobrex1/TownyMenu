@@ -83,9 +83,25 @@ public class TownMenu extends Menu {
 		residentListButton = new ButtonMenu(new ResidentListMenu(residentList), residentListItem);
 		townyPermButton = new ButtonMenu(new TownyPermMenu(town), permissionsMenuItem);
 
-		if (TownySettings.isBankActionLimitedToBankPlots()) {
-			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
-				if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getType().equals(TownBlockType.BANK))
+		if (Settings.ECONOMY_ENABLED) {
+			if (TownySettings.isBankActionLimitedToBankPlots()) {
+				if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
+					if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getType().equals(TownBlockType.BANK))
+						economyButton = new Button() {
+							@Override
+							public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+								Common.tell(player, Localization.Error.MUST_BE_IN_BANK);
+								player.closeInventory();
+							}
+
+							@Override
+							public ItemStack getItem() {
+								return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
+							}
+						};
+					else
+						economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
+				else
 					economyButton = new Button() {
 						@Override
 						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
@@ -98,24 +114,24 @@ public class TownMenu extends Menu {
 							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 						}
 					};
-				else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
-			else
-				economyButton = new Button() {
-					@Override
-					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-						Common.tell(player, Localization.Error.MUST_BE_IN_BANK);
-						player.closeInventory();
-					}
+			} else if (TownySettings.isBankActionDisallowedOutsideTown()) {
+				if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
+					if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getTown().equals(town)) {
+						economyButton = new Button() {
+							@Override
+							public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+								Common.tell(player, Localization.Error.MUST_BE_IN_TOWN);
+								player.closeInventory();
+							}
 
-					@Override
-					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
-					}
-				};
-		} else if (TownySettings.isBankActionDisallowedOutsideTown()) {
-			if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null)
-				if (!TownyAPI.getInstance().getTownBlock(player.getLocation()).getTown().equals(town)) {
+							@Override
+							public ItemStack getItem() {
+								return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
+							}
+						};
+					} else
+						economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
+				else {
 					economyButton = new Button() {
 						@Override
 						public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
@@ -128,25 +144,22 @@ public class TownMenu extends Menu {
 							return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
 						}
 					};
-				} else
-					economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
-			else {
-				economyButton = new Button() {
-					@Override
-					public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
-						Common.tell(player, Localization.Error.MUST_BE_IN_TOWN);
-						player.closeInventory();
-					}
+				}
 
-					@Override
-					public ItemStack getItem() {
-						return ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.ECONOMY_MENU_BUTTON, Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE).build().make();
-					}
-				};
-			}
+			} else
+				economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
+		} else {
+			economyButton = new Button() {
+				@Override
+				public void onClickedInMenu(Player player, Menu menu, ClickType clickType) {
+				}
 
-		} else
-			economyButton = new ButtonMenu(new EconomyManagementMenu(town), economyMenuItem);
+				@Override
+				public ItemStack getItem() {
+					return null;
+				}
+			};
+		}
 
 		generalSettingsButton = new ButtonMenu(new GeneralSettingsMenu(town), settingsMenuItem);
 
@@ -173,9 +186,9 @@ public class TownMenu extends Menu {
 			return townyPermButton.getItem();
 
 		if (slot == 9 * 2 + 2)
-			return economyButton.getItem();
-		if (slot == 9 * 2 + 4)
 			return generalSettingsButton.getItem();
+		if (slot == 9 * 2 + 4 && Settings.ECONOMY_ENABLED)
+			return economyButton.getItem();
 		if (slot == 9 * 2 + 6)
 			return invitePlayerButton.getItem();
 

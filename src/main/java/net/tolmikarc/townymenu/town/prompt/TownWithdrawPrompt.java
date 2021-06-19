@@ -1,7 +1,7 @@
 package net.tolmikarc.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.exceptions.EconomyException;
+import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import net.tolmikarc.townymenu.settings.Localization;
 import net.tolmikarc.townymenu.settings.Settings;
@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.conversation.SimplePrompt;
-import org.mineacademy.fo.model.HookManager;
 
 public class TownWithdrawPrompt extends SimplePrompt {
 
@@ -31,12 +30,7 @@ public class TownWithdrawPrompt extends SimplePrompt {
 
 	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
-		try {
-			return ((Valid.isInteger(input) && (town.getAccount().canPayFromHoldings(Integer.parseInt(input)))) || input.equalsIgnoreCase(Localization.CANCEL));
-		} catch (EconomyException e) {
-			e.printStackTrace();
-		}
-		return false;
+		return ((Valid.isInteger(input) && (town.getAccount().canPayFromHoldings(Integer.parseInt(input)))) || input.equalsIgnoreCase(Localization.CANCEL));
 	}
 
 	@Override
@@ -50,14 +44,10 @@ public class TownWithdrawPrompt extends SimplePrompt {
 		if (input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		try {
-			HookManager.deposit(getPlayer(context), Integer.parseInt(input));
-			town.getAccount().pay(Integer.parseInt(input), "Withdrawn from menu.");
-			TownyAPI.getInstance().getDataSource().saveTown(town);
-			tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
-		} catch (EconomyException e) {
-			e.printStackTrace();
-		}
+		Resident res = TownyAPI.getInstance().getResident(getPlayer(context).getUniqueId());
+		town.getAccount().payTo(Integer.parseInt(input), res,"Withdrawn from menu.");
+		TownyAPI.getInstance().getDataSource().saveTown(town);
+		tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 
 		return null;
 	}
