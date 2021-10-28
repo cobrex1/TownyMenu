@@ -61,6 +61,12 @@
             <artifactId>Foundation</artifactId>
             <version>${foundation.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.TownyAdvanced</groupId>
+            <artifactId>Towny</artifactId>
+            <version>0.97.2.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
