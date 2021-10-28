@@ -2,14 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TownyMenu" />
         <module name="TownyMenuSpigot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="TownyMenu" target="11" />
       <module name="TownyMenuSpigot" target="11" />
     </bytecodeTargetLevel>
   </component>
