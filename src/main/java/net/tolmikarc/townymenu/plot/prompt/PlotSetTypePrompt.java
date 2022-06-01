@@ -3,7 +3,7 @@ package net.tolmikarc.townymenu.plot.prompt;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.object.TownBlock;
-import com.palmergames.bukkit.towny.object.TownBlockType;
+import com.palmergames.bukkit.towny.object.TownBlockTypeHandler;
 import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.settings.Localization;
 import org.bukkit.Bukkit;
@@ -52,7 +52,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.plot.set." + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
-		townBlock.setType(TownBlockType.valueOf(input.toUpperCase()));
+		townBlock.setType(TownBlockTypeHandler.getType(input));
 		townBlock.setChanged(true);
 		TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
 		Bukkit.getServer().getPluginManager().callEvent(event);

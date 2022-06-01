@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mineacademy.plugin:SimpleClans:2.16.2-SNAPSHOT-283">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/SimpleClans/2.16.2-SNAPSHOT-283/SimpleClans-2.16.2-SNAPSHOT-283.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/SimpleClans/2.16.2-SNAPSHOT-283/SimpleClans-2.16.2-SNAPSHOT-283-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/SimpleClans/2.16.2-SNAPSHOT-283/SimpleClans-2.16.2-SNAPSHOT-283-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

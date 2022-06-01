@@ -47,12 +47,20 @@ public class PlotMenu extends Menu {
 
 		Set<Resident> onlineResidents = new HashSet<>();
 		for (Player player : Bukkit.getOnlinePlayers()) {
+			Resident res = TownyAPI.getInstance().getResident((player.getName()));
+			if (res != null) onlineResidents.add(TownyAPI.getInstance().getResident(player.getName()));
+		}
+
+		/*
+		for (Player player : Bukkit.getOnlinePlayers()) {
 			try {
-				onlineResidents.add(TownyAPI.getInstance().getDataSource().getResident(player.getName()));
+				onlineResidents.add(TownyAPI.getInstance().getResident(player.getName()));
 			} catch (NotRegisteredException e) {
 				e.printStackTrace();
 			}
 		}
+
+		 */
 
 		toggleSettingsMenu = new ButtonMenu(new PlotToggleSettingsMenu(townBlock), CompMaterial.LEVER, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE);
 
@@ -102,10 +110,14 @@ public class PlotMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			try {
-				lore.add(item.getFriends().contains(TownyAPI.getInstance().getDataSource().getResident(getViewer().getName())) ? ChatColor.RED + "Remove Friend" : ChatColor.YELLOW + "Add Friend");
+			for (Player players : Bukkit.getOnlinePlayers()) {
+				Resident res = TownyAPI.getInstance().getResident(players.getName());
+			if (res !=null) lore.add(item.getFriends().contains(TownyAPI.getInstance().getResident(getViewer().getName())) ? ChatColor.RED + "Remove Friend" : ChatColor.YELLOW + "Add Friend");
+			/*
 			} catch (NotRegisteredException e) {
 				e.printStackTrace();
+
+			 */
 			}
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
@@ -116,7 +128,7 @@ public class PlotMenu extends Menu {
 		@Override
 		protected void onPageClick(Player player, Resident item, ClickType click) {
 
-			Resident playerResident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
+			Resident playerResident = TownyAPI.getInstance().getResident(player.getName());
 
 			if (item.equals(playerResident))
 				return;
@@ -153,6 +165,8 @@ public class PlotMenu extends Menu {
 			fireToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+					town.getPermissions().change(TownyPermissionChange.Action.SINGLE_PERM, !town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH), TownyPermission.PermLevel.OUTSIDER, TownyPermission.ActionType.SWITCH);
+					restartMenu();
 					townBlock.getPermissions().fire = !townBlock.getPermissions().fire;
 					townBlock.setChanged(true);
 					TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);

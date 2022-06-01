@@ -59,13 +59,20 @@ public class TownMenu extends Menu {
 		List<Resident> allOnlineResidents = new ArrayList<>();
 		LagCatcher.start("load-residents-online");
 		for (Player players : Bukkit.getOnlinePlayers()) {
+			Resident res = TownyAPI.getInstance().getResident(player.getName());
+			if (res != null) allOnlineResidents.add(res);
+		}
+
+			/*
 			try {
-				allOnlineResidents.add(TownyAPI.getInstance().getDataSource().getResident(players.getName()));
+				allOnlineResidents.add(TownyAPI.getInstance().getResident(players.getName()));
 			} catch (NotRegisteredException e) {
 				e.printStackTrace();
 			}
+
 		}
 		LagCatcher.end("load-residents-online");
+	*/
 
 		setSize(9 * 4);
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
@@ -273,7 +280,7 @@ public class TownMenu extends Menu {
 					if (TownySettings.getOutsidersPreventPVPToggle()) {
 						Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
 						for (Player onlinePlayer : onlinePlayers) {
-							Resident onlinePlayerAsRes = TownyAPI.getInstance().getDataSource().getResident(onlinePlayer.getName());
+							Resident onlinePlayerAsRes = TownyAPI.getInstance().getResident(onlinePlayer.getName());
 							if (onlinePlayerAsRes.hasTown()) {
 								if (!onlinePlayerAsRes.getTown().equals(town))
 									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)

@@ -1,8 +1,6 @@
 package net.tolmikarc.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.exceptions.AlreadyRegisteredException;
-import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.permissions.TownyPerms;
 import lombok.SneakyThrows;
@@ -50,21 +48,13 @@ public class TownRankPrompt extends SimplePrompt {
 		} else if (input.toLowerCase().equals(Localization.TownConversables.Rank.REMOVE)) {
 			for (String rank : TownyPerms.getTownRanks()) {
 				if (resident.hasTownRank(rank)) {
-					try {
-						resident.removeTownRank(rank);
-					} catch (NotRegisteredException e) {
-						e.printStackTrace();
-					}
+					resident.removeTownRank(rank);
 				}
 			}
 			tell(Localization.TownConversables.Rank.REMOVED_ALL.replace("{player}", resident.getName()));
 		} else {
-			try {
-				resident.addTownRank(input);
-				tell(Localization.TownConversables.Rank.RESPONSE.replace("{player}", resident.getName()).replace("{input}", input));
-			} catch (AlreadyRegisteredException e) {
-				e.printStackTrace();
-			}
+			resident.addTownRank(input);
+			tell(Localization.TownConversables.Rank.RESPONSE.replace("{player}", resident.getName()).replace("{input}", input));
 		}
 		TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
 		TownyAPI.getInstance().getDataSource().saveResident(resident);

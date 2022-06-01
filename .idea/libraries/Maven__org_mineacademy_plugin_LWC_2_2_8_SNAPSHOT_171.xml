@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mineacademy.plugin:LWC:2.2.8-SNAPSHOT-171">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/LWC/2.2.8-SNAPSHOT-171/LWC-2.2.8-SNAPSHOT-171.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/LWC/2.2.8-SNAPSHOT-171/LWC-2.2.8-SNAPSHOT-171-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/LWC/2.2.8-SNAPSHOT-171/LWC-2.2.8-SNAPSHOT-171-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

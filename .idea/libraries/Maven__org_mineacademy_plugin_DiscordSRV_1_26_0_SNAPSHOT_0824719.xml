@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mineacademy.plugin:DiscordSRV:1.26.0-SNAPSHOT-0824719">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/DiscordSRV/1.26.0-SNAPSHOT-0824719/DiscordSRV-1.26.0-SNAPSHOT-0824719.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/DiscordSRV/1.26.0-SNAPSHOT-0824719/DiscordSRV-1.26.0-SNAPSHOT-0824719-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/DiscordSRV/1.26.0-SNAPSHOT-0824719/DiscordSRV-1.26.0-SNAPSHOT-0824719-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

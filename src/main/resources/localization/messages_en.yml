@@ -327,7 +327,7 @@ Plot_Player_Permission_Menu:
   Build_Nation: "&6&lBuild Town/Nation Perm"
   Build_Nation2: "Can Town/Nation Members Build: "
   Build_Ally: "&6&lBuild Ally Perm"
-  Build_Ally2: "Can Naton Allies Build: "
+  Build_Ally2: "Can Nation Allies Build: "
   Build_Outsider: "&6&lBuild Outsider Perm"
   Build_Outsider2: "Can Outsiders Build: "
   Break_Res: "&6&lBreak Resident/Friend Perm"
