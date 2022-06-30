@@ -21,8 +21,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 		Common.log("Enabling Towny Menu by Tolmikarc");
 		Common.log("for TownyAdvanced");
 
-
-		Common.ADD_TELL_PREFIX = true;
+		Common.setTellPrefix("");
 
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
@@ -31,7 +30,8 @@ public class TownyMenuPlugin extends SimplePlugin {
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 	}
 
-	@Override
+	//@Override
+
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
 		return Arrays.asList(Settings.class, Localization.class);
 	}

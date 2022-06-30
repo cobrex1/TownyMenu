@@ -12,7 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TownyMenu" target="17" />
+      <module name="TownyMenu" target="11" />
       <module name="TownyMenuSpigot" target="11" />
     </bytecodeTargetLevel>
   </component>
