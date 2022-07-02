@@ -4,4 +4,4 @@ main: ${main.class}
 api-version: 1.13
 author: Tolmikarc. Forked by cobrex
 libraries:
-  - org.openjdk.nashorn:nashorn-core:15.3
+  - org.openjdk.nashorn:nashorn-core:15.4

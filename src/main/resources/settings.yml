@@ -2,12 +2,13 @@
 # Welcome to the main settings file.
 #
 # For help, visit https://discord.gg/MMgtDwc
-# Report all bugs and issues at https://github.com/Tolmikarc/TownyMenu
+# Report all bugs and issues at https://github.com/cobrex1/TownyMenu
 #
 
 # The prefix for messages from the plugin
 Prefix: "&b&lTM &7// "
-# The Language this plugin's messages will be run in. Check the localization folder for options
+# The Language this plugin's messages will be run in. Check the localization folder
+# Options currently: en, es
 Locale: en
 # Whether or not economy is enabled or disabled for towny menu corresponding with it being enabled or disabled for Towny
 Economy: true
