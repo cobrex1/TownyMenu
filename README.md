@@ -1,7 +1,7 @@
 # Author
- This was originally written by bennycio. 
- I have forked it and updated code and dependancies
+ This was originally written by bennycio
  https://github.com/bennycio/TownyMenu
+ I have forked it and updated code and dependancies
  
 # Towny Menu
  Spigot Plugin for Towny designed to simplify the ownership and management of Towns and Plots.
