@@ -1,5 +1,6 @@
 # Author
- This was originally written by bennycio. I have forked it and uipdated code and dependancies
+ This was originally written by bennycio. 
+ I have forked it and updated code and dependancies
  https://github.com/bennycio/TownyMenu
  
 # Towny Menu
