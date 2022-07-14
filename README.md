@@ -1,8 +1,12 @@
-# TownyMenu
+# Author
+ This was originally written by bennycio. I have forked it and uipdated code and dependancies
+ https://github.com/bennycio/TownyMenu
+ 
+# Towny Menu
  Spigot Plugin for Towny designed to simplify the ownership and management of Towns and Plots.
 
  
- # Commands
+# Commands
  /tm | /townmenu - open the town management menu  
  /plm | /plotmenu - open the plot management menu  
 
@@ -13,4 +17,4 @@ townymenu.town.use - Permission to use the town management menu
 townymenu.plot.admin - permission to manage any plot in any town  
 
 # Support
-https://discord.gg/MMgtDwc - Support discord
+https://discord.gg/Sgc6hy9CCS - Support discord
