@@ -235,8 +235,6 @@ Extra_Info_Menu:
 
 
 
-
-
 Plot_Menu:
   Main_Menu_Title: "&2Plot Menu"
   Toggle_Settings_Menu_Button: "&3&lToggle Settings Menu"
@@ -311,7 +309,7 @@ Plot_Player_Permission_Menu:
     - ""
     - "Who has permission"
     - "to use items in"
-    - "your town."
+    - "your plot."
     - ""
     - "E.g. take water from cauldron"
   Switch: "&2&lSwitch"
@@ -319,7 +317,7 @@ Plot_Player_Permission_Menu:
     - ""
     - "Who has permission"
     - "to switch in"
-    - "your town."
+    - "your plot."
     - ""
     - "E.g. use a lever or door"
   Build_Res: "&6&lBuild Resident/Friend Perm"
@@ -379,8 +377,6 @@ Plot_Admin_Menu:
     - "of this plot"
 
 
-
-
 Town_Conversables:
   Board:
     Prompt: "&3Type in a message for your town's board: "
@@ -416,8 +412,8 @@ Town_Conversables:
     Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
     Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Withdraw:
-    Prompt: "&3Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)"
-    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to deposit."
+    Prompt: "&3Type in the amount you would like to withdraw from your town: &c(Type cancel to exit prompt)"
+    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
     Response: "&3Withdrew &b{money_symbol}{input} &3from your town account."
 Plot_Conversables:
   Evict:
@@ -436,9 +432,6 @@ Plot_Conversables:
     Invalid: "&cPlease enter a valid plot type. (Valid types: {options}) or type 'cancel' to cancel"
     Response: "&3Plot type set to: &b{input}"
 
-
-
-
 Error:
   No_Permission: "&cYou do not have the permission to use this command."
   No_Town: "&cYou do not have a town."
@@ -453,8 +446,6 @@ Error:
   Cannot_Set_Spawn: "&cCannot set town spawn here."
   Cannot_Change_Name: "&cMust be mayor to change town name."
   Cannot_Change_Board: "&cMust be mayor to change town board."
-
-
 
 # DO NOT TOUCH VERSION
 Version: 2

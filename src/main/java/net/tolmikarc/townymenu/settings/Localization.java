@@ -6,6 +6,7 @@ import java.util.Collection;
 
 
 public class Localization extends SimpleLocalization {
+
 	@Override
 	protected int getConfigVersion() {
 		return 2;
@@ -478,7 +479,7 @@ public class Localization extends SimpleLocalization {
 				BREAK_OUTSIDER = getString("Break_Outsider");
 				BREAK_OUTSIDER2 = getString("Break_Outsider2");
 				USE_RES = getString("Use_Res");
-				USE_RES2 = getString("Use_Res");
+				USE_RES2 = getString("Use_Res2");
 				USE_NATION = getString("Use_Nation");
 				USE_NATION2 = getString("Use_Nation2");
 				USE_ALLY = getString("Use_Ally");

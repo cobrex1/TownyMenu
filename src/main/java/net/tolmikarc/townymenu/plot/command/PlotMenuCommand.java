@@ -7,9 +7,11 @@ import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
 import net.tolmikarc.townymenu.plot.PlotMenu;
 import net.tolmikarc.townymenu.settings.Localization;
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.SimpleCommand;
 
-public class PlotMenuCommand extends SimpleCommand {
+@AutoRegister
+public final class PlotMenuCommand extends SimpleCommand {
 	public PlotMenuCommand() {
 		super("plotmenu|plm");
 		setPermission(null);

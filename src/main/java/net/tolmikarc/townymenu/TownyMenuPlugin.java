@@ -18,7 +18,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 	@Override
 	protected void onPluginStart() {
 
-		Common.log("Enabling Towny Menu by Tolmikarc");
+		Common.log("Enabling Towny Menu written by Tolmikarc, forked by Cobrex");
 		Common.log("for TownyAdvanced");
 
 		Common.setTellPrefix("");
@@ -30,9 +30,10 @@ public class TownyMenuPlugin extends SimplePlugin {
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 	}
 
-	//@Override
+//	@Override
 
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
 		return Arrays.asList(Settings.class, Localization.class);
 	}
+
 }

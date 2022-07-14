@@ -1,19 +1,25 @@
 #
 # Welcome to the main settings file.
 #
-# For help, visit https://discord.gg/MMgtDwc
+# For help, visit https://discord.gg/Sgc6hy9CCS
 # Report all bugs and issues at https://github.com/cobrex1/TownyMenu
 #
 
 # The prefix for messages from the plugin
 Prefix: "&b&lTM &7// "
-# The Language this plugin's messages will be run in. Check the localization folder
-# Options currently: en, es
-Locale: en
+
+# The Language this plugin's messages will be run in.
+# The following translations are available: en, es, de only. More will follow!
+# Once chosen, please re-boot the server to generate the chosen language file.
+# It will then appear in the localization folder.
+Locale: "en"
+
 # Whether or not economy is enabled or disabled for towny menu corresponding with it being enabled or disabled for Towny
-Economy: true
+Economy: "true"
+
 # The symbol used in messages for money
 Money_Symbol: "$"
+
 # How many milliseconds should an action take before the lag is logged to console
 Log_Lag_Over_Milis: 100
 

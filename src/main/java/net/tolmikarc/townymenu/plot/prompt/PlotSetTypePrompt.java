@@ -52,6 +52,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.plot.set." + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
 			return null;
 		}
+
 		townBlock.setType(TownBlockTypeHandler.getType(input));
 		townBlock.setChanged(true);
 		TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
