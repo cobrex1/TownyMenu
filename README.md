@@ -5,8 +5,8 @@
  I have forked it and updated code and dependancies
  
 # Towny Menu
- Spigot Plugin for Towny designed to simplify the ownership and management of Towns and Plots.
-
+ Spigot Plugin for Towny designed to simplify the ownership and management of Towns and Plots.  
+ https://www.spigotmc.org/resources/towny-menu-update.103260/
  
 # Commands
  /tm | /townmenu - open the town management menu  
