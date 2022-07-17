@@ -1,4 +1,4 @@
-package net.tolmikarc.townymenu.settings;
+package me.cobrex.townymenu.settings;
 
 import org.mineacademy.fo.settings.SimpleLocalization;
 

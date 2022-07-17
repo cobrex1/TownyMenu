@@ -1,11 +1,11 @@
-package net.tolmikarc.townymenu.town.command;
+package me.cobrex.townymenu.town.command;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import lombok.SneakyThrows;
-import net.tolmikarc.townymenu.settings.Localization;
-import net.tolmikarc.townymenu.town.TownMenu;
+import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.town.TownMenu;
 import org.mineacademy.fo.command.SimpleCommand;
 
 public class TownMenuCommand extends SimpleCommand {

@@ -1,8 +1,8 @@
-package net.tolmikarc.townymenu.town.prompt;
+package me.cobrex.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Town;
-import net.tolmikarc.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;

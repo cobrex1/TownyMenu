@@ -1,10 +1,10 @@
-package net.tolmikarc.townymenu.town.prompt;
+package me.cobrex.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
-import net.tolmikarc.townymenu.settings.Localization;
-import net.tolmikarc.townymenu.settings.Settings;
+import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +45,6 @@ public class TownDepositPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.deposit") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		HookManager.withdraw(getPlayer(context), Integer.parseInt(input));
 		Resident res = TownyAPI.getInstance().getResident(getPlayer(context).getUniqueId());
 		if (res == null) {
 			return null;

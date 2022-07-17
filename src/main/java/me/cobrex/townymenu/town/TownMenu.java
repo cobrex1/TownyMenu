@@ -1,4 +1,4 @@
-package net.tolmikarc.townymenu.town;
+package me.cobrex.townymenu.town;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
@@ -7,10 +7,10 @@ import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.*;
 import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
 import lombok.SneakyThrows;
-import net.tolmikarc.townymenu.plot.PlotMenu;
-import net.tolmikarc.townymenu.settings.Localization;
-import net.tolmikarc.townymenu.settings.Settings;
-import net.tolmikarc.townymenu.town.prompt.*;
+import me.cobrex.townymenu.plot.PlotMenu;
+import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
+import me.cobrex.townymenu.town.prompt.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -58,9 +58,9 @@ public class TownMenu extends Menu {
 
 		List<Resident> allOnlineResidents = new ArrayList<>();
 		LagCatcher.start("load-residents-online");
-		for (Player players : Bukkit.getOnlinePlayers()) {
-			Resident res = TownyAPI.getInstance().getResident(player.getName());
-			if (res != null) allOnlineResidents.add(res);
+		for (Player onLinePlayer : Bukkit.getOnlinePlayers()) {
+			Resident res = TownyAPI.getInstance().getResident(onLinePlayer.getName());
+			if (res != null && (!res.hasTown())) allOnlineResidents.add(res);
 		}
 
 		setSize(9 * 4);
@@ -986,16 +986,19 @@ public class TownMenu extends Menu {
 
 	public class InvitePlayerMenu extends MenuPagged<Resident> {
 
-
 		protected InvitePlayerMenu(Iterable<Resident> pages) {
 			super(TownMenu.this, pages);
+			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
+	//		Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 		}
 
 		@Override
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(item.getName());
+			skull.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + item.getFormattedTitleName());
+//			if (item.getName() == null);
+//				return null;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			itemSkull.setItemMeta(skull);

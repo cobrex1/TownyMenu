@@ -1,15 +1,15 @@
-package net.tolmikarc.townymenu.plot;
+package me.cobrex.townymenu.plot;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.*;
 import lombok.SneakyThrows;
-import net.tolmikarc.townymenu.plot.prompt.PlotEvictPrompt;
-import net.tolmikarc.townymenu.plot.prompt.PlotForSalePrompt;
-import net.tolmikarc.townymenu.plot.prompt.PlotNotForSalePrompt;
-import net.tolmikarc.townymenu.plot.prompt.PlotSetTypePrompt;
-import net.tolmikarc.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.plot.prompt.PlotEvictPrompt;
+import me.cobrex.townymenu.plot.prompt.PlotForSalePrompt;
+import me.cobrex.townymenu.plot.prompt.PlotNotForSalePrompt;
+import me.cobrex.townymenu.plot.prompt.PlotSetTypePrompt;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

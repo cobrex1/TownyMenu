@@ -1,12 +1,12 @@
-package net.tolmikarc.townymenu.plot.command;
+package me.cobrex.townymenu.plot.command;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
-import net.tolmikarc.townymenu.plot.PlotMenu;
-import net.tolmikarc.townymenu.settings.Localization;
+import me.cobrex.townymenu.plot.PlotMenu;
+import me.cobrex.townymenu.settings.Localization;
 import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.SimpleCommand;
 

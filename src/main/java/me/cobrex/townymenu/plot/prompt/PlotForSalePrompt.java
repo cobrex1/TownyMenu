@@ -1,12 +1,12 @@
-package net.tolmikarc.townymenu.plot.prompt;
+package me.cobrex.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
-import net.tolmikarc.townymenu.settings.Localization;
-import net.tolmikarc.townymenu.settings.Settings;
+import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
