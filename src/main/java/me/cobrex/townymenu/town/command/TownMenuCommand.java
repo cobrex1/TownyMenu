@@ -4,6 +4,7 @@ import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import lombok.SneakyThrows;
+import me.cobrex.townymenu.join.JoinTownMenu;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.town.TownMenu;
 import org.mineacademy.fo.command.SimpleCommand;
@@ -35,8 +36,9 @@ public class TownMenuCommand extends SimpleCommand {
 				new TownMenu(town, getPlayer()).displayTo(getPlayer());
 			} else
 				tell(Localization.Error.NO_PERMISSION);
-		} else {
-			tell(Localization.Error.NO_TOWN);
+		} else if (!resident.hasTown()){
+			new JoinTownMenu(resident, getPlayer()).displayTo(getPlayer());
+//			tell(Localization.Error.NO_TOWN);
 		}
 
 

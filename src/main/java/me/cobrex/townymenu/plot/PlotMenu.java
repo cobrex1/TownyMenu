@@ -5,11 +5,11 @@ import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.*;
 import lombok.SneakyThrows;
-import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.plot.prompt.PlotEvictPrompt;
 import me.cobrex.townymenu.plot.prompt.PlotForSalePrompt;
 import me.cobrex.townymenu.plot.prompt.PlotNotForSalePrompt;
 import me.cobrex.townymenu.plot.prompt.PlotSetTypePrompt;
+import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -18,6 +18,7 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.mineacademy.fo.Common;
+import org.mineacademy.fo.debug.LagCatcher;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
@@ -27,9 +28,7 @@ import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class PlotMenu extends Menu {
 
@@ -45,11 +44,13 @@ public class PlotMenu extends Menu {
 		setSize(9);
 		setTitle(Localization.PlotMenu.MAIN_MENU_TITLE);
 
-		Set<Resident> onlineResidents = new HashSet<>();
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			Resident res = TownyAPI.getInstance().getResident((player.getName()));
-			if (res != null) onlineResidents.add(TownyAPI.getInstance().getResident(player.getName()));
+		List<Resident> allOnlineResidents = new ArrayList<>();
+		LagCatcher.start("load-residents-online");
+		for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+			Resident res = TownyAPI.getInstance().getResident(onlinePlayer.getName());
+			if (res !=null) allOnlineResidents.add(res);
 		}
+
 
 		toggleSettingsMenu = new ButtonMenu(new PlotToggleSettingsMenu(townBlock), CompMaterial.LEVER, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON, Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE);
 
@@ -57,23 +58,28 @@ public class PlotMenu extends Menu {
 
 		plotAdministrationMenuButton = new ButtonMenu(new PlotAdministrationMenu(townBlock), CompMaterial.BELL, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE);
 
-		friendButton = new ButtonMenu(new FriendPlayerMenu(onlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
+		//friendButton = new ButtonMenu(new FriendPlayerMenu(onlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
+		friendButton = new ButtonMenu(new FriendPlayerMenu(allOnlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
 
 		town = townBlock.getTown();
 	}
 
 	@Override
 	public ItemStack getItemAt(int slot) {
-		if (slot == 1)
+		//if (slot == 1)
+		if (slot == 0)
 			return toggleSettingsMenu.getItem();
 
-		if (slot == 3)
+		//if (slot == 3)
+		if (slot == 2)
 			return permMenuButton.getItem();
 
-		if (slot == 5)
+		//if (slot == 5)
+		if (slot == 4)
 			return plotAdministrationMenuButton.getItem();
 
-		if (slot == 7)
+//		if (slot == 7)
+		if (slot == 6)
 			return friendButton.getItem();
 
 		return null;
@@ -93,17 +99,30 @@ public class PlotMenu extends Menu {
 				return null;
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(item.getName());
+			skull.setDisplayName(ChatColor.YELLOW + "" +(item.getName()));
 			Player player = Bukkit.getPlayer(item.getUUID());
 			skull.setOwningPlayer(player);
-			List<String> lore = new ArrayList<>();
-			lore.add("");
+			itemSkull.setItemMeta(skull);
 			for (Player players : Bukkit.getOnlinePlayers()) {
 				Resident res = TownyAPI.getInstance().getResident(players.getName());
-			if (res !=null) lore.add(item.getFriends().contains(TownyAPI.getInstance().getResident(getViewer().getName())) ? ChatColor.RED + "Remove Friend" : ChatColor.YELLOW + "Add Friend");
+
+				if (res.getFriends().contains(item)) {
+					List<String> lore = new ArrayList<>();
+					lore.add("");
+					lore.add(ChatColor.RED + "Click to Remove");
+					lore.add(ChatColor.RED + "Friend");
+					skull.setLore(lore);
+					itemSkull.setItemMeta(skull);
+					return itemSkull;
+				} else {
+					List<String> lore = new ArrayList<>();
+					lore.add("");
+					lore.add(ChatColor.GREEN + "Click to Add");
+					lore.add(ChatColor.GREEN + "Friend");
+					skull.setLore(lore);
+				}
 
 			}
-			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
 		}

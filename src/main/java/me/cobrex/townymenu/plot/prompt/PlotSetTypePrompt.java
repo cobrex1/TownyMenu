@@ -1,12 +1,8 @@
 package me.cobrex.townymenu.plot.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.object.TownBlock;
-import com.palmergames.bukkit.towny.object.TownBlockTypeHandler;
 import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
-import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -19,7 +15,8 @@ import java.util.List;
 
 public class PlotSetTypePrompt extends SimplePrompt {
 
-	private final List<String> plotTypes = Arrays.asList("residential", "commercial", "bank", "farm", "jail", "embassy", "wilds", "inn", "spleef", "arena");
+//	private final List<String> plotTypes = Arrays.asList("arena", "bank", "embassy", "farm", "inn", "jail", "shop", "default", "wilds", "residential", "commercial", "wilds", "spleef", "arena");
+	private final List<String> plotTypes = Arrays.asList("arena", "bank", "default", "embassy", "farm", "inn", "jail", "shop", "wilds");
 
 	TownBlock townBlock;
 
@@ -53,12 +50,7 @@ public class PlotSetTypePrompt extends SimplePrompt {
 			return null;
 		}
 
-		townBlock.setType(TownBlockTypeHandler.getType(input));
-		townBlock.setChanged(true);
-		TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
-		Bukkit.getServer().getPluginManager().callEvent(event);
-		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
-		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
+		getPlayer(context).performCommand("plot set " + (input));
 		tell(Localization.PlotConversables.SetType.RESPONSE.replace("{input}", input));
 		return null;
 	}

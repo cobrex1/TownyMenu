@@ -2,6 +2,8 @@ name: TownyMenu
 version: ${project.version}
 main: ${main.class}
 api-version: 1.13
+softdepend:
+  - Towny
 author: Tolmikarc. Forked by cobrex
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.4
