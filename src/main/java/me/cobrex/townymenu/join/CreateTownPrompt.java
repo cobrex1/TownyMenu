@@ -1,5 +1,6 @@
 package me.cobrex.townymenu.join;
 
+import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.bukkit.entity.Player;
@@ -14,7 +15,7 @@ public class CreateTownPrompt extends SimplePrompt {
 		super(false);
 	}
 	protected String getPrompt(ConversationContext context) {
-		return "&aType the name of your town or type cancel.";
+		return Localization.JoinCreateMenu.CREATE_OWN_TOWN;
 	}
 
 	@Nullable

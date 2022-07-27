@@ -2,6 +2,17 @@ Confirm: "confirmar"
 Cancel: "cancelar"
 Menu_Information: "Información"
 
+
+Join_Create_Menu:
+  Main_Menu_Title: "Únete o crea una Town"
+  Find_Open_Town: "Encuentra una Town abierta"
+  Click_Create_Town: "Haz clic para crear una town"
+  Join_Open_Town: "&aÚnete a un town abierto"
+  Mayor: "Alcalde: "
+  Number_Residence: "Número de Residencia: "
+  Create_Own_Town: "&aEscriba el nombre de su ciudad o para cancelar la creación de una ciudad &cescriba cancelar."
+
+
 Town_Menu:
   Main_Menu_Title: "&2&lTown Menú"
   Toggle_Menu_Button: "&3&lMenú de Configuraciones"
@@ -262,6 +273,8 @@ Friend_Menu:
   Menu_Title: "&2Menu de amigos"
   Remove: "&cHas removido a {player} de tu lista de amigos"
   Add: "&3Has agregado &b{player} &3a tu lista de amigos"
+  Click_Remove_Lore: "Haga clic para eliminar amigos"
+  Click_Add_Lore: "Haga clic para añadir amigos"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu de opciones"
   Info:

@@ -109,16 +109,14 @@ public class PlotMenu extends Menu {
 				if (res.getFriends().contains(item)) {
 					List<String> lore = new ArrayList<>();
 					lore.add("");
-					lore.add(ChatColor.RED + "Click to Remove");
-					lore.add(ChatColor.RED + "Friend");
+					lore.add(ChatColor.RED + Localization.PlotMenu.FriendMenu.CLICK_REMOVE_LORE);
 					skull.setLore(lore);
 					itemSkull.setItemMeta(skull);
 					return itemSkull;
 				} else {
 					List<String> lore = new ArrayList<>();
 					lore.add("");
-					lore.add(ChatColor.GREEN + "Click to Add");
-					lore.add(ChatColor.GREEN + "Friend");
+					lore.add(ChatColor.GREEN + Localization.PlotMenu.FriendMenu.CLICK_ADD_LORE);
 					skull.setLore(lore);
 				}
 

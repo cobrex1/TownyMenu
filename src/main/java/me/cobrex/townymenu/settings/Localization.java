@@ -23,6 +23,29 @@ public class Localization extends SimpleLocalization {
 		MENU_INFORMATION = getString("Menu_Information");
 	}
 
+	public static class JoinCreateMenu {
+
+		public static String MAIN_MENU_TITLE;
+		public static String FIND_OPEN_TOWN;
+		public static String CLICK_CREATE_TOWN;
+		public static String JOIN_OPEN_TOWN;
+		public static String MAYOR;
+		public static String NUMBER_RESIDENCE;
+		public static String CREATE_OWN_TOWN;
+
+		private static void init() {
+			setPathPrefix("Join_Create_Menu");
+
+			MAIN_MENU_TITLE = getString("Main_Menu_Title");
+			FIND_OPEN_TOWN = getString("Find_Open_Town");
+			CLICK_CREATE_TOWN = getString("Click_Create_Town");
+			JOIN_OPEN_TOWN = getString("Join_Open_Town");
+			MAYOR = getString("Mayor");
+			NUMBER_RESIDENCE = getString("Number_Residence");
+			CREATE_OWN_TOWN = getString("Create_Own_Town");
+		}
+	}
+
 	public static class TownMenu {
 
 		public static String MAIN_MENU_TITLE;
@@ -353,6 +376,8 @@ public class Localization extends SimpleLocalization {
 			public static String MENU_TITLE;
 			public static String REMOVE;
 			public static String ADD;
+			public static String CLICK_REMOVE_LORE;
+			public static String CLICK_ADD_LORE;
 
 
 			private static void init() {
@@ -360,6 +385,8 @@ public class Localization extends SimpleLocalization {
 				MENU_TITLE = getString("Menu_Title");
 				REMOVE = getString("Remove");
 				ADD = getString("Add");
+				CLICK_REMOVE_LORE = getString("Click_Remove_Lore");
+				CLICK_ADD_LORE = getString("Click_Add_Lore");
 
 			}
 

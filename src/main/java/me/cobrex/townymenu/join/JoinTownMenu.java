@@ -3,6 +3,7 @@ package me.cobrex.townymenu.join;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
+import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -35,20 +36,14 @@ public class JoinTownMenu extends Menu {
 	public JoinTownMenu(Resident resident, Player player) {
 
 		setSize(9);
-		setTitle("Join or Create a Town");
+		setTitle(Localization.JoinCreateMenu.MAIN_MENU_TITLE);
 
 		List<Town> towns = new ArrayList<>(TownyUniverse.getInstance().getTowns()).stream().filter(t -> t.isOpen()).collect(Collectors.toList());
 
-//		List<Town> towns = new ArrayList<>(TownyUniverse.getInstance().getTowns());
-//		LagCatcher.start("load-open towns");
-//		towns.stream().filter(Government::isOpen).forEach(this::add);
 
-//		System.out.println(towns);
+		openTownButton = new ButtonMenu(new OpenTownMenu(towns), CompMaterial.SUNFLOWER, Localization.JoinCreateMenu.FIND_OPEN_TOWN);
 
-		openTownButton = new ButtonMenu(new OpenTownMenu(towns), CompMaterial.LEVER, "Find an open Town");
-
-		createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(CompMaterial.PLAYER_HEAD, "Click to create a town"));
-
+		createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(CompMaterial.PLAYER_HEAD, Localization.JoinCreateMenu.CLICK_CREATE_TOWN));
 	}
 
 	private void add(Town t) {
@@ -59,7 +54,7 @@ public class JoinTownMenu extends Menu {
 
 		protected OpenTownMenu(Iterable<Town> pages) {
 			super(JoinTownMenu.this, pages);
-			setTitle("&aJoin an Open Town");
+			setTitle(Localization.JoinCreateMenu.JOIN_OPEN_TOWN);
 		}
 
 			@Override
@@ -71,8 +66,8 @@ public class JoinTownMenu extends Menu {
 				skull.setOwningPlayer(player);
 				List<String> lore = new ArrayList<>();
 				lore.add("");
-				lore.add(ChatColor.WHITE + "Mayor: " + (item.getMayor()));
-				lore.add(ChatColor.WHITE + "Number of Residence: " + (item.getNumResidents()));
+				lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
+				lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENCE + (item.getNumResidents()));
 				skull.setLore(lore);
 				itemSkull.setItemMeta(skull);
 				return itemSkull;
