@@ -10,7 +10,7 @@ Join_Create_Menu:
   Join_Open_Town: "&aEiner frei zugänglichen Stadt beitreten"
   Mayor: "Bürgermeister: "
   Number_Residence: "Anzahl an Bewohnern: "
-  Create_Own_Town: "&aGib einen Namen für deine Stadt ein oder um den Vorgang abzubrechen &cgib "cancel" ein."
+  Create_Own_Town: "&aGib einen Namen für deine Stadt ein oder um den Vorgang abzubrechen &cgib 'cancel' ein."
 
 
 Town_Menu:
