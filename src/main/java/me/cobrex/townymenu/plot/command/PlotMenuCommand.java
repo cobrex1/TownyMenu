@@ -41,8 +41,5 @@ public final class PlotMenuCommand extends SimpleCommand {
 		} else {
 			tell(Localization.Error.NO_TOWN);
 		}
-
-
 	}
-
 }

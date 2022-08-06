@@ -14,6 +14,8 @@ public class CreateTownPrompt extends SimplePrompt {
 	public CreateTownPrompt(Player player) {
 		super(false);
 	}
+
+	@Override
 	protected String getPrompt(ConversationContext context) {
 		return Localization.JoinCreateMenu.CREATE_OWN_TOWN;
 	}
@@ -24,10 +26,5 @@ public class CreateTownPrompt extends SimplePrompt {
 		getPlayer(context).performCommand("t new " + (input));
 		return null;
 	}
-
-
-
-
-
 
 }

@@ -36,12 +36,8 @@ public class TownMenuCommand extends SimpleCommand {
 				new TownMenu(town, getPlayer()).displayTo(getPlayer());
 			} else
 				tell(Localization.Error.NO_PERMISSION);
-		} else if (!resident.hasTown()){
+		} else if (!resident.hasTown()) {
 			new JoinTownMenu(resident, getPlayer()).displayTo(getPlayer());
-//			tell(Localization.Error.NO_TOWN);
 		}
-
-
 	}
-
 }

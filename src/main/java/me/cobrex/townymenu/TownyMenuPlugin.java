@@ -2,18 +2,26 @@ package me.cobrex.townymenu;
 
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
+import me.cobrex.townymenu.chunkview.ChunkviewCommand;
+import me.cobrex.townymenu.plot.command.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
 import me.cobrex.townymenu.town.command.TownMenuCommand;
-import me.cobrex.townymenu.plot.command.PlotMenuCommand;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.settings.YamlStaticConfig;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class TownyMenuPlugin extends SimplePlugin {
+
+	public static ArrayList<Player> viewers = new ArrayList<>();
+
+	public static ArrayList<Location> viewerslocs = new ArrayList<>();
 
 	@Override
 	protected void onPluginStart() {
@@ -25,13 +33,11 @@ public class TownyMenuPlugin extends SimplePlugin {
 
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
-
+		registerCommand(new ChunkviewCommand());
 
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 	}
-
-//	@Override
-
+	
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
 		return Arrays.asList(Settings.class, Localization.class);
 	}
