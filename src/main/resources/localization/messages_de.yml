@@ -4,13 +4,13 @@ Menu_Information: "Menü Info"
 
 
 Join_Create_Menu:
-  Main_Menu_Title: "Stadt beitreten oder gründen"
-  Find_Open_Town: "Eine frei zugängliche Stadt finden"
-  Click_Create_Town: "Hier klicken um eine Stadt zu gründen"
-  Join_Open_Town: "&aEiner frei zugänglichen Stadt beitreten"
+  Main_Menu_Title: "Stadt beitreten oder erstellen"
+  Find_Open_Town: "Finde eine offene Stadt"
+  Click_Create_Town: "Klicke, um eine Stadt zu erstellen"
+  Join_Open_Town: "&aTrete einer offenen Stadt bei."
   Mayor: "Bürgermeister: "
-  Number_Residence: "Anzahl an Bewohnern: "
-  Create_Own_Town: "&aGib einen Namen für deine Stadt ein oder um den Vorgang abzubrechen &cgib 'cancel' ein."
+  Number_Residence: "Anzahl der Bewohner: "
+  Create_Own_Town: "&aSchreibe den Namen deiner Stadt oder schreibe &ccancel&a zum Abbrechen."
 
 
 Town_Menu:
@@ -265,11 +265,11 @@ Plot_Menu:
     - ""
     - "Verwaltung von Freunden"
 Friend_Menu:
-  Menu_Title: "&2Freunde Menü"
+  Menu_Title: "&2Freundesmenü"
   Remove: "&c{player} aus deiner Freundesliste entfernt!"
   Add: "&b{player} &3zu deiner Freundesliste hinzugefügt!"
-  Click_Remove_Lore: "Klicken um einen Freund zu entfernen"
-  Click_Add_Lore: "Klicken um einen Freund hinzuzufügen"
+  Click_Remove_Lore: "Klicke, um Freund zu entfernen"
+  Click_Add_Lore: "Klicke, um Freund hinzuzufügen"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lUmschalten Einstellungsmenü"
   Info:
@@ -454,6 +454,9 @@ Error:
   Cannot_Change_Name: "&cDu musst Bürgermeister sein, um den Namen der Stadt zu ändern."
   Cannot_Change_Board: "&cDu musst Bürgermeister sein, um das Schwarze Brett zu ändern."
 
+Chunk_View:
+  Toggle_Remove: "Grenzblöcke werden jetzt angezeigt. Schalten Sie zum Entfernen auf Schleichen um."
+  Removed: "Grenzsperren entfernt."
 
 
 # DO NOT TOUCH VERSION

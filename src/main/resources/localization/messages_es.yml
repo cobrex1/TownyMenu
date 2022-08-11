@@ -461,6 +461,10 @@ Error:
   Cannot_Change_Name: "&cDebes ser el dueño de la ciudad para hacer esto."
   Cannot_Change_Board: "&cDebes ser el dueño de la ciudad para hacer esto."
 
+Chunk_View:
+  Toggle_Remove: "Ahora se muestran los bloques fronterizos. Alternar sigilo para eliminar."
+  Removed: "Se eliminaron los bloques de borde."
+
 
 
 # DO NOT TOUCH VERSION

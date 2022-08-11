@@ -3,6 +3,7 @@ package me.cobrex.townymenu.chunkview;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.cobrex.townymenu.TownyMenuPlugin;
+import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -58,7 +59,8 @@ public final class ChunkviewCommand extends SimpleCommand {
 				Remain.sendBlockChange(0, player, corner4, CompMaterial.SEA_LANTERN);
 
 		}
-		player.sendMessage(ChatColor.GOLD + "Boarder blocks now showing. Toggle sneak to remove");
+		player.sendMessage(ChatColor.GOLD + Localization.ChunkView.TOGGLE_REMOVE);
+//		player.sendMessage(ChatColor.GOLD + "Boarder blocks now showing. Toggle sneak to remove");
 
 	}
 
@@ -109,7 +111,8 @@ public final class ChunkviewCommand extends SimpleCommand {
 						}
 					}
 
-					player.sendMessage(ChatColor.GOLD + "Boarder blocks removed.");
+					player.sendMessage(ChatColor.GOLD + Localization.ChunkView.REMOVED);
+//					player.sendMessage(ChatColor.GOLD + "Boarder blocks removed.");
 					TownyMenuPlugin.viewers.remove(player);
 					TownyMenuPlugin.viewerslocs.remove(index);
 

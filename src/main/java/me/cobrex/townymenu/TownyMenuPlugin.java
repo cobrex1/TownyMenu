@@ -2,6 +2,7 @@ package me.cobrex.townymenu;
 
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
+import me.cobrex.townymenu.bstats.Metrics;
 import me.cobrex.townymenu.chunkview.ChunkviewCommand;
 import me.cobrex.townymenu.plot.command.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
@@ -36,8 +37,15 @@ public class TownyMenuPlugin extends SimplePlugin {
 		registerCommand(new ChunkviewCommand());
 
 		TownyEconomyHandler.initialize(Towny.getPlugin());
+
+		int pluginId = 16084; // <-- Replace with the id of your plugin!
+		Metrics metrics = new Metrics(this, pluginId);
+
+		// Optional: Add custom charts
+		metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
+		
 	}
-	
+
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
 		return Arrays.asList(Settings.class, Localization.class);
 	}

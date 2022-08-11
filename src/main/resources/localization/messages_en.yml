@@ -460,5 +460,9 @@ Error:
   Cannot_Change_Name: "&cMust be mayor to change town name."
   Cannot_Change_Board: "&cMust be mayor to change town board."
 
+Chunk_View:
+  Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
+  Removed: "Boarder blocks removed."
+
 # DO NOT TOUCH VERSION
 Version: 2

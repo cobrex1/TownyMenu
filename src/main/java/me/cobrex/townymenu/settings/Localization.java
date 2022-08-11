@@ -771,4 +771,16 @@ public class Localization extends SimpleLocalization {
 		}
 	}
 
+	public static class ChunkView {
+
+		public static String TOGGLE_REMOVE;
+		public static String REMOVED;
+
+		private static void init() {
+			setPathPrefix("Chunk_View");
+
+			TOGGLE_REMOVE = getString("Toggle_Remove");
+			REMOVED = getString("Removed");
+		}
+	}
 }

@@ -9,6 +9,16 @@ libraries:
   - org.openjdk.nashorn:nashorn-core:15.4
 
 commands:
+  townmenu:
+    description: Open the town level GUI menu
+    aliases: tm
+    permission-message: "You do not have permission to use this command!"
+    default: true
+  plotmenu:
+    description: Opens the plot level GUI menu
+    aliases: plm
+    permission-message: "You do not have permission to use this command!"
+    default: true
   chunkview:
     description: View the boarders of the chunk you are standing in.
     aliases:
@@ -20,6 +30,12 @@ commands:
     usage: |-
       /chunkview - to view the chunk boarder.
 permissions:
+  townmenu.view:
+    description: Opens the town level GUI
+    default: true
+  plotmenu.view:
+    description: Opens the plot level GUI
+    default: true
   chunkview.view:
     description: Allows use of /chunkview
     default: true
