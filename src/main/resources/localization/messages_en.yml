@@ -10,7 +10,7 @@ Join_Create_Menu:
   Join_Open_Town: "&aJoin an Open Town"
   Mayor: "Mayor: "
   Number_Residence: "Number of Residence: "
-  Create_Own_Town: "&aType the name of your town or &ctype cancel."
+Create_Own_Town: "&aType the name of your town or &ctype cancel."
 
 
 Town_Menu:

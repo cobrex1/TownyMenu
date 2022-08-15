@@ -15,7 +15,7 @@ import java.util.List;
 
 public class PlotSetTypePrompt extends SimplePrompt {
 
-//	private final List<String> plotTypes = Arrays.asList("arena", "bank", "embassy", "farm", "inn", "jail", "shop", "default", "wilds", "residential", "commercial", "wilds", "spleef", "arena");
+	//	private final List<String> plotTypes = Arrays.asList("arena", "bank", "embassy", "farm", "inn", "jail", "shop", "default", "wilds", "residential", "commercial", "wilds", "spleef", "arena");
 	private final List<String> plotTypes = Arrays.asList("arena", "bank", "default", "embassy", "farm", "inn", "jail", "shop", "wilds");
 
 	TownBlock townBlock;
@@ -27,6 +27,10 @@ public class PlotSetTypePrompt extends SimplePrompt {
 
 	}
 
+	@Override
+	public boolean isModal() {
+		return false;
+	}
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
