@@ -1,7 +1,5 @@
 package me.cobrex.townymenu.town.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -25,6 +23,11 @@ public class TownDepositPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Deposit.PROMPT;
 	}
@@ -45,12 +48,7 @@ public class TownDepositPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.deposit") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		Resident res = TownyAPI.getInstance().getResident(getPlayer(context).getUniqueId());
-		if (res == null) {
-			return null;
-		}
-		res.getAccount().payTo(Integer.parseInt(input), town, "Deposit money from menu.");
-		TownyAPI.getInstance().getDataSource().saveTown(town);
+		getPlayer(context).performCommand("town deposit " + (input));
 		tell(Localization.TownConversables.Deposit.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 
 		return null;

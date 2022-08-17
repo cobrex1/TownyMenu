@@ -20,6 +20,11 @@ public class TownTitlePrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Title.PROMPT.replace("{player}", resident.getName());
 	}

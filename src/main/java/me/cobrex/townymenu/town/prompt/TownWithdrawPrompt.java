@@ -1,7 +1,5 @@
 package me.cobrex.townymenu.town.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
-import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -24,6 +22,11 @@ public class TownWithdrawPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Withdraw.PROMPT;
 	}
@@ -41,14 +44,11 @@ public class TownWithdrawPrompt extends SimplePrompt {
 	@Override
 	protected @Nullable
 	Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (input.equalsIgnoreCase(Localization.CANCEL))
+		if (!getPlayer(context).hasPermission("towny.command.town.withdraw") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		Resident res = TownyAPI.getInstance().getResident(getPlayer(context).getUniqueId());
-		town.getAccount().payTo(Integer.parseInt(input), res,"Withdrawn from menu.");
-		TownyAPI.getInstance().getDataSource().saveTown(town);
+		getPlayer(context).performCommand("town withdraw " + (input));
 		tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
-
 		return null;
 	}
 }

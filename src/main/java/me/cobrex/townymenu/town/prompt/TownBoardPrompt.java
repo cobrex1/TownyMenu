@@ -1,6 +1,5 @@
 package me.cobrex.townymenu.town.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
@@ -21,6 +20,11 @@ public class TownBoardPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Board.PROMPT;
 	}
@@ -32,12 +36,7 @@ public class TownBoardPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.set.board"))
 			return null;
 
-
-		town.setBoard(input);
-		TownyAPI.getInstance().getDataSource().saveTown(town);
-
-		tell(Localization.TownConversables.Board.RESPONSE);
-
+		getPlayer(context).performCommand("town set board " + (input));
 		return null;
 	}
 }

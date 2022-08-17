@@ -24,6 +24,11 @@ public class TownRankPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Rank.PROMPT.replace("{player}", resident.getName()).replace("{ranks}", Common.join(TownyPerms.getTownRanks(), ", "));
 	}

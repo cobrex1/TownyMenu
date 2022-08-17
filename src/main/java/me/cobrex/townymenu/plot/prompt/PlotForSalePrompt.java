@@ -1,13 +1,10 @@
 package me.cobrex.townymenu.plot.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
-import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
-import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +21,11 @@ public class PlotForSalePrompt extends SimplePrompt {
 
 		this.townBlock = townBlock;
 
+	}
+
+	@Override
+	public boolean isModal() {
+		return false;
 	}
 
 	@Override
@@ -48,12 +50,7 @@ public class PlotForSalePrompt extends SimplePrompt {
 			return null;
 		}
 
-		townBlock.setPlotPrice(Integer.parseInt(input));
-		townBlock.setChanged(true);
-		TownBlockSettingsChangedEvent event = new TownBlockSettingsChangedEvent(townBlock);
-		Bukkit.getServer().getPluginManager().callEvent(event);
-		TownyAPI.getInstance().getDataSource().saveTownBlock(townBlock);
-		TownyAPI.getInstance().getDataSource().saveTown(townBlock.getTown());
+		getPlayer(context).performCommand("plot fs " + (input));
 		tell(Localization.PlotConversables.ForSale.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 		return null;
 	}

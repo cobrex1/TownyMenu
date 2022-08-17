@@ -2,8 +2,6 @@ package me.cobrex.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
-import com.palmergames.bukkit.towny.exceptions.AlreadyRegisteredException;
-import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import org.bukkit.conversations.ConversationContext;
@@ -25,6 +23,11 @@ public class TownNamePrompt extends SimplePrompt {
 
 		this.town = town;
 
+	}
+
+	@Override
+	public boolean isModal() {
+		return false;
 	}
 
 	@Override
@@ -52,21 +55,7 @@ public class TownNamePrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.set.name") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-
-		try {
-			if (town.getAccount().canPayFromHoldings(TownySettings.getTownRenameCost())) {
-				TownyAPI.getInstance().getDataSource().renameTown(town, input);
-				town.getAccount().withdraw(TownySettings.getTownRenameCost(), "Renaming town.");
-
-				tell(Localization.TownConversables.Name.RESPONSE.replace("{input}", input));
-				TownyAPI.getInstance().getDataSource().saveTown(town);
-			} else
-				tell(Localization.TownConversables.Name.RETURN);
-		} catch (NotRegisteredException | AlreadyRegisteredException e) {
-			e.printStackTrace();
-		}
-
-
+		getPlayer(context).performCommand("town set name " + (input));
 		return null;
 	}
 }

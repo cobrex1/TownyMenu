@@ -1,6 +1,5 @@
 package me.cobrex.townymenu.town.prompt;
 
-import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
@@ -21,6 +20,11 @@ public class TownSetTaxPrompt extends SimplePrompt {
 
 		this.town = town;
 
+	}
+
+	@Override
+	public boolean isModal() {
+		return false;
 	}
 
 	@Override
@@ -53,8 +57,7 @@ public class TownSetTaxPrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.set.taxes") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-		town.setTaxes(Integer.parseInt(input));
-		TownyAPI.getInstance().getDataSource().saveTown(town);
+		getPlayer(context).performCommand("town set taxes " + (input));
 		tell(town.isTaxPercentage() ? Localization.TownConversables.Tax.RESPONSE_PERCENT.replace("{input}", input) : Localization.TownConversables.Tax.RESPONSE_AMOUNT.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
 
 		return null;

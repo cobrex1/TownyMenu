@@ -18,6 +18,11 @@ public class TownKickPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Kick.PROMPT.replace("{player}", resident.getName());
 	}

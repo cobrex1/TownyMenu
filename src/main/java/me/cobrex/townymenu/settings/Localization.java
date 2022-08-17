@@ -713,7 +713,7 @@ public class Localization extends SimpleLocalization {
 			public static String RESPONSE;
 
 			private static void init() {
-				setPathPrefix("Plot_Conversables.Evict");
+				setPathPrefix("Plot_Conversables.Not_For_Sale");
 				PROMPT = getString("Prompt");
 				RESPONSE = getString("Response");
 			}

@@ -22,6 +22,11 @@ public class TownGiveMayorPrompt extends SimplePrompt {
 	}
 
 	@Override
+	public boolean isModal() {
+		return false;
+	}
+
+	@Override
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.TownConversables.Mayor.PROMPT.replace("{player}", resident.getName());
 	}
