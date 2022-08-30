@@ -152,7 +152,8 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return null;
+					return ItemCreator.of(CompMaterial.EMERALD_BLOCK, "Economy Disabled").make();
+//					return null;
 				}
 			};
 		}
@@ -437,7 +438,7 @@ public class TownMenu extends Menu {
 
 			kickButton = new ButtonConversation(new TownKickPrompt(resident), ItemCreator.of(CompMaterial.REDSTONE_BLOCK, Localization.TownMenu.ResidentMenu.KICK, Localization.TownMenu.ResidentMenu.KICK_LORE));
 
-			titleButton = new ButtonConversation(new TownTitlePrompt(resident), ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.ResidentMenu.TITLE, Localization.TownMenu.ResidentMenu.TITLE_LORE));
+			titleButton = new ButtonConversation(new TownPlayerTitlePrompt(resident), ItemCreator.of(CompMaterial.NAME_TAG, Localization.TownMenu.ResidentMenu.TITLE, Localization.TownMenu.ResidentMenu.TITLE_LORE));
 
 			rankButton = new ButtonConversation(new TownRankPrompt(resident), ItemCreator.of(CompMaterial.IRON_SWORD, Localization.TownMenu.ResidentMenu.RANK, Localization.TownMenu.ResidentMenu.RANK_LORE));
 
@@ -492,7 +493,7 @@ public class TownMenu extends Menu {
 
 
 		@Override
-		public  String[] getInfo() {
+		public String[] getInfo() {
 			return Localization.TownMenu.PlayerPermissionsMenu.INFO;
 		}
 
@@ -826,7 +827,7 @@ public class TownMenu extends Menu {
 
 	public class EconomyManagementMenu extends Menu {
 
-		private final ItemStack balanceButton;
+		private ItemStack balanceButton;
 		private final Button depositButton;
 		private final Button withdrawButton;
 		private final Button setTaxButton;
@@ -837,7 +838,11 @@ public class TownMenu extends Menu {
 			setSize(9 * 2);
 			setTitle(Localization.TownMenu.EconomyMenu.MENU_TITLE);
 
-			balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.EconomyMenu.BALANCE, "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
+			try {
+				balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, Localization.TownMenu.EconomyMenu.BALANCE, "", "&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
+			} catch (Throwable t) {
+				balanceButton = ItemCreator.of(CompMaterial.EMERALD_BLOCK, "Economy Disabled").make();
+			}
 
 			depositButton = new ButtonConversation(new TownDepositPrompt(town), ItemCreator.of(CompMaterial.CHEST, Localization.TownMenu.EconomyMenu.DEPOSIT, Localization.TownMenu.EconomyMenu.DEPOSIT_LORE));
 
@@ -989,7 +994,7 @@ public class TownMenu extends Menu {
 		protected InvitePlayerMenu(Iterable<Resident> pages) {
 			super(TownMenu.this, pages);
 			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
-	//		Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
+//			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 		}
 
 		@Override

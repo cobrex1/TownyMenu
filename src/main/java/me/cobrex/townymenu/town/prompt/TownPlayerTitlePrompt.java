@@ -10,11 +10,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.mineacademy.fo.conversation.SimplePrompt;
 
-public class TownTitlePrompt extends SimplePrompt {
+public class TownPlayerTitlePrompt extends SimplePrompt {
 
 	Resident resident;
 
-	public TownTitlePrompt(Resident resident) {
+	public TownPlayerTitlePrompt(Resident resident) {
 		super(false);
 		this.resident = resident;
 	}
