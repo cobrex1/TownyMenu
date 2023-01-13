@@ -23,6 +23,83 @@ Money_Symbol: "$"
 # How many milliseconds should an action take before the lag is logged to console
 Log_Lag_Over_Milis: 100
 
+#For item names please use https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#Non-resident menu
+Find_Town: SUNFLOWER
+Create_Town: PLAYER_HEAD
+
+#Town Menu Icons
+Toggle_Menu: LEVER
+Resident_List: PLAYER_HEAD
+Permissions_Menu: STONE_AXE
+Economy_Menu: EMERALD_BLOCK
+Plot_Menu: WOODEN_SHOVEL
+Settings_Menu: ENDER_CHEST
+Invite_Menu: BELL
+Extra_Info: ENCHANTED_BOOK
+
+#Toggle Town Settings Icons
+Toggle_Fire: CAMPFIRE
+Toggle_Mobs: SHULKER_SPAWN_EGG
+Toggle_Explosions: TNT
+Toggle_PVP: GOLDEN_SWORD
+Toggle_Public: CHEST
+Toggle_Open: ACACIA_DOOR
+Toggle_Tax_Percentage: EMERALD
+
+#Resident Menu Icons
+Resident_Kick: REDSTONE_BLOCK
+Resident_Title: NAME_TAG
+Resident_Rank: IRON_SWORD
+Resident_Mayor: GOLDEN_APPLE
+
+#Plot Menu Icons
+Build: BRICKS
+Break: GOLDEN_PICKAXE
+Item_Use: FLINT_AND_STEEL
+Switch: LEVER
+
+Resident_Build: BELL
+Resident_Break: BELL
+Resident_Item_Use: BELL
+Resident_Switch: BELL
+
+Nation_Build: CHAINMAIL_CHESTPLATE
+Nation_Break: CHAINMAIL_CHESTPLATE
+Nation_Item_Use: CHAINMAIL_CHESTPLATE
+Nation_Switch: CHAINMAIL_CHESTPLATE
+
+Ally_Build: CARROT
+Ally_Break: CARROT
+Ally_Item_Use: CARROT
+Ally_Switch: CARROT
+
+Outsider_Build: BONE
+Outsider_Break: BONE
+Outsider_Item_Use: BONE
+Outsider_Switch: BONE
+
+Reset_All: REDSTONE_BLOCK
+All_On: EMERALD_BLOCK
+
+#Economy Menu Icons
+Town_Balance: EMERALD_BLOCK
+Deposit: CHEST
+Withdraw: ENDER_CHEST
+Set_Tax: ARROW
+
+#General Town Settings Menu:
+Set_Town_Spawn: LAPIS_LAZULI
+Set_Home_Block: GLOWSTONE
+Set_Town_Board: OAK_SIGN
+Set_Town_Name: NAME_TAG
+
+#Extra Town Info Menu:
+Town_Claim_Info: GOLDEN_AXE
+Extra_Commands: BOOKSHELF
+
+
+
 # Do not touch below this line
 # ---------------------------------------------------------------
 Debug: [ ]

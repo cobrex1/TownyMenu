@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mineacademy.plugin:BentoBox:1.22.0-SNAPSHOT-b2312">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/BentoBox/1.22.0-SNAPSHOT-b2312/BentoBox-1.22.0-SNAPSHOT-b2312.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/BentoBox/1.22.0-SNAPSHOT-b2312/BentoBox-1.22.0-SNAPSHOT-b2312-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/BentoBox/1.22.0-SNAPSHOT-b2312/BentoBox-1.22.0-SNAPSHOT-b2312-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

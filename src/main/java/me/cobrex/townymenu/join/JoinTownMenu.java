@@ -4,6 +4,7 @@ import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -41,9 +42,9 @@ public class JoinTownMenu extends Menu {
 		List<Town> towns = new ArrayList<>(TownyUniverse.getInstance().getTowns()).stream().filter(t -> t.isOpen()).collect(Collectors.toList());
 
 
-		openTownButton = new ButtonMenu(new OpenTownMenu(towns), CompMaterial.SUNFLOWER, Localization.JoinCreateMenu.FIND_OPEN_TOWN);
+		openTownButton = new ButtonMenu(new OpenTownMenu(towns), CompMaterial.fromString(String.valueOf(Settings.FIND_TOWN)), Localization.JoinCreateMenu.FIND_OPEN_TOWN);
 
-		createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(CompMaterial.PLAYER_HEAD, Localization.JoinCreateMenu.CLICK_CREATE_TOWN));
+		createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.CREATE_TOWN)), Localization.JoinCreateMenu.CLICK_CREATE_TOWN));
 	}
 
 	private void add(Town t) {
@@ -57,31 +58,32 @@ public class JoinTownMenu extends Menu {
 			setTitle(Localization.JoinCreateMenu.JOIN_OPEN_TOWN);
 		}
 
-			@Override
-			protected ItemStack convertToItemStack(Town item) {
-				ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
-				SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-				skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
-				Player player = Bukkit.getPlayer(item.getMayor().getUUID());
-				skull.setOwningPlayer(player);
-				List<String> lore = new ArrayList<>();
-				lore.add("");
-				lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
-				lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENCE + (item.getNumResidents()));
-				skull.setLore(lore);
-				itemSkull.setItemMeta(skull);
-				return itemSkull;
-
-			}
-
-			@Override
-			protected void onPageClick(Player player, Town item, ClickType click) {
-				player.closeInventory();
-				player.performCommand("t join " + item.getName());
-
-			}
+		@Override
+		protected ItemStack convertToItemStack(Town item) {
+			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
+			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
+			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
+			skull.setOwningPlayer(player);
+			List<String> lore = new ArrayList<>();
+			lore.add("");
+			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
+			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENCE + (item.getNumResidents()));
+			skull.setLore(lore);
+			itemSkull.setItemMeta(skull);
+			return itemSkull;
 
 		}
+
+		@Override
+		protected void onPageClick(Player player, Town item, ClickType click) {
+			player.closeInventory();
+			player.performCommand("t join " + item.getName());
+
+		}
+
+	}
+
 	@Override
 	public ItemStack getItemAt(int slot) {
 		if (slot == 1)

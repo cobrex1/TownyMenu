@@ -5,14 +5,14 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.5.4</version>
+    <version>1.6.0</version>
 
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.0.10</foundation.version>
+        <foundation.version>6.2.5</foundation.version>
 
         <java.version>1.8</java.version>
 
@@ -26,7 +26,7 @@
     <repositories>
         <repository>
             <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
@@ -52,18 +52,18 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19-R0.1-SNAPSHOT</version>
+            <version>1.19.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.kangarko</groupId>
             <artifactId>Foundation</artifactId>
-            <version>${foundation.version}</version>
+            <version>6.2.5</version>
         </dependency>
         <dependency>
             <groupId>com.github.TownyAdvanced</groupId>
             <artifactId>Towny</artifactId>
-            <version>0.98.2.0</version>
+            <version>0.98.4.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

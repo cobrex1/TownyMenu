@@ -7,7 +7,11 @@ import lombok.SneakyThrows;
 import me.cobrex.townymenu.join.JoinTownMenu;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.town.TownMenu;
+import org.bukkit.entity.Player;
 import org.mineacademy.fo.command.SimpleCommand;
+import org.mineacademy.fo.plugin.SimplePlugin;
+
+import java.util.List;
 
 public class TownMenuCommand extends SimpleCommand {
 	public TownMenuCommand() {
@@ -21,23 +25,49 @@ public class TownMenuCommand extends SimpleCommand {
 	protected void onCommand() {
 		checkConsole();
 
-		if (TownyAPI.getInstance().isWarTime()) {
-			tell(Localization.Error.WAR_TIME);
+		Player player = this.getPlayer();
+
+		if (this.args.length == 0) {
+			if (TownyAPI.getInstance().isWarTime()) {
+				tell(Localization.Error.WAR_TIME);
+				return;
+			}
+
+			Town town;
+			Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
+			if (resident.hasTown()) {
+				town = resident.getTown();
+//			if (town.getMayor() == resident)
+//			if (town.getMayor().equals(resident))
+				if (town.getMayor().equals(resident) && town.getMayor().hasPermissionNode("townymenu.town.use"))
+					new TownMenu(town, getPlayer()).displayTo(getPlayer());
+				else if (getPlayer().hasPermission("townymenu.town.use")) {
+					new TownMenu(town, getPlayer()).displayTo(getPlayer());
+				} else
+					tell(Localization.Error.NO_PERMISSION);
+			} else if (!resident.hasTown()) {
+				new JoinTownMenu(resident, getPlayer()).displayTo(getPlayer());
+			}
+
 			return;
 		}
 
-		Town town;
-		Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
-		if (resident.hasTown()) {
-			town = resident.getTown();
-			if (town.getMayor().equals(resident))
-				new TownMenu(town, getPlayer()).displayTo(getPlayer());
-			else if (getPlayer().hasPermission("townymenu.town.use")) {
-				new TownMenu(town, getPlayer()).displayTo(getPlayer());
-			} else
-				tell(Localization.Error.NO_PERMISSION);
-		} else if (!resident.hasTown()) {
-			new JoinTownMenu(resident, getPlayer()).displayTo(getPlayer());
+		String param = this.args[0].toLowerCase();
+
+		if ("reload".equals(param) && player.hasPermission("townmenu reload") || player.isOp()) {
+			SimplePlugin.getInstance().reload();
+
+			this.tell("Settings reloaded!");
 		}
+
+	}
+
+	@Override
+	public List<String> tabComplete() {
+		if (this.args.length == 1)
+			return this.completeLastWord("reload");
+
+		return NO_COMPLETE;
+
 	}
 }
