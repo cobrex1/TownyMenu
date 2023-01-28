@@ -240,9 +240,11 @@ Extra_Info_Menu:
   Commands_Lore:
     - ""
     - "&a/t outlaw &7- make a player an outlaw"
+    - "&a/t outlawlist &7- list the outlaws of the town"
     - "&a/t buy &7- chunk purchase info"
     - "&a/t online &7- online town members"
     - "&a/t say &7- broadcast a town message"
+    - "&a/t towny prices &7- shows town prices / costs"
 
 
 

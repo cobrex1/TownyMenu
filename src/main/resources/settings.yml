@@ -9,7 +9,7 @@
 Prefix: "&b&lTM &7// "
 
 # The Language this plugin's messages will be run in.
-# The following translations are available: en, es, de and pt. More will follow!
+# The following translations are available: en, es, de pt and ru. More will follow!
 # Once chosen, please re-boot the server to generate the chosen language file.
 # It will then appear in the localization folder.
 Locale: "en"

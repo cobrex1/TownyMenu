@@ -4,7 +4,8 @@ main: ${main.class}
 api-version: 1.13
 softdepend:
   - Towny
-author: Tolmikarc. Forked by cobrex
+  - HeadDatabase
+author: Cobrex | Original Dev Tolmikarc.
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.4
 

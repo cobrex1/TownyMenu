@@ -67,6 +67,7 @@ public class TownMenu extends Menu {
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
 //		ItemCreator toggleMenuItem = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.TOGGLE_MENU_BUTTON, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+//		ItemCreator toggleMenuItem = ItemCreator.of(new Head().getHead(String.valueOf(Settings.TOGGLE_MENU)), Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
 		ItemCreator toggleMenuItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.TOGGLE_MENU)), Localization.TownMenu.TOGGLE_MENU_BUTTON, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
 		ItemCreator residentListItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.RESIDENT_LIST)), Localization.TownMenu.RESIDENT_MENU_BUTTON, Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
 		ItemCreator permissionsMenuItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.PERMISSIONS_MENU)), Localization.TownMenu.PERMISSIONS_MENU_BUTTON, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
