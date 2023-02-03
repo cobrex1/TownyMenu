@@ -50,7 +50,7 @@ public class TownMenu extends Menu {
 	private final Button extraInfoButton;
 	private final Button plotMenuButton;
 
-	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.GRAY_STAINED_GLASS_PANE, "").make();
+	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_MENU)), "").make();
 
 	public TownMenu(Town town, Player player) throws NotRegisteredException {
 
@@ -196,7 +196,6 @@ public class TownMenu extends Menu {
 		if (slot == 9 * 3 + 5)
 			return plotMenuButton.getItem();
 
-
 		return DUMMY_BUTTON;
 	}
 
@@ -210,6 +209,7 @@ public class TownMenu extends Menu {
 		private final Button openToggle;
 		private final Button taxPercentToggle;
 
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_TOGGLE)), "").make();
 
 		@Override
 		public String[] getInfo() {
@@ -377,12 +377,13 @@ public class TownMenu extends Menu {
 			if (slot == 7)
 				return taxPercentToggle.getItem();
 
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
 	public class ResidentListMenu extends MenuPagged<Resident> {
 
+//		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_INVITE)), "").make();
 
 		@Override
 		public String[] getInfo() {
@@ -401,7 +402,7 @@ public class TownMenu extends Menu {
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
-				return null;
+				return DUMMY_BUTTON;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
@@ -431,6 +432,7 @@ public class TownMenu extends Menu {
 		private final Button rankButton;
 		private final Button mayorButton;
 
+//		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_RESIDENT_MENU)), "").make();
 
 		protected ResidentMenu(Resident resident) {
 			super(TownMenu.this);
@@ -458,8 +460,7 @@ public class TownMenu extends Menu {
 			if (slot == 9 + 7)
 				return mayorButton.getItem();
 
-
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
@@ -492,6 +493,8 @@ public class TownMenu extends Menu {
 
 		private final Button resetButton;
 		private final Button allOnButton;
+
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_PERMS_MENU)), "").make();
 
 
 		@Override
@@ -822,8 +825,8 @@ public class TownMenu extends Menu {
 			if (slot == 9 * 3 + 8)
 				return allOnButton.getItem();
 
-
-			return null;
+			return DUMMY_BUTTON;
+//			return null;
 		}
 	}
 
@@ -833,6 +836,8 @@ public class TownMenu extends Menu {
 		private final Button depositButton;
 		private final Button withdrawButton;
 		private final Button setTaxButton;
+
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_ECONOMY_MENU)), "").make();
 
 
 		protected EconomyManagementMenu(Town town) {
@@ -865,7 +870,8 @@ public class TownMenu extends Menu {
 			if (slot == 7)
 				return setTaxButton.getItem();
 
-			return null;
+			return DUMMY_BUTTON;
+//			return null;
 		}
 	}
 
@@ -876,6 +882,8 @@ public class TownMenu extends Menu {
 		private final Button setHomeBlockButton;
 		private final Button townBoardButton;
 		private final Button townNameButton;
+
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_GENERAL_SETTINGS_MENU)), "").make();
 
 
 		@Override
@@ -987,7 +995,7 @@ public class TownMenu extends Menu {
 			if (slot == 7)
 				return townBoardButton.getItem();
 
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
@@ -1024,6 +1032,8 @@ public class TownMenu extends Menu {
 		private final ItemStack claimInfo = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.TOWN_CLAIM_INFO)), Localization.TownMenu.ExtraInfoMenu.CLAIMING, Localization.TownMenu.ExtraInfoMenu.CLAIMING_LORE).make();
 		private final ItemStack extraCommands = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.EXTRA_COMMANDS)), Localization.TownMenu.ExtraInfoMenu.COMMANDS, Localization.TownMenu.ExtraInfoMenu.COMMANDS_LORE).make();
 
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_EXTRA_INFO_MENU)), "").make();
+
 		protected ExtraTownInfo() {
 			super(TownMenu.this);
 			setSize(9);
@@ -1036,7 +1046,8 @@ public class TownMenu extends Menu {
 			if (slot == 6)
 				return extraCommands;
 
-			return null;
+			return DUMMY_BUTTON;
+//			return null;
 		}
 	}
 

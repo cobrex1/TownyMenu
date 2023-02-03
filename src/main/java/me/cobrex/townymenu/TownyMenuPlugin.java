@@ -42,6 +42,10 @@ public class TownyMenuPlugin extends SimplePlugin {
 		// Optional: Add custom charts
 		metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
 
+//		if (Common.doesPluginExist("HeadsDatabase")) {
+//			new HeadsDatabaseHook();
+//		}
+
 	}
 
 	public List<Class<? extends YamlStaticConfig>> getSettings() {

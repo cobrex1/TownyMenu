@@ -9,7 +9,7 @@
 Prefix: "&b&lTM &7// "
 
 # The Language this plugin's messages will be run in.
-# The following translations are available: en, es, de pt and ru. More will follow!
+# The following translations are available: en, es, de, pt, ru and vi. More will follow!
 # Once chosen, please re-boot the server to generate the chosen language file.
 # It will then appear in the localization folder.
 Locale: "en"
@@ -27,6 +27,21 @@ Log_Lag_Over_Milis: 100
 #Non-resident menu
 Find_Town: SUNFLOWER
 Create_Town: PLAYER_HEAD
+
+#If you wish the filler to be empty, set the material to AIR
+Filler_Join_Town_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Town_Menu: GRAY_STAINED_GLASS_PANE
+
+Filler_Town_Toggle: GRAY_STAINED_GLASS_PANE
+Filler_Town_Perms_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Town_General_Settings_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Economy_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Extra_Info_Menu: GRAY_STAINED_GLASS_PANE
+
+Filler_Plot_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Plot_Toggle_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Plot_Perms_Menu: GRAY_STAINED_GLASS_PANE
+Filler_Plot_Admin_Menu: GRAY_STAINED_GLASS_PANE
 
 #Town Menu Icons
 Toggle_Menu: LEVER

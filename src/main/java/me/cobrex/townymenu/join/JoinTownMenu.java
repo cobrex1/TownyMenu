@@ -31,7 +31,8 @@ public class JoinTownMenu extends Menu {
 	private final Button openTownButton;
 	private final Button createTownButton;
 
-	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.GRAY_STAINED_GLASS_PANE, "").make();
+	//	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.GRAY_STAINED_GLASS_PANE, "").make();
+	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_TOWN_MENU)), "").make();
 
 
 	public JoinTownMenu(Resident resident, Player player) {
@@ -92,7 +93,7 @@ public class JoinTownMenu extends Menu {
 		if (slot == 3)
 			return createTownButton.getItem();
 
-		return null;
+		return DUMMY_BUTTON;
 	}
 
 }

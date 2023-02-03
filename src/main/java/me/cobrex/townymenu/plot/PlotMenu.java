@@ -10,6 +10,7 @@ import me.cobrex.townymenu.plot.prompt.PlotForSalePrompt;
 import me.cobrex.townymenu.plot.prompt.PlotNotForSalePrompt;
 import me.cobrex.townymenu.plot.prompt.PlotSetTypePrompt;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -39,6 +40,8 @@ public class PlotMenu extends Menu {
 	private final Button friendButton;
 	private final Town town;
 
+	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_MENU)), "").make();
+
 	public PlotMenu(TownBlock townBlock) throws NotRegisteredException {
 
 		setSize(9);
@@ -48,7 +51,7 @@ public class PlotMenu extends Menu {
 		LagCatcher.start("load-residents-online");
 		for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
 			Resident res = TownyAPI.getInstance().getResident(onlinePlayer.getName());
-			if (res !=null) allOnlineResidents.add(res);
+			if (res != null) allOnlineResidents.add(res);
 		}
 
 
@@ -58,7 +61,6 @@ public class PlotMenu extends Menu {
 
 		plotAdministrationMenuButton = new ButtonMenu(new PlotAdministrationMenu(townBlock), CompMaterial.BELL, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON, Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE);
 
-		//friendButton = new ButtonMenu(new FriendPlayerMenu(onlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
 		friendButton = new ButtonMenu(new FriendPlayerMenu(allOnlineResidents), CompMaterial.PLAYER_HEAD, Localization.PlotMenu.FRIEND_MENU_BUTTON, Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE);
 
 		town = townBlock.getTown();
@@ -66,26 +68,24 @@ public class PlotMenu extends Menu {
 
 	@Override
 	public ItemStack getItemAt(int slot) {
-		//if (slot == 1)
 		if (slot == 0)
 			return toggleSettingsMenu.getItem();
 
-		//if (slot == 3)
 		if (slot == 2)
 			return permMenuButton.getItem();
 
-		//if (slot == 5)
 		if (slot == 4)
 			return plotAdministrationMenuButton.getItem();
 
-//		if (slot == 7)
 		if (slot == 6)
 			return friendButton.getItem();
 
-		return null;
+		return DUMMY_BUTTON;
 	}
 
 	public class FriendPlayerMenu extends MenuPagged<Resident> {
+
+//		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_FRIENDS_LIST_MENU)), "").make();
 
 
 		protected FriendPlayerMenu(Iterable<Resident> pages) {
@@ -99,7 +99,7 @@ public class PlotMenu extends Menu {
 				return null;
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.YELLOW + "" +(item.getName()));
+			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			itemSkull.setItemMeta(skull);
@@ -147,11 +147,13 @@ public class PlotMenu extends Menu {
 	}
 
 	public class PlotToggleSettingsMenu extends Menu {
+
 		private final Button fireToggle;
 		private final Button mobsToggle;
 		private final Button explosionToggle;
 		private final Button pvpToggle;
 
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_TOGGLE_MENU)), "").make();
 
 		@Override
 		public String[] getInfo() {
@@ -256,7 +258,7 @@ public class PlotMenu extends Menu {
 			if (slot == 7)
 				return pvpToggle.getItem();
 
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
@@ -290,6 +292,7 @@ public class PlotMenu extends Menu {
 		private final Button resetButton;
 		private final Button allOnButton;
 
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_PERMS_MENU)), "").make();
 
 		@Override
 		public String[] getInfo() {
@@ -690,8 +693,7 @@ public class PlotMenu extends Menu {
 			if (slot == 9 * 3 + 8)
 				return allOnButton.getItem();
 
-
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
@@ -701,6 +703,8 @@ public class PlotMenu extends Menu {
 		private final Button plotNotForSaleButton;
 		private final Button plotSetTypeButton;
 		private final Button plotEvictButton;
+
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_ADMIN_MENU)), "").make();
 
 		protected PlotAdministrationMenu(TownBlock townBlock) {
 			super(PlotMenu.this);
@@ -729,8 +733,7 @@ public class PlotMenu extends Menu {
 			if (slot == 6)
 				return plotEvictButton.getItem();
 
-
-			return null;
+			return DUMMY_BUTTON;
 		}
 	}
 
