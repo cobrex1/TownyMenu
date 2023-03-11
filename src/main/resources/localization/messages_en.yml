@@ -2,6 +2,12 @@ Confirm: "confirm"
 Cancel: "cancel"
 Menu_Information: "Menu Info"
 
+Reloaded: "Settings reloaded!"
+Menu:
+  Button_Return_Title: "&a&lBack"
+  Button_Return_Lore:
+    - ""
+    - "Previous menu."
 
 Join_Create_Menu:
   Main_Menu_Title: "Join or Create a Town"
@@ -9,9 +15,163 @@ Join_Create_Menu:
   Click_Create_Town: "Click to create a town"
   Join_Open_Town: "&aJoin an Open Town"
   Mayor: "Mayor: "
-  Number_Residence: "Number of Residence: "
+  Number_Residents: "Number of Residents: "
   Create_Own_Town: "&aType the name of your town or &ctype cancel."
 
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lJoin or create a Nation"
+  Find_Nation_Button: "&4Click to find an open Nation"
+  Click_Create_Nation_Button: "&4Click to create your Nation"
+  Join_Open_Nation: "&aJoin an Open Nation"
+  King: "King: "
+  Number_of_Towns: "Number of Towns: "
+  Create_Own_Nation: "&aType the name of your nation or &ctype cancel."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lNation Menu"
+  Info:
+    - "Main menu for Nation"
+    - "option!"
+  Nation_Toggle_Menu_Button: "&9&lToggle Nation Settings Menu"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lTurn on and off"
+    - "various nation settings."
+  Nation_Town_List_Button: "&6&lTown List Menu"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "View towns in the Nation"
+  Nation_Resident_Menu_Button: "&b&lNation Resident Menu"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Manage the nation residents"
+  Nation_Economy_Menu_Button: "&a&lNation Economy Management Menu"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "Manage your nation's money"
+  Nation_Settings_Button: "&2&lNation Settings Menu"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Change various"
+    - "extra nation settings."
+  Nation_Invite_Town_Menu_Button: "&d&lInvite Town Menu"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Invite a town to"
+    - "your nation."
+  Nation_Extra_Info_Menu_Button: "&e&lExtra Nation Info"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Extra useful commands for"
+    - "Nation leaders"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lNation Settings Menu"
+  Info:
+    - "Adjust other"
+    - "extra nation settings."
+  Set_Spawn_Msg: "&eSet nation spawn to current location."
+  Set_Spawn: "&b&lSet Nation Spawn"
+  Set_Spawn_Lore:
+    - ""
+    - "Set the location for"
+    - "teleporting with"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lSet Nation Name"
+  Set_Name_Lore:
+    - ""
+    - "Change the name"
+    - "of your nation."
+  Set_Board: "&2&lSet Nation Board"
+  Set_Board_Lore:
+    - ""
+    - "Set the nation board"
+    - "of your nation."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lNation Town Menu"
+  Info:
+    - "Click on a town"
+    - "to manage them!"
+  Online: "Last online: "
+  Mayor: "Town Mayor: "
+  Number_of_Residents: "Number of Residence: "
+  Kick: "&c&lKick Town"
+  Kick_Lore:
+    - ""
+    - "Click to kick town"
+    - "from your nation"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lEconomy Menu"
+  Balance: "&2&lCurrent Nation Balance"
+  Upkeep: "Current Upkeep: "
+  Withdraw: "&c&lWithdraw Money"
+  Withdraw_Lore:
+    - ""
+    - "Withdraw money from"
+    - "your nation bank."
+  Deposit: "&a&lDeposit Money"
+  Deposit_Lore:
+    - ""
+    - "Deposit money into"
+    - "your nation bank."
+  Tax: "&c&lSet Tax Amount"
+  Tax_Percentage: "Set tax percentage"
+  Tax_Amount: "Set tax amount"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&lNation Toggle Settings Menu"
+  Info:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Toggle_Off: "&eClick to Turn &cOff"
+  Toggle_On: "&eClick to Turn &aOn"
+  Public: "&9&lToggle Nation Public"
+  Open: "&3&lToggle Nation Open"
+  Tax_Percent: "&2&lToggle Nation Tax Percent"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lNation Invite Town Menu"
+  Invite: "Click to invite town to nation"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lNation Resident Menu"
+  Info:
+    - "Click on a resident"
+    - "to manage them!"
+  Online: "Last online: "
+  Town_Name: "Town: "
+  Nation_Rank: "&3&lSet Resident Rank"
+  Nation_Rank_Lore:
+    - ""
+    - "Give a nation rank"
+    - "to a player"
+  Nation_King: "&a&lGive Resident King"
+  Nation_King_Lore:
+    - ""
+    - "Make this resident"
+    - "the King."
+    - ""
+    - "&4&lIrreversible"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lOther useful commands"
+  Commands_1_Lore:
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [name]"
+    - "&a/n allylist"
+  Commands_2: "&2&lFurther Extra Commands"
+  Commands_2_Lore:
+    - ""
+    - "&a/n enemy [name]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [color]"
 
 Town_Menu:
   Main_Menu_Title: "&2&lTown Menu"
@@ -75,6 +235,8 @@ Resident_Menu:
     - "Click on a resident"
     - "to manage them!"
   Online: "Last online: "
+  Town_Rank: "Town Rank: "
+  Invite: "&aClick to invite player to town"
   Kick: "&c&lKick Player"
   Kick_Lore:
     - ""
@@ -245,8 +407,7 @@ Extra_Info_Menu:
     - "&a/t online &7- online town members"
     - "&a/t say &7- broadcast a town message"
     - "&a/t towny prices &7- shows town prices / costs"
-
-
+    - "&a/t set mapcolor [color]"
 
 Plot_Menu:
   Main_Menu_Title: "&2Plot Menu"
@@ -391,6 +552,41 @@ Plot_Admin_Menu:
     - "Evict the resident"
     - "of this plot"
 
+Nation_Conversables:
+  Board:
+    Prompt: "&3Type in a message for your nation's board: "
+    Response: "&3Successfully set nation board!"
+  Deposit:
+    Prompt: "&3Type in the amount you would like to deposit in your nation: &c(Type cancel to exit prompt)"
+    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to deposit."
+    Response: "&3Deposited &b{money_symbol}{input} &3into your nation account."
+  Mayor:
+    Prompt: "&cAre you sure you would like to give &b{player} &cthe King position? &3(Type &bconfirm &3or &4cancel&3)"
+    Response: "&3Successfully set &b{player} &3as King!"
+  Kick:
+    Prompt: "&cAre you sure you would like to kick &b{town} &cfrom your nation? Type &bconfirm &cor &4cancel &cnow:"
+    Response: "&3Successfully kicked &b{town} &3from your nation."
+  Name:
+    Prompt: "&3Type in the name you would like to give to your nation: (under {max_length} characters) &bCurrent Name: {nation} &cType cancel to exit."
+    Invalid: "&cName must be unique and less than {max_length} characters."
+    Response: "&3Successfully set nation name to {input}"
+    Return: "&cNot enough money in nation bank to change nation name."
+  Rank:
+    Remove: "remove"
+    Prompt: "&3Type in the rank you would like to give to &b{player} &3now: &b(Options: {ranks}) &3Type &ccancel &3to cancel or &cremove &3to remove their rank."
+    Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
+    Response: "&aSuccessfully set {player}'s nation &arank to {input}"
+    Removed_All: "&cRemoved all nation ranks from resident {player}"
+  Tax:
+    Prompt: "&3Type in the amount you would like to set as a tax for your nation: &c(Type cancel to exit prompt)"
+    Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
+    Invalid_Amount: "&cPlease enter a whole number between 0 and {max_amount} for your tax amount."
+    Response_Percent: "&3Tax percent set to &b{input}"
+    Response_Amount: "&3Tax amount set to &b{money_symbol}{input}"
+  Withdraw:
+    Prompt: "&3Type in the amount you would like to withdraw from your nation's bank: &c(Type cancel to exit prompt)"
+    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
+    Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
 
 Town_Conversables:
   Board:
@@ -401,7 +597,7 @@ Town_Conversables:
     Invalid: "&cPlease enter only whole numbers and make sure you have enough money to deposit."
     Response: "&3Deposited &b{money_symbol}{input} &3into your town account."
   Mayor:
-    Prompt: "&cAre you sure you would like to give &b{player} &cthe Mayor position? &3(Type &bconfirm &3or &4deny&3)"
+    Prompt: "&cAre you sure you would like to give &b{player} &cthe Mayor position? &3(Type &bconfirm &3or &4cancel&3)"
     Response: "&3Successfully set &b{player} &3as mayor!"
   Kick:
     Prompt: "&cAre you sure you would like to kick &b{player} &cfrom your town? Type &bconfirm &cor &4cancel &cnow:"

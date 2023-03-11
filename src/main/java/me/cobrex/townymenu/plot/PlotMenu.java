@@ -68,16 +68,16 @@ public class PlotMenu extends Menu {
 
 	@Override
 	public ItemStack getItemAt(int slot) {
-		if (slot == 0)
+		if (slot == 1)
 			return toggleSettingsMenu.getItem();
 
-		if (slot == 2)
+		if (slot == 3)
 			return permMenuButton.getItem();
 
-		if (slot == 4)
+		if (slot == 5)
 			return plotAdministrationMenuButton.getItem();
 
-		if (slot == 6)
+		if (slot == 7)
 			return friendButton.getItem();
 
 		return DUMMY_BUTTON;

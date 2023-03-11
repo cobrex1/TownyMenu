@@ -1,14 +1,178 @@
 Confirm: "xác nhận"
 Cancel: "hủy bỏ"
 Menu_Information: "Thông tin Menu"
+
+Reloaded: "Cài đặt đã được tải lại!"
+Menu:
+  Button_Return_Title: "&a&lQuay lại"
+  Button_Return_Lore:
+    - ""
+    - "Quay lại menu."
+
 Join_Create_Menu:
   Main_Menu_Title: "Tham gia hoặc tạo một thị trấn"
   Find_Open_Town: "Tìm một thị trấn mở"
   Click_Create_Town: "Nhấp để tạo một thị trấn"
   Join_Open_Town: "&aTham gia Thị trấn Mở"
   Mayor: "Thị trưởng: "
-  Number_Residence: "Số nơi cư trú: "
+  Number_Residents: "Số nơi cư trú: "
   Create_Own_Town: "&aNhập tên thị trấn của bạn hoặc &cnhập hủy."
+
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lTham gia hoặc tạo một quốc gia"
+  Find_Nation_Button: "&4Nhấp để tìm một Quốc gia mở"
+  Click_Create_Nation_Button: "&4Nhấp để tạo Quốc gia của bạn"
+  Join_Open_Nation: "&aTham gia một quốc gia mở"
+  King: "Vua: "
+  Number_of_Towns: "Số thị trấn: "
+  Create_Own_Nation: "&aNhập tên quốc gia của bạn hoặc nhận &ccancel."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lMenu quốc gia"
+  Info:
+    - "Menu chính cho Quốc gia"
+    - "lựa chọn!"
+  Nation_Toggle_Menu_Button: "&9&l Chuyển đổi menu cài đặt quốc gia"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lbật và tắt"
+    - "cài đặt quốc gia khác nhau."
+  Nation_Town_List_Button: "&6&lMenu danh sách thị trấn"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "Xem các thị trấn trên quốc gia"
+  Nation_Resident_Menu_Button: "&b&lMenu cư dân quốc gia"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Quản lý cư dân quốc gia"
+  Nation_Economy_Menu_Button: "&a&lMenu quản lý kinh tế quốc gia"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "Quản lý tiền của quốc gia bạn"
+  Nation_Settings_Button: "&2&lMenu cài đặt quốc gia"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Thay đổi khác nhau"
+    - "cài đặt quốc gia bổ sung."
+  Nation_Invite_Town_Menu_Button: "&d&lMenu mời thị trấn"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Mời một thị trấn đến "
+    - "quốc gia của bạn."
+  Nation_Extra_Info_Menu_Button: "&e&lThông tin quốc gia bổ sung"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Các lệnh bổ sung hữu ích cho"
+    - "lãnh đạo quốc gia"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lMenu cài đặt quốc gia"
+  Info:
+    - "Điều chỉnh khác"
+    - "cài đặt quốc gia bổ sung."
+  Set_Spawn_Msg: "&eĐặt điểm hồi sinh quốc gia đến vị trí hiện tại."
+  Set_Spawn: "&b&lĐặt quốc gia điểm hồi sinh"
+  Set_Spawn_Lore:
+    - ""
+    - "Đặt vị trí cho"
+    - "dịch chuyển tức thời với"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lĐặt tên quốc gia"
+  Set_Name_Lore:
+    - ""
+    - "Thay đổi tên"
+    - "của quốc gia của bạn."
+  Set_Board: "&2&lĐặt hội đồng quốc gia"
+  Set_Board_Lore:
+    - ""
+    - "Đặt bảng quốc gia"
+    - "của quốc gia của bạn."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lMenu thị trấn quốc gia"
+  Info:
+    - "Bấm vào một thị trấn"
+    - "để quản lý chúng!"
+  Online: "trực tuyến lần cuối: "
+  Mayor: "Thị trưởng thị trấn: "
+  Number_of_Residents: "Số cư dân: "
+  Kick: "&c&lĐuổi thị trấn"
+  Kick_Lore:
+    - ""
+    - "Click để đuổi thị trấn"
+    - "khỏi quốc gia của bạn"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lMenu tài chính"
+  Balance: "&2&lSố dư quốc gia hiện tại"
+  Upkeep: " phí duy trì hiện tại: "
+  Withdraw: "&c&lRút tiền"
+  Withdraw_Lore:
+    - ""
+    - "Rút tiền từ"
+    - "ngân hàng quốc gia của bạn."
+  Deposit: "&a&lTiền đặt cọc"
+  Deposit_Lore:
+    - ""
+    - "Gửi tiền vào"
+    - "ngân hàng quốc gia của bạn."
+  Tax: "&c&lĐặt số tiền thuế"
+  Tax_Percentage: "Đặt phần trăm thuế"
+  Tax_Amount: "Đặt số tiền thuế"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&lMenu cài đặt chuyển đổi quốc gia"
+  Info:
+    - "Điều chỉnh cài đặt có thể chuyển đổi"
+    - "cho quốc gia của bạn!"
+  Toggle_Off: "&eNhấp để &cTắt"
+  Toggle_On: "&eNhấp để &aBật"
+  Public: "&9&lChuyển đổi Quốc gia Công khai"
+  Open: "&3&lChuyển đổi quốc gia mở"
+  Tax_Percent: "&2&lChuyển đổi phần trăm thuế quốc gia"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lMenu thị trấn mời quốc gia"
+  Invite: "&aClick to invite town to nation"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lMenu cư dân quốc gia"
+  Info:
+    - "Bấm vào một cư dân"
+    - "để quản lý!"
+  Online: "Trực tuyến lần cuối: "
+  Town_Name: "Thị trấn: "
+  Nation_Rank: "&3&lĐặt rank cho cư dân"
+  Nation_Rank_Lore:
+    - ""
+    - "Xếp hạng quốc gia"
+    - "cho một người chơi"
+  Nation_King: "&a&lCung cấp cho vua"
+  Nation_King_Lore:
+    - ""
+    - "Làm cho cư dân này"
+    - "làm vua."
+    - ""
+    - "&4&lkhông thể đảo ngược"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lCác lệnh hữu ích khác"
+  Commands_1_Lore:
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [name]"
+    - "&a/n allylist"
+  Commands_2: "&2&lCác lệnh bổ sung khác"
+  Commands_2_Lore:
+    - ""
+    - "&a/n enemy [name]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [color]"
+
 Town_Menu:
   Main_Menu_Title: "&2&lMenu Thị trấn"
   Toggle_Menu_Button: "&3&lChuyển đổi Menu Cài đặt"
@@ -56,9 +220,9 @@ Toggle_Menu:
   Info:
     - "Điều chỉnh cài đặt có thể chuyển đổi"
     - "cho thị trấn của bạn!"
-  Toggle_Off: "&eNhấp để Tắt &cTắt"
-  Toggle_On: "&eNhấp để Bật &aBật"
-  Fire: "&6&lChuyển đổi Firelan"
+  Toggle_Off: "&eNhấp để &cTắt"
+  Toggle_On: "&eNhấp để &aBật"
+  Fire: "&6&lChuyển đổi lửa lan"
   Mobs: "&a&lChuyển đổi Sinh sản Mob"
   Explode: "&c&lChuyển đổi các vụ nổ"
   PVP: "&4&lChuyển đổi PVP"
@@ -71,6 +235,8 @@ Resident_Menu:
     - "Bấm vào một cư dân"
     - "để quản lý chúng!"
   Online: "Trực tuyến lần cuối: "
+  Town_Rank: "Town Rank: "
+  Invite: "&aClick to invite player to town"
   Kick: "&c&lNgười chơi đá phạt"
   Kick_Lore:
     - ""
@@ -236,9 +402,13 @@ Extra_Info_Menu:
   Commands_Lore:
     - ""
     - "&a/t ngoài vòng pháp luật &7- khiến người chơi trở thành kẻ ngoài vòng pháp luật"
+    - "&a/t outlawlist &7- list the outlaws of the town"
     - "&a/t mua &7- thông tin mua chunk"
     - "&a/t trực tuyến &7- thành viên thị trấn trực tuyến"
     - "&a/t say &7- phát đi thông báo của thị trấn"
+    - "&a/t towny prices &7- shows town prices / costs"
+    - "&a/t set mapcolor [color]"
+
 Plot_Menu:
   Main_Menu_Title: "&2Menu Lô"
   Toggle_Settings_Menu_Button: "&3&lChuyển đổi Menu Cài đặt"
@@ -381,6 +551,43 @@ Plot_Admin_Menu:
     - ""
     - "Đuổi cư dân"
     - "của âm mưu này"
+
+Nation_Conversables:
+  Board:
+    Prompt: "&3Nhập tin nhắn cho hội đồng quốc gia của bạn: "
+    Response: "&3Đặt thành công bảng quốc gia!"
+  Deposit:
+    Prompt: "&3Nhập số tiền bạn muốn gửi tại quốc gia của mình: &c(Nhập cancel để hủy)"
+    Invalid: "&cVui lòng chỉ nhập số nguyên và đảm bảo bạn có đủ tiền để gửi."
+    Response: "&3Đã gửi &b{money_symbol}{input} &3vào tài khoản quốc gia của bạn."
+  Mayor:
+    Prompt: "&cBạn có chắc chắn muốn trao &b{player} &cvị trí Vua không? &3(Nhập &bconfirm &3hoặc &4deny&3)"
+    Response: "&3Đặt thành công &b{player} &3 làm Vua!"
+  Kick:
+    Prompt: "&cBạn có chắc chắn muốn đuổi &b{town} & khỏi quốc gia của mình không? Nhập &aconfirm &choặc &4cancel &cngay bây giờ:"
+    Response: "&3Đã đuổi thành công &b{town} &3khỏi quốc gia của bạn."
+  Name:
+    Prompt: "&3Nhập tên bạn muốn đặt cho quốc gia của mình: (dưới {max_length} ký tự) &bTên hiện tại: {nation} &cType cancel để thoát."
+    Invalid: "&cTên phải là duy nhất và ít hơn {max_length} ký tự."
+    Response: "&3Đã đặt thành công tên quốc gia thành {input}"
+    Return: "&cKhông đủ tiền trong ngân hàng quốc gia để thay đổi tên quốc gia."
+  Rank:
+    Remove: "Loại bỏ"
+    Prompt: "&3Nhập vào thứ hạng bạn muốn cung cấp cho &b{player} &3bây giờ: &b(Lựa chọn: {ranks}) &3Gõ &ccancel &3để hủy hoặc &cremove &3để xóa rank của họ."
+    Invalid: "&cNgười chơi này đã có thứ hạng này hoặc thứ hạng không tồn tại. (Lựa chọn: {ranks}) &cGõ &c&lcancel &cđể hủy hoặc remove để xóa rank của họ."
+    Response: "&athiết lập thành công {player}'s quốc gia &arank thành {input}"
+    Removed_All: "&cĐã xóa tất cả các rank quốc gia khỏi cư dân {player}"
+  Tax:
+    Prompt: "&3Nhập số tiền bạn muốn đặt làm thuế cho quốc gia của mình: &c(gõ cancel để hủy)"
+    Invalid_Percent: "&cVui lòng chỉ nhập một số nguyên giữa 0 và {max_percent} cho phần trăm thuế của bạn."
+    Invalid_Amount: "&cVui lòng nhập một số nguyên giữa 0 và {max_amount} cho số tiền thuế của bạn."
+    Response_Percent: "&3Phần trăm thuế được đặt thành &b{input}"
+    Response_Amount: "&3Số tiền thuế được đặt thành &b{money_symbol}{input}"
+  Withdraw:
+    Prompt: "&3Nhập số tiền bạn muốn rút từ ngân hàng quốc gia của bạn: &c(Gõ cancel để hủy)"
+    Invalid: "&cVui lòng chỉ nhập số nguyên và đảm bảo bạn có đủ tiền để rút."
+    Response: "&3Rút &b{money_symbol}{input} &3khỏi ngân hàng quốc gia của bạn."
+
 Town_Conversables:
   Board:
     Prompt: "&3Nhập tin nhắn cho hội đồng quản trị thị trấn của bạn: "
@@ -390,38 +597,38 @@ Town_Conversables:
     Invalid: "&cVui lòng chỉ nhập các số nguyên và đảm bảo bạn có đủ tiền để gửi."
     Response: "&3Đã gửi &b{money_symbol}{input} &3vào tài khoản thành phố của bạn."
   Mayor:
-    Prompt: "&cBạn có chắc chắn muốn trao &b{player} &cvị trí Thị trưởng không? &3(Loại &bxác nhận &3hoặc &4từ chối&3)"
+    Prompt: "&cBạn có chắc chắn muốn trao &b{player} &cvị trí Thị trưởng không? &3(Loại &bconfirm &3hoặc &4deny&3)"
     Response: "&3Đã thiết lập thành công &b{player} &3làm thị trưởng!"
   Kick:
-    Prompt: "&cBạn có chắc chắn muốn đá &b{player} &c khỏi thị trấn của mình không? Nhập &bxác nhận &hoặc &4hủy &cnow:"
+    Prompt: "&cBạn có chắc chắn muốn đá &b{player} &c khỏi thị trấn của mình không? Nhập &bconfirm &hoặc &4cancel &cngay bây giờ:"
     Response: "&3Đã đá thành công &b{player} &3 khỏi thị trấn của bạn."
   Name:
-    Prompt: "&3Nhập tên bạn muốn đặt cho thị trấn của mình: (dưới {max_length} ký tự) &bTên hiện tại: {town} &cNhập hủy để thoát."
+    Prompt: "&3Nhập tên bạn muốn đặt cho thị trấn của mình: (dưới {max_length} ký tự) &bTên hiện tại: {town} &cNhập cancel để thoát."
     Invalid: "&cName phải là duy nhất và ít hơn {max_length} ký tự."
     Response: "&3Đặt thành công tên thị trấn thành {input}"
     Return: "&cKhông đủ tiền trong ngân hàng thị trấn để đổi tên thị trấn."
   Rank:
     Remove: "gỡ bỏ"
     Prompt: "&3Nhập thứ hạng bạn muốn cung cấp cho &b{player} &3ngay bây giờ: &b(Tùy chọn: {ranks}) &3Nhập &ccancel &3để hủy hoặc &cremove &3để xóa thứ hạng của họ."
-    Invalid: "&cNgười chơi này đã có thứ hạng này hoặc thứ hạng không tồn tại. (Tùy chọn: {ranks}) &cType &c&lcancel &cto cancel or remove để xóa thứ hạng của họ."
+    Invalid: "&cNgười chơi này đã có thứ hạng này hoặc thứ hạng không tồn tại. (Tùy chọn: {ranks}) &cNhập &c&lcancel &cđể hủy or remove để xóa thứ hạng của họ."
     Response: "&aĐặt thành công &arank của {player} thành {input}"
     Removed_All: "&cĐã xóa tất cả thứ hạng khỏi cư dân {player}"
   Tax:
-    Prompt: "&3Nhập số tiền bạn muốn đặt làm thuế cho thị trấn của mình: &c(Nhập hủy để thoát lời nhắc)"
+    Prompt: "&3Nhập số tiền bạn muốn đặt làm thuế cho thị trấn của mình: &c(Nhập cancel để thoát)"
     Invalid_Percent: "&cVui lòng chỉ nhập một số nguyên trong khoảng từ 0 đến {max_percent} cho phần trăm thuế của bạn."
     Invalid_Amount: "&cVui lòng nhập một số nguyên trong khoảng từ 0 đến {max_amount} cho số tiền thuế của bạn."
     Response_Percent: "&3Phần trăm thuế được đặt thành &b{input}"
     Response_Amount: "&3Số tiền thuế được đặt thành &b{money_symbol}{input}"
   Title:
-    Prompt: "&3Nhập tiêu đề bạn muốn đặt cho &b{player} &3now: (dưới 10 ký tự) &cNhập hủy để thoát."
+    Prompt: "&3Nhập tiêu đề bạn muốn đặt cho &b{player} &3now: (dưới 10 ký tự) &cNhập cancel để thoát."
     Response: "&3Đặt thành công tiêu đề &3 của &b{player} thành &b{input}"
   Withdraw:
-    Prompt: "&3Nhập số tiền bạn muốn rút từ thị trấn của mình: &c(Nhập hủy để thoát lời nhắc)"
+    Prompt: "&3Nhập số tiền bạn muốn rút từ thị trấn của mình: &c(Nhập cancel để thoát)"
     Invalid: "&cVui lòng chỉ nhập số nguyên và đảm bảo bạn có đủ tiền để rút."
     Response: "&3Rút &b{money_symbol}{input} &3từ tài khoản thành phố của bạn."
 Plot_Conversables:
   Evict:
-    Prompt: "&cBạn có muốn đuổi cư dân của lô đất này không? Nhập &axác nhận &hoặc hủy bỏ:"
+    Prompt: "&cBạn có muốn đuổi cư dân của lô đất này không? Nhập &aconfirm &choặc cancel:"
     Invalid: "&cPlot không có bất kỳ cư dân nào."
     Response: "&cCư dân khu đất bị trục xuất."
   For_Sale:
@@ -429,12 +636,13 @@ Plot_Conversables:
     Invalid: "&cVui lòng chỉ nhập các số nguyên và nhỏ hơn giá lô đất tối đa: {max_price}"
     Response: "&3Đặt giá lô thành &b{money_symbol}{input}."
   Not_For_Sale:
-    Prompt: "&3Bạn có muốn đặt mảnh đất này không phải để bán không? Nhập &aconfirm &3or &ccancel&6:"
+    Prompt: "&3Bạn có muốn đặt mảnh đất này không phải để bán không? Nhập &aconfirm &3hoặc &ccancel&6:"
     Response: "&cBộ lô đất không phải để bán."
   Set_Type:
     Prompt: "&3Bạn muốn thiết lập biểu đồ này thuộc loại nào? &b(Tùy chọn: {options}) Nhập 'hủy' để hủy"
     Invalid: "&cVui lòng nhập loại biểu đồ hợp lệ. (Các loại hợp lệ: {options}) hoặc nhập 'cancel' để hủy"
     Response: "&3Loại biểu đồ được đặt thành: &b{input}"
+
 Error:
   No_Permission: "&cBạn không có quyền sử dụng lệnh này."
   No_Town: "&cBạn không có thị trấn."
@@ -449,6 +657,7 @@ Error:
   Cannot_Set_Spawn: "&cKhông thể thiết lập thị trấn sinh sản ở đây."
   Cannot_Change_Name: "&cPhải là thị trưởng để thay đổi tên thị trấn."
   Cannot_Change_Board: "&cPhải là thị trưởng để thay đổi hội đồng thành phố."
+
 Chunk_View:
   Toggle_Remove: "Các khối nội trú hiện đang hiển thị. Bật lén để xóa."
   Removed: "khối nội trú bị loại bỏ."

@@ -4,7 +4,6 @@ import org.mineacademy.fo.settings.SimpleLocalization;
 
 import java.util.Collection;
 
-
 public class Localization extends SimpleLocalization {
 
 	@Override
@@ -15,12 +14,229 @@ public class Localization extends SimpleLocalization {
 	public static String CONFIRM;
 	public static String CANCEL;
 	public static String MENU_INFORMATION;
+	public static String RELOADED;
 
 	private static void init() {
 		setPathPrefix(null);
 		CONFIRM = getString("Confirm");
 		CANCEL = getString("Cancel");
 		MENU_INFORMATION = getString("Menu_Information");
+		RELOADED = getString("Reloaded");
+	}
+
+	public static class JoinCreateNationMenu {
+		public static String MAIN_MENU_TITLE;
+		public static String FIND_NATION_BUTTON;
+		public static String CLICK_CREATE_NATION_BUTTON;
+		public static String JOIN_OPEN_NATION;
+		public static String KING;
+		public static String NUMBER_OF_TOWNS;
+		public static String CREATE_OWN_NATION;
+
+		private static void init() {
+			setPathPrefix("Join_Create_Nation_Menu");
+			MAIN_MENU_TITLE = getString("Main_Menu_Title");
+			FIND_NATION_BUTTON = getString("Find_Nation_Button");
+			CLICK_CREATE_NATION_BUTTON = getString("Click_Create_Nation_Button");
+			JOIN_OPEN_NATION = getString("Join_Open_Nation");
+			KING = getString("King");
+			NUMBER_OF_TOWNS = getString("Number_of_Towns");
+			CREATE_OWN_NATION = getString("Create_Own_Nation");
+		}
+	}
+
+	public static class NationMenu {
+		public static String MAIN_MENU_TITLE;
+		public static String[] INFO;
+		public static String NATION_TOGGLE_MENU_BUTTON;
+		public static Collection<String> NATION_TOGGLE_MENU_BUTTON_LORE;
+		public static String NATION_TOWN_LIST_BUTTON;
+		public static Collection<String> NATION_TOWN_LIST_BUTTON_LORE;
+		public static String NATION_RESIDENT_MENU_BUTTON;
+		public static Collection<String> NATION_RESIDENT_MENU_BUTTON_LORE;
+		public static String NATION_ECONOMY_MENU_BUTTON;
+		public static Collection<String> NATION_ECONOMY_MENU_BUTTON_LORE;
+		public static String NATION_SETTINGS_MENU_BUTTON;
+		public static Collection<String> NATION_SETTINGS_MENU_BUTTON_LORE;
+		public static String NATION_INVITE_TOWN_MENU_BUTTON;
+		public static Collection<String> NATION_INVITE_TOWN_MENU_BUTTON_LORE;
+		public static String NATION_EXTRA_INFO_MENU_BUTTON;
+		public static Collection<String> NATION_EXTRA_INFO_MENU_BUTTON_LORE;
+
+
+		private static void init() {
+			setPathPrefix("Nation_Menu");
+			MAIN_MENU_TITLE = getString("Main_Menu_Title");
+			INFO = getStringList("Info").toArray(new String[0]);
+			NATION_TOGGLE_MENU_BUTTON = getString("Nation_Toggle_Menu_Button");
+			NATION_TOGGLE_MENU_BUTTON_LORE = getStringList("Nation_Toggle_Menu_Button_Lore");
+			NATION_TOWN_LIST_BUTTON = getString("Nation_Town_List_Button");
+			NATION_TOWN_LIST_BUTTON_LORE = getStringList("Nation_Town_List_Button_Lore");
+			NATION_RESIDENT_MENU_BUTTON = getString("Nation_Resident_Menu_Button");
+			NATION_RESIDENT_MENU_BUTTON_LORE = getStringList("Nation_Resident_Menu_Button_Lore");
+			NATION_ECONOMY_MENU_BUTTON = getString("Nation_Economy_Menu_Button");
+			NATION_ECONOMY_MENU_BUTTON_LORE = getStringList("Nation_Economy_Menu_Button_Lore");
+			NATION_SETTINGS_MENU_BUTTON = getString("Nation_Settings_Button");
+			NATION_SETTINGS_MENU_BUTTON_LORE = getStringList("Nation_Settings_Button_Lore");
+			NATION_INVITE_TOWN_MENU_BUTTON = getString("Nation_Invite_Town_Menu_Button");
+			NATION_INVITE_TOWN_MENU_BUTTON_LORE = getStringList("Nation_Invite_Town_Menu_Button_Lore");
+			NATION_EXTRA_INFO_MENU_BUTTON = getString("Nation_Extra_Info_Menu_Button");
+			NATION_EXTRA_INFO_MENU_BUTTON_LORE = getStringList("Nation_Extra_Info_Menu_Button_Lore");
+		}
+
+		public static class NationSettingsMenu {
+			public static String MENU_TITLE;
+			public static String[] INFO;
+			public static String SET_SPAWN_MSG;
+			public static String SET_SPAWN;
+			public static Collection<String> SET_SPAWN_LORE;
+			public static String SET_NAME;
+			public static Collection<String> SET_NAME_LORE;
+			public static String SET_BOARD;
+			public static Collection<String> SET_BOARD_LORE;
+
+			private static void init() {
+				setPathPrefix("Nation_Settings_Menu");
+
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
+				SET_SPAWN_MSG = getString("Set_Spawn_Msg");
+				SET_SPAWN = getString("Set_Spawn");
+				SET_SPAWN_LORE = getStringList("Set_Spawn_Lore");
+				SET_NAME = getString("Set_Name");
+				SET_NAME_LORE = getStringList("Set_Name_Lore");
+				SET_BOARD = getString("Set_Board");
+				SET_BOARD_LORE = getStringList("Set_Board_Lore");
+			}
+		}
+
+		public static class NationTownMenu {
+
+			public static String MENU_TITLE;
+			public static String[] INFO;
+			public static String ONLINE;
+			public static String MAYOR;
+			public static String NUMBER_RESIDENTS;
+			public static String KICK;
+			public static Collection<String> KICK_LORE;
+
+			private static void init() {
+				setPathPrefix("Nation_Town_Menu");
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
+				ONLINE = getString("Online");
+				MAYOR = getString("Mayor");
+				NUMBER_RESIDENTS = getString("Number_of_Residents");
+				KICK = getString("Kick");
+				KICK_LORE = getStringList("Kick_Lore");
+			}
+		}
+
+		public static class NationResidentMenu {
+
+			public static String MENU_TITLE;
+			public static String[] INFO;
+			public static String ONLINE;
+			public static String TOWN;
+			public static String NATION_RANK;
+			public static Collection<String> NATION_RANK_LORE;
+			public static String NATION_KING;
+			public static Collection<String> NATION_KING_LORE;
+
+			private static void init() {
+				setPathPrefix("Nation_Resident_Menu");
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
+				ONLINE = getString("Online");
+				TOWN = getString("Town_Name");
+				NATION_RANK = getString("Nation_Rank");
+				NATION_RANK_LORE = getStringList("Nation_Rank_Lore");
+				NATION_KING = getString("Nation_King");
+				NATION_KING_LORE = getStringList("Nation_King_Lore");
+			}
+		}
+
+		public static class NationEconomyMenu {
+
+			public static String MENU_TITLE;
+			public static String BALANCE;
+			public static String UPKEEP;
+			public static String WITHDRAW;
+			public static Collection<String> WITHDRAW_LORE;
+			public static String DEPOSIT;
+			public static Collection<String> DEPOSIT_LORE;
+			public static String TAX;
+			public static String TAX_PERCENTAGE;
+			public static String TAX_AMOUNT;
+
+			private static void init() {
+				setPathPrefix("Nation_Economy_Menu");
+
+				MENU_TITLE = getString("Menu_Title");
+				BALANCE = getString("Balance");
+				UPKEEP = getString("Upkeep");
+				WITHDRAW = getString("Withdraw");
+				WITHDRAW_LORE = getStringList("Withdraw_Lore");
+				DEPOSIT = getString("Deposit");
+				DEPOSIT_LORE = getStringList("Deposit_Lore");
+				TAX = getString("Tax");
+				TAX_PERCENTAGE = getString("Tax_Percentage");
+				TAX_AMOUNT = getString("Tax_Amount");
+			}
+		}
+
+		public static class NationToggleMenu {
+			public static String MENU_TITLE;
+			public static String[] INFO;
+			public static String TOGGLE_OFF;
+			public static String TOGGLE_ON;
+			public static String PUBLIC;
+			public static String OPEN;
+			public static String TAX_PERCENT;
+
+
+			private static void init() {
+				setPathPrefix("Nation_Toggle_Menu");
+
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
+				TOGGLE_OFF = getString("Toggle_Off");
+				TOGGLE_ON = getString("Toggle_On");
+				PUBLIC = getString("Public");
+				OPEN = getString("Open");
+				TAX_PERCENT = getString("Tax_Percent");
+			}
+		}
+
+		public static class NationInviteTownMenu {
+			public static String MENU_TITLE;
+			public static String INVITE;
+
+
+			private static void init() {
+				setPathPrefix("Nation_Invite_Town_Menu");
+
+				MENU_TITLE = getString("Menu_Title");
+				INVITE = getString("Invite");
+			}
+		}
+
+		public static class NationExtraInfoMenu {
+
+			public static String COMMANDS_1;
+			public static Collection<String> COMMANDS_1_LORE;
+			public static String COMMANDS_2;
+			public static Collection<String> COMMANDS_2_LORE;
+
+			private static void init() {
+				setPathPrefix("Nation_Extra_Info_Menu");
+
+				COMMANDS_1 = getString("Commands_1");
+				COMMANDS_1_LORE = getStringList("Commands_1_Lore");
+				COMMANDS_2 = getString("Commands_2");
+				COMMANDS_2_LORE = getStringList("Commands_2_Lore");
+			}
+		}
 	}
 
 	public static class JoinCreateMenu {
@@ -30,7 +246,7 @@ public class Localization extends SimpleLocalization {
 		public static String CLICK_CREATE_TOWN;
 		public static String JOIN_OPEN_TOWN;
 		public static String MAYOR;
-		public static String NUMBER_RESIDENCE;
+		public static String NUMBER_RESIDENTS;
 		public static String CREATE_OWN_TOWN;
 
 		private static void init() {
@@ -41,7 +257,7 @@ public class Localization extends SimpleLocalization {
 			CLICK_CREATE_TOWN = getString("Click_Create_Town");
 			JOIN_OPEN_TOWN = getString("Join_Open_Town");
 			MAYOR = getString("Mayor");
-			NUMBER_RESIDENCE = getString("Number_Residence");
+			NUMBER_RESIDENTS = getString("Number_Residents");
 			CREATE_OWN_TOWN = getString("Create_Own_Town");
 		}
 	}
@@ -124,6 +340,8 @@ public class Localization extends SimpleLocalization {
 			public static String MENU_TITLE;
 			public static String[] INFO;
 			public static String ONLINE;
+			public static String TOWN_RANK;
+			public static String INVITE;
 			public static String KICK;
 			public static Collection<String> KICK_LORE;
 			public static String TITLE;
@@ -138,6 +356,8 @@ public class Localization extends SimpleLocalization {
 				MENU_TITLE = getString("Menu_Title");
 				INFO = getStringList("Info").toArray(new String[0]);
 				ONLINE = getString("Online");
+				TOWN_RANK = getString("Town_Rank");
+				INVITE = getString("Invite");
 				KICK = getString("Kick");
 				KICK_LORE = getStringList("Kick_Lore");
 				TITLE = getString("Title");
@@ -146,7 +366,6 @@ public class Localization extends SimpleLocalization {
 				RANK_LORE = getStringList("Rank_Lore");
 				MAYOR = getString("Mayor");
 				MAYOR_LORE = getStringList("Mayor_Lore");
-
 			}
 		}
 
@@ -253,7 +472,6 @@ public class Localization extends SimpleLocalization {
 				SWITCH_ALLY2 = getString("Switch_Ally2");
 				SWITCH_OUTSIDER = getString("Switch_Outsider");
 				SWITCH_OUTSIDER2 = getString("Switch_Outsider2");
-
 			}
 		}
 
@@ -283,9 +501,7 @@ public class Localization extends SimpleLocalization {
 				TAX = getString("Tax");
 				TAX_PERCENTAGE = getString("Tax_Percentage");
 				TAX_AMOUNT = getString("Tax_Amount");
-
 			}
-
 		}
 
 		public static class GeneralSettingsMenu {
@@ -320,7 +536,6 @@ public class Localization extends SimpleLocalization {
 				SET_BOARD = getString("Set_Board");
 				SET_BOARD_LORE = getStringList("Set_Board_Lore");
 			}
-
 		}
 
 		public static class ExtraInfoMenu {
@@ -337,11 +552,8 @@ public class Localization extends SimpleLocalization {
 				CLAIMING_LORE = getStringList("Claiming_Lore");
 				COMMANDS = getString("Commands");
 				COMMANDS_LORE = getStringList("Commands_Lore");
-
 			}
-
 		}
-
 	}
 
 	public static class PlotMenu {
@@ -368,7 +580,6 @@ public class Localization extends SimpleLocalization {
 			PLOT_ADMIN_MENU_BUTTON_LORE = getStringList("Plot_Admin_Menu_Button_Lore").toArray(new String[0]);
 			FRIEND_MENU_BUTTON = getString("Friend_Menu_Button");
 			FRIEND_MENU_BUTTON_LORE = getStringList("Friend_Menu_Button_Lore").toArray(new String[0]);
-
 		}
 
 		public static class FriendMenu {
@@ -387,9 +598,7 @@ public class Localization extends SimpleLocalization {
 				ADD = getString("Add");
 				CLICK_REMOVE_LORE = getString("Click_Remove_Lore");
 				CLICK_ADD_LORE = getString("Click_Add_Lore");
-
 			}
-
 		}
 
 		public static class ToggleMenu {
@@ -469,7 +678,6 @@ public class Localization extends SimpleLocalization {
 			public static String SWITCH_OUTSIDER;
 			public static String SWITCH_OUTSIDER2;
 
-
 			private static void init() {
 				setPathPrefix("Plot_Player_Permission_Menu");
 				MENU_TITLE = getString("Menu_Title");
@@ -521,7 +729,6 @@ public class Localization extends SimpleLocalization {
 				SWITCH_ALLY2 = getString("Switch_Ally2");
 				SWITCH_OUTSIDER = getString("Switch_Outsider");
 				SWITCH_OUTSIDER2 = getString("Switch_Outsider2");
-
 			}
 		}
 
@@ -548,16 +755,122 @@ public class Localization extends SimpleLocalization {
 				SET_TYPE_LORE = getStringList("Set_Type_Lore").toArray(new String[0]);
 				EVICT = getString("Evict");
 				EVICT_LORE = getStringList("Evict_Lore").toArray(new String[0]);
-
 			}
-
 		}
-
 	}
 
+	public static class NationConversables {
+
+		public static class Nation_Board {
+			public static String PROMPT;
+			public static String RESPONSE;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Board");
+				PROMPT = getString("Prompt");
+				RESPONSE = getString("Response");
+			}
+		}
+
+		public static class Nation_Deposit {
+			public static String PROMPT;
+			public static String INVALID;
+			public static String RESPONSE;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Deposit");
+				PROMPT = getString("Prompt");
+				INVALID = getString("Invalid");
+				RESPONSE = getString("Response");
+			}
+		}
+
+		public static class Nation_King {
+			public static String PROMPT;
+			public static String RESPONSE;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Mayor");
+				PROMPT = getString("Prompt");
+				RESPONSE = getString("Response");
+			}
+		}
+
+		public static class Nation_Kick {
+			public static String PROMPT;
+			public static String RESPONSE;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Kick");
+				PROMPT = getString("Prompt");
+				RESPONSE = getString("Response");
+			}
+		}
+
+		public static class Nation_Name {
+			public static String PROMPT;
+			public static String INVALID;
+			public static String RESPONSE;
+			public static String RETURN;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Name");
+				PROMPT = getString("Prompt");
+				INVALID = getString("Invalid");
+				RESPONSE = getString("Response");
+				RETURN = getString("Return");
+			}
+		}
+
+		public static class Nation_Rank {
+			public static String PROMPT;
+			public static String INVALID;
+			public static String RESPONSE;
+			public static String REMOVE;
+			public static String REMOVED_ALL;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Rank");
+				PROMPT = getString("Prompt");
+				INVALID = getString("Invalid");
+				RESPONSE = getString("Response");
+				REMOVE = getString("Remove");
+				REMOVED_ALL = getString("Removed_All");
+			}
+		}
+
+		public static class Nation_Tax {
+			public static String PROMPT;
+			public static String INVALID_PERCENT;
+			public static String INVALID_AMOUNT;
+			public static String RESPONSE_AMOUNT;
+			public static String RESPONSE_PERCENT;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Tax");
+				PROMPT = getString("Prompt");
+				INVALID_AMOUNT = getString("Invalid_Amount");
+				INVALID_PERCENT = getString("Invalid_Percent");
+				RESPONSE_PERCENT = getString("Response_Percent");
+				RESPONSE_AMOUNT = getString("Response_Amount");
+			}
+		}
+
+		public static class Nation_Withdraw {
+			public static String PROMPT;
+			public static String INVALID;
+			public static String RESPONSE;
+
+			private static void init() {
+				setPathPrefix("Nation_Conversables.Withdraw");
+				PROMPT = getString("Prompt");
+				INVALID = getString("Invalid");
+				RESPONSE = getString("Response");
+			}
+		}
+	}
 
 	public static class TownConversables {
-
 
 		public static class Board {
 			public static String PROMPT;
@@ -677,7 +990,6 @@ public class Localization extends SimpleLocalization {
 				RESPONSE = getString("Response");
 			}
 		}
-
 	}
 
 	public static class PlotConversables {
@@ -731,7 +1043,6 @@ public class Localization extends SimpleLocalization {
 				RESPONSE = getString("Response");
 			}
 		}
-
 	}
 
 
@@ -767,7 +1078,6 @@ public class Localization extends SimpleLocalization {
 			CANNOT_SET_SPAWN = getString("Cannot_Set_Spawn");
 			CANNOT_CHANGE_NAME = getString("Cannot_Change_Name");
 			CANNOT_CHANGE_BOARD = getString("Cannot_Change_Board");
-
 		}
 	}
 

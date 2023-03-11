@@ -5,13 +5,18 @@ api-version: 1.13
 softdepend:
   - Towny
   - HeadDatabase
-author: Cobrex | Original Dev Tolmikarc.
+author: Cobrex | Original author Tolmikarc.
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.4
 
 commands:
+  nationmenu:
+    description: Opens the nation level GUI menu
+    aliases: nm
+    permission-message: "You do not have permission to use this command!"
+    default: true
   townmenu:
-    description: Open the town level GUI menu
+    description: Opens the town level GUI menu
     aliases: tm
     permission-message: "You do not have permission to use this command!"
     default: true
@@ -34,6 +39,9 @@ commands:
     usage: |-
       /chunkview - to view the chunk boarder.
 permissions:
+  nationmenu.view:
+    description: Opens the nation level GUI
+    default: true
   townmenu.view:
     description: Opens the town level GUI
     default: true
@@ -46,6 +54,9 @@ permissions:
   chunkview.view:
     description: Allows use of /chunkview
     default: true
+  townymenu.nation.use:
+    description: OPens the nation lavel GUI
+    default: false
   townymenu.town.use:
     description: Opens the town level GUI
     default: false

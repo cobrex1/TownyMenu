@@ -5,14 +5,14 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.6.2</version>
+    <version>1.7.0</version>
 
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.2.8</foundation.version>
+        <foundation.version>6.3.1</foundation.version>
 
         <java.version>1.8</java.version>
 
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.github.kangarko</groupId>
             <artifactId>Foundation</artifactId>
-            <version>6.2.8</version>
+            <version>6.2.9</version>
         </dependency>
         <dependency>
             <groupId>com.github.TownyAdvanced</groupId>
@@ -67,12 +67,12 @@
             <scope>provided</scope>
         </dependency>
         <!-- HeadDatabase-API -->
-        <!--        <dependency>
-                    <groupId>com.arcaniax</groupId>
-                    <artifactId>HeadDatabase-API</artifactId>
-                    <version>1.3.1</version>
-                    <scope>provided</scope>
-                </dependency> -->
+        <dependency>
+            <groupId>com.arcaniax</groupId>
+            <artifactId>HeadDatabase-API</artifactId>
+            <version>1.3.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

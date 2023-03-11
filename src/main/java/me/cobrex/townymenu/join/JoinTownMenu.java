@@ -68,8 +68,9 @@ public class JoinTownMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
+			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
+			lore.add("");
 			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
-			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENCE + (item.getNumResidents()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;

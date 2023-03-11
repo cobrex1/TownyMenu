@@ -2,6 +2,12 @@ Confirm: "confirmar"
 Cancel: "cancelar"
 Menu_Information: "Información"
 
+Reloaded: "Ajustes recargados!"
+Menu:
+  Button_Return_Title: "&a&lAtrás"
+  Button_Return_Lore:
+    - ""
+    - "Menú anterior."
 
 Join_Create_Menu:
   Main_Menu_Title: "Únete o crea una Town"
@@ -9,9 +15,163 @@ Join_Create_Menu:
   Click_Create_Town: "Haz clic para crear una town"
   Join_Open_Town: "&aÚnete a un town abierto"
   Mayor: "Alcalde: "
-  Number_Residence: "Número de Residencia: "
+  Number_Residents: "Número de Residencia: "
   Create_Own_Town: "&aEscriba el nombre de su ciudad o para cancelar la creación de una ciudad &cescriba cancelar."
 
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lÚnete o crea una Nación"
+  Find_Nation_Button: "&4Encuentra una nación abierta"
+  Click_Create_Nation_Button: "&4Haz clic para crear una Nación"
+  Join_Open_Nation: "&aJÚnete a un Nación abierto"
+  King: "Rey: "
+  Number_of_Towns: "Número de Pueblos: "
+  Create_Own_Nation: "&aEscriba el nombre de su nación o &cescriba cancelar."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lMenú Nación"
+  Info:
+    - "Menú principal de Nación"
+    - "opción!"
+  Nation_Toggle_Menu_Button: "&9&lMenú de configuración de la Nación"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lEncender y apagar"
+    - "opciones varias de la nación."
+  Nation_Town_List_Button: "&6&lMenú de lista de ciudades"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "Ver pueblos de la Nación"
+  Nation_Resident_Menu_Button: "&b&lMenú residente de la nación"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Administrar los residentes de la nación"
+  Nation_Economy_Menu_Button: "&a&lMenú de Economía de la Nación"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "Administra el dinero de tu nación"
+  Nation_Settings_Button: "&2&lMenú de configuración de la nación"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Cambiar varios"
+    - "configuraciones adicionales."
+  Nation_Invite_Town_Menu_Button: "&d&lInvitar menú de la ciudad"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Invita a un pueblo a"
+    - "tu nación."
+  Nation_Extra_Info_Menu_Button: "&e&lInformación adicional de la nación"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Comandos extra útiles para"
+    - "líderes de la nación"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lMenú de configuración de la nación"
+  Info:
+    - "Ajustar otro configuraciones"
+    - "de países adicionales."
+  Set_Spawn_Msg: "&eSe ha establecido el engendro de la nación en tu posicion."
+  Set_Spawn: "&b&lEstablecer engendro de nación"
+  Set_Spawn_Lore:
+    - ""
+    - "Establecer la ubicación"
+    - "del comando"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lEstablecer nombre de nación"
+  Set_Name_Lore:
+    - ""
+    - "Cambiar el nombre"
+    - "de tu nación."
+  Set_Board: "&2&lstablecer el board de la Nación"
+  Set_Board_Lore:
+    - ""
+    - "Establecer el board"
+    - "de tu nación."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lMenú de la ciudad de la nación"
+  Info:
+    - "Haga clic en una ciudad"
+    - "para administrarlos!"
+  Online: "Última conexión: "
+  Mayor: "Alcalde de la ciudad: "
+  Number_of_Residents: "Número de Residencia: "
+  Kick: "&c&lExpulsar la ciudad"
+  Kick_Lore:
+    - ""
+    - "Haz clic para expulsar la ciudad"
+    - "de tu nación"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lMenú de Economía de la nación"
+  Balance: "&2&lDinero actual de la nación"
+  Upkeep: "Cuota de mantenimiento: "
+  Withdraw: "&c&lRetirar Dinero"
+  Withdraw_Lore:
+    - ""
+    - "Retirar dinero del"
+    - "banco de tu nación."
+  Deposit: "&a&lDepositar Dinero"
+  Deposit_Lore:
+    - ""
+    - "Depositar dinero en"
+    - "el banco de tu nación."
+  Tax: "&c&lEstablecer impuestos"
+  Tax_Percentage: "Establecer impuestos por porcentaje"
+  Tax_Amount: "Establecer cantidad de impuestos"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&lNación Alternar menú de configuración"
+  Info:
+    - "Ajustar la configuración conmutable"
+    - "para tu nación!"
+  Toggle_Off: "&eHaga clic para &cDesactivar"
+  Toggle_On: "&eHaga clic para &aActivar"
+  Public: "&9&lAjustar spawn publico"
+  Open: "&3&lAjustar nación abierto"
+  Tax_Percent: "&2&lAjustar impuestos por porcentaje de la nación"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lMenú de la ciudad de invitación de la nación"
+  Invite: "&aHaga clic para invitar a la ciudad a la nación"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lMenú residente de la nación"
+  Info:
+    - "Haga clic en un residente"
+    - "para administrarlos!"
+  Online: "Última conexión: "
+  Town_Name: "Ciudad: "
+  Nation_Rank: "&3&lRango de residente de la nación"
+  Nation_Rank_Lore:
+    - ""
+    - "Dar un rango de nación"
+    - "a un plato"
+  Nation_King: "&a&lDar Rey Residente"
+  Nation_King_Lore:
+    - ""
+    - "Hacer este residente"
+    - "el Rey."
+    - ""
+    - "&4&lIrreversible"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lOtros comandos útiles"
+  Commands_1_Lore:
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [name]"
+    - "&a/n allylist"
+  Commands_2: "&2&lMás comandos adicionales"
+  Commands_2_Lore:
+    - ""
+    - "&a/n enemy [name]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [color]"
 
 Town_Menu:
   Main_Menu_Title: "&2&lTown Menú"
@@ -75,6 +235,8 @@ Resident_Menu:
     - "Click en un residente para"
     - "manejar diversas opciones"
   Online: "Ultima conexion: "
+  Town_Rank: "Rango de ciudad: "
+  Invite: "&aHaga clic para invitar al jugador a la ciudad"
   Kick: "&c&lExpulsar Jugador"
   Kick_Lore:
     - ""
@@ -239,13 +401,12 @@ Extra_Info_Menu:
   Commands_Lore:
     - ""
     - "&a/t outlaw &7- convertir a un jugador en un forajido"
+    - "&a/t outlawlist &7- list the outlaws of the town"
     - "&a/t buy &7- informacion de compra de chunks adicionales"
     - "&a/t online &7- listar miembros de la ciudad conectados"
     - "&a/t say &7- enviar un mensaje de ciudad"
-
-
-
-
+    - "&a/t towny prices &7- shows town prices / costs"
+    - "&a/t set mapcolor [color]"
 
 Plot_Menu:
   Main_Menu_Title: "&2Menu de Parcelas"
@@ -385,8 +546,41 @@ Plot_Admin_Menu:
     - "Remueve al dueño de"
     - "esta parcela"
 
-
-
+Nation_Conversables:
+  Board:
+    Prompt: "&3Escribe el nuevo mensaje de su nación: "
+    Response: "&3Se ha actualizado el board de la nación!"
+  Deposit:
+    Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escriba cancelar para salir de la indicación)"
+    Invalid: "&cIngrese solo números enteros y asegúrese de tener suficiente dinero para depositar."
+    Response: "&3Has Depositado &b{money_symbol}{input} &3en tu cuenta nacional."
+  Mayor:
+    Prompt: "&c¿Está seguro de hacer a &b{player} &cla posición del Rey? &3(Escriba &bconfirmar &3o &4cancelar&3)"
+    Response: "&3¡Se ha otorgado el rol Rey a &b{player} &3!"
+  Kick:
+    Prompt: "&c¿Estas seguro de expulsar a &b{town} &cde tu nación? Escriba &bconfirmar &3o &4cancelar &cahora:"
+    Response: "&3Se ha expulsado a &b{town} &3de tu nación."
+  Name:
+    Prompt: "&3Escribe el nuevo nombre de tu nación: (menos de {max_length} caracteres) &bNombre actual: {nation} &cEscriba cancelar para salir."
+    Invalid: "&cEl nombre debe ser único y mejor a {max_length} caracteres."
+    Response: "&3Establecer con éxito el nombre de la nación en {input}"
+    Return: "&cno hay suficiente dinero en el banco de la nación para cambiar el nombre de la nación."
+  Rank:
+    Remove: "eliminar"
+    Prompt: "&3scribe el nuevo rango de &b{player} &3ahora: &b(Opciones: {ranks}) &3Escriba &ccancelar &3para cancelar o &celiminar &3para quitar su rango."
+    Invalid: "&cEste jugador ya tiene este rango o el rango no existe. (Opciones: {ranks}) &cEscriba &c&lcancelar &cpara cancelar o eliminar para eliminar su rango."
+    Response: "&aEl rango de {player}'s nación &aahora es {input}"
+    Removed_All: "&cSRemover todos los rangos de nación de residente {player}"
+  Tax:
+    Prompt: "&3Escriba la cantidad que le gustaría establecer como impuesto para su nación: &c(Escriba cancelar para salir de la indicación)"
+    Invalid_Percent: "&cIngrese solo un número entero entre 0 y {max_percent} por su porcentaje de impuestos."
+    Invalid_Amount: "&cIngrese solo un número entero entre 0 y {max_amount} por el monto de su impuesto."
+    Response_Percent: "&3El porcentaje de impuestos ahora es &b{input}"
+    Response_Amount: "&3El costo de los puestos ahora es &b{money_symbol}{input}"
+  Withdraw:
+    Prompt: "&3Escriba la cantidad que le gustaría depositar en su ciudad: &c(Escriba cancelar para salir de la indicación)"
+    Invalid: "&cIngrese solo números enteros y asegúrese de tener suficiente dinero para retirar."
+    Response: "&3Se retiró &b{money_symbol}{input} &3de tu cuenta nacional."
 
 Town_Conversables:
   Board:
@@ -443,9 +637,6 @@ Plot_Conversables:
     Invalid: "&cIngrese un tipo de parcela válida. (Tipos validos: {options}) o escribe 'cancel' para cancelar"
     Response: "&3El tipo de parcela ahora es: &b{input}"
 
-
-
-
 Error:
   No_Permission: "&cNo puedes hacer eso."
   No_Town: "&cNo tienes una ciudad."
@@ -464,8 +655,6 @@ Error:
 Chunk_View:
   Toggle_Remove: "Ahora se muestran los bloques fronterizos. Alternar sigilo para eliminar."
   Removed: "Se eliminaron los bloques de borde."
-
-
 
 # DO NOT TOUCH VERSION
 Version: 2

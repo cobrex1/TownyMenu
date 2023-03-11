@@ -43,6 +43,49 @@ Filler_Plot_Toggle_Menu: GRAY_STAINED_GLASS_PANE
 Filler_Plot_Perms_Menu: GRAY_STAINED_GLASS_PANE
 Filler_Plot_Admin_Menu: GRAY_STAINED_GLASS_PANE
 
+Filler_Join_Nation_Menu: GRAY_STAINED_GLASS_PANE
+
+#No nation menu
+Find_Nation_Button: SUNFLOWER
+Create_Nation_Button: PLAYER_HEAD
+
+#Nation Menu Icons
+Nation_Toggle: LEVER
+Nation_Town_List: PLAYER_HEAD
+Nation_Resident_Menu: BOOK
+Nation_Economy_Menu: EMERALD_BLOCK
+Nation_Settings_Menu: ENDER_CHEST
+Nation_Set_Spawn: LAPIS_LAZULI
+Nation_Invite_Town: BELL
+Nation_Extra_Info: ENCHANTED_BOOK
+
+#Nation Economy Menu Icons
+Nation_Balance: GOLD_BLOCK
+Nation_Deposit: CHEST
+Nation_Withdraw: ENDER_CHEST
+Nation_Set_Tax: ARROW
+
+#Nation Town Menu
+Nation_Town_Kick: REDSTONE_BLOCK
+
+#Nation Resident Menu Icons
+Nation_Resident_Rank: IRON_SWORD
+Nation_Set_King: GOLDEN_APPLE
+
+#Toggle Nation Settings Icons
+Nation_Toggle_Public: CHEST
+Nation_Toggle_Open: ACACIA_DOOR
+Nation_Toggle_Tax_Percentage: EMERALD
+
+#General Nation Settings Menu:
+Set_Nation_Spawn: GLOWSTONE
+Set_Nation_Board: OAK_SIGN
+Set_Nation_Name: NAME_TAG
+
+#Extra Nation Commands:
+Nation_Extra_Commands_1: BOOK
+Nation_Extra_Commands_2: BOOKSHELF
+
 #Town Menu Icons
 Toggle_Menu: LEVER
 Resident_List: PLAYER_HEAD
@@ -112,6 +155,7 @@ Set_Town_Name: NAME_TAG
 #Extra Town Info Menu:
 Town_Claim_Info: GOLDEN_AXE
 Extra_Commands: BOOKSHELF
+
 
 
 

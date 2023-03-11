@@ -1,4 +1,4 @@
-package me.cobrex.townymenu.join;
+package me.cobrex.townymenu.nation.prompt;
 
 import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.settings.Localization;
@@ -10,11 +10,11 @@ import org.mineacademy.fo.conversation.SimplePrompt;
 
 import javax.annotation.Nullable;
 
-public class CreateTownPrompt extends SimplePrompt {
+public class CreateNationPrompt extends SimplePrompt {
 
 	Resident resident;
 
-	public CreateTownPrompt(Player player) {
+	public CreateNationPrompt(Player player) {
 		super(false);
 	}
 
@@ -26,13 +26,14 @@ public class CreateTownPrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext context) {
-		return Localization.JoinCreateMenu.CREATE_OWN_TOWN;
+		return Localization.JoinCreateNationMenu.CREATE_OWN_NATION;
 	}
 
 	@Nullable
 	@Override
 	protected @org.jetbrains.annotations.Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		getPlayer(context).performCommand("t new " + (input));
+		getPlayer(context).performCommand("n new " + (input));
 		return null;
 	}
 }
+

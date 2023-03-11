@@ -1,7 +1,13 @@
-Confirm: "confirm"
-Cancel: "cancel"
+Confirm: "подтверждать"
+Cancel: "отмена"
 Menu_Information: "Меню информации"
 
+Reloaded: "Настройки перезагружены!"
+Menu:
+  Button_Return_Title: "&a&lНазад"
+  Button_Return_Lore:
+    - ""
+    - "Предыдущее меню."
 
 Join_Create_Menu:
   Main_Menu_Title: "Присоединяйтесь или создайте город"
@@ -9,9 +15,163 @@ Join_Create_Menu:
   Click_Create_Town: "Создать город"
   Join_Open_Town: "&aЗайти в открытый город"
   Mayor: "Лорд: "
-  Number_Residence: "Кол-во жителей: "
+  Number_Residents: "Кол-во жителей: "
   Create_Own_Town: "&aВведите название вашего города или нажмите &cотмена"
 
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lПрисоединяйтесь или создайте нация"
+  Find_Nation_Button: "&4Найти открытый нацию"
+  Click_Create_Nation_Button: "&4Нажмите, чтобы создать свою нация"
+  Join_Open_Nation: "&aJЗайти в открытый нация"
+  King: "Король: "
+  Number_of_Towns: "Количество городов: "
+  Create_Own_Nation: "&aВведите название вашего нация или нажмите &cотмена."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lМеню управления нация"
+  Info:
+    - "Главное меню нация"
+    - "параметры!"
+  Nation_Toggle_Menu_Button: "&9&lМеню переключения настроек нация"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lУправление опциями"
+    - "для всего нация."
+  Nation_Town_List_Button: "&6&lМеню списка городов"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "Посмотреть города в стране"
+  Nation_Resident_Menu_Button: "&b&lМеню резидента нация"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Управляйте жителями нация"
+  Nation_Economy_Menu_Button: "&a&lнация Управление экономикой"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "MУправление балансом нация"
+  Nation_Settings_Button: "&2&lМеню настроек нация"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Изменить различные"
+    - "дополнительные настройки нация."
+  Nation_Invite_Town_Menu_Button: "&d&lПригласить Город Меню"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Пригласите город в"
+    - "свою нация."
+  Nation_Extra_Info_Menu_Button: "&e&lДополнительная информация о нация"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Дополнительные полезные команды для"
+    - "Лидеры нация"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lнация Меню настроек"
+  Info:
+    - "Настроить другое"
+    - "дополнительные настройки нация."
+  Set_Spawn_Msg: "&eаша позиция установлена как спавн в нация."
+  Set_Spawn: "&b&lУстановить точку спавна в нация"
+  Set_Spawn_Lore:
+    - ""
+    - "Установить точку появления'"
+    - "в вашем нация"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lИзменить название нация"
+  Set_Name_Lore:
+    - ""
+    - "Изменить название"
+    - "вашего нация."
+  Set_Board: "&2&lИзменить заголовок нация"
+  Set_Board_Lore:
+    - ""
+    - "Изменить заголовок"
+    - "вашего ация."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lМеню национального города"
+  Info:
+    - "Нажмите на город"
+    - "управлять ими!"
+  Online: "Последний онлайн: "
+  Mayor: "Мэр города: "
+  Number_of_Residents: "Номер места жительства: "
+  Kick: "&c&lпнуть город"
+  Kick_Lore:
+    - ""
+    - "нажмите, чтобы пнуть город"
+    - "из твоей нация"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lМеню национальной экономики"
+  Balance: "&2&lТекущий национальный баланс"
+  Upkeep: "Плата за содержание: "
+  Withdraw: "&c&lСнять сумму"
+  Withdraw_Lore:
+    - ""
+    - "Снять сумму с баланса"
+    - "банка вашего нация."
+  Deposit: "&a&lПоложить сумму"
+  Deposit_Lore:
+    - ""
+    - "олько команду"
+    - "банка вашего нация."
+  Tax: "&c&lУстановить размер налога"
+  Tax_Percentage: "Установить налог в процентах"
+  Tax_Amount: "Установить сумму налога"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&llМеню переключения настроек нация"
+  Info:
+    - "Настройте переключаемые параметры"
+    - "для вашей нация!"
+  Toggle_Off: "&eНажмите для &cотключения"
+  Toggle_On: "&eНажмите для &aвключения"
+  Public: "&9&lTПубличный статус города"
+  Open: "&3&lОткрытый статус города"
+  Tax_Percent: "&2&lИзменить процент национального налога"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lНация Пригласить Город Меню"
+  Invite: "&aНажмите, чтобы пригласить город в страну"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lМеню резидента нация"
+  Info:
+    - "Нажмите на жителя"
+    - "управлять ими!"
+  Online: "Последний онлайн: "
+  Town_Name: "Город: "
+  Nation_Rank: "&3&lУстановить статус резидента"
+  Nation_Rank_Lore:
+    - ""
+    - "Дайте ранг нация"
+    - "к игроку"
+  Nation_King: "&a&lДайте резидента короля"
+  Nation_King_Lore:
+    - ""
+    - "Сделать это резидентом"
+    - "король."
+    - ""
+    - "&4&lНеобратимо"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lДругие полезные команды"
+  Commands_1_Lore:
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [name]"
+    - "&a/n allylist"
+  Commands_2: "&2&lДополнительные дополнительные команды"
+  Commands_2_Lore:
+    - ""
+    - "&a/n enemy [name]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [color]"
 
 Town_Menu:
   Main_Menu_Title: "&2&lМеню управления городом"
@@ -73,6 +233,8 @@ Resident_Menu:
     - "Нажмите на участника"
     - "для управления!"
   Online: "Последний онлайн: "
+  Town_Rank: "Town Rank: "
+  Invite: "&aClick to invite player to town"
   Kick: "&c&lВыгнать игрока"
   Kick_Lore:
     - ""
@@ -185,7 +347,7 @@ Economy_Menu:
   Deposit_Lore:
     - ""
     - "только команду"
-    - "/ t deposit {$}."
+    - "/t deposit {$}."
     - "(бывает утеря денег)"
   Tax: "&c&lУстановить размер налога"
   Tax_Percentage: "Установить налог в процентах"
@@ -246,8 +408,7 @@ Extra_Info_Menu:
     - "При убийстве преступника на территории вашего города"
     - "он отправится в тюрьму, если таковая имеется."
     - "&a/t outlawlist &7- список преступников"
-
-
+    - "&a/t set mapcolor [color]"
 
 Plot_Menu:
   Main_Menu_Title: "&2Управление участками города"
@@ -399,6 +560,41 @@ Plot_Admin_Menu:
     - ""
     - "&cНе выгоняйте владельцев без веской на то причины."
 
+Nation_Conversables:
+  Board:
+    Prompt: "&3Введите заголовок вашего нация: "
+    Response: "&3нация Заголовок обновлён!"
+  Deposit:
+    Prompt: "&3Введите сумму которую вы хотите положить на баланс вашего нация: &c(введите cancel для отмены)"
+    Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
+    Response: "&3Пополнено &b{money_symbol}{input} &3на баланс вашего нация."
+  Mayor:
+    Prompt: "&cAВы уверены что хотите выдать &b{player} &cпозиция короля? &3(Введите &bconfirm &3или &4deny&3 для отмены)"
+    Response: "&3Игроку &b{player} &3как король!"
+  Kick:
+    Prompt: "&cВы уверены что хотите выгнать &b{town} &cиз вашего нация? Введите &bconfirm &cили &4cancel &cдля отмены:"
+    Response: "&3Игрок &b{town} &3выгнан из вашего нация."
+  Name:
+    Prompt: "&3Введите название вашего города: (не менее {max_length} символов) &bТекущее название: {nation} &cВведите cancel для отмены."
+    Invalid: "&cНазвание должно быть уникальным и не менее {max_length} символов."
+    Response: "&3Название успешно изменено на {input}"
+    Return: "&cНедостаточно монет на балансе нация для изменения названия."
+  Rank:
+    Remove: "remove"
+    Prompt: "&3Введите ранг для игрока &b{player}: &b(Варианты: {ranks}) &3Введите &c&ncancel&r&3 для отмены или &c&nremove&r&3 для снятия рангов."
+    Invalid: "&cто игрок уже с этим рангом или такого ранга не существует. (Варианты: {ranks}) &cВведите &c&ncancel&r&c для отмены или &c&nremove&r&3 для снятия рангов."
+    Response: "&aРанг &2{input}&a успешно установлен для игрока &2{player}"
+    Removed_All: "&cRВсе ранги удалены у игрока {player}"
+  Tax:
+    Prompt: "&3Введите сумму которую вы хотите установить в качестве налога вашего нация: &c(введите cancel для отмены)"
+    Invalid_Percent: "&cВведите целое число между 0 и {max_percent} для установки процента налога."
+    Invalid_Amount: "&cВведите целое число между 0 и {max_amount} для установки цены налога."
+    Response_Percent: "&3Налог в размере &b{input} процентов в день установлен"
+    Response_Amount: "&3Налог в размере &b{money_symbol}{input} монет в день установлен"
+  Withdraw:
+    Prompt: "&3Введите сумму которую вы хотите снять с баланса вашего нация: &c(введите cancel для отмены)"
+    Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
+    Response: "&3Вы сняли &b{money_symbol}{input} &3с акаунта вашего нация."
 
 Town_Conversables:
   Board:
@@ -409,7 +605,7 @@ Town_Conversables:
     Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
     Response: "&3Пополнено &b{input} монет &3на баланс вашего города."
   Mayor:
-    Prompt: "&cВы уверены что хотите выдать &b{player} &cполномочия мэра? &3Введите &bconfirm &3или &4deny&3 для отмены"
+    Prompt: "&cВы уверены что хотите выдать &b{player} &cполномочия мэра? &3Введите &bconfirm &3или &4cancel&3 для отмены"
     Response: "&3Игроку &b{player} &3выданы права мэра!"
   Kick:
     Prompt: "&cВы уверены что хотите выгнать &b{player} &cиз вашего города? Введите &bconfirm &cили &4cancel &cдля отмены"

@@ -2,6 +2,12 @@ Confirm: "bestätigen"
 Cancel: "abbrechen"
 Menu_Information: "Menü Info"
 
+Reloaded: "Einstellungen neu geladen!"
+Menu:
+  Button_Return_Title: "&a&lZurück"
+  Button_Return_Lore:
+    - ""
+    - "Vorheriges Menü."
 
 Join_Create_Menu:
   Main_Menu_Title: "Stadt beitreten oder erstellen"
@@ -9,32 +15,186 @@ Join_Create_Menu:
   Click_Create_Town: "Klicke, um eine Stadt zu erstellen"
   Join_Open_Town: "&aTrete einer offenen Stadt bei."
   Mayor: "Bürgermeister: "
-  Number_Residence: "Anzahl der Bewohner: "
-  Create_Own_Town: "&aSchreibe den Namen deiner Stadt oder schreibe &ccancel&a zum Abbrechen."
+  Number_Residents: "Anzahl der Bewohner: "
+  Create_Own_Town: "&aSchreiben Sie den Namen Ihrer Stadt oder schreiben Sie &cabbrechen&a um abzubrechen."
 
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lTretten Sie einer Nation bei oder gründe eine"
+  Find_Nation_Button: "&4Klicken Sie hier, um eine offene Nation zu finden"
+  Click_Create_Nation_Button: "&4Klicken Sie hier, um Ihre Nation zu erstellen"
+  Join_Open_Nation: "&aTretten Sie einer offenen Nation bei"
+  King: "König: "
+  Number_of_Towns: "Anzahl der Städte: "
+  Create_Own_Nation: "&aGeben Sie den Namen Ihrer Nation ein oder geben Sie &cabbrechen ein um abzubrechen."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lNation Menü"
+  Info:
+    - "Hauptmenü für Nation"
+    - "möglichkeit!"
+  Nation_Toggle_Menu_Button: "&9&lUmschalten des Nation-Einstellungsmenüs"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lEin- und ausschalten"
+    - "verschiedene Ländereinstellungen."
+  Nation_Town_List_Button: "&6&lStadtliste Menü"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "Sehen Sie sich Städte in der Nation an"
+  Nation_Resident_Menu_Button: "&b&lNation Resident Menü"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Verwalten Sie die Bewohner der Nation"
+  Nation_Economy_Menu_Button: "&a&lNation Economy Management-Menü"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "Verwalten Sie das Geld Ihrer Nation"
+  Nation_Settings_Button: "&2&lNation-Einstellungsmenü"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Ändern Sie verschiedene Einstellungen"
+    - "zusätzliche Ländereinstellungen."
+  Nation_Invite_Town_Menu_Button: "&d&lStadtmenü einladen"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Laden Sie eine Stadt ein"
+    - "Ihre Nation."
+  Nation_Extra_Info_Menu_Button: "&e&lZusätzliche Nation-Info"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Extra nützliche Befehle für"
+    - "Staatsoberhäupter"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lNation Einstellungsmenü"
+  Info:
+    - "Sonstiges anpassen"
+    - "zusätzliche Ländereinstellungen."
+  Set_Spawn_Msg: "&eStellen Sie den Nationen-Spawn auf den aktuellen Standort ein."
+  Set_Spawn: "&b&lStellen Sie den Nationen-Spawn ein"
+  Set_Spawn_Lore:
+    - ""
+    - "Legen Sie den Speicherort fest für"
+    - "teleportieren mit"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lStellen Sie den Nationennamen ein"
+  Set_Name_Lore:
+    - ""
+    - "Ändern Sie den Namen"
+    - "Ihrer Nation."
+  Set_Board: "&2&lNationennachrichtenbrett festlegen"
+  Set_Board_Lore:
+    - ""
+    - "Stellen Sie das Nationennachrichtenbrett ein"
+    - "Ihrer Nation."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lNation Stadt Menü"
+  Info:
+    - "Klicken Sie auf eine Stadt"
+    - "um sie zu verwalten!"
+  Online: "Zuletzt Online: "
+  Mayor: "Bürgermeister der Stadt: "
+  Number_of_Residents: "Nummer des Wohnsitzes: "
+  Kick: "&c&lStadt kicken"
+  Kick_Lore:
+    - ""
+    - "Klicken Sie, um die Stadt aus Ihrer Nation"
+    - "zu entfernen"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lEconomy Menü"
+  Balance: "&2&lAktuelle Nation Balance"
+  Upkeep: "Aktuelle Instandhaltungskosten: "
+  Withdraw: "&c&lGeld abheben"
+  Withdraw_Lore:
+    - ""
+    - "Geld abheben von"
+    - "Ihre Landessbank."
+  Deposit: "&a&lGeld einzahlen"
+  Deposit_Lore:
+    - ""
+    - "Geld einzahlen in"
+    - "Ihre Landesbank."
+  Tax: "&c&lSteuerbetrag festlegen"
+  Tax_Percentage: "Steuerprozentsatz festlegen"
+  Tax_Amount: "Steuerbetrag festlegen"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&lNation Toggle Einstellungsmenü"
+  Info:
+    - "Umschaltbare Einstellungen anpassen"
+    - "für Ihre Nation!"
+  Toggle_Off: "&eKlicken Sie Deaktivieren &cauf"
+  Toggle_On: "&eKlicken Sie hier, um &aeinzuschalten"
+  Public: "&9&lNation Öffentlich umschalten"
+  Open: "&3&lUmschalten Nation öffnen"
+  Tax_Percent: "&2&lToggle Nation Tax Percent"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lNation laden Stadtmenü ein"
+  Invite: "Klicken Sie hier, um die Stadt zur Nation einzuladen"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lNation Resident Menü"
+  Info:
+    - "Klicken Sie auf einen Bewohner"
+    - "um diesen zu verwalten!"
+  Online: "Zuletzt Online: "
+  Town_Name: "Stadt: "
+  Nation_Rank: "&3&lStellen Sie den Bewohner-Rang ein"
+  Nation_Rank_Lore:
+    - ""
+    - "Geben Sie einem Spieler einen Rang"
+    - "innerhalb der Nation"
+  Nation_King: "&a&lGeben Sie Resident King"
+  Nation_King_Lore:
+    - ""
+    - "Machen Sie diesen Bewohner"
+    - "zum König."
+    - ""
+    - "&4&lkann nicht rückgängig gemacht werden!"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lAndere nützliche Befehle"
+  Commands_1_Lore:
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [name]"
+    - "&a/n allylist"
+  Commands_2: "&2&lWeitere Befehle"
+  Commands_2_Lore:
+    - ""
+    - "&a/n enemy [name]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [color]"
 
 Town_Menu:
   Main_Menu_Title: "&2&lStadt Menü"
   Toggle_Menu_Button: "&3&lUmschaltfunktionen Menü"
   Toggle_Menu_Button_Lore:
     - ""
-    - "Schalte verschiedene"
+    - "Schalten Sie verschiedene"
     - "Stadteinstellungen ein und aus."
   Resident_Menu_Button: "&6&lEinwohner Menü"
   Resident_Menu_Button_Lore:
     - ""
-    - "Zeige alle Bewohnerinformationen"
+    - "Zeigen Sie alle Bewohnerinformationen"
     - "und -einstellungen an."
   Permissions_Menu_Button: "&c&lBerechtigungsmenü"
   Permissions_Menu_Button_Lore:
     - ""
-    - "Passe Stadtberechtigungen"
+    - "Passen Sie Stadtberechtigungen"
     - "für Einwohner, Nation,"
     - "Verbündete und Außenstehende an."
   Economy_Menu_Button: "&a&lWirtschaftsmanagement Menü"
   Economy_Menu_Button_Lore:
     - ""
-    - "Verwalte das Geld deiner Stadt"
+    - "Verwalten Sie das Geld Ihrer Stadt"
   General_Settings_Menu_Button: "&2&lAndrere Einstellungen"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -43,25 +203,25 @@ Town_Menu:
   Invite_Player_Menu_Button: "&d&lSpieler einladen Menü"
   Invite_Player_Menu_Button_Lore:
     - ""
-    - "Lade einen Online-Spieler"
-    - "in deine Stadt ein."
+    - "Laden Sie einen Online-Spieler"
+    - "in Ihre Stadt ein."
   Extra_Info_Menu_Button: "&e&lZusätzliche Towny Infos"
   Extra_Info_Menu_Button_Lore:
     - ""
-    - "Erfahre, wie du Land beanspruchen kannst"
+    - "Erfahre, wie Sie Land beanspruchen können"
     - "sowie einige nützliche Befehle"
   Plot_Menu_Button: "&9&lBauplatzverwaltungsmenü"
   Plot_Menu_Button_Lore:
     - ""
-    - "Verwalte das Grundstück an"
-    - "deiner aktuellen Position."
+    - "Verwalten Sie das Grundstück an"
+    - "Ihrer aktuellen Position."
 Toggle_Menu:
   Menu_Title: "&2&lUmschaltbare Einstellungen Menü"
   Info:
     - "Umschaltbare Einstellungen"
-    - "für deine Stadt anpassen!"
-  Toggle_Off: "&eKlicke, um &causzuschalten"
-  Toggle_On: "&eKlicke, um &aeinzuschalten"
+    - "für Ihre Stadt anpassen!"
+  Toggle_Off: "&eKlicken, um &causzuschalten"
+  Toggle_On: "&eKlicken, um &aeinzuschalten"
   Fire: "&6&lFeuerausbreitung umschalten"
   Mobs: "&a&lMob Entstehung umschalten"
   Explode: "&c&lExplosionen umschalten"
@@ -72,23 +232,25 @@ Toggle_Menu:
 Resident_Menu:
   Menu_Title: "&2&lEinwohner Menü"
   Info:
-    - "Klicke auf einen Einwohner,"
-    - "um ihn zu verwalten!"
+    - "Klicken Sie auf einen Einwohner,"
+    - "um diesen zu verwalten!"
   Online: "Zuletzt Online: "
+  Town_Rank: "Rang der Stadt: "
+  Invite: "&aKlicken Sie hier, um den Spieler in die Stadt einzuladen"
   Kick: "&c&lEntferne Spieler"
   Kick_Lore:
     - ""
-    - "Klicke, um Einwohner aus"
-    - "deiner Stadt zu entfernen"
+    - "Klicken, um Einwohner aus"
+    - "Ihrer Stadt zu entfernen"
   Title: "&a&lEinwohnertitel festlegen"
   Title_Lore:
     - ""
-    - "Lege einen Titel für"
+    - "Legen Sie einen Titel für"
     - "diesen Einwohner fest."
   Rank: "&3&lEinwohnerrang festlegen"
   Rank_Lore:
     - ""
-    - "Lege einen Stadtrang für"
+    - "Legen Sie einen Stadtrang für"
     - "diesen Einwohner fest."
   Mayor: "&a&lEinwohner zum Bürgermeister machen"
   Mayor_Lore:
@@ -101,12 +263,12 @@ Player_Permission_Menu:
   Menu_Title: "&2&lBerechtigungsmenü"
   Info:
     - ""
-    - "Lege Berechtigungen für"
+    - "Legen Sie Berechtigungen für"
     - "verschiedene Gruppen"
-    - "in deiner Stadt fest."
+    - "in Ihrer Stadt fest."
   True_Msg: "&aWahr"
   False_Msg: "&cFalsch"
-  Change: "&eKlicke, um zu ändern!"
+  Change: "&eKlicken, um zu ändern!"
   Reset: "&c&lAlle Felder zurücksetzen"
   Reset_Lore:
     - ""
@@ -121,17 +283,17 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "in deiner Stadt zu bauen."
+    - "in Ihrer Stadt zu bauen."
   Break: "&c&lAbbauen"
   Break_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "in deiner Stadt abzubauen."
+    - "in Ihrer Stadt abzubauen."
   Use: "&6&lGegenstände verwenden"
   Use_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "Gegenstände in deiner"
+    - "Gegenstände in Ihrer"
     - "Stadt zu verwenden."
     - ""
     - "z.B. Wasser aus Kessel nehmen."
@@ -139,7 +301,7 @@ Player_Permission_Menu:
   Switch_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "Schalter in deiner Stadt"
+    - "Schalter in Ihrer Stadt"
     - "zu verwenden."
     - ""
     - "z.B. Hebel oder Tür verwenden."
@@ -182,14 +344,14 @@ Economy_Menu:
   Withdraw: "&c&lGeld abheben"
   Withdraw_Lore:
     - ""
-    - "Entnehme Geld aus"
-    - "deiner Stadtbank."
+    - "Entnehmen Sie Geld aus"
+    - "Ihrer Stadtbank."
   Deposit: "&a&lGeld einzahlen"
   Deposit_Lore:
     - ""
-    - "Zahle Geld in"
-    - "deine Stadtbank ein."
-  Tax: "&c&lSetze die Steuern fest"
+    - "Zahlen Sie Geld in"
+    - "Ihre Stadtbank ein."
+  Tax: "&c&lSetzen Sie die Steuern fest"
   Tax_Percentage: "Steuerprozentsatz festlegen"
   Tax_Amount: "Steuerbetrag festlegen"
 General_Settings_Menu:
@@ -197,18 +359,18 @@ General_Settings_Menu:
   Info:
     - "Verschiedene zusätzliche"
     - "Stadteinstellungen ändern."
-  Set_Home_Block_Msg: "&eLege deine aktuelle Position als Stadtzentrum fest!"
-  Spawn_Reminder: "&bDenke daran auch den Startpunkt neu festzulegen!"
+  Set_Home_Block_Msg: "&eLegen Sie Ihre aktuelle Position als Stadtzentrum fest!"
+  Spawn_Reminder: "&bDenken Sie bitte daran auch den Startpunkt neu festzulegen!"
   Set_Home_Block: "&3&lStadtzentrum setzen"
   Set_Home_Block_Lore:
     - ""
-    - "Setze das Stadtzentrum"
-    - "deiner Stadt."
-  Set_Spawn_Msg: "&eSetze das Stadtzentrum auf deine aktuelle Position."
+    - "Setze Sie das Stadtzentrum"
+    - "Ihrer Stadt."
+  Set_Spawn_Msg: "&eSetzen Sie das Stadtzentrum auf Ihre aktuelle Position."
   Set_Spawn: "&b&lStadt Startpunkt setzen"
   Set_Spawn_Lore:
     - ""
-    - "Setze den Ort für"
+    - "Legen Sie den Ort fest für"
     - "das Teleportieren mit"
     - "/town spawn"
     - ""
@@ -216,31 +378,33 @@ General_Settings_Menu:
   Set_Name: "&6&lStadtnamen ändern"
   Set_Name_Lore:
     - ""
-    - "Ändere den Namen"
-    - "deiner Stadt."
+    - "Änderen Sie den Namen"
+    - "Ihrer Stadt."
   Set_Board: "&2&lSchwarze Brett setzen"
   Set_Board_Lore:
     - ""
-    - "Setze das Schwarze Brett"
-    - "deiner Stadt."
+    - "Setzen Sie das Schwarze Brett"
+    - "Ihrer Stadt."
 Extra_Info_Menu:
   Claiming: "&6&lLand beanspruchen"
   Claiming_Lore:
     - ""
-    - "&a/town claim &7- Beanspruche ein Stück Land."
+    - "&a/town claim &7- Beanspruchen Sie ein Stück Land."
     - "Das Beanspruchen von Land benötigt Geld"
-    - "in deiner Stadtbank und ist nur an der"
+    - "in Ihrer Stadtbank und ist nur an der"
     - "Stadtgrenze möglich."
-    - "Verwende &aF3+G &7um Chunkgrenzen und"
+    - "Verwenden Sie &aF3+G &7um Chunkgrenzen und"
     - "&a/towny map &7um beanspruchtes Land anzuzeigen."
   Commands: "&2&lExtra Befehle"
   Commands_Lore:
     - ""
     - "&a/town outlaw &7- einen Spieler zum Gesetzlosen machen"
+    - "&a/town outlawlist &7- Listen Sie die Gesetzlosen der Stadt auf"
     - "&a/town buy &7- Chunk Kaufinformationen"
     - "&a/town online &7- Stadtmitglieder die gerade online sind"
     - "&a/town say &7- Übertrage eine Stadtnachricht"
-
+    - "&a/town towny prices &7- zeigt Stadtpreise / Kosten"
+    - "&a/town set mapcolor [color]"
 
 Plot_Menu:
   Main_Menu_Title: "&2Grundstückverwaltungsmenü"
@@ -381,61 +545,95 @@ Plot_Admin_Menu:
     - "Wirft den Bewohner"
     - "dieses Grundstücks raus."
 
-
+Nation_Conversables:
+  Board:
+    Prompt: "&3Geben Sie eine Nachricht für den Vorstand Ihrer Nation ein: "
+    Response: "&3Nationentafel erfolgreich gesetzt!"
+  Deposit:
+    Prompt: "&3Geben Sie den Betrag ein, den Sie in Ihre Nation einzahlen möchten: &c(Geben Sie Abbrechen ein, um die Eingabeaufforderung zu verlassen)"
+    Invalid: "&cBitte geben Sie nur ganze Zahlen ein und stellen Sie sicher, dass Sie genug Geld für die Einzahlung haben."
+    Response: "&3Eingezahlt &b{money_symbol}{input} &3auf Ihr Nationenkonto."
+  Mayor:
+    Prompt: "&cSind Sie sicher, dass Sie die folgende Position abgeben möchten &b{player} &cdie Königsposition? &3(Schreibe &bbestätigen &3oder &4cancel&3)"
+    Response: "&3Sie haben erfolgreich &b{player} &3zum König ernannt!"
+  Kick:
+    Prompt: "&cSind Sie sicher, dass Sie &b{town} &caus aus Ihrer Nation ausschließen wollen? Schreiben Sie jetzt &bbestätigen &coder &4cabbrechen &c:"
+    Response: "&3Sie haben erfolgreich &b{town} &3aus Ihrer Nation ausgeschlossen."
+  Name:
+    Prompt: "&3Schreiben Sie dem Namen, den Sie Ihrer Nation geben möchten: (unter {max_length} zeichen lang) &baktueller name: {nation} &cSchreiben Sie zum Beenden abbrechen."
+    Invalid: "&cDer Name muss eindeutig und kleiner als sein {max_length} Zeichen lang."
+    Response: "&3Namen der Nation erfolgreich festgelegt als {input}"
+    Return: "&cNicht genug Geld in der Nationenbank, um den Namen der Nation zu ändern."
+  Rank:
+    Remove: "entfernen"
+    Prompt: "&3Geben Sie den Rang ein, den Sie vergeben möchten an &b{player} &3jetzt: &b(Optionen: {ranks}) &3Schreiben Sie &cabbrechen &3um zu stornieren bzw &centfernen &3um Ihren Rang zu entfernen."
+    Invalid: "&cEntweder hat dieser Spieler diesen Rang bereits oder der Rang existiert nicht. (Optionen: {ranks}) &cSchreiben Sie &c&labbrechen &cum den Vorgang abzubrechen oder &c&lentfernen, um den Rang des Spielers zu entfernen."
+    Response: "&aSie haben erfolgreich {player}'s &aNationenrang eingestellt als {input}"
+    Removed_All: "&cAlle Nationenränge von Einwohnern entfernt {player}"
+  Tax:
+    Prompt: "&3Geben Sie den Betrag ein, den Sie als Steuer für Ihr Land festlegen möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
+    Invalid_Percent: "&cBitte geben Sie nur eine ganze Zahl zwischen 0 und ein {max_percent} für Ihren Steuerprozentsatz."
+    Invalid_Amount: "&cBitte geben Sie eine ganze Zahl zwischen 0 und {max_amount} ein für den Steuerbetrag."
+    Response_Percent: "&3Steuerprozentsatz auf &b{input}"
+    Response_Amount: "&3Steuerbetrag eingestellt auf &b{money_symbol}{input}"
+  Withdraw:
+    Prompt: "&3Geben Sie den Betrag ein, den Sie von Ihrer Landesbank abheben möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
+    Invalid: "&cGeben Sie Abbrechen ein, um Bitte geben Sie nur ganze Zahlen ein und vergewissern Sie sich, dass Sie genug Geld zum Abheben haben. Verlassen Sie die Eingabeaufforderung"
+    Response: "&3Zurückgezogen &b{money_symbol}{input} &3von Ihrem Nation-Konto."
 
 Town_Conversables:
   Board:
     Prompt: "&3Schreibe eine Nachricht für das Schwarze Brett deiner Stadt: "
     Response: "&3Schwarzes Brett erfolgreich geändert!"
   Deposit:
-    Prompt: "&3Schreibe den Betrag, den du in die Stadtbank einzahlen möchtest: &c(Schreibe cancel um abzubrechen)"
-    Invalid: "&cBitte schreibe nur ganze Zahlen und stelle sicher, dass du genug Geld für die Einzahlung hast."
-    Response: "&3Zahle &b{input}{money_symbol} &3auf das Stadtkonto ein."
+    Prompt: "&3Schreiben Sie den Betrag, den Sie in die Stadtbank einzahlen möchteen: &c(Schreiben Sie abbrechen um abzubrechen)"
+    Invalid: "&cBitte schreiben Sie nur ganze Zahlen und stellen Sie sicher, dass Sie genug Geld für die Einzahlung haben."
+    Response: "&3Zahlen Siie &b{input}{money_symbol} &3auf das Stadtkonto ein."
   Mayor:
-    Prompt: "&cBist du dir sicher, dass du &b{player} &cden Bürgermeisterposten geben möchtest? &3(Schreibe &bconfirm &3oder &4deny&3)"
+    Prompt: "&cSind Sie sich sicher, dass Sie den &b{player} &cden Bürgermeisterposten geben möchten? &3(Schreiben Sie &bbestätigen &3oder &4cancel&3)"
     Response: "&b{player} &3erfolgreich zum Bürgermeister ernannt!"
   Kick:
-    Prompt: "&cBist du dir sicher, dass du &b{player} &caus deiner Stadt werfen möchtest? Schreibe &bconfirm &coder &4cancel &c:"
+    Prompt: "&cSie Sie sich sicher, dass Sie den &b{player} &caus Ihrer Stadt werfen möchten? Schreibe &bestätigen &coder &4abbrechen &c:"
     Response: "&b{player} &3erfolgreich aus deiner Stadt geworfen."
   Name:
-    Prompt: "&3Schreibe den Namen, den du deiner Stadt geben möchtest: (unter {max_length} Zeichen) &bAktueller Name: {town} &cSchreibe cancel um abzubrechen."
+    Prompt: "&3Schreiben Sie den Namen, den Sie Ihrer Stadt geben möchten: (unter {max_length} Zeichen) &bAktueller Name: {town} &cSchreibe abbrechen um abzubrechen."
     Invalid: "&cDer Name muss einzigartig sein und weniger als {max_length} Zeichen lang sein."
-    Response: "&3Der Stadtname wurde erfolgreich auf {input} geändert."
+    Response: "&3Der Stadtname wurde erfolgreich zu {input} geändert."
     Return: "&cEs ist nicht genug Geld in der Stadtbank, um den Namen der Stadt zu ändern."
   Rank:
     Remove: "Entfernen"
-    Prompt: "&3Gebe den Rang ein, den du &b{player} &3geben möchtest: &b(Optionen: {ranks}) &3SChreibe &ccancel &3ein um abzubrechen oder &cremove &3um den Rang vom Spieler zu entfernen."
-    Invalid: "&cEntweder hat dieser Spieler den Rang bereits oder der Rang existiert nicht. (Optionen: {ranks}) &cSchreibe &c&lcancel &cein um abzubrechen oder remove um den Rang vom Spieler zu entfernen."
+    Prompt: "&3Geben Sie den Rang ein, den Sie dem &b{player} &3geben möchten: &b(Optionen: {ranks}) &3Schreiben Sie &cabbrechen &3 um abzubrechen oder &centfernen &3um den Rang des Spielers zu entfernen."
+    Invalid: "&cEntweder hat dieser Spieler den Rang bereits oder der Rang existiert nicht. (Optionen: {ranks}) &cSchreiben Sie &c&labbrechen &c um abzubrechen oder &c&lentfernen um den Rang des Spielers zu entfernen."
     Response: "&a{player}'s &aRang erfolgreich auf {input} geändert"
-    Removed_All: "&cAlle Ränge vom Spieler {player} &centfernt"
+    Removed_All: "&cAlle Ränge des Spielers {player} &centfernt"
   Tax:
-    Prompt: "&3Gebe den Betrag ein, den du als Steuer für deine Stadt festlegen möchtest: &c(Gebe cancel ein zum abzubrechen)"
-    Invalid_Percent: "&cBitte gebe für den Steuerprozentsatz eine ganze Zahl zwischen 0 und {max_percent} ein."
-    Invalid_Amount: "&cBitte gebe für den Steuerbetrag eine ganze Zahl zwischen 0 und {max_amount} ein."
+    Prompt: "&3Geben Sie den Betrag ein, den Sie als Steuer für Ihre Stadt festlegen möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
+    Invalid_Percent: "&cBitte geben Sie für den Steuerprozentsatz eine ganze Zahl zwischen 0 und {max_percent} ein."
+    Invalid_Amount: "&cBitte geben Sie für den Steuerbetrag eine ganze Zahl zwischen 0 und {max_amount} ein."
     Response_Percent: "&3Steuerprozentsatz auf &b{input} &3festgelegt"
     Response_Amount: "&3Steuerbetrag auf &b{input}{money_symbol} &3festgelegt"
   Title:
-    Prompt: "&3Bitte geb den Titel ein, den du &b{player} &3geben möchtest: (unter 10 Zeichen) &cGebe cancel ein zum abzubrechen."
+    Prompt: "&3Bitte geben Sie den Titel ein, den Sie dem &b{player} &3geben möchten: (unter 10 Zeichen) &cGeben Sie abbrechen ein zum abzubrechen."
     Response: "&b{player}'s &3Titel erfolgreich auf &b{input} &3geändert"
   Withdraw:
-    Prompt: "&3Gebe den Betrag ein, den du aus der Stadtbank auszahlen möchtest: &c(Gebe cancel ein zum abzubrechen)"
-    Invalid: "&cBitte gebe nur ganze Zahlen ein und stelle sicher, dass du genug Geld für die Auszahlung hast."
+    Prompt: "&3Geben Sie den Betrag ein, den Sie aus der Stadtbank abheben möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
+    Invalid: "&cBitte geben Sie nur ganze Zahlen ein und stelle Sie sicher, dass Sie genug Geld für die Abhebung haben."
     Response: "&3Zahle &b{input}{money_symbol} &3aus dem Stadtkonto aus."
 Plot_Conversables:
   Evict:
-    Prompt: "&cMöchtest du den Grundstückseigentümer von diesem Grundstück herauswerfen? Gebe &aconfirm &coder &4cancel &cein:"
+    Prompt: "&cMöchtesn Sie den Grundstückseigentümer von diesem Grundstück herauswerfen? Gebe &abestätigen &coder &4abbrechen &cein:"
     Invalid: "&cGrundstück hat keine Bewohner."
     Response: "&cGrundstücksbewohner rausgeworfen."
   For_Sale:
-    Prompt: "&3Gebe den Betrag ein, mit dem du dieses Grundstück zum Verkauf anbieten möchtest: &c(Gebe cancel ein zum abzubrechen)"
-    Invalid: "&cBitte gebe nur ganze Zahlen ein und stelle sicher der Preis liegt unter dem maximalen Grundstückspreis: {max_price}"
+    Prompt: "&3Geben Sie den Betrag ein, mit dem Sie dieses Grundstück zum Verkauf anbieten möchten: &c(Gebe abbrechen ein um abzubrechen)"
+    Invalid: "&cBitte geben Sie nur ganze Zahlen ein und stelle Sie sicher, dass der Preis unter dem maximalen Grundstückspreis: {max_price} liegt"
     Response: "&3Verkaufspreis auf &b{input}{money_symbol} &3eingestellt."
   Not_For_Sale:
-    Prompt: "&3Möchtest du dieses Grundstück nicht zum Verkauf anbieten? Gebe &aconfirm &3oder &ccancel &3ein&6:"
-    Response: "&cGrundstück nicht mehr zum Verkauf angeboten."
+    Prompt: "&3Möchten Sie dieses Grundstück nicht mehr zum Verkauf anbieten? Geben Sie &abestätigen &3oder &cabbrechen &3ein&6:"
+    Response: "&cDas Grundstück wird nicht mehr zum Verkauf angeboten."
   Set_Type:
-    Prompt: "&3elchen Grundstücktyp möchtest du für dieses Grundstück festlegen? &b(Optionen: {options}) Gebe 'cancel' ein um abzubrechen"
-    Invalid: "&cBitte gebe einen gültigen Grundstücktyp ein. (Gültige Grundstücktyp: {options}) oder gebe 'cancel' ein um abzubrechen"
+    Prompt: "&3Welchen Grundstücktyp möchten Sie für dieses Grundstück festlegen? &b(Optionen: {options}) Geben Sie abbrechen ein um abzubrechen"
+    Invalid: "&cBitte geben Sie einen gültigen Grundstücktyp ein. (Gültige Grundstücktyp: {options}) oder geben Sie abbrechen ein um abzubrechen"
     Response: "&3Grundstücktyp geändert zu: &b{input}"
 
 
@@ -449,7 +647,7 @@ Error:
   Toggle_PVP_Outsiders: "&cPVP kann nicht umgeschaltet werden, während sich Außenstehende in deiner Stadt befinden."
   Toggle_PVP_Cooldown: "&cPVP kann nicht umgeschaltet werden, bis die Abklingzeit vorbei ist.."
   Cannot_Select_Self: "&cDu kannst dich nicht selbst auswählen."
-  Cannot_Set_Homeblock: "&cDas STadtzentrum kann hier nicht gesetzt werden."
+  Cannot_Set_Homeblock: "&cDas Stadtzentrum kann hier nicht gesetzt werden."
   Cannot_Set_Spawn: "&cDer Startpunkt der Stadt kann hier nicht gesetzt werden."
   Cannot_Change_Name: "&cDu musst Bürgermeister sein, um den Namen der Stadt zu ändern."
   Cannot_Change_Board: "&cDu musst Bürgermeister sein, um das Schwarze Brett zu ändern."

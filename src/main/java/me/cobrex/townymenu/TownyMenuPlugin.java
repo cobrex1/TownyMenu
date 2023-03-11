@@ -3,6 +3,8 @@ package me.cobrex.townymenu;
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import me.cobrex.townymenu.bstats.Metrics;
+import me.cobrex.townymenu.hooks.HeadDatabaseHook;
+import me.cobrex.townymenu.nation.NationMenuCommand;
 import me.cobrex.townymenu.plot.command.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -19,6 +21,8 @@ import java.util.List;
 
 public class TownyMenuPlugin extends SimplePlugin {
 
+	public HeadDatabaseHook hdb;
+
 	public static ArrayList<Player> viewers = new ArrayList<>();
 
 	public static ArrayList<Location> viewerslocs = new ArrayList<>();
@@ -33,6 +37,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
+		registerCommand(new NationMenuCommand());
 
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 
@@ -42,11 +47,13 @@ public class TownyMenuPlugin extends SimplePlugin {
 		// Optional: Add custom charts
 		metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
 
-//		if (Common.doesPluginExist("HeadsDatabase")) {
-//			new HeadsDatabaseHook();
-//		}
-
+		if (Common.doesPluginExist("HeadsDatabase")) {
+			new HeadDatabaseHook();
+		}
+//
+//		Common.log("Hooked into HeadDatabase");
 	}
+
 
 	public List<Class<? extends YamlStaticConfig>> getSettings() {
 		return Arrays.asList(Settings.class, Localization.class);

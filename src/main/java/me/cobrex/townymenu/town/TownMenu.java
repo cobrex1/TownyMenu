@@ -6,7 +6,9 @@ import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.*;
 import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
+import com.palmergames.util.StringMgmt;
 import lombok.SneakyThrows;
+import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import me.cobrex.townymenu.plot.PlotMenu;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -50,6 +52,8 @@ public class TownMenu extends Menu {
 	private final Button extraInfoButton;
 	private final Button plotMenuButton;
 
+	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
+
 	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_MENU)), "").make();
 
 	public TownMenu(Town town, Player player) throws NotRegisteredException {
@@ -63,11 +67,13 @@ public class TownMenu extends Menu {
 			if (res != null && (!res.hasTown())) allOnlineResidents.add(res);
 		}
 
-		setSize(9 * 4);
+		setSize(9 * 3);
+//		setSize(9 * 4);
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
 //		ItemCreator toggleMenuItem = ItemCreator.of(CompMaterial.LEVER, Localization.TownMenu.TOGGLE_MENU_BUTTON, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
-//		ItemCreator toggleMenuItem = ItemCreator.of(new Head().getHead(String.valueOf(Settings.TOGGLE_MENU)), Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+//		ItemCreator toggleMenuItem = ItemCreator.of(hdb.getItemHead(String.valueOf(Settings.TOGGLE_MENU)));// Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+//		ItemCreator toggleMenuItem = ItemCreator.of(CompMaterial.fromString(hdb.getBase64(String.valueOf(Settings.TOGGLE_MENU))), String.valueOf(Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE));
 		ItemCreator toggleMenuItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.TOGGLE_MENU)), Localization.TownMenu.TOGGLE_MENU_BUTTON, Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
 		ItemCreator residentListItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.RESIDENT_LIST)), Localization.TownMenu.RESIDENT_MENU_BUTTON, Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
 		ItemCreator permissionsMenuItem = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.PERMISSIONS_MENU)), Localization.TownMenu.PERMISSIONS_MENU_BUTTON, Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
@@ -170,9 +176,7 @@ public class TownMenu extends Menu {
 			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), plotMenuItem);
 		else
 			plotMenuButton = Button.makeDummy(plotMenuItem);
-
 	}
-
 
 	@Override
 	public ItemStack getItemAt(int slot) {
@@ -184,21 +188,25 @@ public class TownMenu extends Menu {
 		if (slot == 6)
 			return townyPermButton.getItem();
 
-		if (slot == 9 * 2 + 2)
+		if (slot == 11)
+//		if (slot == 9 * 2 + 2)
 			return generalSettingsButton.getItem();
-		if (slot == 9 * 2 + 4 && Settings.ECONOMY_ENABLED)
+		if (slot == 13 && Settings.ECONOMY_ENABLED)
+//		if (slot == 9 * 2 + 4 && Settings.ECONOMY_ENABLED)
 			return economyButton.getItem();
-		if (slot == 9 * 2 + 6)
+		if (slot == 15)
+//		if (slot == 9 * 2 + 6)
 			return invitePlayerButton.getItem();
 
-		if (slot == 9 * 3 + 3)
+		if (slot == 9 * 2 + 3)
+//		if (slot == 9 * 3 + 3)
 			return extraInfoButton.getItem();
-		if (slot == 9 * 3 + 5)
+		if (slot == 9 * 2 + 5)
+//		if (slot == 9 * 3 + 5)
 			return plotMenuButton.getItem();
 
 		return DUMMY_BUTTON;
 	}
-
 
 	public class ToggleSettingsMenu extends Menu {
 		private final Button fireToggle;
@@ -243,7 +251,6 @@ public class TownMenu extends Menu {
 					town.setHasMobs(!town.hasMobs());
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
-
 				}
 
 				@Override
@@ -264,7 +271,6 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 					return ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.TOGGLE_EXPLOSIONS)), Localization.TownMenu.ToggleMenu.EXPLODE, "", town.isBANG() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).make();
-
 				}
 			};
 			pvpToggle = new Button() {
@@ -317,7 +323,6 @@ public class TownMenu extends Menu {
 					town.setPublic(!town.isPublic());
 					TownyAPI.getInstance().getDataSource().saveTown(town);
 					restartMenu();
-
 				}
 
 				@Override
@@ -353,10 +358,8 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 					return ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.TOGGLE_TAX_PERCENTAGE)), Localization.TownMenu.ToggleMenu.TAX_PERCENT, "", town.isTaxPercentage() ? Localization.TownMenu.ToggleMenu.TOGGLE_OFF : Localization.TownMenu.ToggleMenu.TOGGLE_ON).make();
-
 				}
 			};
-
 		}
 
 		@Override
@@ -407,6 +410,8 @@ public class TownMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
+			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.TOWN_RANK + ChatColor.WHITE + StringMgmt.join(item.getTownRanks(), ","));
+			lore.add("");
 			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
@@ -425,7 +430,6 @@ public class TownMenu extends Menu {
 	}
 
 	public class ResidentMenu extends Menu {
-
 
 		private final Button kickButton;
 		private final Button titleButton;
@@ -1016,6 +1020,10 @@ public class TownMenu extends Menu {
 //				return null;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
+			List<String> lore = new ArrayList<>();
+			lore.add("");
+			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.INVITE);
+			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
 		}
@@ -1036,14 +1044,14 @@ public class TownMenu extends Menu {
 
 		protected ExtraTownInfo() {
 			super(TownMenu.this);
-			setSize(9);
+			setSize(9 * 2);
 		}
 
 		@Override
 		public ItemStack getItemAt(int slot) {
-			if (slot == 2)
+			if (slot == 3)
 				return claimInfo;
-			if (slot == 6)
+			if (slot == 5)
 				return extraCommands;
 
 			return DUMMY_BUTTON;
