@@ -6,7 +6,6 @@ import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.*;
 import lombok.SneakyThrows;
-import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import me.cobrex.townymenu.nation.prompt.*;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -36,33 +35,25 @@ public class NationMenu extends Menu {
 
 	private final Button nationToggleButton;
 	private final Button nationTownListButton;
-	//	private final Button townyPermButton;
 	private final Button nationEconomyButton;
 	private final Button nationSettingsButton;
 	private final Button inviteTownButton;
 	private final Button nationExtraInfoButton;
 	private final Button nationResidentListButton;
 
-	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
+//	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
 
 	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "").make();
 
 	public NationMenu(Nation nation, Player player) throws NotRegisteredException {
 
-//		List<Town> nationTownList = Objects.requireNonNull(TownyAPI.getInstance().getNation(player)).getTowns();
 		List<Town> nationTownList = nation.getTowns();
 
 		List<Town> townList = TownyAPI.getInstance().getTownsWithoutNation();
 
 		List<Resident> nationResidentList = nation.getResidents();
 
-		//		List<Town> townList = new ArrayList<>();
-//		LagCatcher.start("load-town-list");
-//		Town town = TownyAPI.getInstance().getTown();
-//		if (town != null && (!town.hasNation())) townList.add(town);
-
 		setSize(9 * 3);
-//		setSize(9 * 4);
 
 		setTitle(Localization.NationMenu.MAIN_MENU_TITLE);
 
@@ -172,17 +163,14 @@ public class NationMenu extends Menu {
 		if (slot == 6)
 			return nationResidentListButton.getItem();
 		if (slot == 9 + 4 && Settings.ECONOMY_ENABLED)
-//		if (slot == 9 * 2 + 4 && Settings.ECONOMY_ENABLED)
 			return nationEconomyButton.getItem();
 		if (slot == 9 * 2 + 2)
 			return nationSettingsButton.getItem();
 
 		if (slot == 9 * 2 + 4)
-//		if (slot == 9 * 2 + 6)
 			return inviteTownButton.getItem();
 
 		if (slot == 9 * 2 + 6)
-//		if (slot == 9 * 3 + 3)
 			return nationExtraInfoButton.getItem();
 
 		return DUMMY_BUTTON;
@@ -392,13 +380,10 @@ public class NationMenu extends Menu {
 				return setTaxButton.getItem();
 
 			return DUMMY_BUTTON;
-			//			return null;
 		}
 	}
 
 	public class NationResidentListMenu extends MenuPagged<Resident> {
-
-//		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_INVITE)), "").make();
 
 		@Override
 		public String[] getInfo() {

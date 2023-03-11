@@ -8,7 +8,6 @@ import com.palmergames.bukkit.towny.object.*;
 import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
 import com.palmergames.util.StringMgmt;
 import lombok.SneakyThrows;
-import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import me.cobrex.townymenu.plot.PlotMenu;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
@@ -52,7 +51,7 @@ public class TownMenu extends Menu {
 	private final Button extraInfoButton;
 	private final Button plotMenuButton;
 
-	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
+//	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
 
 	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_MENU)), "").make();
 
