@@ -28,10 +28,10 @@ public class TownMenuCommand extends SimpleCommand {
 		Player player = this.getPlayer();
 
 		if (this.args.length == 0) {
-			if (TownyAPI.getInstance().isWarTime()) {
-				tell(Localization.Error.WAR_TIME);
-				return;
-			}
+//			if (TownyAPI.getInstance().isWarTime()) {
+//				tell(Localization.Error.WAR_TIME);
+//				return;
+//			}
 
 			Town town;
 			Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());

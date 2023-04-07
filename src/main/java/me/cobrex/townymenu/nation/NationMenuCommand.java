@@ -26,10 +26,10 @@ public class NationMenuCommand extends SimpleCommand {
 		Player player = this.getPlayer();
 
 		if (this.args.length == 0) {
-			if (TownyAPI.getInstance().isWarTime()) {
-				tell(Localization.Error.WAR_TIME);
-				return;
-			}
+//			if (TownyAPI.getInstance().is.isWarTime()) {
+//				tell(Localization.Error.WAR_TIME);
+//				return;
+//			}
 
 //			Town town;
 			Nation nation;
@@ -60,6 +60,7 @@ public class NationMenuCommand extends SimpleCommand {
 			this.tell("Settings reloaded!");
 		}
 	}
+
 
 	@Override
 	public List<String> tabComplete() {

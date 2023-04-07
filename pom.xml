@@ -5,7 +5,7 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.7.1</version>
+    <version>1.7.2</version>
 
 
     <properties>
@@ -52,18 +52,18 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.kangarko</groupId>
             <artifactId>Foundation</artifactId>
-            <version>6.2.9</version>
+            <version>6.3.3</version>
         </dependency>
         <dependency>
             <groupId>com.github.TownyAdvanced</groupId>
             <artifactId>Towny</artifactId>
-            <version>0.98.4.0</version>
+            <version>0.99.0.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- HeadDatabase-API -->
