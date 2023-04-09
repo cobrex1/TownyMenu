@@ -63,6 +63,7 @@ public class JoinTownMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
 			skull.setOwningPlayer(player);

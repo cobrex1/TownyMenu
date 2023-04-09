@@ -35,6 +35,7 @@ public class NationMenuCommand extends SimpleCommand {
 			Nation nation;
 			Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
 			Town town = TownyAPI.getInstance().getTown(getPlayer().getName());
+			assert resident != null;
 			if (resident.hasTown() && resident.hasNation()) {
 				town = resident.getTown();
 				nation = town.getNation();

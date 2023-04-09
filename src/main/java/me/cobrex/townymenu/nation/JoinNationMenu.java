@@ -61,6 +61,7 @@ public class JoinNationMenu extends Menu {
 		protected ItemStack convertToItemStack(Nation item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getKing().getUUID());
 			skull.setOwningPlayer(player);

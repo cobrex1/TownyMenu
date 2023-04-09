@@ -99,6 +99,7 @@ public class PlotMenu extends Menu {
 				return null;
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getUUID());
 			skull.setOwningPlayer(player);
@@ -106,6 +107,7 @@ public class PlotMenu extends Menu {
 			for (Player players : Bukkit.getOnlinePlayers()) {
 				Resident res = TownyAPI.getInstance().getResident(players.getName());
 
+				assert res != null;
 				if (res.getFriends().contains(item)) {
 					List<String> lore = new ArrayList<>();
 					lore.add("");
@@ -133,6 +135,7 @@ public class PlotMenu extends Menu {
 
 			if (item.equals(playerResident))
 				return;
+			assert playerResident != null;
 			if (playerResident.getFriends().contains(item)) {
 				playerResident.removeFriend(item);
 				Common.tell(player, Localization.PlotMenu.FriendMenu.REMOVE.replace("{player}", item.getName()));

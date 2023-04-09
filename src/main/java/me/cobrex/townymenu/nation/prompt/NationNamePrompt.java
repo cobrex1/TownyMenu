@@ -39,7 +39,7 @@ public class NationNamePrompt extends SimplePrompt {
 	protected boolean isInputValid(ConversationContext context, String input) {
 		LagCatcher.start("load-all-town-names");
 		List<String> allNationNames = new ArrayList<>();
-		for (Nation nation : TownyAPI.getInstance().getDataSource().getNations())
+		for (Nation nation : TownyAPI.getInstance().getNations())
 			allNationNames.add(nation.getName());
 		LagCatcher.end("load-all-town-names");
 		return ((input.length() < TownySettings.getMaxNameLength() && !allNationNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));

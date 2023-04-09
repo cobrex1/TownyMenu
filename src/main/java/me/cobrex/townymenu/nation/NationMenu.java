@@ -274,6 +274,7 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getName());
 			if (item.getName() == null)
 				return DUMMY_BUTTON;
@@ -401,6 +402,7 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
@@ -595,6 +597,7 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+			assert skull != null;
 			skull.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + item.getName());
 //			if (item.getName() == null);
 //				return null;
