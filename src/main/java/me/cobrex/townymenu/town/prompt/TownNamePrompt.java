@@ -22,7 +22,6 @@ public class TownNamePrompt extends SimplePrompt {
 		super(false);
 
 		this.town = town;
-
 	}
 
 	@Override
@@ -40,7 +39,6 @@ public class TownNamePrompt extends SimplePrompt {
 		LagCatcher.start("load-all-town-names");
 		List<String> allTownNames = new ArrayList<>();
 		for (Town town : TownyAPI.getInstance().getTowns())
-//		for (Town town : TownyAPI.getInstance().getDataSource().getTowns())
 			allTownNames.add(town.getName());
 		LagCatcher.end("load-all-town-names");
 		return ((input.length() < TownySettings.getMaxNameLength() && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));

@@ -19,7 +19,6 @@ public class NationWithdrawPrompt extends SimplePrompt {
 		super(false);
 
 		this.nation = nation;
-
 	}
 
 	@Override

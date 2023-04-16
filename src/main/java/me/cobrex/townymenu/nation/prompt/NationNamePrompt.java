@@ -22,7 +22,6 @@ public class NationNamePrompt extends SimplePrompt {
 		super(false);
 
 		this.nation = nation;
-
 	}
 
 	@Override

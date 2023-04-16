@@ -20,7 +20,6 @@ public class PlotForSalePrompt extends SimplePrompt {
 		super(false);
 
 		this.townBlock = townBlock;
-
 	}
 
 	@Override

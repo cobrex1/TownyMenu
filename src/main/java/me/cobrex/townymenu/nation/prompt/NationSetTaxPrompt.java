@@ -20,7 +20,6 @@ public class NationSetTaxPrompt extends SimplePrompt {
 		super(false);
 
 		this.nation = nation;
-
 	}
 
 	@Override

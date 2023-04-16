@@ -19,7 +19,6 @@ public class NationDepositPrompt extends SimplePrompt {
 		super(false);
 
 		this.nation = nation;
-
 	}
 
 	@Override

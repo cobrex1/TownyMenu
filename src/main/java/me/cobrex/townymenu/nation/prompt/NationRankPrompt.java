@@ -65,7 +65,6 @@ public class NationRankPrompt extends SimplePrompt {
 		TownyAPI.getInstance().getDataSource().saveNation(resident.getNation());
 		TownyAPI.getInstance().getDataSource().saveResident(resident);
 
-
 		return null;
 	}
 }

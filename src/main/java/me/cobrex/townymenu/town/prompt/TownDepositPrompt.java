@@ -19,7 +19,6 @@ public class TownDepositPrompt extends SimplePrompt {
 		super(false);
 
 		this.town = town;
-
 	}
 
 	@Override

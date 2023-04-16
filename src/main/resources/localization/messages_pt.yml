@@ -262,7 +262,6 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lMenu de permissões"
   Info:
-    - ""
     - "Definir permissões"
     - "para diferentes grupos"
     - "da sua cidade."
@@ -416,7 +415,7 @@ Plot_Menu:
     - ""
     - "Ligar ou desligar"
     - "configurações de plot"
-  Permissions_Menu_Button: "&c&lMenu de permissões"
+  Permissions_Menu_Button: "&c&lMenu de plot permissões"
   Permissions_Menu_Button_Lore:
     - ""
     - "Ajustar as permissões de uma plot"
@@ -438,7 +437,7 @@ Friend_Menu:
   Click_Remove_Lore: "Clique para remover um amigo"
   Click_Add_Lore: "Clique para adicionar um amigo"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&lMenu de configurações"
+  Menu_Title: "&2&lMenu de plot configurações"
   Info:
     - "Ajustar configurações personalizaveis"
     - "para sua plot!"
@@ -449,9 +448,8 @@ Plot_Toggle_Menu:
   Explode: "&c&lAtivar explosões"
   PVP: "&4&lAtivar PVP"
 Plot_Player_Permission_Menu:
-  Menu_Title: "&2&lMenu de permissões"
+  Menu_Title: "&2&lMenu de permissões de plot"
   Info:
-    - ""
     - "Definir permissões para"
     - "diferentes grupos"
     - "em sua plot."

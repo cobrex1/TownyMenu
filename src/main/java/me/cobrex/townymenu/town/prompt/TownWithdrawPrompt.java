@@ -18,7 +18,6 @@ public class TownWithdrawPrompt extends SimplePrompt {
 		super(false);
 
 		this.town = town;
-
 	}
 
 	@Override

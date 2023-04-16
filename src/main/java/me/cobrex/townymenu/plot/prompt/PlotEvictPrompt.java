@@ -17,7 +17,6 @@ public class PlotEvictPrompt extends SimplePrompt {
 		super(false);
 
 		this.townBlock = townBlock;
-
 	}
 
 	@Override

@@ -16,7 +16,6 @@ public class NationBoardPrompt extends SimplePrompt {
 		super(false);
 
 		this.nation = nation;
-
 	}
 
 	@Override
@@ -28,7 +27,6 @@ public class NationBoardPrompt extends SimplePrompt {
 	protected String getPrompt(ConversationContext ctx) {
 		return Localization.NationConversables.Nation_Board.PROMPT;
 	}
-
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {

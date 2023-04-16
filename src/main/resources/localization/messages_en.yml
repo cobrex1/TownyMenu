@@ -262,7 +262,6 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lPermissions Menu"
   Info:
-    - ""
     - "Set permissions for"
     - "different groups"
     - "in your town."
@@ -411,12 +410,12 @@ Extra_Info_Menu:
 
 Plot_Menu:
   Main_Menu_Title: "&2Plot Menu"
-  Toggle_Settings_Menu_Button: "&3&lToggle Settings Menu"
+  Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
     - "Turn on and off"
     - "various plot settings"
-  Permissions_Menu_Button: "&c&lPermission Menu"
+  Permissions_Menu_Button: "&c&lPlot Permission Menu"
   Permissions_Menu_Button_Lore:
     - ""
     - "Adjust plot permissions"
@@ -438,7 +437,7 @@ Friend_Menu:
   Click_Remove_Lore: "Click to Remove Friend"
   Click_Add_Lore: "Click to Add Friend"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&lToggle Settings Menu"
+  Menu_Title: "&2&lPlot Toggle Settings Menu"
   Info:
     - "Adjust toggleable settings"
     - "for your plot!"
@@ -449,9 +448,8 @@ Plot_Toggle_Menu:
   Explode: "&c&lToggle Explosions"
   PVP: "&4&lToggle PVP"
 Plot_Player_Permission_Menu:
-  Menu_Title: "&2&lPermissions Menu"
+  Menu_Title: "&2&lPlot Permissions Menu"
   Info:
-    - ""
     - "Set permissions for"
     - "different groups"
     - "in your plot."

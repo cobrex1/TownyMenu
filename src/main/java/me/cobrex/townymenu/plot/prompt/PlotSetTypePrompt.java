@@ -24,7 +24,6 @@ public class PlotSetTypePrompt extends SimplePrompt {
 		super(false);
 
 		this.townBlock = townBlock;
-
 	}
 
 	@Override

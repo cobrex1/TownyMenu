@@ -202,7 +202,6 @@ Town_Menu:
     - "Stadteinstellungen ändern."
   Invite_Player_Menu_Button: "&d&lSpieler einladen Menü"
   Invite_Player_Menu_Button_Lore:
-    - ""
     - "Laden Sie einen Online-Spieler"
     - "in Ihre Stadt ein."
   Extra_Info_Menu_Button: "&e&lZusätzliche Towny Infos"
@@ -408,12 +407,12 @@ Extra_Info_Menu:
 
 Plot_Menu:
   Main_Menu_Title: "&2Grundstückverwaltungsmenü"
-  Toggle_Settings_Menu_Button: "&3&lUmschaltbare Einstellungen"
+  Toggle_Settings_Menu_Button: "&3&lGrundstück Umschaltbare Einstellungen"
   Toggle_Settings_Menu_Button_Lore:
     - ""
     - "Umschaltbare Einstellungen"
     - "für dein Grundstück anpassen"
-  Permissions_Menu_Button: "&c&lBerechtigungsmenü"
+  Permissions_Menu_Button: "&c&lGrundstückBerechtigungsmenü"
   Permissions_Menu_Button_Lore:
     - ""
     - "Passe die Grundstückberechtigungen"
@@ -435,7 +434,7 @@ Friend_Menu:
   Click_Remove_Lore: "Klicke, um Freund zu entfernen"
   Click_Add_Lore: "Klicke, um Freund hinzuzufügen"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&lUmschalten Einstellungsmenü"
+  Menu_Title: "&2&lGrundstückUmschalten Einstellungsmenü"
   Info:
     - "Passe umschaltbare Einstellungen"
     - "für dein Grundstück an!"
@@ -446,9 +445,8 @@ Plot_Toggle_Menu:
   Explode: "&c&lExplosionen umschalten"
   PVP: "&4&lPVP umschalten"
 Plot_Player_Permission_Menu:
-  Menu_Title: "&2&lBerechtigungsmenü"
+  Menu_Title: "&2&lGrundstückBerechtigungsmenü"
   Info:
-    - ""
     - "Lege Berechtigungen für"
     - "verschiedene Gruppen"
     - "in deinem Grundstück fest."

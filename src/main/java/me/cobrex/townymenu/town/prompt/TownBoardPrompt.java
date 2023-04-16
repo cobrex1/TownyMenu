@@ -16,7 +16,6 @@ public class TownBoardPrompt extends SimplePrompt {
 		super(false);
 
 		this.town = town;
-
 	}
 
 	@Override

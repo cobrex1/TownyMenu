@@ -262,7 +262,6 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lMenu de permisos de rangos"
   Info:
-    - ""
     - "Define los permisos de"
     - "diferentes grupos en tu"
     - "ciudad"
@@ -410,12 +409,12 @@ Extra_Info_Menu:
 
 Plot_Menu:
   Main_Menu_Title: "&2Menu de Parcelas"
-  Toggle_Settings_Menu_Button: "&3&lMenu de opciones"
+  Toggle_Settings_Menu_Button: "&3&lMenu de parcelas opciones"
   Toggle_Settings_Menu_Button_Lore:
     - ""
     - "Activar y desactivar"
     - "configuraciones de parcelas"
-  Permissions_Menu_Button: "&c&lMenu de permisos"
+  Permissions_Menu_Button: "&c&lMenu de parcelas permisos"
   Permissions_Menu_Button_Lore:
     - ""
     - "Ajustar los permisos de parcelas"
@@ -437,9 +436,9 @@ Friend_Menu:
   Click_Remove_Lore: "Haga clic para eliminar amigos"
   Click_Add_Lore: "Haga clic para añadir amigos"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&lMenu de opciones"
+  Menu_Title: "&2&lMenu de parcelas opciones"
   Info:
-    - "Ajustar configuraciones"
+    - "Ajustar configuraciones de parcelas"
     - "activables de tu parcela"
   Toggle_Off: "&eClick para &cDesactivar"
   Toggle_On: "&eClick para &aActivar"
@@ -450,7 +449,6 @@ Plot_Toggle_Menu:
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lMenu de permisos"
   Info:
-    - ""
     - "Establecer permisos de"
     - "diferentes grupos en tu"
     - "parcela"

@@ -40,7 +40,6 @@ public class TownPlayerTitlePrompt extends SimplePrompt {
 		if (!getPlayer(context).hasPermission("towny.command.town.set.title") || input.equalsIgnoreCase(Localization.CANCEL))
 			return null;
 
-
 		resident.setTitle(input);
 		try {
 			TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());

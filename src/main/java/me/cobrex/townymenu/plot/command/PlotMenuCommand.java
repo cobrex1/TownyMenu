@@ -15,18 +15,12 @@ public final class PlotMenuCommand extends SimpleCommand {
 	public PlotMenuCommand() {
 		super("plotmenu|plm");
 		setPermission(null);
-
 	}
 
 	@SneakyThrows
 	@Override
 	protected void onCommand() {
 		checkConsole();
-
-//		if (TownyAPI.getInstance().isWarTime()) {
-//			tell(Localization.Error.WAR_TIME);
-//			return;
-//		}
 
 		Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
 		if (TownyAPI.getInstance().getTownBlock(getPlayer().getLocation()) != null) {

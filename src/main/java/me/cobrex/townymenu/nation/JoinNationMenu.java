@@ -6,6 +6,7 @@ import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.nation.prompt.CreateNationPrompt;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
+import me.cobrex.townymenu.utils.HeadDatabaseUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -30,8 +31,6 @@ public class JoinNationMenu extends Menu {
 	private final Button openNationButton;
 	private final Button createNationButton;
 
-
-	//	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.GRAY_STAINED_GLASS_PANE, "").make();
 	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "").make();
 
 	public JoinNationMenu(Resident resident, Player player) {
@@ -41,10 +40,11 @@ public class JoinNationMenu extends Menu {
 
 		List<Nation> nations = new ArrayList<>(TownyUniverse.getInstance().getNations()).stream().filter(n -> n.isOpen()).collect(Collectors.toList());
 
-		openNationButton = new ButtonMenu(new OpenNationMenu(nations), CompMaterial.fromString(String.valueOf(Settings.FIND_NATION_BUTTON)), Localization.JoinCreateNationMenu.FIND_NATION_BUTTON);
+		openNationButton = new ButtonMenu(new OpenNationMenu(nations), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.FIND_NATION_BUTTON)))
+				.name(Localization.JoinCreateNationMenu.FIND_NATION_BUTTON));
 
-		createNationButton = new ButtonConversation(new CreateNationPrompt(player), ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.CREATE_NATION_BUTTON)), Localization.JoinCreateNationMenu.CLICK_CREATE_NATION_BUTTON));
-
+		createNationButton = new ButtonConversation(new CreateNationPrompt(player), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.CREATE_NATION_BUTTON)))
+				.name(Localization.JoinCreateNationMenu.CLICK_CREATE_NATION_BUTTON));
 	}
 
 	private void add(Nation n) {
@@ -72,16 +72,13 @@ public class JoinNationMenu extends Menu {
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
-
 		}
 
 		@Override
 		protected void onPageClick(Player player, Nation item, ClickType click) {
 			player.closeInventory();
 			player.performCommand("n join " + item.getName());
-
 		}
-
 	}
 
 	@Override
@@ -89,10 +86,9 @@ public class JoinNationMenu extends Menu {
 		if (slot == 2)
 			return openNationButton.getItem();
 
-		if (slot == 4)
+		if (slot == 5)
 			return createNationButton.getItem();
 
 		return DUMMY_BUTTON;
 	}
-
 }

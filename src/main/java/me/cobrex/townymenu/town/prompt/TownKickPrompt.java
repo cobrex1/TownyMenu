@@ -41,8 +41,6 @@ public class TownKickPrompt extends SimplePrompt {
 			resident.removeTown();
 			tell(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()));
 		}
-
-
 		return null;
 	}
 }

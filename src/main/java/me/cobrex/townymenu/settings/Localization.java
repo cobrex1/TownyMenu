@@ -63,7 +63,6 @@ public class Localization extends SimpleLocalization {
 		public static String NATION_EXTRA_INFO_MENU_BUTTON;
 		public static Collection<String> NATION_EXTRA_INFO_MENU_BUTTON_LORE;
 
-
 		private static void init() {
 			setPathPrefix("Nation_Menu");
 			MAIN_MENU_TITLE = getString("Main_Menu_Title");
@@ -193,7 +192,6 @@ public class Localization extends SimpleLocalization {
 			public static String PUBLIC;
 			public static String OPEN;
 			public static String TAX_PERCENT;
-
 
 			private static void init() {
 				setPathPrefix("Nation_Toggle_Menu");
@@ -568,7 +566,6 @@ public class Localization extends SimpleLocalization {
 		public static String FRIEND_MENU_BUTTON;
 		public static String[] FRIEND_MENU_BUTTON_LORE;
 
-
 		private static void init() {
 			setPathPrefix("Plot_Menu");
 			MAIN_MENU_TITLE = getString("Main_Menu_Title");
@@ -590,7 +587,6 @@ public class Localization extends SimpleLocalization {
 			public static String CLICK_REMOVE_LORE;
 			public static String CLICK_ADD_LORE;
 
-
 			private static void init() {
 				setPathPrefix("Friend_Menu");
 				MENU_TITLE = getString("Menu_Title");
@@ -610,7 +606,6 @@ public class Localization extends SimpleLocalization {
 			public static String MOBS;
 			public static String EXPLODE;
 			public static String PVP;
-
 
 			private static void init() {
 				setPathPrefix("Plot_Toggle_Menu");
@@ -1044,7 +1039,6 @@ public class Localization extends SimpleLocalization {
 			}
 		}
 	}
-
 
 	public static class Error {
 

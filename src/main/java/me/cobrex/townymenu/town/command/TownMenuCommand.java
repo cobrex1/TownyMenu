@@ -17,7 +17,6 @@ public class TownMenuCommand extends SimpleCommand {
 	public TownMenuCommand() {
 		super("townmenu|tm");
 		setPermission(null);
-
 	}
 
 	@SneakyThrows
@@ -28,18 +27,11 @@ public class TownMenuCommand extends SimpleCommand {
 		Player player = this.getPlayer();
 
 		if (this.args.length == 0) {
-//			if (TownyAPI.getInstance().isWarTime()) {
-//				tell(Localization.Error.WAR_TIME);
-//				return;
-//			}
-
 			Town town;
 			Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
 			assert resident != null;
 			if (resident.hasTown()) {
 				town = resident.getTown();
-//			if (town.getMayor() == resident)
-//			if (town.getMayor().equals(resident))
 				if (town.getMayor().equals(resident) && town.getMayor().hasPermissionNode("townymenu.town.use"))
 					new TownMenu(town, getPlayer()).displayTo(getPlayer());
 				else if (getPlayer().hasPermission("townymenu.town.use")) {
@@ -60,7 +52,6 @@ public class TownMenuCommand extends SimpleCommand {
 
 			this.tell(Localization.RELOADED);
 		}
-
 	}
 
 	@Override
@@ -69,6 +60,5 @@ public class TownMenuCommand extends SimpleCommand {
 			return this.completeLastWord("reload");
 
 		return NO_COMPLETE;
-
 	}
 }

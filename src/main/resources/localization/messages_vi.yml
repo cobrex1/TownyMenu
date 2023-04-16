@@ -262,7 +262,6 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lMenu Quyền"
   Info:
-    - ""
     - "Đặt quyền cho"
     - "các nhóm khác nhau"
     - "trong thị trấn của bạn."
@@ -411,18 +410,18 @@ Extra_Info_Menu:
 
 Plot_Menu:
   Main_Menu_Title: "&2Menu Lô"
-  Toggle_Settings_Menu_Button: "&3&lChuyển đổi Menu Cài đặt"
+  Toggle_Settings_Menu_Button: "&3&lLô chuyển đổi Menu Cài đặt"
   Toggle_Settings_Menu_Button_Lore:
     - ""
     - "bật và tắt"
     - "cài đặt cốt truyện khác nhau"
-  Permissions_Menu_Button: "&c&lMenu Quyền"
+  Permissions_Menu_Button: "&c&lLô menu Quyền"
   Permissions_Menu_Button_Lore:
     - ""
     - "Điều chỉnh quyền cốt truyện"
     - "cho bạn bè, đất nước"
     - "đồng minh và người ngoài cuộc"
-  Plot_Admin_Menu_Button: "&5&lMenu Quản trị Lô"
+  Plot_Admin_Menu_Button: "&5&lLô menu Quản trị Lô"
   Plot_Admin_Menu_Button_Lore:
     - ""
     - "Quản lý cốt truyện nâng cao"
@@ -438,7 +437,7 @@ Friend_Menu:
   Click_Remove_Lore: "Nhấp để Xóa bạn bè"
   Click_Add_Lore: "Nhấp để thêm bạn bè"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&lChuyển đổi Menu Cài đặt"
+  Menu_Title: "&2&lLô chuyển đổi Menu Cài đặt"
   Info:
     - "Điều chỉnh cài đặt có thể chuyển đổi"
     - "cho cốt truyện của bạn!"
@@ -449,9 +448,8 @@ Plot_Toggle_Menu:
   Explode: "&c&lChuyển đổi các vụ nổ"
   PVP: "&4&lChuyển đổi PVP"
 Plot_Player_Permission_Menu:
-  Menu_Title: "&2&lMenu Quyền"
+  Menu_Title: "&2&lLô Menu Quyền"
   Info:
-    - ""
     - "Đặt quyền cho"
     - "các nhóm khác nhau"
     - "trong cốt truyện của bạn."
