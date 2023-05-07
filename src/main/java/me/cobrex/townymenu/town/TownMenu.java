@@ -304,7 +304,6 @@ public class TownMenu extends Menu {
 						Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
 						for (Player onlinePlayer : onlinePlayers) {
 							Resident onlinePlayerAsRes = TownyAPI.getInstance().getResident(onlinePlayer.getName());
-							assert onlinePlayerAsRes != null;
 							if (onlinePlayerAsRes.hasTown()) {
 								if (!onlinePlayerAsRes.getTown().equals(town))
 									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
@@ -433,7 +432,6 @@ public class TownMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
@@ -1025,7 +1023,6 @@ public class TownMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
-						assert townBlock != null;
 						if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
 							town.setSpawn(player.getLocation());
 							Common.tell(player, Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN_MSG);
@@ -1110,7 +1107,6 @@ public class TownMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			assert skull != null;
 			skull.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);

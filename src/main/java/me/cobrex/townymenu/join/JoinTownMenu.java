@@ -3,7 +3,6 @@ package me.cobrex.townymenu.join;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
-import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
 import me.cobrex.townymenu.utils.HeadDatabaseUtil;
@@ -30,8 +29,6 @@ public class JoinTownMenu extends Menu {
 
 	private final Button openTownButton;
 	private final Button createTownButton;
-
-	private final HeadDatabaseAPI hdb = new HeadDatabaseAPI();
 
 	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_TOWN_MENU)), "").make();
 
@@ -66,7 +63,6 @@ public class JoinTownMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
 			skull.setOwningPlayer(player);

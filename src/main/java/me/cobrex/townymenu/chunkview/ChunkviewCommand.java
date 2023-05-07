@@ -57,11 +57,9 @@ public final class ChunkviewCommand extends SimpleCommand {
 				Remain.sendBlockChange(0, player, corner3, CompMaterial.SEA_LANTERN);
 			if (corner4.getBlock().getType() == Material.AIR)
 				Remain.sendBlockChange(0, player, corner4, CompMaterial.SEA_LANTERN);
-
 		}
-		player.sendMessage(ChatColor.GOLD + Localization.ChunkView.TOGGLE_REMOVE);
-//		player.sendMessage(ChatColor.GOLD + "Boarder blocks now showing. Toggle sneak to remove");
 
+		player.sendMessage(ChatColor.GOLD + Localization.ChunkView.TOGGLE_REMOVE);
 	}
 
 	@AutoRegister
@@ -112,10 +110,8 @@ public final class ChunkviewCommand extends SimpleCommand {
 					}
 
 					player.sendMessage(ChatColor.GOLD + Localization.ChunkView.REMOVED);
-//					player.sendMessage(ChatColor.GOLD + "Boarder blocks removed.");
 					TownyMenuPlugin.viewers.remove(player);
 					TownyMenuPlugin.viewerslocs.remove(index);
-
 				}
 			}
 		}

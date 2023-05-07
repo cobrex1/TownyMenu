@@ -316,7 +316,6 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getName());
 			if (item.getName() == null)
 				return DUMMY_BUTTON;
@@ -440,7 +439,6 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			assert skull != null;
 			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
@@ -522,8 +520,12 @@ public class NationMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
-						if (!TownySettings.isNationSpawnOnlyAllowedInCapital() && nation.hasTown(Objects.requireNonNull(townBlock).getTown())
-								|| nation.hasTown(Objects.requireNonNull(townBlock).getTown()) && townBlock.getTown().isCapital()) {
+//						if (townBlock != null) {
+						if (!TownySettings.isNationSpawnOnlyAllowedInCapital() && nation.hasTown(townBlock.getTown())
+								|| nation.hasTown(townBlock.getTown()) && townBlock.getTown().isCapital()) {
+							//							if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
+							//						if (!TownySettings.isNationSpawnOnlyAllowedInCapital() && nation.hasTown(Objects.requireNonNull(townBlock).getTown())
+							//								|| nation.hasTown(Objects.requireNonNull(townBlock).getTown()) && townBlock.getTown().isCapital()) {
 							nation.setSpawn(player.getLocation());
 							Common.tell(player, Localization.NationMenu.NationSettingsMenu.SET_SPAWN_MSG);
 							player.closeInventory();
@@ -531,6 +533,7 @@ public class NationMenu extends Menu {
 						} else {
 							Common.tell(player, Localization.Error.CANNOT_SET_SPAWN);
 						}
+//						}
 					} catch (TownyException e) {
 						e.printStackTrace();
 					}
@@ -544,40 +547,48 @@ public class NationMenu extends Menu {
 				}
 			};
 
-			nationNameButton = new Button() {
-				@Override
-				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+			nationNameButton = new
 
-					if (nation.getKing().getName().equals(player.getName()))
-						new NationNamePrompt(nation).show(player);
-					else
-						Common.tell(player, Localization.Error.CANNOT_CHANGE_NAME);
-				}
+					Button() {
+						@Override
+						public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 
-				@Override
-				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_NAME)))
-							.name(Localization.NationMenu.NationSettingsMenu.SET_NAME)
-							.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_NAME_LORE).make();
-				}
-			};
+							if (nation.getKing().getName().equals(player.getName()))
+								new NationNamePrompt(nation).show(player);
+							else
+								Common.tell(player, Localization.Error.CANNOT_CHANGE_NAME);
+						}
 
-			nationBoardButton = new Button() {
-				@Override
-				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					if (nation.getKing().getName().equals(player.getName()))
-						new NationBoardPrompt(nation).show(player);
-					else
-						Common.tell(player, Localization.Error.CANNOT_CHANGE_BOARD);
-				}
+						@Override
+						public ItemStack getItem() {
+							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_NAME)))
+									.name(Localization.NationMenu.NationSettingsMenu.SET_NAME)
+									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_NAME_LORE).make();
+						}
+					}
 
-				@Override
-				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_BOARD)))
-							.name(Localization.NationMenu.NationSettingsMenu.SET_BOARD)
-							.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_BOARD_LORE).make();
-				}
-			};
+			;
+
+			nationBoardButton = new
+
+					Button() {
+						@Override
+						public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+							if (nation.getKing().getName().equals(player.getName()))
+								new NationBoardPrompt(nation).show(player);
+							else
+								Common.tell(player, Localization.Error.CANNOT_CHANGE_BOARD);
+						}
+
+						@Override
+						public ItemStack getItem() {
+							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_BOARD)))
+									.name(Localization.NationMenu.NationSettingsMenu.SET_BOARD)
+									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_BOARD_LORE).make();
+						}
+					}
+
+			;
 		}
 
 		@Override

@@ -25,7 +25,6 @@ public final class PlotMenuCommand extends SimpleCommand {
 		Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
 		if (TownyAPI.getInstance().getTownBlock(getPlayer().getLocation()) != null) {
 			TownBlock townBlock = TownyAPI.getInstance().getTownBlock(getPlayer().getLocation());
-			assert townBlock != null;
 			Town town = townBlock.getTown();
 			if (town.getMayor().equals(resident) || getPlayer().hasPermission("townymenu.admin.plot"))
 				new PlotMenu(townBlock).displayTo(getPlayer());
