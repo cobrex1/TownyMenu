@@ -28,10 +28,14 @@ Log_Lag_Over_Milis: 100
 
 # For item names please use https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 
+# Item to use to display chunk boarders
+Chunk_View: REDSTONE_TORCH
+
 # -----Filler Icons-----#
 
 # If you wish the filler to be empty, set the material to AIR
 # HDB icons cannot be used for fillers
+
 Filler_Join_Town_Menu: GRAY_STAINED_GLASS_PANE
 Filler_Town_Menu: GRAY_STAINED_GLASS_PANE
 

@@ -13,6 +13,8 @@ public final class Settings extends SimpleSettings {
 	public static Boolean ECONOMY_ENABLED;
 	public static String LOCALE;
 
+	public static CompMaterial CHUNK_VIEW;
+
 	public static String FIND_TOWN;
 	public static String CREATE_TOWN;
 
@@ -181,6 +183,8 @@ public final class Settings extends SimpleSettings {
 		MONEY_SYMBOL = getString("Money_Symbol");
 		ECONOMY_ENABLED = getBoolean("Economy");
 		LOCALE = getString("Locale");
+
+		CHUNK_VIEW = getMaterial("Chunk_View");
 
 		FILLER_JOIN_TOWN_MENU = getMaterial("Filler_Join_Town_Menu");
 

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import me.cobrex.townymenu.TownyMenuPlugin;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.settings.Settings;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -50,13 +51,17 @@ public final class ChunkviewCommand extends SimpleCommand {
 			corner3 = chunk.getBlock(15 - i2, i, 15).getLocation();
 			corner4 = chunk.getBlock(0, i, 15 - i2).getLocation();
 			if (corner1.getBlock().getType() == Material.AIR)
-				Remain.sendBlockChange(0, player, corner1, CompMaterial.SEA_LANTERN);
+				Remain.sendBlockChange(0, player, corner1, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
 			if (corner2.getBlock().getType() == Material.AIR)
-				Remain.sendBlockChange(0, player, corner2, CompMaterial.SEA_LANTERN);
+				Remain.sendBlockChange(0, player, corner2, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
+//				Remain.sendBlockChange(0, player, corner2, CompMaterial.REDSTONE_TORCH);
+//				Remain.sendBlockChange(0, player, corner2, CompMaterial.SEA_LANTERN);
 			if (corner3.getBlock().getType() == Material.AIR)
-				Remain.sendBlockChange(0, player, corner3, CompMaterial.SEA_LANTERN);
+				Remain.sendBlockChange(0, player, corner3, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
+//				Remain.sendBlockChange(0, player, corner3, CompMaterial.REDSTONE_TORCH);
 			if (corner4.getBlock().getType() == Material.AIR)
-				Remain.sendBlockChange(0, player, corner4, CompMaterial.SEA_LANTERN);
+				Remain.sendBlockChange(0, player, corner4, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
+//				Remain.sendBlockChange(0, player, corner4, CompMaterial.REDSTONE_TORCH);
 		}
 
 		player.sendMessage(ChatColor.GOLD + Localization.ChunkView.TOGGLE_REMOVE);
