@@ -316,14 +316,18 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getName());
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+					Localization.NationMenu.NationTownMenu.TOWN_NAME + item.getName()));
+//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getName());
 			if (item.getName() == null)
 				return DUMMY_BUTTON;
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationTownMenu.MAYOR + (item.getMayor())));
+//			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.MAYOR + (item.getMayor()));
 			lore.add("");
-			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.MAYOR + (item.getMayor()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationTownMenu.NUMBER_RESIDENTS + (item.getNumResidents())));
+//			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -382,8 +386,10 @@ public class NationMenu extends Menu {
 
 			try {
 				balanceButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BALANCE)))
+						.name(Localization.NationMenu.NationEconomyMenu.BALANCE)
 						.lore("")
-						.lore("&a" + nation.getAccount().getHoldingFormattedBalance())
+						.lore(Localization.NationMenu.NationEconomyMenu.NATION_BALANCE + nation.getAccount().getHoldingFormattedBalance())
+//						.lore("&a" + nation.getAccount().getHoldingFormattedBalance())
 						.lore("")
 						.lore(Localization.NationMenu.NationEconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getNationUpkeepCost(nation)).make();
 			} catch (Throwable t) {
@@ -439,16 +445,20 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+					Localization.NationMenu.NationResidentMenu.RES_NAME + item.getFormattedTitleName()));
+//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.TOWN + item.getTown());
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.TOWN + item.getTown()));
+//			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.TOWN + item.getTown());
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline())));
+//			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -520,20 +530,14 @@ public class NationMenu extends Menu {
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
-//						if (townBlock != null) {
 						if (!TownySettings.isNationSpawnOnlyAllowedInCapital() && nation.hasTown(townBlock.getTown())
 								|| nation.hasTown(townBlock.getTown()) && townBlock.getTown().isCapital()) {
-							//							if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
-							//						if (!TownySettings.isNationSpawnOnlyAllowedInCapital() && nation.hasTown(Objects.requireNonNull(townBlock).getTown())
-							//								|| nation.hasTown(Objects.requireNonNull(townBlock).getTown()) && townBlock.getTown().isCapital()) {
-							nation.setSpawn(player.getLocation());
 							Common.tell(player, Localization.NationMenu.NationSettingsMenu.SET_SPAWN_MSG);
 							player.closeInventory();
 							TownyAPI.getInstance().getDataSource().saveNation(nation);
 						} else {
 							Common.tell(player, Localization.Error.CANNOT_SET_SPAWN);
 						}
-//						}
 					} catch (TownyException e) {
 						e.printStackTrace();
 					}
@@ -621,7 +625,8 @@ public class NationMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.NationMenu.NationInviteTownMenu.INVITE);
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationInviteTownMenu.INVITE));
+//			lore.add(ChatColor.GRAY + Localization.NationMenu.NationInviteTownMenu.INVITE);
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;

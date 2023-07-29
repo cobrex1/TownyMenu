@@ -14,7 +14,9 @@ Join_Create_Menu:
   Find_Open_Town: "Найти открытый город"
   Click_Create_Town: "Создать город"
   Join_Open_Town: "&aЗайти в открытый город"
-  Mayor: "Лорд: "
+  #this is just setting the color
+  Town_Name: "&e"
+  Mayor: "&fЛорд: "
   Number_Residents: "Кол-во жителей: "
   Create_Own_Town: "&aВведите название вашего города или нажмите &cотмена"
 
@@ -23,8 +25,10 @@ Join_Create_Nation_Menu:
   Find_Nation_Button: "&4Найти открытый нацию"
   Click_Create_Nation_Button: "&4Нажмите, чтобы создать свою нация"
   Join_Open_Nation: "&aJЗайти в открытый нация"
-  King: "Король: "
-  Number_of_Towns: "Количество городов: "
+  #this is just setting the color
+  Nation_Name: "&e "
+  King: "&fКороль: "
+  Number_of_Towns: "&fКоличество городов: "
   Create_Own_Nation: "&aВведите название вашего нация или нажмите &cотмена."
 
 Nation_Menu:
@@ -95,8 +99,10 @@ Nation_Town_Menu:
     - "Нажмите на город"
     - "управлять ими!"
   Online: "Последний онлайн: "
-  Mayor: "Мэр города: "
-  Number_of_Residents: "Номер места жительства: "
+  #this is just setting the color
+  Town_Name: "&e&l"
+  Mayor: "&eМэр города: "
+  Number_of_Residents: "&fНомер места жительства: "
   Kick: "&c&lпнуть город"
   Kick_Lore:
     - ""
@@ -106,7 +112,9 @@ Nation_Town_Menu:
 Nation_Economy_Menu:
   Menu_Title: "&2&lМеню национальной экономики"
   Balance: "&2&lТекущий национальный баланс"
-  Upkeep: "Плата за содержание: "
+  #this is just setting the color
+  Nation_Balance: "&a  "
+  Upkeep: "&fПлата за содержание: "
   Withdraw: "&c&lСнять сумму"
   Withdraw_Lore:
     - ""
@@ -141,8 +149,10 @@ Nation_Resident_Menu:
   Info:
     - "Нажмите на жителя"
     - "управлять ими!"
-  Online: "Последний онлайн: "
-  Town_Name: "Город: "
+  #this is just setting the color
+  Res_Name: "&e&l"
+  Online: "&fПоследний онлайн: "
+  Town_Name: "&6Город: "
   Nation_Rank: "&3&lУстановить статус резидента"
   Nation_Rank_Lore:
     - ""
@@ -232,8 +242,10 @@ Resident_Menu:
   Info:
     - "Нажмите на участника"
     - "для управления!"
-  Online: "Последний онлайн: "
-  Town_Rank: "Town Rank: "
+  #this is just setting the color
+  Resident_Name: "&e&l"
+  Online: "&7Последний онлайн: "
+  Town_Rank: "&7Town Rank: "
   Invite: "&aClick to invite player to town"
   Kick: "&c&lВыгнать игрока"
   Kick_Lore:
@@ -335,7 +347,9 @@ Player_Permission_Menu:
 Economy_Menu:
   Menu_Title: "&2&lУправление экономикой"
   Balance: "&2&lТекущий баланс города"
-  Upkeep: "Плата за содержание: "
+  #this is just setting the color
+  Town_Balance: "&a  "
+  Upkeep: "&fПлата за содержание: "
   Withdraw: "&c&lСнять сумму"
   Withdraw_Lore:
     - ""
@@ -440,8 +454,8 @@ Friend_Menu:
   Menu_Title: "&2Меню друзей"
   Remove: "&cИгрок &4{player}&c удалён из вашего списка друзей!"
   Add: "&3Игрок &b{player}&3 добавлен в список ваших друзей!"
-  Click_Remove_Lore: "Click to Remove Friend"
-  Click_Add_Lore: "Click to Add Friend"
+  Click_Remove_Lore: "&cClick to Remove Friend"
+  Click_Add_Lore: "&aClick to Add Friend"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lНастройки участка"
   Info:

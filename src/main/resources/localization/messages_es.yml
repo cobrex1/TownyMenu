@@ -14,8 +14,10 @@ Join_Create_Menu:
   Find_Open_Town: "Encuentra una Town abierta"
   Click_Create_Town: "Haz clic para crear una town"
   Join_Open_Town: "&aÚnete a un town abierto"
-  Mayor: "Alcalde: "
-  Number_Residents: "Número de Residencia: "
+  #this is just setting the color
+  Town_Name: "&e"
+  Mayor: "&fAlcalde: "
+  Number_Residents: "&fNúmero de Residencia: "
   Create_Own_Town: "&aEscriba el nombre de su ciudad o para cancelar la creación de una ciudad &cescriba cancelar."
 
 Join_Create_Nation_Menu:
@@ -23,8 +25,10 @@ Join_Create_Nation_Menu:
   Find_Nation_Button: "&4Encuentra una nación abierta"
   Click_Create_Nation_Button: "&4Haz clic para crear una Nación"
   Join_Open_Nation: "&aJÚnete a un Nación abierto"
-  King: "Rey: "
-  Number_of_Towns: "Número de Pueblos: "
+  #this is just setting the color
+  Nation_Name: "&e "
+  King: "&fRey: "
+  Number_of_Towns: "&fNúmero de Pueblos: "
   Create_Own_Nation: "&aEscriba el nombre de su nación o &cescriba cancelar."
 
 Nation_Menu:
@@ -95,8 +99,10 @@ Nation_Town_Menu:
     - "Haga clic en una ciudad"
     - "para administrarlos!"
   Online: "Última conexión: "
-  Mayor: "Alcalde de la ciudad: "
-  Number_of_Residents: "Número de Residencia: "
+  #this is just setting the color
+  Town_Name: "&e&l"
+  Mayor: "&eAlcalde de la ciudad: "
+  Number_of_Residents: "&fNúmero de Residencia: "
   Kick: "&c&lExpulsar la ciudad"
   Kick_Lore:
     - ""
@@ -106,7 +112,9 @@ Nation_Town_Menu:
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenú de Economía de la nación"
   Balance: "&2&lDinero actual de la nación"
-  Upkeep: "Cuota de mantenimiento: "
+  #this is just setting the color
+  Nation_Balance: "&a  "
+  Upkeep: "&fCuota de mantenimiento: "
   Withdraw: "&c&lRetirar Dinero"
   Withdraw_Lore:
     - ""
@@ -141,8 +149,10 @@ Nation_Resident_Menu:
   Info:
     - "Haga clic en un residente"
     - "para administrarlos!"
-  Online: "Última conexión: "
-  Town_Name: "Ciudad: "
+  #this is just setting the color
+  Res_Name: "&e&l"
+  Online: "&fÚltima conexión: "
+  Town_Name: "&6Ciudad: "
   Nation_Rank: "&3&lRango de residente de la nación"
   Nation_Rank_Lore:
     - ""
@@ -234,8 +244,10 @@ Resident_Menu:
   Info:
     - "Click en un residente para"
     - "manejar diversas opciones"
-  Online: "Ultima conexion: "
-  Town_Rank: "Rango de ciudad: "
+  #this is just setting the color
+  Resident_Name: "&e&l"
+  Online: "&7Ultima conexion: "
+  Town_Rank: "&7Rango de ciudad: "
   Invite: "&aHaga clic para invitar al jugador a la ciudad"
   Kick: "&c&lExpulsar Jugador"
   Kick_Lore:
@@ -337,7 +349,9 @@ Player_Permission_Menu:
 Economy_Menu:
   Menu_Title: "&2&lMenu de Economía"
   Balance: "&2&lDinero actual de la ciudad"
-  Upkeep: "Cuota de mantenimiento: "
+  #this is just setting the color
+  Town_Balance: "&a  "
+  Upkeep: "&fCuota de mantenimiento: "
   Withdraw: "&c&lRetirar dinero"
   Withdraw_Lore:
     - ""
@@ -433,8 +447,8 @@ Friend_Menu:
   Menu_Title: "&2Menu de amigos"
   Remove: "&cHas removido a {player} de tu lista de amigos"
   Add: "&3Has agregado &b{player} &3a tu lista de amigos"
-  Click_Remove_Lore: "Haga clic para eliminar amigos"
-  Click_Add_Lore: "Haga clic para añadir amigos"
+  Click_Remove_Lore: "&cHaga clic para eliminar amigos"
+  Click_Add_Lore: "&aHaga clic para añadir amigos"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu de parcelas opciones"
   Info:

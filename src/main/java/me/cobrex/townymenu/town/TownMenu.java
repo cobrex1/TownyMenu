@@ -432,16 +432,21 @@ public class TownMenu extends Menu {
 		protected ItemStack convertToItemStack(Resident item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', item.getFormattedName()));
+//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.TOWN_RANK + ChatColor.WHITE + StringMgmt.join(item.getTownRanks(), ","));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.TOWN_RANK +
+					ChatColor.translateAlternateColorCodes('&', StringMgmt.join(item.getTownRanks(), ""))));
+//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.TOWN_RANK + ChatColor.WHITE + StringMgmt.join(item.getTownRanks(), ","));
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.ONLINE +
+					TimeUtil.getFormattedDateShort(item.getLastOnline())));
+//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -932,7 +937,9 @@ public class TownMenu extends Menu {
 				balanceButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_BALANCE)))
 						.name(Localization.TownMenu.EconomyMenu.BALANCE)
 						.lore("")
-						.lore("&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
+						.lore(Localization.TownMenu.EconomyMenu.TOWN_BALANCE + town.getAccount().getHoldingFormattedBalance(), "",
+								Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
+//						.lore("&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
 			} catch (Throwable t) {
 				balanceButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_BALANCE)))
 						.name("Economy Disabled").make();
@@ -1112,7 +1119,8 @@ public class TownMenu extends Menu {
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.INVITE);
+			lore.add((ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.INVITE)));
+//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.INVITE);
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;

@@ -29,6 +29,7 @@ public class Localization extends SimpleLocalization {
 		public static String FIND_NATION_BUTTON;
 		public static String CLICK_CREATE_NATION_BUTTON;
 		public static String JOIN_OPEN_NATION;
+		public static String NATION_NAME;
 		public static String KING;
 		public static String NUMBER_OF_TOWNS;
 		public static String CREATE_OWN_NATION;
@@ -39,6 +40,7 @@ public class Localization extends SimpleLocalization {
 			FIND_NATION_BUTTON = getString("Find_Nation_Button");
 			CLICK_CREATE_NATION_BUTTON = getString("Click_Create_Nation_Button");
 			JOIN_OPEN_NATION = getString("Join_Open_Nation");
+			NATION_NAME = getString("Nation_Name");
 			KING = getString("King");
 			NUMBER_OF_TOWNS = getString("Number_of_Towns");
 			CREATE_OWN_NATION = getString("Create_Own_Nation");
@@ -114,6 +116,7 @@ public class Localization extends SimpleLocalization {
 			public static String MENU_TITLE;
 			public static String[] INFO;
 			public static String ONLINE;
+			public static String TOWN_NAME;
 			public static String MAYOR;
 			public static String NUMBER_RESIDENTS;
 			public static String KICK;
@@ -124,6 +127,7 @@ public class Localization extends SimpleLocalization {
 				MENU_TITLE = getString("Menu_Title");
 				INFO = getStringList("Info").toArray(new String[0]);
 				ONLINE = getString("Online");
+				TOWN_NAME = getString("Town_Name");
 				MAYOR = getString("Mayor");
 				NUMBER_RESIDENTS = getString("Number_of_Residents");
 				KICK = getString("Kick");
@@ -136,6 +140,7 @@ public class Localization extends SimpleLocalization {
 			public static String MENU_TITLE;
 			public static String[] INFO;
 			public static String ONLINE;
+			public static String RES_NAME;
 			public static String TOWN;
 			public static String NATION_RANK;
 			public static Collection<String> NATION_RANK_LORE;
@@ -147,6 +152,7 @@ public class Localization extends SimpleLocalization {
 				MENU_TITLE = getString("Menu_Title");
 				INFO = getStringList("Info").toArray(new String[0]);
 				ONLINE = getString("Online");
+				RES_NAME = getString("Res_Name");
 				TOWN = getString("Town_Name");
 				NATION_RANK = getString("Nation_Rank");
 				NATION_RANK_LORE = getStringList("Nation_Rank_Lore");
@@ -159,6 +165,7 @@ public class Localization extends SimpleLocalization {
 
 			public static String MENU_TITLE;
 			public static String BALANCE;
+			public static String NATION_BALANCE;
 			public static String UPKEEP;
 			public static String WITHDRAW;
 			public static Collection<String> WITHDRAW_LORE;
@@ -173,6 +180,7 @@ public class Localization extends SimpleLocalization {
 
 				MENU_TITLE = getString("Menu_Title");
 				BALANCE = getString("Balance");
+				NATION_BALANCE = getString("Nation_Balance");
 				UPKEEP = getString("Upkeep");
 				WITHDRAW = getString("Withdraw");
 				WITHDRAW_LORE = getStringList("Withdraw_Lore");
@@ -243,6 +251,7 @@ public class Localization extends SimpleLocalization {
 		public static String FIND_OPEN_TOWN;
 		public static String CLICK_CREATE_TOWN;
 		public static String JOIN_OPEN_TOWN;
+		public static String TOWN_NAME;
 		public static String MAYOR;
 		public static String NUMBER_RESIDENTS;
 		public static String CREATE_OWN_TOWN;
@@ -254,6 +263,7 @@ public class Localization extends SimpleLocalization {
 			FIND_OPEN_TOWN = getString("Find_Open_Town");
 			CLICK_CREATE_TOWN = getString("Click_Create_Town");
 			JOIN_OPEN_TOWN = getString("Join_Open_Town");
+			TOWN_NAME = getString("Town_Name");
 			MAYOR = getString("Mayor");
 			NUMBER_RESIDENTS = getString("Number_Residents");
 			CREATE_OWN_TOWN = getString("Create_Own_Town");
@@ -337,6 +347,7 @@ public class Localization extends SimpleLocalization {
 
 			public static String MENU_TITLE;
 			public static String[] INFO;
+			public static String RESIDENT_NAME;
 			public static String ONLINE;
 			public static String TOWN_RANK;
 			public static String INVITE;
@@ -353,6 +364,7 @@ public class Localization extends SimpleLocalization {
 				setPathPrefix("Resident_Menu");
 				MENU_TITLE = getString("Menu_Title");
 				INFO = getStringList("Info").toArray(new String[0]);
+				RESIDENT_NAME = getString("Resident_Name");
 				ONLINE = getString("Online");
 				TOWN_RANK = getString("Town_Rank");
 				INVITE = getString("Invite");
@@ -477,6 +489,7 @@ public class Localization extends SimpleLocalization {
 
 			public static String MENU_TITLE;
 			public static String BALANCE;
+			public static String TOWN_BALANCE;
 			public static String UPKEEP;
 			public static String WITHDRAW;
 			public static Collection<String> WITHDRAW_LORE;
@@ -491,6 +504,7 @@ public class Localization extends SimpleLocalization {
 
 				MENU_TITLE = getString("Menu_Title");
 				BALANCE = getString("Balance");
+				TOWN_BALANCE = getString("Town_Balance");
 				UPKEEP = getString("Upkeep");
 				WITHDRAW = getString("Withdraw");
 				WITHDRAW_LORE = getStringList("Withdraw_Lore");

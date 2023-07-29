@@ -63,14 +63,17 @@ public class JoinTownMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.TOWN_NAME));
+//			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
 			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
-			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.MAYOR + (item.getMayor())));
+//			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
 			lore.add("");
-			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.MAYOR + (item.getMayor()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.NUMBER_RESIDENTS + (item.getNumResidents())));
+//			lore.add(ChatColor.WHITE + Localization.JoinCreateMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;

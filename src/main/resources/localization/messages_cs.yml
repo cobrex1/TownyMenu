@@ -1,0 +1,674 @@
+Confirm: "potvrdit"
+Cancel: "zrušit"
+Menu_Information: "Informace o nabídce"
+
+Reloaded: "Nastavení se znovu načetlo!"
+Menu:
+  Button_Return_Title: "&a&lZpět"
+  Button_Return_Lore:
+    - ""
+    - "Předchozí menu."
+
+Join_Create_Menu:
+  Main_Menu_Title: "Připojte se k městu nebo ho vytvořte"
+  Find_Open_Town: "Najít otevřené město"
+  Click_Create_Town: "Kliknutím vytvořte město"
+  Join_Open_Town: "&aPřipojte se k otevřenému městu"
+  #this is just setting the color
+  Town_Name: "&e"
+  Mayor: "^fStarosta: "
+  Number_Residents: "&fPočet obyvatel: "
+  Create_Own_Town: "&aNapište název svého města nebo &ctype zrušte akci."
+
+Join_Create_Nation_Menu:
+  Main_Menu_Title: "&3&lPřipojte se nebo vytvořte národ"
+  Find_Nation_Button: "&4Klikněte pro vyhledání otevřeného národa"
+  Click_Create_Nation_Button: "&4Klikněte pro vytvoření národa"
+  Join_Open_Nation: "&aPřipojit se k otevřenému národu"
+  #this is just setting the color
+  Nation_Name: "&e "
+  King: "&fKrál: "
+  Number_of_Towns: "&fPočet měst: "
+  Create_Own_Nation: "&aZadejte název svého národa nebo &ctype zrušte akci."
+
+Nation_Menu:
+  Main_Menu_Title: "&3&lMenu národa"
+  Info:
+    - "Hlavní menu pro nastavení národa"
+  Nation_Toggle_Menu_Button: "&9&lPřepnout nabídku nastavení národa"
+  Nation_Toggle_Menu_Button_Lore:
+    - ""
+    - "&4&lZapněte a vypněte"
+    - "různá nastavení národa."
+  Nation_Town_List_Button: "&6&lMenu Seznamu měst"
+  Nation_Town_List_Button_Lore:
+    - ""
+    - "Zobraz města v národě"
+  Nation_Resident_Menu_Button: "&b&lMenu obyvatel národa"
+  Nation_Resident_Menu_Button_Lore:
+    - ""
+    - "Správa obyvatel národa"
+  Nation_Economy_Menu_Button: "&a&lMenu Správy ekonomiky národa"
+  Nation_Economy_Menu_Button_Lore:
+    - ""
+    - "Spravujte peníze svého národa"
+  Nation_Settings_Button: "&2&lMenu Nastavení národa"
+  Nation_Settings_Button_Lore:
+    - ""
+    - "Změňte různé"
+    - "další nastavení národa."
+  Nation_Invite_Town_Menu_Button: "&d&lMenu pozvání města"
+  Nation_Invite_Town_Menu_Button_Lore:
+    - ""
+    - "Pozvat město do"
+    - "do svého národa."
+  Nation_Extra_Info_Menu_Button: "&e&lDalší info k národům"
+  Nation_Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Další užitečné příkazy pro"
+    - "Vůdce národa"
+
+Nation_Settings_Menu:
+  Menu_Title: "&2&lMenu Nastavení národa"
+  Info:
+    - "Další nastavení národa."
+  Set_Spawn_Msg: "&eNastavení spawnu národa na aktuální místo."
+  Set_Spawn: "&b&lNastavit spawn národa"
+  Set_Spawn_Lore:
+    - ""
+    - "Nastavení lokaci pro"
+    - "teleportování pomocí"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lNastavit název národa"
+  Set_Name_Lore:
+    - ""
+    - "Změní název"
+    - "národa."
+  Set_Board: "&2&lNastavit národní zprávu"
+  Set_Board_Lore:
+    - ""
+    - "Nastavení zprávy národa."
+
+Nation_Town_Menu:
+  Menu_Title: "&2&lMenu Správy města v národě"
+  Info:
+    - "Klikněte na město"
+    - "a můžete ho spravovat!"
+  Online: "&fNaposledy online: "
+  #this is just setting the color
+  Town_Name: "&e&l"
+  Mayor: "&eStarosta města: "
+  Number_of_Residents: "&fPočet obyvatel: "
+  Kick: "&c&lVyhodit Město"
+  Kick_Lore:
+    - ""
+    - "Klikněte pro vykopnutí města"
+    - "z vašeho národa"
+
+Nation_Economy_Menu:
+  Menu_Title: "&2&lMenu Ekonomiky národa"
+  Balance: "&2&lAktuální zůstatek národa"
+  #this is just setting the color
+  Nation_Balance: "&a  "
+  Upkeep: "&fAktuální údržba: "
+  Withdraw: "&c&lVybrat peníze"
+  Withdraw_Lore:
+    - ""
+    - "Vybrat peníze z"
+    - "z národní banky."
+  Deposit: "&a&lVložit peníze"
+  Deposit_Lore:
+    - ""
+    - "Vložte peníze do"
+    - "národní banky."
+  Tax: "&c&lNastavení výše daně"
+  Tax_Percentage: "Nastavte procentuální daň"
+  Tax_Amount: "Nastavit výši daně"
+
+Nation_Toggle_Menu:
+  Menu_Title: "&2&lMenu Nastavení národa"
+  Info:
+    - "Úprava přepínatelných nastavení"
+    - "pro váš národ!"
+  Toggle_Off: "&eKlikněte pro &cVypnutí"
+  Toggle_On: "&eKlikněte pro &aZapnutí"
+  Public: "&9&lPřepnout národ na Veřejný"
+  Open: "&3&lPřepnout národ na Otevřený"
+  Tax_Percent: "&2&lZapnout/Vypnout procentuální daň"
+
+Nation_Invite_Town_Menu:
+  Menu_Title: "&2&lMenu Pozvání města do národa"
+  Invite: "Kliknutím pozvete město do národa"
+
+Nation_Resident_Menu:
+  Menu_Title: "&2&lMenu Obyvatele národa"
+  Info:
+    - "Klikněte na obyvatele"
+    - "pro jeho správu!"
+  #this is just setting the color
+  Res_Name: "&e&l"
+  Online: "&fNaposledy online: "
+  Town_Name: "&6Město: "
+  Nation_Rank: "&3&lNastavení hodnosti obyvatele"
+  Nation_Rank_Lore:
+    - ""
+    - "Přidělte hodnost v národě"
+    - "hráči"
+  Nation_King: "&a&lDat rezidentovi krále"
+  Nation_King_Lore:
+    - ""
+    - "Udělej z tohoto obyvatele"
+    - "Krále."
+    - ""
+    - "&4&lNelze vrátit!"
+
+Nation_Extra_Info_Menu:
+  Commands_1: "&6&lDalší užitečné příkazy"
+  Commands_1_Lore:
+    - ""
+    - "&a/n změnit neutrálnost"
+    - "&a/n změnit mírovost"
+    - ""
+    - "&a/n spojenec [jméno]"
+    - "&a/n seznam spojenců"
+  Commands_2: "&2&lDalší dodatečné příkazy"
+  Commands_2_Lore:
+    - ""
+    - "&a/n nepřítel [name]"
+    - "&a/n seznam nepřátel"
+    - ""
+    - "&a/n nastavit barvu mapy [color]"
+
+Town_Menu:
+  Main_Menu_Title: "&2&lMenu Města"
+  Toggle_Menu_Button: "&3&lPřepnout na Menu nastavení"
+  Toggle_Menu_Button_Lore:
+    - ""
+    - "Zapnutí a vypnutí"
+    - "různých nastavení města."
+  Resident_Menu_Button: "&6&lMenu pro Obyvatele"
+  Resident_Menu_Button_Lore:
+    - ""
+    - "Zobrazení informací o všech obyvatelích"
+    - "a nastavení."
+  Permissions_Menu_Button: "&c&lMenu Oprávnění"
+  Permissions_Menu_Button_Lore:
+    - ""
+    - "Nastavení oprávnění města"
+    - "pro obyvatele, národ"
+    - "spojence a cizince."
+  Economy_Menu_Button: "&a&lMenu Správy ekonomiky"
+  Economy_Menu_Button_Lore:
+    - ""
+    - "Spravujte peníze svého města"
+  General_Settings_Menu_Button: "&2&lMenu dalších nastavení"
+  General_Settings_Menu_Button_Lore:
+    - ""
+    - "Změňte různé"
+    - "další nastavení města."
+  Invite_Player_Menu_Button: "&d&lMenu Pozvání hráče"
+  Invite_Player_Menu_Button_Lore:
+    - ""
+    - "Pozvat online hráče"
+    - "do svého města."
+  Extra_Info_Menu_Button: "&e&lDalší Info o Towny"
+  Extra_Info_Menu_Button_Lore:
+    - ""
+    - "Zjistěte, jak si clamiovat pozemky a další"
+    - "některé užitečné příkazy"
+  Plot_Menu_Button: "&9&lMenu správy pozemků"
+  Plot_Menu_Button_Lore:
+    - ""
+    - "Spravujte pozemek na"
+    - "vaší aktuální poloze."
+Toggle_Menu:
+  Menu_Title: "&2&lMenu Nastavení možností"
+  Info:
+    - "Úprava přepínatelných nastavení"
+    - "pro vaše město!"
+  Toggle_Off: "&eKlikněte pro &cVypnutí"
+  Toggle_On: "&eKlikněte pro &aZapnutí"
+  Fire: "&6&lPřepnout šíření ohně"
+  Mobs: "&a&lPřepnout spawning mobů"
+  Explode: "&c&lPřepnout exploze"
+  PVP: "&4&lPřepnout PVP"
+  Public: "&9&lPřepnout Veřejné"
+  Open: "&3&lPřepnout Otevřené"
+  Tax_Percent: "&2&lPřepnout Procentuální daň"
+Resident_Menu:
+  Menu_Title: "&2&lMenu Obyvatele"
+  Info:
+    - "Klikněte na obyvatele"
+    - "pro jeho správu!"
+  #this is just setting the color
+  Resident_Name: "&e&l"
+  Online: "&7Naposledy online: "
+  Town_Rank: "&7Hodnost (Město): "
+  Invite: "&aKliknutím pozvete hráče do města"
+  Kick: "&c&lVykopnout hráče"
+  Kick_Lore:
+    - ""
+    - "Klikněte pro vykopnutí obyvatele"
+    - "z vašeho města"
+  Title: "&a&lNastavit titul obyvatele"
+  Title_Lore:
+    - ""
+    - "Přidělit titul"
+    - "tomuto obyvateli."
+  Rank: "&3&lNastavit hodnost obyvatele"
+  Rank_Lore:
+    - ""
+    - "Dejte městskou hodnost tomuto player"
+  Mayor: "&a&lUdělat z obyvatele Starostu"
+  Mayor_Lore:
+    - ""
+    - "Udělejte z tohoto obyvatele"
+    - "starostu."
+    - ""
+    - "&4&lNelze vrátit!"
+Player_Permission_Menu:
+  Menu_Title: "&2&lMenu oprávnění"
+  Info:
+    - "Nastavení oprávnění pro"
+    - "různé skupiny"
+    - "ve vašem městě."
+  True_Msg: "&atrue"
+  False_Msg: "&cfalse"
+  Change: "&eKlikněte pro změnu!"
+  Reset: "&c&lResetovat všechna pole"
+  Reset_Lore:
+    - ""
+    - "Vypněte všechna oprávnění"
+    - "pro všechny skupiny."
+  On_Msg: "&a&lZapnout všechna pole"
+  On_Msg_Lore:
+    - ""
+    - "Zapněte všechna oprávnění"
+    - "pro všechny skupiny."
+  Build: "&3&lStavění"
+  Build_Lore:
+    - ""
+    - "Kdo má oprávnění"
+    - "stavět"
+    - "ve vašem městě."
+  Break: "&c&lRozbíjení bloků"
+  Break_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "rozbíjet bloky v"
+    - "ve vašem městě."
+  Use: "&6&lPoužívání předmětů"
+  Use_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "používat předměty"
+    - "ve vašem městě."
+    - ""
+    - "Např. vzít si vodu z cauldronu."
+  Switch: "&2&lSwitchování"
+  Switch_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "switchovat"
+    - "ve vašem městě."
+    - ""
+    - "Např. použít lever nebo dveře."
+  Build_Res: "&6&lPovolení stavět pro obyvatele"
+  Build_Res2: "Mohou obyvatelé stavět: "
+  Build_Nation: "&6&lPovolení stavět pro národ"
+  Build_Nation2: "Mohou členové národa stavět: "
+  Build_Ally: "&6&lPovolení stavět pro spojence"
+  Build_Ally2: "Mohou stavět spojenci národa: "
+  Build_Outsider: "&6&lPovolení stavět pro cizince"
+  Build_Outsider2: "Mohou cizinci stavět: "
+  Break_Res: "&6&lPovolení rozbíjet bloky pro obyvatele"
+  Break_Res2: "Mohou obyvatelé rozbíjet bloky: "
+  Break_Nation: "&6&lPovolení rozbíjet bloky pro národ"
+  Break_Nation2: "Mohou členové národa rozbíjet bloky: "
+  Break_Ally: "&6&lPovolení rozbíjet bloky pro spojence"
+  Break_Ally2: "Mohou spojenci národa rozbíjet bloky: "
+  Break_Outsider: "&6&lPovolení rozbíjet bloky pro cizince"
+  Break_Outsider2: "Mohou cizinci rozbíjet bloky: "
+  Use_Res: "&6&lPovolení k používání pro obyvatele"
+  Use_Res2: "Mohou obyvatelé používat předměty: "
+  Use_Nation: "&6&lPovolení k používání pro národ"
+  Use_Nation2: "Mohou členové národa používat předměty: "
+  Use_Ally: "&6&lPovolení k používání pro spojence"
+  Use_Ally2: "Mohou spojenci národa používat předměty: "
+  Use_Outsider: "&6&lPovolení k používání pro cizince"
+  Use_Outsider2: "Mohou cizinci používat předměty: "
+  Switch_Res: "&6&lPovolení k switchování pro obyvatele"
+  Switch_Res2: "Může obyvatel switchovat: "
+  Switch_Nation: "&6&lPovolení k switchování pro národ"
+  Switch_Nation2: "Mohou členové národa switchovat: "
+  Switch_Ally: "&6&lPovolení k switchování pro spojence"
+  Switch_Ally2: "Mohou spojenci národa switchovat: "
+  Switch_Outsider: "&6&lPovolení k switchování pro cizince"
+  Switch_Outsider2: "Mohou cizinci switchovat: "
+Economy_Menu:
+  Menu_Title: "&2&lMenu Ekonomiky"
+  Balance: "&2&lAktuální zůstatek města"
+  #this is just setting the color
+  Town_Balance: "&a  "
+  Upkeep: "&fAktuální údržba: "
+  Withdraw: "&c&lVybrat peníze"
+  Withdraw_Lore:
+    - ""
+    - "Vybrat peníze z"
+    - "z městské banky."
+  Deposit: "&a&lVložit peníze"
+  Deposit_Lore:
+    - ""
+    - "Vložte peníze do"
+    - "vaší městské banky."
+  Tax: "&c&lNastavení výše daně"
+  Tax_Percentage: "Nastavte procentuální daň"
+  Tax_Amount: "Nastavit výši daně"
+General_Settings_Menu:
+  Menu_Title: "&2&lMenu obecných nastavení"
+  Info:
+    - "Nastavit další"
+    - "extra nastavení města."
+  Set_Home_Block_Msg: "&Nastavit domovský blok na aktuální polohu."
+  Spawn_Reminder: "&bUjistěte se, že jste také znovu nastavili spawn města!"
+  Set_Home_Block: "&3&lNastavení domovského bloku"
+  Set_Home_Block_Lore:
+    - ""
+    - "Nastavení domovského bloku"
+    - "vašeho města."
+  Set_Spawn_Msg: "&eNastavte spawn města na aktuální polohu."
+  Set_Spawn: "&b&lNastavit spawn města"
+  Set_Spawn_Lore:
+    - ""
+    - "Nastavení umístění pro"
+    - "teleportování pomocí"
+    - "/t spawn"
+    - ""
+    - "&cMusí být v domovském bloku."
+  Set_Name: "&6&lNastavit název města"
+  Set_Name_Lore:
+    - ""
+    - "Změňte název"
+    - "svého města."
+  Set_Board: "&2&lNastavit městskou zprávu"
+  Set_Board_Lore:
+    - ""
+    - "Nastavení zprávy"
+    - "vašeho města."
+Extra_Info_Menu:
+  Claiming: "&6&lInformace o claimování"
+  Claiming_Lore:
+    - ""
+    - "&a/t claim &7- claim chunku"
+    - "Claiming vyžaduje peníze v"
+    - "v městské bance"
+    - "a vyžaduje, abyste byli v"
+    - "chunku sousedícím s vaším městem."
+    - "Pomocí &aF3+G &7zobrazte chunky a"
+    - "&a/towny map &7 k zobrazení nárokovaných pozemků."
+  Commands: "&2&lDalší příkazy"
+  Commands_Lore:
+    - ""
+    - "&a/t outlaw &7- udělejte z hráče psance."
+    - "&a/t outlawlist &7- seznam psanců ve městě"
+    - "&a/t koupit &7- informace o nákupu chunků"
+    - "&a/t online &7- online členové města"
+    - "&a/t say &7- vysílání zprávy ve městě"
+    - "&a/t ceny ve městě &7- zobrazuje ceny / náklady ve městě"
+    - "&a/t nastavte barvu mapy [color]"
+
+Plot_Menu:
+  Main_Menu_Title: "&2Menu Pozemků"
+  Toggle_Settings_Menu_Button: "&3&lMenu Nastavení pozemku"
+  Toggle_Settings_Menu_Button_Lore:
+    - ""
+    - "Zapnutí a vypnutí"
+    - "různých nastavení pozemku"
+  Permissions_Menu_Button: "&c&lMenu Oprávnění pozemku"
+  Permissions_Menu_Button_Lore:
+    - ""
+    - "Nastavení oprávnění k pozemku"
+    - "pro přátele, národ"
+    - "spojence a cizince"
+  Plot_Admin_Menu_Button: "&5&lMenu Správy pozemku"
+  Plot_Admin_Menu_Button_Lore:
+    - ""
+    - "Pokročilá správa pozemku"
+    - "a nastavení"
+  Friend_Menu_Button: "&aMenu Přátel"
+  Friend_Menu_Button_Lore:
+    - ""
+    - "Menu správy přátel"
+Friend_Menu:
+  Menu_Title: "&2Menu přátel"
+  Remove: "&cOdstranění {player} ze seznamu přátel!"
+  Add: "&3Přidat &b{player} &3do svého seznamu přátel!"
+  Click_Remove_Lore: "&cKlikněte pro odstranění přítele"
+  Click_Add_Lore: "&aKlikněte pro přidání přítele"
+Plot_Toggle_Menu:
+  Menu_Title: "&2&lMenu Nastavení pozemku"
+  Info:
+    - "Úprava přepínatelných nastavení"
+    - "pro váš pozemek!"
+  Toggle_Off: "&eKlikněte pro &cVypnutí"
+  Toggle_On: "&eKlikněte pro &aZapnutí"
+  Fire: "&6&lPřepnout šíření ohně"
+  Mobs: "&a&lPřepnout spawning mobů"
+  Explode: "&c&lPřepnout exploze"
+  PVP: "&4&lPřepnout PVP"
+Plot_Player_Permission_Menu:
+  Menu_Title: "&2&lMenu Oprávnění pozemku"
+  Info:
+    - "Nastavení oprávnění pro"
+    - "různé skupiny"
+    - "ve vašem pozemku."
+  True_Msg: "&atrue"
+  False_Msg: "&cfalse"
+  Change: "&eKlikněte pro změnu!"
+  Reset: "&c&lResetovat všechna pole"
+  Reset_Lore:
+    - ""
+    - "Vypněte všechna oprávnění"
+    - "pro všechny skupiny."
+  On_Msg: "&a&lZapnout všechna pole"
+  On_Msg_Lore:
+    - ""
+    - "Zapněte všechna oprávnění"
+    - "pro všechny skupiny."
+  Build: "&3&lStavění"
+  Build_Lore:
+    - ""
+    - "Kdo má oprávnění"
+    - "stavět"
+    - "ve vašem městě."
+  Break: "&c&lRozbíjení bloků"
+  Break_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "rozbíjet bloky v"
+    - "ve vašem městě."
+  Use: "&6&lPoužívání předmětů"
+  Use_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "používat předměty"
+    - "ve vašem městě."
+    - ""
+    - "Např. vzít si vodu z cauldronu."
+  Switch: "&2&lSwitchování"
+  Switch_Lore:
+    - ""
+    - "Kdo má povolení"
+    - "switchovat"
+    - "ve vašem městě."
+    - ""
+    - "Např. použít lever nebo dveře."
+  Build_Res: "&6&lPovolení stavět pro obyvatele/přítele"
+  Build_Res2: "Mohou obyvatelé/přátelé stavět: "
+  Build_Nation: "&6&lPovolení stavět pro národ/město"
+  Build_Nation2: "Mohou členové národa/města stavět: "
+  Build_Ally: "&6&lPovolení stavět pro spojence"
+  Build_Ally2: "Mohou stavět spojenci národa: "
+  Build_Outsider: "&6&lPovolení stavět pro cizince"
+  Build_Outsider2: "Mohou cizinci stavět: "
+  Break_Res: "&6&lPovolení rozbíjet bloky pro obyvatele/přítele"
+  Break_Res2: "Mohou obyvatelé/přátelé rozbíjet bloky: "
+  Break_Nation: "&6&lPovolení rozbíjet bloky pro národ/město"
+  Break_Nation2: "Mohou členové národa/města rozbíjet bloky: "
+  Break_Ally: "&6&lPovolení rozbíjet bloky pro spojence"
+  Break_Ally2: "Mohou spojenci národa rozbíjet bloky: "
+  Break_Outsider: "&6&lPovolení rozbíjet bloky pro cizince"
+  Break_Outsider2: "Mohou cizinci rozbíjet bloky: "
+  Use_Res: "&6&lPovolení k používání pro obyvatele/přítele"
+  Use_Res2: "Mohou obyvatelé/přátelé používat předměty: "
+  Use_Nation: "&6&lPovolení k používání pro národ/město"
+  Use_Nation2: "Mohou členové národa/města používat předměty: "
+  Use_Ally: "&6&lPovolení k používání pro spojence"
+  Use_Ally2: "Mohou spojenci národa používat předměty: "
+  Use_Outsider: "&6&lPovolení k používání pro cizince"
+  Use_Outsider2: "Mohou cizinci používat předměty: "
+  Switch_Res: "&6&lPovolení k switchování pro obyvatele/přítele"
+  Switch_Res2: "Může obyvatel/přátelé switchovat: "
+  Switch_Nation: "&6&lPovolení k switchování pro národ/město"
+  Switch_Nation2: "Mohou členové národa/města switchovat: "
+  Switch_Ally: "&6&lPovolení k switchování pro spojence"
+  Switch_Ally2: "Mohou spojenci národa switchovat: "
+  Switch_Outsider: "&6&lPovolení k switchování pro cizince"
+  Switch_Outsider2: "Mohou cizinci switchovat: "
+Plot_Admin_Menu:
+  Menu_Title: "&2Menu administrátora"
+  For_Sale: "&a&lNastavit pozemek na prodej"
+  For_Sale_Lore:
+    - ""
+    - "Umístí aktuální pozemek"
+    - "na prodej pomocí"
+    - "zadanou cenou"
+  Not_For_Sale: "&c&lNastavit pozemek neprodejný"
+  Not_For_Sale_Lore:
+    - ""
+    - "Vytvořit pozemek"
+    - "nekoupitelný"
+  Set_Type: "&3&lNastavit typ pozemku"
+  Set_Type_Lore:
+    - ""
+    - "Určit, jaký typ"
+    - "pozemku."
+  Evict: "&4&lVyhlásit vlastníka pozemku"
+  Evict_Lore:
+    - ""
+    - "Vystěhovat obyvatele"
+    - "tohoto pozemku"
+
+Nation_Conversables:
+  Board:
+    Prompt: "&3Zadejte zprávu svého národa: "
+    Response: "&3Úspěšně nastavena zpráva národa!"
+  Deposit:
+    Prompt: "&3Zadejte částku, kterou chcete vložit do svého národa: &c(Zadejte cancel pro ukončení výzvy)"
+    Invalid: "&cProsím, zadávejte pouze celá čísla a ujistěte se, že máte dostatek peněz na vklad."
+    Response: "&3Vloženo &b{money_symbol}{input} &3na váš národní účet."
+  Mayor:
+    Prompt: "&cJste si jisti, že chcete dát &b{player} &ctpostavení krále? &3(Zadejte &bconfirm &3nebo &4cancel&3)."
+    Response: "&3Úspěšně jste nastavili &b{player} &3jako krále!"
+  Kick:
+    Prompt: "&cJste si jisti, že chcete vykopnout &b{town} &c ze svého národa? Zadejte &bconfirm &nebo &4cancel &cnow:"
+    Response: "&3Úspěšně jste vykopli &b{town} &3z vašeho národa."
+  Name:
+    Prompt: "&3Zadejte jméno, které chcete dát svému národu: (pod {max_length} znaků) &bSoučasné jméno: {nation} &cZadejte cancel pro ukončení."
+    Invalid: "&cNázev musí být jedinečný a menší než {max_length} znaků."
+    Response: "&3Úspěšně nastaveno jméno národa na {input}."
+    Return: "&cNa změnu názvu národa není v národní bance dostatek peněz."
+  Rank:
+    Remove: "Odstranit"
+    Prompt: "&3Zadejte hodnost, kterou chcete dát &b{player} &3nově: &b(Options: {ranks}) &3Zadejte &ccancel &3pro zrušení nebo &cremove &3pro odstranění jeho hodnosti."
+    Invalid: "&cTento hráč buď již tuto hodnost má, nebo tato hodnost neexistuje. (Options: {ranks}) &cZadejte &c&lcancel &cpro zrušení nebo remove pro odebrání jeho hodnosti."
+    Response: "&aÚspěšně nastavil &rank národa {player} na {input}."
+    Removed_All: "&cOdstranil všechny hodnosti národa rezidenta {player}."
+  Tax:
+    Prompt: "&3Zadejte částku, kterou chcete nastavit jako daň pro svůj národ: &c(Zadejte cancel pro ukončení výzvy)."
+    Invalid_Percent: "&cProsím, zadejte pro procento daně pouze celé číslo v rozmezí 0 až {max_procent}."
+    Invalid_Amount: "&cProsím, zadejte jen celé číslo mezi 0 a {max_částkou} pro výši vaší daně."
+    Response_Percent: "&3Procento daně nastaveno na &b{input}"
+    Response_Amount: "&3Suma daně nastavena na &b{money_symbol}{input}."
+  Withdraw:
+    Prompt: "&3Type in the amount you would like to withdraw from your nation's bank: &c(Type cancel to exit prompt)"
+    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
+    Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
+
+Town_Conversables:
+  Board:
+    Prompt: "&3Zadejte zprávu vašeho města: "
+    Response: "&3Úspěšně nastavena městská zpráva!"
+  Deposit:
+    Prompt: "&3Zadejte částku, kterou chcete vložit do svého města: &c(Zadejte cancel pro ukončení výzvy)."
+    Invalid: "&cZadávejte prosím pouze celá čísla a ujistěte se, že máte dostatek peněz na vklad."
+    Response: "&Vloženo &b{money_symbol}{input} &3na váš městský účet."
+  Mayor:
+    Prompt: "&cJste si jisti, že chcete dát &b{player} &cthe post starosty? &3(Zadejte &bconfirm &3nebo &4cancel&3)."
+    Response: "&3Úspěšně jste nastavili &b{player} &3jako starostu!"
+  Kick:
+    Prompt: "&cJste si jisti, že chcete &b{player} &cvykopnout ze svého města? Zadejte &bconfirm &cnebo &4cancel &cteď:"
+    Response: "&3Úspěšně jste vykopli &b{player} &3z vašeho města."
+  Name:
+    Prompt: "&3Zadejte jméno, které chcete dát svému městu: (pod {max_délka} znaků) &bSoučasné jméno: {&cZadejte cancel pro ukončení."
+    Invalid: "&cNázev musí být jedinečný a menší než {max_délka} znaků."
+    Response: "&3Úspěšně nastaveno jméno města na {input}."
+    Return: "&cNa změnu názvu města není v městské bance dostatek peněz."
+  Rank:
+    Remove: "Odstranit"
+    Prompt: "&3Zadejte hodnost, kterou chcete dát &b{player} &3nově: &b(Options: {ranks}) &3Zadejte &ccancel &3pro zrušení nebo &cremove &3pro odstranění jeho hodnosti."
+    Invalid: "&cTento hráč buď již tuto hodnost má, nebo tato hodnost neexistuje. (Options: {ranks}) &cType &c&lcancel &cpro zrušení nebo remove &cpro odebrání jeho hodnosti."
+    Response: "&aÚspěšně nastavil &hodnost {player} na {input}."
+    Removed_All: "&cOdstranil všechny hodnosti rezidenta {player}."
+  Tax:
+    Prompt: "&3Zadejte částku, kterou chcete nastavit jako daň pro vaše město: &c(Zadáním cancel ukončíte výzvu)."
+    Invalid_Percent: "&cProsím, zadejte pouze celé číslo mezi 0 a {max_procent} pro procento daně."
+    Invalid_Amount: "&cProsím, zadejte jen celé číslo mezi 0 a {max_částkou} pro výši vaší daně."
+    Response_Percent: "&3Procento daně nastaveno na &b{input}"
+    Response_Amount: "&3Suma daně nastavena na &b{money_symbol}{input}."
+  Title:
+    Prompt: "&3Zadejte název, který chcete dát &b{player} &3now: (do 10 znaků) &cZadejte cancel pro ukončení."
+    Response: "&3Úspěšně nastavte &b{player} &3titul na &b{input}."
+  Withdraw:
+    Prompt: "&3Zadejte částku, kterou chcete z města vybrat: &c(Zadejte cancel pro ukončení výzvy)."
+    Invalid: "&cProsím, zadávejte pouze celá čísla a ujistěte se, že máte dostatek peněz na výběr."
+    Response: "&3Vybrali jste &b{money_symbol}{input} &3z vašeho městského účtu."
+Plot_Conversables:
+  Evict:
+    Prompt: "&cChcete vystěhovat obyvatele tohoto pozemku? Zadejte &akonfirm &cor cancel:"
+    Invalid: "&cPlot nemá žádného obyvatele."
+    Response: "&cObyvatel pozemku vystěhován."
+  For_Sale:
+    Prompt: "&3Zadejte částku, za kterou chcete tuto parcelu nastavit k prodeji: &c(Zadejte cancel pro ukončení výzvy)."
+    Invalid: "&cZadejte prosím pouze celá čísla a je nižší než maximální cena pozemku: {max_cena}."
+    Response: "&3Cenu pozemku nastavte na &b{money_symbol}{input}."
+  Not_For_Sale:
+    Prompt: "&3Chcete nastavit, aby tento pozemek nebyl na prodej? Zadejte &aconfirm &3nebo &ccancel&6:"
+    Response: "&cPlot nastaven jako neprodejný."
+  Set_Type:
+    Prompt: "&3Jaký typ pozemku chcete nastavit? &b(Options: {options}) Zadejte 'cancel' pro zrušení."
+    Invalid: "&cProsím, zadejte platný typ pozemku. (Platné typy: {options}) nebo zadejte 'cancel' pro zrušení."
+    Response: "&3Typ grafu nastaven na: &b{input}"
+
+Error:
+  No_Permission: "&cNemáte oprávnění používat tento příkaz."
+  No_Town: "&cNemáte město."
+  War_Time: "&cTuto akci nesmíte provést v době války."
+  Must_Be_In_Own_Plot: "&cTuto akci můžete provést pouze na pozemku, který vlastníte."
+  Must_Be_In_Town: "&cPro provedení této akce musíte být ve svém městě."
+  Must_Be_In_Bank: "&cMusíte být na pozemku banky, abyste mohli provést tuto akci."
+  Toggle_PVP_Outsiders: "&cNemůžete přepínat PVP, když jsou ve vašem městě cizinci."
+  Toggle_PVP_Cooldown: "&cNemůžete přepnout pvp, dokud neskončí cooldown."
+  Cannot_Select_Self: "&cNemůžete vybrat sami sebe."
+  Cannot_Set_Homeblock: "&cNení možné zde nastavit blokování domů."
+  Cannot_Set_Spawn: "&cNení možné zde nastavit spawn města."
+  Cannot_Change_Name: "&cMusíte být starostou, abyste mohli změnit název města."
+  Cannot_Change_Board: "&cMusíte být starostou, abyste mohli změnit městskou radu."
+
+Chunk_View:
+  Toggle_Remove: "Nyní se zobrazují hraniční bloky. Přepněte na plížení pro odstranění."
+  Removed: "Odstranění hraničních bloků."
+
+# DO NOT TOUCH VERSION
+Version: 2

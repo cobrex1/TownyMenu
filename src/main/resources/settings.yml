@@ -27,9 +27,12 @@ Log_Lag_Over_Milis: 100
 # HeadDtabase icons CANNOT be used as fillers
 
 # For item names please use https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-
 # Item to use to display chunk boarders
 Chunk_View: REDSTONE_TORCH
+
+##Get Particle names from: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# Particle to use to display chunk boarders
+Chunk_View_Particle: VILLAGER_HAPPY
 
 # -----Filler Icons-----#
 

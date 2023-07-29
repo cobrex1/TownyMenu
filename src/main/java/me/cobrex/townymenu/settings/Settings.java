@@ -14,6 +14,7 @@ public final class Settings extends SimpleSettings {
 	public static String LOCALE;
 
 	public static CompMaterial CHUNK_VIEW;
+	public static String CHUNK_VIEW_PARTICLE;
 
 	public static String FIND_TOWN;
 	public static String CREATE_TOWN;
@@ -22,15 +23,12 @@ public final class Settings extends SimpleSettings {
 
 	public static CompMaterial FILLER_TOWN_MENU;
 	public static CompMaterial FILLER_TOWN_TOGGLE;
-	//	public static CompMaterial FILLER_TOWN_INVITE;
-//	public static CompMaterial FILLER_RESIDENT_MENU;
 	public static CompMaterial FILLER_TOWN_PERMS_MENU;
 	public static CompMaterial FILLER_TOWN_ECONOMY_MENU;
 	public static CompMaterial FILLER_TOWN_GENERAL_SETTINGS_MENU;
 	public static CompMaterial FILLER_TOWN_EXTRA_INFO_MENU;
 
 	public static CompMaterial FILLER_PLOT_MENU;
-	//	public static CompMaterial FILLER_FRIENDS_LIST_MENU;
 	public static CompMaterial FILLER_PLOT_TOGGLE_MENU;
 	public static CompMaterial FILLER_PLOT_PERMS_MENU;
 	public static CompMaterial FILLER_PLOT_ADMIN_MENU;
@@ -185,20 +183,18 @@ public final class Settings extends SimpleSettings {
 		LOCALE = getString("Locale");
 
 		CHUNK_VIEW = getMaterial("Chunk_View");
+		CHUNK_VIEW_PARTICLE = getString("Chunk_View_Particle");
 
 		FILLER_JOIN_TOWN_MENU = getMaterial("Filler_Join_Town_Menu");
 
 		FILLER_TOWN_MENU = getMaterial("Filler_Town_Menu");
 		FILLER_TOWN_TOGGLE = getMaterial("Filler_Town_Toggle");
-//		FILLER_TOWN_INVITE = getMaterial("Filler_Town_Invite");
-//		FILLER_RESIDENT_MENU = getMaterial("Filler_Resident_Menu");
 		FILLER_TOWN_PERMS_MENU = getMaterial("Filler_Town_Perms_Menu");
 		FILLER_TOWN_ECONOMY_MENU = getMaterial("Filler_Economy_Menu");
 		FILLER_TOWN_GENERAL_SETTINGS_MENU = getMaterial("Filler_Town_General_Settings_Menu");
 		FILLER_TOWN_EXTRA_INFO_MENU = getMaterial("Filler_Extra_Info_Menu");
 
 		FILLER_PLOT_MENU = getMaterial("Filler_Plot_Menu");
-//		FILLER_FRIENDS_LIST_MENU = getMaterial("Filler_Friends_List_Menu");
 		FILLER_PLOT_TOGGLE_MENU = getMaterial("Filler_Plot_Toggle_Menu");
 		FILLER_PLOT_PERMS_MENU = getMaterial("Filler_Plot_Perms_Menu");
 		FILLER_PLOT_ADMIN_MENU = getMaterial("Filler_Plot_Admin_Menu");

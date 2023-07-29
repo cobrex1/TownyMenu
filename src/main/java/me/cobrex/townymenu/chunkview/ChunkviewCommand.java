@@ -54,14 +54,10 @@ public final class ChunkviewCommand extends SimpleCommand {
 				Remain.sendBlockChange(0, player, corner1, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
 			if (corner2.getBlock().getType() == Material.AIR)
 				Remain.sendBlockChange(0, player, corner2, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
-//				Remain.sendBlockChange(0, player, corner2, CompMaterial.REDSTONE_TORCH);
-//				Remain.sendBlockChange(0, player, corner2, CompMaterial.SEA_LANTERN);
 			if (corner3.getBlock().getType() == Material.AIR)
 				Remain.sendBlockChange(0, player, corner3, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
-//				Remain.sendBlockChange(0, player, corner3, CompMaterial.REDSTONE_TORCH);
 			if (corner4.getBlock().getType() == Material.AIR)
 				Remain.sendBlockChange(0, player, corner4, CompMaterial.fromMaterial(Material.valueOf(String.valueOf(Settings.CHUNK_VIEW))));
-//				Remain.sendBlockChange(0, player, corner4, CompMaterial.REDSTONE_TORCH);
 		}
 
 		player.sendMessage(ChatColor.GOLD + Localization.ChunkView.TOGGLE_REMOVE);
@@ -114,7 +110,7 @@ public final class ChunkviewCommand extends SimpleCommand {
 						}
 					}
 
-					player.sendMessage(ChatColor.GOLD + Localization.ChunkView.REMOVED);
+//					player.sendMessage(ChatColor.GOLD + Localization.ChunkView.REMOVED);
 					TownyMenuPlugin.viewers.remove(player);
 					TownyMenuPlugin.viewerslocs.remove(index);
 				}

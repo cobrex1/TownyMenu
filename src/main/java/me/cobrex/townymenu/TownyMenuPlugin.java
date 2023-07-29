@@ -3,6 +3,7 @@ package me.cobrex.townymenu;
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import me.cobrex.townymenu.bstats.Metrics;
+import me.cobrex.townymenu.chunkview.ChunkviewParticleCommand;
 import me.cobrex.townymenu.nation.NationMenuCommand;
 import me.cobrex.townymenu.plot.command.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
@@ -12,6 +13,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.settings.YamlStaticConfig;
@@ -25,10 +27,12 @@ public class TownyMenuPlugin extends SimplePlugin {
 	public static ArrayList<Player> viewers = new ArrayList<>();
 
 	public static ArrayList<Location> viewerslocs = new ArrayList<>();
+	public static Plugin instance;
 
 	@Override
 	protected void onPluginStart() {
 
+		instance = this;
 		Common.log("Enabling Towny Menu maintained by Cobrex");
 		Common.log("for Towny");
 
@@ -37,6 +41,7 @@ public class TownyMenuPlugin extends SimplePlugin {
 		registerCommand(new TownMenuCommand());
 		registerCommand(new PlotMenuCommand());
 		registerCommand(new NationMenuCommand());
+		registerCommand(new ChunkviewParticleCommand());
 
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 

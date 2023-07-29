@@ -5,13 +5,13 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.7.6</version>
+    <version>1.7.7</version>
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.4.2</foundation.version>
+        <foundation.version>6.4.7</foundation.version>
 
         <java.version>1.8</java.version>
 
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>com.github.kangarko</groupId>
             <artifactId>Foundation</artifactId>
-            <version>6.4.2</version>
+            <version>${foundation.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.TownyAdvanced</groupId>

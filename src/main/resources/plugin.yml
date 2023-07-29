@@ -38,6 +38,16 @@ commands:
     default: true
     usage: |-
       /chunkview - to view the chunk boarder.
+  chunkviewparticle:
+    description: View the boarders of the chunk you are standing in.
+    aliases:
+      - cvp
+      - chunkvp
+    permission: chunkviewparticle.view
+    permission-message: "You do not have permission to use this command!"
+    default: true
+    usage: |-
+      /chunkviewparticle - to view the chunk boarder.
 permissions:
   nationmenu.view:
     description: Opens the nation level GUI
@@ -51,12 +61,15 @@ permissions:
   townmenu.reload:
     description: Reloads the settings file
     default: op
-  chunkview.view:
-    description: Allows use of /chunkview
-    default: true
   townymenu.nation.use:
     description: OPens the nation lavel GUI
     default: false
   townymenu.town.use:
     description: Opens the town level GUI
     default: false
+  chunkview.view:
+    description: Allows use of /chunkview
+    default: true
+  chunkviewparticle.view:
+    description: Allows use of /chunkviewparticle
+    default: true

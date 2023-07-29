@@ -115,14 +115,16 @@ public class PlotMenu extends Menu {
 				if (res.getFriends().contains(item)) {
 					List<String> lore = new ArrayList<>();
 					lore.add("");
-					lore.add(ChatColor.RED + Localization.PlotMenu.FriendMenu.CLICK_REMOVE_LORE);
+					lore.add(ChatColor.translateAlternateColorCodes('&', Localization.PlotMenu.FriendMenu.CLICK_REMOVE_LORE));
+//					lore.add(ChatColor.RED + Localization.PlotMenu.FriendMenu.CLICK_REMOVE_LORE);
 					skull.setLore(lore);
 					itemSkull.setItemMeta(skull);
 					return itemSkull;
 				} else {
 					List<String> lore = new ArrayList<>();
 					lore.add("");
-					lore.add(ChatColor.GREEN + Localization.PlotMenu.FriendMenu.CLICK_ADD_LORE);
+					lore.add(ChatColor.translateAlternateColorCodes('&', Localization.PlotMenu.FriendMenu.CLICK_ADD_LORE));
+//					lore.add(ChatColor.GREEN + Localization.PlotMenu.FriendMenu.CLICK_ADD_LORE);
 					skull.setLore(lore);
 				}
 			}
@@ -436,7 +438,7 @@ public class PlotMenu extends Menu {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESIDENT_BREAK)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_RES)
 							.lore("")
-							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_RES2)
+							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_RES2)
 							.lore("" + (townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
 				}
 			};

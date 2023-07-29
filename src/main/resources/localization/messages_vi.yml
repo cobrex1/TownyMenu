@@ -14,8 +14,10 @@ Join_Create_Menu:
   Find_Open_Town: "Tìm một thị trấn mở"
   Click_Create_Town: "Nhấp để tạo một thị trấn"
   Join_Open_Town: "&aTham gia Thị trấn Mở"
-  Mayor: "Thị trưởng: "
-  Number_Residents: "Số nơi cư trú: "
+  #this is just setting the color
+  Town_Name: "&e"
+  Mayor: "&fThị trưởng: "
+  Number_Residents: "&fSố nơi cư trú: "
   Create_Own_Town: "&aNhập tên thị trấn của bạn hoặc &cnhập hủy."
 
 Join_Create_Nation_Menu:
@@ -23,8 +25,10 @@ Join_Create_Nation_Menu:
   Find_Nation_Button: "&4Nhấp để tìm một Quốc gia mở"
   Click_Create_Nation_Button: "&4Nhấp để tạo Quốc gia của bạn"
   Join_Open_Nation: "&aTham gia một quốc gia mở"
-  King: "Vua: "
-  Number_of_Towns: "Số thị trấn: "
+  #this is just setting the color
+  Nation_Name: "&e "
+  King: "&fVua: "
+  Number_of_Towns: "&fSố thị trấn: "
   Create_Own_Nation: "&aNhập tên quốc gia của bạn hoặc nhận &ccancel."
 
 Nation_Menu:
@@ -95,8 +99,10 @@ Nation_Town_Menu:
     - "Bấm vào một thị trấn"
     - "để quản lý chúng!"
   Online: "trực tuyến lần cuối: "
-  Mayor: "Thị trưởng thị trấn: "
-  Number_of_Residents: "Số cư dân: "
+  #this is just setting the color
+  Town_Name: "&e&l"
+  Mayor: "&eThị trưởng thị trấn: "
+  Number_of_Residents: "&fSố cư dân: "
   Kick: "&c&lĐuổi thị trấn"
   Kick_Lore:
     - ""
@@ -106,7 +112,9 @@ Nation_Town_Menu:
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenu tài chính"
   Balance: "&2&lSố dư quốc gia hiện tại"
-  Upkeep: " phí duy trì hiện tại: "
+  #this is just setting the color
+  Nation_Balance: "&a  "
+  Upkeep: "&fphí duy trì hiện tại: "
   Withdraw: "&c&lRút tiền"
   Withdraw_Lore:
     - ""
@@ -141,8 +149,10 @@ Nation_Resident_Menu:
   Info:
     - "Bấm vào một cư dân"
     - "để quản lý!"
-  Online: "Trực tuyến lần cuối: "
-  Town_Name: "Thị trấn: "
+  #this is just setting the color
+  Res_Name: "&e&l"
+  Online: "&fTrực tuyến lần cuối: "
+  Town_Name: "&6Thị trấn: "
   Nation_Rank: "&3&lĐặt rank cho cư dân"
   Nation_Rank_Lore:
     - ""
@@ -234,8 +244,10 @@ Resident_Menu:
   Info:
     - "Bấm vào một cư dân"
     - "để quản lý chúng!"
-  Online: "Trực tuyến lần cuối: "
-  Town_Rank: "Town Rank: "
+  #this is just setting the color
+  Resident_Name: "&e&l"
+  Online: "&7Trực tuyến lần cuối: "
+  Town_Rank: "&7Town Rank: "
   Invite: "&aClick to invite player to town"
   Kick: "&c&lNgười chơi đá phạt"
   Kick_Lore:
@@ -341,7 +353,9 @@ Player_Permission_Menu:
 Economy_Menu:
   Menu_Title: "&2&lMenu Phổ thông"
   Balance: "&2&lSố dư thị trấn hiện tại"
-  Upkeep: "Bảo trì hiện tại: "
+  #this is just setting the color
+  Town_Balance: "&a  "
+  Upkeep: "&fBảo trì hiện tại: "
   Withdraw: "&c&lRút tiền"
   Withdraw_Lore:
     - ""
@@ -434,8 +448,8 @@ Friend_Menu:
   Menu_Title: "&2Menu Bạn bè"
   Remove: "&cĐã xóa {player} khỏi danh sách bạn bè của bạn!"
   Add: "&3Đã thêm &b{player} &3 vào danh sách bạn bè của bạn!"
-  Click_Remove_Lore: "Nhấp để Xóa bạn bè"
-  Click_Add_Lore: "Nhấp để thêm bạn bè"
+  Click_Remove_Lore: "&cNhấp để Xóa bạn bè"
+  Click_Add_Lore: "&aNhấp để thêm bạn bè"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lLô chuyển đổi Menu Cài đặt"
   Info:
