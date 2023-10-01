@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mineacademy.plugin:mcMMO:2.1.223">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/mcMMO/2.1.223/mcMMO-2.1.223.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/mcMMO/2.1.223/mcMMO-2.1.223-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mineacademy/plugin/mcMMO/2.1.223/mcMMO-2.1.223-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

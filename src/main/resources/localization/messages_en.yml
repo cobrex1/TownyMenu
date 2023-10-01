@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "confirm"
 Cancel: "cancel"
 Menu_Information: "Menu Info"
-
 Reloaded: "Settings reloaded!"
-Menu:
-  Button_Return_Title: "&a&lBack"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lBack"
+  Back_Button_Lore:
     - ""
     - "Previous menu."
 
@@ -225,6 +236,20 @@ Town_Menu:
     - ""
     - "Manage the plot at"
     - "your current location."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Residents"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Claim Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  Mayor: "&2Mayor"
+  Mayor_Name: "&a"
+  Nation: "&2Nation"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lToggle Settings Menu"
   Info:
@@ -614,6 +639,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cAre you sure you would like to kick &b{player} &cfrom your town? Type &bconfirm &cor &4cancel &cnow:"
     Response: "&3Successfully kicked &b{player} &3from your town."
+    Mayor: "&cYou cannot kick the Mayor of the town!"
   Name:
     Prompt: "&3Type in the name you would like to give to your town: (under {max_length} characters) &bCurrent Name: {town} &cType cancel to exit."
     Invalid: "&cName must be unique and less than {max_length} characters."

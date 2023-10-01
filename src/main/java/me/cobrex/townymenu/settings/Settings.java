@@ -12,6 +12,7 @@ public final class Settings extends SimpleSettings {
 	public static String MONEY_SYMBOL;
 	public static Boolean ECONOMY_ENABLED;
 	public static String LOCALE;
+	public static CompMaterial BACK_BUTTON;
 
 	public static CompMaterial CHUNK_VIEW;
 	public static String CHUNK_VIEW_PARTICLE;
@@ -77,6 +78,7 @@ public final class Settings extends SimpleSettings {
 	public static String SETTINGS_MENU;
 	public static String INVITE_MENU;
 	public static String EXTRA_INFO;
+	public static String TOWN_INFO_BUTTON;
 
 	public static String TOGGLE_FIRE;
 	public static String TOGGLE_MOBS;
@@ -181,6 +183,7 @@ public final class Settings extends SimpleSettings {
 		MONEY_SYMBOL = getString("Money_Symbol");
 		ECONOMY_ENABLED = getBoolean("Economy");
 		LOCALE = getString("Locale");
+		BACK_BUTTON = getMaterial("Back_Button");
 
 		CHUNK_VIEW = getMaterial("Chunk_View");
 		CHUNK_VIEW_PARTICLE = getString("Chunk_View_Particle");
@@ -246,6 +249,7 @@ public final class Settings extends SimpleSettings {
 		SETTINGS_MENU = getString("Settings_Menu");
 		INVITE_MENU = getString("Invite_Menu");
 		EXTRA_INFO = getString("Extra_Info");
+		TOWN_INFO_BUTTON = getString("Town_Info_Icon");
 
 		TOGGLE_FIRE = getString("Toggle_Fire");
 		TOGGLE_MOBS = getString("Toggle_Mobs");
@@ -306,10 +310,10 @@ public final class Settings extends SimpleSettings {
 		PLOT_ADMIN_MENU = getString("Plot_Admin_Menu");
 		PLOT_FRIEND_MENU = getString("Plot_Friend_Menu");
 
-		PLOT_TOGGLE_FIRE = getString("Toggle_Fire");
-		PLOT_TOGGLE_MOBS = getString("Toggle_Mobs");
-		PLOT_TOGGLE_EXPLOSIONS = getString("Toggle_Explosions");
-		PLOT_TOGGLE_PVP = getString("Toggle_PVP");
+		PLOT_TOGGLE_FIRE = getString("Plot_Toggle_Fire");
+		PLOT_TOGGLE_MOBS = getString("Plot_Toggle_Mobs");
+		PLOT_TOGGLE_EXPLOSIONS = getString("Plot_Toggle_Explosions");
+		PLOT_TOGGLE_PVP = getString("Plot_Toggle_PVP");
 
 		PLOT_BUILD = getString("Plot_Build");
 		PLOT_BREAK = getString("Plot_Break");

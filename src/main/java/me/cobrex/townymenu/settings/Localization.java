@@ -24,6 +24,17 @@ public class Localization extends SimpleLocalization {
 		RELOADED = getString("Reloaded");
 	}
 
+	public static class Back_Button {
+		public static String BACK_BUTTON_TITLE;
+		public static Collection<String> BACK_BUTTON_LORE;
+
+		private static void init() {
+			setPathPrefix("Back_Button");
+			BACK_BUTTON_TITLE = getString("Back_Button_Title");
+			BACK_BUTTON_LORE = getStringList("Back_Button_Lore");
+		}
+	}
+
 	public static class JoinCreateNationMenu {
 		public static String MAIN_MENU_TITLE;
 		public static String FIND_NATION_BUTTON;
@@ -289,6 +300,19 @@ public class Localization extends SimpleLocalization {
 		public static Collection<String> EXTRA_INFO_MENU_BUTTON_LORE;
 		public static String PLOT_MENU_BUTTON;
 		public static Collection<String> PLOT_MENU_BUTTON_LORE;
+		public static String TOWN_NAME;
+		public static String TOWN_POSTFIX;
+		public static String RESIDENTS;
+		public static String NUMBER_RESIDENTS;
+		public static String CLAIM_BLOCKS;
+		public static String TOTAL_CLAIMED_BLOCKS;
+		public static String MAX_CLAIM_BLOCKS;
+		public static String BALANCE;
+		public static String BALANCE_AMOUNT;
+		public static String MAYOR;
+		public static String MAYOR_NAME;
+		public static String NATION;
+		public static String NATION_NAME;
 
 		private static void init() {
 			setPathPrefix("Town_Menu");
@@ -310,6 +334,19 @@ public class Localization extends SimpleLocalization {
 			EXTRA_INFO_MENU_BUTTON_LORE = getStringList("Extra_Info_Menu_Button_Lore");
 			PLOT_MENU_BUTTON = getString("Plot_Menu_Button");
 			PLOT_MENU_BUTTON_LORE = getStringList("Plot_Menu_Button_Lore");
+			TOWN_NAME = getString("Town_Name");
+			TOWN_POSTFIX = getString("Town_Postfix");
+			RESIDENTS = getString("Residents");
+			NUMBER_RESIDENTS = getString("Number_Residents");
+			CLAIM_BLOCKS = getString("Claim_Blocks");
+			TOTAL_CLAIMED_BLOCKS = getString("Total_Claimed_Blocks");
+			MAX_CLAIM_BLOCKS = getString("Max_Claim_Blocks");
+			BALANCE = getString("Balance");
+			BALANCE_AMOUNT = getString("Balance_Amount");
+			MAYOR = getString("Mayor");
+			MAYOR_NAME = getString("Mayor_Name");
+			NATION = getString("Nation");
+			NATION_NAME = getString("Nation_Name");
 		}
 
 		public static class ToggleMenu {
@@ -919,11 +956,13 @@ public class Localization extends SimpleLocalization {
 		public static class Kick {
 			public static String PROMPT;
 			public static String RESPONSE;
+			public static String MAYOR;
 
 			private static void init() {
 				setPathPrefix("Town_Conversables.Kick");
 				PROMPT = getString("Prompt");
 				RESPONSE = getString("Response");
+				MAYOR = getString("Mayor");
 			}
 		}
 

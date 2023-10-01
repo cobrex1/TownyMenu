@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "bestätigen"
 Cancel: "abbrechen"
 Menu_Information: "Menü Info"
-
 Reloaded: "Einstellungen neu geladen!"
-Menu:
-  Button_Return_Title: "&a&lZurück"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lZurück"
+  Back_Button_Lore:
     - ""
     - "Vorheriges Menü."
 
@@ -224,6 +235,20 @@ Town_Menu:
     - ""
     - "Verwalten Sie das Grundstück an"
     - "Ihrer aktuellen Position."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Einwohner"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Beanspruchen Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Aktuelle:"
+  Balance_Amount: "&a"
+  Mayor: "&2Bürgermeister"
+  Mayor_Name: "&a"
+  Nation: "&2Nation"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lUmschaltbare Einstellungen Menü"
   Info:
@@ -607,6 +632,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cSie Sie sich sicher, dass Sie den &b{player} &caus Ihrer Stadt werfen möchten? Schreibe &bestätigen &coder &4abbrechen &c:"
     Response: "&b{player} &3erfolgreich aus deiner Stadt geworfen."
+    Mayor: "Sie können den Bürgermeister der Stadt nicht treten!"
   Name:
     Prompt: "&3Schreiben Sie den Namen, den Sie Ihrer Stadt geben möchten: (unter {max_length} Zeichen) &bAktueller Name: {town} &cSchreibe abbrechen um abzubrechen."
     Invalid: "&cDer Name muss einzigartig sein und weniger als {max_length} Zeichen lang sein."

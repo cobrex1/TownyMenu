@@ -25,6 +25,7 @@ import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
 import org.mineacademy.fo.menu.button.ButtonConversation;
 import org.mineacademy.fo.menu.button.ButtonMenu;
+import org.mineacademy.fo.menu.button.ButtonReturnBack;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
@@ -211,6 +212,9 @@ public class NationMenu extends Menu {
 
 			setTitle(Localization.NationMenu.NationToggleMenu.MENU_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
+			ButtonReturnBack.setTitle(Localization.Back_Button.BACK_BUTTON_TITLE);
+			ButtonReturnBack.setLore((List<String>) Localization.Back_Button.BACK_BUTTON_LORE);
+			ButtonReturnBack.setMaterial(Settings.BACK_BUTTON);
 
 			nationOpenToggle = new Button() {
 				@Override
@@ -318,16 +322,13 @@ public class NationMenu extends Menu {
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
 					Localization.NationMenu.NationTownMenu.TOWN_NAME + item.getName()));
-//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getName());
 			if (item.getName() == null)
 				return DUMMY_BUTTON;
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationTownMenu.MAYOR + (item.getMayor())));
-//			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.MAYOR + (item.getMayor()));
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationTownMenu.NUMBER_RESIDENTS + (item.getNumResidents())));
-//			lore.add(ChatColor.WHITE + Localization.NationMenu.NationTownMenu.NUMBER_RESIDENTS + (item.getNumResidents()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -569,9 +570,7 @@ public class NationMenu extends Menu {
 									.name(Localization.NationMenu.NationSettingsMenu.SET_NAME)
 									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_NAME_LORE).make();
 						}
-					}
-
-			;
+					};
 
 			nationBoardButton = new
 
@@ -590,9 +589,7 @@ public class NationMenu extends Menu {
 									.name(Localization.NationMenu.NationSettingsMenu.SET_BOARD)
 									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_BOARD_LORE).make();
 						}
-					}
-
-			;
+					};
 		}
 
 		@Override

@@ -34,7 +34,7 @@ public class TownKickPrompt extends SimplePrompt {
 
 	@Override
 	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.town.kick"))
+		if (!getPlayer(context).hasPermission("towny.command.town.kick") || resident.isMayor())
 			return null;
 
 		if (input.toLowerCase().equals(Localization.CONFIRM)) {

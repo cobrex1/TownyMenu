@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "potvrdit"
 Cancel: "zrušit"
 Menu_Information: "Informace o nabídce"
-
 Reloaded: "Nastavení se znovu načetlo!"
-Menu:
-  Button_Return_Title: "&a&lZpět"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lZpět"
+  Back_Button_Lore:
     - ""
     - "Předchozí menu."
 
@@ -222,6 +233,20 @@ Town_Menu:
     - ""
     - "Spravujte pozemek na"
     - "vaší aktuální poloze."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Obyvatele"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Claimování Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Aktuální:"
+  Balance_Amount: "&a"
+  Mayor: "&2^fStarosta"
+  Mayor_Name: "&a"
+  Nation: "&2Národa"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lMenu Nastavení možností"
   Info:
@@ -610,6 +635,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cJste si jisti, že chcete &b{player} &cvykopnout ze svého města? Zadejte &bconfirm &cnebo &4cancel &cteď:"
     Response: "&3Úspěšně jste vykopli &b{player} &3z vašeho města."
+    Mayor: "&cNemůžete kopnout starostu města!"
   Name:
     Prompt: "&3Zadejte jméno, které chcete dát svému městu: (pod {max_délka} znaků) &bSoučasné jméno: {&cZadejte cancel pro ukončení."
     Invalid: "&cNázev musí být jedinečný a menší než {max_délka} znaků."

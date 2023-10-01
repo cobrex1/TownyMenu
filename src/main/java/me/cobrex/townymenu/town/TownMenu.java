@@ -29,6 +29,7 @@ import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
 import org.mineacademy.fo.menu.button.ButtonConversation;
 import org.mineacademy.fo.menu.button.ButtonMenu;
+import org.mineacademy.fo.menu.button.ButtonReturnBack;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
@@ -47,6 +48,7 @@ public class TownMenu extends Menu {
 	private final Button economyButton;
 	private final Button generalSettingsButton;
 	private final Button invitePlayerButton;
+	private final ItemStack townInfoButton;
 	private final Button extraInfoButton;
 	private final Button plotMenuButton;
 
@@ -191,6 +193,15 @@ public class TownMenu extends Menu {
 		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), inviteMenuItem);
 		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), extraInfoItem);
 
+		townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+				.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+				.lore("")
+				.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+				.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+				.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+				.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+				.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+
 		if (TownyAPI.getInstance().
 				getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().
 				getTownBlock(player.getLocation())))
@@ -216,6 +227,8 @@ public class TownMenu extends Menu {
 		if (slot == 15)
 			return invitePlayerButton.getItem();
 
+		if (slot == 9 * 2)
+			return townInfoButton;
 		if (slot == 9 * 2 + 3)
 			return extraInfoButton.getItem();
 		if (slot == 9 * 2 + 5)
@@ -247,6 +260,9 @@ public class TownMenu extends Menu {
 
 			setTitle(Localization.TownMenu.ToggleMenu.MENU_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
+			ButtonReturnBack.setTitle(Localization.Back_Button.BACK_BUTTON_TITLE);
+			ButtonReturnBack.setLore((List<String>) Localization.Back_Button.BACK_BUTTON_LORE);
+			ButtonReturnBack.setMaterial(Settings.BACK_BUTTON);
 
 			fireToggle = new Button() {
 				@Override
@@ -433,7 +449,6 @@ public class TownMenu extends Menu {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', item.getFormattedName()));
-//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
 			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
@@ -442,11 +457,9 @@ public class TownMenu extends Menu {
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.TOWN_RANK +
 					ChatColor.translateAlternateColorCodes('&', StringMgmt.join(item.getTownRanks(), ""))));
-//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.TOWN_RANK + ChatColor.WHITE + StringMgmt.join(item.getTownRanks(), ","));
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.ONLINE +
 					TimeUtil.getFormattedDateShort(item.getLastOnline())));
-//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;
@@ -939,7 +952,6 @@ public class TownMenu extends Menu {
 						.lore("")
 						.lore(Localization.TownMenu.EconomyMenu.TOWN_BALANCE + town.getAccount().getHoldingFormattedBalance(), "",
 								Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
-//						.lore("&a" + town.getAccount().getHoldingFormattedBalance(), "", Localization.TownMenu.EconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getTownUpkeepCost(town)).make();
 			} catch (Throwable t) {
 				balanceButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_BALANCE)))
 						.name("Economy Disabled").make();
@@ -1120,7 +1132,6 @@ public class TownMenu extends Menu {
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add((ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.INVITE)));
-//			lore.add(ChatColor.GRAY + Localization.TownMenu.ResidentMenu.INVITE);
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
 			return itemSkull;

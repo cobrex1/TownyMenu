@@ -213,6 +213,8 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_MOBS)))
 							.name(Localization.PlotMenu.ToggleMenu.MOBS)
+//							.meta(Settings.PLOT_TOGGLE_MOBS_CMD)
+//							.modelData(Settings.PLOT_TOGGLE_MOBS_CMD)
 							.lore("")
 							.lore("" + (townBlock.getPermissions().mobs ? Localization.PlotMenu.ToggleMenu.TOGGLE_OFF : Localization.PlotMenu.ToggleMenu.TOGGLE_ON)).make();
 				}

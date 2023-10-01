@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "confirmar"
 Cancel: "cancelar"
 Menu_Information: "Menu de informações"
-
 Reloaded: "Configurações recarregadas!"
-Menu:
-  Button_Return_Title: "&a&lVoltar"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lVoltar"
+  Back_Button_Lore:
     - ""
     - "menu anterior."
 
@@ -101,7 +112,7 @@ Nation_Town_Menu:
   Online: "último en línea: "
   #this is just setting the color
   Town_Name: "&e&l"
-  Mayor: "&ealcalde de la ciudad: "
+  Mayor: "&eAlcalde de la ciudad: "
   Number_of_Residents: "&fNúmero de Residencia: "
   Kick: "&c&lExpulsar la ciudad"
   Kick_Lore:
@@ -225,6 +236,20 @@ Town_Menu:
     - ""
     - "Gerencie a plot da"
     - "sua localização atual."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Residencia"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Cidade Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Saldo:"
+  Balance_Amount: "&a"
+  Mayor: "&2Alcalde"
+  Mayor_Name: "&a"
+  Nation: "&2Nação"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lConfigurações"
   Info:
@@ -614,6 +639,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cTem certeza de que deseja expulsar &b{player} &cda sua cidade? Digite &bconfirm &cou &4cancel &cagora:"
     Response: "&3Jogador &b{player} &3 expulso da cidade com sucesso."
+    Mayor: "Você não pode chutar o prefeito da cidade!"
   Name:
     Prompt: "&3Digite o nome que deseja definir para sua cidade: (abaixo de {max_length} caractéres) &bNome atual: {town} &cDigite cancel para sair."
     Invalid: "&cO nome precisa ter menos de {max_length} caractéres."

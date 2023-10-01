@@ -1,5 +1,5 @@
 #
-# Welcome to the main settings file.
+# Welcome to the main settings file for TownyMenu.
 #
 # For help and support please join my discord https://discord.gg/Sgc6hy9CCS
 # Issues and bugs, please report at: https://github.com/cobrex1/TownyMenu/issues
@@ -33,6 +33,9 @@ Chunk_View: REDSTONE_TORCH
 ##Get Particle names from: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
 # Particle to use to display chunk boarders
 Chunk_View_Particle: VILLAGER_HAPPY
+
+# Back Button icon for all linked menus
+Back_Button: OAK_DOOR
 
 # -----Filler Icons-----#
 
@@ -115,6 +118,7 @@ Plot_Menu: WOODEN_SHOVEL
 Settings_Menu: ENDER_CHEST
 Invite_Menu: BELL
 Extra_Info: ENCHANTED_BOOK
+Town_Info_Icon: NETHER_STAR
 
 # Toggle Town Settings Icons
 Toggle_Fire: CAMPFIRE
@@ -184,6 +188,11 @@ Plot_Toggle_Menu: LEVER
 Plot_Permissions_Menu: STONE_AXE
 Plot_Admin_Menu: BELL
 Plot_Friend_Menu: ENDER_CHEST
+
+Plot_Toggle_Fire: CAMPFIRE
+Plot_Toggle_Mobs: SHULKER_SPAWN_EGG
+Plot_Toggle_Explosions: TNT
+Plot_Toggle_PVP: GOLDEN_SWORD
 
 # Plot Permission Menu Icons
 Plot_Build: BRICKS

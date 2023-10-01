@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "подтверждать"
 Cancel: "отмена"
 Menu_Information: "Меню информации"
-
 Reloaded: "Настройки перезагружены!"
-Menu:
-  Button_Return_Title: "&a&lНазад"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lНазад"
+  Back_Button_Lore:
     - ""
     - "Предыдущее меню."
 
@@ -224,6 +235,20 @@ Town_Menu:
   Plot_Menu_Button_Lore:
     - ""
     - "Управление ячейкой, на которой вы стоите."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2жительства"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2требовать блоки"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2баланс:"
+  Balance_Amount: "&a"
+  Mayor: "&2Мэр"
+  Mayor_Name: "&a"
+  Nation: "&2нация"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lМеню переключения настроек города"
   Info:
@@ -623,6 +648,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cВы уверены что хотите выгнать &b{player} &cиз вашего города? Введите &bconfirm &cили &4cancel &cдля отмены"
     Response: "&3Игрок &b{player} &3выгнан из вашего города."
+    Mayor: "Вы не можете пнуть мэра города!"
   Name:
     Prompt: "&3Введите название вашего города: (не менее {max_length} символов) &bТекущее название: {town} &cВведите cancel для отмены."
     Invalid: "&cНазвание должно быть уникальным и не менее {max_length} символов."

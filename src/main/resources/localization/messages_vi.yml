@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "xác nhận"
 Cancel: "hủy bỏ"
 Menu_Information: "Thông tin Menu"
-
 Reloaded: "Cài đặt đã được tải lại!"
-Menu:
-  Button_Return_Title: "&a&lQuay lại"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lQuay lại"
+  Back_Button_Lore:
     - ""
     - "Quay lại menu."
 
@@ -225,6 +236,20 @@ Town_Menu:
     - ""
     - "Quản lý lô đất tại"
     - "vị trí hiện tại của bạn."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Dân"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Yêu cầu Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Số dư:"
+  Balance_Amount: "&a"
+  Mayor: "&2Mayor"
+  Mayor_Name: "&a"
+  Nation: "&2Nation"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lChuyển đổi Menu Cài đặt"
   Info:
@@ -614,6 +639,7 @@ Town_Conversables:
   Kick:
     Prompt: "&cBạn có chắc chắn muốn đá &b{player} &c khỏi thị trấn của mình không? Nhập &bconfirm &hoặc &4cancel &cngay bây giờ:"
     Response: "&3Đã đá thành công &b{player} &3 khỏi thị trấn của bạn."
+    Mayor: "Bạn không thể đá Thị trưởng của thị trấn!"
   Name:
     Prompt: "&3Nhập tên bạn muốn đặt cho thị trấn của mình: (dưới {max_length} ký tự) &bTên hiện tại: {town} &cNhập cancel để thoát."
     Invalid: "&cName phải là duy nhất và ít hơn {max_length} ký tự."

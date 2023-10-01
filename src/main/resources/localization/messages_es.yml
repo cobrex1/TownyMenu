@@ -1,11 +1,22 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the TownyMenu Localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   COLOR CODES are supported with the '&' character.
+#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#   - When you use them, place quotes around the message like this: "&a&lBack"
+#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
 Confirm: "confirmar"
 Cancel: "cancelar"
 Menu_Information: "Información"
-
 Reloaded: "Ajustes recargados!"
-Menu:
-  Button_Return_Title: "&a&lAtrás"
-  Button_Return_Lore:
+
+Back_Button:
+  Back_Button_Title: "&a&lAtrás"
+  Back_Button_Lore:
     - ""
     - "Menú anterior."
 
@@ -225,6 +236,20 @@ Town_Menu:
     - ""
     - "Maneja la parcela (chunk) en"
     - "la que te encuentras ahora"
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Residencia"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Reclama Blocks"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Dinero:"
+  Balance_Amount: "&a"
+  Mayor: "&2Alcalde"
+  Mayor_Name: "&a"
+  Nation: "&2Nación"
+  Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lMenú de Configuraciones"
   Info:
@@ -608,6 +633,7 @@ Town_Conversables:
   Kick:
     Prompt: "&c¿Estas seguro de expulsar a &b{player} &cde tu ciudad? Escribiendo &bconfirm &co &4cancel &cahora:"
     Response: "&3SSe ha expulsado a &b{player} &3de tu ciudad."
+    Mayor: "No puedes patear al alcalde del pueblo."
   Name:
     Prompt: "&3Escribe el nuevo nombre de tu ciudad: (menos de {max_length} caracteres) &bNombre actual: {town} &cEscrube 'cancel' para salir."
     Invalid: "&cEl nombre debe ser unico y mejor a {max_length} caracteres."
