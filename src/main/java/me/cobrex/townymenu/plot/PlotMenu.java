@@ -40,7 +40,8 @@ public class PlotMenu extends Menu {
 	private final Button friendButton;
 	private final Town town;
 
-	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_MENU)), "").make();
+	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_PLOT_MENU)), "")
+			.modelData(Integer.valueOf(Settings.FILLER_PLOT_MENU_CMD)).make();
 
 	public PlotMenu(TownBlock townBlock) throws NotRegisteredException {
 
@@ -57,21 +58,25 @@ public class PlotMenu extends Menu {
 		toggleSettingsMenu = new ButtonMenu(new PlotToggleSettingsMenu(townBlock),
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_MENU)))
 						.name(Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON)
+						.modelData(Integer.valueOf(Settings.PLOT_TOGGLE_MENU_CMD))
 						.lore(Localization.PlotMenu.TOGGLE_SETTINGS_MENU_BUTTON_LORE));
 
 		permMenuButton = new ButtonMenu(new PlotPermMenu(townBlock),
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_PERMISSIONS_MENU)))
 						.name(Localization.PlotMenu.PERMISSIONS_MENU_BUTTON)
+						.modelData(Integer.valueOf(Settings.PLOT_PERMISSIONS_MENU_CMD))
 						.lore(Localization.PlotMenu.PERMISSIONS_MENU_BUTTON_LORE));
 
 		plotAdministrationMenuButton = new ButtonMenu(new PlotAdministrationMenu(townBlock),
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ADMIN_MENU)))
 						.name(Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON)
+						.modelData(Integer.valueOf(Settings.PLOT_ADMIN_MENU_CMD))
 						.lore(Localization.PlotMenu.PLOT_ADMIN_MENU_BUTTON_LORE));
 
 		friendButton = new ButtonMenu(new FriendPlayerMenu(allOnlineResidents),
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_FRIEND_MENU)))
 						.name(Localization.PlotMenu.FRIEND_MENU_BUTTON)
+						.modelData(Integer.valueOf(Settings.PLOT_FRIEND_MENU_CMD))
 						.lore(Localization.PlotMenu.FRIEND_MENU_BUTTON_LORE));
 
 		town = townBlock.getTown();
@@ -192,6 +197,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_FIRE)))
 							.name(Localization.PlotMenu.ToggleMenu.FIRE)
+							.modelData(Integer.valueOf(Settings.PLOT_TOGGLE_FIRE_CMD))
 							.lore("")
 							.lore("" + (townBlock.getPermissions().fire ? Localization.PlotMenu.ToggleMenu.TOGGLE_OFF : Localization.PlotMenu.ToggleMenu.TOGGLE_ON)).make();
 				}
@@ -213,8 +219,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_MOBS)))
 							.name(Localization.PlotMenu.ToggleMenu.MOBS)
-//							.meta(Settings.PLOT_TOGGLE_MOBS_CMD)
-//							.modelData(Settings.PLOT_TOGGLE_MOBS_CMD)
+							.modelData(Integer.valueOf(Settings.PLOT_TOGGLE_MOBS_CMD))
 							.lore("")
 							.lore("" + (townBlock.getPermissions().mobs ? Localization.PlotMenu.ToggleMenu.TOGGLE_OFF : Localization.PlotMenu.ToggleMenu.TOGGLE_ON)).make();
 				}
@@ -236,6 +241,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_EXPLOSIONS)))
 							.name(Localization.PlotMenu.ToggleMenu.EXPLODE)
+							.modelData(Integer.valueOf(Settings.PLOT_TOGGLE_EXPLOSIONS_CMD))
 							.lore("")
 							.lore("" + (townBlock.getPermissions().explosion ? Localization.PlotMenu.ToggleMenu.TOGGLE_OFF : Localization.PlotMenu.ToggleMenu.TOGGLE_ON)).make();
 				}
@@ -256,6 +262,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_TOGGLE_PVP)))
 							.name(Localization.PlotMenu.ToggleMenu.PVP)
+							.modelData(Integer.valueOf(Settings.PLOT_TOGGLE_PVP_CMD))
 							.lore("")
 							.lore("" + (townBlock.getPermissions().pvp ? Localization.PlotMenu.ToggleMenu.TOGGLE_OFF : Localization.PlotMenu.ToggleMenu.TOGGLE_ON)).make();
 				}
@@ -282,18 +289,22 @@ public class PlotMenu extends Menu {
 
 		private final ItemStack BUILD_BUTTON = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_BUILD)))
 				.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD)
+				.modelData(Integer.valueOf(Settings.PLOT_BUILD_CMD))
 				.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.BUILD_LORE).make();
 
 		private final ItemStack BREAK_BUTTON = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.BREAK)))
 				.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK)
+				.modelData(Integer.valueOf(Settings.PLOT_BREAK_CMD))
 				.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.BREAK_LORE).make();
 
 		private final ItemStack ITEM_USE_BUTTON = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ITEM_USE)))
 				.name(Localization.PlotMenu.PlayerPermissionsMenu.USE)
+				.modelData(Integer.valueOf(Settings.PLOT_ITEM_USE_CMD))
 				.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.USE_LORE).make();
 
 		private final ItemStack SWITCH_BUTTON = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SWITCH)))
 				.name(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH)
+				.modelData(Integer.valueOf(Settings.PLOT_SWITCH_CMD))
 				.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_LORE).make();
 
 		private final Button buildResidentButton;
@@ -349,6 +360,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESIDENT_BUILD)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_RES)
+							.modelData(Integer.valueOf(Settings.PLOT_RESIDENT_BUILD_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_RES2)
 							.lore("" + (townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", (Localization.PlotMenu.PlayerPermissionsMenu.CHANGE)).make();
@@ -371,6 +383,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_NATION_BUILD)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_NATION)
+							.modelData(Integer.valueOf(Settings.PLOT_NATION_BUILD_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_NATION2)
 							.lore("" + (townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -393,6 +406,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALLY_BUILD)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_ALLY)
+							.modelData(Integer.valueOf(Settings.PLOT_ALLY_BREAK_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_ALLY2)
 							.lore("" + (townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -415,6 +429,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_OUTSIDER_BUILD)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_OUTSIDER)
+							.modelData(Integer.valueOf(Settings.PLOT_OUTSIDER_BUILD_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2)
 							.lore("" + (townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -439,6 +454,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESIDENT_BREAK)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_RES)
+							.modelData(Integer.valueOf(Settings.PLOT_RESIDENT_BREAK_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_RES2)
 							.lore("" + (townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -461,6 +477,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_NATION_BREAK)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_NATION)
+							.modelData(Integer.valueOf(Settings.PLOT_NATION_BREAK_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_NATION2)
 							.lore("" + (townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -483,6 +500,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALLY_BREAK)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_ALLY)
+							.modelData(Integer.valueOf(Settings.PLOT_ALLY_BREAK_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_ALLY2)
 							.lore("" + (townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -505,6 +523,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_OUTSIDER_BREAK)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_OUTSIDER)
+							.modelData(Integer.valueOf(Settings.PLOT_OUTSIDER_BREAK_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2)
 							.lore("" + (townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -529,6 +548,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESIDENT_ITEM_USE)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.USE_RES)
+							.modelData(Integer.valueOf(Settings.PLOT_RESIDENT_ITEM_USE_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.USE_RES2)
 							.lore("" + (townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -550,6 +570,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_NATION_ITEM_USE)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.USE_NATION)
+							.modelData(Integer.valueOf(Settings.PLOT_NATION_ITEM_USE_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.USE_NATION2)
 							.lore("" + (townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -572,6 +593,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALLY_ITEM_USE)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.USE_ALLY)
+							.modelData(Integer.valueOf(Settings.PLOT_ALLY_ITEM_USE_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.USE_ALLY2)
 							.lore("" + (townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -594,6 +616,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_OUTSIDER_ITEM_USE)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.USE_OUTSIDER)
+							.modelData(Integer.valueOf(Settings.PLOT_OUTSIDER_ITEM_USE_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.USE_OUTSIDER2)
 							.lore("" + (townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -619,6 +642,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESIDENT_SWITCH)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_RES)
+							.modelData(Integer.valueOf(Settings.PLOT_RESIDENT_SWITCH_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_RES2)
 							.lore("" + (townBlock.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -641,6 +665,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_NATION_SWITCH)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_NATION)
+							.modelData(Integer.valueOf(Settings.PLOT_NATION_SWITCH_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_NATION2)
 							.lore("" + (townBlock.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -662,6 +687,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALLY_SWITCH)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_ALLY)
+							.modelData(Integer.valueOf(Settings.PLOT_ALLY_SWITCH_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_ALLY2)
 							.lore("" + (townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -683,6 +709,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_OUTSIDER_SWITCH)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER)
+							.modelData(Integer.valueOf(Settings.PLOT_OUTSIDER_SWITCH_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2)
 							.lore("" + (townBlock.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -707,6 +734,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_RESET_ALL)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.RESET)
+							.modelData(Integer.valueOf(Settings.PLOT_RESET_ALL_CMD))
 							.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.RESET_LORE).make();
 				}
 			};
@@ -726,6 +754,7 @@ public class PlotMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALL_ON)))
 							.name(Localization.PlotMenu.PlayerPermissionsMenu.ON)
+							.modelData(Integer.valueOf(Settings.PLOT_ALL_ON_CMD))
 							.lore((List<String>) Localization.PlotMenu.PlayerPermissionsMenu.ON_LORE).make();
 				}
 			};
@@ -806,21 +835,25 @@ public class PlotMenu extends Menu {
 			plotForSaleButton = new ButtonConversation(new PlotForSalePrompt(townBlock),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ADMIN_FOR_SALE)))
 							.name(Localization.PlotMenu.PlotAdminMenu.FOR_SALE)
+							.modelData(Integer.valueOf(Settings.PLOT_ADMIN_FOR_SALE_CMD))
 							.lore(Localization.PlotMenu.PlotAdminMenu.FOR_SALE_LORE));
 
 			plotNotForSaleButton = new ButtonConversation(new PlotNotForSalePrompt(townBlock),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ADMIN_NOT_FOR_SALE)))
 							.name(Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE)
+							.modelData(Integer.valueOf(Settings.PLOT_ADMIN_NOT_FOR_SALE_CMD))
 							.lore(Localization.PlotMenu.PlotAdminMenu.NOT_FOR_SALE_LORE));
 
 			plotSetTypeButton = new ButtonConversation(new PlotSetTypePrompt(townBlock),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ADMIN_SET_PLOT_TYPE)))
 							.name(Localization.PlotMenu.PlotAdminMenu.SET_TYPE)
+							.modelData(Integer.valueOf(Settings.PLOT_ADMIN_SET_PLOT_TYPE_CMD))
 							.lore(Localization.PlotMenu.PlotAdminMenu.SET_TYPE_LORE));
 
 			plotEvictButton = new ButtonConversation(new PlotEvictPrompt(townBlock),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ADMIN_EVICT_RES)))
 							.name(Localization.PlotMenu.PlotAdminMenu.EVICT)
+							.modelData(Integer.valueOf(Settings.PLOT_ADMIN_EVICT_RES_CMD))
 							.lore(Localization.PlotMenu.PlotAdminMenu.EVICT_LORE));
 		}
 

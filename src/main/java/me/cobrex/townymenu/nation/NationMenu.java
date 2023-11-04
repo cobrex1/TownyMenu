@@ -43,7 +43,8 @@ public class NationMenu extends Menu {
 	private final Button nationExtraInfoButton;
 	private final Button nationResidentListButton;
 
-	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "").make();
+	private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "")
+			.modelData(Integer.valueOf(Settings.FILLER_JOIN_NATION_MENU_CMD)).make();
 
 	public NationMenu(Nation nation, Player player) throws NotRegisteredException {
 
@@ -58,24 +59,31 @@ public class NationMenu extends Menu {
 		setTitle(Localization.NationMenu.MAIN_MENU_TITLE);
 
 		ItemCreator toggleNationItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_MENU)))
-				.name(Localization.NationMenu.NATION_TOGGLE_MENU_BUTTON);
+				.name(Localization.NationMenu.NATION_TOGGLE_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_TOGGLE_MENU_CMD));
 		ItemCreator nationTownListItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOWN_LIST)))
 				.name(Localization.NationMenu.NATION_TOWN_LIST_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_TOWN_LIST_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_TOWN_LIST_BUTTON_LORE);
 		ItemCreator nationEconomyMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ECONOMY_MENU)))
 				.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_ECONOMY_MENU_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE);
 		ItemCreator nationSettingsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SETTINGS_MENU)))
 				.name(Localization.NationMenu.NATION_SETTINGS_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_SETTINGS_MENU_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_SETTINGS_MENU_BUTTON_LORE);
 		ItemCreator townInviteMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_INVITE_TOWN_MENU)))
 				.name(Localization.NationMenu.NATION_INVITE_TOWN_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_INVITE_TOWN_MENU_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_INVITE_TOWN_MENU_BUTTON_LORE);
 		ItemCreator nationExtraInfoItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_EXTRA_INFO)))
 				.name(Localization.NationMenu.NATION_EXTRA_INFO_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_EXTRA_INFO_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_EXTRA_INFO_MENU_BUTTON_LORE);
 		ItemCreator nationResidentListItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_RESIDENT_MENU)))
 				.name(Localization.NationMenu.NATION_RESIDENT_MENU_BUTTON)
+				.modelData(Integer.valueOf(Settings.NATION_RESIDENT_MENU_CMD))
 				.lore((List<String>) Localization.NationMenu.NATION_RESIDENT_MENU_BUTTON_LORE);
 
 		nationToggleButton = new ButtonMenu(new NationToggleMenu(nation), toggleNationItem);
@@ -100,6 +108,7 @@ public class NationMenu extends Menu {
 							public ItemStack getItem() {
 								return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ECONOMY_MENU)))
 										.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+										.modelData(Integer.valueOf(Settings.NATION_ECONOMY_MENU_CMD))
 										.lore(String.valueOf(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE)).make();
 							}
 						};
@@ -117,6 +126,7 @@ public class NationMenu extends Menu {
 						public ItemStack getItem() {
 							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ECONOMY_MENU)))
 									.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+									.modelData(Integer.valueOf(Settings.NATION_ECONOMY_MENU_CMD))
 									.lore(String.valueOf(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE)).make();
 						}
 					};
@@ -134,6 +144,7 @@ public class NationMenu extends Menu {
 							public ItemStack getItem() {
 								return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ECONOMY_MENU)))
 										.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+										.modelData(Integer.valueOf(Settings.NATION_ECONOMY_MENU_CMD))
 										.lore((List<String>) Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE).make();
 							}
 						};
@@ -151,6 +162,7 @@ public class NationMenu extends Menu {
 						public ItemStack getItem() {
 							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ECONOMY_MENU)))
 									.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+									.modelData(Integer.valueOf(Settings.NATION_ECONOMY_MENU_CMD))
 									.lore((List<String>) Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE).make();
 						}
 					};
@@ -203,7 +215,8 @@ public class NationMenu extends Menu {
 		private final Button nationPublicToggle;
 		private final Button nationTaxPercentToggle;
 
-		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_TOGGLE)), "").make();
+		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_NATION_TOGGLE)), "")
+				.modelData(Integer.valueOf(Settings.FILLER_NATION_TOGGLE_CMD)).make();
 
 		public NationToggleMenu(Nation nation) {
 			super(NationMenu.this);
@@ -229,11 +242,13 @@ public class NationMenu extends Menu {
 					if (nation.isOpen())
 						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_OPEN)))
 								.name(Localization.NationMenu.NationToggleMenu.OPEN)
+								.modelData(Integer.valueOf(Settings.NATION_TOGGLE_OPEN_CMD))
 								.lore("")
 								.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_OFF).make();
 					else
 						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_OPEN)))
 								.name(Localization.NationMenu.NationToggleMenu.OPEN)
+								.modelData(Integer.valueOf(Settings.NATION_TOGGLE_OPEN_CMD))
 								.lore("")
 								.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_ON).make();
 				}
@@ -254,11 +269,13 @@ public class NationMenu extends Menu {
 							if (nation.isPublic())
 								return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_PUBLIC)))
 										.name(Localization.NationMenu.NationToggleMenu.PUBLIC)
+										.modelData(Integer.valueOf(Settings.NATION_TOGGLE_PUBLIC_CMD))
 										.lore("")
 										.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_OFF).make();
 							else
 								return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_PUBLIC)))
 										.name(Localization.NationMenu.NationToggleMenu.PUBLIC)
+										.modelData(Integer.valueOf(Settings.NATION_TOGGLE_PUBLIC_CMD))
 										.lore("")
 										.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_ON).make();
 						}
@@ -278,11 +295,13 @@ public class NationMenu extends Menu {
 					if (nation.isTaxPercentage())
 						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_TAX_PERCENTAGE)))
 								.name(Localization.NationMenu.NationToggleMenu.TAX_PERCENT)
+								.modelData(Integer.valueOf(Settings.NATION_TOGGLE_TAX_PERCENTAGE_CMD))
 								.lore("")
 								.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_OFF).make();
 					else
 						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOGGLE_TAX_PERCENTAGE)))
 								.name(Localization.NationMenu.NationToggleMenu.TAX_PERCENT)
+								.modelData(Integer.valueOf(Settings.NATION_TOGGLE_TAX_PERCENTAGE_CMD))
 								.lore("")
 								.lore(Localization.NationMenu.NationToggleMenu.TOGGLE_ON).make();
 				}
@@ -360,6 +379,7 @@ public class NationMenu extends Menu {
 			townKickButton = new ButtonConversation(new NationKickPrompt(town),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_TOWN_KICK)))
 							.name(Localization.NationMenu.NationTownMenu.KICK)
+							.modelData(Integer.valueOf(Settings.NATION_TOWN_KICK_CMD))
 							.lore((List<String>) Localization.NationMenu.NationTownMenu.KICK_LORE));
 		}
 
@@ -388,9 +408,9 @@ public class NationMenu extends Menu {
 			try {
 				balanceButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BALANCE)))
 						.name(Localization.NationMenu.NationEconomyMenu.BALANCE)
+						.modelData(Integer.valueOf(Settings.NATION_BALANCE_CMD))
 						.lore("")
 						.lore(Localization.NationMenu.NationEconomyMenu.NATION_BALANCE + nation.getAccount().getHoldingFormattedBalance())
-//						.lore("&a" + nation.getAccount().getHoldingFormattedBalance())
 						.lore("")
 						.lore(Localization.NationMenu.NationEconomyMenu.UPKEEP + Settings.MONEY_SYMBOL + TownySettings.getNationUpkeepCost(nation)).make();
 			} catch (Throwable t) {
@@ -401,14 +421,17 @@ public class NationMenu extends Menu {
 			depositButton = new ButtonConversation(new NationDepositPrompt(nation),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_DEPOSIT)))
 							.name(Localization.NationMenu.NationEconomyMenu.DEPOSIT)
+							.modelData(Integer.valueOf(Settings.NATION_DEPOSIT_CMD))
 							.lore((List<String>) Localization.NationMenu.NationEconomyMenu.DEPOSIT_LORE));
 			withdrawButton = new ButtonConversation(new NationWithdrawPrompt(nation),
 					ItemCreator.of(ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_WITHDRAW)))
 							.name(Localization.NationMenu.NationEconomyMenu.WITHDRAW)
+							.modelData(Integer.valueOf(Settings.NATION_WITHDRAW_CMD))
 							.lore((List<String>) Localization.NationMenu.NationEconomyMenu.WITHDRAW_LORE).make()));
 			setTaxButton = new ButtonConversation(new NationSetTaxPrompt(nation),
 					ItemCreator.of(ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SET_TAX)))
 							.name(Localization.NationMenu.NationEconomyMenu.TAX)
+							.modelData(Integer.valueOf(Settings.NATION_SET_TAX_CMD))
 							.lore("")
 							.lore("" + (nation.isTaxPercentage() ? Localization.NationMenu.NationEconomyMenu.TAX_AMOUNT : Localization.NationMenu.NationEconomyMenu.TAX_AMOUNT)).make()));
 		}
@@ -479,7 +502,7 @@ public class NationMenu extends Menu {
 	public class NationResidentMenu extends Menu {
 
 		private final Button rankButton;
-		private final Button mayorButton;
+		private final Button setkingButton;
 
 		protected NationResidentMenu(Resident resident) {
 			super(NationMenu.this);
@@ -489,10 +512,12 @@ public class NationMenu extends Menu {
 			rankButton = new ButtonConversation(new NationRankPrompt(resident),
 					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_RESIDENT_RANK)))
 							.name(Localization.NationMenu.NationResidentMenu.NATION_RANK)
+							.modelData(Integer.valueOf(Settings.NATION_RESIDENT_RANK_CMD))
 							.lore((List<String>) Localization.NationMenu.NationResidentMenu.NATION_RANK_LORE));
-			mayorButton = new ButtonConversation(new NationGiveKingPrompt(resident),
-					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_MAYOR)))
+			setkingButton = new ButtonConversation(new NationGiveKingPrompt(resident),
+					ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SET_KING)))
 							.name(Localization.NationMenu.NationResidentMenu.NATION_KING)
+							.modelData(Integer.valueOf(Settings.NATION_SET_KING_CMD))
 							.lore((List<String>) Localization.NationMenu.NationResidentMenu.NATION_KING_LORE));
 		}
 
@@ -501,7 +526,7 @@ public class NationMenu extends Menu {
 			if (slot == 9 + 3)
 				return rankButton.getItem();
 			if (slot == 9 + 6)
-				return mayorButton.getItem();
+				return setkingButton.getItem();
 
 			return DUMMY_BUTTON;
 		}
@@ -548,6 +573,7 @@ public class NationMenu extends Menu {
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_SPAWN)))
 							.name(Localization.NationMenu.NationSettingsMenu.SET_SPAWN)
+							.modelData(Integer.valueOf(Settings.SET_NATION_SPAWN_CMD))
 							.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_SPAWN_LORE).make();
 				}
 			};
@@ -568,6 +594,7 @@ public class NationMenu extends Menu {
 						public ItemStack getItem() {
 							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_NAME)))
 									.name(Localization.NationMenu.NationSettingsMenu.SET_NAME)
+									.modelData(Integer.valueOf(Settings.SET_NATION_NAME_CMD))
 									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_NAME_LORE).make();
 						}
 					};
@@ -587,6 +614,7 @@ public class NationMenu extends Menu {
 						public ItemStack getItem() {
 							return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SET_NATION_BOARD)))
 									.name(Localization.NationMenu.NationSettingsMenu.SET_BOARD)
+									.modelData(Integer.valueOf(Settings.SET_NATION_BOARD_CMD))
 									.lore((List<String>) Localization.NationMenu.NationSettingsMenu.SET_BOARD_LORE).make();
 						}
 					};
@@ -646,14 +674,17 @@ public class NationMenu extends Menu {
 		private final ItemStack extraCommands1 =
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_EXTRA_COMMANDS_1)))
 						.name(Localization.NationMenu.NationExtraInfoMenu.COMMANDS_1)
+						.modelData(Integer.valueOf(Settings.NATION_EXTRA_COMMANDS_1_CMD))
 						.lore((List<String>) Localization.NationMenu.NationExtraInfoMenu.COMMANDS_1_LORE).make();
 		private final ItemStack extraCommands2 =
 				ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_EXTRA_COMMANDS_2)))
 						.name(Localization.NationMenu.NationExtraInfoMenu.COMMANDS_2)
+						.modelData(Integer.valueOf(Settings.NATION_EXTRA_COMMANDS_2_CMD))
 						.lore((List<String>) Localization.NationMenu.NationExtraInfoMenu.COMMANDS_2_LORE).make();
 
 		private final ItemStack DUMMY_BUTTON =
-				ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_EXTRA_INFO_MENU)), "").make();
+				ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_NATION_EXTRA_INFO_MENU)), "")
+						.modelData(Integer.valueOf(Settings.FILLER_NATION_EXTRA_INFO_MENU_CMD)).make();
 
 		protected NationExtraInfo() {
 			super(NationMenu.this);

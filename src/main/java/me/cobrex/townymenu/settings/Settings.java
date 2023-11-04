@@ -17,165 +17,288 @@ public final class Settings extends SimpleSettings {
 	public static CompMaterial CHUNK_VIEW;
 	public static String CHUNK_VIEW_PARTICLE;
 
-	public static String FIND_TOWN;
-	public static String CREATE_TOWN;
+	public static CompMaterial FILLER_JOIN_NATION_MENU;
+	public static Integer FILLER_JOIN_NATION_MENU_CMD;
+	public static CompMaterial FILLER_NATION_TOGGLE;
+	public static Integer FILLER_NATION_TOGGLE_CMD;
+
+	public static CompMaterial FILLER_NATION_EXTRA_INFO_MENU;
+	public static Integer FILLER_NATION_EXTRA_INFO_MENU_CMD;
 
 	public static CompMaterial FILLER_JOIN_TOWN_MENU;
+	public static Integer FILLER_JOIN_TOWN_MENU_CMD;
 
 	public static CompMaterial FILLER_TOWN_MENU;
+	public static Integer FILLER_TOWN_MENU_CMD;
 	public static CompMaterial FILLER_TOWN_TOGGLE;
+	public static Integer FILLER_TOWN_TOGGLE_CMD;
 	public static CompMaterial FILLER_TOWN_PERMS_MENU;
+	public static Integer FILLER_TOWN_PERMS_MENU_CMD;
 	public static CompMaterial FILLER_TOWN_ECONOMY_MENU;
+	public static Integer FILLER_TOWN_ECONOMY_MENU_CMD;
 	public static CompMaterial FILLER_TOWN_GENERAL_SETTINGS_MENU;
+	public static Integer FILLER_TOWN_GENERAL_SETTINGS_MENU_CMD;
 	public static CompMaterial FILLER_TOWN_EXTRA_INFO_MENU;
+	public static Integer FILLER_TOWN_EXTRA_INFO_MENU_CMD;
 
 	public static CompMaterial FILLER_PLOT_MENU;
+	public static Integer FILLER_PLOT_MENU_CMD;
 	public static CompMaterial FILLER_PLOT_TOGGLE_MENU;
+	public static Integer FILLER_PLOT_TOGGLE_MENU_CMD;
 	public static CompMaterial FILLER_PLOT_PERMS_MENU;
+	public static Integer FILLER_PLOT_PERMS_MENU_CMD;
 	public static CompMaterial FILLER_PLOT_ADMIN_MENU;
-
-	public static CompMaterial FILLER_JOIN_NATION_MENU;
+	public static Integer FILLER_PLOT_ADMIN_MENU_CMD;
 
 	public static String FIND_NATION_BUTTON;
 	public static String CREATE_NATION_BUTTON;
 
 	public static String NATION_TOGGLE_MENU;
+	public static Integer NATION_TOGGLE_MENU_CMD;
 	public static String NATION_TOWN_LIST;
+	public static Integer NATION_TOWN_LIST_CMD;
 	public static String NATION_RESIDENT_MENU;
+	public static Integer NATION_RESIDENT_MENU_CMD;
 	public static String NATION_ECONOMY_MENU;
+	public static Integer NATION_ECONOMY_MENU_CMD;
 	public static String NATION_SETTINGS_MENU;
+	public static Integer NATION_SETTINGS_MENU_CMD;
 	public static String NATION_INVITE_TOWN_MENU;
+	public static Integer NATION_INVITE_TOWN_MENU_CMD;
 	public static String NATION_EXTRA_INFO;
+	public static Integer NATION_EXTRA_INFO_CMD;
 
 	public static String NATION_BALANCE;
+	public static Integer NATION_BALANCE_CMD;
 	public static String NATION_DEPOSIT;
+	public static Integer NATION_DEPOSIT_CMD;
 	public static String NATION_WITHDRAW;
+	public static Integer NATION_WITHDRAW_CMD;
 	public static String NATION_SET_TAX;
+	public static Integer NATION_SET_TAX_CMD;
 
 	public static String NATION_TOGGLE_PUBLIC;
+	public static Integer NATION_TOGGLE_PUBLIC_CMD;
 	public static String NATION_TOGGLE_OPEN;
+	public static Integer NATION_TOGGLE_OPEN_CMD;
 	public static String NATION_TOGGLE_TAX_PERCENTAGE;
-
-	public static String NATION_SET_SPAWN;
+	public static Integer NATION_TOGGLE_TAX_PERCENTAGE_CMD;
 
 	public static String NATION_TOWN_KICK;
+	public static Integer NATION_TOWN_KICK_CMD;
 
 	public static String NATION_RESIDENT_RANK;
+	public static Integer NATION_RESIDENT_RANK_CMD;
 	public static String NATION_SET_KING;
-
-	public static String NATION_EXTRA_COMMANDS_1;
-	public static String NATION_EXTRA_COMMANDS_2;
+	public static Integer NATION_SET_KING_CMD;
 
 	public static String SET_NATION_SPAWN;
+	public static Integer SET_NATION_SPAWN_CMD;
 	public static String SET_NATION_BOARD;
+	public static Integer SET_NATION_BOARD_CMD;
 	public static String SET_NATION_NAME;
+	public static Integer SET_NATION_NAME_CMD;
+
+	public static String NATION_EXTRA_COMMANDS_1;
+	public static Integer NATION_EXTRA_COMMANDS_1_CMD;
+	public static String NATION_EXTRA_COMMANDS_2;
+	public static Integer NATION_EXTRA_COMMANDS_2_CMD;
+
+	public static String FIND_TOWN;
+	public static String CREATE_TOWN;
 
 	public static String TOGGLE_MENU;
+	public static Integer TOGGLE_MENU_CMD;
 	public static String RESIDENT_LIST;
+	public static Integer RESIDENT_LIST_CMD;
 	public static String PERMISSIONS_MENU;
+	public static Integer PERMISSIONS_MENU_CMD;
 	public static String ECONOMY_MENU;
+	public static Integer ECONOMY_MENU_CMD;
 	public static String PLOT_MENU;
+	public static Integer PLOT_MENU_CMD;
 	public static String SETTINGS_MENU;
+	public static Integer SETTINGS_MENU_CMD;
 	public static String INVITE_MENU;
+	public static Integer INVITE_MENU_CMD;
 	public static String EXTRA_INFO;
+	public static Integer EXTRA_INFO_CMD;
 	public static String TOWN_INFO_BUTTON;
+	public static Integer TOWN_INFO_BUTTON_CMD;
 
 	public static String TOGGLE_FIRE;
+	public static Integer TOGGLE_FIRE_CMD;
 	public static String TOGGLE_MOBS;
+	public static Integer TOGGLE_MOBS_CMD;
 	public static String TOGGLE_EXPLOSIONS;
+	public static Integer TOGGLE_EXPLOSIONS_CMD;
 	public static String TOGGLE_PVP;
+	public static Integer TOGGLE_PVP_CMD;
 	public static String TOGGLE_PUBLIC;
+	public static Integer TOGGLE_PUBLIC_CMD;
 	public static String TOGGLE_OPEN;
+	public static Integer TOGGLE_OPEN_CMD;
 	public static String TOGGLE_TAX_PERCENTAGE;
+	public static Integer TOGGLE_TAX_PERCENTAGE_CMD;
 
 	public static String RESIDENT_KICK;
+	public static Integer RESIDENT_KICK_CMD;
 	public static String RESIDENT_TITLE;
+	public static Integer RESIDENT_TITLE_CMD;
 	public static String RESIDENT_RANK;
+	public static Integer RESIDENT_RANK_CMD;
 	public static String RESIDENT_MAYOR;
+	public static Integer RESIDENT_MAYOR_CMD;
 
 	public static String BUILD;
+	public static Integer BUILD_CMD;
 	public static String BREAK;
+	public static Integer BREAK_CMD;
 	public static String ITEM_USE;
+	public static Integer ITEM_USE_CMD;
 	public static String SWITCH;
+	public static Integer SWITCH_CMD;
 
 	public static String RESIDENT_BUILD;
+	public static Integer RESIDENT_BUILD_CMD;
 	public static String RESIDENT_BREAK;
+	public static Integer RESIDENT_BREAK_CMD;
 	public static String RESIDENT_ITEM_USE;
+	public static Integer RESIDENT_ITEM_USE_CMD;
 	public static String RESIDENT_SWITCH;
+	public static Integer RESIDENT_SWITCH_CMD;
 
 	public static String NATION_BUILD;
+	public static Integer NATION_BUILD_CMD;
 	public static String NATION_BREAK;
+	public static Integer NATION_BREAK_CMD;
 	public static String NATION_ITEM_USE;
+	public static Integer NATION_ITEM_USE_CMD;
 	public static String NATION_SWITCH;
+	public static Integer NATION_SWITCH_CMD;
 
 	public static String ALLY_BUILD;
+	public static Integer ALLY_BUILD_CMD;
 	public static String ALLY_BREAK;
+	public static Integer ALLY_BREAK_CMD;
 	public static String ALLY_ITEM_USE;
+	public static Integer ALLY_ITEM_USE_CMD;
 	public static String ALLY_SWITCH;
+	public static Integer ALLY_SWITCH_CMD;
 
 	public static String OUTSIDER_BUILD;
+	public static Integer OUTSIDER_BUILD_CMD;
 	public static String OUTSIDER_BREAK;
+	public static Integer OUTSIDER_BREAK_CMD;
 	public static String OUTSIDER_ITEM_USE;
+	public static Integer OUTSIDER_ITEM_USE_CMD;
 	public static String OUTSIDER_SWITCH;
+	public static Integer OUTSIDER_SWITCH_CMD;
 
 	public static String RESET_ALL;
+	public static Integer RESET_ALL_CMD;
 	public static String ALL_ON;
+	public static Integer ALL_ON_CMD;
 
 	public static String TOWN_BALANCE;
+	public static Integer TOWN_BALANCE_CMD;
 	public static String DEPOSIT;
+	public static Integer DEPOSIT_CMD;
 	public static String WITHDRAW;
+	public static Integer WITHDRAW_CMD;
 	public static String SET_TAX;
+	public static Integer SET_TAX_CMD;
 
 	public static String SET_TOWN_SPAWN;
+	public static Integer SET_TOWN_SPAWN_CMD;
 	public static String SET_HOME_BLOCK;
+	public static Integer SET_HOME_BLOCK_CMD;
 	public static String SET_TOWN_BOARD;
+	public static Integer SET_TOWN_BOARD_CMD;
 	public static String SET_TOWN_NAME;
+	public static Integer SET_TOWN_NAME_CMD;
 
 	public static String TOWN_CLAIM_INFO;
+	public static Integer TOWN_CLAIM_INFO_CMD;
 	public static String EXTRA_COMMANDS;
+	public static Integer EXTRA_COMMANDS_CMD;
 
 	public static String PLOT_TOGGLE_MENU;
+	public static Integer PLOT_TOGGLE_MENU_CMD;
 	public static String PLOT_PERMISSIONS_MENU;
+	public static Integer PLOT_PERMISSIONS_MENU_CMD;
 	public static String PLOT_ADMIN_MENU;
+	public static Integer PLOT_ADMIN_MENU_CMD;
 	public static String PLOT_FRIEND_MENU;
+	public static Integer PLOT_FRIEND_MENU_CMD;
 
 	public static String PLOT_TOGGLE_FIRE;
+	public static Integer PLOT_TOGGLE_FIRE_CMD;
 	public static String PLOT_TOGGLE_MOBS;
+	public static Integer PLOT_TOGGLE_MOBS_CMD;
 	public static String PLOT_TOGGLE_EXPLOSIONS;
+	public static Integer PLOT_TOGGLE_EXPLOSIONS_CMD;
 	public static String PLOT_TOGGLE_PVP;
+	public static Integer PLOT_TOGGLE_PVP_CMD;
 
 	public static String PLOT_BUILD;
+	public static Integer PLOT_BUILD_CMD;
 	public static String PLOT_BREAK;
+	public static Integer PLOT_BREAK_CMD;
 	public static String PLOT_ITEM_USE;
+	public static Integer PLOT_ITEM_USE_CMD;
 	public static String PLOT_SWITCH;
+	public static Integer PLOT_SWITCH_CMD;
 
 	public static String PLOT_RESIDENT_BUILD;
+	public static Integer PLOT_RESIDENT_BUILD_CMD;
 	public static String PLOT_RESIDENT_BREAK;
+	public static Integer PLOT_RESIDENT_BREAK_CMD;
 	public static String PLOT_RESIDENT_ITEM_USE;
+	public static Integer PLOT_RESIDENT_ITEM_USE_CMD;
 	public static String PLOT_RESIDENT_SWITCH;
+	public static Integer PLOT_RESIDENT_SWITCH_CMD;
 
 	public static String PLOT_NATION_BUILD;
+	public static Integer PLOT_NATION_BUILD_CMD;
 	public static String PLOT_NATION_BREAK;
+	public static Integer PLOT_NATION_BREAK_CMD;
 	public static String PLOT_NATION_ITEM_USE;
+	public static Integer PLOT_NATION_ITEM_USE_CMD;
 	public static String PLOT_NATION_SWITCH;
+	public static Integer PLOT_NATION_SWITCH_CMD;
 
 	public static String PLOT_ALLY_BUILD;
+	public static Integer PLOT_ALLY_BUILD_CMD;
 	public static String PLOT_ALLY_BREAK;
+	public static Integer PLOT_ALLY_BREAK_CMD;
 	public static String PLOT_ALLY_ITEM_USE;
+	public static Integer PLOT_ALLY_ITEM_USE_CMD;
 	public static String PLOT_ALLY_SWITCH;
+	public static Integer PLOT_ALLY_SWITCH_CMD;
 
 	public static String PLOT_OUTSIDER_BUILD;
+	public static Integer PLOT_OUTSIDER_BUILD_CMD;
 	public static String PLOT_OUTSIDER_BREAK;
+	public static Integer PLOT_OUTSIDER_BREAK_CMD;
 	public static String PLOT_OUTSIDER_ITEM_USE;
+	public static Integer PLOT_OUTSIDER_ITEM_USE_CMD;
 	public static String PLOT_OUTSIDER_SWITCH;
+	public static Integer PLOT_OUTSIDER_SWITCH_CMD;
 
 	public static String PLOT_RESET_ALL;
+	public static Integer PLOT_RESET_ALL_CMD;
 	public static String PLOT_ALL_ON;
+	public static Integer PLOT_ALL_ON_CMD;
 
 	public static String PLOT_ADMIN_FOR_SALE;
+	public static Integer PLOT_ADMIN_FOR_SALE_CMD;
 	public static String PLOT_ADMIN_NOT_FOR_SALE;
+	public static Integer PLOT_ADMIN_NOT_FOR_SALE_CMD;
 	public static String PLOT_ADMIN_SET_PLOT_TYPE;
+	public static Integer PLOT_ADMIN_SET_PLOT_TYPE_CMD;
 	public static String PLOT_ADMIN_EVICT_RES;
+	public static Integer PLOT_ADMIN_EVICT_RES_CMD;
 
 	private static void init() {
 		setPathPrefix(null);
@@ -183,169 +306,292 @@ public final class Settings extends SimpleSettings {
 		MONEY_SYMBOL = getString("Money_Symbol");
 		ECONOMY_ENABLED = getBoolean("Economy");
 		LOCALE = getString("Locale");
-		BACK_BUTTON = getMaterial("Back_Button");
+		BACK_BUTTON = getMaterial("Back_Button.Item");
 
 		CHUNK_VIEW = getMaterial("Chunk_View");
 		CHUNK_VIEW_PARTICLE = getString("Chunk_View_Particle");
 
-		FILLER_JOIN_TOWN_MENU = getMaterial("Filler_Join_Town_Menu");
+		FILLER_JOIN_NATION_MENU = getMaterial("Filler_Join_Nation_Menu.Item");
+		FILLER_JOIN_NATION_MENU_CMD = getInteger("Filler_Join_Nation_Menu.CustomModelData", 0);
+		FILLER_NATION_TOGGLE = getMaterial("Filler_Nation_Toggle.Item");
+		FILLER_NATION_TOGGLE_CMD = getInteger("Filler_Nation_Toggle.CustomModelData", 0);
 
-		FILLER_TOWN_MENU = getMaterial("Filler_Town_Menu");
-		FILLER_TOWN_TOGGLE = getMaterial("Filler_Town_Toggle");
-		FILLER_TOWN_PERMS_MENU = getMaterial("Filler_Town_Perms_Menu");
-		FILLER_TOWN_ECONOMY_MENU = getMaterial("Filler_Economy_Menu");
-		FILLER_TOWN_GENERAL_SETTINGS_MENU = getMaterial("Filler_Town_General_Settings_Menu");
-		FILLER_TOWN_EXTRA_INFO_MENU = getMaterial("Filler_Extra_Info_Menu");
+		FILLER_NATION_EXTRA_INFO_MENU = getMaterial("Filler_Nation_Extra_Info_Menu.Item");
+		FILLER_NATION_EXTRA_INFO_MENU_CMD = getInteger("Filler_Nation_Extra_Info_Menu.CustomModelData", 0);
 
-		FILLER_PLOT_MENU = getMaterial("Filler_Plot_Menu");
-		FILLER_PLOT_TOGGLE_MENU = getMaterial("Filler_Plot_Toggle_Menu");
-		FILLER_PLOT_PERMS_MENU = getMaterial("Filler_Plot_Perms_Menu");
-		FILLER_PLOT_ADMIN_MENU = getMaterial("Filler_Plot_Admin_Menu");
+		FILLER_JOIN_TOWN_MENU = getMaterial("Filler_Join_Town_Menu.Item");
+		FILLER_JOIN_TOWN_MENU_CMD = getInteger("Filler_Join_Town_Menu.CustomModelData", 0);
 
-		FILLER_JOIN_NATION_MENU = getMaterial("Filler_Join_Nation_Menu");
+		FILLER_TOWN_MENU = getMaterial("Filler_Town_Menu.Item");
+		FILLER_TOWN_MENU_CMD = getInteger("Filler_Town_Menu.CustomModelData", 0);
+		FILLER_TOWN_TOGGLE = getMaterial("Filler_Town_Toggle.Item");
+		FILLER_TOWN_TOGGLE_CMD = getInteger("Filler_Town_Toggle.CustomModelData", 0);
+		FILLER_TOWN_PERMS_MENU = getMaterial("Filler_Town_Perms_Menu.Item");
+		FILLER_TOWN_PERMS_MENU_CMD = getInteger("Filler_Town_Perms_Menu.CustomModelData", 0);
+		FILLER_TOWN_ECONOMY_MENU = getMaterial("Filler_Economy_Menu.Item");
+		FILLER_TOWN_ECONOMY_MENU_CMD = getInteger("Filler_Economy_Menu.CustomModelData", 0);
+		FILLER_TOWN_GENERAL_SETTINGS_MENU = getMaterial("Filler_Town_General_Settings_Menu.Item");
+		FILLER_TOWN_GENERAL_SETTINGS_MENU_CMD = getInteger("Filler_Town_General_Settings_Menu.CustomModelData", 0);
+		FILLER_TOWN_EXTRA_INFO_MENU = getMaterial("Filler_Extra_Info_Menu.Item");
+		FILLER_TOWN_EXTRA_INFO_MENU_CMD = getInteger("Filler_Extra_Info_Menu.CustomModelData", 0);
 
-		FIND_NATION_BUTTON = getString("Find_Nation_Button");
-		CREATE_NATION_BUTTON = getString("Create_Nation_Button");
+		FILLER_PLOT_MENU = getMaterial("Filler_Plot_Menu.Item");
+		FILLER_PLOT_MENU_CMD = getInteger("Filler_Plot_Menu.CustomModelData", 0);
+		FILLER_PLOT_TOGGLE_MENU = getMaterial("Filler_Plot_Toggle_Menu.Item");
+		FILLER_PLOT_TOGGLE_MENU_CMD = getInteger("Filler_Plot_Toggle_Menu.CustomModelData", 0);
+		FILLER_PLOT_PERMS_MENU = getMaterial("Filler_Plot_Perms_Menu.Item");
+		FILLER_PLOT_PERMS_MENU_CMD = getInteger("Filler_Plot_Perms_Menu.CustomModelData", 0);
+		FILLER_PLOT_ADMIN_MENU = getMaterial("Filler_Plot_Admin_Menu.Item");
+		FILLER_PLOT_ADMIN_MENU_CMD = getInteger("Filler_Plot_Admin_Menu.CustomModelData", 0);
 
-		NATION_TOGGLE_MENU = getString("Nation_Toggle");
-		NATION_TOWN_LIST = getString("Nation_Town_List");
-		NATION_RESIDENT_MENU = getString("Nation_Resident_Menu");
-		NATION_ECONOMY_MENU = getString("Nation_Economy_Menu");
-		NATION_SETTINGS_MENU = getString("Nation_Settings_Menu");
-		NATION_INVITE_TOWN_MENU = getString("Nation_Invite_Town");
-		NATION_EXTRA_INFO = getString("Nation_Extra_Info");
+		FIND_NATION_BUTTON = getString("Find_Nation_Button.Item");
+		CREATE_NATION_BUTTON = getString("Create_Nation_Button.Item");
 
-		NATION_SET_SPAWN = getString("Nation_Set_Spawn");
+		NATION_TOGGLE_MENU = getString("Nation_Toggle.Item");
+		NATION_TOGGLE_MENU_CMD = getInteger("Nation_Toggle.CustomModelData", 0);
+		NATION_TOWN_LIST = getString("Nation_Town_List.Item");
+		NATION_TOWN_LIST_CMD = getInteger("Nation_Town_List.CustomModelData", 0);
+		NATION_RESIDENT_MENU = getString("Nation_Resident_Menu.Item");
+		NATION_RESIDENT_MENU_CMD = getInteger("Nation_Resident_Menu.CustomModelData", 0);
+		NATION_ECONOMY_MENU = getString("Nation_Economy_Menu.Item");
+		NATION_ECONOMY_MENU_CMD = getInteger("Nation_Economy_Menu.CustomModelData", 0);
+		NATION_SETTINGS_MENU = getString("Nation_Settings_Menu.Item");
+		NATION_SETTINGS_MENU_CMD = getInteger("Nation_Settings_Menu.CustomModelData", 0);
+		NATION_INVITE_TOWN_MENU = getString("Nation_Invite_Town.Item");
+		NATION_INVITE_TOWN_MENU_CMD = getInteger("Nation_Invite_Town.CustomModelData", 0);
+		NATION_EXTRA_INFO = getString("Nation_Extra_Info.Item");
+		NATION_EXTRA_INFO_CMD = getInteger("Nation_Extra_Info.CustomModelData", 0);
 
-		NATION_EXTRA_COMMANDS_1 = getString("Nation_Extra_Commands_1");
-		NATION_EXTRA_COMMANDS_2 = getString("Nation_Extra_Commands_2");
+		NATION_BALANCE = getString("Nation_Balance.Item");
+		NATION_BALANCE_CMD = getInteger("Nation_Balance.CustomModelData", 0);
+		NATION_DEPOSIT = getString("Nation_Deposit.Item");
+		NATION_DEPOSIT_CMD = getInteger("Nation_Deposit.CustomModelData", 0);
+		NATION_WITHDRAW = getString("Nation_Withdraw.Item");
+		NATION_WITHDRAW_CMD = getInteger("Nation_Withdraw.CustomModelData", 0);
+		NATION_SET_TAX = getString("Nation_Set_Tax.Item");
+		NATION_SET_TAX_CMD = getInteger("Nation_Set_Tax.CustomModelData", 0);
 
-		NATION_BALANCE = getString("Nation_Balance");
-		NATION_DEPOSIT = getString("Nation_Deposit");
-		NATION_WITHDRAW = getString("Nation_Withdraw");
-		NATION_SET_TAX = getString("Nation_Set_Tax");
+		NATION_TOWN_KICK = getString("Nation_Town_Kick.Item");
+		NATION_TOWN_KICK_CMD = getInteger("Nation_Town_Kick.CustomModelData", 0);
 
-		NATION_TOWN_KICK = getString("Nation_Town_Kick");
+		NATION_RESIDENT_RANK = getString("Nation_Resident_Rank.Item");
+		NATION_RESIDENT_RANK_CMD = getInteger("Nation_Resident_Rank.CustomModelData", 0);
+		NATION_SET_KING = getString("Nation_Set_King.Item");
+		NATION_SET_KING_CMD = getInteger("Nation_Set_King.CustomModelData", 0);
 
-		NATION_RESIDENT_RANK = getString("Resident_Rank");
-		NATION_SET_KING = getString("Resident_Mayor");
+		NATION_TOGGLE_PUBLIC = getString("Nation_Toggle_Public.Item");
+		NATION_TOGGLE_PUBLIC_CMD = getInteger("Nation_Toggle_Public.CustomModelData", 0);
+		NATION_TOGGLE_OPEN = getString("Nation_Toggle_Open.Item");
+		NATION_TOGGLE_OPEN_CMD = getInteger("Nation_Toggle_Open.CustomModelData", 0);
+		NATION_TOGGLE_TAX_PERCENTAGE = getString("Nation_Toggle_Tax_Percentage.Item");
+		NATION_TOGGLE_TAX_PERCENTAGE_CMD = getInteger("Nation_Toggle_Tax_Percentage.CustomModelData", 0);
 
-		NATION_TOGGLE_PUBLIC = getString("Nation_Toggle_Public");
-		NATION_TOGGLE_OPEN = getString("Nation_Toggle_Open");
-		NATION_TOGGLE_TAX_PERCENTAGE = getString("Nation_Toggle_Tax_Percentage");
+		SET_NATION_SPAWN = getString("Set_Nation_Spawn.Item");
+		SET_NATION_SPAWN_CMD = getInteger("Set_Nation_Spawn.CustomModelData", 0);
+		SET_NATION_BOARD = getString("Set_Nation_Board.Item");
+		SET_NATION_BOARD_CMD = getInteger("Set_Nation_Board.CustomModelData", 0);
+		SET_NATION_NAME = getString("Set_Nation_Name.Item");
+		SET_NATION_NAME_CMD = getInteger("Set_Nation_Name.CustomModelData", 0);
 
-		SET_NATION_SPAWN = getString("Set_Nation_Spawn");
-		SET_NATION_BOARD = getString("Set_Nation_Board");
-		SET_NATION_NAME = getString("Set_Nation_Name");
+		NATION_EXTRA_COMMANDS_1 = getString("Nation_Extra_Commands_1.Item");
+		NATION_EXTRA_COMMANDS_1_CMD = getInteger("Nation_Extra_Commands_1.CustomModelData", 0);
+		NATION_EXTRA_COMMANDS_2 = getString("Nation_Extra_Commands_2.Item");
+		NATION_EXTRA_COMMANDS_2_CMD = getInteger("Nation_Extra_Commands_2.CustomModelData", 0);
 
 		FIND_TOWN = getString("Find_Town");
 		CREATE_TOWN = getString("Create_Town");
 
-		TOGGLE_MENU = getString("Toggle_Menu");
-		RESIDENT_LIST = getString("Resident_List");
-		PERMISSIONS_MENU = getString("Permissions_Menu");
-		ECONOMY_MENU = getString("Economy_Menu");
-		PLOT_MENU = getString("Plot_Menu");
-		SETTINGS_MENU = getString("Settings_Menu");
-		INVITE_MENU = getString("Invite_Menu");
-		EXTRA_INFO = getString("Extra_Info");
-		TOWN_INFO_BUTTON = getString("Town_Info_Icon");
+		TOGGLE_MENU = getString("Toggle_Menu.Item");
+		TOGGLE_MENU_CMD = getInteger("Toggle_Menu.CustomModelData", 0);
+		RESIDENT_LIST = getString("Resident_List.Item");
+		RESIDENT_LIST_CMD = getInteger("Resident_List.CustomModelData", 0);
+		PERMISSIONS_MENU = getString("Permissions_Menu.Item");
+		PERMISSIONS_MENU_CMD = getInteger("Permissions_Menu.CustomModelData", 0);
+		ECONOMY_MENU = getString("Economy_Menu.Item");
+		ECONOMY_MENU_CMD = getInteger("Economy_Menu.CustomModelData", 0);
+		PLOT_MENU = getString("Plot_Menu.Item");
+		PLOT_MENU_CMD = getInteger("Plot_Menu.CustomModelData", 0);
+		SETTINGS_MENU = getString("Settings_Menu.Item");
+		SETTINGS_MENU_CMD = getInteger("Settings_Menu.CustomModelData", 0);
+		INVITE_MENU = getString("Invite_Menu.Item");
+		INVITE_MENU_CMD = getInteger("Invite_Menu.CustomModelData", 0);
+		EXTRA_INFO = getString("Extra_Info.Item");
+		EXTRA_INFO_CMD = getInteger("Extra_Info.CustomModelData", 0);
+		TOWN_INFO_BUTTON = getString("Town_Info_Icon.Item");
+		TOWN_INFO_BUTTON_CMD = getInteger("Town_Info_Icon.CustomModelData", 0);
 
-		TOGGLE_FIRE = getString("Toggle_Fire");
-		TOGGLE_MOBS = getString("Toggle_Mobs");
-		TOGGLE_EXPLOSIONS = getString("Toggle_Explosions");
-		TOGGLE_PVP = getString("Toggle_PVP");
-		TOGGLE_PUBLIC = getString("Toggle_Public");
-		TOGGLE_OPEN = getString("Toggle_Open");
-		TOGGLE_TAX_PERCENTAGE = getString("Toggle_Tax_Percentage");
+		TOGGLE_FIRE = getString("Toggle_Fire.Item");
+		TOGGLE_FIRE_CMD = getInteger("Toggle_Fire.CustomModelData", 0);
+		TOGGLE_MOBS = getString("Toggle_Mobs.Item");
+		TOGGLE_MOBS_CMD = getInteger("Toggle_Fire.CustomModelData", 0);
+		TOGGLE_EXPLOSIONS = getString("Toggle_Explosions.Item");
+		TOGGLE_EXPLOSIONS_CMD = getInteger("Toggle_Explosions.CustomModelData", 0);
+		TOGGLE_PVP = getString("Toggle_PVP.Item");
+		TOGGLE_PVP_CMD = getInteger("Toggle_PVP.CustomModelData", 0);
+		TOGGLE_PUBLIC = getString("Toggle_Public.Item");
+		TOGGLE_PUBLIC_CMD = getInteger("Toggle_Public.CustomModelData", 0);
+		TOGGLE_OPEN = getString("Toggle_Open.Item");
+		TOGGLE_OPEN_CMD = getInteger("Toggle_Open.CustomModelData", 0);
+		TOGGLE_TAX_PERCENTAGE = getString("Toggle_Tax_Percentage.Item");
+		TOGGLE_TAX_PERCENTAGE_CMD = getInteger("Toggle_Tax_Percentage.CustomModelData", 0);
 
-		RESIDENT_KICK = getString("Resident_Kick");
-		RESIDENT_TITLE = getString("Resident_Title");
-		RESIDENT_RANK = getString("Resident_Rank");
-		RESIDENT_MAYOR = getString("Resident_Mayor");
+		RESIDENT_KICK = getString("Resident_Kick.Item");
+		RESIDENT_KICK_CMD = getInteger("Resident_Kick.CustomModelData", 0);
+		RESIDENT_TITLE = getString("Resident_Title.Item");
+		RESIDENT_TITLE_CMD = getInteger("Resident_Title.CustomModelData", 0);
+		RESIDENT_RANK = getString("Resident_Rank.Item");
+		RESIDENT_RANK_CMD = getInteger("Resident_Rank.CustomModelData", 0);
+		RESIDENT_MAYOR = getString("Resident_Mayor.Item");
+		RESIDENT_MAYOR_CMD = getInteger("Resident_Mayor.CustomModelData", 0);
 
-		BUILD = getString("Build");
-		BREAK = getString("Break");
-		ITEM_USE = getString("Item_Use");
-		SWITCH = getString("Switch");
+		BUILD = getString("Build.Item");
+		BUILD_CMD = getInteger("Build.CustomModelData", 0);
+		BREAK = getString("Break.Item");
+		BREAK_CMD = getInteger("Break.CustomModelData", 0);
+		ITEM_USE = getString("Item_Use.Item");
+		ITEM_USE_CMD = getInteger("Item_Use.CustomModelData", 0);
+		SWITCH = getString("Switch.Item");
+		SWITCH_CMD = getInteger("Switch.CustomModelData", 0);
 
-		RESIDENT_BUILD = getString("Resident_Build");
-		RESIDENT_BREAK = getString("Resident_Break");
-		RESIDENT_ITEM_USE = getString("Resident_Item_Use");
-		RESIDENT_SWITCH = getString("Resident_Switch");
+		RESIDENT_BUILD = getString("Resident_Build.Item");
+		RESIDENT_BUILD_CMD = getInteger("Resident_Build.CustomModelData", 0);
+		RESIDENT_BREAK = getString("Resident_Break.Item");
+		RESIDENT_BREAK_CMD = getInteger("Resident_Break.CustomModelData", 0);
+		RESIDENT_ITEM_USE = getString("Resident_Item_Use.Item");
+		RESIDENT_ITEM_USE_CMD = getInteger("Resident_Item_Use.CustomModelData", 0);
+		RESIDENT_SWITCH = getString("Resident_Switch.Item");
+		RESIDENT_SWITCH_CMD = getInteger("Resident_Switch.CustomModelData", 0);
 
-		NATION_BUILD = getString("Nation_Build");
-		NATION_BREAK = getString("Nation_Break");
-		NATION_ITEM_USE = getString("Nation_Item_Use");
-		NATION_SWITCH = getString("Nation_Switch");
+		NATION_BUILD = getString("Nation_Build.Item");
+		NATION_BUILD_CMD = getInteger("Nation_Build.CustomModelData", 0);
+		NATION_BREAK = getString("Nation_Break.Item");
+		NATION_BREAK_CMD = getInteger("Nation_Break.CustomModelData", 0);
+		NATION_ITEM_USE = getString("Nation_Item_Use.Item");
+		NATION_ITEM_USE_CMD = getInteger("Nation_Item_Use.CustomModelData", 0);
+		NATION_SWITCH = getString("Nation_Switch.Item");
+		NATION_SWITCH_CMD = getInteger("Nation_Switch.CustomModelData", 0);
 
-		ALLY_BUILD = getString("Ally_Build");
-		ALLY_BREAK = getString("Ally_Break");
-		ALLY_ITEM_USE = getString("Ally_Item_Use");
-		ALLY_SWITCH = getString("Ally_Switch");
+		ALLY_BUILD = getString("Ally_Build.Item");
+		ALLY_BUILD_CMD = getInteger("Ally_Build.CustomModelData", 0);
+		ALLY_BREAK = getString("Ally_Break.Item");
+		ALLY_BREAK_CMD = getInteger("Ally_Break.CustomModelData", 0);
+		ALLY_ITEM_USE = getString("Ally_Item_Use.Item");
+		ALLY_ITEM_USE_CMD = getInteger("Ally_Item_Use.CustomModelData", 0);
+		ALLY_SWITCH = getString("Ally_Switch.Item");
+		ALLY_SWITCH_CMD = getInteger("Ally_Switch.CustomModelData", 0);
 
-		OUTSIDER_BUILD = getString("Outsider_Build");
-		OUTSIDER_BREAK = getString("Outsider_Break");
-		OUTSIDER_ITEM_USE = getString("Outsider_Item_Use");
-		OUTSIDER_SWITCH = getString("Outsider_Switch");
+		OUTSIDER_BUILD = getString("Outsider_Build.Item");
+		OUTSIDER_BUILD_CMD = getInteger("Outsider_Build.CustomModelData", 0);
+		OUTSIDER_BREAK = getString("Outsider_Break.Item");
+		OUTSIDER_BREAK_CMD = getInteger("Outsider_Break.CustomModelData", 0);
+		OUTSIDER_ITEM_USE = getString("Outsider_Item_Use.Item");
+		OUTSIDER_ITEM_USE_CMD = getInteger("Outsider_Item_Use.CustomModelData", 0);
+		OUTSIDER_SWITCH = getString("Outsider_Switch.Item");
+		OUTSIDER_SWITCH_CMD = getInteger("Outsider_Switch.CustomModelData", 0);
 
-		RESET_ALL = getString("Reset_All");
-		ALL_ON = getString("All_On");
+		RESET_ALL = getString("Reset_All.Item");
+		RESET_ALL_CMD = getInteger("Reset_All.CustomModelData", 0);
+		ALL_ON = getString("All_On.Item");
+		ALL_ON_CMD = getInteger("All_On.CustomModelData", 0);
 
-		TOWN_BALANCE = getString("Town_Balance");
-		DEPOSIT = getString("Deposit");
-		WITHDRAW = getString("Withdraw");
-		SET_TAX = getString("Set_Tax");
+		TOWN_BALANCE = getString("Town_Balance.Item");
+		TOWN_BALANCE_CMD = getInteger("Town_Balance.CustomModelData", 0);
+		DEPOSIT = getString("Deposit.Item");
+		DEPOSIT_CMD = getInteger("Deposit.CustomModelData", 0);
+		WITHDRAW = getString("Withdraw.Item");
+		WITHDRAW_CMD = getInteger("Withdraw.CustomModelData", 0);
+		SET_TAX = getString("Set_Tax.Item");
+		SET_TAX_CMD = getInteger("Set_Tax.CustomModelData", 0);
 
-		SET_TOWN_SPAWN = getString("Set_Town_Spawn");
-		SET_HOME_BLOCK = getString("Set_Home_Block");
-		SET_TOWN_BOARD = getString("Set_Town_Board");
-		SET_TOWN_NAME = getString("Set_Town_Name");
+		SET_TOWN_SPAWN = getString("Set_Town_Spawn.Item");
+		SET_TOWN_SPAWN_CMD = getInteger("Set_Town_Spawn.CustomModelData", 0);
+		SET_HOME_BLOCK = getString("Set_Home_Block.Item");
+		SET_HOME_BLOCK_CMD = getInteger("Set_Home_Block.CustomModelData", 0);
+		SET_TOWN_BOARD = getString("Set_Town_Board.Item");
+		SET_TOWN_BOARD_CMD = getInteger("Set_Town_Board.CustomModelData", 0);
+		SET_TOWN_NAME = getString("Set_Town_Name.Item");
+		SET_TOWN_NAME_CMD = getInteger("Set_Town_Name.CustomModelData", 0);
 
-		TOWN_CLAIM_INFO = getString("Town_Claim_Info");
-		EXTRA_COMMANDS = getString("Extra_Commands");
+		TOWN_CLAIM_INFO = getString("Town_Claim_Info.Item");
+		TOWN_CLAIM_INFO_CMD = getInteger("Town_Claim_Info.CustomModelData", 0);
+		EXTRA_COMMANDS = getString("Extra_Commands.Item");
+		EXTRA_COMMANDS_CMD = getInteger("Extra_Commands.CustomModelData", 0);
 
-		PLOT_TOGGLE_MENU = getString("Plot_Toggle_Menu");
-		PLOT_PERMISSIONS_MENU = getString("Plot_Permissions_Menu");
-		PLOT_ADMIN_MENU = getString("Plot_Admin_Menu");
-		PLOT_FRIEND_MENU = getString("Plot_Friend_Menu");
+		PLOT_TOGGLE_MENU = getString("Plot_Toggle_Menu.Item");
+		PLOT_TOGGLE_MENU_CMD = getInteger("Plot_Toggle_Menu.CustomModelData", 0);
+		PLOT_PERMISSIONS_MENU = getString("Plot_Permissions_Menu.Item");
+		PLOT_PERMISSIONS_MENU_CMD = getInteger("Plot_Permissions_Menu.CustomModelData", 0);
+		PLOT_ADMIN_MENU = getString("Plot_Admin_Menu.Item");
+		PLOT_ADMIN_MENU_CMD = getInteger("Plot_Admin_Menu.CustomModelData", 0);
+		PLOT_FRIEND_MENU = getString("Plot_Friend_Menu.Item");
+		PLOT_FRIEND_MENU_CMD = getInteger("Plot_Friend_Menu.CustomModelData", 0);
 
-		PLOT_TOGGLE_FIRE = getString("Plot_Toggle_Fire");
-		PLOT_TOGGLE_MOBS = getString("Plot_Toggle_Mobs");
-		PLOT_TOGGLE_EXPLOSIONS = getString("Plot_Toggle_Explosions");
-		PLOT_TOGGLE_PVP = getString("Plot_Toggle_PVP");
+		PLOT_TOGGLE_FIRE = getString("Plot_Toggle_Fire.Item");
+		PLOT_TOGGLE_FIRE_CMD = getInteger("Plot_Toggle_Fire.CustomModelData", 0);
+		PLOT_TOGGLE_MOBS = getString("Plot_Toggle_Mobs.Item");
+		PLOT_TOGGLE_MOBS_CMD = getInteger("Plot_Toggle_Mobs.CustomModelData", 0);
+		PLOT_TOGGLE_EXPLOSIONS = getString("Plot_Toggle_Explosions.Item");
+		PLOT_TOGGLE_EXPLOSIONS_CMD = getInteger("Plot_Toggle_Explosions.CustomModelData", 0);
+		PLOT_TOGGLE_PVP = getString("Plot_Toggle_PVP.Item");
+		PLOT_TOGGLE_PVP_CMD = getInteger("Plot_Toggle_PVP.CustomModelData", 0);
 
-		PLOT_BUILD = getString("Plot_Build");
-		PLOT_BREAK = getString("Plot_Break");
-		PLOT_ITEM_USE = getString("Plot_Item_Use");
-		PLOT_SWITCH = getString("Plot_Switch");
+		PLOT_BUILD = getString("Plot_Build.Item");
+		PLOT_BUILD_CMD = getInteger("Plot_Build.CustomModelData", 0);
+		PLOT_BREAK = getString("Plot_Break.Item");
+		PLOT_BREAK_CMD = getInteger("Plot_Break.CustomModelData", 0);
+		PLOT_ITEM_USE = getString("Plot_Item_Use.Item");
+		PLOT_ITEM_USE_CMD = getInteger("Plot_Item_Use.CustomModelData", 0);
+		PLOT_SWITCH = getString("Plot_Switch.Item");
+		PLOT_SWITCH_CMD = getInteger("Plot_Switch.CustomModelData", 0);
 
-		PLOT_RESIDENT_BUILD = getString("Plot_Resident_Build");
-		PLOT_RESIDENT_BREAK = getString("Plot_Resident_Break");
-		PLOT_RESIDENT_ITEM_USE = getString("Plot_Resident_Item_Use");
-		PLOT_RESIDENT_SWITCH = getString("Plot_Resident_Switch");
+		PLOT_RESIDENT_BUILD = getString("Plot_Resident_Build.Item");
+		PLOT_RESIDENT_BUILD_CMD = getInteger("Plot_Resident_Build.CustomModelData", 0);
+		PLOT_RESIDENT_BREAK = getString("Plot_Resident_Break.Item");
+		PLOT_RESIDENT_BREAK_CMD = getInteger("Plot_Resident_Break.CustomModelData", 0);
+		PLOT_RESIDENT_ITEM_USE = getString("Plot_Resident_Item_Use.Item");
+		PLOT_RESIDENT_ITEM_USE_CMD = getInteger("Plot_Resident_Item_Use.CustomModelData", 0);
+		PLOT_RESIDENT_SWITCH = getString("Plot_Resident_Switch.Item");
+		PLOT_RESIDENT_SWITCH_CMD = getInteger("Plot_Resident_Switch.CustomModelData", 0);
 
-		PLOT_NATION_BUILD = getString("Plot_Nation_Build");
-		PLOT_NATION_BREAK = getString("Plot_Nation_Break");
-		PLOT_NATION_ITEM_USE = getString("Plot_Nation_Item_Use");
-		PLOT_NATION_SWITCH = getString("Plot_Nation_Switch");
+		PLOT_NATION_BUILD = getString("Plot_Nation_Build.Item");
+		PLOT_NATION_BUILD_CMD = getInteger("Plot_Nation_Build.CustomModelData", 0);
+		PLOT_NATION_BREAK = getString("Plot_Nation_Break.Item");
+		PLOT_NATION_BREAK_CMD = getInteger("Plot_Nation_Break.CustomModelData", 0);
+		PLOT_NATION_ITEM_USE = getString("Plot_Nation_Item_Use.Item");
+		PLOT_NATION_ITEM_USE_CMD = getInteger("Plot_Nation_Item_Use.CustomModelData", 0);
+		PLOT_NATION_SWITCH = getString("Plot_Nation_Switch.Item");
+		PLOT_NATION_SWITCH_CMD = getInteger("Plot_Nation_Switch.CustomModelData", 0);
 
-		PLOT_ALLY_BUILD = getString("Plot_Ally_Build");
-		PLOT_ALLY_BREAK = getString("Plot_Ally_Break");
-		PLOT_ALLY_ITEM_USE = getString("Plot_Ally_Item_Use");
-		PLOT_ALLY_SWITCH = getString("Plot_Ally_Switch");
+		PLOT_ALLY_BUILD = getString("Plot_Ally_Build.Item");
+		PLOT_ALLY_BUILD_CMD = getInteger("Plot_Ally_Build.CustomModelData", 0);
+		PLOT_ALLY_BREAK = getString("Plot_Ally_Break.Item");
+		PLOT_ALLY_BREAK_CMD = getInteger("Plot_Ally_Break.CustomModelData", 0);
+		PLOT_ALLY_ITEM_USE = getString("Plot_Ally_Item_Use.Item");
+		PLOT_ALLY_ITEM_USE_CMD = getInteger("Plot_Ally_Item_Use.CustomModelData", 0);
+		PLOT_ALLY_SWITCH = getString("Plot_Ally_Switch.Item");
+		PLOT_ALLY_SWITCH_CMD = getInteger("Plot_Ally_Switch.CustomModelData", 0);
 
-		PLOT_OUTSIDER_BUILD = getString("Plot_Outsider_Build");
-		PLOT_OUTSIDER_BREAK = getString("Plot_Outsider_Break");
-		PLOT_OUTSIDER_ITEM_USE = getString("Plot_Outsider_Item_Use");
-		PLOT_OUTSIDER_SWITCH = getString("Plot_Outsider_Switch");
+		PLOT_OUTSIDER_BUILD = getString("Plot_Outsider_Build.Item");
+		PLOT_OUTSIDER_BUILD_CMD = getInteger("Plot_Outsider_Build.CustomModelData", 0);
+		PLOT_OUTSIDER_BREAK = getString("Plot_Outsider_Break.Item");
+		PLOT_OUTSIDER_BREAK_CMD = getInteger("Plot_Outsider_Break.CustomModelData", 0);
+		PLOT_OUTSIDER_ITEM_USE = getString("Plot_Outsider_Item_Use.Item");
+		PLOT_OUTSIDER_ITEM_USE_CMD = getInteger("Plot_Outsider_Item_Use.CustomModelData", 0);
+		PLOT_OUTSIDER_SWITCH = getString("Plot_Outsider_Switch.Item");
+		PLOT_OUTSIDER_SWITCH_CMD = getInteger("Plot_Outsider_Switch.CustomModelData", 0);
 
-		PLOT_RESET_ALL = getString("Plot_Reset_All");
-		PLOT_ALL_ON = getString("Plot_All_On");
+		PLOT_RESET_ALL = getString("Plot_Reset_All.Item");
+		PLOT_RESET_ALL_CMD = getInteger("Plot_Reset_All.CustomModelData", 0);
+		PLOT_ALL_ON = getString("Plot_All_On.Item");
+		PLOT_ALL_ON_CMD = getInteger("Plot_All_On.CustomModelData", 0);
 
-		PLOT_ADMIN_FOR_SALE = getString("Plot_Admin_For_Sale");
-		PLOT_ADMIN_NOT_FOR_SALE = getString("Plot_Admin_Not_For_Sale");
-		PLOT_ADMIN_SET_PLOT_TYPE = getString("Plot_Admin_Set_Plot_Type");
-		PLOT_ADMIN_EVICT_RES = getString("Plot_Admin_Evict_Res");
+		PLOT_ADMIN_FOR_SALE = getString("Plot_Admin_For_Sale.Item");
+		PLOT_ADMIN_FOR_SALE_CMD = getInteger("Plot_Admin_For_Sale.CustomModelData", 0);
+		PLOT_ADMIN_NOT_FOR_SALE = getString("Plot_Admin_Not_For_Sale.Item");
+		PLOT_ADMIN_NOT_FOR_SALE_CMD = getInteger("Plot_Admin_Not_For_Sale.CustomModelData", 0);
+		PLOT_ADMIN_SET_PLOT_TYPE = getString("Plot_Admin_Set_Plot_Type.Item");
+		PLOT_ADMIN_SET_PLOT_TYPE_CMD = getInteger("Plot_Admin_Set_Plot_Type.CustomModelData", 0);
+		PLOT_ADMIN_EVICT_RES = getString("Plot_Admin_Evict_Res.Item");
+		PLOT_ADMIN_EVICT_RES_CMD = getInteger("Plot_Admin_Evict_Res.CustomModelData", 0);
 	}
 }

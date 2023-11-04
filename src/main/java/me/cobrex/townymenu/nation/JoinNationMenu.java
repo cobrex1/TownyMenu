@@ -31,7 +31,8 @@ public class JoinNationMenu extends Menu {
 	private final Button openNationButton;
 	private final Button createNationButton;
 
-	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "").make();
+	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "")
+			.modelData(Integer.valueOf(Settings.FILLER_JOIN_NATION_MENU_CMD)).make();
 
 	public JoinNationMenu(Resident resident, Player player) {
 

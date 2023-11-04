@@ -30,7 +30,8 @@ public class JoinTownMenu extends Menu {
 	private final Button openTownButton;
 	private final Button createTownButton;
 
-	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_TOWN_MENU)), "").make();
+	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_TOWN_MENU)), "")
+			.modelData(Integer.valueOf(Settings.FILLER_JOIN_TOWN_MENU_CMD)).make();
 
 	public JoinTownMenu(Resident resident, Player player) {
 
@@ -63,7 +64,7 @@ public class JoinTownMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.TOWN_NAME));
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.TOWN_NAME + (item.getName())));
 //			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
 			skull.setOwningPlayer(player);
