@@ -285,6 +285,14 @@ public class TownMenu extends Menu {
 
 			setSize(9 * 2);
 
+//			ButtonReturnBack.setItemStack(ItemCreator
+//					.of(CompMaterial.APPLE)
+//					.name("Return Back")
+//					.lore("", "Click to return back")
+//					.modelData(5)
+//					.make());
+
+
 			setTitle(Localization.TownMenu.ToggleMenu.MENU_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 			ButtonReturnBack.setTitle(Localization.Back_Button.BACK_BUTTON_TITLE);
@@ -647,7 +655,7 @@ public class TownMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BUILD)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION)
+							.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION)
 							.modelData(Integer.valueOf(Settings.NATION_BUILD_CMD))
 							.lore("")
 							.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
@@ -825,7 +833,7 @@ public class TownMenu extends Menu {
 							.name(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER)
 							.modelData(Integer.valueOf(Settings.OUTSIDER_ITEM_USE_CMD))
 							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
 				}
 			};
 
