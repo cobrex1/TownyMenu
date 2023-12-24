@@ -405,8 +405,8 @@ public class PlotMenu extends Menu {
 				@Override
 				public ItemStack getItem() {
 					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_ALLY_BUILD)))
-							.name(Localization.PlotMenu.PlayerPermissionsMenu.BREAK_ALLY)
-							.modelData(Integer.valueOf(Settings.PLOT_ALLY_BREAK_CMD))
+							.name(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_ALLY)
+							.modelData(Integer.valueOf(Settings.PLOT_ALLY_BUILD_CMD))
 							.lore("")
 							.lore(Localization.PlotMenu.PlayerPermissionsMenu.BUILD_ALLY2)
 							.lore("" + (townBlock.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.PlotMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.PlotMenu.PlayerPermissionsMenu.FALSE_MSG), "", Localization.PlotMenu.PlayerPermissionsMenu.CHANGE).make();
