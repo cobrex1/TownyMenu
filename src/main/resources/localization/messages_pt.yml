@@ -1,25 +1,20 @@
-# !-----------------------------------------------------------------------------------------------!
-#                              Welcome to the TownyMenu Localization file.
-# !-----------------------------------------------------------------------------------------------!
-#
-#   COLOR CODES are supported with the '&' character.
-#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
-#   - When you use them, place quotes around the message like this: "&a&lBack"
-#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
-# !-----------------------------------------------------------------------------------------------!
-
+#!-----------------------------------------------------------------------------------------------!
+#Welcome to the TownyMenu Localization file.
+#!-----------------------------------------------------------------------------------------------!
+#COLOR CODES are supported with the '&' character.
+#- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#- When you use them, place quotes around the message like this: "&a&lBack"
+#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#!-----------------------------------------------------------------------------------------------!
 Confirm: "confirmar"
 Cancel: "cancelar"
 Menu_Information: "Menu de informações"
 Reloaded: "Configurações recarregadas!"
-
 Back_Button:
   Back_Button_Title: "&a&lVoltar"
   Back_Button_Lore:
     - ""
     - "menu anterior."
-
 Join_Create_Menu:
   Main_Menu_Title: "Entrar ou criar uma cidade"
   Find_Open_Town: "Encontrar uma cidade aberta"
@@ -30,7 +25,6 @@ Join_Create_Menu:
   Mayor: "&fPrefeito: "
   Number_Residents: "&fNúmero de cidadões: "
   Create_Own_Town: "&aDigite o nome da sua cidade, ou &cdigite cancel."
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lEntrar ou criar uma nação"
   Find_Nation_Button: "&4Clique para encontrar uma nação aberta"
@@ -41,7 +35,6 @@ Join_Create_Nation_Menu:
   King: "&fRei: "
   Number_of_Towns: "&fNúmero de cidades: "
   Create_Own_Nation: "&aDigite o nome de sua nação ou &cdigite cancel."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lMenu da Nação"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Comandos extra úteis para"
     - "líderes da nação"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lMenu de configurações da nação"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Define a mensagem do quadro"
     - "da sua nação."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lMenú de la ciudad de la nación"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "Clique para expulsar o ciudad"
     - "de sua nación"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenú Económico de la Nación"
   Balance: "&2&lSaldo de la nación"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lDefinir valor de taxa"
   Tax_Percentage: "Define a porcentagem da taxa"
   Tax_Amount: "Definir quantidade de taxa"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&lNación Alternar menú de configuración"
   Info:
@@ -150,11 +139,9 @@ Nation_Toggle_Menu:
   Public: "&9&lAlternar nación pública"
   Open: "&3&lToggle nación aberta"
   Tax_Percent: "&2&lAPorcentagem de taxa de la nación"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lMenú de la ciudad de invitación de la nación"
   Invite: "Clique para convidar o jogador para a la nación"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lMenú residente de la nación"
   Info:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "el Rey."
     - ""
     - "&4&lIrreversible"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lOtros comandos útiles"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lMenu da cidade"
   Toggle_Menu_Button: "&3&lConfigurações"
@@ -446,7 +431,6 @@ Extra_Info_Menu:
     - "&a/t say &7- envia uma mensagem para a cidade"
     - "&a/t towny prices &7- muestra los precios de la ciudad / costos"
     - "&a/t set mapcolor [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Menu de plot"
   Toggle_Settings_Menu_Button: "&3&lMenu de ajuste de configurações"
@@ -588,7 +572,6 @@ Plot_Admin_Menu:
     - ""
     - "Despejar o cidadão"
     - "desta plot"
-
 Nation_Conversables:
   Board:
     Prompt: "&3Escreva uma mensagem para o quadro de la nación: "
@@ -624,7 +607,6 @@ Nation_Conversables:
     Prompt: "&3Digite a quantidade que deseja retirar do banco da nación: &c(Digite cancel para salir de aviso)"
     Invalid: "&cPor favor digite apenas números inteiros. Tenha certeza de o banco tenha a quantidade para retirar."
     Response: "&3Quantidade &b{money_symbol}{input} &3dretirada com sucesso de la nacional."
-
 Town_Conversables:
   Board:
     Prompt: "&3Escreva uma mensagem para o quadro da cidade: "
@@ -680,7 +662,6 @@ Plot_Conversables:
     Prompt: "&Qual tipo de plot deseja definir? &b(Opções: {options}) Digite 'cancel' para cancelar"
     Invalid: "&cPor favor defina um tipo válido. (Tipos válidos: {options}) ou digite 'cancel' para cancelar"
     Response: "&3Plot definida com sucesso para: &b{input}"
-
 Error:
   No_Permission: "&cVocê não tem permissão para executar este comando."
   No_Town: "&cVocê não possui uma cidade."
@@ -695,10 +676,8 @@ Error:
   Cannot_Set_Spawn: "&cImpossível definir o spawn aqui."
   Cannot_Change_Name: "&cVocê precisa ser o prefeito para mudar o nome da cidade."
   Cannot_Change_Board: "&cVocê precisa ser o prefeito para alterar o quadro da cidade."
-
 Chunk_View:
   Toggle_Remove: "Blocos do quadro a mostra. Agache para remover."
   Removed: "Blocos do quadro removidos."
-
-# DO NOT TOUCH VERSION
+#DO NOT TOUCH VERSION
 Version: 2
