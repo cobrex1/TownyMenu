@@ -21,6 +21,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.profile.PlayerProfile;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.TimeUtil;
 import org.mineacademy.fo.debug.LagCatcher;
@@ -39,7 +40,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class TownMenu extends Menu {
-
+	
 	// TODO set up discord, spigot
 
 	private final Button toggleMenuButton;
@@ -65,6 +66,7 @@ public class TownMenu extends Menu {
 			Resident res = TownyAPI.getInstance().getResident(onLinePlayer.getName());
 			if (res != null && (!res.hasTown())) allOnlineResidents.add(res);
 		}
+		LagCatcher.end("loaded-residents-online", true);
 
 		setSize(9 * 3);
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
@@ -488,13 +490,22 @@ public class TownMenu extends Menu {
 
 		@Override
 		protected ItemStack convertToItemStack(Resident item) {
+
+//			LagCatcher.start("load-player-skulls");
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', item.getFormattedName()));
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
-			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
-			skull.setOwningPlayer(player);
+//			skull.setOwningPlayer(item.getPlayer());
+			PlayerProfile profile = Bukkit.createPlayerProfile(String.valueOf(item));
+			skull.setOwnerProfile(profile);
+//			LagCatcher.start("load-offline-player-skulls");
+//			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
+//			if (player != null)
+//				return DUMMY_BUTTON;
+//			skull.setOwningPlayer(player);
+//			LagCatcher.end("load-offline-player-skulls", true);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.TOWN_RANK +
@@ -504,6 +515,8 @@ public class TownMenu extends Menu {
 					TimeUtil.getFormattedDateShort(item.getLastOnline())));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
+
+//			LagCatcher.end("load-player-skulls", true);
 			return itemSkull;
 		}
 

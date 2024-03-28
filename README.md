@@ -25,6 +25,11 @@ townymenu.plot.admin - permission to manage any plot in any town
 chunkview.view - Permission to use the chunkview command  
 chunkviewparticle.view - Permission to use the chunkviewparticle command
 
+# Translations
+
+If you'd like to help translating TownyMenu into the available languages or add entirely new languages just me
+on [crowdin](https://crowdin.com/project/townymenu)
+
 # Support
 
 https://discord.gg/Sgc6hy9CCS - Support discord

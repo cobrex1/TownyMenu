@@ -2,6 +2,7 @@ package me.cobrex.townymenu;
 
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
+import lombok.SneakyThrows;
 import me.cobrex.townymenu.bstats.Metrics;
 import me.cobrex.townymenu.chunkview.ChunkviewParticleCommand;
 import me.cobrex.townymenu.nation.NationMenuCommand;
@@ -37,10 +38,11 @@ public class TownyMenuPlugin extends SimplePlugin {
 	protected void onPluginStart() {
 	}
 
+	@SneakyThrows
 	@Override
 	protected void onReloadablesStart() {
 		Valid.checkBoolean(HookManager.isPlaceholderAPILoaded(), "You need to install PlaceholderAPI to the server, if you want to support placeholders.");
-		
+
 		instance = this;
 		Common.log("Enabling Towny Menu maintained by Cobrex");
 		Common.log("for Towny");

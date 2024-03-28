@@ -18,8 +18,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.profile.PlayerProfile;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.TimeUtil;
+import org.mineacademy.fo.debug.LagCatcher;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
@@ -467,6 +469,7 @@ public class NationMenu extends Menu {
 		@SneakyThrows
 		@Override
 		protected ItemStack convertToItemStack(Resident item) {
+//			LagCatcher.start("load-nation-players");
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
@@ -474,17 +477,21 @@ public class NationMenu extends Menu {
 //			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
-			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
-			skull.setOwningPlayer(player);
+			PlayerProfile profile = Bukkit.createPlayerProfile(String.valueOf(item));
+			skull.setOwnerProfile(profile);
+//			LagCatcher.start("load-offline-nation-players");
+//			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
+//			skull.setOwningPlayer(player);
+//			LagCatcher.end("load-offline-nation-players", true);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.TOWN + item.getTown()));
-//			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.TOWN + item.getTown());
 			lore.add("");
-			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline())));
-//			lore.add(ChatColor.GRAY + Localization.NationMenu.NationResidentMenu.ONLINE + TimeUtil.getFormattedDateShort(item.getLastOnline()));
+			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.ONLINE +
+					TimeUtil.getFormattedDateShort(item.getLastOnline())));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
+			LagCatcher.end("loaded-nation-players", true);
 			return itemSkull;
 		}
 
