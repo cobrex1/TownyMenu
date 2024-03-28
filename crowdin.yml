@@ -1,3 +1,3 @@
 files:
-  - source: src/main/resources/localization/messages_en.yml
-    translation: src/main/resources/localization/messages_%two_letters_code%.yml
+  - source: /src/main/resources/localization/messages_en.yml
+    translation: /src/main/resources/localization/messages_%two_letters_code%.yml
