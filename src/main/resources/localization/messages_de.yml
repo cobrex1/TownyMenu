@@ -1,25 +1,20 @@
-# !-----------------------------------------------------------------------------------------------!
-#                              Welcome to the TownyMenu Localization file.
-# !-----------------------------------------------------------------------------------------------!
-#
-#   COLOR CODES are supported with the '&' character.
-#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
-#   - When you use them, place quotes around the message like this: "&a&lBack"
-#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
-# !-----------------------------------------------------------------------------------------------!
-
+#!-----------------------------------------------------------------------------------------------!
+#Welcome to the TownyMenu Localization file.
+#!-----------------------------------------------------------------------------------------------!
+#COLOR CODES are supported with the '&' character.
+#- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#- When you use them, place quotes around the message like this: "&a&lBack"
+#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#!-----------------------------------------------------------------------------------------------!
 Confirm: "bestätigen"
 Cancel: "abbrechen"
 Menu_Information: "Menü Info"
 Reloaded: "Einstellungen neu geladen!"
-
 Back_Button:
   Back_Button_Title: "&a&lZurück"
   Back_Button_Lore:
     - ""
     - "Vorheriges Menü."
-
 Join_Create_Menu:
   Main_Menu_Title: "Stadt beitreten oder erstellen"
   Find_Open_Town: "Finde eine offene Stadt"
@@ -30,18 +25,16 @@ Join_Create_Menu:
   Mayor: "&fBürgermeister: "
   Number_Residents: "&fAnzahl der Bewohner: "
   Create_Own_Town: "&aSchreiben Sie den Namen Ihrer Stadt oder schreiben Sie &cabbrechen&a um abzubrechen."
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lTretten Sie einer Nation bei oder gründe eine"
   Find_Nation_Button: "&4Klicken Sie hier, um eine offene Nation zu finden"
   Click_Create_Nation_Button: "&4Klicken Sie hier, um Ihre Nation zu erstellen"
   Join_Open_Nation: "&aTretten Sie einer offenen Nation bei"
-  Nation_Name: "&e "
   #this is just setting the color
+  Nation_Name: "&e "
   King: "&fKönig: "
   Number_of_Towns: "&fAnzahl der Städte: "
   Create_Own_Nation: "&aGeben Sie den Namen Ihrer Nation ein oder geben Sie &cabbrechen ein um abzubrechen."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lNation Menü"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Extra nützliche Befehle für"
     - "Staatsoberhäupter"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lNation Einstellungsmenü"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Stellen Sie das Nationennachrichtenbrett ein"
     - "Ihrer Nation."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lNation Stadt Menü"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "Klicken Sie, um die Stadt aus Ihrer Nation"
     - "zu entfernen"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lEconomy Menü"
   Balance: "&2&lAktuelle Nation Balance"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lSteuerbetrag festlegen"
   Tax_Percentage: "Steuerprozentsatz festlegen"
   Tax_Amount: "Steuerbetrag festlegen"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&lNation Toggle Einstellungsmenü"
   Info:
@@ -150,19 +139,17 @@ Nation_Toggle_Menu:
   Public: "&9&lNation Öffentlich umschalten"
   Open: "&3&lUmschalten Nation öffnen"
   Tax_Percent: "&2&lToggle Nation Tax Percent"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lNation laden Stadtmenü ein"
   Invite: "Klicken Sie hier, um die Stadt zur Nation einzuladen"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lNation Resident Menü"
   Info:
     - "Klicken Sie auf einen Bewohner"
     - "um diesen zu verwalten!"
-  Online: "Zuletzt Online: "
   #this is just setting the color
   Res_Name: "&e&l"
+  Online: "Zuletzt Online: "
   Town_Name: "&6Stadt: "
   Nation_Rank: "&3&lStellen Sie den Bewohner-Rang ein"
   Nation_Rank_Lore:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "zum König."
     - ""
     - "&4&lkann nicht rückgängig gemacht werden!"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lAndere nützliche Befehle"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lStadt Menü"
   Toggle_Menu_Button: "&3&lUmschaltfunktionen Menü"
@@ -223,8 +208,9 @@ Town_Menu:
     - "Stadteinstellungen ändern."
   Invite_Player_Menu_Button: "&d&lSpieler einladen Menü"
   Invite_Player_Menu_Button_Lore:
-    - "Laden Sie einen Online-Spieler"
+    - ""
     - "in Ihre Stadt ein."
+    - "to your town."
   Extra_Info_Menu_Button: "&e&lZusätzliche Towny Infos"
   Extra_Info_Menu_Button_Lore:
     - ""
@@ -298,10 +284,9 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lBerechtigungsmenü"
   Info:
-    - ""
+    - "Set permissions for"
     - "Legen Sie Berechtigungen für"
     - "verschiedene Gruppen"
-    - "in Ihrer Stadt fest."
   True_Msg: "&aWahr"
   False_Msg: "&cFalsch"
   Change: "&eKlicken, um zu ändern!"
@@ -320,11 +305,13 @@ Player_Permission_Menu:
     - ""
     - "Wer hat die Erlaubnis,"
     - "in Ihrer Stadt zu bauen."
+    - "your town."
   Break: "&c&lAbbauen"
   Break_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
     - "in Ihrer Stadt abzubauen."
+    - "your town."
   Use: "&6&lGegenstände verwenden"
   Use_Lore:
     - ""
@@ -433,6 +420,7 @@ Extra_Info_Menu:
     - "Stadtgrenze möglich."
     - "Verwenden Sie &aF3+G &7um Chunkgrenzen und"
     - "&a/towny map &7um beanspruchtes Land anzuzeigen."
+    - "&a/towny map &7to see claimed land."
   Commands: "&2&lExtra Befehle"
   Commands_Lore:
     - ""
@@ -443,7 +431,6 @@ Extra_Info_Menu:
     - "&a/town say &7- Übertrage eine Stadtnachricht"
     - "&a/town towny prices &7- zeigt Stadtpreise / Kosten"
     - "&a/town set mapcolor [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Grundstückverwaltungsmenü"
   Toggle_Settings_Menu_Button: "&3&lGrundstück Umschaltbare Einstellungen"
@@ -507,25 +494,29 @@ Plot_Player_Permission_Menu:
     - ""
     - "Wer hat die Erlaubnis,"
     - "in deinem Plot zu bauen."
+    - "your plot."
   Break: "&c&lAbbauen"
   Break_Lore:
     - ""
     - "Wer hat die Erlaubnis"
     - "in deinem Plot zu bauen."
+    - "your plot."
   Use: "&6&lGegenstände verwenden"
   Use_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
     - "Gegenstände auf deinem Grundstück zu verwenden."
+    - "your plot."
     - ""
-    - "z.B. Wasser aus Kessel nehmen."
+    - "E.g. take water from cauldron"
   Switch: "&2&lSchalter"
   Switch_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
     - "Schalter in deiner Stadt zu verwenden."
+    - "your plot."
     - ""
-    - "z.B. Hebel oder Tür verwenden."
+    - "E.g. use a lever or door"
   Build_Res: "&6&lErlaubnis von Bewohnern/Freunden zu bauen"
   Build_Res2: "Können Bewohner/Freunde bauen: "
   Build_Nation: "&6&lErlaubnis der Stadteinwohner/Nation zu bauen"
@@ -581,7 +572,6 @@ Plot_Admin_Menu:
     - ""
     - "Wirft den Bewohner"
     - "dieses Grundstücks raus."
-
 Nation_Conversables:
   Board:
     Prompt: "&3Geben Sie eine Nachricht für den Vorstand Ihrer Nation ein: "
@@ -617,7 +607,6 @@ Nation_Conversables:
     Prompt: "&3Geben Sie den Betrag ein, den Sie von Ihrer Landesbank abheben möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
     Invalid: "&cGeben Sie Abbrechen ein, um Bitte geben Sie nur ganze Zahlen ein und vergewissern Sie sich, dass Sie genug Geld zum Abheben haben. Verlassen Sie die Eingabeaufforderung"
     Response: "&3Zurückgezogen &b{money_symbol}{input} &3von Ihrem Nation-Konto."
-
 Town_Conversables:
   Board:
     Prompt: "&3Schreibe eine Nachricht für das Schwarze Brett deiner Stadt: "
@@ -673,8 +662,6 @@ Plot_Conversables:
     Prompt: "&3Welchen Grundstücktyp möchten Sie für dieses Grundstück festlegen? &b(Optionen: {options}) Geben Sie abbrechen ein um abzubrechen"
     Invalid: "&cBitte geben Sie einen gültigen Grundstücktyp ein. (Gültige Grundstücktyp: {options}) oder geben Sie abbrechen ein um abzubrechen"
     Response: "&3Grundstücktyp geändert zu: &b{input}"
-
-
 Error:
   No_Permission: "&cDir fehlen die Berechtigungen, um diesen Befehl ausführen zu können."
   No_Town: "&cDu bist in keiner Stadt."
@@ -689,11 +676,8 @@ Error:
   Cannot_Set_Spawn: "&cDer Startpunkt der Stadt kann hier nicht gesetzt werden."
   Cannot_Change_Name: "&cDu musst Bürgermeister sein, um den Namen der Stadt zu ändern."
   Cannot_Change_Board: "&cDu musst Bürgermeister sein, um das Schwarze Brett zu ändern."
-
 Chunk_View:
   Toggle_Remove: "Grenzblöcke werden jetzt angezeigt. Schalten Sie zum Entfernen auf Schleichen um."
   Removed: "Grenzsperren entfernt."
-
-
-# DO NOT TOUCH VERSION
+#DO NOT TOUCH VERSION
 Version: 2
