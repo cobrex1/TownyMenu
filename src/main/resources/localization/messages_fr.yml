@@ -625,27 +625,27 @@ Town_Conversables:
   Name:
     Prompt: "&3Tapez le nom que vous souhaitez donner à votre ville : (sous les caractères {max_length} ) &bNom actuel : {town} &cTapez cancel pour quitter."
     Invalid: "&cLe nom doit être unique et inférieur à {max_length} caractères."
-    Response: "&3Successfully set town name to {input}"
-    Return: "&cNot enough money in town bank to change town name."
+    Response: "&3Le nom de la ville a été défini avec succès à {input}"
+    Return: "&cPas assez d'argent dans la banque de ville pour changer le nom de la ville."
   Rank:
-    Remove: "remove"
-    Prompt: "&3Type in the rank you would like to give to &b{player} &3now: &b(Options: {ranks}) &3Type &ccancel &3to cancel or &cremove &3to remove their rank."
-    Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
-    Response: "&aSuccessfully set {player}'s &arank to {input}"
-    Removed_All: "&cRemoved all ranks from resident {player}"
+    Remove: "supprimer"
+    Prompt: "&3Tapez le rang que vous souhaitez donner à &b{player} &3maintenant : &b(Options : {ranks}) &3Tapez &cannuler &3pour annuler ou &csupprimer &3pour supprimer son rang."
+    Invalid: "&cCe joueur a déjà ce rang ou le rang n existe pas. (Options : {ranks}) &cTapez &c&lannuler &cpour annuler ou &csupprimer pour supprimer ses rangs."
+    Response: "&aLe rank de {player} a été mis à {input} avec succès"
+    Removed_All: "&cTous les rangs du résident {player} ont été supprimés"
   Tax:
-    Prompt: "&3Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)"
-    Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
-    Invalid_Amount: "&cPlease enter a whole number between 0 and {max_amount} for your tax amount."
-    Response_Percent: "&3Tax percent set to &b{input}"
-    Response_Amount: "&3Tax amount set to &b{money_symbol}{input}"
+    Prompt: "&3Tapez le montant que vous souhaitez déposer dans votre ville : &c(Tapez annuler pour quitter la saisie)"
+    Invalid_Percent: "&cVeuillez entrer uniquement un nombre entier entre 0 et {max_percent} pour votre pourcentage de taxe."
+    Invalid_Amount: "&cVeuillez entrer un nombre entier entre 0 et {max_amount} pour le montant de votre taxe."
+    Response_Percent: "&3Pourcentage de taxe défini sur &b{input}"
+    Response_Amount: "&3Montant de la taxe défini sur &b{money_symbol}{input}"
   Title:
-    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
-    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
+    Prompt: "&3Tapez le titre que vous souhaitez donner à &b{player} &3now : (moins de 10 caractères) &cTapez Annuler pour quitter."
+    Response: "&aRang de la nation de {player} défini avec succès sur {input}"
   Withdraw:
-    Prompt: "&3Type in the amount you would like to withdraw from your town: &c(Type cancel to exit prompt)"
-    Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
-    Response: "&3Withdrew &b{money_symbol}{input} &3from your town account."
+    Prompt: "&3Tapez le montant que vous souhaitez retirer de la banque de votre ville : &c(Tapez annuler pour quitter la saisie)"
+    Invalid: "&cVeuillez entrer uniquement des nombres entiers et assurez-vous d avoir suffisamment d argent à retirer."
+    Response: "&3Retiré &b{money_symbol}{input} &3du compte de votre ville."
 Plot_Conversables:
   Evict:
     Prompt: "&cSouhaitez-vous expulser le résident de cette parcelle ? Tapez &aconfirmer &cou annuler :"
@@ -677,7 +677,7 @@ Error:
   Cannot_Change_Name: "&cIl faut être maire pour changer le nom de la ville."
   Cannot_Change_Board: "&cIl faut être maire pour changer le tableau de la ville."
 Chunk_View:
-  Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
-  Removed: "Boarder blocks removed."
+  Toggle_Remove: "Les blocs du tableau s'affichent désormais. Bascule vers le haut pour le retirer."
+  Removed: "Blocs de tableau supprimés."
 #DO NOT TOUCH VERSION
 Version: 2
