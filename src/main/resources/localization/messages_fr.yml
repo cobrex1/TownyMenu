@@ -8,7 +8,7 @@
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "confirm"
 Cancel: "annuler"
-Menu_Information: "Menu Info"
+Menu_Information: "Informations sur le menu"
 Reloaded: "Reloadé !"
 Back_Button:
   Back_Button_Title: "&a&lRetour"
@@ -162,7 +162,7 @@ Nation_Resident_Menu:
     - "Définir le membres comme"
     - "le nouveau Président."
     - ""
-    - "&4&lIrreversible"
+    - "&4&lIrréversible"
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lAutres commandes utiles"
   Commands_1_Lore:
@@ -233,7 +233,7 @@ Town_Menu:
   Balance_Amount: "&a"
   Mayor: "&2Maire:"
   Mayor_Name: "&a"
-  Nation: "&2Nation:"
+  Nation: "&2Nation :"
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lMenu des paramètres de basculement"
@@ -623,8 +623,8 @@ Town_Conversables:
     Response: "&3"
     Mayor: "&cVous ne pouvez pas exclure le maire de la ville !"
   Name:
-    Prompt: "&3Type in the name you would like to give to your town: (under {max_length} characters) &bCurrent Name: {town} &cType cancel to exit."
-    Invalid: "&cName must be unique and less than {max_length} characters."
+    Prompt: "&3Tapez le nom que vous souhaitez donner à votre ville : (sous les caractères {max_length} ) &bNom actuel : {town} &cTapez cancel pour quitter."
+    Invalid: "&cLe nom doit être unique et inférieur à {max_length} caractères."
     Response: "&3Successfully set town name to {input}"
     Return: "&cNot enough money in town bank to change town name."
   Rank:
