@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class TownMenu extends Menu {
-	
+
 	// TODO set up discord, spigot
 
 	private final Button toggleMenuButton;
@@ -489,45 +489,39 @@ public class TownMenu extends Menu {
 		}
 
 		@Override
-		protected ItemStack convertToItemStack(Resident item) {
+		protected ItemStack convertToItemStack(Resident resident) {
 
 //			LagCatcher.start("load-player-skulls");
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', item.getFormattedName()));
-			if (item.getUUID() == null)
+			if (resident.getUUID() == null)
 				return DUMMY_BUTTON;
 //			skull.setOwningPlayer(item.getPlayer());
-			PlayerProfile profile = Bukkit.createPlayerProfile(String.valueOf(item));
+			PlayerProfile profile = Bukkit.createPlayerProfile(resident.getUUID(), resident.getName());
 			skull.setOwnerProfile(profile);
-//			LagCatcher.start("load-offline-player-skulls");
-//			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
-//			if (player != null)
-//				return DUMMY_BUTTON;
-//			skull.setOwningPlayer(player);
-//			LagCatcher.end("load-offline-player-skulls", true);
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+					Localization.TownMenu.ResidentMenu.RESIDENT_NAME + resident.getFormattedName()));
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.TOWN_RANK +
-					ChatColor.translateAlternateColorCodes('&', StringMgmt.join(item.getTownRanks(), ""))));
+					ChatColor.translateAlternateColorCodes('&', StringMgmt.join(resident.getTownRanks(), ""))));
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.TownMenu.ResidentMenu.ONLINE +
-					TimeUtil.getFormattedDateShort(item.getLastOnline())));
+					TimeUtil.getFormattedDateShort(resident.getLastOnline())));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
-
 //			LagCatcher.end("load-player-skulls", true);
 			return itemSkull;
 		}
 
 		@Override
-		protected void onPageClick(Player player, Resident item, ClickType click) {
-			if (item.getName().equals(player.getName())) {
+		protected void onPageClick(Player player, Resident resident, ClickType click) {
+			if (resident.getName().equals(player.getName())) {
 				Common.tell(player, Localization.Error.CANNOT_SELECT_SELF);
 				player.closeInventory();
 				return;
 			}
-			new ResidentMenu(item).displayTo(player);
+			new ResidentMenu(resident).displayTo(player);
 		}
 	}
 

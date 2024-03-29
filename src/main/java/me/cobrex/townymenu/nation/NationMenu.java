@@ -21,7 +21,6 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.profile.PlayerProfile;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.TimeUtil;
-import org.mineacademy.fo.debug.LagCatcher;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
@@ -472,17 +471,13 @@ public class NationMenu extends Menu {
 //			LagCatcher.start("load-nation-players");
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-					Localization.NationMenu.NationResidentMenu.RES_NAME + item.getFormattedTitleName()));
-//			skull.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + item.getFormattedTitleName());
 			if (item.getUUID() == null)
 				return DUMMY_BUTTON;
-			PlayerProfile profile = Bukkit.createPlayerProfile(String.valueOf(item));
+//			skull.setOwningPlayer(item.getPlayer());
+			PlayerProfile profile = Bukkit.createPlayerProfile(item.getUUID(), item.getName());
 			skull.setOwnerProfile(profile);
-//			LagCatcher.start("load-offline-nation-players");
-//			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
-//			skull.setOwningPlayer(player);
-//			LagCatcher.end("load-offline-nation-players", true);
+			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+					Localization.NationMenu.NationResidentMenu.RES_NAME + item.getFormattedTitleName()));
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationResidentMenu.TOWN + item.getTown()));
@@ -491,7 +486,7 @@ public class NationMenu extends Menu {
 					TimeUtil.getFormattedDateShort(item.getLastOnline())));
 			skull.setLore(lore);
 			itemSkull.setItemMeta(skull);
-			LagCatcher.end("loaded-nation-players", true);
+//			LagCatcher.end("loaded-nation-players", true);
 			return itemSkull;
 		}
 
