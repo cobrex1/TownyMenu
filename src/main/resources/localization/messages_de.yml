@@ -138,7 +138,7 @@ Nation_Toggle_Menu:
   Toggle_On: "&eKlicken Sie hier, um &aeinzuschalten"
   Public: "&9&lNation Öffentlich umschalten"
   Open: "&3&lUmschalten Nation öffnen"
-  Tax_Percent: "&2&lToggle Nation Tax Percent"
+  Tax_Percent: "&2&lNationale Steuer in Prozent"
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lNation laden Stadtmenü ein"
   Invite: "Klicken Sie hier, um die Stadt zur Nation einzuladen"
@@ -175,7 +175,7 @@ Nation_Extra_Info_Menu:
   Commands_2: "&2&lWeitere Befehle"
   Commands_2_Lore:
     - ""
-    - "&a/n enemy [name]"
+    - "&a/n ally [name]"
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
@@ -210,7 +210,7 @@ Town_Menu:
   Invite_Player_Menu_Button_Lore:
     - ""
     - "in Ihre Stadt ein."
-    - "to your town."
+    - "in Ihre Stadt ein."
   Extra_Info_Menu_Button: "&e&lZusätzliche Towny Infos"
   Extra_Info_Menu_Button_Lore:
     - ""
@@ -284,7 +284,7 @@ Resident_Menu:
 Player_Permission_Menu:
   Menu_Title: "&2&lBerechtigungsmenü"
   Info:
-    - "Set permissions for"
+    - "Legen Sie Berechtigungen für"
     - "Legen Sie Berechtigungen für"
     - "verschiedene Gruppen"
   True_Msg: "&aWahr"
@@ -305,7 +305,7 @@ Player_Permission_Menu:
     - ""
     - "Wer hat die Erlaubnis,"
     - "in Ihrer Stadt zu bauen."
-    - "your town."
+    - "in Ihrer Stadt fest."
   Break: "&c&lAbbauen"
   Break_Lore:
     - ""
