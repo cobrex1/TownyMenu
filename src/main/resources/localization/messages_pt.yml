@@ -172,7 +172,7 @@ Nation_Extra_Info_Menu:
     - ""
     - "&a/n ally [name]"
     - "&a/n allylist"
-  Commands_2: "&2&lFurther Extra Commands"
+  Commands_2: "&2&lMais Comandos Extra"
   Commands_2_Lore:
     - ""
     - "&a/n enemy [name]"
