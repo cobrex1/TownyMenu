@@ -204,12 +204,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenú de otras opciones"
   General_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Set Nation Spawn
-    - 
-      - Set Nation Name
-    - 
-      - Set Nation Board
+    - "Définir l'apparition de la nation"
+    - "Définir le nom de la nation"
+    - "Tableau d'affichage Set Nation"
   Invite_Player_Menu_Button: "&d&lMenú de Invitaciones"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -387,14 +384,10 @@ General_Settings_Menu:
   Menu_Title: "&2&lMenu de configuraciones generales"
   Info:
     - ""
-    - 
-      - Set Home Block
-    - 
-      - Set Town Spawn
-    - 
-      - Set Town Name
-    - 
-      - Set Town Board
+    - "Définir le bloc d'accueil"
+    - "Définir l'apparition de la ville"
+    - "Définir le nom de la ville"
+    - "Tableau d'affichage de la ville"
   Set_Home_Block_Msg: "&eSe ha establecido el home block en tu posicion"
   Spawn_Reminder: "&bAsegúrate de volver a configurar tu ciudad de nuevo"
   Set_Home_Block: "&3&lEstablecer Home Block"
@@ -447,14 +440,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lMenu de parcelas opciones"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Fire Spread
-    - 
-      - Monster spawning
-    - 
-      - Explosions
-    - 
-      - PvP
+    - "Propagation du feu"
+    - "Apparition de monstres"
+    - "Explosion"
+    - "PvP"
   Permissions_Menu_Button: "&c&lMenu de parcelas permisos"
   Permissions_Menu_Button_Lore:
     - ""
@@ -464,14 +453,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu de administrador"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - 
-      - Plot for sale
-    - 
-      - Plot not for sale
-    - 
-      - Setting plot type
-    - 
-      - Evict plot owner
+    - "Terrain à vendre"
+    - "Terrain non à vendre"
+    - "Définition du type de tracé"
+    - "Expulser le propriétaire du terrain"
   Friend_Menu_Button: "&aMenu de amigos"
   Friend_Menu_Button_Lore:
     - ""
@@ -486,14 +471,10 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu de parcelas opciones"
   Info:
     - ""
-    - 
-      - Fire Spread
-    - 
-      - Monster spawning
-    - 
-      - Explosions
-    - 
-      - PvP
+    - "Propagation du feu"
+    - "Apparition de monstres"
+    - "Explosion"
+    - "PvP"
   Toggle_Off: "&eClick para &cDesactivar"
   Toggle_On: "&eClick para &aActivar"
   Fire: "&6&lAjustar propagación del fuego"

@@ -204,12 +204,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lAndrere Einstellungen"
   General_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Legen Sie den Nation-Spawn fest
-    - 
-      - Legen Sie den Namen der Nation fest
-    - 
-      - Nation Board festlegen
+    - "Legen Sie den Nation-Spawn fest"
+    - "Legen Sie den Namen der Nation fest"
+    - "Nation Board festlegen"
   Invite_Player_Menu_Button: "&d&lSpieler einladen Menü"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -387,14 +384,10 @@ General_Settings_Menu:
   Menu_Title: "&2&lAndere Einstellungen"
   Info:
     - ""
-    - 
-      - Home-Block festlegen
-    - 
-      - Stadtspawn festlegen
-    - 
-      - Ortsnamen festlegen
-    - 
-      - Stadtrat festlegen
+    - "Home-Block festlegen"
+    - "Stadtspawn festlegen"
+    - "Ortsnamen festlegen"
+    - "Stadtrat festlegen"
   Set_Home_Block_Msg: "&eLegen Sie Ihre aktuelle Position als Stadtzentrum fest!"
   Spawn_Reminder: "&bDenken Sie bitte daran auch den Startpunkt neu festzulegen!"
   Set_Home_Block: "&3&lStadtzentrum setzen"
@@ -447,14 +440,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lGrundstück Umschaltbare Einstellungen"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Brandausbreitung
-    - 
-      - Monster spawnen
-    - 
-      - Explosionen
-    - 
-      - PvP
+    - "Brandausbreitung"
+    - "Monster spawnen"
+    - "Explosionen"
+    - "PvP"
   Permissions_Menu_Button: "&c&lGrundstückBerechtigungsmenü"
   Permissions_Menu_Button_Lore:
     - ""
@@ -464,14 +453,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lGrundstückverwaltungsmenü"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - 
-      - Grundstück zu verkaufen
-    - 
-      - Grundstück nicht zum Verkauf
-    - 
-      - Plottyp festlegen
-    - 
-      - Grundstückseigentümer vertreiben
+    - "Grundstück zu verkaufen"
+    - "Grundstück nicht zum Verkauf"
+    - "Plottyp festlegen"
+    - "Grundstückseigentümer vertreiben"
   Friend_Menu_Button: "&aFreunde Menü"
   Friend_Menu_Button_Lore:
     - ""
@@ -486,14 +471,10 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lGrundstückUmschalten Einstellungsmenü"
   Info:
     - ""
-    - 
-      - Fire Spread
-    - 
-      - Monster spawning
-    - 
-      - Explosions
-    - 
-      - PvP
+    - "Brandausbreitung"
+    - "Monster spawnen"
+    - "Explosionen"
+    - "PvP"
   Toggle_Off: "&eKlicke, um &causzuschalten"
   Toggle_On: "&eKlicke, um &aeinzuschalten"
   Fire: "&6&lFeuerausbreitung umschalten"

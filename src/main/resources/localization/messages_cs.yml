@@ -1,25 +1,20 @@
 # !-----------------------------------------------------------------------------------------------!
 #                              Welcome to the TownyMenu Localization file.
 # !-----------------------------------------------------------------------------------------------!
-#
 #   COLOR CODES are supported with the '&' character.
 #   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #   - When you use them, place quotes around the message like this: "&a&lBack"
 #   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
 # !-----------------------------------------------------------------------------------------------!
-
 Confirm: "potvrdit"
 Cancel: "zrušit"
 Menu_Information: "Informace o nabídce"
 Reloaded: "Nastavení se znovu načetlo!"
-
 Back_Button:
   Back_Button_Title: "&a&lZpět"
   Back_Button_Lore:
     - ""
     - "Předchozí menu."
-
 Join_Create_Menu:
   Main_Menu_Title: "Připojte se k městu nebo ho vytvořte"
   Find_Open_Town: "Najít otevřené město"
@@ -30,7 +25,6 @@ Join_Create_Menu:
   Mayor: "^fStarosta: "
   Number_Residents: "&fPočet obyvatel: "
   Create_Own_Town: "&aNapište název svého města nebo &ctype zrušte akci."
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lPřipojte se nebo vytvořte národ"
   Find_Nation_Button: "&4Klikněte pro vyhledání otevřeného národa"
@@ -41,7 +35,6 @@ Join_Create_Nation_Menu:
   King: "&fKrál: "
   Number_of_Towns: "&fPočet měst: "
   Create_Own_Nation: "&aZadejte název svého národa nebo &ctype zrušte akci."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lMenu národa"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Další užitečné příkazy pro"
     - "Vůdce národa"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lMenu Nastavení národa"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Nastavte národní tabuli"
     - "vašeho národa."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lMenu Správy města v národě"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "Klikněte pro vykopnutí města"
     - "z vašeho národa"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenu Ekonomiky národa"
   Balance: "&2&lAktuální zůstatek národa"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lNastavení výše daně"
   Tax_Percentage: "Nastavte procentuální daň"
   Tax_Amount: "Nastavit výši daně"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&lMenu Nastavení národa"
   Info:
@@ -150,11 +139,9 @@ Nation_Toggle_Menu:
   Public: "&9&lPřepnout národ na Veřejný"
   Open: "&3&lPřepnout národ na Otevřený"
   Tax_Percent: "&2&lZapnout/Vypnout procentuální daň"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lMenu Pozvání města do národa"
   Invite: "Kliknutím pozvete město do národa"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lMenu Obyvatele národa"
   Info:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "Krále."
     - ""
     - "&4&lNelze vrátit!"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lDalší užitečné příkazy"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n seznam nepřátel"
     - ""
     - "&a/n nastavit barvu mapy [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lMenu Města"
   Toggle_Menu_Button: "&3&lPřepnout na Menu nastavení"
@@ -219,9 +204,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu dalších nastavení"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "- Set Nation Spawn"
-    - "- Set Nation Name"
-    - "- Set Nation Board"
+    - "Nastavte bod spawnování národa"
+    - "Nastavte název národa"
+    - "Nastavit Nástěnku národa"
   Invite_Player_Menu_Button: "&d&lMenu Pozvání hráče"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -399,10 +384,10 @@ General_Settings_Menu:
   Menu_Title: "&2&lMenu obecných nastavení"
   Info:
     - ""
-      - "- Set Home Block"
-      - "- Set Town Spawn"
-      - "- Set Town Name"
-      - "- Set Town Board"
+    - "Nastavte domovský blok"
+    - "Nastavte bod spawnování města"
+    - "Nastavte název města"
+    - "Nastavit nástěnku města"
   Set_Home_Block_Msg: "&Nastavit domovský blok na aktuální polohu."
   Spawn_Reminder: "&bUjistěte se, že jste také znovu nastavili spawn města!"
   Set_Home_Block: "&3&lNastavení domovského bloku"
@@ -450,16 +435,15 @@ Extra_Info_Menu:
     - "&a/t say &7- vysílání zprávy ve městě"
     - "&a/t ceny ve městě &7- zobrazuje ceny / náklady ve městě"
     - "&a/t nastavte barvu mapy [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Menu Pozemků"
   Toggle_Settings_Menu_Button: "&3&lMenu Nastavení pozemku"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - "Šíření ohně"
+    - "Monster spawning"
+    - "Tření monster"
+    - "PvP"
   Permissions_Menu_Button: "&c&lMenu Oprávnění pozemku"
   Permissions_Menu_Button_Lore:
     - ""
@@ -469,10 +453,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu Správy pozemku"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "- Plot for sale"
-    - "- Plot not for sale"
-    - "- Setting plot type"
-    - "- Evict plot owner"
+    - "Pozemek na prodej"
+    - "Pozemek není na prodej"
+    - "Nastavení typu plotru"
+    - "Vystěhovat majitele pozemku"
   Friend_Menu_Button: "&aMenu Přátel"
   Friend_Menu_Button_Lore:
     - ""
@@ -487,10 +471,10 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu Nastavení pozemku"
   Info:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - "Šíření ohně"
+    - "Monster spawning"
+    - "Tření monster"
+    - "PvP"
   Toggle_Off: "&eKlikněte pro &cVypnutí"
   Toggle_On: "&eKlikněte pro &aZapnutí"
   Fire: "&6&lPřepnout šíření ohně"
@@ -599,7 +583,6 @@ Plot_Admin_Menu:
     - ""
     - "Vystěhovat obyvatele"
     - "tohoto pozemku"
-
 Nation_Conversables:
   Board:
     Prompt: "&3Zadejte zprávu svého národa: "
@@ -635,7 +618,6 @@ Nation_Conversables:
     Prompt: "&3Type in the amount you would like to withdraw from your nation's bank: &c(Type cancel to exit prompt)"
     Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
     Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
-
 Town_Conversables:
   Board:
     Prompt: "&3Zadejte zprávu vašeho města: "
@@ -691,7 +673,6 @@ Plot_Conversables:
     Prompt: "&3Jaký typ pozemku chcete nastavit? &b(Options: {options}) Zadejte 'cancel' pro zrušení."
     Invalid: "&cProsím, zadejte platný typ pozemku. (Platné typy: {options}) nebo zadejte 'cancel' pro zrušení."
     Response: "&3Typ grafu nastaven na: &b{input}"
-
 Error:
   No_Permission: "&cNemáte oprávnění používat tento příkaz."
   No_Town: "&cNemáte město."
@@ -706,10 +687,8 @@ Error:
   Cannot_Set_Spawn: "&cNení možné zde nastavit spawn města."
   Cannot_Change_Name: "&cMusíte být starostou, abyste mohli změnit název města."
   Cannot_Change_Board: "&cMusíte být starostou, abyste mohli změnit městskou radu."
-
 Chunk_View:
   Toggle_Remove: "Nyní se zobrazují hraniční bloky. Přepněte na plížení pro odstranění."
   Removed: "Odstranění hraničních bloků."
-
 # DO NOT TOUCH VERSION
 Version: 2

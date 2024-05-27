@@ -204,12 +204,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lAutres paramètres"
   General_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Set Nation Spawn
-    - 
-      - Set Nation Name
-    - 
-      - Set Nation Board
+    - "Définir l'apparition de la nation"
+    - "Définir le nom de la nation"
+    - "Tableau d'affichage Set Nation"
   Invite_Player_Menu_Button: "&d&lMenu d invitation aux joueurs"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -387,14 +384,10 @@ General_Settings_Menu:
   Menu_Title: "&2&lMenu des Paramètres Généraux"
   Info:
     - ""
-    - 
-      - Set Home Block
-    - 
-      - Set Town Spawn
-    - 
-      - Set Town Name
-    - 
-      - Set Town Board
+    - "Définir le bloc d'accueil"
+    - "Définir l'apparition de la ville"
+    - "Définir le nom de la ville"
+    - "Tableau d'affichage de la ville"
   Set_Home_Block_Msg: "&eDéfinissez le bloc principal à votre emplacement !"
   Spawn_Reminder: "&bAssurez-vous également de définir à nouveau le spawn de votre ville !"
   Set_Home_Block: "&3&lDéfinir le Bloc Principal"
@@ -447,14 +440,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lBasculer sur le Menu des Paramètres de Parcelle"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - 
-      - Fire Spread
-    - 
-      - Monster spawning
-    - 
-      - Explosions
-    - 
-      - PvP
+    - "Propagation du feu"
+    - "Apparition de monstres"
+    - "Explosion"
+    - "PvP"
   Permissions_Menu_Button: "&c&lMenu des Permissions de Parcelle"
   Permissions_Menu_Button_Lore:
     - ""
@@ -464,14 +453,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu d administration de Parcelle"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - 
-      - Plot for sale
-    - 
-      - Plot not for sale
-    - 
-      - Setting plot type
-    - 
-      - Evict plot owner
+    - "Terrain à vendre"
+    - "Terrain non à vendre"
+    - "Définition du type de tracé"
+    - "Expulser le propriétaire du terrain"
   Friend_Menu_Button: "&aMenu des Amis"
   Friend_Menu_Button_Lore:
     - ""
@@ -486,14 +471,10 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu des Paramètres de Basculement de Parcelle"
   Info:
     - ""
-    - 
-      - Fire Spread
-    - 
-      - Monster spawning
-    - 
-      - Explosions
-    - 
-      - PvP
+    - "Propagation du feu"
+    - "Apparition de monstres"
+    - "Explosion"
+    - "PvP"
   Toggle_Off: "&eCliquez pour désactiver &cOFF"
   Toggle_On: "&eCliquez pour activer &aON"
   Fire: "&6&lActiver/Désactiver la propagation du feu"

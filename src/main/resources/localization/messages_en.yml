@@ -1,25 +1,20 @@
 # !-----------------------------------------------------------------------------------------------!
 #                              Welcome to the TownyMenu Localization file.
 # !-----------------------------------------------------------------------------------------------!
-#
 #   COLOR CODES are supported with the '&' character.
 #   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #   - When you use them, place quotes around the message like this: "&a&lBack"
 #   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
 # !-----------------------------------------------------------------------------------------------!
-
 Confirm: "confirm"
 Cancel: "cancel"
 Menu_Information: "Menu Info"
 Reloaded: "Settings reloaded!"
-
 Back_Button:
   Back_Button_Title: "&a&lBack"
   Back_Button_Lore:
     - ""
     - "Previous menu."
-
 Join_Create_Menu:
   Main_Menu_Title: "Join or Create a Town"
   Find_Open_Town: "Find an open Town"
@@ -30,7 +25,6 @@ Join_Create_Menu:
   Mayor: "&fMayor: "
   Number_Residents: "&fNumber of Residents: "
   Create_Own_Town: "&aType the name of your town or &ctype cancel."
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lJoin or create a Nation"
   Find_Nation_Button: "&4Click to find an open Nation"
@@ -41,7 +35,6 @@ Join_Create_Nation_Menu:
   King: "&fKing: "
   Number_of_Towns: "&fNumber of Towns: "
   Create_Own_Nation: "&aType the name of your nation or &ctype cancel."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lNation Menu"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Extra useful commands for"
     - "Nation leaders"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lNation Settings Menu"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Set the nation board"
     - "of your nation."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lNation Town Menu"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "Click to kick town"
     - "from your nation"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lEconomy Menu"
   Balance: "&2&lCurrent Nation Balance"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lSet Tax Amount"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&lNation Toggle Settings Menu"
   Info:
@@ -150,11 +139,9 @@ Nation_Toggle_Menu:
   Public: "&9&lToggle Nation Public"
   Open: "&3&lToggle Nation Open"
   Tax_Percent: "&2&lToggle Nation Tax Percent"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lNation Invite Town Menu"
   Invite: "Click to invite town to nation"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lNation Resident Menu"
   Info:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "the King."
     - ""
     - "&4&lIrreversible"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lOther useful commands"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lTown Menu"
   Toggle_Menu_Button: "&3&lToggle Settings Menu"
@@ -219,9 +204,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOther Settings Menu"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "- Set Nation Spawn"
-    - "- Set Nation Name"
-    - "- Set Nation Board"
+    - "Set Nation Spawn"
+    - "Set Nation Name"
+    - "Set Nation Board"
   Invite_Player_Menu_Button: "&d&lInvite Player Menu"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -399,10 +384,10 @@ General_Settings_Menu:
   Menu_Title: "&2&lGeneral Settings Menu"
   Info:
     - ""
-    - "- Set Home Block"
-    - "- Set Town Spawn"
-    - "- Set Town Name"
-    - "- Set Town Board"
+    - "Set Home Block"
+    - "Set Town Spawn"
+    - "Set Town Name"
+    - "Set Town Board"
   Set_Home_Block_Msg: "&eSet home block to your location!"
   Spawn_Reminder: "&bMake sure to also set your town spawn again!"
   Set_Home_Block: "&3&lSet Home Block"
@@ -450,16 +435,15 @@ Extra_Info_Menu:
     - "&a/t say &7- broadcast a town message"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Plot Menu"
   Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - "Fire Spread"
+    - "Monster spawning"
+    - "Explosions"
+    - "PvP"
   Permissions_Menu_Button: "&c&lPlot Permission Menu"
   Permissions_Menu_Button_Lore:
     - ""
@@ -469,10 +453,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lPlot Administration Menu"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "- Plot for sale"
-    - "- Plot not for sale"
-    - "- Setting plot type"
-    - "- Evict plot owner"
+    - "Plot for sale"
+    - "Plot not for sale"
+    - "Setting plot type"
+    - "Evict plot owner"
   Friend_Menu_Button: "&aFriend Menu"
   Friend_Menu_Button_Lore:
     - ""
@@ -487,10 +471,10 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lPlot Toggle Settings Menu"
   Info:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - "Fire Spread"
+    - "Monster spawning"
+    - "Explosions"
+    - "PvP"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Fire: "&6&lToggle Firespread"
@@ -599,7 +583,6 @@ Plot_Admin_Menu:
     - ""
     - "Evict the resident"
     - "of this plot"
-
 Nation_Conversables:
   Board:
     Prompt: "&3Type in a message for your nation's board: "
@@ -635,7 +618,6 @@ Nation_Conversables:
     Prompt: "&3Type in the amount you would like to withdraw from your nation's bank: &c(Type cancel to exit prompt)"
     Invalid: "&cPlease enter only whole numbers and make sure you have enough money to withdraw."
     Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
-
 Town_Conversables:
   Board:
     Prompt: "&3Type in a message for your town's board: "
@@ -691,7 +673,6 @@ Plot_Conversables:
     Prompt: "&3What type would you like to set this plot? &b(Options: {options}) Type 'cancel' to cancel"
     Invalid: "&cPlease enter a valid plot type. (Valid types: {options}) or type 'cancel' to cancel"
     Response: "&3Plot type set to: &b{input}"
-
 Error:
   No_Permission: "&cYou do not have the permission to use this command."
   No_Town: "&cYou do not have a town."
@@ -706,10 +687,8 @@ Error:
   Cannot_Set_Spawn: "&cCannot set town spawn here."
   Cannot_Change_Name: "&cMust be mayor to change town name."
   Cannot_Change_Board: "&cMust be mayor to change town board."
-
 Chunk_View:
   Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
   Removed: "Boarder blocks removed."
-
 # DO NOT TOUCH VERSION
 Version: 2
