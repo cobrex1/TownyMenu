@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOutras configurações"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Definir geração de nação"
-    - "Definir nome da nação"
-    - "Definir quadro de avisos da nação"
+    - "Set Town home block"
+    - "Definir geração de cidade"
+    - "Definir nome da cidade"
+    - "Definir quadro de avisos da cidade"
   Invite_Player_Menu_Button: "&d&lMenu de convite"
   Invite_Player_Menu_Button_Lore:
     - ""
