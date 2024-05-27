@@ -1,25 +1,20 @@
-# !-----------------------------------------------------------------------------------------------!
-#                              Welcome to the TownyMenu Localization file.
-# !-----------------------------------------------------------------------------------------------!
-#
-#   COLOR CODES are supported with the '&' character.
-#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
-#   - When you use them, place quotes around the message like this: "&a&lBack"
-#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
-# !-----------------------------------------------------------------------------------------------!
-
+#!-----------------------------------------------------------------------------------------------!
+#Welcome to the TownyMenu Localization file.
+#!-----------------------------------------------------------------------------------------------!
+#COLOR CODES are supported with the '&' character.
+#- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#- When you use them, place quotes around the message like this: "&a&lBack"
+#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#!-----------------------------------------------------------------------------------------------!
 Confirm: "подтверждать"
 Cancel: "отмена"
 Menu_Information: "Меню информации"
 Reloaded: "Настройки перезагружены!"
-
 Back_Button:
   Back_Button_Title: "&a&lНазад"
   Back_Button_Lore:
     - ""
     - "Предыдущее меню."
-
 Join_Create_Menu:
   Main_Menu_Title: "Присоединяйтесь или создайте город"
   Find_Open_Town: "Найти открытый город"
@@ -30,7 +25,6 @@ Join_Create_Menu:
   Mayor: "&fЛорд: "
   Number_Residents: "Кол-во жителей: "
   Create_Own_Town: "&aВведите название вашего города или нажмите &cотмена"
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lПрисоединяйтесь или создайте нация"
   Find_Nation_Button: "&4Найти открытый нацию"
@@ -41,7 +35,6 @@ Join_Create_Nation_Menu:
   King: "&fКороль: "
   Number_of_Towns: "&fКоличество городов: "
   Create_Own_Nation: "&aВведите название вашего нация или нажмите &cотмена."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lМеню управления нация"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Дополнительные полезные команды для"
     - "Лидеры нация"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lнация Меню настроек"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Изменить заголовок"
     - "вашего ация."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lМеню национального города"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "нажмите, чтобы пнуть город"
     - "из твоей нация"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lМеню национальной экономики"
   Balance: "&2&lТекущий национальный баланс"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lУстановить размер налога"
   Tax_Percentage: "Установить налог в процентах"
   Tax_Amount: "Установить сумму налога"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&llМеню переключения настроек нация"
   Info:
@@ -150,11 +139,9 @@ Nation_Toggle_Menu:
   Public: "&9&lTПубличный статус города"
   Open: "&3&lОткрытый статус города"
   Tax_Percent: "&2&lИзменить процент национального налога"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lНация Пригласить Город Меню"
   Invite: "&aНажмите, чтобы пригласить город в страну"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lМеню резидента нация"
   Info:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "король."
     - ""
     - "&4&lНеобратимо"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lДругие полезные команды"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lМеню управления городом"
   Toggle_Menu_Button: "&3&lМеню переключения настроек города"
@@ -219,9 +204,12 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lПрочие настройки"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "- Установить спавн нации"
-    - "- Установить название нации"
-    - "- Установить Совет нации"
+    - 
+      - Установить спавн нации
+    - 
+      - Установить название нации
+    - 
+      - Установить Совет нации
   Invite_Player_Menu_Button: "&d&lМеню приглашения"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -399,10 +387,14 @@ General_Settings_Menu:
   Menu_Title: "&2&lПрочие настройки"
   Info:
     - ""
-    - "- Установка домашнего блока"
-    - "- Установить возрождение города"
-    - "- Установить название города"
-    - "- Установить городской совет"
+    - 
+      - Установка домашнего блока
+    - 
+      - Установить возрождение города
+    - 
+      - Установить название города
+    - 
+      - Установить городской совет
   Set_Home_Block_Msg: "&eВаша позиция установлена как главный участок!"
   Spawn_Reminder: "&bУбедитесь, что вы находитесь внутри города!"
   Set_Home_Block: "&3&lУстановить главный участок"
@@ -435,15 +427,11 @@ Extra_Info_Menu:
     - ""
     - "Вы можете присоединять к своему городу не"
     - "занятые участки из диких земель."
-    - ""
     - "Используйте &a/t claim &7"
-    - ""
+    - "Используйте &a/t claim &7"
+    - "Сумма покупки спишется с баланса вашего города,"
     - "Сумма покупки спишется с баланса вашего города,"
     - "а не с вашего личного. Убедитесь что там достаточно средств."
-    - "Участок должен быть на границе вашего города."
-    - ""
-    - "Используйте &a/resident toggle plotborder"
-    - "для отображения границ участков."
   Commands: "&2&lExtra Commands"
   Commands_Lore:
     - ""
@@ -452,22 +440,21 @@ Extra_Info_Menu:
     - "&a/t say &7- сообщение всем горожанам онлайн"
     - "&a/towny prices &7- просмотр цен"
     - "&a/t set plottax &7- установить сумму налога с участка"
-    - ""
+    - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t outlaw &7- объявить игрока вне закона"
-    - "При убийстве преступника на территории вашего города"
-    - "он отправится в тюрьму, если таковая имеется."
-    - "&a/t outlawlist &7- список преступников"
-    - "&a/t set mapcolor [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Управление участками города"
   Toggle_Settings_Menu_Button: "&3&lНастройки участка"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "- распростронение огня"
-    - "- спавн монстров"
-    - "- разрещение взрывов"
-    - "- разрешение PvP"
+    - 
+      - распростронение огня
+    - 
+      - спавн монстров
+    - 
+      - разрещение взрывов
+    - 
+      - разрешение PvP
   Permissions_Menu_Button: "&c&lМеню прав доступа в участке"
   Permissions_Menu_Button_Lore:
     - ""
@@ -477,10 +464,14 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lУправление участком"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "- выставление на продажу"
-    - "- снятие с продажи"
-    - "- изменеие типа участка"
-    - "- выселение владелца участка"
+    - 
+      - выставление на продажу
+    - 
+      - снятие с продажи
+    - 
+      - изменеие типа участка
+    - 
+      - выселение владелца участка
   Friend_Menu_Button: "&aМеню друзей"
   Friend_Menu_Button_Lore:
     - ""
@@ -495,10 +486,14 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lНастройки участка"
   Info:
     - ""
-    - "- распростронение огня"
-    - "- спавн монстров"
-    - "- разрещение взрывов"
-    - "- разрешение PvP"
+    - 
+      - распростронение огня
+    - 
+      - спавн монстров
+    - 
+      - разрещение взрывов
+    - 
+      - разрешение PvP
   Toggle_Off: "&eНажмите для &cвыключения"
   Toggle_On: "&eНажмите для &aвключения"
   Fire: "&6&lРаспростронение огня"
@@ -508,10 +503,9 @@ Plot_Toggle_Menu:
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lМеню прав доступа"
   Info:
-    - ""
+    - "Set permissions for"
     - "Изменение прав доступа"
     - "для различных групп"
-    - "в этом участке."
   True_Msg: "&aвключено"
   False_Msg: "&cвыключено"
   Change: "&eНажмите для изменения!"
@@ -592,10 +586,7 @@ Plot_Admin_Menu:
     - ""
     - "Выставить на продажу и указать сумму."
     - "Можно использовать через &a/plot fs сумма"
-    - ""
-    - "Вы можете указать цену по умолчанию командой"
-    - "&a/town set plotprice цена,&7 чтобы не указывать каждый раз"
-    - "и использовать /plot fs"
+    - "a specified price"
   Not_For_Sale: "&c&lСнять участок с продажи"
   Not_For_Sale_Lore:
     - ""
@@ -610,9 +601,7 @@ Plot_Admin_Menu:
   Evict_Lore:
     - ""
     - "Делает участок без владельца."
-    - ""
-    - "&cНе выгоняйте владельцев без веской на то причины."
-
+    - "of this plot"
 Nation_Conversables:
   Board:
     Prompt: "&3Введите заголовок вашего нация: "
@@ -648,7 +637,6 @@ Nation_Conversables:
     Prompt: "&3Введите сумму которую вы хотите снять с баланса вашего нация: &c(введите cancel для отмены)"
     Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
     Response: "&3Вы сняли &b{money_symbol}{input} &3с акаунта вашего нация."
-
 Town_Conversables:
   Board:
     Prompt: "&3Введите заголовок вашего города: "
@@ -704,7 +692,6 @@ Plot_Conversables:
     Prompt: "&3What type would you like to set this plot? &b(Options: {options}) Type ''cancel'' to cancel"
     Invalid: "&cPlease enter a valid plot type. (Valid types: {options}) or type ''cancel'' to cancel"
     Response: "&3Plot type set to: &b{input}"
-
 Error:
   No_Permission: "&cУ вас нет права для этого действия."
   No_Town: "&cУ вас нет города или Вы за пределами города."
@@ -719,10 +706,8 @@ Error:
   Cannot_Set_Spawn: "&cНельзя установить спавн города в этом месте."
   Cannot_Change_Name: "&cВы должны быть мэром для изменения названия города."
   Cannot_Change_Board: "&cВы должны быть мэром для изменения заголовка города."
-
 Chunk_View:
   Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
   Removed: "Boarder blocks removed."
-
-# DO NOT TOUCH VERSION
+#DO NOT TOUCH VERSION
 Version: 2
