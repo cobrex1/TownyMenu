@@ -1,25 +1,20 @@
-# !-----------------------------------------------------------------------------------------------!
-#                              Welcome to the TownyMenu Localization file.
-# !-----------------------------------------------------------------------------------------------!
-#
-#   COLOR CODES are supported with the '&' character.
-#   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
-#   - When you use them, place quotes around the message like this: "&a&lBack"
-#   - To use HEX colors, use #123456 syntax: "Hello #123456world."
-#
-# !-----------------------------------------------------------------------------------------------!
-
+#!-----------------------------------------------------------------------------------------------!
+#Welcome to the TownyMenu Localization file.
+#!-----------------------------------------------------------------------------------------------!
+#COLOR CODES are supported with the '&' character.
+#- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#- When you use them, place quotes around the message like this: "&a&lBack"
+#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#!-----------------------------------------------------------------------------------------------!
 Confirm: "xác nhận"
 Cancel: "hủy bỏ"
 Menu_Information: "Thông tin Menu"
 Reloaded: "Cài đặt đã được tải lại!"
-
 Back_Button:
   Back_Button_Title: "&a&lQuay lại"
   Back_Button_Lore:
     - ""
     - "Quay lại menu."
-
 Join_Create_Menu:
   Main_Menu_Title: "Tham gia hoặc tạo một thị trấn"
   Find_Open_Town: "Tìm một thị trấn mở"
@@ -30,7 +25,6 @@ Join_Create_Menu:
   Mayor: "&fThị trưởng: "
   Number_Residents: "&fSố nơi cư trú: "
   Create_Own_Town: "&aNhập tên thị trấn của bạn hoặc &cnhập hủy."
-
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lTham gia hoặc tạo một quốc gia"
   Find_Nation_Button: "&4Nhấp để tìm một Quốc gia mở"
@@ -41,7 +35,6 @@ Join_Create_Nation_Menu:
   King: "&fVua: "
   Number_of_Towns: "&fSố thị trấn: "
   Create_Own_Nation: "&aNhập tên quốc gia của bạn hoặc nhận &ccancel."
-
 Nation_Menu:
   Main_Menu_Title: "&3&lMenu quốc gia"
   Info:
@@ -79,7 +72,6 @@ Nation_Menu:
     - ""
     - "Các lệnh bổ sung hữu ích cho"
     - "lãnh đạo quốc gia"
-
 Nation_Settings_Menu:
   Menu_Title: "&2&lMenu cài đặt quốc gia"
   Info:
@@ -103,7 +95,6 @@ Nation_Settings_Menu:
     - ""
     - "Đặt bảng quốc gia"
     - "của quốc gia của bạn."
-
 Nation_Town_Menu:
   Menu_Title: "&2&lMenu thị trấn quốc gia"
   Info:
@@ -119,7 +110,6 @@ Nation_Town_Menu:
     - ""
     - "Click để đuổi thị trấn"
     - "khỏi quốc gia của bạn"
-
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenu tài chính"
   Balance: "&2&lSố dư quốc gia hiện tại"
@@ -139,7 +129,6 @@ Nation_Economy_Menu:
   Tax: "&c&lĐặt số tiền thuế"
   Tax_Percentage: "Đặt phần trăm thuế"
   Tax_Amount: "Đặt số tiền thuế"
-
 Nation_Toggle_Menu:
   Menu_Title: "&2&lMenu cài đặt chuyển đổi quốc gia"
   Info:
@@ -150,11 +139,9 @@ Nation_Toggle_Menu:
   Public: "&9&lChuyển đổi Quốc gia Công khai"
   Open: "&3&lChuyển đổi quốc gia mở"
   Tax_Percent: "&2&lChuyển đổi phần trăm thuế quốc gia"
-
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lMenu thị trấn mời quốc gia"
   Invite: "&aClick to invite town to nation"
-
 Nation_Resident_Menu:
   Menu_Title: "&2&lMenu cư dân quốc gia"
   Info:
@@ -176,7 +163,6 @@ Nation_Resident_Menu:
     - "làm vua."
     - ""
     - "&4&lkhông thể đảo ngược"
-
 Nation_Extra_Info_Menu:
   Commands_1: "&6&lCác lệnh hữu ích khác"
   Commands_1_Lore:
@@ -193,7 +179,6 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
-
 Town_Menu:
   Main_Menu_Title: "&2&lMenu Thị trấn"
   Toggle_Menu_Button: "&3&lChuyển đổi Menu Cài đặt"
@@ -219,9 +204,12 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu Cài đặt khác"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "- Set Nation Spawn"
-    - "- Set Nation Name"
-    - "- Set Nation Board"
+    - 
+      - Set Nation Spawn
+    - 
+      - Set Nation Name
+    - 
+      - Set Nation Board
   Invite_Player_Menu_Button: "&d&lMời Menu Người chơi"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -295,7 +283,7 @@ Resident_Menu:
     - ""
     - "Làm cho cư dân này"
     - "thị trưởng."
-    - "3"
+    - ""
     - "&4&lKhông thể đảo ngược"
 Player_Permission_Menu:
   Menu_Title: "&2&lMenu Quyền"
@@ -399,10 +387,14 @@ General_Settings_Menu:
   Menu_Title: "&2&lMenu Cài đặt Chung"
   Info:
     - ""
-    - "- Set Home Block"
-    - "- Set Town Spawn"
-    - "- Set Town Name"
-    - "- Set Town Board"
+    - 
+      - Set Home Block
+    - 
+      - Set Town Spawn
+    - 
+      - Set Town Name
+    - 
+      - Set Town Board
   Set_Home_Block_Msg: "&eĐặt khối nhà vào vị trí của bạn!"
   Spawn_Reminder: "&bĐảm bảo cũng thiết lập lại thị trấn của bạn!"
   Set_Home_Block: "&3&lĐặt khối nhà"
@@ -450,16 +442,19 @@ Extra_Info_Menu:
     - "&a/t say &7- phát đi thông báo của thị trấn"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
-
 Plot_Menu:
   Main_Menu_Title: "&2Menu Lô"
   Toggle_Settings_Menu_Button: "&3&lLô chuyển đổi Menu Cài đặt"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - 
+      - Fire Spread
+    - 
+      - Monster spawning
+    - 
+      - Explosions
+    - 
+      - PvP
   Permissions_Menu_Button: "&c&lLô menu Quyền"
   Permissions_Menu_Button_Lore:
     - ""
@@ -469,10 +464,14 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lLô menu Quản trị Lô"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "- Plot for sale"
-    - "- Plot not for sale"
-    - "- Setting plot type"
-    - "- Evict plot owner"
+    - 
+      - Plot for sale
+    - 
+      - Plot not for sale
+    - 
+      - Setting plot type
+    - 
+      - Evict plot owner
   Friend_Menu_Button: "&aMenu Bạn bè"
   Friend_Menu_Button_Lore:
     - ""
@@ -487,10 +486,14 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lLô chuyển đổi Menu Cài đặt"
   Info:
     - ""
-    - "- Fire Spread"
-    - "- Monster spawning"
-    - "- Explosions"
-    - "- PvP"
+    - 
+      - Fire Spread
+    - 
+      - Monster spawning
+    - 
+      - Explosions
+    - 
+      - PvP
   Toggle_Off: "&eNhấp để Tắt &cTắt"
   Toggle_On: "&eNhấp để Bật &aBật"
   Fire: "&6&lChuyển đổi Firelan"
@@ -599,7 +602,6 @@ Plot_Admin_Menu:
     - ""
     - "Đuổi cư dân"
     - "của âm mưu này"
-
 Nation_Conversables:
   Board:
     Prompt: "&3Nhập tin nhắn cho hội đồng quốc gia của bạn: "
@@ -635,7 +637,6 @@ Nation_Conversables:
     Prompt: "&3Nhập số tiền bạn muốn rút từ ngân hàng quốc gia của bạn: &c(Gõ cancel để hủy)"
     Invalid: "&cVui lòng chỉ nhập số nguyên và đảm bảo bạn có đủ tiền để rút."
     Response: "&3Rút &b{money_symbol}{input} &3khỏi ngân hàng quốc gia của bạn."
-
 Town_Conversables:
   Board:
     Prompt: "&3Nhập tin nhắn cho hội đồng quản trị thị trấn của bạn: "
@@ -691,7 +692,6 @@ Plot_Conversables:
     Prompt: "&3Bạn muốn thiết lập biểu đồ này thuộc loại nào? &b(Tùy chọn: {options}) Nhập 'hủy' để hủy"
     Invalid: "&cVui lòng nhập loại biểu đồ hợp lệ. (Các loại hợp lệ: {options}) hoặc nhập 'cancel' để hủy"
     Response: "&3Loại biểu đồ được đặt thành: &b{input}"
-
 Error:
   No_Permission: "&cBạn không có quyền sử dụng lệnh này."
   No_Town: "&cBạn không có thị trấn."
@@ -706,10 +706,8 @@ Error:
   Cannot_Set_Spawn: "&cKhông thể thiết lập thị trấn sinh sản ở đây."
   Cannot_Change_Name: "&cPhải là thị trưởng để thay đổi tên thị trấn."
   Cannot_Change_Board: "&cPhải là thị trưởng để thay đổi hội đồng thành phố."
-
 Chunk_View:
   Toggle_Remove: "Các khối nội trú hiện đang hiển thị. Bật lén để xóa."
   Removed: "khối nội trú bị loại bỏ."
-
-# DO NOT TOUCH VERSION
+#DO NOT TOUCH VERSION
 Version: 2
