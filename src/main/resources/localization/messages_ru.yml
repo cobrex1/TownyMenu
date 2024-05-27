@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lМеню настроек нация"
   Nation_Settings_Button_Lore:
     - ""
-    - "Изменить различные"
-    - "дополнительные настройки нация."
+    - "Установить спавн нации"
+    - "Установить название нации"
+    - "Установить доску объявлений нации"
   Nation_Invite_Town_Menu_Button: "&d&lПригласить Город Меню"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenu des paramètres de la nation"
   Nation_Settings_Button_Lore:
     - ""
-    - "Changer divers"
-    - "Autres changement de la Nation."
+    - "Définir l'apparition de la nation"
+    - "Définir le nom de la nation"
+    - "Tableau d'affichage Set Nation"
   Nation_Invite_Town_Menu_Button: "&d&lMenu d invitation de la ville"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

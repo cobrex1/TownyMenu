@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenú de configuración de la nación"
   Nation_Settings_Button_Lore:
     - ""
-    - "Cambiar varios"
-    - "configuraciones adicionales."
+    - "Establecer generación de nación"
+    - "Establecer nombre de nación"
+    - "Tablón de anuncios de Set Nation"
   Nation_Invite_Town_Menu_Button: "&d&lInvitar menú de la ciudad"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

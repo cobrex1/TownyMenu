@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lNation Settings Menu"
   Nation_Settings_Button_Lore:
     - ""
-    - "Change various"
-    - "extra nation settings."
+    - "Set Nation Spawn"
+    - "Set Nation Name"
+    - "Set Nation Board"
   Nation_Invite_Town_Menu_Button: "&d&lInvite Town Menu"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lNation-Einstellungsmenü"
   Nation_Settings_Button_Lore:
     - ""
-    - "Ändern Sie verschiedene Einstellungen"
-    - "zusätzliche Ländereinstellungen."
+    - "Legen Sie den Nation-Spawn fest"
+    - "Legen Sie den Namen der Nation fest"
+    - "Stellen Sie die Anschlagtafel der Nation ein"
   Nation_Invite_Town_Menu_Button: "&d&lStadtmenü einladen"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

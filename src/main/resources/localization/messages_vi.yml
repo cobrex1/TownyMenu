@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenu cài đặt quốc gia"
   Nation_Settings_Button_Lore:
     - ""
-    - "Thay đổi khác nhau"
-    - "cài đặt quốc gia bổ sung."
+    - "Đặt quốc gia sinh sản"
+    - "Đặt tên quốc gia"
+    - "Bảng thông báo Set Nation"
   Nation_Invite_Town_Menu_Button: "&d&lMenu mời thị trấn"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenu Nastavení národa"
   Nation_Settings_Button_Lore:
     - ""
-    - "Změňte různé"
-    - "další nastavení národa."
+    - "Nastavte bod spawnování národa"
+    - "Nastavte název národa"
+    - "Nastavit nástěnku národa"
   Nation_Invite_Town_Menu_Button: "&d&lMenu pozvání města"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""

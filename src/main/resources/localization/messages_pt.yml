@@ -60,8 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenu de configurações da nação"
   Nation_Settings_Button_Lore:
     - ""
-    - "Mudar vários"
-    - "configurações de nação extra."
+    - "Definir geração de nação"
+    - "Definir nome da nação"
+    - "Definir quadro de avisos da nação"
   Nation_Invite_Town_Menu_Button: "&d&lMenu Convidar Cidade"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""
