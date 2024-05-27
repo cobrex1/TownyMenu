@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lAndrere Einstellungen"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Legen Sie den Nation-Spawn fest"
-    - "Legen Sie den Namen der Nation fest"
-    - "Nation Board festlegen"
+    - "Stadthausblock festlegen"
+    - "Legen Sie den Spawn-Punkt der Stadt fest"
+    - "Ortsnamen festlegen"
+    - "Stellen Sie die Anschlagtafel der Stadt ein"
   Invite_Player_Menu_Button: "&d&lSpieler einladen Menü"
   Invite_Player_Menu_Button_Lore:
     - ""

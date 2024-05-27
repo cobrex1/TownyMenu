@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOther Settings Menu"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Set Nation Spawn"
-    - "Set Nation Name"
-    - "Set Nation Board"
+    - "Set Town home block"
+    - "Set Town Spawn"
+    - "Set Town Name"
+    - "Set Town Board"
   Invite_Player_Menu_Button: "&d&lInvite Player Menu"
   Invite_Player_Menu_Button_Lore:
     - ""
