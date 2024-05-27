@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lAutres paramètres"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Définir l'apparition de la nation"
-    - "Définir le nom de la nation"
-    - "Tableau d'affichage Set Nation"
+    - "Définir le bloc d'accueil de la ville"
+    - "Définir l'apparition de la ville"
+    - "Définir le nom de la ville"
+    - "Tableau d'affichage de la ville"
   Invite_Player_Menu_Button: "&d&lMenu d invitation aux joueurs"
   Invite_Player_Menu_Button_Lore:
     - ""
