@@ -45,7 +45,8 @@ Join_Create_Nation_Menu:
 Nation_Menu:
   Main_Menu_Title: "&3&lMenu národa"
   Info:
-    - "Hlavní menu pro nastavení národa"
+    - "Hlavní menu pro nastavení"
+    - "národa"
   Nation_Toggle_Menu_Button: "&9&lPřepnout nabídku nastavení národa"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -82,7 +83,8 @@ Nation_Menu:
 Nation_Settings_Menu:
   Menu_Title: "&2&lMenu Nastavení národa"
   Info:
-    - "Další nastavení národa."
+    - "Upravit jiné"
+    - "extra nastavení národa."
   Set_Spawn_Msg: "&eNastavení spawnu národa na aktuální místo."
   Set_Spawn: "&b&lNastavit spawn národa"
   Set_Spawn_Lore:
@@ -99,7 +101,8 @@ Nation_Settings_Menu:
   Set_Board: "&2&lNastavit národní zprávu"
   Set_Board_Lore:
     - ""
-    - "Nastavení zprávy národa."
+    - "Nastavte národní tabuli"
+    - "vašeho národa."
 
 Nation_Town_Menu:
   Menu_Title: "&2&lMenu Správy města v národě"
@@ -216,8 +219,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu dalších nastavení"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Změňte různé"
-    - "další nastavení města."
+    - "- Set Nation Spawn"
+    - "- Set Nation Name"
+    - "- Set Nation Board"
   Invite_Player_Menu_Button: "&d&lMenu Pozvání hráče"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -284,7 +288,8 @@ Resident_Menu:
   Rank: "&3&lNastavit hodnost obyvatele"
   Rank_Lore:
     - ""
-    - "Dejte městskou hodnost tomuto player"
+    - "Dejte městskou hodnost"
+    - "tomuto player"
   Mayor: "&a&lUdělat z obyvatele Starostu"
   Mayor_Lore:
     - ""
@@ -393,8 +398,11 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: "&2&lMenu obecných nastavení"
   Info:
-    - "Nastavit další"
-    - "extra nastavení města."
+    - ""
+      - "- Set Home Block"
+      - "- Set Town Spawn"
+      - "- Set Town Name"
+      - "- Set Town Board"
   Set_Home_Block_Msg: "&Nastavit domovský blok na aktuální polohu."
   Spawn_Reminder: "&bUjistěte se, že jste také znovu nastavili spawn města!"
   Set_Home_Block: "&3&lNastavení domovského bloku"
@@ -448,8 +456,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lMenu Nastavení pozemku"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "Zapnutí a vypnutí"
-    - "různých nastavení pozemku"
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Permissions_Menu_Button: "&c&lMenu Oprávnění pozemku"
   Permissions_Menu_Button_Lore:
     - ""
@@ -459,8 +469,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu Správy pozemku"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Pokročilá správa pozemku"
-    - "a nastavení"
+    - "- Plot for sale"
+    - "- Plot not for sale"
+    - "- Setting plot type"
+    - "- Evict plot owner"
   Friend_Menu_Button: "&aMenu Přátel"
   Friend_Menu_Button_Lore:
     - ""
@@ -474,8 +486,11 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu Nastavení pozemku"
   Info:
-    - "Úprava přepínatelných nastavení"
-    - "pro váš pozemek!"
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Toggle_Off: "&eKlikněte pro &cVypnutí"
   Toggle_On: "&eKlikněte pro &aZapnutí"
   Fire: "&6&lPřepnout šíření ohně"

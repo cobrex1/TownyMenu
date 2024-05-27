@@ -5,13 +5,13 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.8.3.1</version>
+    <version>1.8.4</version>
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.6.2</foundation.version>
+        <foundation.version>6.7.14</foundation.version>
 
         <java.version>1.8</java.version>
 
@@ -69,7 +69,7 @@
         <dependency>
             <groupId>com.arcaniax</groupId>
             <artifactId>HeadDatabase-API</artifactId>
-            <version>1.3.1</version>
+            <version>1.3.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

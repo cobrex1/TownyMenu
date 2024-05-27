@@ -219,8 +219,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOther Settings Menu"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Change various"
-    - "extra town settings."
+    - "- Set Nation Spawn"
+    - "- Set Nation Name"
+    - "- Set Nation Board"
   Invite_Player_Menu_Button: "&d&lInvite Player Menu"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -288,7 +289,7 @@ Resident_Menu:
   Rank_Lore:
     - ""
     - "Give a town rank"
-    - "to a a player"
+    - "to a player"
   Mayor: "&a&lGive Resident Mayor"
   Mayor_Lore:
     - ""
@@ -397,8 +398,11 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: "&2&lGeneral Settings Menu"
   Info:
-    - "Adjust other"
-    - "extra town settings."
+    - ""
+    - "- Set Home Block"
+    - "- Set Town Spawn"
+    - "- Set Town Name"
+    - "- Set Town Board"
   Set_Home_Block_Msg: "&eSet home block to your location!"
   Spawn_Reminder: "&bMake sure to also set your town spawn again!"
   Set_Home_Block: "&3&lSet Home Block"
@@ -452,8 +456,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "Turn on and off"
-    - "various plot settings"
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Permissions_Menu_Button: "&c&lPlot Permission Menu"
   Permissions_Menu_Button_Lore:
     - ""
@@ -463,12 +469,14 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lPlot Administration Menu"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Advanced plot management"
-    - "and settings"
+    - "- Plot for sale"
+    - "- Plot not for sale"
+    - "- Setting plot type"
+    - "- Evict plot owner"
   Friend_Menu_Button: "&aFriend Menu"
   Friend_Menu_Button_Lore:
     - ""
-    - "Friend management menu"
+    - "Friend Management menu"
 Friend_Menu:
   Menu_Title: "&2Friend Menu"
   Remove: "&cRemoved {player} from your friends list!"
@@ -478,8 +486,11 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: "&2&lPlot Toggle Settings Menu"
   Info:
-    - "Adjust toggleable settings"
-    - "for your plot!"
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Fire: "&6&lToggle Firespread"

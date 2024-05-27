@@ -219,8 +219,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu Cài đặt khác"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Thay đổi khác nhau"
-    - "cài đặt thêm thị trấn."
+    - "- Set Nation Spawn"
+    - "- Set Nation Name"
+    - "- Set Nation Board"
   Invite_Player_Menu_Button: "&d&lMời Menu Người chơi"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -397,8 +398,11 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: "&2&lMenu Cài đặt Chung"
   Info:
-    - "Điều chỉnh khác"
-    - "cài đặt thêm thị trấn."
+    - ""
+    - "- Set Home Block"
+    - "- Set Town Spawn"
+    - "- Set Town Name"
+    - "- Set Town Board"
   Set_Home_Block_Msg: "&eĐặt khối nhà vào vị trí của bạn!"
   Spawn_Reminder: "&bĐảm bảo cũng thiết lập lại thị trấn của bạn!"
   Set_Home_Block: "&3&lĐặt khối nhà"
@@ -452,8 +456,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lLô chuyển đổi Menu Cài đặt"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "bật và tắt"
-    - "cài đặt cốt truyện khác nhau"
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Permissions_Menu_Button: "&c&lLô menu Quyền"
   Permissions_Menu_Button_Lore:
     - ""
@@ -463,8 +469,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lLô menu Quản trị Lô"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Quản lý cốt truyện nâng cao"
-    - "và cài đặt"
+    - "- Plot for sale"
+    - "- Plot not for sale"
+    - "- Setting plot type"
+    - "- Evict plot owner"
   Friend_Menu_Button: "&aMenu Bạn bè"
   Friend_Menu_Button_Lore:
     - ""
@@ -478,8 +486,11 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: "&2&lLô chuyển đổi Menu Cài đặt"
   Info:
-    - "Điều chỉnh cài đặt có thể chuyển đổi"
-    - "cho cốt truyện của bạn!"
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Toggle_Off: "&eNhấp để Tắt &cTắt"
   Toggle_On: "&eNhấp để Bật &aBật"
   Fire: "&6&lChuyển đổi Firelan"
@@ -699,5 +710,6 @@ Error:
 Chunk_View:
   Toggle_Remove: "Các khối nội trú hiện đang hiển thị. Bật lén để xóa."
   Removed: "khối nội trú bị loại bỏ."
+
 # DO NOT TOUCH VERSION
 Version: 2

@@ -218,9 +218,10 @@ Town_Menu:
     - 'Gérer l argent de votre ville.'
   General_Settings_Menu_Button: '&2&lAutres paramètres'
   General_Settings_Menu_Button_Lore:
-    - ''
-    - 'Changer divers paramètres'
-    - 'supplémentaires de la ville.'
+    - ""
+    - "- Set Nation Spawn"
+    - "- Set Nation Name"
+    - "- Set Nation Board"
   Invite_Player_Menu_Button: '&d&lMenu d invitation aux joueurs'
   Invite_Player_Menu_Button_Lore:
     - ''
@@ -397,8 +398,11 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: '&2&lMenu des Paramètres Généraux'
   Info:
-    - 'Ajustez d autres'
-    - 'paramètres supplémentaires de la ville.'
+    - ""
+    - "- Set Home Block"
+    - "- Set Town Spawn"
+    - "- Set Town Name"
+    - "- Set Town Board"
   Set_Home_Block_Msg: '&eDéfinissez le bloc principal à votre emplacement !'
   Spawn_Reminder: '&bAssurez-vous également de définir à nouveau le spawn de votre ville !'
   Set_Home_Block: '&3&lDéfinir le Bloc Principal'
@@ -451,9 +455,11 @@ Plot_Menu:
   Main_Menu_Title: '&2Menu Parcelle'
   Toggle_Settings_Menu_Button: '&3&lBasculer sur le Menu des Paramètres de Parcelle'
   Toggle_Settings_Menu_Button_Lore:
-    - ''
-    - 'Activer et désactiver'
-    - 'divers paramètres de parcelle'
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Permissions_Menu_Button: '&c&lMenu des Permissions de Parcelle'
   Permissions_Menu_Button_Lore:
     - ''
@@ -462,9 +468,11 @@ Plot_Menu:
     - 'les alliés et les extérieurs'
   Plot_Admin_Menu_Button: '&5&lMenu d administration de Parcelle'
   Plot_Admin_Menu_Button_Lore:
-    - ''
-    - 'Gestion avancée des parcelles'
-    - 'et paramètres'
+    - ""
+    - "- Plot for sale"
+    - "- Plot not for sale"
+    - "- Setting plot type"
+    - "- Evict plot owner"
   Friend_Menu_Button: '&aMenu des Amis'
   Friend_Menu_Button_Lore:
     - ''
@@ -478,8 +486,11 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: '&2&lMenu des Paramètres de Basculement de Parcelle'
   Info:
-    - 'Ajustez les paramètres pouvant être basculés'
-    - 'pour votre parcelle !'
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Toggle_Off: '&eCliquez pour désactiver &cOFF'
   Toggle_On: '&eCliquez pour activer &aON'
   Fire: '&6&lActiver/Désactiver la propagation du feu'

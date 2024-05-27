@@ -219,8 +219,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOutras configurações"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Ajustar configurações adicionais"
-    - "da sua cidade."
+    - "- Set Nation Spawn"
+    - "- Set Nation Name"
+    - "- Set Nation Board"
   Invite_Player_Menu_Button: "&d&lMenu de convite"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -397,8 +398,11 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: "&2&lMenu de configurações gerais"
   Info:
-    - "Ajustar outras"
-    - "configurações adicionais da cidade."
+    - ""
+    - "- Set Home Block"
+    - "- Set Town Spawn"
+    - "- Set Town Name"
+    - "- Set Town Board"
   Set_Home_Block_Msg: "&eDefinir home no bloco atual"
   Spawn_Reminder: "&bTenha certeza de definir o spawn da sua cidade novamente!"
   Set_Home_Block: "&3&lDefinir bloco de home"
@@ -452,8 +456,10 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lMenu de ajuste de configurações"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "Ligar ou desligar"
-    - "configurações de plot"
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Permissions_Menu_Button: "&c&lMenu de plot permissões"
   Permissions_Menu_Button_Lore:
     - ""
@@ -463,8 +469,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu de administração de plot"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Gerenciamento avançado da plot"
-    - "e configurações."
+    - "- Plot for sale"
+    - "- Plot not for sale"
+    - "- Setting plot type"
+    - "- Evict plot owner"
   Friend_Menu_Button: "&aMenu de amigos"
   Friend_Menu_Button_Lore:
     - ""
@@ -478,8 +486,11 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu de plot configurações"
   Info:
-    - "Ajustar configurações personalizaveis"
-    - "para sua plot!"
+    - ""
+    - "- Fire Spread"
+    - "- Monster spawning"
+    - "- Explosions"
+    - "- PvP"
   Toggle_Off: "&eClique para &cdesativar"
   Toggle_On: "&eClique para &aativar"
   Fire: "&6&lAtivar propagação do fogo"
