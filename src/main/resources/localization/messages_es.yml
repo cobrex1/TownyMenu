@@ -204,8 +204,12 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenú de otras opciones"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Cambios varios"
-    - "configuraciones adicionales."
+    - 
+      - Set Nation Spawn
+    - 
+      - Set Nation Name
+    - 
+      - Set Nation Board
   Invite_Player_Menu_Button: "&d&lMenú de Invitaciones"
   Invite_Player_Menu_Button_Lore:
     - ""
@@ -303,31 +307,31 @@ Player_Permission_Menu:
   Build: "&3&lConstruir"
   Build_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede construir en la ciudad"
-    - "your town."
+    - "Quien tiene permiso"
+    - "construir en"
+    - "su ciudad."
   Break: "&c&lRomper"
   Break_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede romper bloques en la ciudad"
-    - "your town."
+    - "Quien tiene permiso"
+    - "romper bloques en"
+    - "su ciudad."
   Use: "&6&lUsar items"
   Use_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede usar items en la ciudad"
-    - "your town."
+    - "Quien tiene permiso"
+    - "putilizar elementos en"
+    - "su ciudad."
     - ""
-    - "E.g. take water from cauldron"
+    - "Ej. Agarrar agua con un balde"
   Switch: "&2&lSwitch"
   Switch_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede usar switchs en la ciudad"
-    - "your town."
+    - "Quien tiene permiso"
+    - "puede usar switchs en"
+    - "su ciudad."
     - ""
-    - "E.g. use a lever or door"
+    - "Ej. Usar una palanca o una puerta"
   Build_Res: "&6&lResidentes - Permiso para construir"
   Build_Res2: "Pueden los residentes construir: "
   Build_Nation: "&6&lNacion - Permiso para construir"
@@ -382,8 +386,15 @@ Economy_Menu:
 General_Settings_Menu:
   Menu_Title: "&2&lMenu de configuraciones generales"
   Info:
-    - "Ajustar otros ajustes"
-    - "adicionales de la ciudad"
+    - ""
+    - 
+      - Set Home Block
+    - 
+      - Set Town Spawn
+    - 
+      - Set Town Name
+    - 
+      - Set Town Board
   Set_Home_Block_Msg: "&eSe ha establecido el home block en tu posicion"
   Spawn_Reminder: "&bAsegúrate de volver a configurar tu ciudad de nuevo"
   Set_Home_Block: "&3&lEstablecer Home Block"
@@ -396,10 +407,10 @@ General_Settings_Menu:
   Set_Spawn_Lore:
     - ""
     - "Establecer la ubicacion"
-    - "del comando /t spawn"
+    - "del comando"
     - "/t spawn"
     - ""
-    - "&cMust be in the Home Block."
+    - "&cDebes estar en el Home Block."
   Set_Name: "&6&lEstablecer nombre de la ciudad"
   Set_Name_Lore:
     - ""
@@ -415,12 +426,12 @@ Extra_Info_Menu:
   Claiming_Lore:
     - ""
     - "&a/t claim &7- Reclama un chunk para tu ciudad"
-    - "Claiming requires money in"
     - "Necesitas dinero en el banco de tu"
     - "ciudad para usar este comando."
-    - "chunk bordering your town."
     - "Necesitas esta en el chunk que quieres"
     - "reclamar junto a tierras ya reclamadas."
+    - "Usa &aF3+G &7para ver los chunks"
+    - "&a/towny map &7para ver tierras reclamadas"
   Commands: "&2&lExtra Commands"
   Commands_Lore:
     - ""
@@ -436,8 +447,14 @@ Plot_Menu:
   Toggle_Settings_Menu_Button: "&3&lMenu de parcelas opciones"
   Toggle_Settings_Menu_Button_Lore:
     - ""
-    - "Activar y desactivar"
-    - "configuraciones de parcelas"
+    - 
+      - Fire Spread
+    - 
+      - Monster spawning
+    - 
+      - Explosions
+    - 
+      - PvP
   Permissions_Menu_Button: "&c&lMenu de parcelas permisos"
   Permissions_Menu_Button_Lore:
     - ""
@@ -447,8 +464,14 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&lMenu de administrador"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Opiones avanzadas de parcelas"
-    - "y configuraciones"
+    - 
+      - Plot for sale
+    - 
+      - Plot not for sale
+    - 
+      - Setting plot type
+    - 
+      - Evict plot owner
   Friend_Menu_Button: "&aMenu de amigos"
   Friend_Menu_Button_Lore:
     - ""
@@ -462,8 +485,15 @@ Friend_Menu:
 Plot_Toggle_Menu:
   Menu_Title: "&2&lMenu de parcelas opciones"
   Info:
-    - "Ajustar configuraciones de parcelas"
-    - "activables de tu parcela"
+    - ""
+    - 
+      - Fire Spread
+    - 
+      - Monster spawning
+    - 
+      - Explosions
+    - 
+      - PvP
   Toggle_Off: "&eClick para &cDesactivar"
   Toggle_On: "&eClick para &aActivar"
   Fire: "&6&lAjustar propagación del fuego"
@@ -492,31 +522,31 @@ Plot_Player_Permission_Menu:
   Build: "&3&lContruir"
   Build_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede construir en tu parcela"
-    - "your plot."
+    - "Quien tiene permiso"
+    - "construir en"
+    - "tu trama."
   Break: "&c&lRomper"
   Break_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede romper bloques en tu parcela"
-    - "your plot."
+    - "Quien tiene permiso"
+    - "romper bloques en"
+    - "tu trama."
   Use: "&6&lUsar items"
   Use_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede usar items en tu parcela"
-    - "your plot."
+    - "Quien tiene permiso"
+    - "puede usar items en"
+    - "tu trama."
     - ""
-    - "E.g. take water from cauldron"
+    - "Ej. Agarrar agua con un balde"
   Switch: "&2&lSwitch"
   Switch_Lore:
     - ""
-    - "Quien tenga este permiso"
-    - "puede usar switchs en tu parcela"
-    - "your plot."
+    - "Quien tiene permiso"
+    - "puede usar switchs en"
+    - "tu trama."
     - ""
-    - "E.g. use a lever or door"
+    - "Ej. Usar una palanca o una puerta"
   Build_Res: "&6&lResidentes/Amigos - Permiso para construir"
   Build_Res2: "Pueden los residentes/amigos construir: "
   Build_Nation: "&6&lNacion/Ciudad - Permiso para construir"
@@ -554,9 +584,9 @@ Plot_Admin_Menu:
   For_Sale: "&a&lPoner a la venta"
   For_Sale_Lore:
     - ""
-    - "Pon la parcela actual en"
-    - "venta con un precio especifico"
-    - "a specified price"
+    - "Pon la trama actual"
+    - "a la venta con"
+    - "un precio especificado"
   Not_For_Sale: "&c&lDejar de vender"
   Not_For_Sale_Lore:
     - ""
