@@ -60,9 +60,9 @@ Nation_Menu:
   Nation_Settings_Button: "&2&lMenu cài đặt quốc gia"
   Nation_Settings_Button_Lore:
     - ""
-    - "Đặt quốc gia sinh sản"
+    - "Đặt điểm sinh sản quốc gia"
     - "Đặt tên quốc gia"
-    - "Bảng thông báo Set Nation"
+    - "Đặt bảng thông báo cho quốc gia"
   Nation_Invite_Town_Menu_Button: "&d&lMenu mời thị trấn"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""
@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu Cài đặt khác"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Đặt quốc gia sinh sản"
-    - "Đặt tên quốc gia"
-    - "Bảng thông báo Set Nation"
+    - "Đặt khối nhà cho thị trấn"
+    - "Đặt thị trấn sinh sản"
+    - "ặt tên thị trấn"
+    - "Đặt bảng thông báo cho thị trấn"
   Invite_Player_Menu_Button: "&d&lMời Menu Người chơi"
   Invite_Player_Menu_Button_Lore:
     - ""
