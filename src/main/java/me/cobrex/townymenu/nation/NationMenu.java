@@ -13,7 +13,6 @@ import me.cobrex.townymenu.utils.HeadDatabaseUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
@@ -340,6 +339,12 @@ public class NationMenu extends Menu {
 		protected ItemStack convertToItemStack(Town item) {
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
+// new code
+//			if (item.getName() == null)
+//				return DUMMY_BUTTON;
+//			PlayerProfile profile = Bukkit.createPlayerProfile(String.valueOf(item.getMayor()));
+//			skull.setOwningPlayer((OfflinePlayer) profile);
+//old code
 			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&',
 					Localization.NationMenu.NationTownMenu.TOWN_NAME + item.getName()));
 			if (item.getName() == null)
@@ -644,12 +649,14 @@ public class NationMenu extends Menu {
 
 		@Override
 		protected ItemStack convertToItemStack(Town item) {
+			if (item.hasNation())
+				return DUMMY_BUTTON;
 			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
 			assert skull != null;
 			skull.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + item.getName());
-			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
-			skull.setOwningPlayer(player);
+//			OfflinePlayer player = Bukkit.getOfflinePlayer(item.getUUID());
+//			skull.setOwningPlayer(player);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.NationMenu.NationInviteTownMenu.INVITE));
@@ -661,13 +668,14 @@ public class NationMenu extends Menu {
 
 		@Override
 		protected void onPageClick(Player player, Town item, ClickType click) {
-
-		}
-
-		protected void onPageClick(Player player, Resident item, ClickType click) {
 			player.closeInventory();
-			player.performCommand("t invite " + item.getName());
+			player.performCommand("n invite " + item.getName());
 		}
+
+//		protected void onPageClick(Player player, Resident item, ClickType click) {
+//			player.closeInventory();
+//			player.performCommand("t invite " + item.getName());
+//		}
 	}
 
 

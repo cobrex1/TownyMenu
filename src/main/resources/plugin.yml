@@ -5,6 +5,7 @@ api-version: 1.13
 softdepend:
   - Towny
   - HeadDatabase
+folia-supported: true
 author: Cobrex | Original author Tolmikarc.
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.4

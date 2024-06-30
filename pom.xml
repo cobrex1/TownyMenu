@@ -5,13 +5,13 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.8.4</version>
+    <version>1.8.5</version>
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.7.14</foundation.version>
+        <foundation.version>6.8.5</foundation.version>
 
         <java.version>1.8</java.version>
 
