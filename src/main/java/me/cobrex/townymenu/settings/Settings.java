@@ -423,7 +423,7 @@ public final class Settings extends SimpleSettings {
 		TOGGLE_FIRE = getString("Toggle_Fire.Item");
 		TOGGLE_FIRE_CMD = getInteger("Toggle_Fire.CustomModelData");
 		TOGGLE_MOBS = getString("Toggle_Mobs.Item");
-		TOGGLE_MOBS_CMD = getInteger("Toggle_Fire.CustomModelData");
+		TOGGLE_MOBS_CMD = getInteger("Toggle_Mobs.CustomModelData");
 		TOGGLE_EXPLOSIONS = getString("Toggle_Explosions.Item");
 		TOGGLE_EXPLOSIONS_CMD = getInteger("Toggle_Explosions.CustomModelData");
 		TOGGLE_PVP = getString("Toggle_PVP.Item");
