@@ -1,9 +1,11 @@
 package me.cobrex.townymenu.settings;
 
+import org.mineacademy.fo.remain.CompColor;
 import org.mineacademy.fo.remain.CompMaterial;
 import org.mineacademy.fo.settings.SimpleSettings;
 
 public final class Settings extends SimpleSettings {
+
 	@Override
 	protected int getConfigVersion() {
 		return 1;
@@ -16,6 +18,13 @@ public final class Settings extends SimpleSettings {
 
 	public static CompMaterial CHUNK_VIEW;
 	public static String CHUNK_VIEW_PARTICLE;
+
+	public static CompColor NEUTRAL_BUTTON_COLOR;
+	public static CompColor POSITIVE_BUTTON_COLOR;
+	public static CompColor NEGATIVE_BUTTON_COLOR;
+
+	public static boolean USE_FIXED_INVENTORY_SIZE;
+	public static boolean REMOVE_INFO_BUTTON;
 
 	public static CompMaterial FILLER_JOIN_NATION_MENU;
 	public static Integer FILLER_JOIN_NATION_MENU_CMD;
@@ -51,7 +60,9 @@ public final class Settings extends SimpleSettings {
 	public static Integer FILLER_PLOT_ADMIN_MENU_CMD;
 
 	public static String FIND_NATION_BUTTON;
+	public static String FIND_NATION_BUTTON_CMD;
 	public static String CREATE_NATION_BUTTON;
+	public static String CREATE_NATION_BUTTON_CMD;
 
 	public static String NATION_TOGGLE_MENU;
 	public static Integer NATION_TOGGLE_MENU_CMD;
@@ -311,6 +322,13 @@ public final class Settings extends SimpleSettings {
 		CHUNK_VIEW = getMaterial("Chunk_View");
 		CHUNK_VIEW_PARTICLE = getString("Chunk_View_Particle");
 
+		NEUTRAL_BUTTON_COLOR = CompColor.fromName(getString("Neutral_Button_Color"));
+		POSITIVE_BUTTON_COLOR = CompColor.fromName(getString("Positive_Button_Color"));
+		NEGATIVE_BUTTON_COLOR = CompColor.fromName(getString("Negative_Button_Color"));
+
+		USE_FIXED_INVENTORY_SIZE = getBoolean("Use_Fixed_Inventory_size");
+		REMOVE_INFO_BUTTON = getBoolean("Remove_Info_Button");
+
 		FILLER_JOIN_NATION_MENU = getMaterial("Filler_Join_Nation_Menu.Item");
 		FILLER_JOIN_NATION_MENU_CMD = getInteger("Filler_Join_Nation_Menu.CustomModelData");
 		FILLER_NATION_TOGGLE = getMaterial("Filler_Nation_Toggle.Item");
@@ -345,7 +363,9 @@ public final class Settings extends SimpleSettings {
 		FILLER_PLOT_ADMIN_MENU_CMD = getInteger("Filler_Plot_Admin_Menu.CustomModelData");
 
 		FIND_NATION_BUTTON = getString("Find_Nation_Button.Item");
+		FIND_NATION_BUTTON_CMD = getString("Find_Nation_Button.CustomModelData");
 		CREATE_NATION_BUTTON = getString("Create_Nation_Button.Item");
+		CREATE_NATION_BUTTON_CMD = getString("Create_Nation_Button.CustomModelData");
 
 		NATION_TOGGLE_MENU = getString("Nation_Toggle.Item");
 		NATION_TOGGLE_MENU_CMD = getInteger("Nation_Toggle.CustomModelData");
