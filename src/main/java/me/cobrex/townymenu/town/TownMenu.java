@@ -68,7 +68,13 @@ public class TownMenu extends Menu {
 		}
 		LagCatcher.end("loaded-residents-online", true);
 
-		setSize(9 * 3);
+		if (Settings.USE_FIXED_INVENTORY_SIZE) {
+			setSize(9 * 6);
+		} else {
+			setSize(9 * 3);
+		}
+
+
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
 		ItemCreator toggleMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOGGLE_MENU)))
@@ -322,7 +328,11 @@ public class TownMenu extends Menu {
 		public ToggleSettingsMenu(Town town) {
 			super(TownMenu.this);
 
-			setSize(9 * 2);
+			if (Settings.USE_FIXED_INVENTORY_SIZE) {
+				setSize(9 * 6);
+			} else {
+				setSize(9 * 2);
+			}
 
 //			ButtonReturnBack.setItemStack(ItemCreator
 //					.of(CompMaterial.APPLE)
@@ -1057,7 +1067,12 @@ public class TownMenu extends Menu {
 
 		protected EconomyManagementMenu(Town town) {
 			super(TownMenu.this);
-			setSize(9 * 2);
+
+			if (Settings.USE_FIXED_INVENTORY_SIZE) {
+				setSize(9 * 6);
+			} else {
+				setSize(9 * 2);
+			}
 			setTitle(Localization.TownMenu.EconomyMenu.MENU_TITLE);
 
 			try {
@@ -1124,7 +1139,13 @@ public class TownMenu extends Menu {
 
 		protected GeneralSettingsMenu(Town town) {
 			super(TownMenu.this);
-			setSize(9 * 2);
+
+			if (Settings.USE_FIXED_INVENTORY_SIZE) {
+				setSize(9 * 6);
+			} else {
+				setSize(9 * 2);
+			}
+
 			setTitle(Localization.TownMenu.GeneralSettingsMenu.MENU_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 
@@ -1283,7 +1304,12 @@ public class TownMenu extends Menu {
 
 		protected ExtraTownInfo() {
 			super(TownMenu.this);
-			setSize(9 * 2);
+
+			if (Settings.USE_FIXED_INVENTORY_SIZE) {
+				setSize(9 * 6);
+			} else {
+				setSize(9 * 2);
+			}
 		}
 
 		@Override

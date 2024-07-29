@@ -23,8 +23,8 @@ public final class Settings extends SimpleSettings {
 	public static CompColor POSITIVE_BUTTON_COLOR;
 	public static CompColor NEGATIVE_BUTTON_COLOR;
 
-	public static boolean USE_FIXED_INVENTORY_SIZE;
-	public static boolean REMOVE_INFO_BUTTON;
+	public static Boolean USE_FIXED_INVENTORY_SIZE;
+	public static Boolean REMOVE_INFO_BUTTON;
 
 	public static CompMaterial FILLER_JOIN_NATION_MENU;
 	public static Integer FILLER_JOIN_NATION_MENU_CMD;

@@ -38,6 +38,22 @@ Chunk_View_Particle: VILLAGER_HAPPY
 Back_Button:
   Item: OAK_DOOR
 
+# ----- Advanced resource pack support-----#
+
+#Color(HEX) for Buttons, if the material can be colored
+#Neutral color is used for every button that can not have a state
+Neutral_Button_Color: "#FFDAB5"
+#Positive color is used for buttons that are activated
+Positive_Button_Color: "#86C45F"
+#Negativ color is used for buttons that are deactivated or if its actions have a big impact
+Negative_Button_Color: "#C45F5F"
+
+#Fix every inventory size to 6 rows for better QUI background support
+Use_Fixed_Inventory_size: TRUE
+
+#Remove the info button in every menu
+Remove_Info_Button: FALSE
+
 # -----Filler Icons-----#
 
 # If you wish the filler to be empty, set the material to AIR
@@ -97,8 +113,10 @@ Filler_Plot_Admin_Menu:
 # Non-nation menu
 Find_Nation_Button:
   Item: SUNFLOWER
+  CustomModelData: 0
 Create_Nation_Button:
   Item: PLAYER_HEAD
+  CustomModelData: 0
 
 # Nation Menu Icons
 Nation_Toggle:
