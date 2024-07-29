@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TownyMenu.iml" filepath="$PROJECT_DIR$/TownyMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/TownyMenuSpigot.iml" filepath="$PROJECT_DIR$/TownyMenuSpigot.iml" />
     </modules>
   </component>
