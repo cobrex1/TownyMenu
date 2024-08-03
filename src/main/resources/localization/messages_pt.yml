@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lIrreversible"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lOtros comandos útiles"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Define a mensagem do quadro"
     - "da sua cidade."
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lInformações de expansão"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/t say &7- envia uma mensagem para a cidade"
     - "&a/t towny prices &7- muestra los precios de la ciudad / costos"
     - "&a/t set mapcolor [color]"
+Player_Invite_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
 Plot_Menu:
   Main_Menu_Title: "&2Menu de plot"
   Toggle_Settings_Menu_Button: "&3&lMenu de ajuste de configurações"

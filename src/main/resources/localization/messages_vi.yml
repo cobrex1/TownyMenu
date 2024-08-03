@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lkhông thể đảo ngược"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lCác lệnh hữu ích khác"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Đặt bảng thành phố"
     - "của thị trấn của bạn."
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lThông tin Khiếu nại"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/t say &7- phát đi thông báo của thị trấn"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
+Player_Invite_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
 Plot_Menu:
   Main_Menu_Title: "&2Menu Lô"
   Toggle_Settings_Menu_Button: "&3&lLô chuyển đổi Menu Cài đặt"

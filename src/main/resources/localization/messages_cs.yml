@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lNelze vrátit!"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lDalší užitečné příkazy"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Nastavení zprávy"
     - "vašeho města."
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lInformace o claimování"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/t say &7- vysílání zprávy ve městě"
     - "&a/t ceny ve městě &7- zobrazuje ceny / náklady ve městě"
     - "&a/t nastavte barvu mapy [color]"
+Player_Invite_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
 Plot_Menu:
   Main_Menu_Title: "&2Menu Pozemků"
   Toggle_Settings_Menu_Button: "&3&lMenu Nastavení pozemku"

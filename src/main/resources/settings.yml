@@ -37,6 +37,7 @@ Chunk_View_Particle: VILLAGER_HAPPY
 # Back Button icon for all linked menus
 Back_Button:
   Item: OAK_DOOR
+  CustomModelData: 0
 
 # ----- Advanced resource pack support-----#
 
@@ -50,9 +51,6 @@ Negative_Button_Color: "#C45F5F"
 
 #Fix every inventory size to 6 rows for better QUI background support
 Use_Fixed_Inventory_size: TRUE
-
-#Remove the info button in every menu
-Remove_Info_Button: FALSE
 
 # -----Filler Icons-----#
 
@@ -261,6 +259,10 @@ Toggle_Tax_Percentage:
   CustomModelData: 0
 
 # Resident Menu Icons
+Resident_List_Player_Head:
+  CustomModelData: 0
+Resident_Player_Head:
+  CustomModelData: 0
 Resident_Kick:
   Item: REDSTONE_BLOCK
   CustomModelData: 0

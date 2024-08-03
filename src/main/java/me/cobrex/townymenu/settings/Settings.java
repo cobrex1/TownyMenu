@@ -15,6 +15,7 @@ public final class Settings extends SimpleSettings {
 	public static Boolean ECONOMY_ENABLED;
 	public static String LOCALE;
 	public static CompMaterial BACK_BUTTON;
+	public static Integer BACK_BUTTON_CMD;
 
 	public static CompMaterial CHUNK_VIEW;
 	public static String CHUNK_VIEW_PARTICLE;
@@ -24,7 +25,6 @@ public final class Settings extends SimpleSettings {
 	public static CompColor NEGATIVE_BUTTON_COLOR;
 
 	public static Boolean USE_FIXED_INVENTORY_SIZE;
-	public static Boolean REMOVE_INFO_BUTTON;
 
 	public static CompMaterial FILLER_JOIN_NATION_MENU;
 	public static Integer FILLER_JOIN_NATION_MENU_CMD;
@@ -152,6 +152,8 @@ public final class Settings extends SimpleSettings {
 	public static String TOGGLE_TAX_PERCENTAGE;
 	public static Integer TOGGLE_TAX_PERCENTAGE_CMD;
 
+	public static Integer RESIDENT_LIST_PLAYER_HEAD_CMD;
+	public static Integer RESIDENT_PLAYER_HEAD_CMD;
 	public static String RESIDENT_KICK;
 	public static Integer RESIDENT_KICK_CMD;
 	public static String RESIDENT_TITLE;
@@ -318,6 +320,7 @@ public final class Settings extends SimpleSettings {
 		ECONOMY_ENABLED = getBoolean("Economy");
 		LOCALE = getString("Locale");
 		BACK_BUTTON = getMaterial("Back_Button.Item");
+		BACK_BUTTON_CMD = getInteger("Back_Button.CustomModelData");
 
 		CHUNK_VIEW = getMaterial("Chunk_View");
 		CHUNK_VIEW_PARTICLE = getString("Chunk_View_Particle");
@@ -327,7 +330,6 @@ public final class Settings extends SimpleSettings {
 		NEGATIVE_BUTTON_COLOR = CompColor.fromName(getString("Negative_Button_Color"));
 
 		USE_FIXED_INVENTORY_SIZE = getBoolean("Use_Fixed_Inventory_size");
-		REMOVE_INFO_BUTTON = getBoolean("Remove_Info_Button");
 
 		FILLER_JOIN_NATION_MENU = getMaterial("Filler_Join_Nation_Menu.Item");
 		FILLER_JOIN_NATION_MENU_CMD = getInteger("Filler_Join_Nation_Menu.CustomModelData");
@@ -455,6 +457,8 @@ public final class Settings extends SimpleSettings {
 		TOGGLE_TAX_PERCENTAGE = getString("Toggle_Tax_Percentage.Item");
 		TOGGLE_TAX_PERCENTAGE_CMD = getInteger("Toggle_Tax_Percentage.CustomModelData");
 
+		RESIDENT_LIST_PLAYER_HEAD_CMD = getInteger("Resident_List_Player_Head.CustomModelData");
+		RESIDENT_PLAYER_HEAD_CMD = getInteger("Resident_Player_Head.CustomModelData");
 		RESIDENT_KICK = getString("Resident_Kick.Item");
 		RESIDENT_KICK_CMD = getInteger("Resident_Kick.CustomModelData");
 		RESIDENT_TITLE = getString("Resident_Title.Item");

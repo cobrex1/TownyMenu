@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lIrréversible"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lAutres commandes utiles"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Définissez le tableau de la ville"
     - "de votre ville."
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lInformations sur la Revendication"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/t say &7- diffuser un message de la ville"
     - "&a/t towny prices &7- affiche les prix / coûts de la ville"
     - "&a/t set mapcolor [couleur]"
+Player_Invite_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
 Plot_Menu:
   Main_Menu_Title: "&2Menu Parcelle"
   Toggle_Settings_Menu_Button: "&3&lBasculer sur le Menu des Paramètres de Parcelle"

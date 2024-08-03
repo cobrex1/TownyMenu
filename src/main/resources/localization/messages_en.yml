@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lIrreversible"
 Nation_Extra_Info_Menu:
+  Menu_Title: "&2&lExtra Info Menu"
   Commands_1: "&6&lOther useful commands"
   Commands_1_Lore:
     - ""
@@ -416,7 +417,18 @@ General_Settings_Menu:
     - ""
     - "Set the town board"
     - "of your town."
+Player_Invite_Menu:
+  Menu_Title: "&2&lInvite Player Menu"
+  Info:
+    - ""
+    - "Click on a playerhead"
+    - "to send an invite"
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - "Learn how to claim land"
+    - "Learn some useful commands"
   Claiming: "&6&lClaiming Info"
   Claiming_Lore:
     - ""

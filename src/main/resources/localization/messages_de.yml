@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lkann nicht rückgängig gemacht werden!"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lAndere nützliche Befehle"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Setzen Sie das Schwarze Brett"
     - "Ihrer Stadt."
 Extra_Info_Menu:
+  Menu_Title: "&2&lExtra Info Menu"
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lLand beanspruchen"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/town say &7- Übertrage eine Stadtnachricht"
     - "&a/town towny prices &7- zeigt Stadtpreise / Kosten"
     - "&a/town set mapcolor [color]"
+Player_Invite_Menu:
+  Menu_Title: "&2&lSpieler Einladen"
+  Info:
+    - ""
+    - "Klicke auf einen Spielerkopf"
+    - "um eine Einladung zu versenden"
 Plot_Menu:
   Main_Menu_Title: "&2Grundstückverwaltungsmenü"
   Toggle_Settings_Menu_Button: "&3&lGrundstück Umschaltbare Einstellungen"

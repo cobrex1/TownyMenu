@@ -244,10 +244,12 @@ public class Localization extends SimpleLocalization {
 			public static Collection<String> COMMANDS_1_LORE;
 			public static String COMMANDS_2;
 			public static Collection<String> COMMANDS_2_LORE;
+			public static String MENU_TITLE;
 
 			private static void init() {
 				setPathPrefix("Nation_Extra_Info_Menu");
 
+				MENU_TITLE = getString("Menu_Title");
 				COMMANDS_1 = getString("Commands_1");
 				COMMANDS_1_LORE = getStringList("Commands_1_Lore");
 				COMMANDS_2 = getString("Commands_2");
@@ -593,14 +595,29 @@ public class Localization extends SimpleLocalization {
 			public static Collection<String> CLAIMING_LORE;
 			public static String COMMANDS;
 			public static Collection<String> COMMANDS_LORE;
+			public static String MENU_TITLE;
+			public static String[] INFO;
 
 			private static void init() {
 				setPathPrefix("Extra_Info_Menu");
 
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
 				CLAIMING = getString("Claiming");
 				CLAIMING_LORE = getStringList("Claiming_Lore");
 				COMMANDS = getString("Commands");
 				COMMANDS_LORE = getStringList("Commands_Lore");
+			}
+		}
+
+		public static class InvitePlayerMenu {
+			public static String MENU_TITLE;
+			public static String[] INFO;
+
+			private static void init() {
+				setPathPrefix("Player_Invite_Menu");
+				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
 			}
 		}
 	}

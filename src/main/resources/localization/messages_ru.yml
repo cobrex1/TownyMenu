@@ -165,6 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lНеобратимо"
 Nation_Extra_Info_Menu:
+  Menu_Title: ""
   Commands_1: "&6&lДругие полезные команды"
   Commands_1_Lore:
     - ""
@@ -417,6 +418,11 @@ General_Settings_Menu:
     - "Изменить заголовок"
     - "вашего города."
 Extra_Info_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
   Claiming: "&6&lИнформация о присоединении участков"
   Claiming_Lore:
     - ""
@@ -437,6 +443,12 @@ Extra_Info_Menu:
     - "&a/t set plottax &7- установить сумму налога с участка"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t outlaw &7- объявить игрока вне закона"
+Player_Invite_Menu:
+  Menu_Title: ""
+  Info:
+    - ""
+    - ""
+    - ""
 Plot_Menu:
   Main_Menu_Title: "&2Управление участками города"
   Toggle_Settings_Menu_Button: "&3&lНастройки участка"
