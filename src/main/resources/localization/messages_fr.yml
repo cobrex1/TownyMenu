@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Gérer la parcelle à"
     - "votre emplacement actuel."
+  Nation_Menu_Button: ""
+  Nation_Menu_Button_Lore:
+    - ""
+    - ""
+    - ""
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lActiver/Désactiver le pourcentage de taxe"
 Resident_Menu:
   Menu_Title: "&2&lMenu des Résidents"
+  Menu_List_Title: ""
   Info:
     - "Cliquez sur un résident"
     - "pour les gérer !"
+  Info_Edit:
+    - ""
+    - ""
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Dernière connexion : "

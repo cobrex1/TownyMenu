@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Gerencie a plot da"
     - "sua localização atual."
+  Nation_Menu_Button: ""
+  Nation_Menu_Button_Lore:
+    - ""
+    - ""
+    - ""
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lPorcentagem de taxa"
 Resident_Menu:
   Menu_Title: "&2&lMenu de cidadão"
+  Menu_List_Title: ""
   Info:
     - "Clique em um cidadão"
     - "para gerenciar."
+  Info_Edit:
+    - ""
+    - ""
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Último online: "

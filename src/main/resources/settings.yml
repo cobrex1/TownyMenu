@@ -234,6 +234,9 @@ Extra_Info:
 Town_Info_Icon:
   Item: NETHER_STAR
   CustomModelData: 0
+Nation_Menu:
+  Item: IRON_SWORD
+  CustomModelData: 0
 
 # Toggle Town Settings Icons
 Toggle_Fire:

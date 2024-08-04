@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Управление ячейкой"
     - "на которой вы стоите."
+  Nation_Menu_Button: ""
+  Nation_Menu_Button_Lore:
+    - ""
+    - ""
+    - ""
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lИзменить процент налога"
 Resident_Menu:
   Menu_Title: "&2&lМеню участков"
+  Menu_List_Title: ""
   Info:
     - "Нажмите на участника"
     - "для управления!"
+  Info_Edit:
+    - ""
+    - ""
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Последний онлайн: "

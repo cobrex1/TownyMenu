@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Manage the plot at"
     - "your current location."
+  Nation_Menu_Button: "&9&lNation Management Menu"
+  Nation_Menu_Button_Lore:
+    - ""
+    - "Manage your nation"
+    - "or create one"
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lToggle Tax Percent"
 Resident_Menu:
   Menu_Title: "&2&lResident Menu"
+  Menu_List_Title: "&2&lResident List"
   Info:
     - "Click on a resident"
     - "to manage them!"
+  Info_Edit:
+    - "Set titles, ranks or"
+    - "kick player out of the town"
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Last online: "

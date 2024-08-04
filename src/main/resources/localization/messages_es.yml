@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Maneja la parcela (chunk) en"
     - "la que te encuentras ahora"
+  Nation_Menu_Button: ""
+  Nation_Menu_Button_Lore:
+    - ""
+    - ""
+    - ""
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lAjustar impuestos por porcentaje"
 Resident_Menu:
   Menu_Title: "&2&lMenu de Residentes"
+  Menu_List_Title: ""
   Info:
     - "Click en un residente para"
     - "manejar diversas opciones"
+  Info_Edit:
+    - ""
+    - ""
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Ultima conexion: "

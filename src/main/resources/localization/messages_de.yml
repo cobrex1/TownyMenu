@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Verwalten Sie das Grundstück an"
     - "Ihrer aktuellen Position."
+  Nation_Menu_Button: "&9&lNationsverwaltung"
+  Nation_Menu_Button_Lore:
+    - ""
+    - "Verwalten Sie Ihre Nation"
+    - "oder erstellen sie eine."
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,10 +260,14 @@ Toggle_Menu:
   Tax_Percent: "&2&lSteuern umschalten"
 Resident_Menu:
   Menu_Title: "&2&lEinwohner Menü"
+  Menu_List_Title: "&2&lEinwohner Liste"
   Info:
     - "Klicken Sie auf einen Einwohner,"
     - "um diesen zu verwalten!"
   #this is just setting the color
+  Info_Edit:
+    - "Ändere Rank, Titel oder"
+    - "entferne Spieler aus der Stadt."
   Resident_Name: "&e&l"
   Online: "&7Zuletzt Online: "
   Town_Rank: "&7Rang der Stadt: "

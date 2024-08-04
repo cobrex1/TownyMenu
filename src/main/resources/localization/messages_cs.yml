@@ -225,6 +225,11 @@ Town_Menu:
     - ""
     - "Spravujte pozemek na"
     - "vaší aktuální poloze."
+  Nation_Menu_Button: ""
+  Nation_Menu_Button_Lore:
+    - ""
+    - ""
+    - ""
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
@@ -255,9 +260,13 @@ Toggle_Menu:
   Tax_Percent: "&2&lPřepnout Procentuální daň"
 Resident_Menu:
   Menu_Title: "&2&lMenu Obyvatele"
+  Menu_List_Title: ""
   Info:
     - "Klikněte na obyvatele"
     - "pro jeho správu!"
+  Info_Edit:
+    - ""
+    - ""
   #this is just setting the color
   Resident_Name: "&e&l"
   Online: "&7Naposledy online: "

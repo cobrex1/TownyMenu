@@ -302,6 +302,8 @@ public class Localization extends SimpleLocalization {
 		public static Collection<String> EXTRA_INFO_MENU_BUTTON_LORE;
 		public static String PLOT_MENU_BUTTON;
 		public static Collection<String> PLOT_MENU_BUTTON_LORE;
+		public static String NATION_MENU_BUTTON;
+		public static Collection<String> NATION_MENU_BUTTON_LORE;
 		public static String TOWN_NAME;
 		public static String TOWN_POSTFIX;
 		public static String RESIDENTS;
@@ -336,6 +338,8 @@ public class Localization extends SimpleLocalization {
 			EXTRA_INFO_MENU_BUTTON_LORE = getStringList("Extra_Info_Menu_Button_Lore");
 			PLOT_MENU_BUTTON = getString("Plot_Menu_Button");
 			PLOT_MENU_BUTTON_LORE = getStringList("Plot_Menu_Button_Lore");
+			NATION_MENU_BUTTON = getString("Nation_Menu_Button");
+			NATION_MENU_BUTTON_LORE = getStringList("Nation_Menu_Button_Lore");
 			TOWN_NAME = getString("Town_Name");
 			TOWN_POSTFIX = getString("Town_Postfix");
 			RESIDENTS = getString("Residents");
@@ -385,7 +389,9 @@ public class Localization extends SimpleLocalization {
 		public static class ResidentMenu {
 
 			public static String MENU_TITLE;
+			public static String MENU_LIST_TITLE;
 			public static String[] INFO;
+			public static String[] INFO_EDIT;
 			public static String RESIDENT_NAME;
 			public static String ONLINE;
 			public static String TOWN_RANK;
@@ -402,7 +408,9 @@ public class Localization extends SimpleLocalization {
 			private static void init() {
 				setPathPrefix("Resident_Menu");
 				MENU_TITLE = getString("Menu_Title");
+				MENU_LIST_TITLE = getString("Menu_List_Title");
 				INFO = getStringList("Info").toArray(new String[0]);
+				INFO_EDIT = getStringList("Info_Edit").toArray(new String[0]);
 				RESIDENT_NAME = getString("Resident_Name");
 				ONLINE = getString("Online");
 				TOWN_RANK = getString("Town_Rank");

@@ -136,6 +136,8 @@ public final class Settings extends SimpleSettings {
 	public static Integer EXTRA_INFO_CMD;
 	public static String TOWN_INFO_BUTTON;
 	public static Integer TOWN_INFO_BUTTON_CMD;
+	public static String NATION_MENU_BUTTON;
+	public static Integer NATION_MENU_BUTTON_CMD;
 
 	public static String TOGGLE_FIRE;
 	public static Integer TOGGLE_FIRE_CMD;
@@ -441,6 +443,8 @@ public final class Settings extends SimpleSettings {
 		EXTRA_INFO_CMD = getInteger("Extra_Info.CustomModelData");
 		TOWN_INFO_BUTTON = getString("Town_Info_Icon.Item");
 		TOWN_INFO_BUTTON_CMD = getInteger("Town_Info_Icon.CustomModelData");
+		NATION_MENU_BUTTON = getString("Nation_Menu.Item");
+		NATION_MENU_BUTTON_CMD = getInteger("Nation_Menu.CustomModelData");
 
 		TOGGLE_FIRE = getString("Toggle_Fire.Item");
 		TOGGLE_FIRE_CMD = getInteger("Toggle_Fire.CustomModelData");

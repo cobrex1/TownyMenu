@@ -35,7 +35,10 @@ import org.mineacademy.fo.menu.button.ButtonReturnBack;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 
 public class TownMenu extends Menu {
 
@@ -72,48 +75,142 @@ public class TownMenu extends Menu {
 		} else {
 			setSize(9 * 3);
 		}
-
+		ItemCreator toggleMenuItem;
+		ItemCreator residentListItem;
+		ItemCreator permissionsMenuItem;
+		ItemCreator economyMenuItem;
+		ItemCreator plotMenuItem;
+		ItemCreator settingsMenuItem;
+		ItemCreator inviteMenuItem;
+		ItemCreator extraInfoItem;
+		ItemCreator nationMenuItem;
 
 		setTitle(Localization.TownMenu.MAIN_MENU_TITLE);
 
-		ItemCreator toggleMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOGGLE_MENU)))
-				.name(Localization.TownMenu.TOGGLE_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.TOGGLE_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
-		ItemCreator residentListItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_LIST)))
-				.name(Localization.TownMenu.RESIDENT_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.RESIDENT_LIST_CMD))
-				.lore((List<String>) Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
-		ItemCreator permissionsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PERMISSIONS_MENU)))
-				.name(Localization.TownMenu.PERMISSIONS_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.PERMISSIONS_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
-		ItemCreator economyMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ECONOMY_MENU)))
-				.name(Localization.TownMenu.ECONOMY_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.ECONOMY_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE);
-		ItemCreator plotMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_MENU)))
-				.name(Localization.TownMenu.PLOT_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.PLOT_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.PLOT_MENU_BUTTON_LORE);
-		ItemCreator settingsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SETTINGS_MENU)))
-				.name(Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.SETTINGS_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE);
-		ItemCreator inviteMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.INVITE_MENU)))
-				.name(Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.INVITE_MENU_CMD))
-				.lore((List<String>) Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE);
-		ItemCreator extraInfoItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.EXTRA_INFO)))
-				.name(Localization.TownMenu.EXTRA_INFO_MENU_BUTTON)
-				.modelData(Integer.valueOf(Settings.EXTRA_INFO_CMD))
-				.lore((List<String>) Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE);
-		ItemCreator nationMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOGGLE_MENU)))
-				.name("§e§lNation Management Menu")
-				.modelData(0)
-				.lore((List<String>) Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE);
+		if (Material.getMaterial(Settings.TOGGLE_MENU).equals(Material.LEATHER_BOOTS)) {
+			toggleMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOGGLE_MENU)))
+					.name(Localization.TownMenu.TOGGLE_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.TOGGLE_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+		} else {
+			toggleMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOGGLE_MENU)))
+					.name(Localization.TownMenu.TOGGLE_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.TOGGLE_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.TOGGLE_MENU_BUTTON_LORE);
+		}
 
 
+		if (Material.getMaterial(Settings.RESIDENT_LIST).equals(Material.LEATHER_BOOTS)) {
+			residentListItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_LIST)))
+					.name(Localization.TownMenu.RESIDENT_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.RESIDENT_LIST_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
+		} else {
+			residentListItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_LIST)))
+					.name(Localization.TownMenu.RESIDENT_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.RESIDENT_LIST_CMD))
+					.lore((List<String>) Localization.TownMenu.RESIDENT_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.PERMISSIONS_MENU).equals(Material.LEATHER_BOOTS)) {
+			permissionsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PERMISSIONS_MENU)))
+					.name(Localization.TownMenu.PERMISSIONS_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.PERMISSIONS_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
+		} else {
+			permissionsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PERMISSIONS_MENU)))
+					.name(Localization.TownMenu.PERMISSIONS_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.PERMISSIONS_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.PERMISSIONS_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.ECONOMY_MENU).equals(Material.LEATHER_BOOTS)) {
+			economyMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ECONOMY_MENU)))
+					.name(Localization.TownMenu.ECONOMY_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.ECONOMY_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE);
+		} else {
+			economyMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ECONOMY_MENU)))
+					.name(Localization.TownMenu.ECONOMY_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.ECONOMY_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.PLOT_MENU).equals(Material.LEATHER_BOOTS)) {
+			plotMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_MENU)))
+					.name(Localization.TownMenu.PLOT_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.PLOT_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.PLOT_MENU_BUTTON_LORE);
+		} else {
+			plotMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.PLOT_MENU)))
+					.name(Localization.TownMenu.PLOT_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.PLOT_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.PLOT_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.SETTINGS_MENU).equals(Material.LEATHER_BOOTS)) {
+			settingsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SETTINGS_MENU)))
+					.name(Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.SETTINGS_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE);
+		} else {
+			settingsMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SETTINGS_MENU)))
+					.name(Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.SETTINGS_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.GENERAL_SETTINGS_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.INVITE_MENU).equals(Material.LEATHER_BOOTS)) {
+			inviteMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.INVITE_MENU)))
+					.name(Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.INVITE_MENU_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE);
+		} else {
+			inviteMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.INVITE_MENU)))
+					.name(Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.INVITE_MENU_CMD))
+					.lore((List<String>) Localization.TownMenu.INVITE_PLAYER_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.EXTRA_INFO).equals(Material.LEATHER_BOOTS)) {
+			extraInfoItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.EXTRA_INFO)))
+					.name(Localization.TownMenu.EXTRA_INFO_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.EXTRA_INFO_CMD))
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE);
+		} else {
+			extraInfoItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.EXTRA_INFO)))
+					.name(Localization.TownMenu.EXTRA_INFO_MENU_BUTTON)
+					.modelData(Integer.valueOf(Settings.EXTRA_INFO_CMD))
+					.lore((List<String>) Localization.TownMenu.EXTRA_INFO_MENU_BUTTON_LORE);
+		}
+
+
+		if (Material.getMaterial(Settings.TOGGLE_MENU).equals(Material.LEATHER_BOOTS)) {
+			nationMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_MENU_BUTTON)))
+					.name(Localization.TownMenu.NATION_MENU_BUTTON)
+					.modelData(Settings.NATION_MENU_BUTTON_CMD)
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.lore((List<String>) Localization.TownMenu.NATION_MENU_BUTTON_LORE);
+		} else {
+			nationMenuItem = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_MENU_BUTTON)))
+					.name(Localization.TownMenu.NATION_MENU_BUTTON)
+					.modelData(Settings.NATION_MENU_BUTTON_CMD)
+					.lore((List<String>) Localization.TownMenu.NATION_MENU_BUTTON_LORE);
+		}
 
 		toggleMenuButton = new
 				ButtonMenu(new ToggleSettingsMenu(town), toggleMenuItem);
@@ -219,54 +316,110 @@ public class TownMenu extends Menu {
 		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), inviteMenuItem);
 		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), extraInfoItem);
 
-		if (Settings.ECONOMY_ENABLED) {
+		if (Material.getMaterial(Settings.TOWN_INFO_BUTTON).equals(Material.LEATHER_BOOTS)) {
+			if (Settings.ECONOMY_ENABLED) {
 
-			if (town.hasNation()) {
-				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-						.lore("")
-						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
-						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-						.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
-			} else
-				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-						.lore("")
-						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
-						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-						.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+				if (town.hasNation()) {
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.color(Settings.NEUTRAL_BUTTON_COLOR)
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+							.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+				} else
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.color(Settings.NEUTRAL_BUTTON_COLOR)
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+							.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
 
+			} else {
+
+				if (town.hasNation()) {
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.color(Settings.NEUTRAL_BUTTON_COLOR)
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+//						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+				} else
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.color(Settings.NEUTRAL_BUTTON_COLOR)
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+//						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+
+
+			}
 		} else {
+			if (Settings.ECONOMY_ENABLED) {
 
-			if (town.hasNation()) {
-				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-						.lore("")
-						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+				if (town.hasNation()) {
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+							.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+				} else
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+							.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+
+			} else {
+
+				if (town.hasNation()) {
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
 //						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-						.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
-			} else
-				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-						.lore("")
-						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+				} else
+					townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+							.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+							.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+							.lore("")
+							.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+							.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
 //						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-						.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+							.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+							.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
 
 
+			}
 		}
+
 
 		if (TownyAPI.getInstance().getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().getTownBlock(player.getLocation()))) {
 			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().getTownBlock(player.getLocation())), plotMenuItem);
@@ -653,7 +806,7 @@ public class TownMenu extends Menu {
 				setSize(9 * 6);
 			}
 
-			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
+			setTitle(Localization.TownMenu.ResidentMenu.MENU_LIST_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 		}
 
@@ -696,7 +849,9 @@ public class TownMenu extends Menu {
 	}
 
 	public class ResidentMenu extends Menu {
-
+		public String[] getInfo() {
+			return Localization.TownMenu.ResidentMenu.INFO_EDIT;
+		}
 		private final Button playerButton;
 		private final Button kickButton;
 		private final Button titleButton;
@@ -730,7 +885,7 @@ public class TownMenu extends Menu {
 				kickButton = new ButtonConversation(new TownKickPrompt(resident),
 						ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_KICK)))
 								.name(Localization.TownMenu.ResidentMenu.KICK)
-								.color(Settings.NEUTRAL_BUTTON_COLOR)
+								.color(Settings.NEGATIVE_BUTTON_COLOR)
 								.modelData(Integer.valueOf(Settings.RESIDENT_KICK_CMD))
 								.lore((List<String>) Localization.TownMenu.ResidentMenu.KICK_LORE));
 			} else {
@@ -745,6 +900,7 @@ public class TownMenu extends Menu {
 				titleButton = new ButtonConversation(new TownPlayerTitlePrompt(resident),
 						ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_TITLE)))
 								.name(Localization.TownMenu.ResidentMenu.TITLE)
+								.color(Settings.NEUTRAL_BUTTON_COLOR)
 								.modelData(Integer.valueOf(Settings.RESIDENT_TITLE_CMD))
 								.lore((List<String>) Localization.TownMenu.ResidentMenu.TITLE_LORE));
 			} else {
@@ -759,6 +915,7 @@ public class TownMenu extends Menu {
 				rankButton = new ButtonConversation(new TownRankPrompt(resident),
 						ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_RANK)))
 								.name(Localization.TownMenu.ResidentMenu.RANK)
+								.color(Settings.NEUTRAL_BUTTON_COLOR)
 								.modelData(Integer.valueOf(Settings.RESIDENT_RANK_CMD))
 								.lore((List<String>) Localization.TownMenu.ResidentMenu.RANK_LORE));
 			} else {
@@ -773,6 +930,7 @@ public class TownMenu extends Menu {
 				mayorButton = new ButtonConversation(new TownGiveMayorPrompt(resident),
 						ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_MAYOR)))
 								.name(Localization.TownMenu.ResidentMenu.MAYOR)
+								.color(Settings.NEGATIVE_BUTTON_COLOR)
 								.modelData(Integer.valueOf(Settings.RESIDENT_MAYOR_CMD))
 								.lore((List<String>) Localization.TownMenu.ResidentMenu.MAYOR_LORE));
 			} else {
@@ -787,16 +945,30 @@ public class TownMenu extends Menu {
 
 		@Override
 		public ItemStack getItemAt(int slot) {
-			if (slot == 4 )
-				return playerButton.getItem();
-			if (slot == 9 + 1)
-				return kickButton.getItem();
-			if (slot == 9 + 3)
-				return titleButton.getItem();
-			if (slot == 9 + 5)
-				return rankButton.getItem();
-			if (slot == 9 + 7)
-				return mayorButton.getItem();
+			if (!Settings.USE_FIXED_INVENTORY_SIZE) {
+				if (slot == 4 )
+					return playerButton.getItem();
+				if (slot == 9 + 1)
+					return kickButton.getItem();
+				if (slot == 9 + 3)
+					return titleButton.getItem();
+				if (slot == 9 + 5)
+					return rankButton.getItem();
+				if (slot == 9 + 7)
+					return mayorButton.getItem();
+			} else {
+				if (slot == 13 )
+					return playerButton.getItem();
+				if (slot == 0)
+					return kickButton.getItem();
+				if (slot == 8)
+					return titleButton.getItem();
+				if (slot == 17)
+					return rankButton.getItem();
+				if (slot == 9)
+					return mayorButton.getItem();
+			}
+
 
 			return DUMMY_BUTTON;
 		}
@@ -820,6 +992,29 @@ public class TownMenu extends Menu {
 				.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH)
 				.modelData(Integer.valueOf(Settings.SWITCH_CMD))
 				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE).make();
+
+		private final ItemStack BUILD_BUTTON_COLORED = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem("LEATHER_BOOTS"))
+				.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD)
+				.modelData(Integer.valueOf(Settings.BUILD_CMD))
+				.color(Settings.NEUTRAL_BUTTON_COLOR)
+				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.BUILD_LORE).make();
+		private final ItemStack BREAK_BUTTON_COLORED = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem("LEATHER_BOOTS"))
+				.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK)
+				.modelData(Integer.valueOf(Settings.BREAK_CMD))
+				.color(Settings.NEUTRAL_BUTTON_COLOR)
+				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.BREAK_LORE).make();
+		private final ItemStack ITEM_USE_BUTTON_COLORED = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem("LEATHER_BOOTS"))
+				.name(Localization.TownMenu.PlayerPermissionsMenu.USE)
+				.modelData(Integer.valueOf(Settings.ITEM_USE_CMD))
+				.color(Settings.NEUTRAL_BUTTON_COLOR)
+				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.USE_LORE).make();
+		private final ItemStack SWITCH_BUTTON_COLORED = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem("LEATHER_BOOTS"))
+				.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH)
+				.modelData(Integer.valueOf(Settings.SWITCH_CMD))
+				.color(Settings.NEUTRAL_BUTTON_COLOR)
+				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE).make();
+
+
 
 		private final Button buildResidentButton;
 		private final Button buildNationButton;
@@ -869,11 +1064,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BUILD)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES)
-							.modelData(Integer.valueOf(Settings.RESIDENT_BUILD_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.RESIDENT_BUILD).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_BUILD_CMD))
+								.color(town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_BUILD_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			buildNationButton = new Button() {
@@ -886,11 +1092,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BUILD)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION)
-							.modelData(Integer.valueOf(Settings.NATION_BUILD_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.NATION_BUILD).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_BUILD_CMD))
+								.color(town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_BUILD_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			buildAllyButton = new Button() {
@@ -904,11 +1121,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BUILD)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY)
-							.modelData(Integer.valueOf(Settings.ALLY_BUILD_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.ALLY_BUILD).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_BUILD_CMD))
+								.color(town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_BUILD_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			buildOutsiderButton = new Button() {
@@ -921,11 +1149,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BUILD)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER)
-							.modelData(Integer.valueOf(Settings.OUTSIDER_BUILD_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.OUTSIDER_BUILD).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_BUILD_CMD))
+								.color(town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BUILD)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_BUILD_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BUILD_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.BUILD) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 
@@ -940,11 +1179,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BREAK)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES)
-							.modelData(Integer.valueOf(Settings.RESIDENT_BREAK_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.RESIDENT_BREAK).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_BREAK_CMD))
+								.color(town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_BREAK_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			breakNationButton = new Button() {
@@ -957,11 +1207,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BREAK)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION)
-							.modelData(Integer.valueOf(Settings.NATION_BREAK_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.NATION_BREAK).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_BREAK_CMD))
+								.color(town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_BREAK_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			breakAllyButton = new Button() {
@@ -974,11 +1235,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BREAK)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY)
-							.modelData(Integer.valueOf(Settings.ALLY_BREAK_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.ALLY_BREAK).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_BREAK_CMD))
+								.color(town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_BREAK_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			breakOutsiderButton = new Button() {
@@ -991,11 +1263,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BREAK)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER)
-							.modelData(Integer.valueOf(Settings.OUTSIDER_BREAK_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.OUTSIDER_BREAK).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_BREAK_CMD))
+								.color(town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_BREAK)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_BREAK_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.BREAK_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.DESTROY) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 
@@ -1010,11 +1293,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_ITEM_USE)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.USE_RES)
-							.modelData(Integer.valueOf(Settings.RESIDENT_ITEM_USE_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.RESIDENT_ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_ITEM_USE_CMD))
+								.color(town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_ITEM_USE_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			itemUseNationButton = new Button() {
@@ -1027,11 +1321,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ITEM_USE)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION)
-							.modelData(Integer.valueOf(Settings.NATION_ITEM_USE_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.NATION_ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_ITEM_USE_CMD))
+								.color(town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_ITEM_USE_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			itemUseAllyButton = new Button() {
@@ -1044,11 +1349,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_ITEM_USE)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY)
-							.modelData(Integer.valueOf(Settings.ALLY_ITEM_USE_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.ALLY_ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_ITEM_USE_CMD))
+								.color(town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_ITEM_USE_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			itemUseOutsiderButton = new Button() {
@@ -1061,11 +1377,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_ITEM_USE)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER)
-							.modelData(Integer.valueOf(Settings.OUTSIDER_ITEM_USE_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.OUTSIDER_ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_ITEM_USE_CMD))
+								.color(town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_ITEM_USE)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_ITEM_USE_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.USE_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.ITEM_USE) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 
@@ -1081,11 +1408,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_SWITCH)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES)
-							.modelData(Integer.valueOf(Settings.RESIDENT_SWITCH_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.RESIDENT_SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_SWITCH_CMD))
+								.color(town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESIDENT_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES)
+								.modelData(Integer.valueOf(Settings.RESIDENT_SWITCH_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_RES2, town.getPermissions().getResidentPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			switchNationButton = new Button() {
@@ -1098,11 +1436,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SWITCH)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION)
-							.modelData(Integer.valueOf(Settings.NATION_SWITCH_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.NATION_SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION)
+								.color(town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.modelData(Integer.valueOf(Settings.NATION_SWITCH_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.NATION_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION)
+								.modelData(Integer.valueOf(Settings.NATION_SWITCH_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_NATION2, town.getPermissions().getNationPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			switchAllyButton = new Button() {
@@ -1115,10 +1464,20 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_SWITCH)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY)
-							.modelData(Integer.valueOf(Settings.ALLY_SWITCH_CMD))
-							.lore("", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.ALLY_SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_SWITCH_CMD))
+								.color(town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALLY_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY)
+								.modelData(Integer.valueOf(Settings.ALLY_SWITCH_CMD))
+								.lore("", Localization.TownMenu.PlayerPermissionsMenu.SWITCH_ALLY2, town.getPermissions().getAllyPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 			switchOutsiderButton = new Button() {
@@ -1131,11 +1490,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_SWITCH)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER)
-							.modelData(Integer.valueOf(Settings.OUTSIDER_SWITCH_CMD))
-							.lore("")
-							.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+					if (Material.getMaterial(Settings.OUTSIDER_SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_SWITCH_CMD))
+								.color(town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Settings.POSITIVE_BUTTON_COLOR : Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.OUTSIDER_SWITCH)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER)
+								.modelData(Integer.valueOf(Settings.OUTSIDER_SWITCH_CMD))
+								.lore("")
+								.lore(Localization.TownMenu.PlayerPermissionsMenu.SWITCH_OUTSIDER2, town.getPermissions().getOutsiderPerm(TownyPermission.ActionType.SWITCH) ? Localization.TownMenu.PlayerPermissionsMenu.TRUE_MSG : Localization.TownMenu.PlayerPermissionsMenu.FALSE_MSG, "", Localization.TownMenu.PlayerPermissionsMenu.CHANGE).make();
+
+					}
 				}
 			};
 
@@ -1151,11 +1521,22 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESET_ALL)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.RESET)
-							.modelData(Integer.valueOf(Settings.RESET_ALL_CMD))
-							.lore("")
-							.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.RESET_LORE).make();
+					if (Material.getMaterial(Settings.RESET_ALL).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESET_ALL)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.RESET)
+								.modelData(Integer.valueOf(Settings.RESET_ALL_CMD))
+								.color(Settings.NEGATIVE_BUTTON_COLOR)
+								.lore("")
+								.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.RESET_LORE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESET_ALL)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.RESET)
+								.modelData(Integer.valueOf(Settings.RESET_ALL_CMD))
+								.lore("")
+								.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.RESET_LORE).make();
+
+					}
 				}
 			};
 			allOnButton = new Button() {
@@ -1168,66 +1549,173 @@ public class TownMenu extends Menu {
 
 				@Override
 				public ItemStack getItem() {
-					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALL_ON)))
-							.name(Localization.TownMenu.PlayerPermissionsMenu.ON)
-							.modelData(Integer.valueOf(Settings.ALL_ON_CMD))
-							.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.ON_LORE).make();
+					if (Material.getMaterial(Settings.ALL_ON).equals(Material.LEATHER_BOOTS)) {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALL_ON)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.ON)
+								.color(Settings.POSITIVE_BUTTON_COLOR)
+								.modelData(Integer.valueOf(Settings.ALL_ON_CMD))
+								.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.ON_LORE).make();
+
+					} else {
+						return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.ALL_ON)))
+								.name(Localization.TownMenu.PlayerPermissionsMenu.ON)
+								.modelData(Integer.valueOf(Settings.ALL_ON_CMD))
+								.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.ON_LORE).make();
+
+					}
 				}
 			};
 		}
 
 		@Override
 		public ItemStack getItemAt(int slot) {
+			if (!Settings.USE_FIXED_INVENTORY_SIZE) {
+				if (slot == 9 + 1) {
+					if (Material.getMaterial(Settings.BUILD).equals(Material.LEATHER_BOOTS)) {
+						return BUILD_BUTTON_COLORED;
+					} else {
+						return BUILD_BUTTON;
+					}
+				}
 
-			if (slot == 9 + 1)
-				return BUILD_BUTTON;
-			if (slot == 9 * 2 + 1)
-				return BREAK_BUTTON;
-			if (slot == 9 * 3 + 1)
-				return ITEM_USE_BUTTON;
-			if (slot == 9 * 4 + 1)
-				return SWITCH_BUTTON;
+				if (slot == 9 * 2 + 1) {
+					if (Material.getMaterial(Settings.BREAK).equals(Material.LEATHER_BOOTS)) {
+						return BREAK_BUTTON_COLORED;
+					} else {
+						return BREAK_BUTTON;
+					}
+				}
 
-			if (slot == 9 + 3)
-				return buildResidentButton.getItem();
-			if (slot == 9 + 4)
-				return buildNationButton.getItem();
-			if (slot == 9 + 5)
-				return buildAllyButton.getItem();
-			if (slot == 9 + 6)
-				return buildOutsiderButton.getItem();
+				if (slot == 9 * 3 + 1) {
+					if (Material.getMaterial(Settings.ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ITEM_USE_BUTTON_COLORED;
+					} else {
+						return ITEM_USE_BUTTON;
+					}
+				}
 
-			if (slot == 9 * 2 + 3)
-				return breakResidentButton.getItem();
-			if (slot == 9 * 2 + 4)
-				return breakNationButton.getItem();
-			if (slot == 9 * 2 + 5)
-				return breakAllyButton.getItem();
-			if (slot == 9 * 2 + 6)
-				return breakOutsiderButton.getItem();
+				if (slot == 9 * 4 + 1) {
+					if (Material.getMaterial(Settings.SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return SWITCH_BUTTON_COLORED;
+					} else {
+						return SWITCH_BUTTON;
+					}
+				}
 
-			if (slot == 9 * 3 + 3)
-				return itemUseResidentButton.getItem();
-			if (slot == 9 * 3 + 4)
-				return itemUseNationButton.getItem();
-			if (slot == 9 * 3 + 5)
-				return itemUseAllyButton.getItem();
-			if (slot == 9 * 3 + 6)
-				return itemUseOutsiderButton.getItem();
+				if (slot == 9 + 3)
+					return buildResidentButton.getItem();
+				if (slot == 9 + 4)
+					return buildNationButton.getItem();
+				if (slot == 9 + 5)
+					return buildAllyButton.getItem();
+				if (slot == 9 + 6)
+					return buildOutsiderButton.getItem();
 
-			if (slot == 9 * 4 + 3)
-				return switchResidentButton.getItem();
-			if (slot == 9 * 4 + 4)
-				return switchNationButton.getItem();
-			if (slot == 9 * 4 + 5)
-				return switchAllyButton.getItem();
-			if (slot == 9 * 4 + 6)
-				return switchOutsiderButton.getItem();
+				if (slot == 9 * 2 + 3)
+					return breakResidentButton.getItem();
+				if (slot == 9 * 2 + 4)
+					return breakNationButton.getItem();
+				if (slot == 9 * 2 + 5)
+					return breakAllyButton.getItem();
+				if (slot == 9 * 2 + 6)
+					return breakOutsiderButton.getItem();
 
-			if (slot == 9 * 2 + 8)
-				return resetButton.getItem();
-			if (slot == 9 * 3 + 8)
-				return allOnButton.getItem();
+				if (slot == 9 * 3 + 3)
+					return itemUseResidentButton.getItem();
+				if (slot == 9 * 3 + 4)
+					return itemUseNationButton.getItem();
+				if (slot == 9 * 3 + 5)
+					return itemUseAllyButton.getItem();
+				if (slot == 9 * 3 + 6)
+					return itemUseOutsiderButton.getItem();
+
+				if (slot == 9 * 4 + 3)
+					return switchResidentButton.getItem();
+				if (slot == 9 * 4 + 4)
+					return switchNationButton.getItem();
+				if (slot == 9 * 4 + 5)
+					return switchAllyButton.getItem();
+				if (slot == 9 * 4 + 6)
+					return switchOutsiderButton.getItem();
+
+				if (slot == 9 * 2 + 8)
+					return resetButton.getItem();
+				if (slot == 9 * 3 + 8)
+					return allOnButton.getItem();
+			} else {
+				if (slot == 1) {
+					if (Material.getMaterial(Settings.BUILD).equals(Material.LEATHER_BOOTS)) {
+						return BUILD_BUTTON_COLORED;
+					} else {
+						return BUILD_BUTTON;
+					}
+				}
+
+				if (slot == 9 + 1) {
+					if (Material.getMaterial(Settings.BREAK).equals(Material.LEATHER_BOOTS)) {
+						return BREAK_BUTTON_COLORED;
+					} else {
+						return BREAK_BUTTON;
+					}
+				}
+
+				if (slot == 9 * 2 + 1) {
+					if (Material.getMaterial(Settings.ITEM_USE).equals(Material.LEATHER_BOOTS)) {
+						return ITEM_USE_BUTTON_COLORED;
+					} else {
+						return ITEM_USE_BUTTON;
+					}
+				}
+
+				if (slot == 9 * 3 + 1) {
+					if (Material.getMaterial(Settings.SWITCH).equals(Material.LEATHER_BOOTS)) {
+						return SWITCH_BUTTON_COLORED;
+					} else {
+						return SWITCH_BUTTON;
+					}
+				}
+
+				if (slot == 3)
+					return buildResidentButton.getItem();
+				if (slot == 4)
+					return buildNationButton.getItem();
+				if (slot == 5)
+					return buildAllyButton.getItem();
+				if (slot == 6)
+					return buildOutsiderButton.getItem();
+
+				if (slot == 9 + 3)
+					return breakResidentButton.getItem();
+				if (slot == 9 + 4)
+					return breakNationButton.getItem();
+				if (slot == 9 + 5)
+					return breakAllyButton.getItem();
+				if (slot == 9 + 6)
+					return breakOutsiderButton.getItem();
+
+				if (slot == 9 * 2 + 3)
+					return itemUseResidentButton.getItem();
+				if (slot == 9 * 2 + 4)
+					return itemUseNationButton.getItem();
+				if (slot == 9 * 2 + 5)
+					return itemUseAllyButton.getItem();
+				if (slot == 9 * 2 + 6)
+					return itemUseOutsiderButton.getItem();
+
+				if (slot == 9 * 3 + 3)
+					return switchResidentButton.getItem();
+				if (slot == 9 * 3 + 4)
+					return switchNationButton.getItem();
+				if (slot == 9 * 3 + 5)
+					return switchAllyButton.getItem();
+				if (slot == 9 * 3 + 6)
+					return switchOutsiderButton.getItem();
+
+				if (slot == 9 + 8)
+					return resetButton.getItem();
+				if (slot == 9 * 2 + 8)
+					return allOnButton.getItem();
+			}
 
 			return DUMMY_BUTTON;
 		}
@@ -1544,7 +2032,7 @@ public class TownMenu extends Menu {
 				setSize(9 * 6);
 			}
 
-			setTitle(Localization.TownMenu.ResidentMenu.MENU_TITLE);
+			setTitle(Localization.TownMenu.ResidentMenu.MENU_LIST_TITLE);
 
 		}
 
