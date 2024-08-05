@@ -8,6 +8,7 @@ import com.palmergames.bukkit.towny.object.*;
 import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
 import com.palmergames.util.StringMgmt;
 import lombok.SneakyThrows;
+import me.cobrex.townymenu.nation.JoinNationMenu;
 import me.cobrex.townymenu.nation.NationMenu;
 import me.cobrex.townymenu.plot.PlotMenu;
 import me.cobrex.townymenu.settings.Localization;
@@ -433,7 +434,8 @@ public class TownMenu extends Menu {
 			nationMenuButton = new ButtonMenu(new NationMenu(town.getNation(), player), nationMenuItem);
 
 		} else {
-			nationMenuButton = Button.makeDummy(nationMenuItem);
+			//nationMenuButton = Button.makeDummy(nationMenuItem);
+			nationMenuButton = new ButtonMenu(new JoinNationMenu(null, player), nationMenuItem);
 
 		}
 	}
@@ -516,7 +518,7 @@ public class TownMenu extends Menu {
 				setSize(9 * 2);
 			}
 
-			if (Material.getMaterial(Settings.TOGGLE_PVP).equals(Material.LEATHER_BOOTS)) {
+			if (Settings.BACK_BUTTON.getMaterial().equals(Material.LEATHER_BOOTS)) {
 				ButtonReturnBack.setItemStack(ItemCreator
 						.of(Settings.BACK_BUTTON)
 						.name(Localization.Back_Button.BACK_BUTTON_TITLE)

@@ -116,8 +116,9 @@ public final class Settings extends SimpleSettings {
 	public static Integer NATION_EXTRA_COMMANDS_2_CMD;
 
 	public static String FIND_TOWN;
+	public static Integer FIND_TOWN_CMD;
 	public static String CREATE_TOWN;
-
+	public static Integer CREATE_TOWN_CMD;
 	public static String TOGGLE_MENU;
 	public static Integer TOGGLE_MENU_CMD;
 	public static String RESIDENT_LIST;
@@ -422,8 +423,10 @@ public final class Settings extends SimpleSettings {
 		NATION_EXTRA_COMMANDS_2 = getString("Nation_Extra_Commands_2.Item");
 		NATION_EXTRA_COMMANDS_2_CMD = getInteger("Nation_Extra_Commands_2.CustomModelData");
 
-		FIND_TOWN = getString("Find_Town");
-		CREATE_TOWN = getString("Create_Town");
+		FIND_TOWN = getString("Find_Town.Item");
+		FIND_TOWN_CMD = getInteger("Find_Town.CustomModelData");
+		CREATE_TOWN = getString("Create_Town.Item");
+		CREATE_TOWN_CMD = getInteger("Create_Town.CustomModelData");
 
 		TOGGLE_MENU = getString("Toggle_Menu.Item");
 		TOGGLE_MENU_CMD = getInteger("Toggle_Menu.CustomModelData");

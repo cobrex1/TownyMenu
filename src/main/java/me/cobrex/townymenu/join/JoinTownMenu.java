@@ -18,6 +18,7 @@ import org.mineacademy.fo.menu.MenuPagged;
 import org.mineacademy.fo.menu.button.Button;
 import org.mineacademy.fo.menu.button.ButtonConversation;
 import org.mineacademy.fo.menu.button.ButtonMenu;
+import org.mineacademy.fo.menu.button.ButtonReturnBack;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.remain.CompMaterial;
 
@@ -38,16 +39,38 @@ public class JoinTownMenu extends Menu {
 		ItemStack headItem = HeadDatabaseUtil.HeadDataUtil.createItem("hdb-10230");
 		ItemStack materialItem = HeadDatabaseUtil.HeadDataUtil.createItem("SUNFLOWER");
 
-		setSize(9);
+		if (Settings.USE_FIXED_INVENTORY_SIZE) {
+			setSize(9 * 6);
+		} else {
+			setSize(9);
+		}
+
 		setTitle(Localization.JoinCreateMenu.MAIN_MENU_TITLE);
 
 		List<Town> towns = new ArrayList<>(TownyUniverse.getInstance().getTowns()).stream().filter(t -> t.isOpen()).collect(Collectors.toList());
 
-		openTownButton = new ButtonMenu(new OpenTownMenu(towns), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.FIND_TOWN)))
-				.name(Localization.JoinCreateMenu.FIND_OPEN_TOWN));
+		if (Material.getMaterial(Settings.FIND_TOWN).equals(Material.LEATHER_BOOTS)) {
+			openTownButton = new ButtonMenu(new OpenTownMenu(towns), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.FIND_TOWN)))
+					.name(Localization.JoinCreateMenu.FIND_OPEN_TOWN)
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.modelData(Settings.FIND_TOWN_CMD));
+		} else {
+			openTownButton = new ButtonMenu(new OpenTownMenu(towns), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.FIND_TOWN)))
+					.name(Localization.JoinCreateMenu.FIND_OPEN_TOWN)
+					.modelData(Settings.FIND_TOWN_CMD));
+		}
 
-		createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.CREATE_TOWN)))
-				.name(Localization.JoinCreateMenu.CLICK_CREATE_TOWN));
+		if (Material.getMaterial(Settings.CREATE_TOWN).equals(Material.LEATHER_BOOTS)) {
+			createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.CREATE_TOWN)))
+					.name(Localization.JoinCreateMenu.CLICK_CREATE_TOWN)
+					.color(Settings.NEUTRAL_BUTTON_COLOR)
+					.modelData(Settings.CREATE_TOWN_CMD));
+		} else {
+			createTownButton = new ButtonConversation(new CreateTownPrompt(player), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.CREATE_TOWN)))
+					.name(Localization.JoinCreateMenu.CLICK_CREATE_TOWN)
+					.modelData(Settings.CREATE_TOWN_CMD));
+		}
+
 	}
 
 	private void add(Town t) {
@@ -57,7 +80,29 @@ public class JoinTownMenu extends Menu {
 
 		protected OpenTownMenu(Iterable<Town> pages) {
 			super(JoinTownMenu.this, pages);
+
 			setTitle(Localization.JoinCreateMenu.JOIN_OPEN_TOWN);
+
+			if (Settings.USE_FIXED_INVENTORY_SIZE) {
+				setSize(9 * 6);
+			}
+
+			if (Settings.BACK_BUTTON.getMaterial().equals(Material.LEATHER_BOOTS)) {
+				ButtonReturnBack.setItemStack(ItemCreator
+						.of(Settings.BACK_BUTTON)
+						.name(Localization.Back_Button.BACK_BUTTON_TITLE)
+						.lore((List<String>) Localization.Back_Button.BACK_BUTTON_LORE)
+						.color(Settings.NEUTRAL_BUTTON_COLOR)
+						.modelData(Settings.BACK_BUTTON_CMD)
+						.make());
+			} else {
+				ButtonReturnBack.setItemStack(ItemCreator
+						.of(Settings.BACK_BUTTON)
+						.name(Localization.Back_Button.BACK_BUTTON_TITLE)
+						.lore((List<String>) Localization.Back_Button.BACK_BUTTON_LORE)
+						.modelData(Settings.BACK_BUTTON_CMD)
+						.make());
+			}
 		}
 
 		@Override
@@ -68,6 +113,7 @@ public class JoinTownMenu extends Menu {
 //			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
 			Player player = Bukkit.getPlayer(item.getMayor().getUUID());
 			skull.setOwningPlayer(player);
+			skull.setCustomModelData(Settings.RESIDENT_LIST_PLAYER_HEAD_CMD);
 			List<String> lore = new ArrayList<>();
 			lore.add("");
 			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateMenu.MAYOR + (item.getMayor())));
@@ -89,11 +135,20 @@ public class JoinTownMenu extends Menu {
 
 	@Override
 	public ItemStack getItemAt(int slot) {
-		if (slot == 2)
-			return openTownButton.getItem();
+		if (!Settings.USE_FIXED_INVENTORY_SIZE) {
+			if (slot == 2)
+				return openTownButton.getItem();
 
-		if (slot == 5)
-			return createTownButton.getItem();
+			if (slot == 5)
+				return createTownButton.getItem();
+		} else {
+			if (slot == 20)
+				return openTownButton.getItem();
+
+			if (slot == 24)
+				return createTownButton.getItem();
+		}
+
 
 		return DUMMY_BUTTON;
 	}

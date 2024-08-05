@@ -203,8 +203,12 @@ Nation_Extra_Commands_2:
 # -----Town Menu Icons-----#
 
 # Non-resident menu
-Find_Town: SUNFLOWER
-Create_Town: PLAYER_HEAD
+Find_Town:
+  Item: SUNFLOWER
+  CustomModelData: 0
+Create_Town:
+  Item: PLAYER_HEAD
+  CustomModelData: 0
 
 # Town Main Menu Icons
 Toggle_Menu:

@@ -29,6 +29,12 @@ public class TownMenuCommand extends SimpleCommand {
 		if (this.args.length == 0) {
 			Town town;
 			Resident resident = TownyAPI.getInstance().getResident(getPlayer().getName());
+
+			//prevent town menu not showing up if resident is null
+			if (resident == null) {
+				new JoinTownMenu(null, getPlayer()).displayTo(getPlayer());
+			}
+
 			if (resident.hasTown()) {
 				town = resident.getTown();
 				if (town.getMayor().equals(resident) && town.getMayor().hasPermissionNode("townymenu.town.use"))
