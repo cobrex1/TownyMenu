@@ -205,9 +205,10 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenu dalších nastavení"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Nastavte bod spawnování národa"
-    - "Nastavte název národa"
-    - "Nastavit Nástěnku národa"
+    - "Nastavte domovský blok města"
+    - "Nastavte bod spawnování města"
+    - "Nastavte název nměsta"
+    - "Nastavit Nástěnku nměsta"
   Invite_Player_Menu_Button: "&d&lMenu Pozvání hráče"
   Invite_Player_Menu_Button_Lore:
     - ""

@@ -208,37 +208,74 @@ public class TownMenu extends Menu {
 		invitePlayerButton = new ButtonMenu(new InvitePlayerMenu(allOnlineResidents), inviteMenuItem);
 		extraInfoButton = new ButtonMenu(new ExtraTownInfo(), extraInfoItem);
 
-		if (town.hasNation()) {
-			townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-					.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-					.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-					.lore("")
-					.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-					.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
-					.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-					.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-					.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
-		} else
-			townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
-					.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
-					.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
-					.lore("")
-					.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
-					.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
-					.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
-					.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
-					.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+		if (Settings.ECONOMY_ENABLED) {
+
+			if (town.hasNation()) {
+				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+						.lore("")
+						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+						.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+			} else
+				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+						.lore("")
+						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+						.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
 
 
-		if (TownyAPI.getInstance().
-				getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().
-				getTownBlock(player.getLocation())))
+			if (TownyAPI.getInstance().
+					getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().
+					getTownBlock(player.getLocation())))
 
-			plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().
-					getTownBlock(player.getLocation())), plotMenuItem);
-		else
-			plotMenuButton = Button.makeDummy(plotMenuItem);
+				plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().
+						getTownBlock(player.getLocation())), plotMenuItem);
+			else
+				plotMenuButton = Button.makeDummy(plotMenuItem);
+
+		} else {
+
+			if (town.hasNation()) {
+				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+						.lore("")
+						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+//						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+						.lore((Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + " " + town.getNation()))).make();
+			} else
+				townInfoButton = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.TOWN_INFO_BUTTON)))
+						.name(Localization.TownMenu.TOWN_NAME + town.getName() + " " + "&7|" + (Localization.TownMenu.TOWN_POSTFIX + town.getPostfix()))
+						.modelData(Integer.valueOf(Settings.TOWN_INFO_BUTTON_CMD))
+						.lore("")
+						.lore(Localization.TownMenu.RESIDENTS + (Localization.TownMenu.NUMBER_RESIDENTS + " " + town.getNumResidents()))
+						.lore(Localization.TownMenu.CLAIM_BLOCKS + (Localization.TownMenu.TOTAL_CLAIMED_BLOCKS + " " + town.getNumTownBlocks()) + "" + "&7/" + (Localization.TownMenu.MAX_CLAIM_BLOCKS + "" + town.getMaxTownBlocks()))
+//						.lore(Localization.TownMenu.BALANCE + (Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()))
+						.lore(Localization.TownMenu.MAYOR + (Localization.TownMenu.MAYOR_NAME + " " + town.getMayor()))
+						.lore(Localization.TownMenu.NATION + (Localization.TownMenu.NATION_NAME + "")).make();
+
+
+			if (TownyAPI.getInstance().
+					getTownBlock(player.getLocation()) != null && town.hasTownBlock(TownyAPI.getInstance().
+					getTownBlock(player.getLocation())))
+
+				plotMenuButton = new ButtonMenu(new PlotMenu(TownyAPI.getInstance().
+						getTownBlock(player.getLocation())), plotMenuItem);
+			else
+				plotMenuButton = Button.makeDummy(plotMenuItem);
+		}
 	}
+
 
 	@Override
 	public ItemStack getItemAt(int slot) {
@@ -287,14 +324,6 @@ public class TownMenu extends Menu {
 
 			setSize(9 * 2);
 
-//			ButtonReturnBack.setItemStack(ItemCreator
-//					.of(CompMaterial.APPLE)
-//					.name("Return Back")
-//					.lore("", "Click to return back")
-//					.modelData(5)
-//					.make());
-
-
 			setTitle(Localization.TownMenu.ToggleMenu.MENU_TITLE);
 			Button.setInfoButtonTitle(Localization.MENU_INFORMATION);
 			ButtonReturnBack.setTitle(Localization.Back_Button.BACK_BUTTON_TITLE);
@@ -304,9 +333,12 @@ public class TownMenu extends Menu {
 			fireToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					town.setFire(!town.isFire());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+					if (player.hasPermission("towny.command.town.toggle.fire")) {
+						town.setFire(!town.isFire());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -321,9 +353,12 @@ public class TownMenu extends Menu {
 			mobsToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					town.setHasMobs(!town.hasMobs());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+					if (player.hasPermission("towny.command.town.toggle.mobs")) {
+						town.setHasMobs(!town.hasMobs());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -338,9 +373,12 @@ public class TownMenu extends Menu {
 			explosionToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					town.setExplosion(!town.isExplosion());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+					if (player.hasPermission("towny.command.town.toggle.explosion")) {
+						town.setExplosion(!town.isExplosion());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -356,39 +394,51 @@ public class TownMenu extends Menu {
 				@SneakyThrows
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					if (TownySettings.getOutsidersPreventPVPToggle()) {
-						Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
-						for (Player onlinePlayer : onlinePlayers) {
-							Resident onlinePlayerAsRes = TownyAPI.getInstance().getResident(onlinePlayer.getName());
-							if (onlinePlayerAsRes.hasTown()) {
-								if (!onlinePlayerAsRes.getTown().equals(town))
-									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
-										if (Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
-											Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
-											player.closeInventory();
-											return;
-										}
-							} else {
-								if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
-									if (Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
-										Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
-										player.closeInventory();
-										return;
+					if (player.hasPermission("towny.command.town.toggle.pvp")) {
+						if (TownySettings.getOutsidersPreventPVPToggle()) {
+							Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
+							for (Player onlinePlayer : onlinePlayers) {
+								Resident onlinePlayerAsRes = TownyAPI.getInstance().getResident(onlinePlayer.getName());
+								if (onlinePlayerAsRes.hasTown()) {
+									try {
+										if (!onlinePlayerAsRes.getTown().equals(town))
+											if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null)
+												if (Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
+													Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
+													player.closeInventory();
+													return;
+												}
+									} catch (NotRegisteredException e) {
+										throw new RuntimeException(e);
 									}
+								} else {
+									if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null) {
+										try {
+											if (Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
+												Common.tell(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
+												player.closeInventory();
+												return;
+											}
+										} catch (NotRegisteredException e) {
+											throw new RuntimeException(e);
+										}
+									}
+								}
 							}
 						}
-					}
-					if (TownySettings.getPVPCoolDownTime() > 0) {
-						if (CooldownTimerTask.hasCooldown(town.getName(), CooldownTimerTask.CooldownType.PVP)) {
-							Common.tell(player, Localization.Error.TOGGLE_PVP_COOLDOWN);
-							player.closeInventory();
-							return;
+						if (TownySettings.getPVPCoolDownTime() > 0) {
+							if (CooldownTimerTask.hasCooldown(town.getName(), CooldownTimerTask.CooldownType.PVP)) {
+								Common.tell(player, Localization.Error.TOGGLE_PVP_COOLDOWN);
+								player.closeInventory();
+								return;
+							}
 						}
-					}
-					town.setPVP(!town.isPVP());
-					CooldownTimerTask.addCooldownTimer(town.getName(), CooldownTimerTask.CooldownType.PVP);
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+						town.setPVP(!town.isPVP());
+						CooldownTimerTask.addCooldownTimer(town.getName(), CooldownTimerTask.CooldownType.PVP);
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -403,9 +453,12 @@ public class TownMenu extends Menu {
 			publicToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					town.setPublic(!town.isPublic());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+					if (player.hasPermission("towny.command.town.toggle.public")) {
+						town.setPublic(!town.isPublic());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -420,9 +473,12 @@ public class TownMenu extends Menu {
 			openToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
-					town.setOpen(!town.isOpen());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+					if (player.hasPermission("towny.command.town.toggle.open")) {
+						town.setOpen(!town.isOpen());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override
@@ -437,10 +493,13 @@ public class TownMenu extends Menu {
 			taxPercentToggle = new Button() {
 				@Override
 				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+					if (player.hasPermission("towny.command.town.toggle.taxpercent")) {
 
-					town.setTaxPercentage(!town.isTaxPercentage());
-					TownyAPI.getInstance().getDataSource().saveTown(town);
-					restartMenu();
+						town.setTaxPercentage(!town.isTaxPercentage());
+						TownyAPI.getInstance().getDataSource().saveTown(town);
+						restartMenu();
+					} else
+						tell(Localization.Error.NO_PERMISSION);
 				}
 
 				@Override

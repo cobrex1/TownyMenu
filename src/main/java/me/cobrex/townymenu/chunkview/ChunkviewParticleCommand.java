@@ -8,8 +8,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.mineacademy.fo.command.SimpleCommand;
+import org.mineacademy.fo.model.SimpleRunnable;
 
 public class ChunkviewParticleCommand extends SimpleCommand {
 
@@ -27,7 +27,8 @@ public class ChunkviewParticleCommand extends SimpleCommand {
 		Player player = getPlayer();
 		checkPerm("chunkviewparticle.view");
 
-		new BukkitRunnable() {
+		new SimpleRunnable() {
+			//		new BukkitRunnable() {
 			int count = 0;
 
 			@Override
