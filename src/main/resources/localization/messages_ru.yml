@@ -6,7 +6,7 @@
 #- When you use them, place quotes around the message like this: "&a&lBack"
 #- To use HEX colors, use #123456 syntax: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
-Confirm: "подтверждать"
+Confirm: "подтвердить"
 Cancel: "отмена"
 Menu_Information: "Меню информации"
 Reloaded: "Настройки перезагружены!"

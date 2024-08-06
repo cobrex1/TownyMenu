@@ -205,7 +205,7 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lOutras configurações"
   General_Settings_Menu_Button_Lore:
     - ""
-    - ""
+    - "Set Town home block"
     - "Definir geração de cidade"
     - "Definir nome da cidade"
     - "Definir quadro de avisos da cidade"
