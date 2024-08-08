@@ -227,7 +227,7 @@ Town_Menu:
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
-  Residents: "&2住宅:"
+  Residents: "&2居民:"
   Number_Residents: "&2"
   Claim_Blocks: "&2认领区块："
   Total_Claimed_Blocks: "&a"
@@ -253,7 +253,7 @@ Toggle_Menu:
   Open: "&3&l开启/禁用 开放"
   Tax_Percent: "&2&l切换税率"
 Resident_Menu:
-  Menu_Title: "&2&l住宅菜单"
+  Menu_Title: "&2&l居民菜单"
   Info:
     - "点击一个居民"
     - "来管理它们!"
@@ -436,7 +436,7 @@ Extra_Info_Menu:
     - "&a/t online &7- 在线城镇成员"
     - "&a/t say &7- 向城镇广播消息"
     - "&a/t towny prices &7- 显示城镇的价格/成本"
-    - "&a/t 设置地图颜色 [color]"
+    - "&a/t set mapcolor [color] &7-设置地图颜色"
 Plot_Menu:
   Main_Menu_Title: "&2地皮菜单"
   Toggle_Settings_Menu_Button: "&3&l地皮切换设置菜单"
