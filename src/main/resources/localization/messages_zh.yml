@@ -40,7 +40,7 @@ Nation_Menu:
   Info:
     - "国家主菜单"
     - "选择！"
-  Nation_Toggle_Menu_Button: "&9&l国家设置菜单"
+  Nation_Toggle_Menu_Button: "&9&l切换国家设置菜单"
   Nation_Toggle_Menu_Button_Lore:
     - ""
     - "&4&l开启或关闭"
@@ -131,7 +131,7 @@ Nation_Economy_Menu:
   Tax_Percentage: "设置税率"
   Tax_Amount: "设置税率"
 Nation_Toggle_Menu:
-  Menu_Title: "&2&l国家设置菜单"
+  Menu_Title: "&2&l国家切换设置菜单"
   Info:
     - "调整可切换的设置"
     - "为你的国家！"
@@ -139,7 +139,7 @@ Nation_Toggle_Menu:
   Toggle_On: "&e点击以&a打开"
   Public: "&9&l公开你的国家"
   Open: "&3&l开放你的国家"
-  Tax_Percent: "&2&l开启/禁用国家税率"
+  Tax_Percent: "&2&l切换国家税率"
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&l国家邀请城镇菜单"
   Invite: "点击邀请城镇加入国家"
@@ -219,10 +219,10 @@ Town_Menu:
     - ""
     - "了解如何索取土地"
     - "一些有用的命令"
-  Plot_Menu_Button: "&9&l地皮管理菜单"
+  Plot_Menu_Button: "&9&l地块管理菜单"
   Plot_Menu_Button_Lore:
     - ""
-    - "管理位于您当前"
+    - "管理地块位于"
     - "位置的地皮"
   #Town info icon
   Town_Name: "&a"
@@ -251,9 +251,9 @@ Toggle_Menu:
   PVP: "&4&开启/禁用 PVP"
   Public: "&9&l开启/禁用公共访问"
   Open: "&3&l开启/禁用 开放"
-  Tax_Percent: "&2&l开启/禁用税率"
+  Tax_Percent: "&2&l切换税率"
 Resident_Menu:
-  Menu_Title: "&2&l居民菜单"
+  Menu_Title: "&2&l住宅菜单"
   Info:
     - "点击一个居民"
     - "来管理它们!"
@@ -303,7 +303,7 @@ Player_Permission_Menu:
     - ""
     - "打开所有权限"
     - "给所有权限组"
-  Build: "&3&l建造"
+  Build: "&3&l版本"
   Build_Lore:
     - ""
     - "谁拥有权限"
@@ -334,7 +334,7 @@ Player_Permission_Menu:
   Build_Res: "&6&l居民 放置许可"
   Build_Res2: "居民是否能放置方块: "
   Build_Nation: "&6&l获得全国放置许可"
-  Build_Nation2: "国民是否能放置方块: "
+  Build_Nation2: "国家成员能放置方块: "
   Build_Ally: "&6&l盟友放置许可"
   Build_Ally2: "国家的盟友是否能放置方块: "
   Build_Outsider: "&6&l外人放置许可"
@@ -342,9 +342,9 @@ Player_Permission_Menu:
   Break_Res: "&6&l居民破坏许可"
   Break_Res2: "居民是否能破坏方块: "
   Break_Nation: "&6&l国家破坏许可"
-  Break_Nation2: "国民是否能破坏方块: "
+  Break_Nation2: "国家成员能破坏方块: "
   Break_Ally: "&6&l盟友破坏许可"
-  Break_Ally2: "国家的盟友是否能破坏方块: "
+  Break_Ally2: "国家的盟友能破坏的方块: "
   Break_Outsider: "&6&l外人破坏许可"
   Break_Outsider2: "外人是否能破坏方块: "
   Use_Res: "允许居民使用物品"
@@ -436,7 +436,7 @@ Extra_Info_Menu:
     - "&a/t online &7- 在线城镇成员"
     - "&a/t say &7- 向城镇广播消息"
     - "&a/t towny prices &7- 显示城镇的价格/成本"
-    - "&a/t set mapcolor [color] &7-设置地图颜色"
+    - "&a/t 设置地图颜色 [color]"
 Plot_Menu:
   Main_Menu_Title: "&2地皮菜单"
   Toggle_Settings_Menu_Button: "&3&l地皮设置菜单"
@@ -455,10 +455,10 @@ Plot_Menu:
   Plot_Admin_Menu_Button: "&5&l地皮管理菜单"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "地皮出售"
-    - "地皮不出售"
+    - "地块出售"
+    - "地块不出售"
     - "设置地皮类型"
-    - "驱逐地皮所有者"
+    - "驱逐地块所有者"
   Friend_Menu_Button: "&a好友菜单"
   Friend_Menu_Button_Lore:
     - ""
@@ -470,7 +470,7 @@ Friend_Menu:
   Click_Remove_Lore: "&c点击以移除好友"
   Click_Add_Lore: "&a点击添加好友"
 Plot_Toggle_Menu:
-  Menu_Title: "&2&l地皮设置菜单"
+  Menu_Title: "&2&l地块设置菜单"
   Info:
     - ""
     - "火焰蔓延"
@@ -533,15 +533,15 @@ Plot_Player_Permission_Menu:
   Build_Res: "&6&l居民/好友 放置许可"
   Build_Res2: "居民/好友是否能放置方块: "
   Build_Nation: "&6&l城镇/国民放置许可"
-  Build_Nation2: "市民/国民是否能放置方块: "
+  Build_Nation2: "城镇/国家成员能放置方块: "
   Build_Ally: "&6&l盟友放置许可"
   Build_Ally2: "国家的盟友是否能放置方块: "
   Build_Outsider: "&6&l外人放置许可"
-  Build_Outsider2: "外人是否能放置方块: "
+  Build_Outsider2: "外人能放置的方块: "
   Break_Res: "&6&l居民/好友 破坏许可"
   Break_Res2: "居民/好友是否能破坏方块: "
   Break_Nation: "&6&l城镇/国民破坏许可"
-  Break_Nation2: "市民/国民是否能破坏方块: "
+  Break_Nation2: "城镇/国家成员能破坏方块: "
   Break_Ally: "&6&l盟友破坏许可"
   Break_Ally2: "国家的盟友是否能破坏方块: "
   Break_Outsider: "&6&l外人破坏许可"
@@ -549,7 +549,7 @@ Plot_Player_Permission_Menu:
   Use_Res: "允许居民/好友使用物品"
   Use_Res2: "居民/好友是否能使用物品: "
   Use_Nation: "&6&l允许城镇/国民使用物品"
-  Use_Nation2: "市民/国民是否能使用的物品: "
+  Use_Nation2: "城镇/国家成员能使用的物品: "
   Use_Ally: "&6&l允许盟友使用物品"
   Use_Ally2: "盟友是否能使用物品: "
   Use_Outsider: "&6&l允许外人使用物品"
@@ -557,7 +557,7 @@ Plot_Player_Permission_Menu:
   Switch_Res: "&6&l允许居民/好友使用开关"
   Switch_Res2: "居民/好友是否能开关东西: "
   Switch_Nation: "&6&l允许城镇/国民使用开关"
-  Switch_Nation2: "市民/国民是否能开关东西: "
+  Switch_Nation2: "城镇/国家成员能开关东西: "
   Switch_Ally: "&6&l允许盟友使用开关"
   Switch_Ally2: "盟友是否能开关东西: "
   Switch_Outsider: "&6&l允许外人使用开关"
@@ -579,11 +579,11 @@ Plot_Admin_Menu:
   Set_Type_Lore:
     - ""
     - "确定这是哪种类型"
-    - "的地皮。"
-  Evict: "&4&l驱逐地皮所有者"
+    - "的地块。"
+  Evict: "&4&l驱逐地块所有者"
   Evict_Lore:
     - ""
-    - "驱逐这个地皮"
+    - "驱逐这个地块"
     - "上的居民"
 Nation_Conversables:
   Board:
@@ -663,17 +663,17 @@ Plot_Conversables:
   Evict:
     Prompt: "&c您是否想要驱逐这块地的居民？输入 &aconfirm &c或 &ccancel："
     Invalid: "&c这块地没有居民。"
-    Response: "&c地皮居民已被驱逐。"
+    Response: "&c地块居民已被驱逐。"
   For_Sale:
     Prompt: "&3输入你想要将这块地设置为出售的价格：&c (输入 \"cancel\" 以退出提示)"
-    Invalid: "&c请输入一个整数，并且价格要低于最高地皮价格：{max_price}"
-    Response: "&3地皮价格已设置为 &b{money_symbol}{input}。"
+    Invalid: "&c请输入一个整数，并且价格要低于最高地块价格：{max_price}"
+    Response: "&3地块价格已设置为 &b{money_symbol}{input}。"
   Not_For_Sale:
     Prompt: "&3您是否要将此地皮设置为不出售？输入 &aconfirm &3或 &ccancel&6："
     Response: "&c地皮设置为不出售。"
   Set_Type:
     Prompt: "&3您希望将此地皮设置为什么类型？&b（选项：{options}）输入 'cancel' 以取消"
-    Invalid: "&c请输入一个有效的地皮类型。（有效类型：{options}）或者输入 'cancel' 以取消"
+    Invalid: "&c请输入一个有效的地块类型。（有效类型：{options}）或者输入 'cancel' 以取消"
     Response: "&3地皮类型已设置为：&b{input}"
 Error:
   No_Permission: "&c你没有权限使用这个命令。"
@@ -690,7 +690,7 @@ Error:
   Cannot_Change_Name: "&c必须是市长才能更改城镇名称。"
   Cannot_Change_Board: "&c必须是市长才能更改城镇公告板。"
 Chunk_View:
-  Toggle_Remove: "边界方块现在显示，切换潜行以移除。"
+  Toggle_Remove: "边界方块现在显示。潜行切换以移除。"
   Removed: "边界方块已移除。"
 #DO NOT TOUCH VERSION
 Version: 2
