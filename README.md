@@ -27,8 +27,9 @@ chunkviewparticle.view - Permission to use the chunkviewparticle command
 
 # Translations
 
-If you'd like to help translating TownyMenu into the available languages or add entirely new languages just me
-on [crowdin](https://crowdin.com/project/townymenu)
+If you'd like to help translating TownyMenu into the available languages or add an entirely
+new languages just open an issue on Github, or message me on my discord. 
+Translations are here -> [crowdin](https://crowdin.com/project/townymenu)
 
 # Support
 
