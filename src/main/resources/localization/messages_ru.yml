@@ -484,8 +484,16 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Меню управления друзьями"
+  Town_Menu_Button: ""
+  Town_Menu_Button_Lore:
+    - ""
+    - ""
 Friend_Menu:
   Menu_Title: "&2Меню друзей"
+  Info:
+    - ""
+    - ""
+    - ""
   Remove: "&cИгрок &4{player}&c удалён из вашего списка друзей!"
   Add: "&3Игрок &b{player}&3 добавлен в список ваших друзей!"
   Click_Remove_Lore: "&cClick to Remove Friend"
@@ -585,6 +593,10 @@ Plot_Player_Permission_Menu:
   Switch_Outsider2: "&fСтатус на переключение:"
 Plot_Admin_Menu:
   Menu_Title: "&2Управление участком"
+  Info:
+    - ""
+    - ""
+    - ""
   For_Sale: "&a&lВыставить участок на продажу"
   For_Sale_Lore:
     - ""

@@ -641,6 +641,8 @@ public class Localization extends SimpleLocalization {
 		public static String[] PLOT_ADMIN_MENU_BUTTON_LORE;
 		public static String FRIEND_MENU_BUTTON;
 		public static String[] FRIEND_MENU_BUTTON_LORE;
+		public static String TOWN_MENU_BUTTON;
+		public static String[] TOWN_MENU_BUTTON_LORE;
 
 		private static void init() {
 			setPathPrefix("Plot_Menu");
@@ -653,11 +655,14 @@ public class Localization extends SimpleLocalization {
 			PLOT_ADMIN_MENU_BUTTON_LORE = getStringList("Plot_Admin_Menu_Button_Lore").toArray(new String[0]);
 			FRIEND_MENU_BUTTON = getString("Friend_Menu_Button");
 			FRIEND_MENU_BUTTON_LORE = getStringList("Friend_Menu_Button_Lore").toArray(new String[0]);
+			TOWN_MENU_BUTTON = getString("Town_Menu_Button");
+			TOWN_MENU_BUTTON_LORE = getStringList("Town_Menu_Button_Lore").toArray(new String[0]);
 		}
 
 		public static class FriendMenu {
 
 			public static String MENU_TITLE;
+			public static String[] INFO;
 			public static String REMOVE;
 			public static String ADD;
 			public static String CLICK_REMOVE_LORE;
@@ -666,6 +671,7 @@ public class Localization extends SimpleLocalization {
 			private static void init() {
 				setPathPrefix("Friend_Menu");
 				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
 				REMOVE = getString("Remove");
 				ADD = getString("Add");
 				CLICK_REMOVE_LORE = getString("Click_Remove_Lore");
@@ -806,6 +812,7 @@ public class Localization extends SimpleLocalization {
 		public static class PlotAdminMenu {
 
 			public static String MENU_TITLE;
+			public static String[] INFO;
 			public static String FOR_SALE;
 			public static String[] FOR_SALE_LORE;
 			public static String NOT_FOR_SALE;
@@ -818,6 +825,7 @@ public class Localization extends SimpleLocalization {
 			private static void init() {
 				setPathPrefix("Plot_Admin_Menu");
 				MENU_TITLE = getString("Menu_Title");
+				INFO = getStringList("Info").toArray(new String[0]);
 				FOR_SALE = getString("For_Sale");
 				FOR_SALE_LORE = getStringList("For_Sale_Lore").toArray(new String[0]);
 				NOT_FOR_SALE = getString("Not_For_Sale");

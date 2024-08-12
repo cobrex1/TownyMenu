@@ -484,8 +484,16 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Menu quản lý bạn bè"
+  Town_Menu_Button: ""
+  Town_Menu_Button_Lore:
+    - ""
+    - ""
 Friend_Menu:
   Menu_Title: "&2Menu Bạn bè"
+  Info:
+    - ""
+    - ""
+    - ""
   Remove: "&cĐã xóa {player} khỏi danh sách bạn bè của bạn!"
   Add: "&3Đã thêm &b{player} &3 vào danh sách bạn bè của bạn!"
   Click_Remove_Lore: "&cNhấp để Xóa bạn bè"
@@ -585,6 +593,10 @@ Plot_Player_Permission_Menu:
   Switch_Outsider2: "Người ngoài có thể chuyển đổi: "
 Plot_Admin_Menu:
   Menu_Title: "&2Menu Quản trị Lô"
+  Info:
+    - ""
+    - ""
+    - ""
   For_Sale: "&a&lSet Lô đất Cần Bán"
   For_Sale_Lore:
     - ""

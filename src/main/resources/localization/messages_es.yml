@@ -484,8 +484,16 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Menu de manejo de amigos"
+  Town_Menu_Button: ""
+  Town_Menu_Button_Lore:
+    - ""
+    - ""
 Friend_Menu:
   Menu_Title: "&2Menu de amigos"
+  Info:
+    - ""
+    - ""
+    - ""
   Remove: "&cHas removido a {player} de tu lista de amigos"
   Add: "&3Has agregado &b{player} &3a tu lista de amigos"
   Click_Remove_Lore: "&cHaga clic para eliminar amigos"
@@ -585,6 +593,10 @@ Plot_Player_Permission_Menu:
   Switch_Outsider2: "Pueden los forasteros usar switch: "
 Plot_Admin_Menu:
   Menu_Title: "&2Menu admin de parcelas"
+  Info:
+    - ""
+    - ""
+    - ""
   For_Sale: "&a&lPoner a la venta"
   For_Sale_Lore:
     - ""

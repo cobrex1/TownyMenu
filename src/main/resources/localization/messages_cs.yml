@@ -484,8 +484,16 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Menu správy přátel"
+  Town_Menu_Button: ""
+  Town_Menu_Button_Lore:
+    - ""
+    - ""
 Friend_Menu:
   Menu_Title: "&2Menu přátel"
+  Info:
+    - ""
+    - ""
+    - ""
   Remove: "&cOdstranění {player} ze seznamu přátel!"
   Add: "&3Přidat &b{player} &3do svého seznamu přátel!"
   Click_Remove_Lore: "&cKlikněte pro odstranění přítele"
@@ -585,6 +593,10 @@ Plot_Player_Permission_Menu:
   Switch_Outsider2: "Mohou cizinci switchovat: "
 Plot_Admin_Menu:
   Menu_Title: "&2Menu administrátora"
+  Info:
+    - ""
+    - ""
+    - ""
   For_Sale: "&a&lNastavit pozemek na prodej"
   For_Sale_Lore:
     - ""

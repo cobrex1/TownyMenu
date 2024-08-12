@@ -440,7 +440,6 @@ public class TownMenu extends Menu {
 		}
 	}
 
-
 	@Override
 	public ItemStack getItemAt(int slot) {
 		if (!Settings.USE_FIXED_INVENTORY_SIZE) {

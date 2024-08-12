@@ -484,8 +484,16 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Friend Management menu"
+  Town_Menu_Button: "&aTown Management Menu"
+  Town_Menu_Button_Lore:
+    - ""
+    - "Manage your town"
 Friend_Menu:
   Menu_Title: "&2Friend Menu"
+  Info:
+    - "Add friends that"
+    - "are able to build"
+    - " on your plot"
   Remove: "&cRemoved {player} from your friends list!"
   Add: "&3Added &b{player} &3to your friends list!"
   Click_Remove_Lore: "&cClick to Remove Friend"
@@ -585,6 +593,10 @@ Plot_Player_Permission_Menu:
   Switch_Outsider2: "Can Outsiders Switch: "
 Plot_Admin_Menu:
   Menu_Title: "&2Plot Admin Menu"
+  Info:
+    - "Set your plot for"
+    - "sale or set its"
+    - "type."
   For_Sale: "&a&lSet Plot For Sale"
   For_Sale_Lore:
     - ""
