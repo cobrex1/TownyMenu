@@ -6,18 +6,18 @@
 #- When you use them, place quotes around the message like this: "&a&lBack"
 #- To use HEX colors, use #123456 syntax: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
-Confirm: "confirm"
+Confirm: "confirmer"
 Cancel: "annuler"
-Menu_Information: "Informations sur le menu"
-Reloaded: "Reloadé !"
+Menu_Information: "Menu d'informations"
+Reloaded: "Paramètres rechargés !"
 Back_Button:
   Back_Button_Title: "&a&lRetour"
   Back_Button_Lore:
     - ""
-    - "Menu précédant."
+    - "Menu précédent."
 Join_Create_Menu:
   Main_Menu_Title: "Rejoindre ou créer une ville"
-  Find_Open_Town: "Trouver une ville ouverte"
+  Find_Open_Town: "Trouver une ville libre"
   Click_Create_Town: "Clique pour créer une ville"
   Join_Open_Town: "&aRejoindre une ville ouverte"
   #this is just setting the color
@@ -445,7 +445,7 @@ Plot_Menu:
     - "Propagation du feu"
     - "Apparition de monstres"
     - "Explosion"
-    - "PvP"
+    - "PVP"
   Permissions_Menu_Button: "&c&lMenu des Permissions de Parcelle"
   Permissions_Menu_Button_Lore:
     - ""
@@ -476,7 +476,7 @@ Plot_Toggle_Menu:
     - "Propagation du feu"
     - "Apparition de monstres"
     - "Explosion"
-    - "PvP"
+    - "PVP"
   Toggle_Off: "&eCliquez pour désactiver &cOFF"
   Toggle_On: "&eCliquez pour activer &aON"
   Fire: "&6&lActiver/Désactiver la propagation du feu"
