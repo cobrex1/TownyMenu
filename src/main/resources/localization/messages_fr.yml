@@ -18,28 +18,28 @@ Back_Button:
 Join_Create_Menu:
   Main_Menu_Title: "Rejoindre ou créer une ville"
   Find_Open_Town: "Trouver une ville libre"
-  Click_Create_Town: "Clique pour créer une ville"
-  Join_Open_Town: "&aRejoindre une ville ouverte"
+  Click_Create_Town: "Cliquez pour créer une ville"
+  Join_Open_Town: "&aRejoindre une ville libre"
   #this is just setting the color
   Town_Name: "&e"
   Mayor: "&fMaire: "
-  Number_Residents: "&fNombre de membres: "
-  Create_Own_Town: "&aécrire le nom de la ville ou &cécrire annuler."
+  Number_Residents: "&fNombre de résidents: "
+  Create_Own_Town: "&aÉcrire le nom de la ville ou &ccancel&a pour annuler."
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lRejoindre ou créer une Nation"
-  Find_Nation_Button: "&4Cliquer et trouver une Nation ouverte"
-  Click_Create_Nation_Button: "&4Cliquer pour créer une Nation"
-  Join_Open_Nation: "&aRejoindre une Nation ouverte"
+  Find_Nation_Button: "&4Cliquez pour trouver une Nation libre"
+  Click_Create_Nation_Button: "&4Cliquez pour créer une Nation"
+  Join_Open_Nation: "&aRejoindre une Nation libre"
   #this is just setting the color
   Nation_Name: "&e "
-  King: "&fPrésident: "
-  Number_of_Towns: "&fNombre de ville: "
-  Create_Own_Nation: "&aEcrire le nom de la Nation ou &cécrire annuler."
+  King: "&fRoi: "
+  Number_of_Towns: "&fNombre de villes: "
+  Create_Own_Nation: "&aÉcrire le nom de la ville ou &ccancel&a pour annuler."
 Nation_Menu:
-  Main_Menu_Title: "&3&lMenu de la nation"
+  Main_Menu_Title: "&3&lMenu de la Nation"
   Info:
-    - "Menu principale de la nation"
-    - "option!"
+    - "Menu principal de la Nation"
+    - "option !"
   Nation_Toggle_Menu_Button: "&9&lBasucler le menu de la nation"
   Nation_Toggle_Menu_Button_Lore:
     - ""
