@@ -323,7 +323,7 @@ Player_Permission_Menu:
     - "su ciudad."
     - ""
     - "Ej. Agarrar agua con un balde"
-  Switch: "&2&lSwitch"
+  Switch: "&2&lCambiar"
   Switch_Lore:
     - ""
     - "Quien tiene permiso"
@@ -427,7 +427,7 @@ Extra_Info_Menu:
     - "reclamar junto a tierras ya reclamadas."
     - "Usa &aF3+G &7para ver los chunks"
     - "&a/towny map &7para ver tierras reclamadas"
-  Commands: "&2&lExtra Commands"
+  Commands: "&2&lComandos Extra"
   Commands_Lore:
     - ""
     - "&a/t outlaw &7- convertir a un jugador en un forajido"
