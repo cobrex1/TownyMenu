@@ -431,11 +431,11 @@ Extra_Info_Menu:
   Commands_Lore:
     - ""
     - "&a/t outlaw &7- convertir a un jugador en un forajido"
-    - "&a/t outlawlist &7- list the outlaws of the town"
+    - "&a/t outlawlist &7- listar los proscritos de la ciudad"
     - "&a/t buy &7- informacion de compra de chunks adicionales"
     - "&a/t online &7- listar miembros de la ciudad conectados"
     - "&a/t say &7- enviar un mensaje de ciudad"
-    - "&a/t towny prices &7- shows town prices / costs"
+    - "&a/t towny prices &7- muestra precios / costos de la ciudad"
     - "&a/t set mapcolor [color]"
 Plot_Menu:
   Main_Menu_Title: "&2Menu de Parcelas"
@@ -522,7 +522,7 @@ Plot_Player_Permission_Menu:
     - "tu trama."
     - ""
     - "Ej. Agarrar agua con un balde"
-  Switch: "&2&lSwitch"
+  Switch: "&2&lCambiar"
   Switch_Lore:
     - ""
     - "Quien tiene permiso"
@@ -641,7 +641,7 @@ Town_Conversables:
     Response: "&3El nombre de tu ciudad ahora es {input}"
     Return: "&cNo tienes suficiente dinero en el banco para cambiar el nombre."
   Rank:
-    Remove: "remove"
+    Remove: "eliminar"
     Prompt: "&3Escribe el nuevo rango de &b{player} &3: &b(Opciones: {ranks}) &3Escribe &ccancel &3para cancelar o&cremove &3para eliminar su rango."
     Invalid: "&cEste jugador ya tiene este rango o el rango no existe. (Opciones: {ranks}) &cEscribe &c&lcancel &cpara cancelar o remove para eliminar su rango."
     Response: "&aEl rango de {player} ahora es {input}"
@@ -678,7 +678,7 @@ Plot_Conversables:
 Error:
   No_Permission: "&cNo puedes hacer eso."
   No_Town: "&cNo tienes una ciudad."
-  War_Time: "&cYou may not do this action during war time."
+  War_Time: "&cNo puedes hacer esta acción durante el tiempo de guerra."
   Must_Be_In_Own_Plot: "&cSolo puedes usar esto en tus parcelas."
   Must_Be_In_Town: "&cDebes estar en tu ciudad para hacer esto."
   Must_Be_In_Bank: "&cDebes estar en el banco de tu ciudad para hacer esto."
