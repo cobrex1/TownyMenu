@@ -8,56 +8,56 @@
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "confirm"
 Cancel: "cancel"
-Menu_Information: "Menu Info"
-Reloaded: "Settings reloaded!"
+Menu_Information: "Menü Bilgisi"
+Reloaded: "Ayarlar yeniden yüklendi!"
 Back_Button:
-  Back_Button_Title: "&a&lBack"
+  Back_Button_Title: "&a&lGeri dön"
   Back_Button_Lore:
     - ""
-    - "Previous menu."
+    - "Önceki menü."
 Join_Create_Menu:
-  Main_Menu_Title: "Join or Create a Town"
-  Find_Open_Town: "Find an open Town"
-  Click_Create_Town: "Click to create a town"
-  Join_Open_Town: "&aJoin an Open Town"
+  Main_Menu_Title: "Bir Kasabaya Katılın veya Kasaba Oluşturun"
+  Find_Open_Town: "Açık bir Kasaba bulun"
+  Click_Create_Town: "Bir kasaba oluşturmak için tıklayın"
+  Join_Open_Town: "&aAçık Kasabaya Katılın"
   #this is just setting the color
   Town_Name: "&e"
   Mayor: "&fBelediye Başkanı: "
-  Number_Residents: "&fNumber of Residents: "
+  Number_Residents: "&fSakin Sayısı: "
   Create_Own_Town: "&aType the name of your town or &ctype cancel."
 Join_Create_Nation_Menu:
-  Main_Menu_Title: "&3&lJoin or create a Nation"
-  Find_Nation_Button: "&4Click to find an open Nation"
-  Click_Create_Nation_Button: "&4Click to create your Nation"
-  Join_Open_Nation: "&aJoin an Open Nation"
+  Main_Menu_Title: "&3&lBir Ulusa katılın veya oluşturun"
+  Find_Nation_Button: "&4Açık bir Ulus bulmak için tıklayın"
+  Click_Create_Nation_Button: "&4Ulusunuzu oluşturmak için tıklayın"
+  Join_Open_Nation: "&aAçık Bir Ulusa Katılın"
   #this is just setting the color
   Nation_Name: "&e "
-  King: "&fKing: "
-  Number_of_Towns: "&fNumber of Towns: "
+  King: "&fKral: "
+  Number_of_Towns: "&fKasaba Sayısı: "
   Create_Own_Nation: "&aType the name of your nation or &ctype cancel."
 Nation_Menu:
-  Main_Menu_Title: "&3&lNation Menu"
+  Main_Menu_Title: "&3&lUlus Menüsü"
   Info:
-    - "Main menu for Nation"
+    - "Ulus için ana menü"
     - "option!"
   Nation_Toggle_Menu_Button: "&9&lToggle Nation Settings Menu"
   Nation_Toggle_Menu_Button_Lore:
     - ""
     - "&4&lTurn on and off"
     - "various nation settings."
-  Nation_Town_List_Button: "&6&lTown List Menu"
+  Nation_Town_List_Button: "&6&lKasaba Listesi Menüsü"
   Nation_Town_List_Button_Lore:
     - ""
-    - "View towns in the Nation"
-  Nation_Resident_Menu_Button: "&b&lNation Resident Menu"
+    - "Ulus'taki kasabaları görüntüleyin"
+  Nation_Resident_Menu_Button: "&b&lUlus Sakinleri Menüsü"
   Nation_Resident_Menu_Button_Lore:
     - ""
-    - "Manage the nation residents"
-  Nation_Economy_Menu_Button: "&a&lNation Economy Management Menu"
+    - "Ulus sakinlerini yönetin"
+  Nation_Economy_Menu_Button: "&a&lUlus Ekonomi Yönetimi Menüsü"
   Nation_Economy_Menu_Button_Lore:
     - ""
-    - "Manage your nation's money"
-  Nation_Settings_Button: "&2&lNation Settings Menu"
+    - "Ulusunuzun parasını yönetin"
+  Nation_Settings_Button: "&2&lUlus Ayarları Menüsü"
   Nation_Settings_Button_Lore:
     - ""
     - "Set Nation Spawn"
@@ -97,7 +97,7 @@ Nation_Settings_Menu:
     - "Set the nation board"
     - "of your nation."
 Nation_Town_Menu:
-  Menu_Title: "&2&lNation Town Menu"
+  Menu_Title: "&2&lUlus Kasabası Menüsü"
   Info:
     - "Click on a town"
     - "to manage them!"
@@ -112,11 +112,11 @@ Nation_Town_Menu:
     - "Click to kick town"
     - "from your nation"
 Nation_Economy_Menu:
-  Menu_Title: "&2&lEconomy Menu"
-  Balance: "&2&lCurrent Nation Balance"
+  Menu_Title: "&2&lEkonomi Menüsü"
+  Balance: "&2&lMevcut Ulus Bakiyesi"
   #this is just setting the color
   Nation_Balance: "&a  "
-  Upkeep: "&fCurrent Upkeep: "
+  Upkeep: "&fMevcut Bakım: "
   Withdraw: "&c&lWithdraw Money"
   Withdraw_Lore:
     - ""
@@ -151,7 +151,7 @@ Nation_Resident_Menu:
   #this is just setting the color
   Res_Name: "&e&l"
   Online: "&fLast online: "
-  Town_Name: "&6Town: "
+  Town_Name: "&6Kasaba: "
   Nation_Rank: "&3&lSet Resident Rank"
   Nation_Rank_Lore:
     - ""
@@ -165,7 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lIrreversible"
 Nation_Extra_Info_Menu:
-  Commands_1: "&6&lOther useful commands"
+  Commands_1: "&6&lDiğer faydalı komutlar"
   Commands_1_Lore:
     - ""
     - "&a/n toggle neutral"
@@ -173,7 +173,7 @@ Nation_Extra_Info_Menu:
     - ""
     - "&a/n ally [name]"
     - "&a/n allylist"
-  Commands_2: "&2&lFurther Extra Commands"
+  Commands_2: "&2&lBaşka Ekstra Komutlar"
   Commands_2_Lore:
     - ""
     - "&a/n enemy [name]"
@@ -181,13 +181,13 @@ Nation_Extra_Info_Menu:
     - ""
     - "&a/n set mapcolor [color]"
 Town_Menu:
-  Main_Menu_Title: "&2&lTown Menu"
+  Main_Menu_Title: "&2&lKasaba Menüsü"
   Toggle_Menu_Button: "&3&lToggle Settings Menu"
   Toggle_Menu_Button_Lore:
     - ""
     - "Turn on and off"
     - "various town settings."
-  Resident_Menu_Button: "&6&lResident Menu"
+  Resident_Menu_Button: "&6&lSakin Menüsü"
   Resident_Menu_Button_Lore:
     - ""
     - "View all resident info"
@@ -198,11 +198,11 @@ Town_Menu:
     - "Adjust town permissions"
     - "for residents, nation"
     - "allies and outsiders."
-  Economy_Menu_Button: "&a&lEconomy Management Menu"
+  Economy_Menu_Button: "&a&lEkonomi Yönetimi Menüsü"
   Economy_Menu_Button_Lore:
     - ""
     - "Manage your town's money"
-  General_Settings_Menu_Button: "&2&lOther Settings Menu"
+  General_Settings_Menu_Button: "&2&lDiğer Ayarlar Menüsü"
   General_Settings_Menu_Button_Lore:
     - ""
     - "Set Town home block"
@@ -214,12 +214,12 @@ Town_Menu:
     - ""
     - "Invite an online player"
     - "to your town."
-  Extra_Info_Menu_Button: "&e&lExtra Towny Info"
+  Extra_Info_Menu_Button: "&e&lEkstra Kasaba Bilgisi"
   Extra_Info_Menu_Button_Lore:
     - ""
     - "Learn how to claim land plus"
     - "some useful commands"
-  Plot_Menu_Button: "&9&lPlot Management Menu"
+  Plot_Menu_Button: "&9&lArsa Yönetimi Menüsü"
   Plot_Menu_Button_Lore:
     - ""
     - "Manage the plot at"
@@ -227,16 +227,16 @@ Town_Menu:
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
-  Residents: "&2Residents:"
+  Residents: "&2Sakinler:"
   Number_Residents: "&2"
   Claim_Blocks: "&2Claim Blocks:"
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2Balance:"
   Balance_Amount: "&a"
-  Mayor: "&2Mayor:"
+  Mayor: "&2Belediye Başkanı:"
   Mayor_Name: "&a"
-  Nation: "&2Nation:"
+  Nation: "&2Ulus:"
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lToggle Settings Menu"
@@ -364,11 +364,11 @@ Player_Permission_Menu:
   Switch_Outsider: "&6&lSwitch Outsider Perm"
   Switch_Outsider2: "Can Outsiders Switch: "
 Economy_Menu:
-  Menu_Title: "&2&lEconomy Menu"
-  Balance: "&2&lCurrent Town Balance"
+  Menu_Title: "&2&lEkonomi Menüsü"
+  Balance: "&2&lMevcut Kasaba Bakiyesi"
   #this is just setting the color
   Town_Balance: "&a  "
-  Upkeep: "&fCurrent Upkeep: "
+  Upkeep: "&fMevcut Bakım: "
   Withdraw: "&c&lWithdraw Money"
   Withdraw_Lore:
     - ""
@@ -383,7 +383,7 @@ Economy_Menu:
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
 General_Settings_Menu:
-  Menu_Title: "&2&lGeneral Settings Menu"
+  Menu_Title: "&2&lGenel Ayarlar Menüsü"
   Info:
     - ""
     - "Set Home Block"
@@ -438,7 +438,7 @@ Extra_Info_Menu:
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
 Plot_Menu:
-  Main_Menu_Title: "&2Plot Menu"
+  Main_Menu_Title: "&2Arsa Menüsü"
   Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -452,19 +452,19 @@ Plot_Menu:
     - "Adjust plot permissions"
     - "for friends, nation"
     - "allies and outsiders"
-  Plot_Admin_Menu_Button: "&5&lPlot Administration Menu"
+  Plot_Admin_Menu_Button: "&5&lArsa Yönetim Menüsü"
   Plot_Admin_Menu_Button_Lore:
     - ""
-    - "Plot for sale"
-    - "Plot not for sale"
-    - "Setting plot type"
-    - "Evict plot owner"
-  Friend_Menu_Button: "&aFriend Menu"
+    - "Satılık Arsa"
+    - "Arsa satılık değil"
+    - "Arsa türünü ayarlama"
+    - "Arsa sahibini tahliye edin"
+  Friend_Menu_Button: "&aArkadaş Menüsü"
   Friend_Menu_Button_Lore:
     - ""
-    - "Friend Management menu"
+    - "Arkadaş Yönetimi menüsü"
 Friend_Menu:
-  Menu_Title: "&2Friend Menu"
+  Menu_Title: "&2Arkadaş Menüsü"
   Remove: "&cRemoved {player} from your friends list!"
   Add: "&3Added &b{player} &3to your friends list!"
   Click_Remove_Lore: "&cClick to Remove Friend"
@@ -575,20 +575,20 @@ Plot_Admin_Menu:
     - ""
     - "Make a plot"
     - "not purchasable"
-  Set_Type: "&3&lSet Plot Type"
+  Set_Type: "&3&lArsa Türünü Ayarla"
   Set_Type_Lore:
     - ""
     - "Determine what type of"
     - "plot this is."
-  Evict: "&4&lEvict Plot Owner"
+  Evict: "&4&lArsa Sahibini Tahliye Edin"
   Evict_Lore:
     - ""
     - "Evict the resident"
     - "of this plot"
 Nation_Conversables:
   Board:
-    Prompt: "&3Type in a message for your nation's board: "
-    Response: "&3Successfully set nation board!"
+    Prompt: "&3Ulusunuzun panosu için bir mesaj yazın: "
+    Response: "&3Ulus panosu başarıyla ayarlandı!"
   Deposit:
     Prompt: "&3Type in the amount you would like to deposit in your nation: &c(Type cancel to exit prompt)"
     Invalid: "&cPlease enter only whole numbers and make sure you have enough money to deposit."
@@ -601,9 +601,9 @@ Nation_Conversables:
     Response: "&3Successfully kicked &b{town} &3from your nation."
   Name:
     Prompt: "&3Type in the name you would like to give to your nation: (under {max_length} characters) &bCurrent Name: {nation} &cType cancel to exit."
-    Invalid: "&cName must be unique and less than {max_length} characters."
-    Response: "&3Successfully set nation name to {input}"
-    Return: "&cNot enough money in nation bank to change nation name."
+    Invalid: "&cAd benzersiz olmalı ve {max_length} karakterinden az olmalıdır."
+    Response: "&3Ulus adı başarıyla {input} olarak ayarlandı"
+    Return: "&cUlus bankasında ulusun adını değiştirmek için yeterli para yok."
   Rank:
     Remove: "remove"
     Prompt: "&3Type in the rank you would like to give to &b{player} &3now: &b(Options: {ranks}) &3Type &ccancel &3to cancel or &cremove &3to remove their rank."
@@ -639,7 +639,7 @@ Town_Conversables:
     Prompt: "&3Type in the name you would like to give to your town: (under {max_length} characters) &bCurrent Name: {town} &cType cancel to exit."
     Invalid: "&cName must be unique and less than {max_length} characters."
     Response: "&3Successfully set town name to {input}"
-    Return: "&cNot enough money in town bank to change town name."
+    Return: "&cKasabanın adını değiştirmek için kasada yeterli para yok."
   Rank:
     Remove: "remove"
     Prompt: "&3Type in the rank you would like to give to &b{player} &3now: &b(Options: {ranks}) &3Type &ccancel &3to cancel or &cremove &3to remove their rank."
@@ -677,14 +677,14 @@ Plot_Conversables:
     Response: "&3Plot type set to: &b{input}"
 Error:
   No_Permission: "&cYou do not have the permission to use this command."
-  No_Town: "&cYou do not have a town."
-  War_Time: "&cYou may not do this action during war time."
-  Must_Be_In_Own_Plot: "&cYou can only do this in a plot you own."
-  Must_Be_In_Town: "&cYou must be in your town to do this."
-  Must_Be_In_Bank: "&cYou must be in a bank plot to do this."
-  Toggle_PVP_Outsiders: "&cCannot toggle PVP while outsiders are in your town."
-  Toggle_PVP_Cooldown: "&cYou cannot toggle pvp until the cooldown is complete."
-  Cannot_Select_Self: "&cYou cannot select yourself."
+  No_Town: "&cSenin bir kasaban yok."
+  War_Time: "&cBu eylemi savaş sırasında yapamazsın."
+  Must_Be_In_Own_Plot: "&cBunu yalnızca sahip olduğunuz bir arsada yapabilirsin."
+  Must_Be_In_Town: "&cBunu yapmak için kasabanızda olmalısın."
+  Must_Be_In_Bank: "&cBunu yapmak için bir banka arsasında olmalısın."
+  Toggle_PVP_Outsiders: "&cYabancılar kasabanızdayken PVP'yi değiştiremezsin."
+  Toggle_PVP_Cooldown: "&cBekleme süresi tamamlanana kadar pvp'yi değiştiremezsin."
+  Cannot_Select_Self: "&cKendini seçemezsin."
   Cannot_Set_Homeblock: "&cCannot set Home block here."
   Cannot_Set_Spawn: "&cCannot set town spawn here."
   Cannot_Change_Name: "&cMust be mayor to change town name."
