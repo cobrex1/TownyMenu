@@ -22,7 +22,7 @@ Join_Create_Menu:
   Join_Open_Town: "&aJoin an Open Town"
   #this is just setting the color
   Town_Name: "&e"
-  Mayor: "&fMayor: "
+  Mayor: "&fBelediye Başkanı: "
   Number_Residents: "&fNumber of Residents: "
   Create_Own_Town: "&aType the name of your town or &ctype cancel."
 Join_Create_Nation_Menu:
