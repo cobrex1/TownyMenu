@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "Aktiviere alle Berechtigungen"
     - "für alle Gruppen."
+  Reset_to_Town_Perm: "&c&lStadteigene Grundstücke zurücksetzen"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Setzen Sie alle stadteigenen Grundstücke zurück"
+    - "zu Berechtigungen auf Stadtebene"
   Build: "&3&lBauen"
   Build_Lore:
     - ""
