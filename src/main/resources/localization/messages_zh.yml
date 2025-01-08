@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "打开所有权限"
     - "给所有权限组"
+  Reset_to_Town_Perm: "&c&l重置城镇拥有的地块"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "重置所有城镇拥有的地块"
+    - "镇级权限"
   Build: "&3&l版本"
   Build_Lore:
     - ""

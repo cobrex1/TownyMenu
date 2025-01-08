@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "Turn on all permissions"
     - "for all groups."
+  Reset_to_Town_Perm: "&c&lReset Town Owned Plots"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Reset all Town owned plots"
+    - "to Town level permissions"
   Build: "&3&lBuild"
   Build_Lore:
     - ""

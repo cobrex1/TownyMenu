@@ -6,8 +6,8 @@
 #- When you use them, place quotes around the message like this: "&a&lBack"
 #- To use HEX colors, use #123456 syntax: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
-Confirm: "confirm"
-Cancel: "cancel"
+Confirm: "onay"
+Cancel: "iptal"
 Menu_Information: "Menü Bilgisi"
 Reloaded: "Ayarlar yeniden yüklendi!"
 Back_Button:
@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "Turn on all permissions"
     - "for all groups."
+  Reset_to_Town_Perm: "&c&lKasabaya Ait Arsaları Sıfırla"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Kasabanın sahip olduğu tüm arazileri sıfırla"
+    - "Kasaba düzeyindeki izinlere"
   Build: "&3&lBuild"
   Build_Lore:
     - ""

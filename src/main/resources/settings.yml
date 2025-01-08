@@ -328,6 +328,9 @@ Reset_All:
 All_On:
   Item: EMERALD_BLOCK
   CustomModelData: 0
+Reset_to_Town_Perm:
+  Item: DIAMOND_BLOCK
+  CustomModelData: 0
 
 # Economy Menu Icons
 Town_Balance:

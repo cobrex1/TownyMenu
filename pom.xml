@@ -5,13 +5,13 @@
 
     <groupId>me.cobrex</groupId>
     <artifactId>TownyMenu</artifactId>
-    <version>1.8.10</version>
+    <version>1.8.11</version>
 
     <properties>
 
         <main.class>me.cobrex.townymenu.TownyMenuPlugin</main.class>
 
-        <foundation.version>6.9.11</foundation.version>
+        <foundation.version>6.9.16</foundation.version>
 
         <java.version>1.8</java.version>
 
@@ -26,6 +26,10 @@
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>glaremasters repo</id>
+            <url>https://repo.glaremasters.me/repository/towny/</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
@@ -60,9 +64,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.TownyAdvanced</groupId>
-            <artifactId>Towny</artifactId>
-            <version>0.100.4.7</version>
+            <groupId>com.palmergames.bukkit.towny</groupId>
+            <artifactId>towny</artifactId>
+            <version>0.101.0.2</version>
             <scope>provided</scope>
         </dependency>
         <!-- HeadDatabase-API -->
@@ -100,12 +104,8 @@
                             <finalName>${project.name}-${project.version}</finalName>
                             <artifactSet>
                                 <includes>
-                                    <include>org.mineacademy:Game*</include>
                                     <include>com.github.kangarko:Foundation*</include>
                                 </includes>
-                                <excludes>
-                                    <exclude>org.mineacademy:GameAPI*</exclude>
-                                </excludes>
                             </artifactSet>
                             <relocations>
                                 <relocation>
@@ -113,9 +113,6 @@
                                     <shadedPattern>${project.groupId}.${project.artifactId}.lib</shadedPattern>
                                     <excludes>
                                         <exclude>org.mineacademy.${project.artifactId}.*</exclude>
-                                        <exclude>org.mineacademy.gameapi.*</exclude>
-                                        <exclude>org.mineacademy.boss.*</exclude>
-                                        <exclude>org.mineacademy.worldeditbridge.*</exclude>
                                     </excludes>
                                 </relocation>
                             </relocations>

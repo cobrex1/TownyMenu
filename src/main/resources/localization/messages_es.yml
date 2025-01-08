@@ -303,6 +303,12 @@ Player_Permission_Menu:
     - ""
     - "Activar todos los permisos"
     - "de todos los grupos."
+  Reset_to_Town_Perm: "&c&lRestablecer parcelas de propiedad municipal"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Restablecer todas las parcelas"
+    - "propiedad de la ciudad a"
+    - "permisos a nivel de ciudad"
   Build: "&3&lConstruir"
   Build_Lore:
     - ""

@@ -199,6 +199,8 @@ public final class Settings extends SimpleSettings {
 	public static Integer RESET_ALL_CMD;
 	public static String ALL_ON;
 	public static Integer ALL_ON_CMD;
+	public static String RESET_TO_TOWN_PERM;
+	public static Integer RESET_TO_TOWN_PERM_CMD;
 
 	public static String TOWN_BALANCE;
 	public static Integer TOWN_BALANCE_CMD;
@@ -493,6 +495,8 @@ public final class Settings extends SimpleSettings {
 		RESET_ALL_CMD = getInteger("Reset_All.CustomModelData");
 		ALL_ON = getString("All_On.Item");
 		ALL_ON_CMD = getInteger("All_On.CustomModelData");
+		RESET_TO_TOWN_PERM = getString("Reset_to_Town_Perm.Item");
+		RESET_TO_TOWN_PERM_CMD = getInteger("Reset_to_Town_Perm.CustomModelData");
 
 		TOWN_BALANCE = getString("Town_Balance.Item");
 		TOWN_BALANCE_CMD = getInteger("Town_Balance.CustomModelData");

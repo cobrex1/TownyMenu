@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "Zapněte všechna oprávnění"
     - "pro všechny skupiny."
+  Reset_to_Town_Perm: "&c&lObnovit pozemky ve vlastnictví města"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Obnovit všechny pozemky ve vlastnictví města"
+    - "oprávnění na úrovni města"
   Build: "&3&lStavění"
   Build_Lore:
     - ""
