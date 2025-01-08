@@ -307,7 +307,6 @@ Player_Permission_Menu:
   Reset_to_Town_Perm_Lore:
     - ""
     - "Redefinir todos os terrenos"
-    - "propriedade da cidade para"
     - "permissões ao nível da cidade"
   Build: "&3&lConstrução"
   Build_Lore:
