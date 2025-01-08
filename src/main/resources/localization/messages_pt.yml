@@ -303,6 +303,11 @@ Player_Permission_Menu:
     - ""
     - "Ativa todas as permissões"
     - "para todos os grupos."
+  Reset_to_Town_Perm: "&c&lRedefinir lotes de propriedade da cidade"
+  Reset_to_Town_Perm_Lore:
+    - ""
+    - "Redefinir todos os terrenos"
+    - "propriedade da cidade para"
   Build: "&3&lConstrução"
   Build_Lore:
     - ""
