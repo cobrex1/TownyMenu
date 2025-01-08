@@ -427,6 +427,8 @@ public class Localization extends SimpleLocalization {
 			public static Collection<String> RESET_LORE;
 			public static String ON;
 			public static Collection<String> ON_LORE;
+			public static String RESET_TO_TOWN_PERM;
+			public static Collection<String> RESET_TO_TOWN_PERM_LORE;
 			public static String BUILD;
 			public static Collection<String> BUILD_LORE;
 			public static String BREAK;
@@ -479,6 +481,8 @@ public class Localization extends SimpleLocalization {
 				RESET_LORE = getStringList("Reset_Lore");
 				ON = getString("On_Msg");
 				ON_LORE = getStringList("On_Msg_Lore");
+				RESET_TO_TOWN_PERM = getString("Reset_to_Town_Perm");
+				RESET_TO_TOWN_PERM_LORE = getStringList("Reset_to_Town_Perm_Lore");
 				BUILD = getString("Build");
 				BUILD_LORE = getStringList("Build_Lore");
 				BREAK = getString("Break");

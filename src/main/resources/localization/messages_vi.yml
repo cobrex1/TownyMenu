@@ -307,7 +307,7 @@ Player_Permission_Menu:
   Reset_to_Town_Perm_Lore:
     - ""
     - "Đặt lại tất cả các lô thuộc"
-    - "sở hữu của Thị trấn"
+    - "quyền cấp Thị trấn"
   Build: "&3&lXây dựng"
   Build_Lore:
     - ""

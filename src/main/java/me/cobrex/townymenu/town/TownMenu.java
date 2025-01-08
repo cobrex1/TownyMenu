@@ -654,6 +654,10 @@ public class TownMenu extends Menu {
 				.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH)
 				.modelData(Integer.valueOf(Settings.SWITCH_CMD))
 				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE).make();
+		private final ItemStack TOWNPLOTRESET_BUTTON = ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.SWITCH)))
+				.name(Localization.TownMenu.PlayerPermissionsMenu.SWITCH)
+				.modelData(Integer.valueOf(Settings.SWITCH_CMD))
+				.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.SWITCH_LORE).make();
 
 		private final Button buildResidentButton;
 		private final Button buildNationButton;
@@ -677,6 +681,7 @@ public class TownMenu extends Menu {
 
 		private final Button resetButton;
 		private final Button allOnButton;
+		private final Button townPlotResetButton;
 
 		private final ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_TOWN_PERMS_MENU)), "")
 				.modelData(Integer.valueOf(Settings.FILLER_TOWN_PERMS_MENU_CMD)).make();
@@ -1008,6 +1013,21 @@ public class TownMenu extends Menu {
 							.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.ON_LORE).make();
 				}
 			};
+			townPlotResetButton = new Button() {
+				@Override
+				public void onClickedInMenu(Player player, Menu menu, ClickType click) {
+					player.closeInventory();
+					player.performCommand("t set perm reset");
+				}
+
+				@Override
+				public ItemStack getItem() {
+					return ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.RESET_TO_TOWN_PERM)))
+							.name(Localization.TownMenu.PlayerPermissionsMenu.RESET_TO_TOWN_PERM)
+							.modelData(Integer.valueOf(Settings.RESET_TO_TOWN_PERM_CMD))
+							.lore((List<String>) Localization.TownMenu.PlayerPermissionsMenu.RESET_TO_TOWN_PERM_LORE).make();
+				}
+			};
 		}
 
 		@Override
@@ -1058,10 +1078,12 @@ public class TownMenu extends Menu {
 			if (slot == 9 * 4 + 6)
 				return switchOutsiderButton.getItem();
 
-			if (slot == 9 * 2 + 8)
+			if (slot == 9 * 1 + 8)
 				return resetButton.getItem();
-			if (slot == 9 * 3 + 8)
+			if (slot == 9 * 2 + 8)
 				return allOnButton.getItem();
+			if (slot == 9 * 3 + 8)
+				return townPlotResetButton.getItem();
 
 			return DUMMY_BUTTON;
 		}
