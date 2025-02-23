@@ -127,7 +127,7 @@ Nation_Economy_Menu:
     - ""
     - "Deposit money into"
     - "your nation bank."
-  Tax: "&c&lSet Tax Amount"
+  Tax: "&c&lVergi miktarını ayarla"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
 Nation_Toggle_Menu:
