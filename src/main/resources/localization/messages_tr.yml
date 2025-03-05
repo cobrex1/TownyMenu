@@ -74,7 +74,7 @@ Nation_Menu:
     - "Extra useful commands for"
     - "Nation leaders"
 Nation_Settings_Menu:
-  Menu_Title: "&2&lNation Settings Menu"
+  Menu_Title: "&2&lUlus Kasabası Menüsü"
   Info:
     - "Adjust other"
     - "extra nation settings."
