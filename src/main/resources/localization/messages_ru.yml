@@ -21,7 +21,7 @@ Join_Create_Menu:
   Click_Create_Town: "Создать город"
   Join_Open_Town: "&aЗайти в открытый город"
   #this is just setting the color
-  Town_Name: "&e"
+  Town_Name: ""
   Mayor: "&fЛорд: "
   Number_Residents: "Кол-во жителей: "
   Create_Own_Town: "&aВведите название вашего города или нажмите &cотмена"

@@ -74,7 +74,7 @@ Nation_Menu:
     - "Extra useful commands for"
     - "Nation leaders"
 Nation_Settings_Menu:
-  Menu_Title: "&2&lNation Settings Menu"
+  Menu_Title: "&2&lUlus Kasabası Menüsü"
   Info:
     - "Adjust other"
     - "extra nation settings."
@@ -127,7 +127,7 @@ Nation_Economy_Menu:
     - ""
     - "Deposit money into"
     - "your nation bank."
-  Tax: "&c&lSet Tax Amount"
+  Tax: "&c&lVergi miktarını ayarla"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
 Nation_Toggle_Menu:
