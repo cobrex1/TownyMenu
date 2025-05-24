@@ -131,7 +131,7 @@ Nation_Economy_Menu:
   Tax_Percentage: "Установить налог в процентах"
   Tax_Amount: "Установить сумму налога"
 Nation_Toggle_Menu:
-  Menu_Title: "&2&lМеню флагов нации"
+  Menu_Title: "&2&lМеню флажков нации"
   Info:
     - "Настройте переключаемые параметры"
     - "для вашей нации!"
@@ -182,16 +182,16 @@ Nation_Extra_Info_Menu:
     - "&a/n set mapcolor [color]"
 Town_Menu:
   Main_Menu_Title: "&2&lМеню управления городом"
-  Toggle_Menu_Button: "&3&lМеню переключения настроек города"
+  Toggle_Menu_Button: "&3&lМеню флажков города"
   Toggle_Menu_Button_Lore:
     - ""
     - "Включение и выключение"
-    - "различные городские настройки."
-  Resident_Menu_Button: "&6&lМеню участков"
+    - "различных городских настроек."
+  Resident_Menu_Button: "&6&lМеню жителей"
   Resident_Menu_Button_Lore:
     - ""
     - "Посмотреть всю информацию о жителях"
-    - "и настройки."
+    - "и их настройки."
   Permissions_Menu_Button: "&c&lМеню прав доступа в городе"
   Permissions_Menu_Button_Lore:
     - ""
@@ -658,7 +658,7 @@ Town_Conversables:
     Response_Percent: "&3Налог в размере &b{input} процентов в день установлен"
     Response_Amount: "&3Налог в размере &b{money_symbol} монет в день установлен"
   Title:
-    Prompt: "&3Введите титул жителю &b{player}: (до 10 символов) &cВведите cancel для отмены."
+    Prompt: "&3Введите титул, который хотите присвоить жителю &b{player}: (до 10 символов) &cВведите /cancel для отмены."
     Response: "&3Успешно set &b{player}''s &3title to &b{input}"
   Withdraw:
     Prompt: "&3Введите сумму которую вы хотите снять с баланса вашего города: &c(введите cancel для отмены)"
@@ -688,12 +688,12 @@ Error:
   Must_Be_In_Town: "&cВы должны быть в городе для этого действия."
   Must_Be_In_Bank: "&cВы должны быть на территории. банка для этого действия."
   Toggle_PVP_Outsiders: "&cНельзя переключать PVP, пока посторонние находятся в вашем городе."
-  Toggle_PVP_Cooldown: "&cВы не можете переключать режим слишком часто"
+  Toggle_PVP_Cooldown: "&cВы не можете переключить ПВП до тех пор, пока не пройдёт кулдаун."
   Cannot_Select_Self: "&cВы не можете выбрать себя."
   Cannot_Set_Homeblock: "&cНельзя установить главный участок в этом месте."
   Cannot_Set_Spawn: "&cНельзя установить спавн города в этом месте."
   Cannot_Change_Name: "&cВы должны быть мэром для изменения названия города."
-  Cannot_Change_Board: "&cВы должны быть мэром для изменения заголовка города."
+  Cannot_Change_Board: "&cВы должны быть мэром для изменения надписи города."
 Chunk_View:
   Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
   Removed: "Boarder blocks removed."
