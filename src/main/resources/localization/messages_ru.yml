@@ -34,11 +34,11 @@ Join_Create_Nation_Menu:
   Nation_Name: "&e "
   King: "&fКороль: "
   Number_of_Towns: "&fКоличество городов: "
-  Create_Own_Nation: "&aВведите название вашего нация или нажмите &cотмена."
+  Create_Own_Nation: "&aВведите название вашей нации или &cвведите /cancel."
 Nation_Menu:
-  Main_Menu_Title: "&3&lМеню управления нация"
+  Main_Menu_Title: "&3&lМеню Нации"
   Info:
-    - "Главное меню нация"
+    - "Главное меню для Нации"
     - "параметры!"
   Nation_Toggle_Menu_Button: "&9&lМеню переключения настроек нация"
   Nation_Toggle_Menu_Button_Lore:
@@ -57,13 +57,13 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "MУправление балансом нация"
-  Nation_Settings_Button: "&2&lМеню настроек нация"
+  Nation_Settings_Button: "&2&lМеню настроек нации"
   Nation_Settings_Button_Lore:
     - ""
     - "Установить спавн нации"
     - "Установить название нации"
     - "Установить доску объявлений нации"
-  Nation_Invite_Town_Menu_Button: "&d&lПригласить Город Меню"
+  Nation_Invite_Town_Menu_Button: "&d&lМеню приглашений"
   Nation_Invite_Town_Menu_Button_Lore:
     - ""
     - "Пригласите город в"
@@ -72,25 +72,25 @@ Nation_Menu:
   Nation_Extra_Info_Menu_Button_Lore:
     - ""
     - "Дополнительные полезные команды для"
-    - "Лидеры нация"
+    - "лидеров нации"
 Nation_Settings_Menu:
-  Menu_Title: "&2&lнация Меню настроек"
+  Menu_Title: "&2&lМеню настроек нации"
   Info:
-    - "Настроить другое"
-    - "дополнительные настройки нация."
+    - "Настроить другие"
+    - "дополнительные настройки нации."
   Set_Spawn_Msg: "&eаша позиция установлена как спавн в нация."
-  Set_Spawn: "&b&lУстановить точку спавна в нация"
+  Set_Spawn: "&b&lУстановить точку спавна для нации"
   Set_Spawn_Lore:
     - ""
-    - "Установить точку появления'"
-    - "в вашем нация"
+    - "Установить точку появления"
+    - "в вашем нации"
     - "/n spawn"
     - ""
-  Set_Name: "&6&lИзменить название нация"
+  Set_Name: "&6&lИзменить название нации"
   Set_Name_Lore:
     - ""
     - "Изменить название"
-    - "вашего нация."
+    - "вашей нации."
   Set_Board: "&2&lИзменить заголовок нация"
   Set_Board_Lore:
     - ""
