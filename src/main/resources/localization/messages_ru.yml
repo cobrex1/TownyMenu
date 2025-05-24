@@ -40,11 +40,11 @@ Nation_Menu:
   Info:
     - "Главное меню для Нации"
     - "параметры!"
-  Nation_Toggle_Menu_Button: "&9&lМеню переключения настроек нация"
+  Nation_Toggle_Menu_Button: "&9&lМеню переключения настроек нации"
   Nation_Toggle_Menu_Button_Lore:
     - ""
-    - "&4&lУправление опциями"
-    - "для всего нация."
+    - "&4&lВключение и выключение"
+    - "различных национальных настроек."
   Nation_Town_List_Button: "&6&lМеню списка городов"
   Nation_Town_List_Button_Lore:
     - ""
