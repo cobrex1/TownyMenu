@@ -67,8 +67,8 @@ Nation_Menu:
   Nation_Invite_Town_Menu_Button_Lore:
     - ""
     - "Пригласите город в"
-    - "свою нация."
-  Nation_Extra_Info_Menu_Button: "&e&lДополнительная информация о нация"
+    - "свою нацию."
+  Nation_Extra_Info_Menu_Button: "&e&lДополнительная информация о нации"
   Nation_Extra_Info_Menu_Button_Lore:
     - ""
     - "Дополнительные полезные команды для"
@@ -94,7 +94,7 @@ Nation_Settings_Menu:
   Set_Board: "&2&lИзменить надпись нации"
   Set_Board_Lore:
     - ""
-    - "Изменить заголовок"
+    - "Изменить надпись"
     - "вашей нации."
 Nation_Town_Menu:
   Menu_Title: "&2&lМеню национального города"
@@ -150,7 +150,7 @@ Nation_Resident_Menu:
     - "чтобы управлять ими!"
   #this is just setting the color
   Res_Name: "&e&l"
-  Online: "&fПоследний онлайн: "
+  Online: "&fПоследний раз онлайн: "
   Town_Name: "&6Город: "
   Nation_Rank: "&3&lУстановить ранг жителя"
   Nation_Rank_Lore:
@@ -659,7 +659,7 @@ Town_Conversables:
     Response_Amount: "&3Налог в размере &b{money_symbol} монет в день установлен"
   Title:
     Prompt: "&3Введите титул, который хотите присвоить жителю &b{player}: (до 10 символов) &cВведите /cancel для отмены."
-    Response: "&3Успешно set &b{player}''s &3title to &b{input}"
+    Response: "&3Успешно установили &b{player}''s &3title to &b{input}"
   Withdraw:
     Prompt: "&3Введите сумму которую вы хотите снять с баланса вашего города: &c(введите cancel для отмены)"
     Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
