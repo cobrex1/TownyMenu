@@ -659,11 +659,11 @@ Town_Conversables:
     Response_Amount: "&3Налог в размере &b{money_symbol} монет в день установлен"
   Title:
     Prompt: "&3Введите титул, который хотите присвоить жителю &b{player}: (до 10 символов) &cВведите /cancel для отмены."
-    Response: "&3Успешно установили &b{player}''s &3title to &b{input}"
+    Response: "&3Успешно установили &b{player}''s &3 титул &b{input}"
   Withdraw:
     Prompt: "&3Введите сумму которую вы хотите снять с баланса вашего города: &c(введите cancel для отмены)"
-    Invalid: "&cВводите только числа и убедитесь что у вас достаточно монет на счету."
-    Response: "&3Вы сняли &b{input} монет &3с акаунта вашего города."
+    Invalid: "&cВводя число убедитесь, что у вас достаточно монет на счету."
+    Response: "&3Вы сняли &b{money_symbol}{input} &3с казны вашего города."
 Plot_Conversables:
   Evict:
     Prompt: "&cВы точно хотите выгнать владельца данного участка? Введите &aconfirm &cили cancel:"
@@ -672,21 +672,21 @@ Plot_Conversables:
   For_Sale:
     Prompt: "&3Введите сумму продажи: &c(введите cancel для отмены)"
     Invalid: "&cВводите только числа. Цена должна быть меньше максимальной: {max_price}"
-    Response: "&3Цена участка установлена на &b{input} монет"
+    Response: "&3Цена участка установлена на &b{money_symbol}{input}."
   Not_For_Sale:
     Prompt: "&3Вы хотите выставить участок на продажу? Введите &aconfirm &3или &ccancel&6:"
     Response: "&cУчасток не для продажи."
   Set_Type:
-    Prompt: "&3What type would you like to set this plot? &b(Options: {options}) Type ''cancel'' to cancel"
-    Invalid: "&cPlease enter a valid plot type. (Valid types: {options}) or type ''cancel'' to cancel"
+    Prompt: "&3Какой тип вы хотите установить для этого участка? &b(Параметры: {options}) Введите 'cancel' для отмены"
+    Invalid: "&cПожалуйста, введите допустимый тип участка. (Допустимые типы: {options}) или введите 'cancel' для отмены"
     Response: "&3Тип участка: &b{input}"
 Error:
-  No_Permission: "&cУ вас нет права для этого действия."
+  No_Permission: "&cУ вас нет прав для этого действия."
   No_Town: "&cУ вас нет города или Вы за пределами города."
   War_Time: "&cВы не можете делать это действие во время войны."
   Must_Be_In_Own_Plot: "&cЭто не Ваш участок! В доступе отказано!"
   Must_Be_In_Town: "&cВы должны быть в городе для этого действия."
-  Must_Be_In_Bank: "&cВы должны быть на территории. банка для этого действия."
+  Must_Be_In_Bank: "&cВы должны быть на территории банка для этого действия."
   Toggle_PVP_Outsiders: "&cНельзя переключать PVP, пока посторонние находятся в вашем городе."
   Toggle_PVP_Cooldown: "&cВы не можете переключить ПВП до тех пор, пока не пройдёт кулдаун."
   Cannot_Select_Self: "&cВы не можете выбрать себя."
