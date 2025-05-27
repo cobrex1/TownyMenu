@@ -49,14 +49,14 @@ Nation_Menu:
   Nation_Town_List_Button_Lore:
     - ""
     - "Посмотреть города в стране"
-  Nation_Resident_Menu_Button: "&b&lМеню резидента нация"
+  Nation_Resident_Menu_Button: "&b&lМеню жителя нации"
   Nation_Resident_Menu_Button_Lore:
     - ""
-    - "Управляйте жителями нация"
-  Nation_Economy_Menu_Button: "&a&lнация Управление экономикой"
+    - "Управляйте жителями нации"
+  Nation_Economy_Menu_Button: "&a&lУправление экономикой нации"
   Nation_Economy_Menu_Button_Lore:
     - ""
-    - "MУправление балансом нация"
+    - "Управление балансом нации"
   Nation_Settings_Button: "&2&lМеню настроек нации"
   Nation_Settings_Button_Lore:
     - ""
@@ -195,9 +195,9 @@ Town_Menu:
   Permissions_Menu_Button: "&c&lМеню прав доступа в городе"
   Permissions_Menu_Button_Lore:
     - ""
-    - "УНастройте разрешения города"
-    - "для жителей, нации"
-    - "ссоюзники и аутсайдеры."
+    - "Настройте разрешения в городе"
+    - "для жителей, национальных"
+    - "союзников и проходимцев."
   Economy_Menu_Button: "&a&lУправление экономикой"
   Economy_Menu_Button_Lore:
     - ""
@@ -206,7 +206,7 @@ Town_Menu:
   General_Settings_Menu_Button_Lore:
     - ""
     - "Домашний блок Набор города"
-    - "Установить появление города"
+    - "Установить появление в городе"
     - "Установить название города"
     - "Установить городскую доску объявлений"
   Invite_Player_Menu_Button: "&d&lМеню приглашения"
@@ -214,7 +214,7 @@ Town_Menu:
     - ""
     - "Приглашения игроков онлайн"
     - "в ваш город."
-  Extra_Info_Menu_Button: "&e&lПрочая информация о управлении"
+  Extra_Info_Menu_Button: "&e&lПрочая информация об управлении"
   Extra_Info_Menu_Button_Lore:
     - ""
     - "Узнайте, как претендовать на землю плюс"
