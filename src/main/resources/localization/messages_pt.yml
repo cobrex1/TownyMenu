@@ -6,8 +6,8 @@
 #- When you use them, place quotes around the message like this: "&a&lBack"
 #- To use HEX colors, use #123456 syntax: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
-Confirm: "confirmar"
-Cancel: "cancelar"
+Confirm: "confirm\n"
+Cancel: "cancel"
 Menu_Information: "Menu de informações"
 Reloaded: "Configurações recarregadas!"
 Back_Button:
