@@ -599,10 +599,10 @@ Nation_Conversables:
     Invalid: "&c请输入整数并确保您有足够的钱存入。"
     Response: "&3已将 &b{money_symbol}{input}&3存入您的国家账户。"
   Mayor:
-    Prompt: "&c您确定要授予 &b{player}&c 国王职位吗？&3(输入&bconfirm &3或 &4cancel3)"
+    Prompt: "&c您确定要授予 &b{player}&c 国王职位吗？&3(输入&b确认 &3或 &4取消&3)"
     Response: "&3成功设置 &b{player} &3为国王!"
   Kick:
-    Prompt: "&c你确定要将 &b{town} &c从你的国家中踢出吗？现在输入 &bconfirm &c或 &4cancel &c进行确认："
+    Prompt: "&c你确定要将 &b{town} &c从你的国家中踢出吗？现在输入 &b确认 &c或 &4取消 &c进行确认："
     Response: "&3已成功将 &b{town} &3从你的国家中踢出。"
   Name:
     Prompt: "&3输入您想要给您的国家起的名字：（不超过 {max_length} 个字符）&b当前名称：{nation} &c输入 \"cancel\" 以退出。"
@@ -634,10 +634,10 @@ Town_Conversables:
     Invalid: "&c请输入整数并确保您有足够的钱存入。"
     Response: "&3已将 &b{money_symbol}{input}&3存入您的城镇账户。"
   Mayor:
-    Prompt: "&c您确定要授予 &b{player}&c 市长职位吗？&3(输入&bconfirm &3或 &4cancel3)"
+    Prompt: "&c您确定要授予 &b{player}&c 市长职位吗？&3(输入&b确认 &3或 &4取消3)"
     Response: "&3成功设置 &b{player} &3为市长!"
   Kick:
-    Prompt: "&c你确定要将 &b{player} &c从你的城镇中踢出吗？现在输入 &bconfirm &c或 &4cancel &c进行确认："
+    Prompt: "&c你确定要将 &b{player} &c从你的城镇中踢出吗？现在输入 &b确认 &c或 &4取消 &c进行确认："
     Response: "&3已成功将 &b{player} &3从你的城镇中踢出。"
     Mayor: "&c你不能将城镇的镇长踢出去！"
   Name:
@@ -666,7 +666,7 @@ Town_Conversables:
     Response: "&3已从你的城镇账户中提取 &b{money_symbol}{input}。"
 Plot_Conversables:
   Evict:
-    Prompt: "&c您是否想要驱逐这块地的居民？输入 &aconfirm &c或 &ccancel："
+    Prompt: "&c您是否想要驱逐这块地的居民？输入 &a确认 &c或 &c取消："
     Invalid: "&c这块地没有居民。"
     Response: "&c地块居民已被驱逐。"
   For_Sale:
@@ -674,7 +674,7 @@ Plot_Conversables:
     Invalid: "&c请输入一个整数，并且价格要低于最高地块价格：{max_price}"
     Response: "&3地块价格已设置为 &b{money_symbol}{input}。"
   Not_For_Sale:
-    Prompt: "&3您是否要将此地皮设置为不出售？输入 &aconfirm &3或 &ccancel&6："
+    Prompt: "&3您是否要将此地皮设置为不出售？输入 &a确认 &3或 &c取消&6："
     Response: "&c地皮设置为不出售。"
   Set_Type:
     Prompt: "&3您希望将此地皮设置为什么类型？&b（选项：{options}）输入 'cancel' 以取消"
