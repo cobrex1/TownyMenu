@@ -217,8 +217,8 @@ Town_Menu:
   Extra_Info_Menu_Button: "&e&lInformacion extra"
   Extra_Info_Menu_Button_Lore:
     - ""
-    - "Apende a cómo reclamar tierras"
-    - "y otros comandos utiles"
+    - "Aprende a cómo reclamar tierras"
+    - "y otros comandos útiles"
   Plot_Menu_Button: "&9&lMenú de Parcelas"
   Plot_Menu_Button_Lore:
     - ""
