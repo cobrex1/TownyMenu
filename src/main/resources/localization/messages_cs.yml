@@ -14,7 +14,7 @@ Back_Button:
   Back_Button_Title: "&a&lZpět"
   Back_Button_Lore:
     - ""
-    - "Předchozí menu"
+    - "Předchozí menu."
 Join_Create_Menu:
   Main_Menu_Title: "Připojit se, nebo vytvořit město"
   Find_Open_Town: "Najít veřejné město"
@@ -39,17 +39,17 @@ Nation_Menu:
   Main_Menu_Title: "&3&lMenu státu"
   Info:
     - "Hlavní menu pro stát!"
-    - ""
+    - "možnost!"
   Nation_Toggle_Menu_Button: "&9&lMenu s nastavením státu"
   Nation_Toggle_Menu_Button_Lore:
     - ""
     - "&4&lNastav &aON &cOFF"
-    - "ruzných nastavení státu."
+    - "různých nastavení státu."
   Nation_Town_List_Button: "&6&lMenu se seznamem měst"
   Nation_Town_List_Button_Lore:
     - ""
     - "Zobraz města ve státu"
-  Nation_Resident_Menu_Button: "&b&lMenu s obyvately"
+  Nation_Resident_Menu_Button: "&b&lMenu s obyvateli"
   Nation_Resident_Menu_Button_Lore:
     - ""
     - "Spravuj obyvatele státu"
@@ -414,8 +414,8 @@ General_Settings_Menu:
   Set_Name: "&6&lSet Town Name"
   Set_Name_Lore:
     - ""
-    - "Change the name"
-    - "of your town."
+    - "Změnit jméno"
+    - "tvého města."
   Set_Board: "&2&lSet Town Board"
   Set_Board_Lore:
     - ""
@@ -478,12 +478,12 @@ Plot_Toggle_Menu:
   Menu_Title: "&2&lPlot Toggle Settings Menu"
   Info:
     - ""
-    - "Fire Spread"
-    - "Monster spawning"
-    - "Explosions"
-    - "PvP"
-  Toggle_Off: "&eClick to Turn &cOff"
-  Toggle_On: "&eClick to Turn &aOn"
+    - "Šíření ohně"
+    - "Spawnování monster"
+    - "Výbuchy"
+    - "PVP"
+  Toggle_Off: "&eKlikni pro &cvypnutí"
+  Toggle_On: "&eKlikni pro &azapnutí"
   Fire: "&6&lToggle Firespread"
   Mobs: "&a&lToggle Mob Spawning"
   Explode: "&c&lToggle Explosions"
@@ -500,25 +500,25 @@ Plot_Player_Permission_Menu:
   Reset: "&c&lReset All Fields"
   Reset_Lore:
     - ""
-    - "Turn off all permissions"
-    - "for all groups."
+    - "Vypnout všechna práva"
+    - "pro všechny skupiny."
   On_Msg: "&a&lTurn On All Fields"
   On_Msg_Lore:
     - ""
-    - "Turn on all permissions"
-    - "for all groups."
-  Build: "&3&lBuild"
+    - "Zapnout všechna práva"
+    - "pro všechny skupiny."
+  Build: "&3&lStavění"
   Build_Lore:
     - ""
-    - "Who has permission"
-    - "to build in"
-    - "your plot."
-  Break: "&c&lBreak"
+    - "Oprávnění"
+    - "ke stavění na"
+    - "tvém pozemku."
+  Break: "&c&lNičení"
   Break_Lore:
     - ""
-    - "Who has permission"
-    - "to break blocks in"
-    - "your plot."
+    - "Oprávnění"
+    - "ničit blocky na"
+    - "tvém pozemku."
   Use: "&6&lItem Use"
   Use_Lore:
     - ""
