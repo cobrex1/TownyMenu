@@ -165,7 +165,7 @@ Nation_Resident_Menu:
     - ""
     - "&4&lNEVRATNÉ!!!"
 Nation_Extra_Info_Menu:
-  Commands_1: "&6&lOther useful commands"
+  Commands_1: "&6&lDalší užitečné příkazy"
   Commands_1_Lore:
     - ""
     - "&a/n toggle neutral"
@@ -191,7 +191,7 @@ Town_Menu:
   Resident_Menu_Button_Lore:
     - ""
     - "View all resident info"
-    - "and settings."
+    - "a nastavení."
   Permissions_Menu_Button: "&c&lPermission Menu"
   Permissions_Menu_Button_Lore:
     - ""
@@ -207,7 +207,7 @@ Town_Menu:
     - ""
     - "Set Town home block"
     - "Set Town Spawn"
-    - "Set Town Name"
+    - "Nastavit Jméno Města"
     - "Set Town Board"
   Invite_Player_Menu_Button: "&d&lInvite Player Menu"
   Invite_Player_Menu_Button_Lore:
@@ -218,7 +218,7 @@ Town_Menu:
   Extra_Info_Menu_Button_Lore:
     - ""
     - "Learn how to claim land plus"
-    - "some useful commands"
+    - "nějaké užitečné příkazy"
   Plot_Menu_Button: "&9&lPlot Management Menu"
   Plot_Menu_Button_Lore:
     - ""
@@ -242,7 +242,7 @@ Toggle_Menu:
   Menu_Title: "&2&lToggle Settings Menu"
   Info:
     - "Adjust toggleable settings"
-    - "for your town!"
+    - "pro vaše město!"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Fire: "&6&lToggle Firespread"
@@ -378,12 +378,12 @@ Economy_Menu:
   Withdraw_Lore:
     - ""
     - "Withdraw money from"
-    - "your town bank."
+    - "banka tvého města."
   Deposit: "&a&lDeposit Money"
   Deposit_Lore:
     - ""
     - "Deposit money into"
-    - "your town bank."
+    - "banka tvého města."
   Tax: "&c&lSet Tax Amount"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
@@ -679,10 +679,10 @@ Plot_Conversables:
   Set_Type:
     Prompt: "&3What type would you like to set this plot? &b(Options: {options}) Type 'cancel' to cancel"
     Invalid: "&cPlease enter a valid plot type. (Valid types: {options}) or type 'cancel' to cancel"
-    Response: "&3Plot type set to: &b{input}"
+    Response: "&3Typ pozemku nastaven na &b{input}"
 Error:
-  No_Permission: "&cYou do not have the permission to use this command."
-  No_Town: "&cYou do not have a town."
+  No_Permission: "Nemáš dostatečná oprávnění pro použití tohoto příkazu."
+  No_Town: "Nemáš město."
   War_Time: "&cYou may not do this action during war time."
   Must_Be_In_Own_Plot: "&cYou can only do this in a plot you own."
   Must_Be_In_Town: "&cYou must be in your town to do this."
