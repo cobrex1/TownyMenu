@@ -583,13 +583,13 @@ Plot_Admin_Menu:
   Set_Type: "&3&lУстановить тип участка"
   Set_Type_Lore:
     - ""
-    - "Determine what type of"
-    - "plot this is."
+    - "Определяет, какой тип"
+    - "участок это."
   Evict: "&4&lВыгнать вдадельца с участка"
   Evict_Lore:
     - ""
     - "Делает участок без владельца."
-    - "of this plot"
+    - "этот участок"
 Nation_Conversables:
   Board:
     Prompt: "&3Введите заголовок вашего нация: "
@@ -610,7 +610,7 @@ Nation_Conversables:
     Response: "&3Название успешно изменено на {input}"
     Return: "&cНедостаточно монет на балансе нация для изменения названия."
   Rank:
-    Remove: "remove"
+    Remove: "убрать"
     Prompt: "&3Введите ранг для игрока &b{player}: &b(Варианты: {ranks}) &3Введите &c&ncancel&r&3 для отмены или &c&nremove&r&3 для снятия рангов."
     Invalid: "&cто игрок уже с этим рангом или такого ранга не существует. (Варианты: {ranks}) &cВведите &c&ncancel&r&c для отмены или &c&nremove&r&3 для снятия рангов."
     Response: "&aРанг &2{input}&a успешно установлен для игрока &2{player}"
@@ -646,7 +646,7 @@ Town_Conversables:
     Response: "&3Название успешно изменено на &b{input}"
     Return: "&cНедостаточно монет на балансе города для изменения названия."
   Rank:
-    Remove: "remove"
+    Remove: "убрать"
     Prompt: "&3Введите ранг для игрока &b{player} &b(Варианты: {ranks}) &3Введите &c&ncancel&r&3 для отмены или &c&nremove&r&3 для снятия рангов."
     Invalid: "&cЭто игрок уже с этим рангом или такого ранга не существует. (Варианты: {ranks}) &cВведите &c&ncancel&r&c для отмены или &c&nremove&r&3 для снятия рангов"
     Response: "&aРанг &2{input}&a успешно установлен для игрока &2{player}"
@@ -695,7 +695,7 @@ Error:
   Cannot_Change_Name: "&cВы должны быть мэром для изменения названия города."
   Cannot_Change_Board: "&cВы должны быть мэром для изменения надписи города."
 Chunk_View:
-  Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
-  Removed: "Boarder blocks removed."
+  Toggle_Remove: "Барьерные блоки теперь показываются. Присядьте, что бы убрать."
+  Removed: "Барьерные блоки удаленны."
 #DO NOT TOUCH VERSION
 Version: 2
