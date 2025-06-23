@@ -181,7 +181,7 @@ Nation_Extra_Info_Menu:
     - ""
     - "&a/n set mapcolor [color]"
 Town_Menu:
-  Main_Menu_Title: "&2&lTown Menu"
+  Main_Menu_Title: "&2&lMenu města"
   Toggle_Menu_Button: "&3&lToggle Settings Menu"
   Toggle_Menu_Button_Lore:
     - ""
