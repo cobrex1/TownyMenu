@@ -692,8 +692,8 @@ Error:
   Cannot_Select_Self: "&cNemůžete si vybrat sami sebe."
   Cannot_Set_Homeblock: "&cCannot set Home block here."
   Cannot_Set_Spawn: "&cZde nelze nastavit spawn města."
-  Cannot_Change_Name: "&cPro změnu názvu města musíš být starosta/ka."
-  Cannot_Change_Board: "&cPro změnu městské tabulky musíš být starosta/ka."
+  Cannot_Change_Name: "&cPro změnu názvu města musí být starosta/ka."
+  Cannot_Change_Board: "&cPro změnu městské tabulky musí být starosta/ka."
 Chunk_View:
   Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
   Removed: "Boarder blocks removed."
