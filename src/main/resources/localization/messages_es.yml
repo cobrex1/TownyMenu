@@ -23,7 +23,7 @@ Join_Create_Menu:
   #this is just setting the color
   Town_Name: "&e"
   Mayor: "&fAlcalde: "
-  Number_Residents: "&fNúmero de Residencia: "
+  Number_Residents: "&fNúmero de Residentes: "
   Create_Own_Town: "&aEscriba el nombre de su ciudad o para cancelar la creación de una ciudad &cescriba cancelar."
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lÚnete o crea una Nación"
@@ -205,9 +205,9 @@ Town_Menu:
   General_Settings_Menu_Button: "&2&lMenú de otras opciones"
   General_Settings_Menu_Button_Lore:
     - ""
-    - "Establecer bloque de viviendas de la ciudad"
-    - "Définir l'apparition de la ciudad"
-    - "Définir le nom de la ciudad"
+    - "Establecer bloque principal de la ciudad"
+    - "Establecer spawn de la ciudad"
+    - "Establecer nombre de la ciudad"
     - "Establecer tablón de anuncios de la ciudad"
   Invite_Player_Menu_Button: "&d&lMenú de Invitaciones"
   Invite_Player_Menu_Button_Lore:
@@ -227,7 +227,7 @@ Town_Menu:
   #Town info icon
   Town_Name: "&a"
   Town_Postfix: "&e"
-  Residents: "&2Residencia:"
+  Residents: "&2Residentes:"
   Number_Residents: "&2"
   Claim_Blocks: "&2Reclama Blocks:"
   Total_Claimed_Blocks: "&a"
