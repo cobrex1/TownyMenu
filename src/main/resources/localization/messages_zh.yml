@@ -4,17 +4,27 @@
 #COLOR CODES are supported with the '&' character.
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
-#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#- To use HEX colors, use #123456 or &#123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "确认"
 Cancel: "取消"
-Menu_Information: "菜单信息"
+Menu_Information: "&fMenu Info"
 Reloaded: "配置已重载！"
 Back_Button:
   Back_Button_Title: "&a&l返回"
   Back_Button_Lore:
     - ""
     - "上级菜单"
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
   Main_Menu_Title: "加入或创建一个城镇"
   Find_Open_Town: "寻找一个开放的城镇"
@@ -27,8 +37,8 @@ Join_Create_Menu:
   Create_Own_Town: "&a键入您的城镇名称或 &c键入cancel 以取消"
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&l加入或创建一个国家"
-  Find_Nation_Button: "&4点击查找一个开放的国家"
-  Click_Create_Nation_Button: "&4点击创建您的国家"
+  Find_Nation_Button: "&cClick to find an open Nation"
+  Click_Create_Nation_Button: "&cClick to create your Nation"
   Join_Open_Nation: "&a加入一个开放的国家"
   #this is just setting the color
   Nation_Name: "&e "
@@ -37,9 +47,6 @@ Join_Create_Nation_Menu:
   Create_Own_Nation: "&a键入您的国家名称或 &c键入cancel 以取消"
 Nation_Menu:
   Main_Menu_Title: "&3&l国家菜单"
-  Info:
-    - "国家主菜单"
-    - "选择！"
   Nation_Toggle_Menu_Button: "&9&l切换国家设置菜单"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -57,6 +64,11 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "管理您国家的资金"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   Nation_Settings_Button: "&2&l国家设置菜单"
   Nation_Settings_Button_Lore:
     - ""
@@ -73,11 +85,21 @@ Nation_Menu:
     - ""
     - "额外的有用命令"
     - "国家领导人"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
   Menu_Title: "&2&l国家设置菜单"
-  Info:
-    - "调整其它设置"
-    - "额外的国家设置。"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
   Set_Spawn_Msg: "&e设置国家出生点到当前位置"
   Set_Spawn: "&b&l设置国家出生点"
   Set_Spawn_Lore:
@@ -96,23 +118,40 @@ Nation_Settings_Menu:
     - ""
     - "设置国家公告板"
     - "为你的国家"
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
   Menu_Title: "&2&l国家城镇菜单"
-  Info:
-    - "点击一个城镇"
-    - "来管理它们"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a town"
+    - "to manage them!"
   Online: "&f最后在线: "
   #this is just setting the color
-  Town_Name: "&e&l"
-  Mayor: "&e镇长: "
-  Number_of_Residents: "&f居住编号: "
+  Town_Name: "&6Town: &e&l{town}"
+  Mayor: "&eTown Mayor: &f{mayor}"
+  Number_of_Residents: "&fNumber of Residents: &7{residents}"
   Kick: "&c&踢除城镇"
   Kick_Lore:
     - ""
     - "单击以踢出城镇"
     - "从你的国家"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
   Menu_Title: "&2&l经济菜单"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
   Balance: "&2&l当前国家余额"
   #this is just setting the color
   Nation_Balance: "&a  "
@@ -130,33 +169,54 @@ Nation_Economy_Menu:
   Tax: "&c&l设置税额"
   Tax_Percentage: "设置税率"
   Tax_Amount: "设置税率"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
   Menu_Title: "&2&l国家切换设置菜单"
-  Info:
-    - "调整可切换的设置"
-    - "为你的国家！"
+  Info: "&fMenu Info"
+  Info Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
   Toggle_Off: "&e点击以&c关闭"
   Toggle_On: "&e点击以&a打开"
   Public: "&9&l公开你的国家"
   Open: "&3&l开放你的国家"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
   Tax_Percent: "&2&l切换国家税率"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&l国家邀请城镇菜单"
   Invite: "点击邀请城镇加入国家"
 Nation_Resident_Menu:
   Menu_Title: "&2&l国家居民菜单"
-  Info:
-    - "点击一个居民"
-    - "来管理它们!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Res_Name: "&e&l"
-  Online: "&f最后在线: "
-  Town_Name: "&6城镇: "
+  Res_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Name: "&6Town: &f{town}"
   Nation_Rank: "&3&l设置居民等级"
   Nation_Rank_Lore:
     - ""
     - "给予一个国家等级"
     - "给一位玩家"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
   Nation_King: "&a&l让一个居民继承为国王"
   Nation_King_Lore:
     - ""
@@ -164,7 +224,16 @@ Nation_Resident_Menu:
     - "国王。"
     - ""
     - "&4&l不可逆转的"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
+  Menu_Title: "&a&lFurther Info"
   Commands_1: "&6&l其他有用的指令"
   Commands_1_Lore:
     - ""
@@ -180,6 +249,10 @@ Nation_Extra_Info_Menu:
     - "&a/n 敌人列表"
     - ""
     - "&a/n 设置地图颜色 [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
   Main_Menu_Title: "&2&l城镇菜单"
   Toggle_Menu_Button: "&3&l设置菜单"
@@ -202,6 +275,11 @@ Town_Menu:
   Economy_Menu_Button_Lore:
     - ""
     - "管理您城镇的资金"
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   General_Settings_Menu_Button: "&2&l其它设置菜单"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -229,7 +307,7 @@ Town_Menu:
   Town_Postfix: "&e"
   Residents: "&2居民:"
   Number_Residents: "&2"
-  Claim_Blocks: "&2认领区块："
+  Claim_Blocks: "&2Claim Blocks: "
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2余额:"
@@ -240,9 +318,10 @@ Town_Menu:
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&l设置菜单"
-  Info:
-    - "调整可切换的设置"
-    - "为你的国家！"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&e点击以&c关闭"
   Toggle_On: "&e点击以&a打开"
   Fire: "&6&l启用/禁用火焰传播"
@@ -252,15 +331,20 @@ Toggle_Menu:
   Public: "&9&l开启/禁用公共访问"
   Open: "&3&l开启/禁用 开放"
   Tax_Percent: "&2&l切换税率"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
   Menu_Title: "&2&l住宅菜单"
-  Info:
-    - "点击一个居民"
-    - "来管理它们!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Resident_Name: "&e&l"
-  Online: "&7最后在线: "
-  Town_Rank: "&7城镇排名： "
+  Resident_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Rank: "&7Town Rank: &f{rank}"
   Invite: "&a点击邀请玩家到城镇"
   Kick: "&c&l踢出玩家"
   Kick_Lore:
@@ -284,12 +368,17 @@ Resident_Menu:
     - "市长。"
     - ""
     - "&4&l不可逆转的"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
   Menu_Title: "&2&l权限菜单"
-  Info:
-    - "将权限设给"
-    - "不同的组"
-    - "在你的城镇。"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set permissions for"
+    - "different groups"
+    - "in your town."
   True_Msg: "&a是"
   False_Msg: "&c否"
   Change: "&e点击以更改！"
@@ -312,7 +401,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "谁拥有权限"
-    - "建立于"
+    - "to buildAndSet in"
     - "你的城镇"
   Break: "&c&l破坏"
   Break_Lore:
@@ -341,7 +430,7 @@ Player_Permission_Menu:
   Build_Nation: "&6&l获得全国放置许可"
   Build_Nation2: "国家成员能放置方块: "
   Build_Ally: "&6&l盟友放置许可"
-  Build_Ally2: "国家的盟友是否能放置方块: "
+  Build_Ally2: "Can Nation Allies Build: "
   Build_Outsider: "&6&l外人放置许可"
   Build_Outsider2: "外人是否能放置方块: "
   Break_Res: "&6&l居民破坏许可"
@@ -368,8 +457,16 @@ Player_Permission_Menu:
   Switch_Ally2: "盟友是否能开关东西: "
   Switch_Outsider: "&6&l允许外人使用开关"
   Switch_Outsider2: "外人是否能开关东西: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
   Menu_Title: "&2&l经济菜单"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
   Balance: "&2&l当前城镇余额"
   #this is just setting the color
   Town_Balance: "&a  "
@@ -387,14 +484,17 @@ Economy_Menu:
   Tax: "&c&l设置税额"
   Tax_Percentage: "设置税率"
   Tax_Amount: "设置税额"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
   Menu_Title: "&2&l常规设置菜单"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "设置主块（Home）"
-    - "设置城镇出生点"
-    - "设置城镇名称"
-    - "设置城镇公告板"
+    - "Set general settings"
+    - "for your town"
   Set_Home_Block_Msg: "&e设置主块(home)到你的位置!"
   Spawn_Reminder: "&b请确保重新设置你城镇的出生点！"
   Set_Home_Block: "&3&l设置主块（Home）"
@@ -421,7 +521,12 @@ General_Settings_Menu:
     - ""
     - "设置城镇公告板"
     - "为你的城镇。"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
+  Menu_Title: "&2Extra Information"
   Claiming: "&6&l声明(claims)信息"
   Claiming_Lore:
     - ""
@@ -442,8 +547,16 @@ Extra_Info_Menu:
     - "&a/t say &7- 向城镇广播消息"
     - "&a/t towny prices &7- 显示城镇的价格/成本"
     - "&a/t 设置地图颜色 [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
   Main_Menu_Title: "&2地皮菜单"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
   Toggle_Settings_Menu_Button: "&3&l地皮设置菜单"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -468,6 +581,10 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "好友管理菜单"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
   Menu_Title: "&2好友菜单"
   Remove: "&c已将 {player} 从你的好友列表中移除！"
@@ -476,24 +593,29 @@ Friend_Menu:
   Click_Add_Lore: "&a点击添加好友"
 Plot_Toggle_Menu:
   Menu_Title: "&2&l地块设置菜单"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "火焰蔓延"
-    - "怪物生成"
-    - "爆炸"
-    - "PvP"
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&e点击以&c关闭"
   Toggle_On: "&e点击以&a打开"
   Fire: "&6&l启用/禁用火焰传播"
   Mobs: "&a&l启用/禁用怪物生成"
   Explode: "&c&l开启/禁用爆炸"
   PVP: "&4&开启/禁用 PVP"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&l地皮权限菜单"
-  Info:
-    - "设置权限给"
-    - "不同的组"
-    - "在您的地皮中。"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Set permissions for"
+    - "different groups"
+    - "in your plot."
   True_Msg: "&a是"
   False_Msg: "&c否"
   Change: "&e点击以更改！"
@@ -511,7 +633,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "谁拥有权限"
-    - "来放置在"
+    - "to buildAndSet in"
     - "您的地皮中。"
   Break: "&c&l破坏"
   Break_Lore:
@@ -567,8 +689,16 @@ Plot_Player_Permission_Menu:
   Switch_Ally2: "盟友是否能开关东西: "
   Switch_Outsider: "&6&l允许外人使用开关"
   Switch_Outsider2: "外人是否能开关东西: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
   Menu_Title: "&2地皮 管理菜单"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
   For_Sale: "&a&l设置地皮为出售"
   For_Sale_Lore:
     - ""
@@ -590,6 +720,10 @@ Plot_Admin_Menu:
     - ""
     - "驱逐这个地块"
     - "上的居民"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
     Prompt: "&3输入您国家公告板上的消息： "
@@ -615,6 +749,10 @@ Nation_Conversables:
     Invalid: "&c这个玩家已经拥有这个等级，或者这个等级不存在。(选项：{ranks}) &c输入 &c&lcancel &c来取消或输入 remove 来移除他们的等级。"
     Response: "&a已成功将 {player} 的 国家&a等级设置为 {input}。"
     Removed_All: "&c已从居民 {player} 那里移除了所有国家等级。"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
     Prompt: "&3输入您想要为您的国家设置的税收金额：&c（输入 \"cancel\" 以退出提示）"
     Invalid_Percent: "&c请输入一个介于 0 到 {max_percent} 之间的整数作为你的税率。"
@@ -627,7 +765,7 @@ Nation_Conversables:
     Response: "&3已从你的国家账户中提取 &b{money_symbol}{input}。"
 Town_Conversables:
   Board:
-    Prompt: "&3键入您的城镇公告板的消息： "
+    Prompt: "&3Type in a message for the town board: "
     Response: "&3成功设置城镇公告板！"
   Deposit:
     Prompt: "&3键入您想要存入您的城镇的金额：&c(输入 cancel 以取消)"
@@ -651,6 +789,7 @@ Town_Conversables:
     Invalid: "&c这个玩家已经拥有这个等级，或者这个等级不存在。(选项：{ranks}) &c输入 &c&lcancel &c来取消或输入 remove 来移除他们的等级。"
     Response: "&a已成功将 {player} 的 &a等级设置为 {input}。"
     Removed_All: "&c已从居民 {player} 那里移除了所有等级。"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
     Prompt: "&3输入你想要为你的城镇设置的税收金额: &c(输入 cancel 以退出提示)"
     Invalid_Percent: "&c请输入一个介于 0 到 {max_percent} 之间的整数作为你的税率。"
@@ -683,8 +822,11 @@ Plot_Conversables:
 Error:
   No_Permission: "&c你没有权限使用这个命令。"
   No_Town: "&c你没有一个城镇。"
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
   War_Time: "&c你不能在战争期间执行此操作。"
   Must_Be_In_Own_Plot: "&c你只能在你拥有的地皮中做这件事。"
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
   Must_Be_In_Town: "&c你必须在你的城镇才能做到这一点。"
   Must_Be_In_Bank: "&c您必须在银行地皮中才能做到这一点。"
   Toggle_PVP_Outsiders: "&c外人在你的城镇时无法切换PVP。"
@@ -695,7 +837,8 @@ Error:
   Cannot_Change_Name: "&c必须是市长才能更改城镇名称。"
   Cannot_Change_Board: "&c必须是市长才能更改城镇公告板。"
 Chunk_View:
-  Toggle_Remove: "边界方块现在显示。潜行切换以移除。"
-  Removed: "边界方块已移除。"
+  Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
+  Removed: "&6Boarder blocks removed."
+  Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2
