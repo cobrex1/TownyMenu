@@ -1,20 +1,33 @@
 #!-----------------------------------------------------------------------------------------------!
 #Welcome to the TownyMenu Localization file.
 #!-----------------------------------------------------------------------------------------------!
-#COLOR CODES are supported with the '&' character.
+#COLOR CODES
+#- Default is MINIMESSAGE, but HEX and Legacy ('&') are also supported in this mode.
+#- If you keep to LAEGACY mode, do not use MINIMESSAGE format
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
-#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#- To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
+#- To use HEX colors, use #123456 or #123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "Potvrdit"
 Cancel: "Zrušit"
-Menu_Information: "Menu Info"
+Menu_Information: "&fMenu Info"
 Reloaded: "Nastaví bylo znovunačteno!"
 Back_Button:
   Back_Button_Title: "&a&lZpět"
   Back_Button_Lore:
     - ""
     - "Předchozí menu."
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
   Main_Menu_Title: "Připojit se, nebo vytvořit město"
   Find_Open_Town: "Najít veřejné město"
@@ -27,8 +40,8 @@ Join_Create_Menu:
   Create_Own_Town: "&aNapiš jméno města, nebo napiš &ccancel"
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lPřipojit se, nebo vytvořit stát"
-  Find_Nation_Button: "&4Klikni pro nalezení veřejného státu"
-  Click_Create_Nation_Button: "&4Klikni pro vytvoření tvého státu"
+  Find_Nation_Button: "&cClick to find an open Nation"
+  Click_Create_Nation_Button: "&cClick to create your Nation"
   Join_Open_Nation: "&aPřipoj se k veřejnému státu"
   #this is just setting the color
   Nation_Name: "&e "
@@ -37,9 +50,6 @@ Join_Create_Nation_Menu:
   Create_Own_Nation: "&aNapiš jméno tvého státu, nebo napiš &ccancel."
 Nation_Menu:
   Main_Menu_Title: "&3&lMenu státu"
-  Info:
-    - "Hlavní menu pro stát!"
-    - "možnost!"
   Nation_Toggle_Menu_Button: "&9&lMenu s nastavením státu"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -57,6 +67,11 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "Spravuj státní peníze"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   Nation_Settings_Button: "&2&lMenu nastavení státu"
   Nation_Settings_Button_Lore:
     - ""
@@ -73,11 +88,21 @@ Nation_Menu:
     - ""
     - "Další užitečné příkazy"
     - "pro leadery státu"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
   Menu_Title: "&2&lNastavení státu"
-  Info:
-    - "Upravit další"
-    - "nastavení státu."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
   Set_Spawn_Msg: "&eNastavit spawn státu na aktuální pozici."
   Set_Spawn: "&b&lNastav spawn státu"
   Set_Spawn_Lore:
@@ -96,23 +121,40 @@ Nation_Settings_Menu:
     - ""
     - "Nastavení board message"
     - "tvého státu."
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
   Menu_Title: "&2&lMenu měst státu"
-  Info:
-    - "Klikni na město"
-    - "pro jejich správu!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a town"
+    - "to manage them!"
   Online: "&eNaposledy online: "
   #this is just setting the color
-  Town_Name: "&e&l"
-  Mayor: "&eStarosta/ka města: "
-  Number_of_Residents: "&fPočet obyvatel: "
+  Town_Name: "&6Town: &e&l{town}"
+  Mayor: "&eTown Mayor: &f{mayor}"
+  Number_of_Residents: "&fNumber of Residents: &7{residents}"
   Kick: "&c&lVyhodit město"
   Kick_Lore:
     - ""
     - "Klikni pro vyhození města"
     - "z tvého státu"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
   Menu_Title: "&2&lMenu ekonomiky"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
   Balance: "&2&lAktuální stav peněz státu"
   #this is just setting the color
   Nation_Balance: "&a  "
@@ -130,33 +172,54 @@ Nation_Economy_Menu:
   Tax: "&c&lNastav výši daní"
   Tax_Percentage: "Nastav procentuální daně"
   Tax_Amount: "Nastav výši daní"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
   Menu_Title: "&2&lToggle nastavení státu"
-  Info:
-    - "Uprav přepínací nastavení"
-    - "tvého státu!"
+  Info: "&fMenu Info"
+  Info Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
   Toggle_Off: "&eKlikni pro nastavení &cOff"
   Toggle_On: "&eKlikni pro nastavení &aOn"
   Public: "&9&lNastavení veřejnosti státu"
   Open: "&3&lNastav stát na veřejný"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
   Tax_Percent: "&2&lPřepni procenta daní státu"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lPozvání měst"
   Invite: "Klikni pro pozvání města do státu"
 Nation_Resident_Menu:
   Menu_Title: "&2&lObyvatelé státu"
-  Info:
-    - "Klikni na obyvatele"
-    - "pro jejich správu!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Res_Name: "&e&l"
-  Online: "&eNaposledy online: "
-  Town_Name: "&6Město: "
+  Res_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Name: "&6Town: &f{town}"
   Nation_Rank: "&3&lNastav hodnost obyvatele"
   Nation_Rank_Lore:
     - ""
     - "Dej hráči"
     - "rank státu"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
   Nation_King: "&a&lDej obyvateli krále"
   Nation_King_Lore:
     - ""
@@ -164,7 +227,16 @@ Nation_Resident_Menu:
     - "hodnost krále."
     - ""
     - "&4&lNEVRATNÉ!!!"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
+  Menu_Title: "&a&lFurther Info"
   Commands_1: "&6&lDalší užitečné příkazy"
   Commands_1_Lore:
     - ""
@@ -180,6 +252,10 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
   Main_Menu_Title: "&2&lMenu města"
   Toggle_Menu_Button: "&3&lToggle Settings Menu"
@@ -202,6 +278,11 @@ Town_Menu:
   Economy_Menu_Button_Lore:
     - ""
     - "Manage your town's money"
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   General_Settings_Menu_Button: "&2&lOther Settings Menu"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -229,7 +310,7 @@ Town_Menu:
   Town_Postfix: "&e"
   Residents: "&2Residents:"
   Number_Residents: "&2"
-  Claim_Blocks: "&2Claim Blocks:"
+  Claim_Blocks: "&2Claim Blocks: "
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2Balance:"
@@ -240,9 +321,10 @@ Town_Menu:
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lToggle Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Adjust toggleable settings"
-    - "pro vaše město!"
+    - "for your town!"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Fire: "&6&lPřepnout Šíření Ohně"
@@ -252,15 +334,20 @@ Toggle_Menu:
   Public: "&9&lPřepni na veřejné"
   Open: "&3&lPřepni na veřejné"
   Tax_Percent: "&2&lPřepni procenta daní státu"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
   Menu_Title: "&2&lObyvatelé"
-  Info:
-    - "Klikni na obyvatele"
-    - "pro jejich správu!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Resident_Name: "&e&l"
-  Online: "&eNaposledy online: "
-  Town_Rank: "&7Městská hodnost: "
+  Resident_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Rank: "&7Town Rank: &f{rank}"
   Invite: "&aKlikni pro pozvání hráče do města"
   Kick: "&c&lVyhoď hráče"
   Kick_Lore:
@@ -284,12 +371,17 @@ Resident_Menu:
     - "obyvatele starostu."
     - ""
     - "&4&lNEVRATNÉ!!!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
   Menu_Title: "&2&lMenu oprávnění"
-  Info:
-    - "Nastav oprávnění"
-    - "pro jednotlivé skupiny"
-    - "tvého města."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set permissions for"
+    - "different groups"
+    - "in your town."
   True_Msg: "&atrue"
   False_Msg: "&cfalse"
   Change: "&eKlikni pro změnu!"
@@ -312,7 +404,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Oprávnění"
-    - "na stavění"
+    - "to buildAndSet in"
     - "v městě."
   Break: "&c&lBreak"
   Break_Lore:
@@ -341,7 +433,7 @@ Player_Permission_Menu:
   Build_Nation: "&6&lBuild Nation Perm"
   Build_Nation2: "Can Nation Members Build: "
   Build_Ally: "&6&lBuild Ally Perm"
-  Build_Ally2: "Can Naton Allies Build: "
+  Build_Ally2: "Can Nation Allies Build: "
   Build_Outsider: "&6&lBuild Outsider Perm"
   Build_Outsider2: "Can Outsiders Build: "
   Break_Res: "&6&lBreak Resident Perm"
@@ -368,8 +460,16 @@ Player_Permission_Menu:
   Switch_Ally2: "Can Nation Allies Switch: "
   Switch_Outsider: "&6&lSwitch Outsider Perm"
   Switch_Outsider2: "Can Outsiders Switch: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
   Menu_Title: "&2&lEconomy Menu"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
   Balance: "&2&lCurrent Town Balance"
   #this is just setting the color
   Town_Balance: "&a  "
@@ -387,14 +487,17 @@ Economy_Menu:
   Tax: "&c&lSet Tax Amount"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
   Menu_Title: "&2&lGeneral Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Set Home Block"
-    - "Nastavit Swawn Města"
-    - "Nastavit Jméno Města"
-    - "Set Town Board"
+    - "Set general settings"
+    - "for your town"
   Set_Home_Block_Msg: "&eSet home block to your location!"
   Spawn_Reminder: "&bMake sure to also set your town spawn again!"
   Set_Home_Block: "&3&lSet Home Block"
@@ -421,7 +524,12 @@ General_Settings_Menu:
     - ""
     - "Set the town board"
     - "of your town."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
+  Menu_Title: "&2Extra Information"
   Claiming: "&6&lClaiming Info"
   Claiming_Lore:
     - ""
@@ -442,8 +550,16 @@ Extra_Info_Menu:
     - "&a/t say &7- broadcast a town message"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
   Main_Menu_Title: "Menu Pozemku"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
   Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -468,6 +584,10 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Friend Management menu"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
   Menu_Title: "&2Friend Menu"
   Remove: "&cRemoved {player} from your friends list!"
@@ -476,21 +596,26 @@ Friend_Menu:
   Click_Add_Lore: "&aClick to Add Friend"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lPlot Toggle Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Šíření ohně"
-    - "Spawnování monster"
-    - "Výbuchy"
-    - "PVP"
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eKlikni pro &cvypnutí"
   Toggle_On: "&eKlikni pro &azapnutí"
   Fire: "&6&lToggle Firespread"
   Mobs: "&a&lToggle Mob Spawning"
   Explode: "&c&lToggle Explosions"
   PVP: "&4&lToggle PVP"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lPlot Permissions Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
     - "Set permissions for"
     - "different groups"
     - "in your plot."
@@ -511,7 +636,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Oprávnění"
-    - "ke stavění na"
+    - "to buildAndSet in"
     - "tvém pozemku."
   Break: "&c&lNičení"
   Break_Lore:
@@ -567,8 +692,16 @@ Plot_Player_Permission_Menu:
   Switch_Ally2: "Can Nation Allies Switch: "
   Switch_Outsider: "&6&lSwitch Outsider Perm"
   Switch_Outsider2: "Can Outsiders Switch: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
   Menu_Title: "&2Plot Admin Menu"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
   For_Sale: "&a&lSet Plot For Sale"
   For_Sale_Lore:
     - ""
@@ -590,6 +723,10 @@ Plot_Admin_Menu:
     - ""
     - "Evict the resident"
     - "of this plot"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
     Prompt: "&3Type in a message for your nation's board: "
@@ -615,6 +752,10 @@ Nation_Conversables:
     Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
     Response: "&aSuccessfully set {player}'s nation &arank to {input}"
     Removed_All: "&cRemoved all nation ranks from resident {player}"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
     Prompt: "&3Type in the amount you would like to set as a tax for your nation: &c(Type cancel to exit prompt)"
     Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
@@ -627,7 +768,7 @@ Nation_Conversables:
     Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for your town's board: "
+    Prompt: "&3Type in a message for the town board: "
     Response: "&3Successfully set town board!"
   Deposit:
     Prompt: "&3Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)"
@@ -651,6 +792,7 @@ Town_Conversables:
     Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
     Response: "&aSuccessfully set {player}'s &arank to {input}"
     Removed_All: "&cRemoved all ranks from resident {player}"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
     Prompt: "&3Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)"
     Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
@@ -683,8 +825,11 @@ Plot_Conversables:
 Error:
   No_Permission: "Nemáš dostatečná oprávnění pro použití tohoto příkazu."
   No_Town: "Nemáš město."
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
   War_Time: "&cYou may not do this action during war time."
   Must_Be_In_Own_Plot: "&cYou can only do this in a plot you own."
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
   Must_Be_In_Town: "&cYou must be in your town to do this."
   Must_Be_In_Bank: "&cYou must be in a bank plot to do this."
   Toggle_PVP_Outsiders: "&cCannot toggle PVP while outsiders are in your town."
@@ -695,7 +840,8 @@ Error:
   Cannot_Change_Name: "&cPro změnu názvu města musí být starosta/ka."
   Cannot_Change_Board: "&cPro změnu městské tabulky musí být starosta/ka."
 Chunk_View:
-  Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
-  Removed: "Boarder blocks removed."
+  Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
+  Removed: "&6Boarder blocks removed."
+  Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2

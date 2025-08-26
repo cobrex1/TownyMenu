@@ -1,20 +1,33 @@
 #!-----------------------------------------------------------------------------------------------!
 #Welcome to the TownyMenu Localization file.
 #!-----------------------------------------------------------------------------------------------!
-#COLOR CODES are supported with the '&' character.
+#COLOR CODES
+#- Default is MINIMESSAGE, but HEX and Legacy ('&') are also supported in this mode.
+#- If you keep to LAEGACY mode, do not use MINIMESSAGE format
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
-#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#- To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
+#- To use HEX colors, use #123456 or #123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "подтвердить"
 Cancel: "отмена"
-Menu_Information: "Меню информации"
+Menu_Information: "&fMenu Info"
 Reloaded: "Настройки перезагружены!"
 Back_Button:
   Back_Button_Title: "&a&lНазад"
   Back_Button_Lore:
     - ""
     - "Предыдущее меню."
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
   Main_Menu_Title: "Присоединиться или создать город"
   Find_Open_Town: "Найти открытый город"
@@ -27,8 +40,8 @@ Join_Create_Menu:
   Create_Own_Town: "&aВведите название вашего города или &cвведите /cancel."
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lПрисоединиться или создать нацию"
-  Find_Nation_Button: "&4Найти открытую нацию"
-  Click_Create_Nation_Button: "&4Нажмите, чтобы создать свою нация"
+  Find_Nation_Button: "&cClick to find an open Nation"
+  Click_Create_Nation_Button: "&cClick to create your Nation"
   Join_Open_Nation: "&aПрисоединиться к открытой нации"
   #this is just setting the color
   Nation_Name: "&e "
@@ -37,9 +50,6 @@ Join_Create_Nation_Menu:
   Create_Own_Nation: "&aВведите название вашей нации или &cвведите /cancel."
 Nation_Menu:
   Main_Menu_Title: "&3&lМеню Нации"
-  Info:
-    - "Главное меню для Нации"
-    - "параметры!"
   Nation_Toggle_Menu_Button: "&9&lМеню переключения настроек нации"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -57,6 +67,11 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "Управление балансом нации"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   Nation_Settings_Button: "&2&lМеню настроек нации"
   Nation_Settings_Button_Lore:
     - ""
@@ -73,11 +88,21 @@ Nation_Menu:
     - ""
     - "Дополнительные полезные команды для"
     - "лидеров нации"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
   Menu_Title: "&2&lМеню настроек нации"
-  Info:
-    - "Настроить другие"
-    - "дополнительные настройки нации."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
   Set_Spawn_Msg: "&eаша позиция установлена как спавн в нация."
   Set_Spawn: "&b&lУстановить точку спавна для нации"
   Set_Spawn_Lore:
@@ -96,23 +121,40 @@ Nation_Settings_Menu:
     - ""
     - "Изменить надпись"
     - "вашей нации."
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
   Menu_Title: "&2&lМеню национального города"
-  Info:
-    - "Нажмите на город"
-    - "чтобы настроить его!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a town"
+    - "to manage them!"
   Online: "&fПоследний онлайн: "
   #this is just setting the color
-  Town_Name: "&e&l"
-  Mayor: "&eМэр города: "
-  Number_of_Residents: "&fКол-во жителей: "
+  Town_Name: "&6Town: &e&l{town}"
+  Mayor: "&eTown Mayor: &f{mayor}"
+  Number_of_Residents: "&fNumber of Residents: &7{residents}"
   Kick: "&c&lКикнуть город"
   Kick_Lore:
     - ""
     - "Нажмите, чтобы кикнуть город"
     - "из твоей нация"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
   Menu_Title: "&2&lМеню национальной экономики"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
   Balance: "&2&lТекущий баланс нации"
   #this is just setting the color
   Nation_Balance: "&a  "
@@ -130,33 +172,54 @@ Nation_Economy_Menu:
   Tax: "&c&lУстановить размер налога"
   Tax_Percentage: "Установить налог в процентах"
   Tax_Amount: "Установить сумму налога"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
   Menu_Title: "&2&lМеню флажков нации"
-  Info:
-    - "Настройте переключаемые параметры"
-    - "для вашей нации!"
+  Info: "&fMenu Info"
+  Info Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
   Toggle_Off: "&eНажмите для &cотключения"
   Toggle_On: "&eНажмите для &aвключения"
   Public: "&9&lTПубличный статус города"
   Open: "&3&lОткрытый статус города"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
   Tax_Percent: "&2&lПроцент национального налога"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lМеню приглашения в нацию"
   Invite: "Нажмите, чтобы пригласить город в нацию"
 Nation_Resident_Menu:
   Menu_Title: "&2&lМеню жителя нации"
-  Info:
-    - "Нажмите на жителя,"
-    - "чтобы управлять ими!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Res_Name: "&e&l"
-  Online: "&fПоследний раз онлайн: "
-  Town_Name: "&6Город: "
+  Res_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Name: "&6Town: &f{town}"
   Nation_Rank: "&3&lУстановить ранг жителя"
   Nation_Rank_Lore:
     - ""
     - "Дайте национальный ранг"
     - "игроку"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
   Nation_King: "&a&lДать жителю статус короля"
   Nation_King_Lore:
     - ""
@@ -164,7 +227,16 @@ Nation_Resident_Menu:
     - "королём."
     - ""
     - "&4&lНеобратимо"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
+  Menu_Title: "&a&lFurther Info"
   Commands_1: "&6&lДругие полезные команды"
   Commands_1_Lore:
     - ""
@@ -180,6 +252,10 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
   Main_Menu_Title: "&2&lМеню управления городом"
   Toggle_Menu_Button: "&3&lМеню флажков города"
@@ -202,6 +278,11 @@ Town_Menu:
   Economy_Menu_Button_Lore:
     - ""
     - "Управление балансом города."
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   General_Settings_Menu_Button: "&2&lПрочие настройки"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -229,7 +310,7 @@ Town_Menu:
   Town_Postfix: "&e"
   Residents: "&2Жители:"
   Number_Residents: "&2"
-  Claim_Blocks: "&2Занятые чанки:"
+  Claim_Blocks: "&2Claim Blocks: "
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2Баланс:"
@@ -240,9 +321,10 @@ Town_Menu:
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lМеню переключения настроек города"
-  Info:
-    - "Управление опциями"
-    - "вашего города."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eНажмите для &cотключения"
   Toggle_On: "&eНажмите для &aвключения"
   Fire: "&6&lРаспространение огня"
@@ -252,15 +334,20 @@ Toggle_Menu:
   Public: "&9&lПубличный статус города"
   Open: "&3&lОткрытый статус города"
   Tax_Percent: "&2&lИзменить процент налога"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
   Menu_Title: "&2&lМеню жителей"
-  Info:
-    - "Нажмите на жителя"
-    - "для управления."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Resident_Name: "&e&l"
-  Online: "&7Последний онлайн: "
-  Town_Rank: "&7Городской ранг: "
+  Resident_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Rank: "&7Town Rank: &f{rank}"
   Invite: "&aНажмите, чтобы пригласить игрока в город"
   Kick: "&c&lВыгнать игрока"
   Kick_Lore:
@@ -284,12 +371,17 @@ Resident_Menu:
     - "выбранному игроку."
     - ""
     - "&4&lНеобратимо"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
   Menu_Title: "&2&lМеню разрешений"
-  Info:
-    - "Изменение прав доступа"
-    - "для различных групп"
-    - "в вашем городе."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set permissions for"
+    - "different groups"
+    - "in your town."
   True_Msg: "&aвключено"
   False_Msg: "&cвыключено"
   Change: "&eНажмите для изменения!"
@@ -312,7 +404,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Кто имеет право"
-    - "строить в"
+    - "to buildAndSet in"
     - "вашем городе городе."
   Break: "&c&lЛомать"
   Break_Lore:
@@ -341,7 +433,7 @@ Player_Permission_Menu:
   Build_Nation: "&bМэр: Разрешение участникам нации"
   Build_Nation2: "&fСтатус на строительство:"
   Build_Ally: "&bМэр: Разрешение союзникам"
-  Build_Ally2: "&fСтатус на строительство:"
+  Build_Ally2: "Can Nation Allies Build: "
   Build_Outsider: "&bМэр: Разрешение посторонним"
   Build_Outsider2: "&fСтатус на строительство:"
   Break_Res: "&bМэр: Разрешение для резидентов"
@@ -368,8 +460,16 @@ Player_Permission_Menu:
   Switch_Ally2: "&fСтатус на переключение:"
   Switch_Outsider: "&bМэр: Разрешение посторонним"
   Switch_Outsider2: "&fСтатус на переключение:"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
   Menu_Title: "&2&lУправление экономикой"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
   Balance: "&2&lТекущий баланс города"
   #this is just setting the color
   Town_Balance: "&a  "
@@ -387,14 +487,17 @@ Economy_Menu:
   Tax: "&c&lУстановить размер налога"
   Tax_Percentage: "Установить налог в процентах"
   Tax_Amount: "Установить сумму налога"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
   Menu_Title: "&2&lПрочие настройки"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Установка домашнего блока"
-    - "Установить возрождение города"
-    - "Установить название города"
-    - "Установить городской совет"
+    - "Set general settings"
+    - "for your town"
   Set_Home_Block_Msg: "&eВаша позиция установлена как главный участок!"
   Spawn_Reminder: "&bУбедитесь, что вы находитесь внутри города!"
   Set_Home_Block: "&3&lУстановить главный участок"
@@ -421,7 +524,12 @@ General_Settings_Menu:
     - ""
     - "Изменить заголовок"
     - "вашего города."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
+  Menu_Title: "&2Extra Information"
   Claiming: "&6&lИнформация о присоединении участков"
   Claiming_Lore:
     - ""
@@ -442,8 +550,16 @@ Extra_Info_Menu:
     - "&a/t set plottax &7- установить сумму налога с участка"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t outlaw &7- объявить игрока вне закона"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
   Main_Menu_Title: "&2Управление участками города"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
   Toggle_Settings_Menu_Button: "&3&lНастройки участка"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -468,6 +584,10 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Меню управления друзьями"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
   Menu_Title: "&2Меню друзей"
   Remove: "&cИгрок &4{player}&c удалён из вашего списка друзей!"
@@ -476,24 +596,29 @@ Friend_Menu:
   Click_Add_Lore: "&aНажмите, чтобы добавить друга"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lНастройки участка"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "распростронение огня"
-    - "спавн монстров"
-    - "разрещение взрывов"
-    - "разрешение PvP"
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eНажмите для &cвыключения"
   Toggle_On: "&eНажмите для &aвключения"
   Fire: "&6&lРаспростронение огня"
   Mobs: "&a&lРазрешить спавн мобов"
   Explode: "&c&lРазрешить взрывы"
   PVP: "&4&lРазрешить PvP"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lМеню прав доступа"
-  Info:
-    - "Установка прав доступа для"
-    - "Изменение прав доступа"
-    - "для различных групп"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Set permissions for"
+    - "different groups"
+    - "in your plot."
   True_Msg: "&aвключено"
   False_Msg: "&cвыключено"
   Change: "&eНажмите для изменения!"
@@ -511,7 +636,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Кто имеет право"
-    - "ставить блоки"
+    - "to buildAndSet in"
     - "в этом участке."
   Break: "&c&lЛомать"
   Break_Lore:
@@ -567,8 +692,16 @@ Plot_Player_Permission_Menu:
   Switch_Ally2: "&fСтатус на переключение:"
   Switch_Outsider: "&7Резидент: Разрешение посторонним"
   Switch_Outsider2: "&fСтатус на переключение:"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
   Menu_Title: "&2Управление участком"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
   For_Sale: "&a&lВыставить участок на продажу"
   For_Sale_Lore:
     - ""
@@ -590,6 +723,10 @@ Plot_Admin_Menu:
     - ""
     - "Делает участок без владельца."
     - "этот участок"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
     Prompt: "&3Введите заголовок вашего нация: "
@@ -615,6 +752,10 @@ Nation_Conversables:
     Invalid: "&cто игрок уже с этим рангом или такого ранга не существует. (Варианты: {ranks}) &cВведите &c&ncancel&r&c для отмены или &c&nremove&r&3 для снятия рангов."
     Response: "&aРанг &2{input}&a успешно установлен для игрока &2{player}"
     Removed_All: "&cRВсе ранги удалены у игрока {player}"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
     Prompt: "&3Введите сумму которую вы хотите установить в качестве налога вашего нация: &c(введите cancel для отмены)"
     Invalid_Percent: "&cВведите целое число между 0 и {max_percent} для установки процента налога."
@@ -627,7 +768,7 @@ Nation_Conversables:
     Response: "&3Вы сняли &b{money_symbol}{input} &3с акаунта вашего нация."
 Town_Conversables:
   Board:
-    Prompt: "&3Введите заголовок вашего города: "
+    Prompt: "&3Type in a message for the town board: "
     Response: "&3Заголовок обновлён!"
   Deposit:
     Prompt: "&3Введите сумму которую вы хотите положить на баланс вашего города: &c(введите cancel для отмены)"
@@ -651,6 +792,7 @@ Town_Conversables:
     Invalid: "&cЭто игрок уже с этим рангом или такого ранга не существует. (Варианты: {ranks}) &cВведите &c&ncancel&r&c для отмены или &c&nremove&r&3 для снятия рангов"
     Response: "&aРанг &2{input}&a успешно установлен для игрока &2{player}"
     Removed_All: "&cВсе ранги удалены у игрока &4{player}"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
     Prompt: "&3Введите сумму которую вы хотите установить в качестве налога вашего города: &c(введите cancel для отмены)"
     Invalid_Percent: "&cВведите целое число между 0 и {max_percent} для установки процента налога."
@@ -683,8 +825,11 @@ Plot_Conversables:
 Error:
   No_Permission: "&cУ вас нет прав для этого действия."
   No_Town: "&cУ вас нет города или Вы за пределами города."
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
   War_Time: "&cВы не можете делать это действие во время войны."
   Must_Be_In_Own_Plot: "&cЭто не Ваш участок! В доступе отказано!"
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
   Must_Be_In_Town: "&cВы должны быть в городе для этого действия."
   Must_Be_In_Bank: "&cВы должны быть на территории банка для этого действия."
   Toggle_PVP_Outsiders: "&cНельзя переключать PVP, пока посторонние находятся в вашем городе."
@@ -695,7 +840,8 @@ Error:
   Cannot_Change_Name: "&cВы должны быть мэром для изменения названия города."
   Cannot_Change_Board: "&cВы должны быть мэром для изменения надписи города."
 Chunk_View:
-  Toggle_Remove: "Барьерные блоки теперь показываются. Присядьте, что бы убрать."
-  Removed: "Барьерные блоки удаленны."
+  Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
+  Removed: "&6Boarder blocks removed."
+  Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2

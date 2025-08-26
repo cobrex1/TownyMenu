@@ -1,10 +1,13 @@
 #!-----------------------------------------------------------------------------------------------!
 #Welcome to the TownyMenu Localization file.
 #!-----------------------------------------------------------------------------------------------!
-#COLOR CODES are supported with the '&' character.
+#COLOR CODES
+#- Default is MINIMESSAGE, but HEX and Legacy ('&') are also supported in this mode.
+#- If you keep to LAEGACY mode, do not use MINIMESSAGE format
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
-#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#- To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
+#- To use HEX colors, use #123456 or #123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "onay"
 Cancel: "iptal"
@@ -15,6 +18,16 @@ Back_Button:
   Back_Button_Lore:
     - ""
     - "Önceki menü."
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
   Main_Menu_Title: "Bir Kasabaya Katılın veya Kasaba Oluşturun"
   Find_Open_Town: "Açık bir Kasaba bulun"
@@ -37,9 +50,6 @@ Join_Create_Nation_Menu:
   Create_Own_Nation: "&aType the name of your nation or &ctype cancel."
 Nation_Menu:
   Main_Menu_Title: "&3&lUlus Menüsü"
-  Info:
-    - "Ulus için ana menü"
-    - "option!"
   Nation_Toggle_Menu_Button: "&9&lToggle Nation Settings Menu"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -57,6 +67,11 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "Ulusunuzun parasını yönetin"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   Nation_Settings_Button: "&2&lUlus Ayarları Menüsü"
   Nation_Settings_Button_Lore:
     - ""
@@ -73,11 +88,21 @@ Nation_Menu:
     - ""
     - "Extra useful commands for"
     - "Nation leaders"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
   Menu_Title: "&2&lUlus Kasabası Menüsü"
-  Info:
-    - "Adjust other"
-    - "extra nation settings."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
   Set_Spawn_Msg: "&eSet nation spawn to current location."
   Set_Spawn: "&b&lSet Nation Spawn"
   Set_Spawn_Lore:
@@ -96,9 +121,18 @@ Nation_Settings_Menu:
     - ""
     - "Set the nation board"
     - "of your nation."
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
   Menu_Title: "&2&lUlus Kasabası Menüsü"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Click on a town"
     - "to manage them!"
   Online: "&fLast online: "
@@ -111,8 +145,16 @@ Nation_Town_Menu:
     - ""
     - "Click to kick town"
     - "from your nation"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
   Menu_Title: "&2&lEkonomi Menüsü"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
   Balance: "&2&lMevcut Ulus Bakiyesi"
   #this is just setting the color
   Nation_Balance: "&a  "
@@ -130,22 +172,38 @@ Nation_Economy_Menu:
   Tax: "&c&lVergi miktarını ayarla"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
   Menu_Title: "&2&lNation Toggle Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info Lore:
     - "Adjust toggleable settings"
     - "for your nation!"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Public: "&9&lToggle Nation Public"
   Open: "&3&lToggle Nation Open"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
   Tax_Percent: "&2&lToggle Nation Tax Percent"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lNation Invite Town Menu"
   Invite: "Click to invite town to nation"
 Nation_Resident_Menu:
   Menu_Title: "&2&lNation Resident Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Click on a resident"
     - "to manage them!"
   #this is just setting the color
@@ -157,6 +215,11 @@ Nation_Resident_Menu:
     - ""
     - "Give a nation rank"
     - "to a player"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
   Nation_King: "&a&lGive Resident King"
   Nation_King_Lore:
     - ""
@@ -164,7 +227,16 @@ Nation_Resident_Menu:
     - "the King."
     - ""
     - "&4&lIrreversible"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
+  Menu_Title: "&a&lFurther Info"
   Commands_1: "&6&lDiğer faydalı komutlar"
   Commands_1_Lore:
     - ""
@@ -180,6 +252,10 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
   Main_Menu_Title: "&2&lKasaba Menüsü"
   Toggle_Menu_Button: "&3&lToggle Settings Menu"
@@ -202,6 +278,11 @@ Town_Menu:
   Economy_Menu_Button_Lore:
     - ""
     - "Manage your town's money"
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   General_Settings_Menu_Button: "&2&lDiğer Ayarlar Menüsü"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -240,7 +321,8 @@ Town_Menu:
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lToggle Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Adjust toggleable settings"
     - "for your town!"
   Toggle_Off: "&eClick to Turn &cOff"
@@ -252,9 +334,14 @@ Toggle_Menu:
   Public: "&9&lToggle Public"
   Open: "&3&lToggle Open"
   Tax_Percent: "&2&lToggle Tax Percent"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
   Menu_Title: "&2&lResident Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Click on a resident"
     - "to manage them!"
   #this is just setting the color
@@ -284,9 +371,14 @@ Resident_Menu:
     - "the mayor."
     - ""
     - "&4&lIrreversible"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
   Menu_Title: "&2&lPermissions Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - "Set permissions for"
     - "different groups"
     - "in your town."
@@ -368,8 +460,16 @@ Player_Permission_Menu:
   Switch_Ally2: "Can Nation Allies Switch: "
   Switch_Outsider: "&6&lSwitch Outsider Perm"
   Switch_Outsider2: "Can Outsiders Switch: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
   Menu_Title: "&2&lEkonomi Menüsü"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
   Balance: "&2&lMevcut Kasaba Bakiyesi"
   #this is just setting the color
   Town_Balance: "&a  "
@@ -387,14 +487,17 @@ Economy_Menu:
   Tax: "&c&lSet Tax Amount"
   Tax_Percentage: "Set tax percentage"
   Tax_Amount: "Set tax amount"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
   Menu_Title: "&2&lGenel Ayarlar Menüsü"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Set Home Block"
-    - "Set Town Spawn"
-    - "Set Town Name"
-    - "Set Town Board"
+    - "Set general settings"
+    - "for your town"
   Set_Home_Block_Msg: "&eSet home block to your location!"
   Spawn_Reminder: "&bMake sure to also set your town spawn again!"
   Set_Home_Block: "&3&lSet Home Block"
@@ -421,7 +524,12 @@ General_Settings_Menu:
     - ""
     - "Set the town board"
     - "of your town."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
+  Menu_Title: "&2Extra Information"
   Claiming: "&6&lClaiming Info"
   Claiming_Lore:
     - ""
@@ -442,8 +550,16 @@ Extra_Info_Menu:
     - "&a/t say &7- broadcast a town message"
     - "&a/t towny prices &7- shows town prices / costs"
     - "&a/t set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
   Main_Menu_Title: "&2Arsa Menüsü"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
   Toggle_Settings_Menu_Button: "&3&lPlot Toggle Settings Menu"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -468,6 +584,10 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Arkadaş Yönetimi menüsü"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
   Menu_Title: "&2Arkadaş Menüsü"
   Remove: "&cRemoved {player} from your friends list!"
@@ -476,21 +596,26 @@ Friend_Menu:
   Click_Add_Lore: "&aClick to Add Friend"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lPlot Toggle Settings Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Fire Spread"
-    - "Monster spawning"
-    - "Explosions"
-    - "PvP"
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eClick to Turn &cOff"
   Toggle_On: "&eClick to Turn &aOn"
   Fire: "&6&lToggle Firespread"
   Mobs: "&a&lToggle Mob Spawning"
   Explode: "&c&lToggle Explosions"
   PVP: "&4&lToggle PVP"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lPlot Permissions Menu"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
     - "Set permissions for"
     - "different groups"
     - "in your plot."
@@ -567,8 +692,16 @@ Plot_Player_Permission_Menu:
   Switch_Ally2: "Can Nation Allies Switch: "
   Switch_Outsider: "&6&lSwitch Outsider Perm"
   Switch_Outsider2: "Can Outsiders Switch: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
   Menu_Title: "&2Plot Admin Menu"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
   For_Sale: "&a&lSet Plot For Sale"
   For_Sale_Lore:
     - ""
@@ -590,6 +723,10 @@ Plot_Admin_Menu:
     - ""
     - "Evict the resident"
     - "of this plot"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
     Prompt: "&3Ulusunuzun panosu için bir mesaj yazın: "
@@ -615,6 +752,10 @@ Nation_Conversables:
     Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
     Response: "&aSuccessfully set {player}'s nation &arank to {input}"
     Removed_All: "&cRemoved all nation ranks from resident {player}"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
     Prompt: "&3Type in the amount you would like to set as a tax for your nation: &c(Type cancel to exit prompt)"
     Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
@@ -651,6 +792,7 @@ Town_Conversables:
     Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
     Response: "&aSuccessfully set {player}'s &arank to {input}"
     Removed_All: "&cRemoved all ranks from resident {player}"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
     Prompt: "&3Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)"
     Invalid_Percent: "&cPlease enter only a whole number between 0 and {max_percent} for your tax percent."
@@ -683,8 +825,11 @@ Plot_Conversables:
 Error:
   No_Permission: "&cYou do not have the permission to use this command."
   No_Town: "&cSenin bir kasaban yok."
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
   War_Time: "&cBu eylemi savaş sırasında yapamazsın."
   Must_Be_In_Own_Plot: "&cBunu yalnızca sahip olduğunuz bir arsada yapabilirsin."
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
   Must_Be_In_Town: "&cBunu yapmak için kasabanızda olmalısın."
   Must_Be_In_Bank: "&cBunu yapmak için bir banka arsasında olmalısın."
   Toggle_PVP_Outsiders: "&cYabancılar kasabanızdayken PVP'yi değiştiremezsin."
@@ -697,5 +842,6 @@ Error:
 Chunk_View:
   Toggle_Remove: "Boarder blocks now showing. Toggle sneak to remove."
   Removed: "Boarder blocks removed."
+  Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2
