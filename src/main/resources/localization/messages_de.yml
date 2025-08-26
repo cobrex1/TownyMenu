@@ -4,17 +4,27 @@
 #COLOR CODES are supported with the '&' character.
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
-#- To use HEX colors, use #123456 syntax: "Hello #123456world."
+#- To use HEX colors, use #123456 or &#123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "bestätigen"
 Cancel: "abbrechen"
-Menu_Information: "Menü Info"
+Menu_Information: "&fMenu Info"
 Reloaded: "Einstellungen neu geladen!"
 Back_Button:
   Back_Button_Title: "&a&lZurück"
   Back_Button_Lore:
     - ""
     - "Vorheriges Menü."
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
   Main_Menu_Title: "Stadt beitreten oder erstellen"
   Find_Open_Town: "Finde eine offene Stadt"
@@ -27,8 +37,8 @@ Join_Create_Menu:
   Create_Own_Town: "&aSchreiben Sie den Namen Ihrer Stadt oder schreiben Sie &cabbrechen&a um abzubrechen."
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lTretten Sie einer Nation bei oder gründe eine"
-  Find_Nation_Button: "&4Klicken Sie hier, um eine offene Nation zu finden"
-  Click_Create_Nation_Button: "&4Klicken Sie hier, um Ihre Nation zu erstellen"
+  Find_Nation_Button: "&cClick to find an open Nation"
+  Click_Create_Nation_Button: "&cClick to create your Nation"
   Join_Open_Nation: "&aTretten Sie einer offenen Nation bei"
   #this is just setting the color
   Nation_Name: "&e "
@@ -37,9 +47,6 @@ Join_Create_Nation_Menu:
   Create_Own_Nation: "&aGeben Sie den Namen Ihrer Nation ein oder geben Sie &cabbrechen ein um abzubrechen."
 Nation_Menu:
   Main_Menu_Title: "&3&lNation Menü"
-  Info:
-    - "Hauptmenü für Nation"
-    - "möglichkeit!"
   Nation_Toggle_Menu_Button: "&9&lUmschalten des Nation-Einstellungsmenüs"
   Nation_Toggle_Menu_Button_Lore:
     - ""
@@ -57,6 +64,11 @@ Nation_Menu:
   Nation_Economy_Menu_Button_Lore:
     - ""
     - "Verwalten Sie das Geld Ihrer Nation"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   Nation_Settings_Button: "&2&lNation-Einstellungsmenü"
   Nation_Settings_Button_Lore:
     - ""
@@ -73,11 +85,21 @@ Nation_Menu:
     - ""
     - "Extra nützliche Befehle für"
     - "Staatsoberhäupter"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
   Menu_Title: "&2&lNation Einstellungsmenü"
-  Info:
-    - "Sonstiges anpassen"
-    - "zusätzliche Ländereinstellungen."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
   Set_Spawn_Msg: "&eStellen Sie den Nationen-Spawn auf den aktuellen Standort ein."
   Set_Spawn: "&b&lStellen Sie den Nationen-Spawn ein"
   Set_Spawn_Lore:
@@ -96,23 +118,40 @@ Nation_Settings_Menu:
     - ""
     - "Stellen Sie das Nationennachrichtenbrett ein"
     - "Ihrer Nation."
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
   Menu_Title: "&2&lNation Stadt Menü"
-  Info:
-    - "Klicken Sie auf eine Stadt"
-    - "um sie zu verwalten!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a town"
+    - "to manage them!"
   Online: "Zuletzt Online: "
   #this is just setting the color
-  Town_Name: "&e&l"
-  Mayor: "Bürgermeister der Stadt: "
-  Number_of_Residents: "Nummer des Wohnsitzes: "
+  Town_Name: "&6Town: &e&l{town}"
+  Mayor: "&eTown Mayor: &f{mayor}"
+  Number_of_Residents: "&fNumber of Residents: &7{residents}"
   Kick: "&c&lStadt kicken"
   Kick_Lore:
     - ""
     - "Klicken Sie, um die Stadt aus Ihrer Nation"
     - "zu entfernen"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
   Menu_Title: "&2&lEconomy Menü"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
   Balance: "&2&lAktuelle Nation Balance"
   #this is just setting the color
   Nation_Balance: "&a  "
@@ -130,33 +169,54 @@ Nation_Economy_Menu:
   Tax: "&c&lSteuerbetrag festlegen"
   Tax_Percentage: "Steuerprozentsatz festlegen"
   Tax_Amount: "Steuerbetrag festlegen"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
   Menu_Title: "&2&lNation Toggle Einstellungsmenü"
-  Info:
-    - "Umschaltbare Einstellungen anpassen"
-    - "für Ihre Nation!"
+  Info: "&fMenu Info"
+  Info Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
   Toggle_Off: "&eKlicken Sie Deaktivieren &cauf"
   Toggle_On: "&eKlicken Sie hier, um &aeinzuschalten"
   Public: "&9&lNation Öffentlich umschalten"
   Open: "&3&lUmschalten Nation öffnen"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
   Tax_Percent: "&2&lNationale Steuer in Prozent"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
   Menu_Title: "&2&lNation laden Stadtmenü ein"
   Invite: "Klicken Sie hier, um die Stadt zur Nation einzuladen"
 Nation_Resident_Menu:
   Menu_Title: "&2&lNation Resident Menü"
-  Info:
-    - "Klicken Sie auf einen Bewohner"
-    - "um diesen zu verwalten!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Res_Name: "&e&l"
-  Online: "Zuletzt Online: "
-  Town_Name: "&6Stadt: "
+  Res_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Name: "&6Town: &f{town}"
   Nation_Rank: "&3&lStellen Sie den Bewohner-Rang ein"
   Nation_Rank_Lore:
     - ""
     - "Geben Sie einem Spieler einen Rang"
     - "innerhalb der Nation"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
   Nation_King: "&a&lGeben Sie Resident King"
   Nation_King_Lore:
     - ""
@@ -164,7 +224,16 @@ Nation_Resident_Menu:
     - "zum König."
     - ""
     - "&4&lkann nicht rückgängig gemacht werden!"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
+  Menu_Title: "&a&lFurther Info"
   Commands_1: "&6&lAndere nützliche Befehle"
   Commands_1_Lore:
     - ""
@@ -180,6 +249,10 @@ Nation_Extra_Info_Menu:
     - "&a/n enemy list"
     - ""
     - "&a/n set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
   Main_Menu_Title: "&2&lStadt Menü"
   Toggle_Menu_Button: "&3&lUmschaltfunktionen Menü"
@@ -202,6 +275,11 @@ Town_Menu:
   Economy_Menu_Button_Lore:
     - ""
     - "Verwalten Sie das Geld Ihrer Stadt"
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
   General_Settings_Menu_Button: "&2&lAndrere Einstellungen"
   General_Settings_Menu_Button_Lore:
     - ""
@@ -229,7 +307,7 @@ Town_Menu:
   Town_Postfix: "&e"
   Residents: "&2Einwohner:"
   Number_Residents: "&2"
-  Claim_Blocks: "&2Beanspruchen Blocks:"
+  Claim_Blocks: "&2Claim Blocks: "
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2Aktuelle:"
@@ -240,9 +318,10 @@ Town_Menu:
   Nation_Name: "&a"
 Toggle_Menu:
   Menu_Title: "&2&lUmschaltbare Einstellungen Menü"
-  Info:
-    - "Umschaltbare Einstellungen"
-    - "für Ihre Stadt anpassen!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eKlicken, um &causzuschalten"
   Toggle_On: "&eKlicken, um &aeinzuschalten"
   Fire: "&6&lFeuerausbreitung umschalten"
@@ -252,15 +331,20 @@ Toggle_Menu:
   Public: "&9&lZugang für die Öffentlichkeit umschalten"
   Open: "&3&lFreien Beitritt umschalten"
   Tax_Percent: "&2&lSteuern umschalten"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
   Menu_Title: "&2&lEinwohner Menü"
-  Info:
-    - "Klicken Sie auf einen Einwohner,"
-    - "um diesen zu verwalten!"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
   #this is just setting the color
-  Resident_Name: "&e&l"
-  Online: "&7Zuletzt Online: "
-  Town_Rank: "&7Rang der Stadt: "
+  Resident_Name: "&e&l{player}"
+  Online: "&7Last online: &f{online}"
+  Town_Rank: "&7Town Rank: &f{rank}"
   Invite: "&aKlicken Sie hier, um den Spieler in die Stadt einzuladen"
   Kick: "&c&lEntferne Spieler"
   Kick_Lore:
@@ -284,12 +368,17 @@ Resident_Menu:
     - "zum Bürgermeiser."
     - ""
     - "&4&lNicht umkehrbar!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
   Menu_Title: "&2&lBerechtigungsmenü"
-  Info:
-    - "Legen Sie Berechtigungen für"
-    - "Legen Sie Berechtigungen für"
-    - "verschiedene Gruppen"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set permissions for"
+    - "different groups"
+    - "in your town."
   True_Msg: "&aWahr"
   False_Msg: "&cFalsch"
   Change: "&eKlicken, um zu ändern!"
@@ -312,7 +401,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "in Ihrer Stadt"
+    - "to buildAndSet in"
     - "zu verwenden."
   Break: "&c&lAbbauen"
   Break_Lore:
@@ -341,7 +430,7 @@ Player_Permission_Menu:
   Build_Nation: "&6&lErlaubnis der Mitglieder der Nation zu bauen"
   Build_Nation2: "Können Mitglieder der Nation bauen: "
   Build_Ally: "&6&lErlaubnis der Verbündeten zu bauen"
-  Build_Ally2: "Können Verbündetee bauen: "
+  Build_Ally2: "Can Nation Allies Build: "
   Build_Outsider: "&6&lErlaubnis für Außenstehende zu bauen"
   Build_Outsider2: "Können Außenstehende: "
   Break_Res: "&6&lErlaubnis der Einwohner abzubauen"
@@ -368,8 +457,16 @@ Player_Permission_Menu:
   Switch_Ally2: "Können Verbündete Schalter verwenden: "
   Switch_Outsider: "&6&lErlaubnis für Außenstehende Schalter zu verwenden"
   Switch_Outsider2: "Können Außenstehende Schalter verwenden: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
   Menu_Title: "&2&lWirtschaftsmanagement"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
   Balance: "&2&lAktuelle Stadtbilanz"
   #this is just setting the color
   Town_Balance: "&a  "
@@ -387,14 +484,17 @@ Economy_Menu:
   Tax: "&c&lSetzen Sie die Steuern fest"
   Tax_Percentage: "Steuerprozentsatz festlegen"
   Tax_Amount: "Steuerbetrag festlegen"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
   Menu_Title: "&2&lAndere Einstellungen"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Home-Block festlegen"
-    - "Stadtspawn festlegen"
-    - "Ortsnamen festlegen"
-    - "Stadtrat festlegen"
+    - "Set general settings"
+    - "for your town"
   Set_Home_Block_Msg: "&eLegen Sie Ihre aktuelle Position als Stadtzentrum fest!"
   Spawn_Reminder: "&bDenken Sie bitte daran auch den Startpunkt neu festzulegen!"
   Set_Home_Block: "&3&lStadtzentrum setzen"
@@ -421,7 +521,12 @@ General_Settings_Menu:
     - ""
     - "Setzen Sie das Schwarze Brett"
     - "Ihrer Stadt."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
+  Menu_Title: "&2Extra Information"
   Claiming: "&6&lLand beanspruchen"
   Claiming_Lore:
     - ""
@@ -442,8 +547,16 @@ Extra_Info_Menu:
     - "&a/town say &7- Übertrage eine Stadtnachricht"
     - "&a/town towny prices &7- zeigt Stadtpreise / Kosten"
     - "&a/town set mapcolor [color]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
   Main_Menu_Title: "&2Grundstückverwaltungsmenü"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
   Toggle_Settings_Menu_Button: "&3&lGrundstück Umschaltbare Einstellungen"
   Toggle_Settings_Menu_Button_Lore:
     - ""
@@ -468,6 +581,10 @@ Plot_Menu:
   Friend_Menu_Button_Lore:
     - ""
     - "Verwaltung von Freunden"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
   Menu_Title: "&2Freundesmenü"
   Remove: "&c{player} aus deiner Freundesliste entfernt!"
@@ -476,24 +593,29 @@ Friend_Menu:
   Click_Add_Lore: "&aKlicke, um Freund hinzuzufügen"
 Plot_Toggle_Menu:
   Menu_Title: "&2&lGrundstückUmschalten Einstellungsmenü"
-  Info:
+  Info: "&fMenu Info"
+  Info_Lore:
     - ""
-    - "Brandausbreitung"
-    - "Monster spawnen"
-    - "Explosionen"
-    - "PvP"
+    - "Adjust toggleable settings"
+    - "for your town!"
   Toggle_Off: "&eKlicke, um &causzuschalten"
   Toggle_On: "&eKlicke, um &aeinzuschalten"
   Fire: "&6&lFeuerausbreitung umschalten"
   Mobs: "&a&lMob Entstehung umschalten"
   Explode: "&c&lExplosionen umschalten"
   PVP: "&4&lPVP umschalten"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
   Menu_Title: "&2&lGrundstückBerechtigungsmenü"
-  Info:
-    - "Lege Berechtigungen für"
-    - "verschiedene Gruppen"
-    - "in deinem Grundstück fest."
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Set permissions for"
+    - "different groups"
+    - "in your plot."
   True_Msg: "&aWahr"
   False_Msg: "&cFalsch"
   Change: "&eKlicke, um zu ändern!"
@@ -511,7 +633,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Wer hat die Erlaubnis,"
-    - "in deinem Plot"
+    - "to buildAndSet in"
     - "zu bauen."
   Break: "&c&lAbbauen"
   Break_Lore:
@@ -567,8 +689,16 @@ Plot_Player_Permission_Menu:
   Switch_Ally2: "Können Verbündete Schalter verwenden: "
   Switch_Outsider: "&6&lErlaubnis Außenstehender Schalter zu verwenden"
   Switch_Outsider2: "Können Außenstehende Schalter verwenden: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
   Menu_Title: "&2Grundstückverwaltungsmenü"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
   For_Sale: "&a&lGrundstück zum Verkauf anbieten"
   For_Sale_Lore:
     - ""
@@ -590,6 +720,10 @@ Plot_Admin_Menu:
     - ""
     - "Wirft den Bewohner"
     - "dieses Grundstücks raus."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
     Prompt: "&3Geben Sie eine Nachricht für den Vorstand Ihrer Nation ein: "
@@ -615,6 +749,10 @@ Nation_Conversables:
     Invalid: "&cEntweder hat dieser Spieler diesen Rang bereits oder der Rang existiert nicht. (Optionen: {ranks}) &cSchreiben Sie &c&labbrechen &cum den Vorgang abzubrechen oder &c&lentfernen, um den Rang des Spielers zu entfernen."
     Response: "&aSie haben erfolgreich {player}'s &aNationenrang eingestellt als {input}"
     Removed_All: "&cAlle Nationenränge von Einwohnern entfernt {player}"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
     Prompt: "&3Geben Sie den Betrag ein, den Sie als Steuer für Ihr Land festlegen möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
     Invalid_Percent: "&cBitte geben Sie nur eine ganze Zahl zwischen 0 und ein {max_percent} für Ihren Steuerprozentsatz."
@@ -627,7 +765,7 @@ Nation_Conversables:
     Response: "&3Zurückgezogen &b{money_symbol}{input} &3von Ihrem Nation-Konto."
 Town_Conversables:
   Board:
-    Prompt: "&3Schreibe eine Nachricht für das Schwarze Brett deiner Stadt: "
+    Prompt: "&3Type in a message for the town board: "
     Response: "&3Schwarzes Brett erfolgreich geändert!"
   Deposit:
     Prompt: "&3Schreiben Sie den Betrag, den Sie in die Stadtbank einzahlen möchteen: &c(Schreiben Sie abbrechen um abzubrechen)"
@@ -651,6 +789,7 @@ Town_Conversables:
     Invalid: "&cEntweder hat dieser Spieler den Rang bereits oder der Rang existiert nicht. (Optionen: {ranks}) &cSchreiben Sie &c&labbrechen &c um abzubrechen oder &c&lentfernen um den Rang des Spielers zu entfernen."
     Response: "&a{player}'s &aRang erfolgreich auf {input} geändert"
     Removed_All: "&cAlle Ränge des Spielers {player} &centfernt"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
     Prompt: "&3Geben Sie den Betrag ein, den Sie als Steuer für Ihre Stadt festlegen möchten: &c(Geben Sie abbrechen ein zum abzubrechen)"
     Invalid_Percent: "&cBitte geben Sie für den Steuerprozentsatz eine ganze Zahl zwischen 0 und {max_percent} ein."
@@ -683,8 +822,11 @@ Plot_Conversables:
 Error:
   No_Permission: "&cDir fehlen die Berechtigungen, um diesen Befehl ausführen zu können."
   No_Town: "&cDu bist in keiner Stadt."
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
   War_Time: "&cWährend sich die Stadt in einem Krieg befindet darfst du diese Aktion nicht ausführen."
   Must_Be_In_Own_Plot: "&cDu kannst dies nur in deinem Grundstück tun."
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
   Must_Be_In_Town: "&cDu kannst dies nur in deiner eigenen Stadt tun."
   Must_Be_In_Bank: "&cDu kannst dies nur in einer Bank tun."
   Toggle_PVP_Outsiders: "&cPVP kann nicht umgeschaltet werden, während sich Außenstehende in deiner Stadt befinden."
@@ -695,7 +837,8 @@ Error:
   Cannot_Change_Name: "&cDu musst Bürgermeister sein, um den Namen der Stadt zu ändern."
   Cannot_Change_Board: "&cDu musst Bürgermeister sein, um das Schwarze Brett zu ändern."
 Chunk_View:
-  Toggle_Remove: "Grenzblöcke werden jetzt angezeigt. Schalten Sie zum Entfernen auf Schleichen um."
-  Removed: "Grenzsperren entfernt."
+  Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
+  Removed: "&6Boarder blocks removed."
+  Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2
