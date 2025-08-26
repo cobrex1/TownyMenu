@@ -1,49 +1,49 @@
 package me.cobrex.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.object.TownBlock;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class PlotEvictPrompt extends SimplePrompt {
+public class PlotEvictPrompt extends ComponentPrompt {
 
-	TownBlock townBlock;
+	private final TownBlock townBlock;
+	private final Player player;
 
-	public PlotEvictPrompt(TownBlock townBlock) {
-		super(false);
-
+	public PlotEvictPrompt(Player player, TownBlock townBlock) {
+		this.player = player;
 		this.townBlock = townBlock;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.PlotConversables.Evict.PROMPT;
 	}
 
-
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return (input.equalsIgnoreCase(Localization.CANCEL) || input.equalsIgnoreCase(Localization.CONFIRM));
-	}
-
-	@SneakyThrows
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.evict") || input.equalsIgnoreCase(Localization.CANCEL)) {
-			return null;
+	public Prompt acceptInput(ConversationContext context, String input) {
+		if (!player.hasPermission("towny.command.plot.evict") || input.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
 		}
 
-		getPlayer(context).performCommand("plot evict");
-		tell(Localization.PlotConversables.Evict.RESPONSE);
-		return null;
+		if (!isInputValid(context, input)) {
+			MessageUtils.send(player, Localization.Error.INVALID);
+			return this;
+		}
+
+		player.performCommand("plot evict");
+		MessageUtils.send(player, Localization.PlotConversables.Evict.RESPONSE);
+		return Prompt.END_OF_CONVERSATION;
+	}
+
+	protected boolean isInputValid(ConversationContext context, String input) {
+		return input.equalsIgnoreCase(Localization.cancel(player)) || input.equalsIgnoreCase(Localization.confirm(player));
+	}
+
+	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
+		return Localization.Error.INVALID;
 	}
 }

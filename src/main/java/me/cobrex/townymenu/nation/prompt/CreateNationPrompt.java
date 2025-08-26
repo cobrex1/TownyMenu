@@ -1,39 +1,37 @@
 package me.cobrex.townymenu.nation.prompt;
 
-import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.mineacademy.fo.conversation.SimplePrompt;
 
-import javax.annotation.Nullable;
+public class CreateNationPrompt extends ComponentPrompt {
 
-public class CreateNationPrompt extends SimplePrompt {
-
-	Resident resident;
+	private final Player player;
 
 	public CreateNationPrompt(Player player) {
-		super(false);
+		this.player = player;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-
-	@Override
-	protected String getPrompt(ConversationContext context) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.JoinCreateNationMenu.CREATE_OWN_NATION;
 	}
 
-	@Nullable
 	@Override
-	protected @org.jetbrains.annotations.Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		getPlayer(context).performCommand("n new " + (input));
-		return null;
+	public Prompt acceptInput(ConversationContext context, String input) {
+		if (input == null || input.isBlank()) {
+			MessageUtils.send(player, "&4Nation name cannot be empty.");
+			return END_OF_CONVERSATION;
+		}
+
+		if (input.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		player.performCommand("n new " + input);
+		return Prompt.END_OF_CONVERSATION;
 	}
 }
-

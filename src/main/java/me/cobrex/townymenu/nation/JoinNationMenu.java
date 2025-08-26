@@ -3,96 +3,53 @@ package me.cobrex.townymenu.nation;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Resident;
+import me.cobrex.townymenu.config.ConfigNodes;
 import me.cobrex.townymenu.nation.prompt.CreateNationPrompt;
 import me.cobrex.townymenu.settings.Localization;
-import me.cobrex.townymenu.settings.Settings;
-import me.cobrex.townymenu.utils.HeadDatabaseUtil;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import me.cobrex.townymenu.utils.*;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.ClickType;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
-import org.mineacademy.fo.menu.Menu;
-import org.mineacademy.fo.menu.MenuPagged;
-import org.mineacademy.fo.menu.button.Button;
-import org.mineacademy.fo.menu.button.ButtonConversation;
-import org.mineacademy.fo.menu.button.ButtonMenu;
-import org.mineacademy.fo.menu.model.ItemCreator;
-import org.mineacademy.fo.remain.CompMaterial;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JoinNationMenu extends Menu {
+public class JoinNationMenu extends MenuHandler {
 
-	private final Button openNationButton;
-	private final Button createNationButton;
+	private final Player player;
+	private final Resident resident;
 
-	private final static ItemStack DUMMY_BUTTON = ItemCreator.of(CompMaterial.fromString(String.valueOf(Settings.FILLER_JOIN_NATION_MENU)), "")
-			.modelData(Integer.valueOf(Settings.FILLER_JOIN_NATION_MENU_CMD)).make();
+	public JoinNationMenu(Player player, Resident resident) {
+		super(
+				player,
+				Localization.JoinCreateNationMenu.MAIN_MENU_TITLE,
+				getInventorySize(ConfigNodes.FIND_NATION_MENU_SIZE)
+		);
 
-	public JoinNationMenu(Resident resident, Player player) {
-
-		setSize(9);
-		setTitle(Localization.JoinCreateNationMenu.MAIN_MENU_TITLE);
-
-		List<Nation> nations = new ArrayList<>(TownyUniverse.getInstance().getNations()).stream().filter(n -> n.isOpen()).collect(Collectors.toList());
-
-		openNationButton = new ButtonMenu(new OpenNationMenu(nations), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.FIND_NATION_BUTTON)))
-				.name(Localization.JoinCreateNationMenu.FIND_NATION_BUTTON));
-
-		createNationButton = new ButtonConversation(new CreateNationPrompt(player), ItemCreator.of(HeadDatabaseUtil.HeadDataUtil.createItem(String.valueOf(Settings.CREATE_NATION_BUTTON)))
-				.name(Localization.JoinCreateNationMenu.CLICK_CREATE_NATION_BUTTON));
+		this.player = player;
+		this.resident = resident;
+		buildmenu();
+		fillEmptySlots("filler_join_nation_menu");
 	}
 
-	private void add(Nation n) {
-	}
+	private void buildmenu() {
 
-	public class OpenNationMenu extends MenuPagged<Nation> {
+		MenuItemBuilder.of("find_nation_button")
+				.name(Localization.JoinCreateNationMenu.FIND_NATION_BUTTON)
+				.lore("")
+				.onClick(click -> {
+					List<Nation> nations = TownyUniverse.getInstance().getNations().stream()
+							.filter(Nation::isOpen)
+							.collect(Collectors.toList());
+					player.closeInventory();
+					MenuManager.switchMenu(player, new OpenNationMenu(player, nations));
+				})
+				.buildAndSet(player, this);
 
-		protected OpenNationMenu(Iterable<Nation> pages) {
-			super(JoinNationMenu.this, pages);
-			setTitle(Localization.JoinCreateNationMenu.JOIN_OPEN_NATION);
-		}
-
-		@Override
-		protected ItemStack convertToItemStack(Nation item) {
-			ItemStack itemSkull = new ItemStack(Material.PLAYER_HEAD, 1);
-			SkullMeta skull = (SkullMeta) itemSkull.getItemMeta();
-			skull.setDisplayName(ChatColor.translateAlternateColorCodes('&', item.getName()));
-//			skull.setDisplayName(ChatColor.YELLOW + "" + (item.getName()));
-			Player player = Bukkit.getPlayer(item.getKing().getUUID());
-			skull.setOwningPlayer(player);
-			List<String> lore = new ArrayList<>();
-			lore.add("");
-			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateNationMenu.KING + (item).getKing()));
-//			lore.add(ChatColor.WHITE + Localization.JoinCreateNationMenu.KING + (item.getKing()));
-			lore.add("");
-			lore.add(ChatColor.translateAlternateColorCodes('&', Localization.JoinCreateNationMenu.NUMBER_OF_TOWNS + (item).getNumTowns()));
-//			lore.add(ChatColor.WHITE + Localization.JoinCreateNationMenu.NUMBER_OF_TOWNS + (item.getNumTowns()));
-			skull.setLore(lore);
-			itemSkull.setItemMeta(skull);
-			return itemSkull;
-		}
-
-		@Override
-		protected void onPageClick(Player player, Nation item, ClickType click) {
-			player.closeInventory();
-			player.performCommand("n join " + item.getName());
-		}
-	}
-
-	@Override
-	public ItemStack getItemAt(int slot) {
-		if (slot == 2)
-			return openNationButton.getItem();
-
-		if (slot == 5)
-			return createNationButton.getItem();
-
-		return DUMMY_BUTTON;
+		MenuItemBuilder.of("create_nation_button")
+				.name(Localization.JoinCreateNationMenu.CLICK_CREATE_NATION_BUTTON)
+				.onClick(click -> {
+					player.closeInventory();
+					new CreateNationPrompt(player).show(player);
+				})
+				.buildAndSet(player, this);
 	}
 }

@@ -1,71 +1,81 @@
 package me.cobrex.townymenu.nation.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.permissions.TownyPerms;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Common;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class NationRankPrompt extends SimplePrompt {
+public class NationRankPrompt extends ComponentPrompt {
 
-
-	// TODO fix
-
-	Resident resident;
+	private final Resident resident;
 
 	public NationRankPrompt(Resident resident) {
-		super(false);
 		this.resident = resident;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
+	protected String getPromptMessage(ConversationContext context) {
+		String ranks = String.join(", ", TownyPerms.getNationRanks());
+		return Localization.NationConversables.Nation_Rank.PROMPT
+				.replace("{player}", resident.getName())
+				.replace("{ranks}", ranks);
 	}
 
 	@Override
-	protected String getPrompt(ConversationContext ctx) {
-		return Localization.NationConversables.Nation_Rank.PROMPT.replace("{player}", resident.getName()).replace("{ranks}", Common.join(TownyPerms.getNationRanks(), ", "));
-	}
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
 
+		if (!player.hasPermission("towny.command.town.rank"))
+			return END_OF_CONVERSATION;
 
-	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.NationConversables.Nation_Rank.INVALID.replace("{ranks}", Common.join(TownyPerms.getNationRanks(), ", "));
-	}
+		input = input.trim();
 
-	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return (TownyPerms.getNationRanks().contains(input) && !resident.hasNationRank(input)) || (input.toLowerCase().equals(Localization.CANCEL) || input.toLowerCase().equals(Localization.NationConversables.Nation_Rank.REMOVE));
-	}
+		if (input.equalsIgnoreCase(Localization.cancel(player)))
+			return END_OF_CONVERSATION;
 
-	@SneakyThrows
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-
-		if (input.toLowerCase().equals(Localization.CANCEL)) {
-			return null;
-		} else if (input.toLowerCase().equals(Localization.NationConversables.Nation_Rank.REMOVE)) {
-			for (String rank : TownyPerms.getNationRanks()) {
-				if (resident.hasNationRank(rank)) {
+		if (input.equalsIgnoreCase(Localization.NationConversables.Nation_Rank.REMOVE)) {
+			for (String rank : TownyPerms.getTownRanks()) {
+				if (resident.hasNationRank(rank))
 					resident.removeNationRank(rank);
-				}
 			}
-			tell(Localization.NationConversables.Nation_Rank.REMOVED_ALL.replace("{player}", resident.getName()));
-		} else {
-			resident.addNationRank(input);
-			tell(Localization.NationConversables.Nation_Rank.RESPONSE.replace("{player}", resident.getName()).replace("{input}", input));
+			MessageUtils.send(player, Localization.NationConversables.Nation_Rank.REMOVED_ALL.replace("{player}", resident.getName()));
 		}
-		TownyAPI.getInstance().getDataSource().saveNation(resident.getNation());
-		TownyAPI.getInstance().getDataSource().saveResident(resident);
 
-		return null;
+		else if (isValidRank(input)) {
+			if (resident.hasNationRank(input)) {
+				MessageUtils.send(player, Localization.NationConversables.Nation_Rank.ALREADY_HAS_RANK
+						.replace("{player}", resident.getName())
+						.replace("{input}", input));
+				return this;
+			}
+
+			resident.addNationRank(input);
+			MessageUtils.send(player, Localization.NationConversables.Nation_Rank.RESPONSE
+					.replace("{player}", resident.getName())
+					.replace("{input}", input));
+		} else {
+			String ranks = String.join(", ", TownyPerms.getNationRanks());
+			MessageUtils.send(player, Localization.TownConversables.Rank.INVALID.replace("{ranks}", ranks));
+			return this;
+		}
+
+		try {
+			TownyAPI.getInstance().getDataSource().saveNation(resident.getNation());
+		} catch (TownyException e) {
+			throw new RuntimeException(e);
+		}
+		TownyAPI.getInstance().getDataSource().saveResident(resident);
+		return END_OF_CONVERSATION;
+	}
+
+	private boolean isValidRank(String input) {
+		return TownyPerms.getTownRanks().stream()
+				.anyMatch(rank -> rank.equalsIgnoreCase(input));
 	}
 }
-

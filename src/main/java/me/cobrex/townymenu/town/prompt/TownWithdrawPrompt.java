@@ -3,51 +3,63 @@ package me.cobrex.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.conversation.SimplePrompt;
 
-public class TownWithdrawPrompt extends SimplePrompt {
+public class TownWithdrawPrompt extends ComponentPrompt {
 
-	Town town;
+	private final Town town;
 
 	public TownWithdrawPrompt(Town town) {
-		super(false);
-
+		System.out.println("[DEBUG] Constructed TownBoardPrompt for town: " + town.getName());
 		this.town = town;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
+		System.out.println("[DEBUG TBP] getPromptMessage called for board prompt.");
+		System.out.println("[DEBUG TBP] Sending get message: " + Localization.TownConversables.Withdraw.PROMPT);
 		return Localization.TownConversables.Withdraw.PROMPT;
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return ((Valid.isInteger(input) && (town.getAccount().canPayFromHoldings(Integer.parseInt(input)))) || input.equalsIgnoreCase(Localization.CANCEL));
+	public @Nullable Prompt acceptInput(@NotNull ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
+
+		input = input.trim();
+
+		if (!player.hasPermission("towny.command.town.withdraw")) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (input.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (!isValidAmount(input)) {
+			MessageUtils.send(player, Localization.TownConversables.Withdraw.INVALID);
+			return this;
+		}
+
+		player.performCommand("town withdraw " + input);
+		MessageUtils.send(player, Localization.TownConversables.Withdraw.RESPONSE
+				.replace("{money_symbol}", Settings.MONEY_SYMBOL)
+				.replace("{input}", input));
+
+		return END_OF_CONVERSATION;
 	}
 
-	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.TownConversables.Withdraw.INVALID;
-	}
-
-	@Override
-	protected @Nullable
-	Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.town.withdraw") || input.equalsIgnoreCase(Localization.CANCEL))
-			return null;
-
-		getPlayer(context).performCommand("town withdraw " + (input));
-		tell(Localization.TownConversables.Withdraw.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
-		return null;
+	private boolean isValidAmount(String input) {
+		try {
+			int amount = Integer.parseInt(input);
+			return town.getAccount().canPayFromHoldings(amount);
+		} catch (NumberFormatException e) {
+			return false;
+		}
 	}
 }

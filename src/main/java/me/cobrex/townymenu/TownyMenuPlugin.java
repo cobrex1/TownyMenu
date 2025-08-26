@@ -2,94 +2,119 @@ package me.cobrex.townymenu;
 
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.bstats.Metrics;
-import me.cobrex.townymenu.chunkview.ChunkviewParticleCommand;
-import me.cobrex.townymenu.nation.NationMenuCommand;
-import me.cobrex.townymenu.plot.command.PlotMenuCommand;
+import me.cobrex.townymenu.commands.ChunkviewCommand;
+import me.cobrex.townymenu.commands.ChunkviewParticleCommand;
+import me.cobrex.townymenu.config.ConfigUtil;
+import me.cobrex.townymenu.listeners.ChunkViewListener;
+import me.cobrex.townymenu.listeners.MenuListener;
+import me.cobrex.townymenu.commands.NationMenuCommand;
+import me.cobrex.townymenu.commands.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
-import me.cobrex.townymenu.town.command.TownMenuCommand;
+import me.cobrex.townymenu.commands.TownMenuCommand;
+import me.cobrex.townymenu.utils.PlaceholderHook;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-import org.mineacademy.fo.Common;
-import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.model.HookManager;
-import org.mineacademy.fo.plugin.SimplePlugin;
-import org.mineacademy.fo.settings.YamlStaticConfig;
+import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class TownyMenuPlugin extends SimplePlugin {
+public class TownyMenuPlugin extends JavaPlugin {
 
-	public static ArrayList<Player> viewers = new ArrayList<>();
+	public static TownyMenuPlugin instance;
 
-	public static ArrayList<Location> viewerslocs = new ArrayList<>();
-	public static Plugin instance;
+	public static final List<Player> viewers = new ArrayList<>();
+	public static final List<Location> viewerslocs = new ArrayList<>();
 
 	@Override
-	protected void onPluginStart() {
-	}
 
-	@SneakyThrows
-	@Override
-	protected void onReloadablesStart() {
-		Valid.checkBoolean(HookManager.isPlaceholderAPILoaded(), "You need to install PlaceholderAPI to the server, if you want to support placeholders.");
-
+	public void onEnable() {
 		instance = this;
-		Common.log("Enabling Towny Menu maintained by Cobrex");
-		Common.log("for Towny");
 
-		Common.setTellPrefix("");
+		try {
+			ConfigUtil.loadConfig(this);
+		} catch (IOException e) {
+			throw new RuntimeException("Failed to load settings.yml", e);
+		}
 
-		registerCommand(new TownMenuCommand());
-		registerCommand(new PlotMenuCommand());
-		registerCommand(new NationMenuCommand());
-		registerCommand(new ChunkviewParticleCommand());
+		Settings.init(this);
+		Localization.load(this);
+		Localization.init();
+		Bukkit.getLogger().info("Settings.COLOR_MODE = " + Settings.COLOR_MODE);
+
+		getCommand("townmenu").setExecutor(new TownMenuCommand());
+		getCommand("townmenu").setTabCompleter(new TownMenuCommand());
+		getCommand("plotmenu").setExecutor(new PlotMenuCommand());
+		getCommand("nationmenu").setExecutor(new NationMenuCommand(this));
+		getCommand("chunkview").setExecutor(new ChunkviewCommand());
+		getCommand("chunkviewparticle").setExecutor(new ChunkviewParticleCommand());
+
+		getServer().getPluginManager().registerEvents(new MenuListener(), this);
+		getServer().getPluginManager().registerEvents(new ChunkViewListener(), this);
+
 
 		TownyEconomyHandler.initialize(Towny.getPlugin());
 
-		int pluginId = 16084; // <-- Replace with the id of your plugin!
-		Metrics metrics = new Metrics(this, pluginId);
+		Metrics metrics = new Metrics(this, 16084);
 
-		// Optional: Add custom charts
 		metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
 
-		if (hasHDB()) getServer().getConsoleSender().
-				sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + "HeadDatabase Hooked!");
+		if (hasHDB())
+			logHooked("HeadDatabase");
 
-		if (hasTowny()) getServer().getConsoleSender().
-				sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + "Towny Hooked!");
+		if (hasTowny())
+			logHooked("Towny");
 
-		if (hasPlaceholderAPI()) getServer().getConsoleSender().
-				sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + "PlaceholderAPI Hooked!");
+		if (hasPlaceholderAPI()) {
+			logHooked("PlaceholderAPI");
+			new PlaceholderHook().register();
+		}
+
+		getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "[TownyMenu]" + ChatColor.WHITE + "Economy Setting: " + Settings.ECONOMY_ENABLED);
+		getServer().getConsoleSender().sendMessage(ChatColor.WHITE + "TownyMenu by Cobrex has been enabled.");
+	}
+
+	public void reload() throws IOException {
+		ConfigUtil.loadConfig(this);
+		Settings.init(this);
+		Localization.load(this);
+
+		getLogger().info("TownyMenu configuration reloaded.");
 	}
 
 	@Override
-	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-		return super.onTabComplete(sender, command, alias, args);
+	public void onDisable() {
+		if (ConfigUtil.getConfig() != null) {
+			ConfigUtil.getConfig().save();
+		}
+		Localization.save();
+
+		Bukkit.getScheduler().cancelTasks(this);
+
+		getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + "Plugin has been disabled");
 	}
 
-	public List<Class<? extends YamlStaticConfig>> getSettings() {
-		return Arrays.asList(Settings.class, Localization.class);
+	private void logHooked(String pluginName) {
+		getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + pluginName + " Hooked!");
 	}
 
 	public boolean hasHDB() {
-		return Bukkit.getServer().getPluginManager().getPlugin("HeadDatabase") != null;
+		return Bukkit.getPluginManager().isPluginEnabled("HeadDatabase");
 	}
 
 	public boolean hasTowny() {
-		return Bukkit.getServer().getPluginManager().getPlugin("Towny") != null;
+		return Bukkit.getPluginManager().isPluginEnabled("Towny");
 	}
 
 	public boolean hasPlaceholderAPI() {
-		return Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null;
+		return Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
 	}
+
 }
+
+//Original creator and ideas for this plugin: Tolmikarc.

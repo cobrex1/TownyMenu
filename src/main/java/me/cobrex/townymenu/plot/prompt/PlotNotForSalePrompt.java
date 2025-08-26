@@ -1,49 +1,63 @@
 package me.cobrex.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.object.TownBlock;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class PlotNotForSalePrompt extends SimplePrompt {
+public class PlotNotForSalePrompt extends ComponentPrompt {
 
-	TownBlock townBlock;
+	private final TownBlock townBlock;
+	private final Player player;
 
-	public PlotNotForSalePrompt(TownBlock townBlock) {
-		super(false);
-
+	public PlotNotForSalePrompt(Player player, TownBlock townBlock) {
+		this.player = player;
 		this.townBlock = townBlock;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.PlotConversables.NotForSale.PROMPT;
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return (input.equalsIgnoreCase(Localization.CANCEL) || input.equalsIgnoreCase(Localization.CONFIRM));
-	}
-
-
-	@SneakyThrows
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.notforsale") || input.equalsIgnoreCase(Localization.CANCEL)) {
-			return null;
+	public Prompt acceptInput(ConversationContext context, String input) {
+		if (input == null || input.isBlank()) {
+			MessageUtils.send(player, Localization.Error.INVALID);
+			return Prompt.END_OF_CONVERSATION;
 		}
 
-		getPlayer(context).performCommand("plot nfs");
-		tell(Localization.PlotConversables.NotForSale.RESPONSE);
-		return null;
+		String trimmedInput = input.trim();
+		String expectedCancel = Localization.cancel(player);
+		String expectedConfirm = Localization.confirm(player);
+
+		System.out.println("[DEBUG NFS] Input = [" + trimmedInput + "]");
+		System.out.println("[DEBUG NFS] Expected CONFIRM = [" + expectedConfirm + "]");
+		System.out.println("[DEBUG NFS] EqualsIgnoreCase = " + trimmedInput.equalsIgnoreCase(expectedConfirm));
+
+		if (!trimmedInput.equalsIgnoreCase(expectedCancel) &&
+				!trimmedInput.equalsIgnoreCase(expectedConfirm)) {
+			MessageUtils.send(player, Localization.Error.INVALID);
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (!player.hasPermission("towny.command.plot.notforsale")) {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (trimmedInput.equalsIgnoreCase(expectedCancel)) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		player.performCommand("plot nfs");
+
+		MessageUtils.send(player, Localization.PlotConversables.NotForSale.RESPONSE);
+
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

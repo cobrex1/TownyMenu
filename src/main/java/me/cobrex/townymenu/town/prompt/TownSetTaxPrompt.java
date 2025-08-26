@@ -4,61 +4,77 @@ import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.conversation.SimplePrompt;
 
-public class TownSetTaxPrompt extends SimplePrompt {
+public class TownSetTaxPrompt extends ComponentPrompt {
 
-	Town town;
+	private final Town town;
+	private final Player player;
 
-	public TownSetTaxPrompt(Town town) {
-		super(false);
-
+	public TownSetTaxPrompt(Town town, Player player) {
 		this.town = town;
+		this.player = player;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.TownConversables.Tax.PROMPT;
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		if (Valid.isInteger(input))
-			if (town.isTaxPercentage())
-				return (0 <= Integer.parseInt(input) && Integer.parseInt(input) < TownySettings.getMaxTownTaxPercent());
-			else
-				return (Integer.parseInt(input) < TownySettings.getMaxTownTax() && Integer.parseInt(input) >= 0);
-
-		else return input.equals(Localization.CANCEL);
+	public boolean blocksForInput(ConversationContext context) {
+		return false;
 	}
 
 	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		if (town.isTaxPercentage())
-			return Localization.TownConversables.Tax.INVALID_PERCENT.replace("{max_percent}", String.valueOf(TownySettings.getMaxTownTaxPercent()));
-		else
-			return Localization.TownConversables.Tax.INVALID_AMOUNT.replace("{max_amount}", String.valueOf(TownySettings.getMaxTownTax()));
-	}
+	public @Nullable Prompt acceptInput(@NotNull ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
 
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-
-		if (!getPlayer(context).hasPermission("towny.command.town.set.taxes") || input.equalsIgnoreCase(Localization.CANCEL))
+		if (!player.hasPermission("towny.command.town.set.taxes") || input.equalsIgnoreCase(Localization.cancel(player)))
 			return null;
 
-		getPlayer(context).performCommand("town set taxes " + (input));
-		tell(town.isTaxPercentage() ? Localization.TownConversables.Tax.RESPONSE_PERCENT.replace("{input}", input) : Localization.TownConversables.Tax.RESPONSE_AMOUNT.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
+		if (!isValidInput(input)) {
+			if (town.isTaxPercentage()) {
+				MessageUtils.send(player,
+						Localization.TownConversables.Tax.INVALID_PERCENT
+								.replace("{max_percent}", String.valueOf(TownySettings.getMaxTownTaxPercent())));
+			} else {
+				MessageUtils.send(player,
+						Localization.TownConversables.Tax.INVALID_AMOUNT
+								.replace("{max_amount}", String.valueOf(TownySettings.getMaxTownTax())));
+			}
+			return this;
+		}
 
+		player.performCommand("town set taxes " + input);
+
+		String message = town.isTaxPercentage()
+				? Localization.TownConversables.Tax.RESPONSE_PERCENT.replace("{input}", input)
+				: Localization.TownConversables.Tax.RESPONSE_AMOUNT
+				.replace("{money_symbol}", Settings.MONEY_SYMBOL)
+				.replace("{input}", input);
+
+		MessageUtils.send(player, message);
 		return null;
+	}
+
+	private boolean isValidInput(String input) {
+		try {
+			Integer.parseInt(input);
+		} catch (NumberFormatException e) {
+			return input.equalsIgnoreCase(Localization.cancel(player));
+		}
+
+		int value = Integer.parseInt(input);
+		if (town.isTaxPercentage())
+			return value >= 0 && value < TownySettings.getMaxTownTaxPercent();
+		else
+			return value >= 0 && value <= TownySettings.getMaxTownTax();
 	}
 }

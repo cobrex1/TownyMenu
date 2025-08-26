@@ -1,55 +1,66 @@
 package me.cobrex.townymenu.town.prompt;
 
+
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
 
-public class TownPlayerTitlePrompt extends SimplePrompt {
+public class TownPlayerTitlePrompt extends ComponentPrompt {
 
-	Resident resident;
+	private final Resident resident;
 
 	public TownPlayerTitlePrompt(Resident resident) {
-		super(false);
 		this.resident = resident;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
+	protected String getPromptMessage(ConversationContext context) {
+		return Localization.TownConversables.Title.PROMPT
+				.replace("{player}", resident.getName());
 	}
 
 	@Override
-	protected String getPrompt(ConversationContext ctx) {
-		return Localization.TownConversables.Title.PROMPT.replace("{player}", resident.getName());
-	}
+	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+		Player player = getPlayer(context);
+		String trimmed = input.trim();
 
-	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return input.length() < 10;
-	}
+		if (!player.hasPermission("towny.command.town.set.title")) {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
+		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-		if (!getPlayer(context).hasPermission("towny.command.town.set.title") || input.equalsIgnoreCase(Localization.CANCEL))
-			return null;
+		if (trimmed.length() >= 10) {
+			MessageUtils.send(player, Localization.Error.INVALID);
+			return this;
+		}
 
-		resident.setTitle(input);
+		resident.setTitle(trimmed);
+
 		try {
-			TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
+			if (resident.hasTown()) {
+				TownyAPI.getInstance().getDataSource().saveTown(resident.getTown());
+			}
 			TownyAPI.getInstance().getDataSource().saveResident(resident);
 		} catch (NotRegisteredException e) {
 			e.printStackTrace();
 		}
 
-		tell(Localization.TownConversables.Title.RESPONSE.replace("{player}", resident.getName()).replace("{input}", input));
+		MessageUtils.send(player, Localization.TownConversables.Title.RESPONSE
+				.replace("{player}", resident.getName())
+				.replace("{input}", trimmed));
 
-		return null;
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

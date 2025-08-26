@@ -1,57 +1,68 @@
 package me.cobrex.townymenu.nation.prompt;
 
 import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.exceptions.TownyException;
 import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Resident;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Common;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class NationGiveKingPrompt extends SimplePrompt {
+public class NationGiveKingPrompt extends ComponentPrompt {
 
-
-	Resident resident;
+		private final Resident resident;
 
 	public NationGiveKingPrompt(Resident resident) {
-		super(false);
 		this.resident = resident;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.NationConversables.Nation_King.PROMPT.replace("{player}", resident.getName());
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return input.toLowerCase().equals(Localization.CONFIRM) || input.toLowerCase().equals(Localization.CANCEL);
-	}
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
 
-	@SneakyThrows
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.nation.set.king"))
-			return null;
-
-		if (input.toLowerCase().equals(Localization.CONFIRM)) {
-			Nation nation = resident.getNation();
-			nation.setKing(resident);
-			Common.tell(getPlayer(context), Localization.NationConversables.Nation_King.RESPONSE.replace("{player}", resident.getName()));
-			TownyAPI.getInstance().getDataSource().saveNation(nation);
-			TownyAPI.getInstance().getDataSource().saveResident(resident);
+		if (!player.hasPermission("towny.command.nation.set.king")) {
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+			return Prompt.END_OF_CONVERSATION;
 		}
 
-		return null;
+		input = input.trim().toLowerCase();
+		if (input.equals(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (input.equals(Localization.confirm(player))) {
+
+			Nation nation = null;
+			try {
+				nation = resident.getNation();
+			} catch (TownyException e) {
+				throw new RuntimeException(e);
+			}
+			try {
+				nation.setKing(resident);
+			} catch (TownyException e) {
+				throw new RuntimeException(e);
+			}
+
+			MessageUtils.send(player, Localization.NationConversables.Nation_King.RESPONSE
+					.replace("{player}", resident.getName()));
+
+			TownyAPI.getInstance().getDataSource().saveNation(nation);
+			TownyAPI.getInstance().getDataSource().saveResident(resident);
+		} else {
+			MessageUtils.send(player, Localization.Error.INVALID);
+			return this;
+
+		}
+
+		return Prompt.END_OF_CONVERSATION;
 	}
 }
-

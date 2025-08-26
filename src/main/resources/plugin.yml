@@ -5,30 +5,40 @@ api-version: 1.13
 softdepend:
   - Towny
   - HeadDatabase
+  - PlaceholderAPI
 folia-supported: true
-author: Cobrex | Original author Tolmikarc.
+author: Cobrex
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.4
 
 commands:
   nationmenu:
     description: Opens the nation level GUI menu
-    aliases: nm
+    aliases:
+      - nm
+      - nmenu
     permission-message: "You do not have permission to use this command!"
     default: true
-  townmenu:
+  tm:
     description: Opens the town level GUI menu
-    aliases: tm
+    aliases:
+      - tmn
+      - tmenu
+      - townmenu
+    usage: /<command> [reload]
     permission-message: "You do not have permission to use this command!"
     default: true
   plotmenu:
     description: Opens the plot level GUI menu
-    aliases: plm
+    aliases:
+      - plm
+      - pmenu
+      - plmenu
     permission-message: "You do not have permission to use this command!"
     default: true
-  townmenu reload:
-    description: Reloads the settings file
-    default: op
+  #townmenu reload:
+  #  description: Reloads the settings file
+  #  default: op
   chunkview:
     description: View the boarders of the chunk you are standing in.
     aliases:

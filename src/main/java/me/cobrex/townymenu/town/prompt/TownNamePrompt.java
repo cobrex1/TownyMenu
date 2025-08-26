@@ -1,60 +1,68 @@
 package me.cobrex.townymenu.town.prompt;
 
+
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.MessageUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
-import org.mineacademy.fo.debug.LagCatcher;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class TownNamePrompt extends SimplePrompt {
+;
 
-	Town town;
+public class TownNamePrompt extends ComponentPrompt {
+
+	private final Town town;
 
 	public TownNamePrompt(Town town) {
-		super(false);
-
 		this.town = town;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
+	protected String getPromptMessage(ConversationContext context) {
+		Bukkit.getLogger().info("[DEBUG] Showing prompt to " + town.getName());
+		return Localization.TownConversables.Name.PROMPT
+				.replace("{town}", town.getName())
+				.replace("{max_length}", String.valueOf(TownySettings.getMaxNameLength()));
 	}
 
 	@Override
-	protected String getPrompt(ConversationContext ctx) {
-		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName()).replace("{max_length}", String.valueOf(TownySettings.getMaxNameLength()));
-	}
+	public Prompt acceptInput(@NotNull ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
+		String trimmed = input.trim();
 
-	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		LagCatcher.start("load-all-town-names");
-		List<String> allTownNames = new ArrayList<>();
-		for (Town town : TownyAPI.getInstance().getTowns())
-			allTownNames.add(town.getName());
-		LagCatcher.end("load-all-town-names");
-		return ((input.length() < TownySettings.getMaxNameLength() && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
-	}
+		if (!player.hasPermission("towny.command.town.set.name")) {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.TownConversables.Name.INVALID.replace("{max_length}", String.valueOf(TownySettings.getMaxNameLength()));
-	}
+		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.town.set.name") || input.equalsIgnoreCase(Localization.CANCEL))
-			return null;
+		int maxLength = TownySettings.getMaxNameLength();
+		List<String> allTownNames = TownyAPI.getInstance().getTowns().stream()
+				.map(Town::getName)
+				.collect(Collectors.toList());
 
-		getPlayer(context).performCommand("town set name " + (input));
-		return null;
+		if (trimmed.length() >= maxLength || allTownNames.contains(trimmed)) {
+			MessageUtils.send(player, Localization.TownConversables.Name.INVALID
+					.replace("{max_length}", String.valueOf(maxLength)));
+			return this;
+		}
+
+		player.performCommand("town set name " + trimmed);
+		MessageUtils.send(player, Localization.TownConversables.Name.RESPONSE
+		.replace("{input}", trimmed));
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

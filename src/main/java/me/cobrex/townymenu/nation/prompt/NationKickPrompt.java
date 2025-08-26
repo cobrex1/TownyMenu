@@ -2,46 +2,48 @@ package me.cobrex.townymenu.nation.prompt;
 
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class NationKickPrompt extends SimplePrompt {
+public class NationKickPrompt extends ComponentPrompt {
 
-	Town town;
+	private final Town town;
 
 	public NationKickPrompt(Town town) {
-		super(false);
 		this.town = town;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.NationConversables.Nation_Kick.PROMPT.replace("{town}", town.getName());
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return input.toLowerCase().equals(Localization.CONFIRM) || input.toLowerCase().equals(Localization.CANCEL);
-	}
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
+		String lowerInput = input.toLowerCase();
 
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.nation.kick"))
-			return null;
-
-		if (input.toLowerCase().equals(Localization.CONFIRM)) {
-			town.removeNation();
-			tell(Localization.NationConversables.Nation_Kick.RESPONSE.replace("{town}", town.getName()));
+		if (!player.hasPermission("towny.command.nation.kick")) {
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+			return Prompt.END_OF_CONVERSATION;
 		}
 
-		return null;
+		if (lowerInput.equals(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (lowerInput.equals(Localization.confirm(player))) {
+			town.removeNation();
+			MessageUtils.send(player, Localization.NationConversables.Nation_Kick.RESPONSE.replace("{town}", town.getName()));
+		} else {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

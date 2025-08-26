@@ -1,41 +1,41 @@
 package me.cobrex.townymenu.nation.prompt;
 
-import com.palmergames.bukkit.towny.object.Nation;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class NationBoardPrompt extends SimplePrompt {
+public class NationBoardPrompt extends ComponentPrompt {
 
-	Nation nation;
+	private final Player player;
 
-	public NationBoardPrompt(Nation nation) {
-		super(false);
-
-		this.nation = nation;
+	public NationBoardPrompt(Player player) {
+		this.player = player;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.NationConversables.Nation_Board.PROMPT;
 	}
 
 	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
+		String trimmed = input.trim();
 
-		if (!getPlayer(context).hasPermission("towny.command.nation.set.board"))
-			return null;
+		if (!player.hasPermission("towny.command.nation.set.board")) {
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-		getPlayer(context).performCommand("nation set board " + (input));
-		return null;
+		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		player.performCommand("nation set board " + input);
+		MessageUtils.send(player, Localization.NationConversables.Nation_Board.RESPONSE);
+		return Prompt.END_OF_CONVERSATION;
 	}
 }
-

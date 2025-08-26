@@ -2,40 +2,50 @@ package me.cobrex.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
-public class TownBoardPrompt extends SimplePrompt {
+public class TownBoardPrompt extends ComponentPrompt {
 
-	Town town;
+	private final Town town;
+	private final Player player;
 
-	public TownBoardPrompt(Town town) {
-		super(false);
-
+	public TownBoardPrompt(Player player, Town town) {
+		System.out.println("[DEBUG] Constructed TownBoardPrompt for town: " + town.getName());
+		this.player = player;
 		this.town = town;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
+		Bukkit.getLogger().info("[DEBUG TBP] Showing prompt to " + player.getName());
+		System.out.println("[DEBUG TBP] getPromptMessage called for board prompt.");
+		System.out.println("[DEBUG TBP] Sending get message: " + Localization.TownConversables.Board.PROMPT);
 		return Localization.TownConversables.Board.PROMPT;
 	}
 
-
 	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = (Player) context.getForWhom();
+		String trimmed = input.trim();
+		System.out.println("[DEBUG TBP] acceptInput received: " + input);
 
-		if (!getPlayer(context).hasPermission("towny.command.town.set.board"))
-			return null;
+		if (!player.hasPermission("towny.command.town.set.board")) {
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+			return Prompt.END_OF_CONVERSATION;
+		}
 
-		getPlayer(context).performCommand("town set board " + (input));
-		return null;
+		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		player.performCommand("town set board " + input);
+		System.out.println("[DEBUG TBP] Sending response message: " + Localization.TownConversables.Board.RESPONSE);
+		MessageUtils.send(player, Localization.TownConversables.Board.RESPONSE);
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

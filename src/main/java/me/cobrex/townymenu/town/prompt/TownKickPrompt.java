@@ -2,45 +2,54 @@ package me.cobrex.townymenu.town.prompt;
 
 import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.conversation.SimplePrompt;
 
-public class TownKickPrompt extends SimplePrompt {
+public class TownKickPrompt extends ComponentPrompt {
 
-	Resident resident;
+	private final Resident resident;
 
 	public TownKickPrompt(Resident resident) {
-		super(false);
 		this.resident = resident;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.TownConversables.Kick.PROMPT.replace("{player}", resident.getName());
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return input.toLowerCase().equals(Localization.CONFIRM) || input.toLowerCase().equals(Localization.CANCEL);
-	}
+	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+		Player player = resident.getPlayer();
+		String lowered = input.trim().toLowerCase();
 
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.town.kick") || resident.isMayor())
-			return null;
-
-		if (input.toLowerCase().equals(Localization.CONFIRM)) {
-			resident.removeTown();
-			tell(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()));
+		if (!player.hasPermission("towny.command.town.kick")) {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			return Prompt.END_OF_CONVERSATION;
 		}
-		return null;
+
+		if (resident.isMayor()) {
+			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.MAYOR, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (lowered.equals(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (lowered.equals(Localization.confirm(player))) {
+			resident.removeTown();
+			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()), player));
+		} else {
+			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

@@ -1,60 +1,55 @@
 package me.cobrex.townymenu.plot.prompt;
 
 import com.palmergames.bukkit.towny.object.TownBlock;
-import lombok.SneakyThrows;
 import me.cobrex.townymenu.settings.Localization;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Common;
-import org.mineacademy.fo.conversation.SimplePrompt;
+import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class PlotSetTypePrompt extends SimplePrompt {
+public class PlotSetTypePrompt extends ComponentPrompt {
 
-	//	private final List<String> plotTypes = Arrays.asList("arena", "bank", "embassy", "farm", "inn", "jail", "shop", "default", "wilds", "residential", "commercial", "wilds", "spleef", "arena");
-	private final List<String> plotTypes = Arrays.asList("arena", "bank", "default", "embassy", "farm", "inn", "jail", "shop", "wilds");
+	private final List<String> plotTypes = Arrays.asList(
+			"arena", "bank", "default", "embassy", "farm", "inn", "jail", "shop", "wilds"
+	);
 
-	TownBlock townBlock;
+	private final TownBlock townBlock;
+	private final Player player;
 
-	public PlotSetTypePrompt(TownBlock townBlock) {
-		super(false);
-
+	public PlotSetTypePrompt(Player player, TownBlock townBlock) {
+		this.player = player;
 		this.townBlock = townBlock;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
+	protected String getPromptMessage(ConversationContext context) {
+		String options = String.join(", ", plotTypes);
+		return Localization.PlotConversables.SetType.PROMPT.replace("{options}", options);
 	}
 
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
-		return Localization.PlotConversables.SetType.PROMPT.replace("{options}", Common.join(plotTypes, ", "));
-	}
-
-	@Override
 	protected boolean isInputValid(ConversationContext context, String input) {
-		return (plotTypes.contains(input.toLowerCase())) || (input.equalsIgnoreCase(Localization.CANCEL));
+		String lowerInput = input.toLowerCase();
+		return plotTypes.contains(lowerInput) || input.equalsIgnoreCase(Localization.cancel(player));
 	}
 
 	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.PlotConversables.SetType.INVALID.replace("{options}", Common.join(plotTypes, ", "));
-	}
-
-	@SneakyThrows
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (!getPlayer(context).hasPermission("towny.command.plot.set." + input.toLowerCase()) || input.equalsIgnoreCase(Localization.CANCEL)) {
-			return null;
+	public Prompt acceptInput(ConversationContext context, String input) {
+		if (!isInputValid(context, input)) {
+			String options = String.join(", ", plotTypes);
+			MessageUtils.send(player, Localization.PlotConversables.SetType.INVALID.replace("{options}", options));
+			return this;
 		}
 
-		getPlayer(context).performCommand("plot set " + (input));
-		tell(Localization.PlotConversables.SetType.RESPONSE.replace("{input}", input));
-		return null;
+		if (input.equalsIgnoreCase(Localization.cancel(player)) || !player.hasPermission("towny.command.plot.set." + input.toLowerCase())) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		player.performCommand("plot set " + input);
+		MessageUtils.send(player, Localization.PlotConversables.SetType.RESPONSE.replace("{input}", input));
+		return Prompt.END_OF_CONVERSATION;
 	}
 }

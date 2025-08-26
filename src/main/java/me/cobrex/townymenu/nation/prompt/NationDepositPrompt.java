@@ -3,53 +3,76 @@ package me.cobrex.townymenu.nation.prompt;
 import com.palmergames.bukkit.towny.object.Nation;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
+import me.cobrex.townymenu.utils.ComponentPrompt;
+import me.cobrex.townymenu.utils.MessageUtils;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.mineacademy.fo.Valid;
-import org.mineacademy.fo.conversation.SimplePrompt;
-import org.mineacademy.fo.model.HookManager;
 
-public class NationDepositPrompt extends SimplePrompt {
+public class NationDepositPrompt extends ComponentPrompt {
 
-	Nation nation;
+	private final Nation nation;
+	private final Economy economy;
 
-	public NationDepositPrompt(Nation nation) {
-		super(false);
-
+	public NationDepositPrompt(Nation nation, Economy economy) {
 		this.nation = nation;
+		this.economy = economy;
 	}
 
 	@Override
-	public boolean isModal() {
-		return false;
-	}
-
-	@Override
-	protected String getPrompt(ConversationContext ctx) {
+	protected String getPromptMessage(ConversationContext context) {
 		return Localization.NationConversables.Nation_Deposit.PROMPT;
 	}
 
 	@Override
-	protected boolean isInputValid(ConversationContext context, String input) {
-		return ((Valid.isInteger(input) && ((HookManager.getBalance(getPlayer(context)) - Integer.parseInt(input)) > 0))) || input.equalsIgnoreCase(Localization.CANCEL);
+	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+		Player player = (Player) context.getForWhom();
+
+		if (input.equalsIgnoreCase(Localization.cancel(player))) {
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		if (!isInteger(input)) {
+			MessageUtils.send(player, Localization.NationConversables.Nation_Deposit.INVALID);
+			return this;
+		}
+
+		if (!player.hasPermission("towny.command.nation.deposit")) {
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		int amount;
+		try {
+			amount = Integer.parseInt(input);
+		} catch (NumberFormatException e) {
+			player.sendMessage(Localization.NationConversables.Nation_Deposit.INVALID);
+			return this;
+		}
+
+		double balance = economy.getBalance(player);
+		if (amount <= 0 || balance < amount) {
+			MessageUtils.send(player, Localization.NationConversables.Nation_Deposit.INVALID);
+			return this;
+		}
+
+		player.performCommand("nation deposit " + amount);
+
+		MessageUtils.send(player, Localization.NationConversables.Nation_Deposit.RESPONSE
+				.replace("{money_symbol}", Settings.MONEY_SYMBOL)
+				.replace("{input}", input));
+
+		return Prompt.END_OF_CONVERSATION;
 	}
 
-	@Override
-	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.NationConversables.Nation_Deposit.INVALID;
-	}
-
-	@Override
-	protected @Nullable Prompt acceptValidatedInput(@NotNull ConversationContext context, @NotNull String input) {
-
-		if (!getPlayer(context).hasPermission("towny.command.nation.deposit") || input.equalsIgnoreCase(Localization.CANCEL))
-			return null;
-
-		getPlayer(context).performCommand("nation deposit " + (input));
-		tell(Localization.NationConversables.Nation_Deposit.RESPONSE.replace("{money_symbol}", Settings.MONEY_SYMBOL).replace("{input}", input));
-
-		return null;
+	private boolean isInteger(String str) {
+		try {
+			Integer.parseInt(str);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
 	}
 }

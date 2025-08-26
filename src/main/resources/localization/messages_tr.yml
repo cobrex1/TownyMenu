@@ -312,7 +312,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Who has permission"
-    - "to build in"
+    - "to buildAndSet in"
     - "your town."
   Break: "&c&lBreak"
   Break_Lore:
@@ -511,7 +511,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Who has permission"
-    - "to build in"
+    - "to buildAndSet in"
     - "your plot."
   Break: "&c&lBreak"
   Break_Lore:
