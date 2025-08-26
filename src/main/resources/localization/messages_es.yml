@@ -11,7 +11,7 @@
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "confirmar"
 Cancel: "cancelar"
-Menu_Information: "&fMenu Info"
+Menu_Information: "Información"
 Reloaded: "Ajustes recargados!"
 Back_Button:
   Back_Button_Title: "&a&lAtrás"
@@ -40,8 +40,8 @@ Join_Create_Menu:
   Create_Own_Town: "&aEscriba el nombre de su ciudad o para cancelar la creación de una ciudad &cescriba cancelar."
 Join_Create_Nation_Menu:
   Main_Menu_Title: "&3&lÚnete o crea una Nación"
-  Find_Nation_Button: "&cClick to find an open Nation"
-  Click_Create_Nation_Button: "&cClick to create your Nation"
+  Find_Nation_Button: "&4Encuentra una nación abierta"
+  Click_Create_Nation_Button: "&4Haz clic para crear una Nación"
   Join_Open_Nation: "&aJÚnete a un Nación abierto"
   #this is just setting the color
   Nation_Name: "&e "
@@ -137,9 +137,9 @@ Nation_Town_Menu:
     - "to manage them!"
   Online: "Última conexión: "
   #this is just setting the color
-  Town_Name: "&6Town: &e&l{town}"
-  Mayor: "&eTown Mayor: &f{mayor}"
-  Number_of_Residents: "&fNumber of Residents: &7{residents}"
+  Town_Name: "&e&l"
+  Mayor: "&eAlcalde de la ciudad: "
+  Number_of_Residents: "&fNúmero de Residencia: "
   Kick: "&c&lExpulsar la ciudad"
   Kick_Lore:
     - ""
@@ -207,9 +207,9 @@ Nation_Resident_Menu:
     - "Click on a resident"
     - "to manage them!"
   #this is just setting the color
-  Res_Name: "&e&l{player}"
-  Online: "&7Last online: &f{online}"
-  Town_Name: "&6Town: &f{town}"
+  Res_Name: "&e&l"
+  Online: "&fÚltima conexión: "
+  Town_Name: "&6Ciudad: "
   Nation_Rank: "&3&lRango de residente de la nación"
   Nation_Rank_Lore:
     - ""
@@ -310,7 +310,7 @@ Town_Menu:
   Town_Postfix: "&e"
   Residents: "&2Residentes:"
   Number_Residents: "&2"
-  Claim_Blocks: "&2Claim Blocks: "
+  Claim_Blocks: "&2Reclama Blocks:"
   Total_Claimed_Blocks: "&a"
   Max_Claim_Blocks: "&a"
   Balance: "&2Dinero:"
@@ -345,9 +345,9 @@ Resident_Menu:
     - "Click on a resident"
     - "to manage them!"
   #this is just setting the color
-  Resident_Name: "&e&l{player}"
-  Online: "&7Last online: &f{online}"
-  Town_Rank: "&7Town Rank: &f{rank}"
+  Resident_Name: "&e&l"
+  Online: "&7Ultima conexion: "
+  Town_Rank: "&7Rango de ciudad: "
   Invite: "&aHaga clic para invitar al jugador a la ciudad"
   Kick: "&c&lExpulsar Jugador"
   Kick_Lore:
@@ -404,7 +404,7 @@ Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Quien tiene permiso"
-    - "to buildAndSet in"
+    - "construir en"
     - "su ciudad."
   Break: "&c&lRomper"
   Break_Lore:
@@ -433,7 +433,7 @@ Player_Permission_Menu:
   Build_Nation: "&6&lNacion - Permiso para construir"
   Build_Nation2: "Pueden los miembros de la nacion construir: "
   Build_Ally: "&6&lAlianzas - Permiso para consstruir"
-  Build_Ally2: "Can Nation Allies Build: "
+  Build_Ally2: "Pueden los aliados de la nacion construir: "
   Build_Outsider: "&6&lForasteros - Permiso para construir"
   Build_Outsider2: "Pueden los forasteros construir: "
   Break_Res: "&6&lResidentes - Permiso para romper"
@@ -636,7 +636,7 @@ Plot_Player_Permission_Menu:
   Build_Lore:
     - ""
     - "Quien tiene permiso"
-    - "to buildAndSet in"
+    - "construir en"
     - "tu trama."
   Break: "&c&lRomper"
   Break_Lore:
@@ -768,7 +768,7 @@ Nation_Conversables:
     Response: "&3Se retiró &b{money_symbol}{input} &3de tu cuenta nacional."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for the town board: "
+    Prompt: "&3Escribe el nuevo mensaje de ciudad: "
     Response: "&3Se ha actualizado el board de tu ciudad"
   Deposit:
     Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escribe 'cancel' para cancelar)"
@@ -840,8 +840,8 @@ Error:
   Cannot_Change_Name: "&cDebes ser el dueño de la ciudad para hacer esto."
   Cannot_Change_Board: "&cDebes ser el dueño de la ciudad para hacer esto."
 Chunk_View:
-  Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
-  Removed: "&6Boarder blocks removed."
+  Toggle_Remove: "Ahora se muestran los bloques fronterizos. Alternar sigilo para eliminar."
+  Removed: "Se eliminaron los bloques de borde."
   Particles: "&6Border particles now showing."
 #DO NOT TOUCH VERSION
 Version: 2

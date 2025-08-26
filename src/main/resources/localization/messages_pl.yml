@@ -9,681 +9,839 @@
 #- To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
 #- To use HEX colors, use #123456 or #123456 syntax eg: "Hello #123456world."
 #!-----------------------------------------------------------------------------------------------!
-Confirm: potwierdź
-Cancel: anuluj
-Menu_Information: Informacje o menu
-Reloaded: Ustawienia zostały przeładowane!
+Confirm: "potwierdź"
+Cancel: "anuluj"
+Menu_Information: "Informacje o menu"
+Reloaded: "Ustawienia zostały przeładowane!"
 Back_Button:
-  Back_Button_Title: '&a&lWstecz'
+  Back_Button_Title: "&a&lWstecz"
   Back_Button_Lore:
-    - ''
-    - 'Poprzednie menu.'
+    - ""
+    - "Poprzednie menu."
+Next_Page_Button:
+  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Lore:
+    - ""
+    - "&bNext page"
+Previous_Page_Button:
+  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Lore:
+    - ""
+    - "&bPrevious page"
 Join_Create_Menu:
-  Main_Menu_Title: Dołącz lub stwórz Miasto
-  Find_Open_Town: Znajdź otwarte miasto
-  Click_Create_Town: Kliknij, aby stworzyć miasto
-  Join_Open_Town: '&aDołącz do otwartego miasta'
-  Town_Name: '&e'
-  Mayor: '&fBurmistrz: '
-  Number_Residents: '&fLiczba mieszkańców: '
-  Create_Own_Town: '&aWpisz nazwę swojego miasta lub &cnapisz cancel, aby anulować.'
+  Main_Menu_Title: "Dołącz lub stwórz Miasto"
+  Find_Open_Town: "Znajdź otwarte miasto"
+  Click_Create_Town: "Kliknij, aby stworzyć miasto"
+  Join_Open_Town: "&aDołącz do otwartego miasta"
+  #this is just setting the color
+  Town_Name: "&e"
+  Mayor: "&fBurmistrz: "
+  Number_Residents: "&fLiczba mieszkańców: "
+  Create_Own_Town: "&aWpisz nazwę swojego miasta lub &cnapisz cancel, aby anulować."
 Join_Create_Nation_Menu:
-  Main_Menu_Title: '&3&lDołącz lub stwórz Naród'
-  Find_Nation_Button: '&4Kliknij, aby znaleźć otwarty Naród'
-  Click_Create_Nation_Button: '&4Kliknij, aby stworzyć własny Naród'
-  Join_Open_Nation: '&aDołącz do otwartego Narodu'
-  Nation_Name: '&e '
-  King: '&fKról: '
-  Number_of_Towns: '&fLiczba miast: '
-  Create_Own_Nation: '&aWpisz nazwę swojego narodu lub &cnapisz cancel, aby anulować.'
+  Main_Menu_Title: "&3&lDołącz lub stwórz Naród"
+  Find_Nation_Button: "&4Kliknij, aby znaleźć otwarty Naród"
+  Click_Create_Nation_Button: "&4Kliknij, aby stworzyć własny Naród"
+  Join_Open_Nation: "&aDołącz do otwartego Narodu"
+  #this is just setting the color
+  Nation_Name: "&e "
+  King: "&fKról: "
+  Number_of_Towns: "&fLiczba miast: "
+  Create_Own_Nation: "&aWpisz nazwę swojego narodu lub &cnapisz cancel, aby anulować."
 Nation_Menu:
-  Main_Menu_Title: '&3&lMenu Narodu'
-  Info:
-    - 'Główne menu'
-    - 'dla narodu!'
-  Nation_Toggle_Menu_Button: '&9&lUstawienia Narodu'
+  Main_Menu_Title: "&3&lMenu Narodu"
+  Nation_Toggle_Menu_Button: "&9&lUstawienia Narodu"
   Nation_Toggle_Menu_Button_Lore:
-    - ''
-    - '&4&lWłączaj i wyłączaj'
-    - 'różne ustawienia narodu.'
-  Nation_Town_List_Button: '&6&lLista Miast'
+    - ""
+    - "&4&lWłączaj i wyłączaj"
+    - "różne ustawienia narodu."
+  Nation_Town_List_Button: "&6&lLista Miast"
   Nation_Town_List_Button_Lore:
-    - ''
-    - 'Zobacz miasta należące do narodu'
-  Nation_Resident_Menu_Button: '&b&lMieszkańcy Narodu'
+    - ""
+    - "Zobacz miasta należące do narodu"
+  Nation_Resident_Menu_Button: "&b&lMieszkańcy Narodu"
   Nation_Resident_Menu_Button_Lore:
-    - ''
-    - 'Zarządzaj mieszkańcami narodu'
-  Nation_Economy_Menu_Button: '&a&lEkonomia Narodu'
+    - ""
+    - "Zarządzaj mieszkańcami narodu"
+  Nation_Economy_Menu_Button: "&a&lEkonomia Narodu"
   Nation_Economy_Menu_Button_Lore:
-    - ''
-    - 'Zarządzaj finansami narodu'
-  Nation_Settings_Button: '&2&lUstawienia Narodu'
+    - ""
+    - "Zarządzaj finansami narodu"
+  Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
+  Nation_Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
+  Nation_Settings_Button: "&2&lUstawienia Narodu"
   Nation_Settings_Button_Lore:
-    - ''
-    - 'Ustaw punkt teleportacji narodu'
-    - 'Zmień nazwę narodu'
-    - 'Ustaw tablicę informacyjną'
-  Nation_Invite_Town_Menu_Button: '&d&lZaproś Miasto'
+    - ""
+    - "Ustaw punkt teleportacji narodu"
+    - "Zmień nazwę narodu"
+    - "Ustaw tablicę informacyjną"
+  Nation_Invite_Town_Menu_Button: "&d&lZaproś Miasto"
   Nation_Invite_Town_Menu_Button_Lore:
-    - ''
-    - 'Zaproś miasto do'
-    - 'swojego narodu.'
-  Nation_Extra_Info_Menu_Button: '&e&lDodatkowe Informacje'
+    - ""
+    - "Zaproś miasto do"
+    - "swojego narodu."
+  Nation_Extra_Info_Menu_Button: "&e&lDodatkowe Informacje"
   Nation_Extra_Info_Menu_Button_Lore:
-    - ''
-    - 'Dodatkowe komendy'
-    - 'dla liderów narodów'
+    - ""
+    - "Dodatkowe komendy"
+    - "dla liderów narodów"
+  Nation_Name: "&a"
+  Towns: "&eTowns"
+  Number_Towns: "&2"
+  Residents: "&2Residents:"
+  Number_Residents: "&2"
+  Balance: "&2Balance:"
+  Balance_Amount: "&a"
+  King: "&2King:"
+  King_Name: "&a"
 Nation_Settings_Menu:
-  Menu_Title: '&2&lUstawienia Narodu'
-  Info:
-    - 'Dostosuj dodatkowe'
-    - 'ustawienia narodu.'
-  Set_Spawn_Msg: '&eUstawiono punkt narodowy w bieżącej lokalizacji.'
-  Set_Spawn: '&b&lUstaw punkt narodowy'
+  Menu_Title: "&2&lUstawienia Narodu"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set general settings"
+    - "for your Nation"
+  Set_Spawn_Msg: "&eUstawiono punkt narodowy w bieżącej lokalizacji."
+  Set_Spawn: "&b&lUstaw punkt narodowy"
   Set_Spawn_Lore:
-    - ''
-    - 'Ustaw lokalizację do'
-    - 'teleportacji komendą'
-    - '/n spawn'
-    - ''
-  Set_Name: '&6&lZmień nazwę narodu'
+    - ""
+    - "Ustaw lokalizację do"
+    - "teleportacji komendą"
+    - "/n spawn"
+    - ""
+  Set_Name: "&6&lZmień nazwę narodu"
   Set_Name_Lore:
-    - ''
-    - 'Zmień nazwę'
-    - 'swojego narodu.'
-  Set_Board: '&2&lUstaw tablicę narodu'
+    - ""
+    - "Zmień nazwę"
+    - "swojego narodu."
+  Set_Board: "&2&lUstaw tablicę narodu"
   Set_Board_Lore:
-    - ''
-    - 'Ustaw tablicę informacyjną'
-    - 'swojego narodu.'
+    - ""
+    - "Ustaw tablicę informacyjną"
+    - "swojego narodu."
+  Nation_Settings_Info: "&fMenu Information"
+  Nation_Settings_Info_Lore:
+    - "Adjust other"
+    - "extra nation settings."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Town_Menu:
-  Menu_Title: '&2&lMiasta w Narodzie'
-  Info:
-    - 'Kliknij na miasto,'
-    - 'aby nim zarządzać!'
-  Online: '&fOstatnio online: '
-  Town_Name: '&e&l'
-  Mayor: '&eBurmistrz: '
-  Number_of_Residents: '&fLiczba mieszkańców: '
-  Kick: '&c&lWyrzuć miasto'
+  Menu_Title: "&2&lMiasta w Narodzie"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a town"
+    - "to manage them!"
+  Online: "&fOstatnio online: "
+  #this is just setting the color
+  Town_Name: "&e&l"
+  Mayor: "&eBurmistrz: "
+  Number_of_Residents: "&fLiczba mieszkańców: "
+  Kick: "&c&lWyrzuć miasto"
   Kick_Lore:
-    - ''
-    - 'Kliknij, aby wyrzucić miasto'
-    - 'z narodu'
+    - ""
+    - "Kliknij, aby wyrzucić miasto"
+    - "z narodu"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Economy_Menu:
-  Menu_Title: '&2&lMenu Ekonomii'
-  Balance: '&2&lAktualny stan konta narodu'
-  Nation_Balance: '&a  '
-  Upkeep: '&fObecne koszty utrzymania: '
-  Withdraw: '&c&lWypłać pieniądze'
+  Menu_Title: "&2&lMenu Ekonomii"
+  Nation_Economy_Menu_Info: "&fMenu Information"
+  Nation_Economy_Menu_Info_Lore:
+    - "Economy actions"
+    - "for your Nation!"
+  Balance: "&2&lAktualny stan konta narodu"
+  #this is just setting the color
+  Nation_Balance: "&a  "
+  Upkeep: "&fObecne koszty utrzymania: "
+  Withdraw: "&c&lWypłać pieniądze"
   Withdraw_Lore:
-    - ''
-    - 'Wypłać środki z'
-    - 'banku narodu.'
-  Deposit: '&a&lWpłać pieniądze'
+    - ""
+    - "Wypłać środki z"
+    - "banku narodu."
+  Deposit: "&a&lWpłać pieniądze"
   Deposit_Lore:
-    - ''
-    - 'Wpłać środki do'
-    - 'banku narodu.'
-  Tax: '&c&lUstaw wysokość podatku'
-  Tax_Percentage: Ustaw procent podatku
-  Tax_Amount: Ustaw kwotę podatku
+    - ""
+    - "Wpłać środki do"
+    - "banku narodu."
+  Tax: "&c&lUstaw wysokość podatku"
+  Tax_Percentage: "Ustaw procent podatku"
+  Tax_Amount: "Ustaw kwotę podatku"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Toggle_Menu:
-  Menu_Title: '&2&lMenu Przełączników Narodu'
-  Info:
-    - 'Dostosuj ustawienia przełączników'
-    - 'dla swojego narodu!'
-  Toggle_Off: '&eKliknij, aby wyłączyć &c'
-  Toggle_On: '&eKliknij, aby włączyć &a'
-  Public: '&9&lPrzełącz Publiczny Naród'
-  Open: '&3&lPrzełącz Otwarty Naród'
-  Tax_Percent: '&2&lPrzełącz Procentowy Podatek Narodu'
+  Menu_Title: "&2&lMenu Przełączników Narodu"
+  Info: "&fMenu Info"
+  Info Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Toggle_Off: "&eKliknij, aby wyłączyć &c"
+  Toggle_On: "&eKliknij, aby włączyć &a"
+  Public: "&9&lPrzełącz Publiczny Naród"
+  Open: "&3&lPrzełącz Otwarty Naród"
+  Neutral: "&6&lToggle Nation's neutrality"
+  Peaceful: "&6&lToggle Nation's peaceful status"
+  Tax_Percent: "&2&lPrzełącz Procentowy Podatek Narodu"
+  Nation_Toggle_Menu_Info: "&fMenu Information"
+  Nation_Toggle_Menu_Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your nation!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Invite_Town_Menu:
-  Menu_Title: '&2&lMenu Zapraszania Miast do Narodu'
-  Invite: Kliknij, aby zaprosić miasto do narodu
+  Menu_Title: "&2&lMenu Zapraszania Miast do Narodu"
+  Invite: "Kliknij, aby zaprosić miasto do narodu"
 Nation_Resident_Menu:
-  Menu_Title: '&2&lMenu Mieszkańców Narodu'
-  Info:
-    - 'Kliknij na mieszkańca,'
-    - 'aby nim zarządzać!'
-  Res_Name: '&e&l'
-  Online: '&fOstatnio online: '
-  Town_Name: '&6Miasto: '
-  Nation_Rank: '&3&lUstaw Rangę Narodową'
+  Menu_Title: "&2&lMenu Mieszkańców Narodu"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  #this is just setting the color
+  Res_Name: "&e&l"
+  Online: "&fOstatnio online: "
+  Town_Name: "&6Miasto: "
+  Nation_Rank: "&3&lUstaw Rangę Narodową"
   Nation_Rank_Lore:
-    - ''
-    - 'Nadaj rangę narodową'
-    - 'graczowi'
-  Nation_King: '&a&lUczyń Królem'
+    - ""
+    - "Nadaj rangę narodową"
+    - "graczowi"
+  Nation_Title: "&3&lSet Resident's Nation Title"
+  Nation_Title_Lore:
+    - ""
+    - "Give a nation title"
+    - "to a player"
+  Nation_King: "&a&lUczyń Królem"
   Nation_King_Lore:
-    - ''
-    - 'Uczyń tego mieszkańca'
-    - 'Królem.'
-    - ''
-    - '&4&lNieodwracalne'
+    - ""
+    - "Uczyń tego mieszkańca"
+    - "Królem."
+    - ""
+    - "&4&lNieodwracalne"
+  Nation_Resident_Info_Button: "&fMenu Information"
+  Nation_Resident_Info_Button_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Extra_Info_Menu:
-  Commands_1: '&6&lInne przydatne komendy'
+  Menu_Title: "&a&lFurther Info"
+  Commands_1: "&6&lInne przydatne komendy"
   Commands_1_Lore:
-    - ''
-    - '&a/n toggle neutral'
-    - '&a/n toggle peaceful'
-    - ''
-    - '&a/n ally [nazwa]'
-    - '&a/n allylist'
-  Commands_2: '&2&lDodatkowe Komendy Narodu'
+    - ""
+    - "&a/n toggle neutral"
+    - "&a/n toggle peaceful"
+    - ""
+    - "&a/n ally [nazwa]"
+    - "&a/n allylist"
+  Commands_2: "&2&lDodatkowe Komendy Narodu"
   Commands_2_Lore:
-    - ''
-    - '&a/n enemy [nazwa]'
-    - '&a/n enemy list'
-    - ''
-    - '&a/n set mapcolor [kolor]'
+    - ""
+    - "&a/n enemy [nazwa]"
+    - "&a/n enemy list"
+    - ""
+    - "&a/n set mapcolor [kolor]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Town_Menu:
-  Main_Menu_Title: '&2&lMenu Miasta'
-  Toggle_Menu_Button: '&3&lMenu Przełączników'
+  Main_Menu_Title: "&2&lMenu Miasta"
+  Toggle_Menu_Button: "&3&lMenu Przełączników"
   Toggle_Menu_Button_Lore:
-    - ''
-    - 'Włączaj i wyłączaj'
-    - 'różne ustawienia miasta.'
-  Resident_Menu_Button: '&6&lMenu Mieszkańców'
+    - ""
+    - "Włączaj i wyłączaj"
+    - "różne ustawienia miasta."
+  Resident_Menu_Button: "&6&lMenu Mieszkańców"
   Resident_Menu_Button_Lore:
-    - ''
-    - 'Zobacz wszystkie informacje'
-    - 'i ustawienia mieszkańców.'
-  Permissions_Menu_Button: '&c&lMenu Uprawnień'
+    - ""
+    - "Zobacz wszystkie informacje"
+    - "i ustawienia mieszkańców."
+  Permissions_Menu_Button: "&c&lMenu Uprawnień"
   Permissions_Menu_Button_Lore:
-    - ''
-    - 'Dostosuj uprawnienia miasta'
-    - 'dla mieszkańców, narodu,'
-    - 'sojuszników i obcych.'
-  Economy_Menu_Button: '&a&lMenu Ekonomii'
+    - ""
+    - "Dostosuj uprawnienia miasta"
+    - "dla mieszkańców, narodu,"
+    - "sojuszników i obcych."
+  Economy_Menu_Button: "&a&lMenu Ekonomii"
   Economy_Menu_Button_Lore:
-    - ''
-    - 'Zarządzaj finansami'
-    - 'swojego miasta'
-  General_Settings_Menu_Button: '&2&lInne Ustawienia'
+    - ""
+    - "Zarządzaj finansami"
+  Economy_Disabled_Menu_Button: "&c&lEconomy Management Disabled"
+  Economy_Disabled_Menu_Button_Lore:
+    - ""
+    - "Economy features are"
+    - "currently turned off"
+  General_Settings_Menu_Button: "&2&lInne Ustawienia"
   General_Settings_Menu_Button_Lore:
-    - ''
-    - 'Ustaw blok domowy miasta'
-    - 'Ustaw punkt odrodzenia'
-    - 'Ustaw nazwę miasta'
-    - 'Ustaw tablicę miasta'
-  Invite_Player_Menu_Button: '&d&lMenu Zapraszania Graczy'
+    - ""
+    - "Ustaw blok domowy miasta"
+    - "Ustaw punkt odrodzenia"
+    - "Ustaw nazwę miasta"
+    - "Ustaw tablicę miasta"
+  Invite_Player_Menu_Button: "&d&lMenu Zapraszania Graczy"
   Invite_Player_Menu_Button_Lore:
-    - ''
-    - 'Zaproś online gracza'
-    - 'do swojego miasta.'
-  Extra_Info_Menu_Button: '&e&lDodatkowe Informacje'
+    - ""
+    - "Zaproś online gracza"
+    - "do swojego miasta."
+  Extra_Info_Menu_Button: "&e&lDodatkowe Informacje"
   Extra_Info_Menu_Button_Lore:
-    - ''
-    - 'Dowiedz się, jak przejmować ziemię'
-    - 'oraz kilka przydatnych komend'
-  Plot_Menu_Button: '&9&lMenu Działki'
+    - ""
+    - "Dowiedz się, jak przejmować ziemię"
+    - "oraz kilka przydatnych komend"
+  Plot_Menu_Button: "&9&lMenu Działki"
   Plot_Menu_Button_Lore:
-    - ''
-    - 'Zarządzaj działką,'
-    - 'na której obecnie się znajdujesz.'
-  Town_Name: '&a'
-  Town_Postfix: '&e'
-  Residents: '&2Mieszkańcy:'
-  Number_Residents: '&2'
-  Claim_Blocks: '&2Bloki zajęte:'
-  Total_Claimed_Blocks: '&a'
-  Max_Claim_Blocks: '&a'
-  Balance: '&2Stan konta:'
-  Balance_Amount: '&a'
-  Mayor: '&2Burmistrz:'
-  Mayor_Name: '&a'
-  Nation: '&2Naród:'
-  Nation_Name: '&a'
+    - ""
+    - "Zarządzaj działką,"
+    - "na której obecnie się znajdujesz."
+  #Town info icon
+  Town_Name: "&a"
+  Town_Postfix: "&e"
+  Residents: "&2Mieszkańcy:"
+  Number_Residents: "&2"
+  Claim_Blocks: "&2Bloki zajęte:"
+  Total_Claimed_Blocks: "&a"
+  Max_Claim_Blocks: "&a"
+  Balance: "&2Stan konta:"
+  Balance_Amount: "&a"
+  Mayor: "&2Burmistrz:"
+  Mayor_Name: "&a"
+  Nation: "&2Naród:"
+  Nation_Name: "&a"
 Toggle_Menu:
-  Menu_Title: '&2&lMenu Przełączników'
-  Info:
-    - 'Dostosuj ustawienia przełączników'
-    - 'dla swojego miasta!'
-  Toggle_Off: '&eKliknij, aby wyłączyć &c'
-  Toggle_On: '&eKliknij, aby włączyć &a'
-  Fire: '&6&lPrzełącz Rozprzestrzenianie Ognia'
-  Mobs: '&a&lPrzełącz Spawn Potworów'
-  Explode: '&c&lPrzełącz Eksplozje'
-  PVP: '&4&lPrzełącz PVP'
-  Public: '&9&lPrzełącz Publiczne'
-  Open: '&3&lPrzełącz Otwarte'
-  Tax_Percent: '&2&lPrzełącz Procentowy Podatek'
+  Menu_Title: "&2&lMenu Przełączników"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust toggleable settings"
+    - "for your town!"
+  Toggle_Off: "&eKliknij, aby wyłączyć &c"
+  Toggle_On: "&eKliknij, aby włączyć &a"
+  Fire: "&6&lPrzełącz Rozprzestrzenianie Ognia"
+  Mobs: "&a&lPrzełącz Spawn Potworów"
+  Explode: "&c&lPrzełącz Eksplozje"
+  PVP: "&4&lPrzełącz PVP"
+  Public: "&9&lPrzełącz Publiczne"
+  Open: "&3&lPrzełącz Otwarte"
+  Tax_Percent: "&2&lPrzełącz Procentowy Podatek"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Resident_Menu:
-  Menu_Title: '&2&lMenu Mieszkańca'
-  Info:
-    - 'Kliknij na mieszkańca,'
-    - 'aby nim zarządzać!'
-  Resident_Name: '&e&l'
-  Online: '&7Ostatnio online: '
-  Town_Rank: '&7Ranga w mieście: '
-  Invite: '&aKliknij, aby zaprosić gracza do miasta'
-  Kick: '&c&lWyrzuć Gracza'
+  Menu_Title: "&2&lMenu Mieszkańca"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Click on a resident"
+    - "to manage them!"
+  #this is just setting the color
+  Resident_Name: "&e&l"
+  Online: "&7Ostatnio online: "
+  Town_Rank: "&7Ranga w mieście: "
+  Invite: "&aKliknij, aby zaprosić gracza do miasta"
+  Kick: "&c&lWyrzuć Gracza"
   Kick_Lore:
-    - ''
-    - 'Kliknij, aby wyrzucić'
-    - 'mieszkańca z miasta'
-  Title: '&a&lUstaw Tytuł Mieszkańca'
+    - ""
+    - "Kliknij, aby wyrzucić"
+    - "mieszkańca z miasta"
+  Title: "&a&lUstaw Tytuł Mieszkańca"
   Title_Lore:
-    - ''
-    - 'Nadaj tytuł'
-    - 'temu mieszkańcowi.'
-  Rank: '&3&lUstaw Rangę Mieszkańca'
+    - ""
+    - "Nadaj tytuł"
+    - "temu mieszkańcowi."
+  Rank: "&3&lUstaw Rangę Mieszkańca"
   Rank_Lore:
-    - ''
-    - 'Nadaj rangę miejską'
-    - 'graczowi.'
-  Mayor: '&a&lNadaj Mieszkańcowi Burmistrza'
+    - ""
+    - "Nadaj rangę miejską"
+    - "graczowi."
+  Mayor: "&a&lNadaj Mieszkańcowi Burmistrza"
   Mayor_Lore:
-    - ''
-    - 'Uczyń tego mieszkańca'
-    - 'burmistrzem.'
-    - ''
-    - '&4&lNieodwracalne'
+    - ""
+    - "Uczyń tego mieszkańca"
+    - "burmistrzem."
+    - ""
+    - "&4&lNieodwracalne"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Player_Permission_Menu:
-  Menu_Title: '&2&lMenu Uprawnień'
-  Info:
-    - 'Ustaw uprawnienia'
-    - 'dla różnych grup'
-    - 'w twoim mieście.'
-  True_Msg: '&aprawda'
-  False_Msg: '&cfałsz'
-  Change: '&eKliknij, aby zmienić!'
-  Reset: '&c&lZresetuj Wszystkie Pola'
+  Menu_Title: "&2&lMenu Uprawnień"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Set permissions for"
+    - "different groups"
+    - "in your town."
+  True_Msg: "&aprawda"
+  False_Msg: "&cfałsz"
+  Change: "&eKliknij, aby zmienić!"
+  Reset: "&c&lZresetuj Wszystkie Pola"
   Reset_Lore:
-    - ''
-    - 'Wyłącz wszystkie uprawnienia'
-    - 'dla wszystkich grup.'
-  On_Msg: '&a&lWłącz Wszystkie Pola'
+    - ""
+    - "Wyłącz wszystkie uprawnienia"
+    - "dla wszystkich grup."
+  On_Msg: "&a&lWłącz Wszystkie Pola"
   On_Msg_Lore:
-    - ''
-    - 'Włącz wszystkie uprawnienia'
-    - 'dla wszystkich grup.'
-  Reset_to_Town_Perm: '&c&lResetuj Działki Miejskie'
+    - ""
+    - "Włącz wszystkie uprawnienia"
+    - "dla wszystkich grup."
+  Reset_to_Town_Perm: "&c&lResetuj Działki Miejskie"
   Reset_to_Town_Perm_Lore:
-    - ''
-    - 'Zresetuj wszystkie działki miejskie'
-    - 'do poziomu uprawnień miasta.'
-  Build: '&3&lBudowanie'
+    - ""
+    - "Zresetuj wszystkie działki miejskie"
+    - "do poziomu uprawnień miasta."
+  Build: "&3&lBudowanie"
   Build_Lore:
-    - ''
-    - 'Kto ma prawo budować'
-    - 'w twoim mieście.'
-  Break: '&c&lNiszczenie'
+    - ""
+    - "Kto ma prawo budować"
+    - "w twoim mieście."
+    - "your town."
+  Break: "&c&lNiszczenie"
   Break_Lore:
-    - ''
-    - 'Kto ma prawo niszczyć bloki'
-    - 'w twoim mieście.'
-  Use: '&6&lUżywanie Przedmiotów'
+    - ""
+    - "Kto ma prawo niszczyć bloki"
+    - "w twoim mieście."
+    - "your town."
+  Use: "&6&lUżywanie Przedmiotów"
   Use_Lore:
-    - ''
-    - 'Kto ma prawo używać przedmiotów'
-    - 'w twoim mieście.'
-    - ''
-    - 'Np. czerpanie wody z kotła'
-  Switch: '&2&lPrzełączanie'
+    - ""
+    - "Kto ma prawo używać przedmiotów"
+    - "w twoim mieście."
+    - "your town."
+    - ""
+    - "E.g. take water from cauldron"
+  Switch: "&2&lPrzełączanie"
   Switch_Lore:
-    - ''
-    - 'Kto ma prawo przełączać'
-    - 'w twoim mieście.'
-    - ''
-    - 'Np. użycie dźwigni lub drzwi'
-  Build_Res: '&6&lBudowanie - Mieszkańcy'
-  Build_Res2: 'Czy mieszkańcy mogą budować: '
-  Build_Nation: '&6&lBudowanie - Członkowie Narodu'
-  Build_Nation2: 'Czy członkowie narodu mogą budować: '
-  Build_Ally: '&6&lBudowanie - Sojusznicy'
-  Build_Ally2: 'Czy sojusznicy mogą budować: '
-  Build_Outsider: '&6&lBudowanie - Obcy'
-  Build_Outsider2: 'Czy obcy mogą budować: '
-  Break_Res: '&6&lNiszczenie - Mieszkańcy'
-  Break_Res2: 'Czy mieszkańcy mogą niszczyć bloki: '
-  Break_Nation: '&6&lNiszczenie - Członkowie Narodu'
-  Break_Nation2: 'Czy członkowie narodu mogą niszczyć bloki: '
-  Break_Ally: '&6&lNiszczenie - Sojusznicy'
-  Break_Ally2: 'Czy sojusznicy mogą niszczyć bloki: '
-  Break_Outsider: '&6&lNiszczenie - Obcy'
-  Break_Outsider2: 'Czy obcy mogą niszczyć bloki: '
-  Use_Res: '&6&lUżywanie - Mieszkańcy'
-  Use_Res2: 'Czy mieszkańcy mogą używać przedmiotów: '
-  Use_Nation: '&6&lUżywanie - Członkowie Narodu'
-  Use_Nation2: 'Czy członkowie narodu mogą używać przedmiotów: '
-  Use_Ally: '&6&lUżywanie - Sojusznicy'
-  Use_Ally2: 'Czy sojusznicy mogą używać przedmiotów: '
-  Use_Outsider: '&6&lUżywanie - Obcy'
-  Use_Outsider2: 'Czy obcy mogą używać przedmiotów: '
-  Switch_Res: '&6&lPrzełączanie - Mieszkańcy'
-  Switch_Res2: 'Czy mieszkańcy mogą przełączać: '
-  Switch_Nation: '&6&lPrzełączanie - Członkowie Narodu'
-  Switch_Nation2: 'Czy członkowie narodu mogą przełączać: '
-  Switch_Ally: '&6&lPrzełączanie - Sojusznicy'
-  Switch_Ally2: 'Czy sojusznicy mogą przełączać: '
-  Switch_Outsider: '&6&lPrzełączanie - Obcy'
-  Switch_Outsider2: 'Czy obcy mogą przełączać: '
+    - ""
+    - "Kto ma prawo przełączać"
+    - "w twoim mieście."
+    - "your town."
+    - ""
+    - "E.g. use a lever or door"
+  Build_Res: "&6&lBudowanie - Mieszkańcy"
+  Build_Res2: "Czy mieszkańcy mogą budować: "
+  Build_Nation: "&6&lBudowanie - Członkowie Narodu"
+  Build_Nation2: "Czy członkowie narodu mogą budować: "
+  Build_Ally: "&6&lBudowanie - Sojusznicy"
+  Build_Ally2: "Czy sojusznicy mogą budować: "
+  Build_Outsider: "&6&lBudowanie - Obcy"
+  Build_Outsider2: "Czy obcy mogą budować: "
+  Break_Res: "&6&lNiszczenie - Mieszkańcy"
+  Break_Res2: "Czy mieszkańcy mogą niszczyć bloki: "
+  Break_Nation: "&6&lNiszczenie - Członkowie Narodu"
+  Break_Nation2: "Czy członkowie narodu mogą niszczyć bloki: "
+  Break_Ally: "&6&lNiszczenie - Sojusznicy"
+  Break_Ally2: "Czy sojusznicy mogą niszczyć bloki: "
+  Break_Outsider: "&6&lNiszczenie - Obcy"
+  Break_Outsider2: "Czy obcy mogą niszczyć bloki: "
+  Use_Res: "&6&lUżywanie - Mieszkańcy"
+  Use_Res2: "Czy mieszkańcy mogą używać przedmiotów: "
+  Use_Nation: "&6&lUżywanie - Członkowie Narodu"
+  Use_Nation2: "Czy członkowie narodu mogą używać przedmiotów: "
+  Use_Ally: "&6&lUżywanie - Sojusznicy"
+  Use_Ally2: "Czy sojusznicy mogą używać przedmiotów: "
+  Use_Outsider: "&6&lUżywanie - Obcy"
+  Use_Outsider2: "Czy obcy mogą używać przedmiotów: "
+  Switch_Res: "&6&lPrzełączanie - Mieszkańcy"
+  Switch_Res2: "Czy mieszkańcy mogą przełączać: "
+  Switch_Nation: "&6&lPrzełączanie - Członkowie Narodu"
+  Switch_Nation2: "Czy członkowie narodu mogą przełączać: "
+  Switch_Ally: "&6&lPrzełączanie - Sojusznicy"
+  Switch_Ally2: "Czy sojusznicy mogą przełączać: "
+  Switch_Outsider: "&6&lPrzełączanie - Obcy"
+  Switch_Outsider2: "Czy obcy mogą przełączać: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Economy_Menu:
-  Menu_Title: '&2&lMenu Ekonomii'
-  Balance: '&2&lObecne Saldo Miasta'
-  Town_Balance: '&a  '
-  Upkeep: '&fBieżące Utrzymanie: '
-  Withdraw: '&c&lWypłać Pieniądze'
+  Menu_Title: "&2&lMenu Ekonomii"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Economy actions"
+    - "for your town!"
+  Balance: "&2&lObecne Saldo Miasta"
+  #this is just setting the color
+  Town_Balance: "&a  "
+  Upkeep: "&fBieżące Utrzymanie: "
+  Withdraw: "&c&lWypłać Pieniądze"
   Withdraw_Lore:
-    - ''
-    - 'Wypłać pieniądze z'
-    - 'banku miasta.'
-  Deposit: '&a&lWpłać Pieniądze'
+    - ""
+    - "Wypłać pieniądze z"
+    - "banku miasta."
+  Deposit: "&a&lWpłać Pieniądze"
   Deposit_Lore:
-    - ''
-    - 'Wpłać pieniądze do'
-    - 'banku miasta.'
-  Tax: '&c&lUstaw Kwotę Podatku'
-  Tax_Percentage: Ustaw procent podatku
-  Tax_Amount: Ustaw kwotę podatku
+    - ""
+    - "Wpłać pieniądze do"
+    - "banku miasta."
+  Tax: "&c&lUstaw Kwotę Podatku"
+  Tax_Percentage: "Ustaw procent podatku"
+  Tax_Amount: "Ustaw kwotę podatku"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 General_Settings_Menu:
-  Menu_Title: '&2&lMenu Ustawień Ogólnych'
-  Info:
-    - ''
-    - 'Ustaw Blok Domowy'
-    - 'Ustaw Spawn Miasta'
-    - 'Ustaw Nazwę Miasta'
-    - 'Ustaw Tablicę Miasta'
-  Set_Home_Block_Msg: '&eUstawiono blok domowy na twoją lokalizację!'
-  Spawn_Reminder: '&bPamiętaj, aby ponownie ustawić spawn miasta!'
-  Set_Home_Block: '&3&lUstaw Blok Domowy'
+  Menu_Title: "&2&lMenu Ustawień Ogólnych"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Set general settings"
+    - "for your town"
+  Set_Home_Block_Msg: "&eUstawiono blok domowy na twoją lokalizację!"
+  Spawn_Reminder: "&bPamiętaj, aby ponownie ustawić spawn miasta!"
+  Set_Home_Block: "&3&lUstaw Blok Domowy"
   Set_Home_Block_Lore:
-    - ''
-    - 'Ustaw blok domowy'
-    - 'dla twojego miasta.'
-  Set_Spawn_Msg: '&eUstawiono spawn miasta na aktualną lokalizację.'
-  Set_Spawn: '&b&lUstaw Spawn Miasta'
+    - ""
+    - "Ustaw blok domowy"
+    - "dla twojego miasta."
+  Set_Spawn_Msg: "&eUstawiono spawn miasta na aktualną lokalizację."
+  Set_Spawn: "&b&lUstaw Spawn Miasta"
   Set_Spawn_Lore:
-    - ''
-    - 'Ustaw lokalizację dla'
-    - 'teleportacji komendą'
-    - '/t spawn'
-    - ''
-    - '&cMusi znajdować się w bloku domowym.'
-  Set_Name: '&6&lUstaw Nazwę Miasta'
+    - ""
+    - "Ustaw lokalizację dla"
+    - "teleportacji komendą"
+    - "/t spawn"
+    - ""
+    - "&cMusi znajdować się w bloku domowym."
+  Set_Name: "&6&lUstaw Nazwę Miasta"
   Set_Name_Lore:
-    - ''
-    - 'Zmień nazwę'
-    - 'swojego miasta.'
-  Set_Board: '&2&lUstaw Tablicę Miasta'
+    - ""
+    - "Zmień nazwę"
+    - "swojego miasta."
+  Set_Board: "&2&lUstaw Tablicę Miasta"
   Set_Board_Lore:
-    - ''
-    - 'Ustaw tablicę'
-    - 'swojego miasta.'
+    - ""
+    - "Ustaw tablicę"
+    - "swojego miasta."
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Extra_Info_Menu:
-  Claiming: '&6&lInformacje o Zajmowaniu'
+  Menu_Title: "&2Extra Information"
+  Claiming: "&6&lInformacje o Zajmowaniu"
   Claiming_Lore:
-    - ''
-    - '&a/t claim &7- zajmuje fragment ziemi'
-    - 'Zajmowanie wymaga pieniędzy'
-    - 'w banku miasta'
-    - 'oraz bycia w fragmencie'
-    - 'graniczącym z miastem.'
-    - 'Użyj &aF3+G &7aby zobaczyć chunki oraz'
-    - '&a/towny map &7aby zobaczyć zajęte tereny.'
-  Commands: '&2&lDodatkowe Komendy'
+    - ""
+    - "&a/t claim &7- zajmuje fragment ziemi"
+    - "Zajmowanie wymaga pieniędzy"
+    - "w banku miasta"
+    - "oraz bycia w fragmencie"
+    - "graniczącym z miastem."
+    - "Użyj &aF3+G &7aby zobaczyć chunki oraz"
+    - "&a/towny map &7aby zobaczyć zajęte tereny."
+  Commands: "&2&lDodatkowe Komendy"
   Commands_Lore:
-    - ''
-    - '&a/t outlaw &7- oznacz gracza wygnańcem'
-    - '&a/t outlawlist &7- pokaż listę wygnańców'
-    - '&a/t buy &7- informacje o kupowaniu chunków'
-    - '&a/t online &7- członkowie online'
-    - '&a/t say &7- ogłoszenie miejskie'
-    - '&a/t towny prices &7- ceny miasta'
-    - '&a/t set mapcolor [kolor]'
+    - ""
+    - "&a/t outlaw &7- oznacz gracza wygnańcem"
+    - "&a/t outlawlist &7- pokaż listę wygnańców"
+    - "&a/t buy &7- informacje o kupowaniu chunków"
+    - "&a/t online &7- członkowie online"
+    - "&a/t say &7- ogłoszenie miejskie"
+    - "&a/t towny prices &7- ceny miasta"
+    - "&a/t set mapcolor [kolor]"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Menu:
-  Main_Menu_Title: '&2Menu Działki'
-  Toggle_Settings_Menu_Button: '&3&lUstawienia Działki'
+  Main_Menu_Title: "&2Menu Działki"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - "Adjust various settings"
+    - "on your plot!"
+  Toggle_Settings_Menu_Button: "&3&lUstawienia Działki"
   Toggle_Settings_Menu_Button_Lore:
-    - ''
-    - 'Rozprzestrzenianie ognia'
-    - 'Pojawianie się potworów'
-    - 'Eksplozje'
-    - 'PvP'
-  Permissions_Menu_Button: '&c&lUprawnienia Działki'
+    - ""
+    - "Rozprzestrzenianie ognia"
+    - "Pojawianie się potworów"
+    - "Eksplozje"
+    - "PvP"
+  Permissions_Menu_Button: "&c&lUprawnienia Działki"
   Permissions_Menu_Button_Lore:
-    - ''
-    - 'Zmień uprawnienia działki'
-    - 'dla znajomych, nacji'
-    - 'sojuszników i obcych'
-  Plot_Admin_Menu_Button: '&5&lAdministracja Działki'
+    - ""
+    - "Zmień uprawnienia działki"
+    - "dla znajomych, nacji"
+    - "sojuszników i obcych"
+  Plot_Admin_Menu_Button: "&5&lAdministracja Działki"
   Plot_Admin_Menu_Button_Lore:
-    - ''
-    - 'Wystaw działkę na sprzedaż'
-    - 'Usuń działkę ze sprzedaży'
-    - 'Ustaw typ działki'
-    - 'Eksmituj właściciela'
-  Friend_Menu_Button: '&aMenu Znajomych'
+    - ""
+    - "Wystaw działkę na sprzedaż"
+    - "Usuń działkę ze sprzedaży"
+    - "Ustaw typ działki"
+    - "Eksmituj właściciela"
+  Friend_Menu_Button: "&aMenu Znajomych"
   Friend_Menu_Button_Lore:
-    - ''
-    - 'Zarządzanie znajomymi'
+    - ""
+    - "Zarządzanie znajomymi"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "&7Previous Menu"
 Friend_Menu:
-  Menu_Title: '&2Menu Znajomych'
-  Remove: '&cUsunięto {player} z listy znajomych!'
-  Add: '&3Dodano &b{player} &3do listy znajomych!'
-  Click_Remove_Lore: '&cKliknij, aby usunąć znajomego'
-  Click_Add_Lore: '&aKliknij, aby dodać znajomego'
+  Menu_Title: "&2Menu Znajomych"
+  Remove: "&cUsunięto {player} z listy znajomych!"
+  Add: "&3Dodano &b{player} &3do listy znajomych!"
+  Click_Remove_Lore: "&cKliknij, aby usunąć znajomego"
+  Click_Add_Lore: "&aKliknij, aby dodać znajomego"
 Plot_Toggle_Menu:
-  Menu_Title: '&2&lUstawienia Działki'
-  Info:
-    - ''
-    - 'Rozprzestrzenianie ognia'
-    - 'Pojawianie się potworów'
-    - 'Eksplozje'
-    - 'PvP'
-  Toggle_Off: '&eKliknij, aby wyłączyć &c'
-  Toggle_On: '&eKliknij, aby włączyć &a'
-  Fire: '&6&lPrzełącz rozprzestrzenianie ognia'
-  Mobs: '&a&lPrzełącz pojawianie się potworów'
-  Explode: '&c&lPrzełącz eksplozje'
-  PVP: '&4&lPrzełącz PvP'
+  Menu_Title: "&2&lUstawienia Działki"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Adjust toggleable settings"
+    - "for your town!"
+  Toggle_Off: "&eKliknij, aby wyłączyć &c"
+  Toggle_On: "&eKliknij, aby włączyć &a"
+  Fire: "&6&lPrzełącz rozprzestrzenianie ognia"
+  Mobs: "&a&lPrzełącz pojawianie się potworów"
+  Explode: "&c&lPrzełącz eksplozje"
+  PVP: "&4&lPrzełącz PvP"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Player_Permission_Menu:
-  Menu_Title: '&2&lUprawnienia Działki'
-  Info:
-    - 'Ustaw uprawnienia dla'
-    - 'różnych grup'
-    - 'na swojej działce.'
-  True_Msg: '&aprawda'
-  False_Msg: '&cfałsz'
-  Change: '&eKliknij, aby zmienić!'
-  Reset: '&c&lZresetuj wszystko'
+  Menu_Title: "&2&lUprawnienia Działki"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Set permissions for"
+    - "different groups"
+    - "in your plot."
+  True_Msg: "&aprawda"
+  False_Msg: "&cfałsz"
+  Change: "&eKliknij, aby zmienić!"
+  Reset: "&c&lZresetuj wszystko"
   Reset_Lore:
-    - ''
-    - 'Wyłącz wszystkie uprawnienia'
-    - 'dla wszystkich grup.'
-  On_Msg: '&a&lWłącz wszystko'
+    - ""
+    - "Wyłącz wszystkie uprawnienia"
+    - "dla wszystkich grup."
+  On_Msg: "&a&lWłącz wszystko"
   On_Msg_Lore:
-    - ''
-    - 'Włącz wszystkie uprawnienia'
-    - 'dla wszystkich grup.'
-  Build: '&3&lBudowanie'
+    - ""
+    - "Włącz wszystkie uprawnienia"
+    - "dla wszystkich grup."
+  Build: "&3&lBudowanie"
   Build_Lore:
-    - ''
-    - 'Kto może budować'
-    - 'na twojej działce.'
-  Break: '&c&lNiszczenie'
+    - ""
+    - "Kto może budować"
+    - "na twojej działce."
+    - "your plot."
+  Break: "&c&lNiszczenie"
   Break_Lore:
-    - ''
-    - 'Kto może niszczyć bloki'
-    - 'na twojej działce.'
-  Use: '&6&lUżywanie przedmiotów'
+    - ""
+    - "Kto może niszczyć bloki"
+    - "na twojej działce."
+    - "your plot."
+  Use: "&6&lUżywanie przedmiotów"
   Use_Lore:
-    - ''
-    - 'Kto może używać przedmiotów'
-    - 'na twojej działce.'
-    - ''
-    - 'Np. nabieranie wody z kotła'
-  Switch: '&2&lPrzełączanie'
+    - ""
+    - "Kto może używać przedmiotów"
+    - "na twojej działce."
+    - "your plot."
+    - ""
+    - "E.g. take water from cauldron"
+  Switch: "&2&lPrzełączanie"
   Switch_Lore:
-    - ''
-    - 'Kto może przełączać rzeczy'
-    - 'na twojej działce.'
-    - ''
-    - 'Np. użycie dźwigni lub drzwi'
-  Build_Res: '&6&lBudowanie - Mieszkańcy/Znajomi'
-  Build_Res2: 'Czy Mieszkańcy/Znajomi mogą budować: '
-  Build_Nation: '&6&lBudowanie - Miasto/Nacja'
-  Build_Nation2: 'Czy członkowie Miasta/Nacji mogą budować: '
-  Build_Ally: '&6&lBudowanie - Sojusznicy'
-  Build_Ally2: 'Czy Sojusznicy mogą budować: '
-  Build_Outsider: '&6&lBudowanie - Obcy'
-  Build_Outsider2: 'Czy Obcy mogą budować: '
-  Break_Res: '&6&lNiszczenie - Mieszkańcy/Znajomi'
-  Break_Res2: 'Czy Mieszkańcy/Znajomi mogą niszczyć bloki: '
-  Break_Nation: '&6&lNiszczenie - Miasto/Nacja'
-  Break_Nation2: 'Czy członkowie Miasta/Nacji mogą niszczyć bloki: '
-  Break_Ally: '&6&lNiszczenie - Sojusznicy'
-  Break_Ally2: 'Czy Sojusznicy mogą niszczyć bloki: '
-  Break_Outsider: '&6&lNiszczenie - Obcy'
-  Break_Outsider2: 'Czy Obcy mogą niszczyć bloki: '
-  Use_Res: '&6&lUżywanie - Mieszkańcy/Znajomi'
-  Use_Res2: 'Czy Mieszkańcy/Znajomi mogą używać przedmiotów: '
-  Use_Nation: '&6&lUżywanie - Miasto/Nacja'
-  Use_Nation2: 'Czy członkowie Miasta/Nacji mogą używać przedmiotów: '
-  Use_Ally: '&6&lUżywanie - Sojusznicy'
-  Use_Ally2: 'Czy Sojusznicy mogą używać przedmiotów: '
-  Use_Outsider: '&6&lUżywanie - Obcy'
-  Use_Outsider2: 'Czy Obcy mogą używać przedmiotów: '
-  Switch_Res: '&6&lPrzełączanie - Mieszkańcy/Znajomi'
-  Switch_Res2: 'Czy Mieszkańcy/Znajomi mogą przełączać: '
-  Switch_Nation: '&6&lPrzełączanie - Miasto/Nacja'
-  Switch_Nation2: 'Czy członkowie Miasta/Nacji mogą przełączać: '
-  Switch_Ally: '&6&lPrzełączanie - Sojusznicy'
-  Switch_Ally2: 'Czy Sojusznicy mogą przełączać: '
-  Switch_Outsider: '&6&lPrzełączanie - Obcy'
-  Switch_Outsider2: 'Czy Obcy mogą przełączać: '
+    - ""
+    - "Kto może przełączać rzeczy"
+    - "na twojej działce."
+    - "your plot."
+    - ""
+    - "E.g. use a lever or door"
+  Build_Res: "&6&lBudowanie - Mieszkańcy/Znajomi"
+  Build_Res2: "Czy Mieszkańcy/Znajomi mogą budować: "
+  Build_Nation: "&6&lBudowanie - Miasto/Nacja"
+  Build_Nation2: "Czy członkowie Miasta/Nacji mogą budować: "
+  Build_Ally: "&6&lBudowanie - Sojusznicy"
+  Build_Ally2: "Czy Sojusznicy mogą budować: "
+  Build_Outsider: "&6&lBudowanie - Obcy"
+  Build_Outsider2: "Czy Obcy mogą budować: "
+  Break_Res: "&6&lNiszczenie - Mieszkańcy/Znajomi"
+  Break_Res2: "Czy Mieszkańcy/Znajomi mogą niszczyć bloki: "
+  Break_Nation: "&6&lNiszczenie - Miasto/Nacja"
+  Break_Nation2: "Czy członkowie Miasta/Nacji mogą niszczyć bloki: "
+  Break_Ally: "&6&lNiszczenie - Sojusznicy"
+  Break_Ally2: "Czy Sojusznicy mogą niszczyć bloki: "
+  Break_Outsider: "&6&lNiszczenie - Obcy"
+  Break_Outsider2: "Czy Obcy mogą niszczyć bloki: "
+  Use_Res: "&6&lUżywanie - Mieszkańcy/Znajomi"
+  Use_Res2: "Czy Mieszkańcy/Znajomi mogą używać przedmiotów: "
+  Use_Nation: "&6&lUżywanie - Miasto/Nacja"
+  Use_Nation2: "Czy członkowie Miasta/Nacji mogą używać przedmiotów: "
+  Use_Ally: "&6&lUżywanie - Sojusznicy"
+  Use_Ally2: "Czy Sojusznicy mogą używać przedmiotów: "
+  Use_Outsider: "&6&lUżywanie - Obcy"
+  Use_Outsider2: "Czy Obcy mogą używać przedmiotów: "
+  Switch_Res: "&6&lPrzełączanie - Mieszkańcy/Znajomi"
+  Switch_Res2: "Czy Mieszkańcy/Znajomi mogą przełączać: "
+  Switch_Nation: "&6&lPrzełączanie - Miasto/Nacja"
+  Switch_Nation2: "Czy członkowie Miasta/Nacji mogą przełączać: "
+  Switch_Ally: "&6&lPrzełączanie - Sojusznicy"
+  Switch_Ally2: "Czy Sojusznicy mogą przełączać: "
+  Switch_Outsider: "&6&lPrzełączanie - Obcy"
+  Switch_Outsider2: "Czy Obcy mogą przełączać: "
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Plot_Admin_Menu:
-  Menu_Title: '&2Menu Administracji Działki'
-  For_Sale: '&a&lWystaw działkę na sprzedaż'
+  Menu_Title: "&2Menu Administracji Działki"
+  Info: "&fMenu Info"
+  Info_Lore:
+    - ""
+    - "Manage your plots"
+  For_Sale: "&a&lWystaw działkę na sprzedaż"
   For_Sale_Lore:
-    - ''
-    - 'Wystaw obecną działkę'
-    - 'na sprzedaż za podaną cenę'
-  Not_For_Sale: '&c&lZdejmij działkę ze sprzedaży'
+    - ""
+    - "Wystaw obecną działkę"
+    - "na sprzedaż za podaną cenę"
+    - "a specified price"
+  Not_For_Sale: "&c&lZdejmij działkę ze sprzedaży"
   Not_For_Sale_Lore:
-    - ''
-    - 'Spraw, aby działka'
-    - 'nie była do kupienia'
-  Set_Type: '&3&lUstaw typ działki'
+    - ""
+    - "Spraw, aby działka"
+    - "nie była do kupienia"
+  Set_Type: "&3&lUstaw typ działki"
   Set_Type_Lore:
-    - ''
-    - 'Określ typ tej'
-    - 'działki.'
-  Evict: '&4&lEksmituj właściciela'
+    - ""
+    - "Określ typ tej"
+    - "działki."
+  Evict: "&4&lEksmituj właściciela"
   Evict_Lore:
-    - ''
-    - 'Eksmituj mieszkańca'
-    - 'tej działki'
+    - ""
+    - "Eksmituj mieszkańca"
+    - "tej działki"
+  Back_Button: "&a&lBack"
+  Back_Button_Lore:
+    - ""
+    - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: '&3Wpisz wiadomość dla tablicy twojego narodu: '
-    Response: '&3Pomyślnie ustawiono tablicę narodu!'
+    Prompt: "&3Wpisz wiadomość dla tablicy twojego narodu: "
+    Response: "&3Pomyślnie ustawiono tablicę narodu!"
   Deposit:
-    Prompt: '&3Wpisz kwotę, którą chcesz wpłacić na konto swojego narodu: &c(Wpisz cancel, aby zakończyć)'
-    Invalid: '&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wpłatę.'
-    Response: '&3Wpłacono &b{money_symbol}{input} &3na konto twojego narodu.'
+    Prompt: "&3Wpisz kwotę, którą chcesz wpłacić na konto swojego narodu: &c(Wpisz cancel, aby zakończyć)"
+    Invalid: "&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wpłatę."
+    Response: "&3Wpłacono &b{money_symbol}{input} &3na konto twojego narodu."
   Mayor:
-    Prompt: '&cCzy na pewno chcesz nadać &b{player} &cpozycję Króla? &3(Wpisz &bconfirm &3lub &4cancel&3)'
-    Response: '&3Pomyślnie ustawiono &b{player} &3na Króla!'
+    Prompt: "&cCzy na pewno chcesz nadać &b{player} &cpozycję Króla? &3(Wpisz &bconfirm &3lub &4cancel&3)"
+    Response: "&3Pomyślnie ustawiono &b{player} &3na Króla!"
   Kick:
-    Prompt: '&cCzy na pewno chcesz wyrzucić &b{town} &cz twojego narodu? Wpisz &bconfirm &cor &4cancel &czaraz:'
-    Response: '&3Pomyślnie wyrzucono &b{town} &3z twojego narodu.'
+    Prompt: "&cCzy na pewno chcesz wyrzucić &b{town} &cz twojego narodu? Wpisz &bconfirm &cor &4cancel &czaraz:"
+    Response: "&3Pomyślnie wyrzucono &b{town} &3z twojego narodu."
   Name:
-    Prompt: '&3Wpisz nazwę, którą chcesz nadać swojemu narodowi: (do {max_length} znaków) &bAktualna nazwa: {nation} &cWpisz cancel, aby zakończyć.'
-    Invalid: '&cNazwa musi być unikalna i mieć mniej niż {max_length} znaków.'
-    Response: '&3Pomyślnie ustawiono nazwę narodu na {input}'
-    Return: '&cBrak wystarczających funduszy w banku narodu, aby zmienić nazwę narodu.'
+    Prompt: "&3Wpisz nazwę, którą chcesz nadać swojemu narodowi: (do {max_length} znaków) &bAktualna nazwa: {nation} &cWpisz cancel, aby zakończyć."
+    Invalid: "&cNazwa musi być unikalna i mieć mniej niż {max_length} znaków."
+    Response: "&3Pomyślnie ustawiono nazwę narodu na {input}"
+    Return: "&cBrak wystarczających funduszy w banku narodu, aby zmienić nazwę narodu."
   Rank:
-    Remove: remove
-    Prompt: '&3Wpisz rangę, którą chcesz nadać &b{player} &3teraz: &b(Opacje: {ranks}) &3Wpisz &ccancel &3aby anulować lub &cremove &3aby usunąć ich rangę.'
-    Invalid: '&cTen gracz już ma tę rangę lub ta ranga nie istnieje. (Opcje: {ranks}) &cWpisz &c&lcancel &cto anulowania lub remove, aby usunąć ich rangę.'
-    Response: '&aPomyślnie ustawiono rangę narodu {player} na {input}'
-    Removed_All: '&cUsunięto wszystkie rangi narodu z mieszkańca {player}'
+    Remove: "remove"
+    Prompt: "&3Wpisz rangę, którą chcesz nadać &b{player} &3teraz: &b(Opacje: {ranks}) &3Wpisz &ccancel &3aby anulować lub &cremove &3aby usunąć ich rangę."
+    Invalid: "&cTen gracz już ma tę rangę lub ta ranga nie istnieje. (Opcje: {ranks}) &cWpisz &c&lcancel &cto anulowania lub remove, aby usunąć ich rangę."
+    Response: "&aPomyślnie ustawiono rangę narodu {player} na {input}"
+    Removed_All: "&cUsunięto wszystkie rangi narodu z mieszkańca {player}"
+    Has_Rank: "&cPlayer already has this rank!"
+  Title:
+    Prompt: "&3Type in the title you would like to give to &b{player} &3now: (under 10 characters) &cType cancel to exit."
+    Response: "&3Successfully set &b{player}'s &3title to &b{input}"
   Tax:
-    Prompt: '&3Wpisz kwotę, którą chcesz ustawić jako podatek dla twojego narodu: &c(Wpisz cancel, aby zakończyć)'
-    Invalid_Percent: '&cWpisz tylko liczbę całkowitą między 0 a {max_percent} jako procent podatku.'
-    Invalid_Amount: '&cWpisz liczbę całkowitą między 0 a {max_amount} jako kwotę podatku.'
-    Response_Percent: '&3Procent podatku ustawiono na &b{input}'
-    Response_Amount: '&3Kwota podatku ustawiona na &b{money_symbol}{input}'
+    Prompt: "&3Wpisz kwotę, którą chcesz ustawić jako podatek dla twojego narodu: &c(Wpisz cancel, aby zakończyć)"
+    Invalid_Percent: "&cWpisz tylko liczbę całkowitą między 0 a {max_percent} jako procent podatku."
+    Invalid_Amount: "&cWpisz liczbę całkowitą między 0 a {max_amount} jako kwotę podatku."
+    Response_Percent: "&3Procent podatku ustawiono na &b{input}"
+    Response_Amount: "&3Kwota podatku ustawiona na &b{money_symbol}{input}"
   Withdraw:
-    Prompt: '&3Wpisz kwotę, którą chcesz wypłacić z konta swojego narodu: &c(Wpisz cancel, aby zakończyć)'
-    Invalid: '&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wypłatę.'
-    Response: '&3Wypłacono &b{money_symbol}{input} &3z konta twojego narodu.'
+    Prompt: "&3Wpisz kwotę, którą chcesz wypłacić z konta swojego narodu: &c(Wpisz cancel, aby zakończyć)"
+    Invalid: "&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wypłatę."
+    Response: "&3Wypłacono &b{money_symbol}{input} &3z konta twojego narodu."
 Town_Conversables:
   Board:
-    Prompt: '&3Wpisz wiadomość dla tablicy twojego miasta: '
-    Response: '&3Pomyślnie ustawiono tablicę miasta!'
+    Prompt: "&3Wpisz wiadomość dla tablicy twojego miasta: "
+    Response: "&3Pomyślnie ustawiono tablicę miasta!"
   Deposit:
-    Prompt: '&3Wpisz kwotę, którą chcesz wpłacić na konto swojego miasta: &c(Wpisz cancel, aby zakończyć)'
-    Invalid: '&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wpłatę.'
-    Response: '&3Wpłacono &b{money_symbol}{input} &3na konto twojego miasta.'
+    Prompt: "&3Wpisz kwotę, którą chcesz wpłacić na konto swojego miasta: &c(Wpisz cancel, aby zakończyć)"
+    Invalid: "&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wpłatę."
+    Response: "&3Wpłacono &b{money_symbol}{input} &3na konto twojego miasta."
   Mayor:
-    Prompt: '&cCzy na pewno chcesz nadać &b{player} &cpozycję Burmistrza? &3(Wpisz &bconfirm &3lub &4cancel&3)'
-    Response: '&3Pomyślnie ustawiono &b{player} &3na Burmistrza!'
+    Prompt: "&cCzy na pewno chcesz nadać &b{player} &cpozycję Burmistrza? &3(Wpisz &bconfirm &3lub &4cancel&3)"
+    Response: "&3Pomyślnie ustawiono &b{player} &3na Burmistrza!"
   Kick:
-    Prompt: '&cCzy na pewno chcesz wyrzucić &b{player} &cz twojego miasta? Wpisz &bconfirm &cor &4cancel &czaraz:'
-    Response: '&3Pomyślnie wyrzucono &b{player} &3z twojego miasta.'
-    Mayor: '&cNie możesz wyrzucić Burmistrza miasta!'
+    Prompt: "&cCzy na pewno chcesz wyrzucić &b{player} &cz twojego miasta? Wpisz &bconfirm &cor &4cancel &czaraz:"
+    Response: "&3Pomyślnie wyrzucono &b{player} &3z twojego miasta."
+    Mayor: "&cNie możesz wyrzucić Burmistrza miasta!"
   Name:
-    Prompt: '&3Wpisz nazwę, którą chcesz nadać swojemu miastu: (do {max_length} znaków) &bAktualna nazwa: {town} &cWpisz cancel, aby zakończyć.'
-    Invalid: '&cNazwa musi być unikalna i mieć mniej niż {max_length} znaków.'
-    Response: '&3Pomyślnie ustawiono nazwę miasta na {input}'
-    Return: '&cBrak wystarczających funduszy w banku miasta, aby zmienić nazwę miasta.'
+    Prompt: "&3Wpisz nazwę, którą chcesz nadać swojemu miastu: (do {max_length} znaków) &bAktualna nazwa: {town} &cWpisz cancel, aby zakończyć."
+    Invalid: "&cNazwa musi być unikalna i mieć mniej niż {max_length} znaków."
+    Response: "&3Pomyślnie ustawiono nazwę miasta na {input}"
+    Return: "&cBrak wystarczających funduszy w banku miasta, aby zmienić nazwę miasta."
   Rank:
-    Remove: remove
-    Prompt: '&3Wpisz rangę, którą chcesz nadać &b{player} &3teraz: &b(Opacje: {ranks}) &3Wpisz &ccancel &3aby anulować lub &cremove &3aby usunąć ich rangę.'
-    Invalid: '&cTen gracz już ma tę rangę lub ta ranga nie istnieje. (Opcje: {ranks}) &cWpisz &c&lcancel &cto anulowania lub remove, aby usunąć ich rangę.'
-    Response: '&aPomyślnie ustawiono rangę {player} na {input}'
-    Removed_All: '&cUsunięto wszystkie rangi z mieszkańca {player}'
+    Remove: "remove"
+    Prompt: "&3Wpisz rangę, którą chcesz nadać &b{player} &3teraz: &b(Opacje: {ranks}) &3Wpisz &ccancel &3aby anulować lub &cremove &3aby usunąć ich rangę."
+    Invalid: "&cTen gracz już ma tę rangę lub ta ranga nie istnieje. (Opcje: {ranks}) &cWpisz &c&lcancel &cto anulowania lub remove, aby usunąć ich rangę."
+    Response: "&aPomyślnie ustawiono rangę {player} na {input}"
+    Removed_All: "&cUsunięto wszystkie rangi z mieszkańca {player}"
+    Has_Rank: "&cPlayer already has this rank!"
   Tax:
-    Prompt: '&3Wpisz kwotę, którą chcesz ustawić jako podatek dla twojego miasta: &c(Wpisz cancel, aby zakończyć)'
-    Invalid_Percent: '&cWpisz tylko liczbę całkowitą między 0 a {max_percent} jako procent podatku.'
-    Invalid_Amount: '&cWpisz liczbę całkowitą między 0 a {max_amount} jako kwotę podatku.'
-    Response_Percent: '&3Procent podatku ustawiono na &b{input}'
-    Response_Amount: '&3Kwota podatku ustawiona na &b{money_symbol}{input}'
+    Prompt: "&3Wpisz kwotę, którą chcesz ustawić jako podatek dla twojego miasta: &c(Wpisz cancel, aby zakończyć)"
+    Invalid_Percent: "&cWpisz tylko liczbę całkowitą między 0 a {max_percent} jako procent podatku."
+    Invalid_Amount: "&cWpisz liczbę całkowitą między 0 a {max_amount} jako kwotę podatku."
+    Response_Percent: "&3Procent podatku ustawiono na &b{input}"
+    Response_Amount: "&3Kwota podatku ustawiona na &b{money_symbol}{input}"
   Title:
-    Prompt: '&3Wpisz tytuł, który chcesz nadać &b{player} &3teraz: (do 10 znaków) &cWpisz cancel, aby zakończyć.'
-    Response: '&3Pomyślnie ustawiono tytuł &b{player} &3na &b{input}'
+    Prompt: "&3Wpisz tytuł, który chcesz nadać &b{player} &3teraz: (do 10 znaków) &cWpisz cancel, aby zakończyć."
+    Response: "&3Pomyślnie ustawiono tytuł &b{player} &3na &b{input}"
   Withdraw:
-    Prompt: '&3Wpisz kwotę, którą chcesz wypłacić z konta swojego miasta: &c(Wpisz cancel, aby zakończyć)'
-    Invalid: '&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wypłatę.'
-    Response: '&3Wypłacono &b{money_symbol}{input} &3z konta twojego miasta.'
+    Prompt: "&3Wpisz kwotę, którą chcesz wypłacić z konta swojego miasta: &c(Wpisz cancel, aby zakończyć)"
+    Invalid: "&cWpisz tylko liczby całkowite i upewnij się, że masz wystarczająco pieniędzy na wypłatę."
+    Response: "&3Wypłacono &b{money_symbol}{input} &3z konta twojego miasta."
 Plot_Conversables:
   Evict:
-    Prompt: '&cCzy chcesz eksmitować mieszkańca tej działki? Wpisz &aconfirm &cor cancel:'
-    Invalid: '&cDziałka nie ma żadnych mieszkańców.'
-    Response: '&cMieszkaniec działki eksmitowany.'
+    Prompt: "&cCzy chcesz eksmitować mieszkańca tej działki? Wpisz &aconfirm &cor cancel:"
+    Invalid: "&cDziałka nie ma żadnych mieszkańców."
+    Response: "&cMieszkaniec działki eksmitowany."
   For_Sale:
-    Prompt: '&3Wpisz kwotę, za którą chcesz wystawić działkę na sprzedaż: &c(Wpisz cancel, aby zakończyć)'
-    Invalid: '&cWpisz tylko liczby całkowite, które są mniejsze niż maksymalna cena działki: {max_price}'
-    Response: '&3Cena działki ustawiona na &b{money_symbol}{input}.'
+    Prompt: "&3Wpisz kwotę, za którą chcesz wystawić działkę na sprzedaż: &c(Wpisz cancel, aby zakończyć)"
+    Invalid: "&cWpisz tylko liczby całkowite, które są mniejsze niż maksymalna cena działki: {max_price}"
+    Response: "&3Cena działki ustawiona na &b{money_symbol}{input}."
   Not_For_Sale:
-    Prompt: '&3Czy chcesz ustawić tę działkę jako nie na sprzedaż? Wpisz &aconfirm &3lub &ccancel&6:'
-    Response: '&cDziałka ustawiona jako nie na sprzedaż.'
+    Prompt: "&3Czy chcesz ustawić tę działkę jako nie na sprzedaż? Wpisz &aconfirm &3lub &ccancel&6:"
+    Response: "&cDziałka ustawiona jako nie na sprzedaż."
   Set_Type:
-    Prompt: '&3Jaki typ chcesz ustawić dla tej działki? &b(Opcje: {options}) Wpisz "cancel", aby anulować'
-    Invalid: '&cWpisz poprawny typ działki. (Poprawne typy: {options}) lub wpisz "cancel", aby anulować'
-    Response: '&3Typ działki ustawiony na: &b{input}'
+    Prompt: "&3Jaki typ chcesz ustawić dla tej działki? &b(Opcje: {options}) Wpisz \"cancel\", aby anulować"
+    Invalid: "&cWpisz poprawny typ działki. (Poprawne typy: {options}) lub wpisz \"cancel\", aby anulować"
+    Response: "&3Typ działki ustawiony na: &b{input}"
 Error:
-  No_Permission: '&cNie masz uprawnień do używania tej komendy.'
-  No_Town: '&cNie masz miasta.'
-  War_Time: '&cNie możesz wykonać tej akcji w czasie wojny.'
-  Must_Be_In_Own_Plot: '&cMożesz to zrobić tylko na działce, którą posiadasz.'
-  Must_Be_In_Town: '&cMusisz być w swoim mieście, aby to zrobić.'
-  Must_Be_In_Bank: '&cMusisz być na działce banku, aby to zrobić.'
-  Toggle_PVP_Outsiders: '&cNie możesz włączyć/wyłączyć PVP, gdy obcy są w twoim mieście.'
-  Toggle_PVP_Cooldown: '&cNie możesz włączyć PVP, dopóki czas oczekiwania się nie zakończy.'
-  Cannot_Select_Self: '&cNie możesz wybrać siebie.'
-  Cannot_Set_Homeblock: '&cNie można ustawić bloku domowego tutaj.'
-  Cannot_Set_Spawn: '&cNie można ustawić punktu spawn w tym miejscu.'
-  Cannot_Change_Name: '&cMusisz być burmistrzem, aby zmienić nazwę miasta.'
-  Cannot_Change_Board: '&cMusisz być burmistrzem, aby zmienić tablicę miasta.'
+  No_Permission: "&cNie masz uprawnień do używania tej komendy."
+  No_Town: "&cNie masz miasta."
+  Invalid_Input: "&cValue entered is invalid"
+  Economy_Disabled: "&4Economy options are disabled"
+  War_Time: "&cNie możesz wykonać tej akcji w czasie wojny."
+  Must_Be_In_Own_Plot: "&cMożesz to zrobić tylko na działce, którą posiadasz."
+  Must_Be_In_Nation: "&cYou must be in a nation to do this."
+  Must_Be_In_Town: "&cMusisz być w swoim mieście, aby to zrobić."
+  Must_Be_In_Bank: "&cMusisz być na działce banku, aby to zrobić."
+  Toggle_PVP_Outsiders: "&cNie możesz włączyć/wyłączyć PVP, gdy obcy są w twoim mieście."
+  Toggle_PVP_Cooldown: "&cNie możesz włączyć PVP, dopóki czas oczekiwania się nie zakończy."
+  Cannot_Select_Self: "&cNie możesz wybrać siebie."
+  Cannot_Set_Homeblock: "&cNie można ustawić bloku domowego tutaj."
+  Cannot_Set_Spawn: "&cNie można ustawić punktu spawn w tym miejscu."
+  Cannot_Change_Name: "&cMusisz być burmistrzem, aby zmienić nazwę miasta."
+  Cannot_Change_Board: "&cMusisz być burmistrzem, aby zmienić tablicę miasta."
 Chunk_View:
-  Toggle_Remove: 'Bloki granic teraz wyświetlane. Naciśnij sneak, aby usunąć.'
-  Removed: 'Bloki granic usunięte.'
-# DO NOT TOUCH VERSION
+  Toggle_Remove: "Bloki granic teraz wyświetlane. Naciśnij sneak, aby usunąć."
+  Removed: "Bloki granic usunięte."
+  Particles: "&6Border particles now showing."
+#DO NOT TOUCH VERSION
 Version: 2
-# by .pan_n
