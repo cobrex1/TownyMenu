@@ -1,10 +1,13 @@
 # !-----------------------------------------------------------------------------------------------!
 #                              Welcome to the TownyMenu Localization file.
 # !-----------------------------------------------------------------------------------------------!
-#   COLOR CODES are supported with the '&' character.
+#   COLOR CODES
+#   - Default is MINIMESSAGE, but HEX and Legacy ('&') are also supported in this mode.
+#   - If you keep to LAEGACY mode, do not use MINIMESSAGE format
 #   - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #   - When you use them, place quotes around the message like this: "&a&lBack"
-#   - To use HEX colors, use #123456 or &#123456 syntax eg: "Hello #123456world."
+#   - To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
+#   - To use HEX colors, use #123456 or #123456 syntax eg: "Hello #123456world."
 # !-----------------------------------------------------------------------------------------------!
 Confirm: "confirm"
 Cancel: "cancel"
