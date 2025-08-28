@@ -3,7 +3,7 @@
 #!-----------------------------------------------------------------------------------------------!
 #COLOR CODES
 #- Default is MINIMESSAGE, but HEX and Legacy ('&') are also supported in this mode.
-#- If you keep to LEGACY mode, do not use MINIMESSAGE format
+#- If you keep to LAEGACY mode, do not use MINIMESSAGE format
 #- For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #- When you use them, place quotes around the message like this: "&a&lBack"
 #- To use MINIMESAGE, use <bold><green> or <gradient:red:green> for example.
