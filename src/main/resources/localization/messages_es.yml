@@ -19,20 +19,20 @@ Back_Button:
     - ""
     - "Menú anterior."
 Next_Page_Button:
-  Next_Page_Button_Title: "&bNext"
+  Next_Page_Button_Title: "&bSiguiente"
   Next_Page_Button_Lore:
     - ""
-    - "&bNext page"
+    - "&bSiguiente pagina"
 Previous_Page_Button:
-  Previous_Page_Button_Title: "&bPrevious"
+  Previous_Page_Button_Title: "&bAnterior"
   Previous_Page_Button_Lore:
     - ""
-    - "&bPrevious page"
+    - "&bPagina Anterior"
 Join_Create_Menu:
-  Main_Menu_Title: "Únete o crea una Town"
-  Find_Open_Town: "Encuentra una Town abierta"
-  Click_Create_Town: "Haz clic para crear una town"
-  Join_Open_Town: "&aÚnete a un town abierto"
+  Main_Menu_Title: "Únete o crea una Ciudad"
+  Find_Open_Town: "Encuentra una Ciudad abierta"
+  Click_Create_Town: "Haz clic para crear una Ciudad"
+  Join_Open_Town: "&aÚnete a un ciudad abierta"
   #this is just setting the color
   Town_Name: "&e"
   Mayor: "&fAlcalde: "
@@ -70,8 +70,8 @@ Nation_Menu:
   Nation_Economy_Disabled_Menu_Button: "&c&lNation Economy Management Disabled"
   Nation_Economy_Disabled_Menu_Button_Lore:
     - ""
-    - "Economy features are"
-    - "currently turned off"
+    - "Las funciones de economia estan"
+    - "actualmente apagado"
   Nation_Settings_Button: "&2&lMenú de configuración de la nación"
   Nation_Settings_Button_Lore:
     - ""
@@ -89,7 +89,7 @@ Nation_Menu:
     - "Comandos extra útiles para"
     - "líderes de la nación"
   Nation_Name: "&a"
-  Towns: "&eTowns"
+  Towns: "&eCiudades"
   Number_Towns: "&2"
   Residents: "&2Residents:"
   Number_Residents: "&2"
