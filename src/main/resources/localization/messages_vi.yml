@@ -153,6 +153,7 @@ Nation_Economy_Menu:
   Menu_Title: "&2&lMenu tài chính"
   Nation_Economy_Menu_Info: "&fMenu Information"
   Nation_Economy_Menu_Info_Lore:
+    - ""
     - "Economy actions"
     - "for your Nation!"
   Balance: "&2&lSố dư quốc gia hiện tại"
