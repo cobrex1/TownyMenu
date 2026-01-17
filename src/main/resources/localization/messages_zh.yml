@@ -154,7 +154,7 @@ Nation_Economy_Menu:
   Nation_Economy_Menu_Info: "&f菜单信息"
   Nation_Economy_Menu_Info_Lore:
     - ""
-    - "Economy actions"
+    - "为您的国家！"
     - "for your Nation!"
   Balance: "&2&l当前国家余额"
   #this is just setting the color
