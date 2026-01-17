@@ -154,7 +154,7 @@ Nation_Economy_Menu:
   Nation_Economy_Menu_Info: "&fMenu Information"
   Nation_Economy_Menu_Info_Lore:
     - ""
-    - "Economy actions"
+    - "for your Nation!"
     - "for your Nation!"
   Balance: "&2&lAktualny stan konta narodu"
   #this is just setting the color
