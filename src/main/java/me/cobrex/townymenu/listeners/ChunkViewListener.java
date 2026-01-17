@@ -20,7 +20,7 @@ public class ChunkViewListener implements Listener {
 
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
-		System.out.println("Joined player: " + event.getPlayer().getName());
+//		System.out.println("Joined player: " + event.getPlayer().getName());
 	}
 
 	@EventHandler

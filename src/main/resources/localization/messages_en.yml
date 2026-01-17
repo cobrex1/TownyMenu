@@ -153,6 +153,7 @@ Nation_Economy_Menu:
   Menu_Title: "&2&lEconomy Menu"
   Nation_Economy_Menu_Info: "&fMenu Information"
   Nation_Economy_Menu_Info_Lore:
+    - ""
     - "Economy actions"
     - "for your Nation!"
   Balance: "&2&lCurrent Nation Balance"

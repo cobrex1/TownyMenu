@@ -78,9 +78,8 @@ public class NationEconomyMenu extends MenuHandler {
 				})
 				.buildAndSet(player, this);
 
-		MenuItemBuilder.of("town_economy_menu_info_button")
+		MenuItemBuilder.of("nation_economy_info_button")
 				.name(Localization.NationMenu.NationEconomyMenu.NATION_ECONOMY_MENU_INFO)
-				.lore("")
 				.lore(Localization.NationMenu.NationEconomyMenu.NATION_ECONOMY_MENU_INFO_LORE)
 				.onClick(click -> {})
 				.buildAndSet(player, this);

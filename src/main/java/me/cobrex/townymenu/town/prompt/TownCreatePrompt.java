@@ -9,6 +9,7 @@ import org.bukkit.conversations.Prompt;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+//public class TownCreatePrompt extends BasePrompt {
 public class TownCreatePrompt extends ComponentPrompt {
 
 	private final Player player;

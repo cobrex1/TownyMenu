@@ -92,7 +92,9 @@ public class TownMenu extends MenuHandler {
 				.onClick(click -> MenuManager.switchMenu(player, new ExtraTownInfo(player)))
 				.buildAndSet(player, this);
 
-		String balanceDisplay = Settings.ECONOMY_ENABLED
+		boolean economyActive = Settings.ECONOMY_ENABLED && TownySettings.isUsingEconomy();
+
+		String balanceDisplay = economyActive
 				? Localization.TownMenu.BALANCE + Localization.TownMenu.BALANCE_AMOUNT + " " + town.getAccount().getHoldingFormattedBalance()
 				: Localization.TownMenu.BALANCE + Localization.TownMenu.BALANCE_AMOUNT + " &cDisabled";
 
@@ -128,7 +130,7 @@ public class TownMenu extends MenuHandler {
 
 	private void handleTownEconomyMenu() throws NotRegisteredException {
 
-		if (Settings.ECONOMY_ENABLED) {
+		if (Settings.ECONOMY_ENABLED && TownySettings.isUsingEconomy()) {
 //			System.out.println("[DEBUG] ECONOMY_ENABLED: " + Settings.ECONOMY_ENABLED);
 			TownBlock block = TownyAPI.getInstance().getTownBlock(player.getLocation());
 

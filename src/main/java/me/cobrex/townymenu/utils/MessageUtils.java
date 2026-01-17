@@ -25,7 +25,6 @@ public class MessageUtils {
 	private static final int DEFAULT_TIMEOUT_SECONDS = 30;
 
 	private static final boolean IS_PAPER;
-
 	static {
 		boolean isPaper = false;
 		try {

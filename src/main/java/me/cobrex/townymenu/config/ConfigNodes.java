@@ -429,18 +429,18 @@ public enum ConfigNodes {
 	NATION_EXTRA_INFO_BUTTON_CMD(
 			"nation_extra_info_button.custommodeldata",
 			0),
-	NATION_MAIN_MENU_INFO(
-			"nation_menu_info",
+	NATION_MENU_INFO_BUTTON(
+			"nation_menu_info_button",
 			"",
 			""),
-	NATION_MAIN_MENU_INFO_SLOT(
-			"nation_menu_info.slot",
+	NATION_MENU_INFO_BUTTON_SLOT(
+			"nation_menu_info_button.slot",
 			18),
-	NATION_MAIN_MENU_INFO_ITEM(
-			"nation_menu_info.item",
+	NATION_MENU_INFO_BUTTON_ITEM(
+			"nation_menu_info_button.item",
 			"NETHER_STAR"),
-	NATION_MAIN_MENU_INFO_BUTTON_CMD(
-			"nation_menu_info.custommodeldata",
+	NATION_MENU_INFO_BUTTON_CMD(
+			"nation_menu_info_button.custommodeldata",
 			0),
 
 	NATION_ECONOMY_MENU_SIZE(
@@ -508,7 +508,7 @@ public enum ConfigNodes {
 			"nation_economy_info_button.slot",
 			9),
 	NATION_ECONOMY_INFO_ITEM(
-			"nation_menu_info.item",
+			"nation_economy_info_button.item",
 			"NETHER_STAR"),
 	NATION_ECONOMY_INFO_BUTTON_CMD(
 			"nation_economy_info_button.custommodeldata",

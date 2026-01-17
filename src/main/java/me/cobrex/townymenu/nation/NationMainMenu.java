@@ -72,11 +72,13 @@ public class NationMainMenu extends MenuHandler {
 				.onClick(click -> MenuManager.switchMenu(player, new NationExtraInfoMenu(player)))
 				.buildAndSet(player, this);
 
-		String balanceDisplay = Settings.ECONOMY_ENABLED
+		boolean economyActive = Settings.ECONOMY_ENABLED && TownySettings.isUsingEconomy();
+
+		String balanceDisplay = economyActive
 				? Localization.NationMenu.BALANCE + Localization.NationMenu.BALANCE_AMOUNT + " " + nation.getAccount().getHoldingFormattedBalance()
 				: Localization.NationMenu.BALANCE + Localization.NationMenu.BALANCE_AMOUNT + " &cDisabled";
 
-		MenuItemBuilder.of("nation_menu_info")
+		MenuItemBuilder.of("nation_menu_info_button")
 				.name(Localization.NationMenu.NATION_NAME + nation.getName())
 				.lore("")
 				.lore(Localization.NationMenu.TOWNS + Localization.NationMenu.NUMBER_TOWNS + " " + nation.getNumTowns())
@@ -93,7 +95,7 @@ public class NationMainMenu extends MenuHandler {
 
 	private void handleNationEconomyMenu() throws NotRegisteredException {
 
-		if (Settings.ECONOMY_ENABLED) {
+		if (Settings.ECONOMY_ENABLED && TownySettings.isUsingEconomy()) {
 //			System.out.println("[DEBUG] ECONOMY_ENABLED: " + Settings.ECONOMY_ENABLED);
 
 			TownBlock block = TownyAPI.getInstance().getTownBlock(player.getLocation());
@@ -125,15 +127,15 @@ public class NationMainMenu extends MenuHandler {
 			}
 
 			MenuItemBuilder.of("nation_economy_menu_button")
-					.name(Localization.TownMenu.ECONOMY_MENU_BUTTON)
-					.lore(Localization.TownMenu.ECONOMY_MENU_BUTTON_LORE)
+					.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+					.lore(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON_LORE)
 					.onClick(click -> MenuManager.switchMenu(player, new NationEconomyMenu(player)))
 					.buildAndSet(player, this);
 
 		} else {
 			MenuItemBuilder.of("nation_economy_menu_button")
-					.name(Localization.TownMenu.ECONOMY_DISABLED_MENU_BUTTON)
-					.lore(Localization.TownMenu.ECONOMY_DISABLED_MENU_BUTTON_LORE)
+					.name(Localization.NationMenu.NATION_ECONOMY_MENU_BUTTON)
+					.lore(Localization.NationMenu.NATION_ECONOMY_DISABLED_MENU_BUTTON_LORE)
 					.onClick(click -> {})
 					.buildAndSet(player, this);
 		}

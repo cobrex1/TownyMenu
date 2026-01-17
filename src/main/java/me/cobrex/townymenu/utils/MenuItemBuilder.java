@@ -153,14 +153,14 @@ public class MenuItemBuilder {
 		ItemMeta meta = item.getItemMeta();
 		if (meta != null) {
 			if (name != null) {
-				Component displayNameComp = MessageFormatter.formatComponent(name, player);
-				if (meta.hasDisplayName()) meta.setDisplayName(null);
-				try {
-					meta.displayName(displayNameComp);
-				} catch (NoSuchMethodError ignored) {
-					meta.setDisplayName(MessageFormatter.format(name, player));
+					Component displayNameComp = MessageFormatter.formatComponent(name, player);
+					if (meta.hasDisplayName()) meta.setDisplayName(null);
+					try {
+						meta.displayName(displayNameComp);
+					} catch (NoSuchMethodError ignored) {
+						meta.setDisplayName(MessageFormatter.format(name, player));
+					}
 				}
-			}
 			if (!lore.isEmpty()) {
 				List<Component> loreComp = lore.stream()
 						.map(line -> MessageFormatter.formatComponent(line, player))

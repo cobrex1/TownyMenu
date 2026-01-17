@@ -24,20 +24,25 @@ public class MenuManager {
 	}
 
 	public static void handleClick(InventoryClickEvent event) {
-		Player player = (Player) event.getWhoClicked();
+		if (!(event.getWhoClicked() instanceof Player player))
+			return;
+
 		MenuHandler handler = openMenus.get(player.getUniqueId());
+		if (handler == null)
+			return;
 
-		if (handler != null) {
-//			Bukkit.getLogger().info("[DEBUG] TopInventory: " + event.getView().getTopInventory());
-//			Bukkit.getLogger().info("[DEBUG] Handler Inventory: " + handler.getInventory());
-//			System.out.println("[DEBUG] Equal? " + event.getView().getTopInventory().equals(handler.getInventory()));
+		event.setCancelled(true);
 
-			if (event.getView().getTopInventory().equals(handler.getInventory())) {
-				handler.handleClick(event);
-			} else {
-//				Bukkit.getLogger().warning("[DEBUG] Inventory mismatch for player: " + player.getName());
-			}
-		}
+		if (event.getClickedInventory() == null)
+			return;
+
+		if (event.getClickedInventory() != event.getView().getTopInventory())
+			return;
+
+		if (event.isShiftClick() || event.getClick().isKeyboardClick())
+			return;
+
+		handler.handleClick(event);
 	}
 
 	public static void refreshInPlace(Player player, MenuHandler rebuilt) {

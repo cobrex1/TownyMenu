@@ -2,17 +2,14 @@ package me.cobrex.townymenu;
 
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
+import com.palmergames.bukkit.towny.TownySettings;
 import me.cobrex.townymenu.bstats.Metrics;
-import me.cobrex.townymenu.commands.ChunkviewCommand;
-import me.cobrex.townymenu.commands.ChunkviewParticleCommand;
+import me.cobrex.townymenu.commands.*;
 import me.cobrex.townymenu.config.ConfigUtil;
 import me.cobrex.townymenu.listeners.ChunkViewListener;
 import me.cobrex.townymenu.listeners.MenuListener;
-import me.cobrex.townymenu.commands.NationMenuCommand;
-import me.cobrex.townymenu.commands.PlotMenuCommand;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
-import me.cobrex.townymenu.commands.TownMenuCommand;
 import me.cobrex.townymenu.utils.PlaceholderHook;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -73,6 +70,18 @@ public class TownyMenuPlugin extends JavaPlugin {
 		if (hasPlaceholderAPI()) {
 			logHooked("PlaceholderAPI");
 			new PlaceholderHook().register();
+		}
+
+		if (Settings.ECONOMY_ENABLED && !TownySettings.isUsingEconomy()) {
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] Economy mismatch detected!");
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] Fix: Set 'economy_enabled: false' in setting.yml");
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] to match TownyAdvanced economy setting");
+		}
+
+		if (!Settings.ECONOMY_ENABLED && TownySettings.isUsingEconomy()) {
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] Economy mismatch detected!");
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] Fix: Set 'economy_enabled: true' in setting.yml");
+			getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "[TownyMenu] to match TownyAdvanced economy setting");
 		}
 
 		getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "[TownyMenu]" + ChatColor.WHITE + "Economy Setting: " + Settings.ECONOMY_ENABLED);
