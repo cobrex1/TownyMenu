@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: "&3Escreva uma mensagem para o quadro de la nación: "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3EQuadro alterado com sucesso de la nación!"
   Deposit:
     Prompt: "&3Digite a quantidade de dinheiro que deseja depositar no banco: &c(Escriba cancel para salir de aviso)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3Quantidade &b{money_symbol}{input} &3dretirada com sucesso de la nacional."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for the town board: "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3Quadro alterado com sucesso!"
   Deposit:
     Prompt: "&3Digite a quantidade de dinheiro que deseja depositar no banco: &c(Digite cancel para cancelar o depósito)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&cImpossível definir o spawn aqui."
   Cannot_Change_Name: "&cVocê precisa ser o prefeito para mudar o nome da cidade."
   Cannot_Change_Board: "&cVocê precisa ser o prefeito para alterar o quadro da cidade."
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
   Removed: "&6Boarder blocks removed."

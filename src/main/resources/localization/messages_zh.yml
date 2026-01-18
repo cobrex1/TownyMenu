@@ -154,7 +154,7 @@ Nation_Economy_Menu:
   Nation_Economy_Menu_Info: "&f菜单信息"
   Nation_Economy_Menu_Info_Lore:
     - ""
-    - "Economy actions"
+    - "为您的国家！"
     - "for your Nation!"
   Balance: "&2&l当前国家余额"
   #this is just setting the color
@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "上级菜单。"
 Nation_Conversables:
   Board:
-    Prompt: "&3输入您国家公告板上的消息： "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3成功设置国家公告板！"
   Deposit:
     Prompt: "&3键入您想要存入您的国家的金额：&c(输入 cancel 以取消)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3已从你的国家账户中提取 &b{money_symbol}{input}。"
 Town_Conversables:
   Board:
-    Prompt: "&3键入您的城镇公告板的消息 "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3成功设置城镇公告板！"
   Deposit:
     Prompt: "&3键入您想要存入您的城镇的金额：&c(输入 cancel 以取消)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&c无法在此设置城镇出生点。"
   Cannot_Change_Name: "&c必须是市长才能更改城镇名称。"
   Cannot_Change_Board: "&c必须是市长才能更改城镇公告板。"
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "&6边界方块现在正在显示。按下潜行键可以关闭。"
   Removed: "&6边界方块已移除。"

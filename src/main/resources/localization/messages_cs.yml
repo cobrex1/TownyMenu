@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: "&3Type in a message for your nation's board: "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3Successfully set nation board!"
   Deposit:
     Prompt: "&3Type in the amount you would like to deposit in your nation: &c(Type cancel to exit prompt)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3Withdrew &b{money_symbol}{input} &3from your nation account."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for the town board: "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3Successfully set town board!"
   Deposit:
     Prompt: "&3Type in the amount you would like to deposit in your town: &c(Type cancel to exit prompt)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&cZde nelze nastavit spawn města."
   Cannot_Change_Name: "&cPro změnu názvu města musí být starosta/ka."
   Cannot_Change_Board: "&cPro změnu městské tabulky musí být starosta/ka."
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
   Removed: "&6Boarder blocks removed."
