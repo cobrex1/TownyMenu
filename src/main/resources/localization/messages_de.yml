@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: "&3Geben Sie eine Nachricht für den Vorstand Ihrer Nation ein: "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3Nationentafel erfolgreich gesetzt!"
   Deposit:
     Prompt: "&3Geben Sie den Betrag ein, den Sie in Ihre Nation einzahlen möchten: &c(Geben Sie Abbrechen ein, um die Eingabeaufforderung zu verlassen)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3Zurückgezogen &b{money_symbol}{input} &3von Ihrem Nation-Konto."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for the town board: "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3Schwarzes Brett erfolgreich geändert!"
   Deposit:
     Prompt: "&3Schreiben Sie den Betrag, den Sie in die Stadtbank einzahlen möchteen: &c(Schreiben Sie abbrechen um abzubrechen)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&cDer Startpunkt der Stadt kann hier nicht gesetzt werden."
   Cannot_Change_Name: "&cDu musst Bürgermeister sein, um den Namen der Stadt zu ändern."
   Cannot_Change_Board: "&cDu musst Bürgermeister sein, um das Schwarze Brett zu ändern."
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
   Removed: "&6Boarder blocks removed."
