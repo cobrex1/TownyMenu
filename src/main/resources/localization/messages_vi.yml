@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: "&3Nhập tin nhắn cho hội đồng quốc gia của bạn: "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3Đặt thành công bảng quốc gia!"
   Deposit:
     Prompt: "&3Nhập số tiền bạn muốn gửi tại quốc gia của mình: &c(Nhập cancel để hủy)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3Rút &b{money_symbol}{input} &3khỏi ngân hàng quốc gia của bạn."
 Town_Conversables:
   Board:
-    Prompt: "&3Type in a message for the town board: "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3Thiết lập thành công bảng thị trấn!"
   Deposit:
     Prompt: "&3Nhập số tiền bạn muốn gửi vào thị trấn của mình: &c(Nhập hủy để thoát lời nhắc)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&cKhông thể thiết lập thị trấn sinh sản ở đây."
   Cannot_Change_Name: "&cPhải là thị trưởng để thay đổi tên thị trấn."
   Cannot_Change_Board: "&cPhải là thị trưởng để thay đổi hội đồng thành phố."
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "&6Boarder blocks now showing. Toggle sneak to remove."
   Removed: "&6Boarder blocks removed."
