@@ -38,7 +38,7 @@ public class PlotForSalePrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
+	public Prompt accept(ConversationContext context, String input) {
 		if (!isInputValid(context, input)) {
 			player.sendMessage(getFailedValidationText(context, input));
 			return this;

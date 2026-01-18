@@ -24,8 +24,8 @@ public class PlotEvictPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
-		if (!player.hasPermission("towny.command.plot.evict") || input.equalsIgnoreCase(Localization.cancel(player))) {
+	public Prompt accept(ConversationContext context, String input) {
+		if (!player.hasPermission("towny.command.plot.evict"))  {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

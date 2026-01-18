@@ -25,16 +25,11 @@ public class NationGiveKingPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
+	public Prompt accept(ConversationContext context, String input) {
 		Player player = (Player) context.getForWhom();
 
 		if (!player.hasPermission("towny.command.nation.set.king")) {
 			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
-			return Prompt.END_OF_CONVERSATION;
-		}
-
-		input = input.trim().toLowerCase();
-		if (input.equals(Localization.cancel(player))) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

@@ -27,10 +27,11 @@ public class TownDepositPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
-		if (input.equalsIgnoreCase(Localization.cancel(player))) {
-			return Prompt.END_OF_CONVERSATION;
-		}
+	public Prompt accept(@NotNull ConversationContext context, @NotNull String input) {
+		Player player = (Player) context.getForWhom();
+//		if (input.equalsIgnoreCase(Localization.cancel(player))) {
+//			return Prompt.END_OF_CONVERSATION;
+//		}
 
 		if (!isInteger(input)) {
 			MessageUtils.send(player, Localization.TownConversables.Deposit.INVALID);

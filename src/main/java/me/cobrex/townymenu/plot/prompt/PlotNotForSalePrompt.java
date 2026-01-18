@@ -25,7 +25,7 @@ public class PlotNotForSalePrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
+	public Prompt accept(ConversationContext context, String input) {
 		if (input == null || input.isBlank()) {
 			MessageUtils.send(player, Localization.Error.INVALID);
 			return Prompt.END_OF_CONVERSATION;
@@ -34,10 +34,6 @@ public class PlotNotForSalePrompt extends ComponentPrompt {
 		String trimmedInput = input.trim();
 		String expectedCancel = Localization.cancel(player);
 		String expectedConfirm = Localization.confirm(player);
-
-		System.out.println("[DEBUG NFS] Input = [" + trimmedInput + "]");
-		System.out.println("[DEBUG NFS] Expected CONFIRM = [" + expectedConfirm + "]");
-		System.out.println("[DEBUG NFS] EqualsIgnoreCase = " + trimmedInput.equalsIgnoreCase(expectedConfirm));
 
 		if (!trimmedInput.equalsIgnoreCase(expectedCancel) &&
 				!trimmedInput.equalsIgnoreCase(expectedConfirm)) {

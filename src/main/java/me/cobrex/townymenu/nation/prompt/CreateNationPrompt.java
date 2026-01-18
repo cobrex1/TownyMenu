@@ -21,14 +21,10 @@ public class CreateNationPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
+	public Prompt accept(ConversationContext context, String input) {
 		if (input == null || input.isBlank()) {
 			MessageUtils.send(player, "&4Nation name cannot be empty.");
 			return END_OF_CONVERSATION;
-		}
-
-		if (input.equalsIgnoreCase(Localization.cancel(player))) {
-			return Prompt.END_OF_CONVERSATION;
 		}
 
 		player.performCommand("n new " + input);

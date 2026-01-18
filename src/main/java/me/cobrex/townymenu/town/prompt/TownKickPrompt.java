@@ -24,7 +24,7 @@ public class TownKickPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt accept(@NotNull ConversationContext context, @NotNull String input) {
 		Player player = resident.getPlayer();
 		String lowered = input.trim().toLowerCase();
 
@@ -35,10 +35,6 @@ public class TownKickPrompt extends ComponentPrompt {
 
 		if (resident.isMayor()) {
 			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.MAYOR, player));
-			return Prompt.END_OF_CONVERSATION;
-		}
-
-		if (lowered.equals(Localization.cancel(player))) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

@@ -33,10 +33,10 @@ public class TownSetTaxPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public @Nullable Prompt acceptInput(@NotNull ConversationContext context, String input) {
+	public @Nullable Prompt accept(@NotNull ConversationContext context, String input) {
 		Player player = (Player) context.getForWhom();
 
-		if (!player.hasPermission("towny.command.town.set.taxes") || input.equalsIgnoreCase(Localization.cancel(player)))
+		if (!player.hasPermission("towny.command.town.set.taxes"))
 			return null;
 
 		if (!isValidInput(input)) {

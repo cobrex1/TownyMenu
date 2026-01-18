@@ -16,28 +16,21 @@ public class TownWithdrawPrompt extends ComponentPrompt {
 	private final Town town;
 
 	public TownWithdrawPrompt(Town town) {
-		System.out.println("[DEBUG] Constructed TownBoardPrompt for town: " + town.getName());
 		this.town = town;
 	}
 
 	@Override
 	protected String getPromptMessage(ConversationContext context) {
-		System.out.println("[DEBUG TBP] getPromptMessage called for board prompt.");
-		System.out.println("[DEBUG TBP] Sending get message: " + Localization.TownConversables.Withdraw.PROMPT);
 		return Localization.TownConversables.Withdraw.PROMPT;
 	}
 
 	@Override
-	public @Nullable Prompt acceptInput(@NotNull ConversationContext context, String input) {
+	public @Nullable Prompt accept(@NotNull ConversationContext context, String input) {
 		Player player = (Player) context.getForWhom();
 
 		input = input.trim();
 
 		if (!player.hasPermission("towny.command.town.withdraw")) {
-			return Prompt.END_OF_CONVERSATION;
-		}
-
-		if (input.equalsIgnoreCase(Localization.cancel(player))) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

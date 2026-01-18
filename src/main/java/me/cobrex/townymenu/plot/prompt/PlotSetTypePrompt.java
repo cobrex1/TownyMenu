@@ -37,14 +37,14 @@ public class PlotSetTypePrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(ConversationContext context, String input) {
+	public Prompt accept(ConversationContext context, String input) {
 		if (!isInputValid(context, input)) {
 			String options = String.join(", ", plotTypes);
 			MessageUtils.send(player, Localization.PlotConversables.SetType.INVALID.replace("{options}", options));
 			return this;
 		}
 
-		if (input.equalsIgnoreCase(Localization.cancel(player)) || !player.hasPermission("towny.command.plot.set." + input.toLowerCase())) {
+		if (!player.hasPermission("towny.command.plot.set." + input.toLowerCase())) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

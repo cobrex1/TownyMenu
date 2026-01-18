@@ -27,12 +27,8 @@ public class NationDepositPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt accept(@NotNull ConversationContext context, @NotNull String input) {
 		Player player = (Player) context.getForWhom();
-
-		if (input.equalsIgnoreCase(Localization.cancel(player))) {
-			return Prompt.END_OF_CONVERSATION;
-		}
 
 		if (!isInteger(input)) {
 			MessageUtils.send(player, Localization.NationConversables.Nation_Deposit.INVALID);

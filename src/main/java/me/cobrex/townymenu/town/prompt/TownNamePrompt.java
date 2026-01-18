@@ -8,7 +8,6 @@ import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.utils.ComponentPrompt;
 import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
 import org.bukkit.entity.Player;
@@ -29,23 +28,18 @@ public class TownNamePrompt extends ComponentPrompt {
 
 	@Override
 	protected String getPromptMessage(ConversationContext context) {
-		Bukkit.getLogger().info("[DEBUG] Showing prompt to " + town.getName());
 		return Localization.TownConversables.Name.PROMPT
 				.replace("{town}", town.getName())
 				.replace("{max_length}", String.valueOf(TownySettings.getMaxNameLength()));
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, String input) {
+	public Prompt accept(@NotNull ConversationContext context, String input) {
 		Player player = (Player) context.getForWhom();
 		String trimmed = input.trim();
 
 		if (!player.hasPermission("towny.command.town.set.name")) {
 			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
-			return Prompt.END_OF_CONVERSATION;
-		}
-
-		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

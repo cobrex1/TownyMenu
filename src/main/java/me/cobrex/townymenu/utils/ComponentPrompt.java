@@ -2,10 +2,7 @@ package me.cobrex.townymenu.utils;
 
 import me.cobrex.townymenu.TownyMenuPlugin;
 import me.cobrex.townymenu.settings.Localization;
-import org.bukkit.conversations.Conversation;
-import org.bukkit.conversations.ConversationContext;
-import org.bukkit.conversations.ConversationFactory;
-import org.bukkit.conversations.StringPrompt;
+import org.bukkit.conversations.*;
 import org.bukkit.entity.Player;
 
 public abstract class ComponentPrompt extends StringPrompt {
@@ -16,7 +13,8 @@ public abstract class ComponentPrompt extends StringPrompt {
 				.withFirstPrompt(prompt)
 				.withLocalEcho(false)
 				.withPrefix(context -> "")
-				.withEscapeSequence(Localization.cancel(player))
+//				.withEscapeSequence("cancel")
+//				.withEscapeSequence(Localization.cancel(player))
 				.thatExcludesNonPlayersWithMessage("Console cannot use this.");
 
 		Conversation conversation = factory.buildConversation(player);
@@ -42,6 +40,21 @@ public abstract class ComponentPrompt extends StringPrompt {
 		}
 		throw new IllegalStateException("Prompt was not started by a player.");
 	}
+
+	@Override
+	public Prompt acceptInput(ConversationContext context, String input) {
+		Player player = getPlayer(context);
+		String trimmed = input.trim();
+
+		if (trimmed.equalsIgnoreCase("cancel")) {
+			MessageUtils.send(player, Localization.Error.CANCELLED);
+			return Prompt.END_OF_CONVERSATION;
+		}
+
+		return accept(context, input);
+	}
+
+	protected abstract Prompt accept(ConversationContext context, String input);
 
 	protected abstract String getPromptMessage(ConversationContext context);
 }

@@ -28,16 +28,12 @@ public class NationPlayerTitlePrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt accept(@NotNull ConversationContext context, @NotNull String input) {
 		Player player = getPlayer(context);
 		String trimmed = input.trim();
 
 		if (!player.hasPermission("towny.command.nation.set.title")) {
 			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
-			return Prompt.END_OF_CONVERSATION;
-		}
-
-		if (trimmed.equalsIgnoreCase(Localization.cancel(player))) {
 			return Prompt.END_OF_CONVERSATION;
 		}
 

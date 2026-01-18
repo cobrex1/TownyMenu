@@ -29,16 +29,13 @@ public class TownRankPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, String input) {
+	public Prompt accept(@NotNull ConversationContext context, String input) {
 		Player player = (Player) context.getForWhom();
 
 		if (!player.hasPermission("towny.command.town.rank"))
 			return END_OF_CONVERSATION;
 
 		input = input.trim();
-
-		if (input.equalsIgnoreCase(Localization.cancel(player)))
-			return END_OF_CONVERSATION;
 
 		if (input.equalsIgnoreCase(Localization.TownConversables.Rank.REMOVE)) {
 			for (String rank : TownyPerms.getTownRanks()) {

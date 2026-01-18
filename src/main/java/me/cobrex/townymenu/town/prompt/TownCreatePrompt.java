@@ -24,14 +24,10 @@ public class TownCreatePrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, String input) {
+	public Prompt accept(@NotNull ConversationContext context, String input) {
 		if (input == null || input.isBlank()) {
 			MessageUtils.send(player, "&4Town name cannot be empty.");
 			return END_OF_CONVERSATION;
-		}
-
-		if (input.equalsIgnoreCase(Localization.cancel(player))) {
-			return Prompt.END_OF_CONVERSATION;
 		}
 
 		player.performCommand("t new " + input);

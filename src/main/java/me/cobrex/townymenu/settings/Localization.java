@@ -1686,6 +1686,7 @@ public class Localization {
 		public static String CANNOT_SET_SPAWN;
 		public static String CANNOT_CHANGE_NAME;
 		public static String CANNOT_CHANGE_BOARD;
+		public static String CANCELLED;
 
 		private static void init(Player player) {
 			String locale = (player != null && player.getLocale() != null)
@@ -1709,6 +1710,7 @@ public class Localization {
 			CANNOT_SET_SPAWN = get(player, "Cannot_Set_Spawn");
 			CANNOT_CHANGE_NAME = get(player, "Cannot_Change_Name");
 			CANNOT_CHANGE_BOARD = get(player, "Cannot_Change_Board");
+			CANCELLED = get(player, "Cancelled");
 
 			popPathPrefix();
 		}

@@ -30,10 +30,10 @@ public class NationSetTaxPrompt extends ComponentPrompt {
 	}
 
 	@Override
-	public Prompt acceptInput(@NotNull ConversationContext context, @NotNull String input) {
+	public Prompt accept(@NotNull ConversationContext context, @NotNull String input) {
 		Player player = (Player) context.getForWhom();
 
-		if (!player.hasPermission("towny.command.nation.set.taxes") || input.equalsIgnoreCase(Localization.cancel(player))) {
+		if (!player.hasPermission("towny.command.nation.set.taxes")) { // || input.equalsIgnoreCase(Localization.cancel(player))) {
 			return END_OF_CONVERSATION;
 		}
 
