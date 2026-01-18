@@ -730,7 +730,7 @@ Plot_Admin_Menu:
     - "Previous menu."
 Nation_Conversables:
   Board:
-    Prompt: "&3Escribe el nuevo mensaje de su nación: "
+    Prompt: "&3Type in a message for your nation's board: &c(Type cancel to exit prompt)"
     Response: "&3Se ha actualizado el board de la nación!"
   Deposit:
     Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escriba cancelar para salir de la indicación)"
@@ -769,7 +769,7 @@ Nation_Conversables:
     Response: "&3Se retiró &b{money_symbol}{input} &3de tu cuenta nacional."
 Town_Conversables:
   Board:
-    Prompt: "&3Escribe el nuevo mensaje de ciudad: "
+    Prompt: "&3Type in a message for the town board: &c(Type cancel to exit prompt)"
     Response: "&3Se ha actualizado el board de tu ciudad"
   Deposit:
     Prompt: "&3Escribe la cantidad de dinero a depositar: &c(Escribe 'cancel' para cancelar)"
@@ -840,6 +840,7 @@ Error:
   Cannot_Set_Spawn: "&cNo puedes establecer el spawn de la ciudad acá."
   Cannot_Change_Name: "&cDebes ser el dueño de la ciudad para hacer esto."
   Cannot_Change_Board: "&cDebes ser el dueño de la ciudad para hacer esto."
+  Cancelled: "&7Your conversation input has been cancelled."
 Chunk_View:
   Toggle_Remove: "Ahora se muestran los bloques fronterizos. Alternar sigilo para eliminar."
   Removed: "Se eliminaron los bloques de borde."
