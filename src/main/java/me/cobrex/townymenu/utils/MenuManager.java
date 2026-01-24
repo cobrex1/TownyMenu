@@ -18,7 +18,7 @@ public class MenuManager {
 //		System.out.println("[DEBUG MMang17] openMenus map: " + openMenus);
 //		Bukkit.getLogger().info("[MenuManager MMang18] Opening menu: " + handler.getClass().getSimpleName());
 		openMenus.put(player.getUniqueId(), handler);
-		Bukkit.getScheduler().runTaskLater(TownyMenuPlugin.instance, () ->
+		Bukkit.getGlobalRegionScheduler().runDelayed(TownyMenuPlugin.instance, scheduledTask ->
 		player.openInventory(handler.getInventory()), 1L);
 //		Bukkit.getLogger().info("[MenuManager MMang22] openMenus now: " + openMenus);
 	}

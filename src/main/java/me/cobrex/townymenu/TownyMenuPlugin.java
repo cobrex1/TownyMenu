@@ -103,7 +103,7 @@ public class TownyMenuPlugin extends JavaPlugin {
 		}
 		Localization.save();
 
-		Bukkit.getScheduler().cancelTasks(this);
+		Bukkit.getGlobalRegionScheduler().cancelTasks(this);
 
 		getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "[TownyMenu] " + ChatColor.WHITE + "Plugin has been disabled");
 	}
