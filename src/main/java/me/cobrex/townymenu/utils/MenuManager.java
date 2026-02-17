@@ -1,8 +1,6 @@
 package me.cobrex.townymenu.utils;
 
-import me.cobrex.townymenu.TownyMenuPlugin;
 import me.cobrex.townymenu.town.ToggleSettingsMenu;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
@@ -18,9 +16,9 @@ public class MenuManager {
 //		System.out.println("[DEBUG MMang17] openMenus map: " + openMenus);
 //		Bukkit.getLogger().info("[MenuManager MMang18] Opening menu: " + handler.getClass().getSimpleName());
 		openMenus.put(player.getUniqueId(), handler);
-		Bukkit.getScheduler().runTaskLater(TownyMenuPlugin.instance, () ->
-		player.openInventory(handler.getInventory()), 1L);
-//		Bukkit.getLogger().info("[MenuManager MMang22] openMenus now: " + openMenus);
+		SchedulerUtil.runLater(player, () -> {
+			player.openInventory(handler.getInventory());
+		}, 1L);
 	}
 
 	public static void handleClick(InventoryClickEvent event) {
