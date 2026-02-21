@@ -9,10 +9,7 @@ import com.palmergames.bukkit.towny.tasks.CooldownTimerTask;
 import me.cobrex.townymenu.config.ConfigNodes;
 import me.cobrex.townymenu.config.ConfigUtil;
 import me.cobrex.townymenu.settings.Localization;
-import me.cobrex.townymenu.utils.MenuHandler;
-import me.cobrex.townymenu.utils.MenuItemBuilder;
-import me.cobrex.townymenu.utils.MenuManager;
-import me.cobrex.townymenu.utils.MessageFormatter;
+import me.cobrex.townymenu.utils.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -118,7 +115,8 @@ public class ToggleSettingsMenu extends MenuHandler {
 
 	private void toggleTownSetting(String type, String permission) {
 		if (!player.hasPermission(permission)) {
-			MessageFormatter.format(Localization.Error.NO_PERMISSION, player);
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageFormatter.format(Localization.Error.NO_PERMISSION, player);
 			return;
 		}
 
@@ -137,7 +135,8 @@ public class ToggleSettingsMenu extends MenuHandler {
 
 	private void togglePVP() {
 		if (!player.hasPermission("towny.command.town.toggle.pvp")) {
-			MessageFormatter.format(Localization.Error.NO_PERMISSION, player);
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageFormatter.format(Localization.Error.NO_PERMISSION, player);
 			return;
 		}
 
@@ -149,7 +148,8 @@ public class ToggleSettingsMenu extends MenuHandler {
 						if (!res.getTown().equals(town) &&
 								TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null &&
 								Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
-							player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_OUTSIDERS, player));
+							MessageUtils.send(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
+//							player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_OUTSIDERS, player));
 							player.closeInventory();
 							return;
 						}
@@ -160,7 +160,8 @@ public class ToggleSettingsMenu extends MenuHandler {
 					if (TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation()) != null) {
 						try {
 							if (Objects.requireNonNull(TownyAPI.getInstance().getTownBlock(onlinePlayer.getLocation())).getTown().equals(town)) {
-								player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_OUTSIDERS, player));
+								MessageUtils.send(player, Localization.Error.TOGGLE_PVP_OUTSIDERS);
+//								player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_OUTSIDERS, player));
 								player.closeInventory();
 								return;
 							}
@@ -174,7 +175,8 @@ public class ToggleSettingsMenu extends MenuHandler {
 
 		if (TownySettings.getPVPCoolDownTime() > 0 &&
 				CooldownTimerTask.hasCooldown(town.getName(), CooldownTimerTask.CooldownType.PVP)) {
-			player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_COOLDOWN, player));
+			MessageUtils.send(player, Localization.Error.TOGGLE_PVP_COOLDOWN);
+//			player.sendMessage(MessageFormatter.format(Localization.Error.TOGGLE_PVP_COOLDOWN, player));
 			player.closeInventory();
 			return;
 		}

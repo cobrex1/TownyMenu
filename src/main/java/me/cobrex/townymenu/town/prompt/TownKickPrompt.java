@@ -3,7 +3,6 @@ package me.cobrex.townymenu.town.prompt;
 import com.palmergames.bukkit.towny.object.Resident;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.utils.ComponentPrompt;
-import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -29,20 +28,24 @@ public class TownKickPrompt extends ComponentPrompt {
 		String lowered = input.trim().toLowerCase();
 
 		if (!player.hasPermission("towny.command.town.kick")) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 
 		if (resident.isMayor()) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.MAYOR, player));
+			MessageUtils.send(player, Localization.TownConversables.Kick.MAYOR);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.MAYOR, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 
 		if (lowered.equals(Localization.confirm(player))) {
 			resident.removeTown();
-			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()), player));
+			MessageUtils.send(player, Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()));
+//			MessageUtils.send(player, MessageFormatter.format(Localization.TownConversables.Kick.RESPONSE.replace("{player}", resident.getName()), player));
 		} else {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
+			MessageUtils.send(player, Localization.Error.INVALID);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 

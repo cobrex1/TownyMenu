@@ -3,7 +3,6 @@ package me.cobrex.townymenu.nation.prompt;
 import com.palmergames.bukkit.towny.object.Town;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.utils.ComponentPrompt;
-import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -36,7 +35,8 @@ public class NationKickPrompt extends ComponentPrompt {
 			town.removeNation();
 			MessageUtils.send(player, Localization.NationConversables.Nation_Kick.RESPONSE.replace("{town}", town.getName()));
 		} else {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
+			MessageUtils.send(player, Localization.Error.INVALID);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.INVALID, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 

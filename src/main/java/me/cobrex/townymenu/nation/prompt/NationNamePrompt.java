@@ -5,7 +5,6 @@ import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Nation;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.utils.ComponentPrompt;
-import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -37,7 +36,8 @@ public class NationNamePrompt extends ComponentPrompt {
 		String trimmed = input.trim();
 
 		if (!player.hasPermission("towny.command.nation.set.name")) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 

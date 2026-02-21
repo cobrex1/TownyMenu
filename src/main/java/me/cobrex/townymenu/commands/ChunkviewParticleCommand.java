@@ -4,7 +4,6 @@ import me.cobrex.townymenu.TownyMenuPlugin;
 import me.cobrex.townymenu.config.CommentedConfiguration;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.settings.Settings;
-import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
 import me.cobrex.townymenu.utils.SchedulerUtil;
 import org.bukkit.*;
@@ -29,7 +28,8 @@ public class ChunkviewParticleCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (!sender.hasPermission("chunkviewparticle.view")) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
 			return true;
 		}
 

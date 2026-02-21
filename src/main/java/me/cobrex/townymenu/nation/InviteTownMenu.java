@@ -58,7 +58,8 @@ public class InviteTownMenu extends PaginatedMenu {
 		try {
 			MenuManager.switchMenu(player, new NationMainMenu(player));
 		} catch (NotRegisteredException e) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.MUST_BE_IN_NATION, player));
+			MessageUtils.send(player, Localization.Error.MUST_BE_IN_NATION);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.MUST_BE_IN_NATION, player));
 		}
 	}
 }

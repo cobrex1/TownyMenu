@@ -32,12 +32,16 @@ public class GeneralSettingsMenu extends MenuHandler {
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
 						if (townBlock != null && townBlock.getTown().equals(town) && town.getMayor().getName().equals(player.getName())) {
-							town.setHomeBlock(townBlock);
-							TownyAPI.getInstance().getDataSource().saveTown(town);
-							player.sendMessage(Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_MSG);
-							player.sendMessage(Localization.TownMenu.GeneralSettingsMenu.SPAWN_REMINDER);
+							player.performCommand("town set homeblock");
+//							town.setHomeBlock(townBlock);
+//							TownyAPI.getInstance().getDataSource().saveTown(town);
+							MessageUtils.send(player, Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_MSG);
+//							player.sendMessage(Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_MSG);
+							MessageUtils.send(player, Localization.TownMenu.GeneralSettingsMenu.SPAWN_REMINDER);
+//							player.sendMessage(Localization.TownMenu.GeneralSettingsMenu.SPAWN_REMINDER);
 						} else {
-							player.sendMessage(Localization.Error.CANNOT_SET_HOMEBLOCK);
+							MessageUtils.send(player, Localization.Error.CANNOT_SET_HOMEBLOCK);
+//							player.sendMessage(Localization.Error.CANNOT_SET_HOMEBLOCK);
 						}
 					} catch (TownyException e) {
 						MessageUtils.send(player, Localization.Error.CANNOT_SET_HOMEBLOCK);

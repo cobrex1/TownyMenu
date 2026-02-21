@@ -3,7 +3,6 @@ package me.cobrex.townymenu.plot.prompt;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import me.cobrex.townymenu.settings.Localization;
 import me.cobrex.townymenu.utils.ComponentPrompt;
-import me.cobrex.townymenu.utils.MessageFormatter;
 import me.cobrex.townymenu.utils.MessageUtils;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -42,7 +41,8 @@ public class PlotNotForSalePrompt extends ComponentPrompt {
 		}
 
 		if (!player.hasPermission("towny.command.plot.notforsale")) {
-			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
+			MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+//			MessageUtils.send(player, MessageFormatter.format(Localization.Error.NO_PERMISSION, player));
 			return Prompt.END_OF_CONVERSATION;
 		}
 
