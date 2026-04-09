@@ -364,7 +364,7 @@ public class Settings {
 		PREFIX = config.getString("prefix", "&b&lTM &7// ");
 
 		COLOR_MODE = ColorMode.valueOf(config.getString("color_mode", "LEGACY").toUpperCase());
-//		Bukkit.getLogger().info("[DEBUG Settings380] Settings.COLOR_MODE = " + Settings.COLOR_MODE);
+//		Bukkit.getLogger().info("[DEBUG Settings367] Settings.COLOR_MODE = " + Settings.COLOR_MODE);
 
 		MONEY_SYMBOL = config.getString("money_symbol", "$");
 		ECONOMY_ENABLED = config.getBoolean("economy");

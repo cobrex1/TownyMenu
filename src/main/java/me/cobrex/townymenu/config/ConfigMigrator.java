@@ -186,6 +186,7 @@ public class ConfigMigrator {
 		if (p.startsWith("filler_")) return true;
 		if (p.equals("back_button.item") || p.equals("back_button.custommodeldata")) return true;
 		if (p.equals("chunk_view") || p.equals("chunk_view_partilce")) return true;
+		if (p.equals("color_mode")) return true;
 		if (p.equals("money_symbol") || p.equals("economy") || p.equals("locale") || p.equals("prefix")) return true;
 		return false;
 	}

@@ -86,7 +86,8 @@ public class ResidentListMenu extends PaginatedMenu {
 							player.sendMessage(MessageFormatter.format(Localization.Error.CANNOT_SELECT_SELF, player));
 							player.closeInventory();
 						} else {
-							MenuManager.switchMenu(player, new ResidentMenu(resident));
+							MenuManager.switchMenu(player, new ResidentMenu(player, resident));
+	//						MenuManager.switchMenu(player, new ResidentMenu(resident));
 						}
 					});
 				})

@@ -17,20 +17,24 @@ import org.bukkit.entity.Player;
 
 public class ResidentMenu extends MenuHandler {
 
-	private final Player player;
+	private final Player viewer;
+//	private final Player player;
 	private final Resident resident;
 	private final Town town;
 
-	public ResidentMenu(Resident resident) {
+	public ResidentMenu(Player viewer, Resident resident) {
 		super(
-				TownyAPI.getInstance().getPlayer(resident),
+				viewer,
+//				TownyAPI.getInstance().getPlayer(resident),
 				Localization.TownMenu.ResidentMenu.MENU_TITLE,
 				getInventorySize(ConfigNodes.RESIDENT_MENU_SIZE)
 		);
 
-		this.player = TownyAPI.getInstance().getPlayer(resident);
+		this.viewer = viewer;
+//		this.player = TownyAPI.getInstance().getPlayer(resident);
 		this.resident = resident;
-		this.town = TownyAPI.getInstance().getTown(player);
+		this.town = TownyAPI.getInstance().getTown(viewer);
+//		this.town = TownyAPI.getInstance().getTown(player);
 
 		setupMenuItems();
 		fillEmptySlots("filler_resident_menu");
@@ -52,7 +56,8 @@ public class ResidentMenu extends MenuHandler {
 				.lore(Localization.TownMenu.ResidentMenu.TITLE_LORE)
 				.onClick(click -> {
 					player.closeInventory();
-					new TownPlayerTitlePrompt(resident).show(player);
+					new TownPlayerTitlePrompt(resident).show(viewer);
+//					new TownPlayerTitlePrompt(resident).show(player);
 				})
 				.buildAndSet(player,this);
 
@@ -80,7 +85,7 @@ public class ResidentMenu extends MenuHandler {
 				.onClick(click -> {})
 				.buildAndSet(player,this);
 
-		MenuItemBuilder.of("Back_Button")
+		MenuItemBuilder.of("resident_menu_back_button")
 				.name(Localization.TownMenu.ResidentMenu.BACK_BUTTON)
 				.lore(Localization.TownMenu.ResidentMenu.BACK_BUTTON_LORE)
 				.onClick(click -> {
