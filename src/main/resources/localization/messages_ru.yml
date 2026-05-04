@@ -11,7 +11,7 @@
 #!-----------------------------------------------------------------------------------------------!
 Confirm: "подтвердить"
 Cancel: "отмена"
-Menu_Information: "&fMenu Info"
+Menu_Information: ""
 Reloaded: "Настройки перезагружены!"
 Back_Button:
   Back_Button_Title: "&a&lНазад"
