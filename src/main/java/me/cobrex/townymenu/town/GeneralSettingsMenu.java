@@ -29,6 +29,13 @@ public class GeneralSettingsMenu extends MenuHandler {
 				.name(Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK)
 				.lore(Localization.TownMenu.GeneralSettingsMenu.SET_HOME_BLOCK_LORE)
 				.onClick(click -> {
+
+					if (!player.hasPermission("towny.command.town.set.homeblock")) {
+						MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+						player.closeInventory();
+						return;
+					}
+
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
 						if (townBlock != null && townBlock.getTown().equals(town) && town.getMayor().getName().equals(player.getName())) {
@@ -55,6 +62,12 @@ public class GeneralSettingsMenu extends MenuHandler {
 				.lore(Localization.TownMenu.GeneralSettingsMenu.SET_SPAWN_LORE)
 				.onClick(click -> {
 					player.closeInventory();
+
+					if (!player.hasPermission("towny.command.town.set.spawn")) {
+						MessageUtils.send(player, Localization.Error.NO_PERMISSION);
+						return;
+					}
+
 					TownBlock townBlock = TownyAPI.getInstance().getTownBlock(player.getLocation());
 					try {
 						if (townBlock.isHomeBlock() && townBlock.getTown().equals(town)) {
@@ -87,7 +100,7 @@ public class GeneralSettingsMenu extends MenuHandler {
 				.name(Localization.TownMenu.GeneralSettingsMenu.SET_BOARD)
 				.lore(Localization.TownMenu.GeneralSettingsMenu.SET_BOARD_LORE)
 				.onClick(click -> {
-					System.out.println("[DEBUG] Town board button clicked by " + player.getName());
+//					System.out.println("[DEBUG] Town board button clicked by " + player.getName());
 					player.closeInventory();
 					if (town.getMayor().getName().equals(player.getName())) {
 						new TownBoardPrompt(player, town).show(player);
