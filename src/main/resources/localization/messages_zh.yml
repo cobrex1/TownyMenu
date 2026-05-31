@@ -840,7 +840,7 @@ Error:
   Cannot_Set_Spawn: "&c无法在此设置城镇出生点。"
   Cannot_Change_Name: "&c必须是市长才能更改城镇名称。"
   Cannot_Change_Board: "&c必须是市长才能更改城镇公告板。"
-  Cancelled: "&7Your conversation input has been cancelled."
+  Cancelled: "&7您的聊天栏输入已被取消。"
 Chunk_View:
   Toggle_Remove: "&6边界方块现在正在显示。按下潜行键可以关闭。"
   Removed: "&6边界方块已移除。"
