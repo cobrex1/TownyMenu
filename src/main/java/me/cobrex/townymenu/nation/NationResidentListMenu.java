@@ -1,6 +1,5 @@
 package me.cobrex.townymenu.nation;
 
-import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Resident;
@@ -64,7 +63,8 @@ public class NationResidentListMenu extends PaginatedMenu {
 						)));
 
 						List<Component> lore = new ArrayList<>();
-						Town town = TownyAPI.getInstance().getTown(player);
+						Town town = resident.getTownOrNull();
+//						Town town = TownyAPI.getInstance().getTown(player);
 						if (town != null) {
 							lore.add(parseFormatted(MessageFormatter.format(
 									Localization.NationMenu.NationResidentMenu.TOWN.replace(
@@ -92,7 +92,8 @@ public class NationResidentListMenu extends PaginatedMenu {
 							player.sendMessage(MessageFormatter.format(Localization.Error.CANNOT_SELECT_SELF, player));
 							player.closeInventory();
 						} else {
-							MenuManager.switchMenu(player, new NationResidentMenu(resident));
+							MenuManager.switchMenu(player, new NationResidentMenu(player, resident));
+//							enuManager.switchMenu(player, new NationResidentMenu(resident));
 						}
 					});
 				})

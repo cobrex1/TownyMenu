@@ -1,6 +1,5 @@
 package me.cobrex.townymenu.nation;
 
-import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
@@ -17,18 +16,21 @@ import org.bukkit.entity.Player;
 
 public class NationResidentMenu extends MenuHandler {
 
-	private final Player player;
+	private final Player viewer;
+//	private final Player player;
 	private final Town town;
 	private final Resident resident;
 
-	public NationResidentMenu(Resident resident) {
+	public NationResidentMenu(Player viewer, Resident resident) {
 		super(
-				TownyAPI.getInstance().getPlayer(resident),
+				viewer,
+//				TownyAPI.getInstance().getPlayer(resident),
 				Localization.TownMenu.ResidentMenu.MENU_TITLE,
 				getInventorySize(ConfigNodes.RESIDENT_MENU_SIZE)
 		);
 
-		this.player = TownyAPI.getInstance().getPlayer(resident);
+		this.viewer = viewer;
+//		this.player = TownyAPI.getInstance().getPlayer(resident);
 		this.resident = resident;
 		this.town = resident.hasTown() ? resident.getTownOrNull() : null;
 
