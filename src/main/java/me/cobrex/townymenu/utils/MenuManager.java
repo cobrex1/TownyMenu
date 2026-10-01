@@ -3,6 +3,9 @@ package me.cobrex.townymenu.utils;
 import me.cobrex.townymenu.town.ToggleSettingsMenu;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.ClickType;
+import org.bukkit.inventory.Inventory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,25 +25,28 @@ public class MenuManager {
 	}
 
 	public static void handleClick(InventoryClickEvent event) {
-		if (!(event.getWhoClicked() instanceof Player player))
-			return;
+		Inventory top = event.getView().getTopInventory();
+		if (!(top.getHolder() instanceof MenuHandler handler)) return;
 
-		MenuHandler handler = openMenus.get(player.getUniqueId());
-		if (handler == null)
-			return;
-
+		// Protect the actual view before any permission check or button callback.
+		boolean alreadyCancelled = event.isCancelled();
 		event.setCancelled(true);
+		if (alreadyCancelled || !(event.getWhoClicked() instanceof Player)) return;
+		if (event.getClickedInventory() != top) return;
+		if (event.getClick() != ClickType.LEFT && event.getClick() != ClickType.RIGHT) return;
 
-		if (event.getClickedInventory() == null)
-			return;
+		try {
+			handler.handleClick(event);
+		} finally {
+			// An exception or callback must never unlock decorative menu items.
+			event.setCancelled(true);
+		}
+	}
 
-		if (event.getClickedInventory() != event.getView().getTopInventory())
-			return;
-
-		if (event.isShiftClick() || event.getClick().isKeyboardClick())
-			return;
-
-		handler.handleClick(event);
+	public static void handleDrag(InventoryDragEvent event) {
+		if (event.getView().getTopInventory().getHolder() instanceof MenuHandler) {
+			event.setCancelled(true);
+		}
 	}
 
 	public static void refreshInPlace(Player player, MenuHandler rebuilt) {
